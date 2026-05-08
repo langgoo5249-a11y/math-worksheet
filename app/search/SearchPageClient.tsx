@@ -27,7 +27,8 @@ export default function SearchPageClient() {
       tool.active && (
         tool.name.toLowerCase().includes(lowerQuery) ||
         tool.desc.toLowerCase().includes(lowerQuery) ||
-        tool.keywords?.some(k => k.toLowerCase().includes(lowerQuery))
+        tool.schemaName.toLowerCase().includes(lowerQuery) ||
+        tool.schemaDescription.toLowerCase().includes(lowerQuery)
       )
     );
 
