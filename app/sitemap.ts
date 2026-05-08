@@ -7,6 +7,10 @@ export const dynamic = 'force-static';
 
 const BASE_URL = 'https://www.skillxm.cn';
 
+// 分页配置
+const ARTICLES_PER_PAGE = 12;
+const TOTAL_PAGES = Math.ceil(articles.length / ARTICLES_PER_PAGE);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const today = new Date().toISOString().split('T')[0];
 
@@ -19,6 +23,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/terms/`, lastModified: '2026-04-23', changeFrequency: 'monthly', priority: 0.3 },
     { url: `${BASE_URL}/privacy/`, lastModified: '2026-04-23', changeFrequency: 'monthly', priority: 0.3 },
   ];
+
+  // 博客分页页面
+  const blogPaginationPages: MetadataRoute.Sitemap = [];
+  for (let i = 1; i <= TOTAL_PAGES; i++) {
+    blogPaginationPages.push({
+      url: i === 1 ? `${BASE_URL}/blog/` : `${BASE_URL}/blog/page/${i}/`,
+      lastModified: today,
+      changeFrequency: 'weekly' as const,
+      priority: i === 1 ? 0.9 : 0.7,
+    });
+  }
 
   // 工具页面
   const toolPages: MetadataRoute.Sitemap = TOOLS.filter(t => t.active).map(tool => ({
@@ -36,5 +51,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...toolPages, ...blogPages];
+  return [...staticPages, ...blogPaginationPages, ...toolPages, ...blogPages];
+}
+
+// 生成 sitemap 索引文件（用于大量页面）
+export function sitemapIndex(): string {
+  const today = new Date().toISOString().split('T')[0];
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>${BASE_URL}/sitemap.xml</loc>
+    <lastmod>${today}</lastmod>
+  </sitemap>
+</sitemapindex>`;
 }

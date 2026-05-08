@@ -103,10 +103,21 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
     '关于我们': 'bg-pink-500/20 text-pink-300',
   };
 
-  // Related articles: same category, excluding current
-  const relatedArticles = articles
+  // 相关文章推荐：同分类优先，然后是其他分类的最新文章
+  const sameCategoryArticles = articles
     .filter(a => a.category === article.category && a.id !== article.id)
-    .slice(0, 5);
+    .slice(0, 6);
+  
+  const otherCategoryArticles = articles
+    .filter(a => a.category !== article.category)
+    .slice(0, 6 - sameCategoryArticles.length);
+  
+  const relatedArticles = [...sameCategoryArticles, ...otherCategoryArticles];
+  
+  // 最新文章（用于底部推荐）
+  const latestArticles = articles
+    .filter(a => a.id !== article.id)
+    .slice(0, 8);
 
   return (
     <SiteLayout>
@@ -151,10 +162,10 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
         {/* 广告位 */}
         <AdUnit />
 
-        {/* 相关文章推荐 */}
+        {/* 相关文章推荐 - 增强版 */}
         {relatedArticles.length > 0 && (
           <div className="mt-8 p-6 bg-slate-800/50 rounded-xl border border-white/10">
-            <h3 className="text-lg font-bold text-white mb-4">相关推荐</h3>
+            <h3 className="text-lg font-bold text-white mb-4">📌 相关推荐</h3>
             <ul className="space-y-3">
               {relatedArticles.map((related) => (
                 <li key={related.id}>
@@ -167,7 +178,9 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
                       <span className="text-gray-300 font-medium group-hover:text-blue-400 transition-colors">
                         {related.title}
                       </span>
-                      <span className="text-sm text-gray-500 ml-2">{related.category}</span>
+                      <span className={`text-xs ml-2 px-2 py-0.5 rounded-full ${categoryColors[related.category] || 'bg-gray-500/20 text-gray-300'}`}>
+                        {related.category}
+                      </span>
                     </div>
                   </Link>
                 </li>
@@ -198,12 +211,12 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             返回博客列表
           </Link>
 
-          {/* Related Articles */}
+          {/* Related Articles Grid - 增强版 */}
           {relatedArticles.length > 0 && (
             <div className="mt-10">
-              <h3 className="text-lg font-bold text-white mb-4">相关文章推荐</h3>
+              <h3 className="text-lg font-bold text-white mb-4">📖 相关文章推荐</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {relatedArticles.map((related) => (
+                {relatedArticles.slice(0, 6).map((related) => (
                   <Link
                     key={related.id}
                     href={`/blog/${related.id}`}
@@ -221,6 +234,27 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
               </div>
             </div>
           )}
+          
+          {/* 最新文章推荐 */}
+          <div className="mt-10">
+            <h3 className="text-lg font-bold text-white mb-4">🆕 最新文章</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              {latestArticles.slice(0, 4).map((latest) => (
+                <Link
+                  key={latest.id}
+                  href={`/blog/${latest.id}`}
+                  className="bg-slate-800/30 border border-white/5 rounded-lg p-3 hover:border-white/10 transition-all group"
+                >
+                  <span className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-medium mb-1 ${categoryColors[latest.category] || 'bg-gray-500/20 text-gray-300'}`}>
+                    {latest.category}
+                  </span>
+                  <h4 className="text-xs font-medium text-gray-300 group-hover:text-blue-400 transition-colors line-clamp-2">
+                    {latest.title}
+                  </h4>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </article>
     </SiteLayout>
