@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "拼音学习工具 - 声母韵母/拼音注音/四线三格 | 教材工具箱",
     description: "免费拼音学习工具，完整收录声母韵母和整体认读音节，采用四线三格标准格式，支持PDF导出A4打印。帮助小学生规范拼音书写，打好语文学习基础。",
-    keywords: "拼音练习,拼音注音,声母韵母,整体认读音节,拼音学习,小学拼音,拼音打印",
+    keywords: "拼音练习,拼音注音,声母韵母,整体认读音节,拼音学习,小学拼音,拼音打印,一年级拼音练习,声母韵母练习,拼音四线三格,拼音描红,拼音书写,幼小衔接拼音,拼音启蒙,拼音学习资料,拼音练习纸,拼音测试题",
     alternates: { canonical: canonicalUrl },
     openGraph: {
       url: canonicalUrl,
@@ -39,7 +39,64 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
         <h2>适用对象</h2>
         <p>拼音学习工具适合小学一年级语文教师、幼儿园大班教师、学生家长以及从事拼音教学的培训机构使用。无论是课堂教学、课后辅导还是家庭早教，都可以通过本工具生成专业的拼音书写练习纸，帮助孩子打好拼音基础。</p>
         <p>访问 <a href="https://www.skillxm.cn">教材工具箱</a> 获取更多免费教学工具。</p>
+        <h2>相关学习文章</h2>
+        <ul>
+          <li><a href="https://www.skillxm.cn/blog/pinyin-xuexi-luxiantu">一年级拼音学习完整攻略</a></li>
+          <li><a href="https://www.skillxm.cn/blog/yinianji-pinyin-shizi-kousuan-gonglue">一年级家长必看：拼音+识字+口算全攻略</a></li>
+          <li><a href="https://www.skillxm.cn/blog/shizi-fangfa-tisheng">小学识字方法大比拼</a></li>
+        </ul>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "拼音学习工具包含哪些内容？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "完整收录23个声母、24个韵母和16个整体认读音节，涵盖小学一年级拼音学习全部内容。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "拼音练习纸是什么格式？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "采用标准四线三格格式，与教材格式一致，帮助孩子养成规范的拼音书写习惯。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "可以打印拼音练习纸吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "可以，一键生成PDF文件，A4纸张直接打印，可反复练习。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "适合什么时候开始学拼音？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "适合幼小衔接阶段（大班下学期）和小学一年级上学期使用。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "拼音学习工具免费吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "完全免费，无需注册登录，所有拼音练习内容均可免费使用和打印。"
+                }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );

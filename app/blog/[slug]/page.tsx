@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `${article.title} | 教材工具箱`,
     description: article.description,
     authors: [{ name: '教材工具箱' }],
-    keywords: [article.category, '小学教育', '学习方法', '家长辅导', article.title.split(' ').slice(0, 5).join(' ')],
+    keywords: article.keywords || [article.category, '小学教育', '学习方法', '家长辅导'],
     alternates: {
       canonical: `https://www.skillxm.cn/blog/${slug}`,
     },

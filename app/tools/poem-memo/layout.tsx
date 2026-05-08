@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "古诗词默写生成器 - 240首小学必背古诗词在线打印 | 教材工具箱",
     description: "免费生成小学必背古诗词默写练习卷，240首经典古诗词，三种默写模式PDF打印",
-    keywords: "古诗词默写,小学古诗词,必背古诗,古诗打印,默写练习,古诗词填空,唐诗三百首,宋词,古诗文默写",
+    keywords: "古诗词默写,小学古诗词,必背古诗,古诗打印,默写练习,古诗词填空,唐诗三百首,宋词,古诗文默写,小学必背古诗75首,小学必背古诗80首,一年级古诗,二年级古诗,三年级古诗,古诗词上下句默写,古诗默写练习卷,古诗词复习,语文古诗默写",
     alternates: { canonical: canonicalUrl },
     openGraph: {
       url: canonicalUrl,
@@ -39,7 +39,49 @@ export default function PoemMemoLayout({ children }: { children: React.ReactNode
         <h2>适用对象</h2>
         <p>古诗词默写生成器适合小学语文教师、学生家长以及小学各年级学生使用。无论是日常古诗词背诵检查、期中期末考试复习还是假期作业布置，都可以通过本工具快速生成专业的古诗词默写练习卷，提高古诗词学习效率。</p>
         <p>访问 <a href="https://www.skillxm.cn">教材工具箱</a> 获取更多免费教学工具。</p>
+        <h2>相关学习文章</h2>
+        <ul>
+          <li><a href="https://www.skillxm.cn/blog/gushi-shici-moxie-lianxi-fangfa">小学1-6年级必背古诗词完整清单及默写方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/pinyin-xuexi-luxiantu">一年级拼音学习完整攻略</a></li>
+          <li><a href="https://www.skillxm.cn/blog/sannianji-zuowen-rumen">三年级作文入门方法</a></li>
+        </ul>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "收录了多少首古诗词？",
+                "acceptedAnswer": { "@type": "Answer", "text": "收录240首经典古诗词，完整覆盖小学1-6年级必背古诗词及课外拓展篇目。" }
+              },
+              {
+                "@type": "Question",
+                "name": "支持哪些默写模式？",
+                "acceptedAnswer": { "@type": "Answer", "text": "支持填空默写、全诗默写、上下句默写三种模式，从易到难满足不同学习阶段需求。" }
+              },
+              {
+                "@type": "Question",
+                "name": "可以按年级筛选古诗吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "可以，所有古诗词按年级分类，一年级到六年级的古诗词均可单独选择。" }
+              },
+              {
+                "@type": "Question",
+                "name": "生成的默写卷可以打印吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "可以，一键生成PDF文件，支持田字格、方格、横线格三种书写格式，A4纸直接打印。" }
+              },
+              {
+                "@type": "Question",
+                "name": "古诗词默写生成器收费吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "完全免费，无需注册，所有功能均可免费使用。" }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );

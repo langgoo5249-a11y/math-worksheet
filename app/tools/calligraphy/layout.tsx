@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "免费字帖生成器 - 田字格/米字格/楷体字帖 | 教材工具箱",
     description: "免费在线生成田字格米字格汉字字帖，支持楷体宋体黑体，自定义内容输入，PDF导出A4打印。适合小学生日常练字和书法初学者描红练习，输入任意汉字即可生成标准字帖模板。",
-    keywords: "字帖生成器,田字格字帖,米字格字帖,练字模板,书法练习,汉字字帖,免费字帖,在线练字",
+    keywords: "字帖生成器,田字格字帖,米字格字帖,练字模板,书法练习,汉字字帖,免费字帖,在线练字,田字格字帖免费下载,小学生练字帖,汉字描红打印,楷体字帖,生字描红,一年级练字,二年级练字,硬笔书法字帖,同步字帖,语文生字字帖",
     alternates: { canonical: canonicalUrl },
     openGraph: {
       url: canonicalUrl,
@@ -41,7 +41,50 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
         <h2>适用对象</h2>
         <p>小学1-6年级学生、书法初学者、汉字书写需要提升的中小学生、语文教师布置练字作业。适合日常练字、书法兴趣培养、汉字书写规范训练等场景。</p>
         <p>访问 <a href="https://www.skillxm.cn">教材工具箱</a> 获取更多免费教学工具，包括数学练习卷生成器、英语字帖、数独游戏、口算速练等。</p>
+        <h2>相关学习文章</h2>
+        <ul>
+          <li><a href="https://www.skillxm.cn/blog/haizi-lianzi-shijianbiao">孩子写字歪歪扭扭？练字时间表和方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/ertong-lianzi-nianling">小学生练字最佳年龄和方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/fanggezhi-tianzige">田字格、米字格、方格纸的使用场景和选择</a></li>
+          <li><a href="https://www.skillxm.cn/blog/mianfei-zitie-shengchengqi-tuijian">免费字帖生成器推荐</a></li>
+        </ul>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "字帖生成器支持哪些格子样式？",
+                "acceptedAnswer": { "@type": "Answer", "text": "支持田字格、米字格、回宫格、空白格四种格子样式，满足不同练字阶段需求。" }
+              },
+              {
+                "@type": "Question",
+                "name": "可以自定义字帖内容吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "可以，支持输入任意汉字、词语、古诗、课文内容生成字帖，完全自定义。" }
+              },
+              {
+                "@type": "Question",
+                "name": "字帖生成器是免费的吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "完全免费，无需注册登录，不限制使用次数，生成的字帖可自由打印。" }
+              },
+              {
+                "@type": "Question",
+                "name": "支持哪些字体？",
+                "acceptedAnswer": { "@type": "Answer", "text": "支持楷体、宋体、黑体三种字体，适合不同书写风格练习。" }
+              },
+              {
+                "@type": "Question",
+                "name": "生成的字帖怎么打印？",
+                "acceptedAnswer": { "@type": "Answer", "text": "点击下载PDF按钮保存文件，用A4纸打印即可，支持描红和临摹两种模式。" }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );

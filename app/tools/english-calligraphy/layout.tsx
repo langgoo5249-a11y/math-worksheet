@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "英文字帖生成器 - 四线三格英文书写练习 | 教材工具箱",
     description: "免费生成四线三格英文字帖，支持手写体印刷体等多种字体，可自定义单词句子内容，PDF导出A4打印。适合小学生英语书写练习，帮助规范英文字母书写格式。",
-    keywords: "英语字帖,四线三格,英语练习,英文字帖,英语书写,英语打印,免费英语字帖",
+    keywords: "英语字帖,四线三格,英语练习,英文字帖,英语书写,英语打印,免费英语字帖,英文字母描红,小学英语书写练习,英语字母练习,英语单词书写,英语手写体,英语印刷体,三年级英语字帖,英语书写规范,英语抄写本,英语练字",
     alternates: { canonical: canonicalUrl },
     openGraph: {
       url: canonicalUrl,
@@ -41,7 +41,64 @@ export default function EnglishCalligraphyLayout({ children }: { children: React
         <h2>适用对象</h2>
         <p>小学3-6年级学生、英语初学者、英文字母书写需要规范的中学生、英语教师布置书写练习作业。适合英语课堂书写训练、课后练习、英语书写竞赛准备等场景。</p>
         <p>访问 <a href="https://www.skillxm.cn">教材工具箱</a> 获取更多免费教学工具，包括数学练习卷生成器、汉字字帖、数独游戏、口算速练等。</p>
+        <h2>相关学习文章</h2>
+        <ul>
+          <li><a href="https://www.skillxm.cn/blog/xiaoxue-yingyu-shuxie">小学英语四线三格书写规范</a></li>
+          <li><a href="https://www.skillxm.cn/blog/ziran-pindu-rumen">英语自然拼读入门</a></li>
+          <li><a href="https://www.skillxm.cn/blog/xiaoxue-yingyu-xuexi-ziyuan-tuijian">小学英语学习资源推荐</a></li>
+        </ul>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "英语字帖是什么格式？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "采用标准四线三格格式，符合英语书写规范，帮助孩子掌握字母占格规则。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "支持哪些英文字体？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "提供手写体、印刷体等多种英文字体选择，适合不同学习阶段。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "可以自定义字帖内容吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "可以，支持输入任意英文单词、短语、句子生成字帖，比如课文内容或单词表。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "英语字帖适合几年级？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "主要适合小学3-6年级学生，英文字母书写需要规范的中学生也可以使用。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "英语字帖生成器免费吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "完全免费，无需注册，生成的字帖可自由打印使用。"
+                }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );

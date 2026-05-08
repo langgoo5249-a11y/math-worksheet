@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "作文模板生成器 - 看图写话/日记/作文格纸 | 教材工具箱",
     description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。",
-    keywords: "作文模板,看图写话,日记模板,作文格纸,小学作文,写作练习,作文纸打印,作文格子",
+    keywords: "作文模板,看图写话,日记模板,作文格纸,小学作文,写作练习,作文纸打印,作文格子,三年级作文模板,看图写话练习纸,小学生日记格式,作文开头结尾,写人作文模板,记事作文模板,写景作文模板,作文素材,低年级写话,作文格子纸",
     alternates: { canonical: canonicalUrl },
     openGraph: { url: canonicalUrl, title: "作文模板生成器 - 教材工具箱", description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。", images: [{ url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }] },
   };
@@ -32,7 +32,65 @@ export default function WritingTemplateLayout({ children }: { children: React.Re
         <h2>适用对象</h2>
         <p>作文模板生成器适合小学语文教师、学生家长以及小学各年级学生使用。无论是日常写作练习、考试作文训练还是家庭作业，都可以通过本工具快速生成规范的作文书写模板，培养孩子良好的书写习惯。</p>
         <p>访问 <a href="https://www.skillxm.cn">教材工具箱</a> 获取更多免费教学工具。</p>
+        <h2>相关学习文章</h2>
+        <ul>
+          <li><a href="https://www.skillxm.cn/blog/xiaoxue-zuowen-moban">小学作文不会写？3个模板轻松写出300字</a></li>
+          <li><a href="https://www.skillxm.cn/blog/sannianji-zuowen-rumen">三年级作文入门方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kantu-xiehua-xunlian">如何辅导孩子看图写话</a></li>
+          <li><a href="https://www.skillxm.cn/blog/xiaoxue-zuowen-fudao-moban-shengcheng">小学作文辅导：写作不再难</a></li>
+        </ul>
       </div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "作文模板有哪些类型？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "提供看图写话、日记、书信、读后感等多种作文模板，涵盖小学低年级到高年级的写作需求。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "看图写话模板适合几年级？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "专为小学一二年级设计，配有图片区域和书写区域，适合低年级看图写话练习。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "作文格子纸支持哪些格式？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "支持田字格、方格、横线格等多种书写格式，满足不同年级和场景的写作需求。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "可以设置不同字数吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "可以，支持300字、400字、500字等不同篇幅的作文格子纸。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "作文模板生成器免费吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "完全免费，无需注册，所有模板均可免费使用和打印。"
+                }
+              }
+            ]
+          })
+        }}
+      />
       {children}
     </>
   );
