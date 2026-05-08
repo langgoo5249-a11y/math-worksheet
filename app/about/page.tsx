@@ -195,8 +195,8 @@ export default function AboutPage() {
                 <h3 className="text-white font-medium mb-2">联系我们</h3>
                 <p className="mb-2">
                   公司名称：教材工具箱<br />
-                  地址：浙江绍兴<br />
-                  电话：0575-88886666<br />
+                  地址：浙江省绍兴市嵊州三江街道花园社区75号<br />
+                  电话：0575-64972527<br />
                   邮箱：<a href="mailto:lang@skillxm.cn" className="text-blue-400 hover:underline">lang@skillxm.cn</a>
                 </p>
                 <p>
