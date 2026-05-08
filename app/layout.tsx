@@ -261,7 +261,7 @@ export default function RootLayout({
             "name": "数据安全吗？孩子信息会泄露吗？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "完全安全。教材工具箱所有功能在浏览器本地运行，不会收集、存储或上传任何用户数据。不需要输入姓名、电话等个人信息，也不会使用Cookie追踪用户行为，充分保护隐私安全。"
+              "text": "完全安全。教材工具箱所有功能在浏览器本地运行，不会收集、存储或上传任何用户数据。不需要输入姓名、电话等个人信息。我们使用百度统计了解匿名访问趋势，使用 Google AdSense 展示广告，用户可通过Cookie横幅选择关闭追踪，充分保护隐私安全。"
             }
           }
         ]
@@ -293,11 +293,29 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
         />
 
-        {/* Google AdSense */}
+        {/* Google AdSense — 仅在用户同意Cookie后加载 */}
         <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4710405779358793"
-          crossOrigin="anonymous"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function loadAdSense() {
+                  var s = document.createElement('script');
+                  s.async = true;
+                  s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4710405779358793';
+                  s.crossOrigin = 'anonymous';
+                  document.head.appendChild(s);
+                }
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent === 'accepted') {
+                  loadAdSense();
+                } else {
+                  window.addEventListener('cookie-consent-accepted', function() {
+                    loadAdSense();
+                  }, { once: true });
+                }
+              })();
+            `,
+          }}
         />
 
         {/* 百度主动推送 */}
@@ -322,18 +340,32 @@ export default function RootLayout({
       <body className="min-h-screen antialiased">
         <CookieConsent />
         {children}
+        {/* 百度统计 — 仅在用户同意Cookie后加载 */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?b1c5ccce83f4e80c4c12dea6bd544723";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();`,
+              (function() {
+                function loadBaiduTongji() {
+                  var _hmt = _hmt || [];
+                  (function() {
+                    var hm = document.createElement("script");
+                    hm.src = "https://hm.baidu.com/hm.js?b1c5ccce83f4e80c4c12dea6bd544723";
+                    var s = document.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(hm, s);
+                  })();
+                }
+                var consent = localStorage.getItem('cookie-consent');
+                if (consent === 'accepted') {
+                  loadBaiduTongji();
+                } else {
+                  window.addEventListener('cookie-consent-accepted', function() {
+                    loadBaiduTongji();
+                  }, { once: true });
+                }
+              })();
+            `,
           }}
- />
+        />
       </body>
     </html>
   );

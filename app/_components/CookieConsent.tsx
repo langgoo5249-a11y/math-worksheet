@@ -1,22 +1,40 @@
 'use client';
 import { useState, useEffect } from 'react';
 
+/**
+ * CookieConsent — 真正控制追踪脚本加载
+ * 
+ * 同意机制：
+ * - "接受全部" → localStorage 'accepted' → 触发自定义事件 'cookie-consent-accepted'
+ * - "仅必要Cookie" → localStorage 'rejected' → 不触发追踪脚本
+ * 
+ * layout.tsx 中的百度统计和 AdSense 脚本会检查此状态，
+ * 仅在 consent=accepted 时才加载。
+ */
 export default function CookieConsent() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
     const consent = localStorage.getItem('cookie-consent');
-    if (!consent) setShow(true);
+    if (!consent) {
+      setShow(true);
+    } else if (consent === 'accepted') {
+      // 已接受，触发追踪脚本加载
+      window.dispatchEvent(new Event('cookie-consent-accepted'));
+    }
   }, []);
 
   const accept = () => {
     localStorage.setItem('cookie-consent', 'accepted');
     setShow(false);
+    // 通知 layout.tsx 可以加载追踪脚本
+    window.dispatchEvent(new Event('cookie-consent-accepted'));
   };
 
   const reject = () => {
     localStorage.setItem('cookie-consent', 'rejected');
     setShow(false);
+    // 不触发事件，追踪脚本不会加载
   };
 
   if (!show) return null;
