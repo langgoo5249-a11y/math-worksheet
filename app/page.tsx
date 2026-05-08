@@ -259,6 +259,10 @@ export default function HomePage() {
                 📰 教育博客
               </a>
 
+              <a href="/search" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                🔍 搜索
+              </a>
+
               <button onClick={() => setShowTutorial(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 📖 使用教程
               </button>
@@ -333,6 +337,10 @@ export default function HomePage() {
                 <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">📖</span>
                 使用教程
               </button>
+              <a href="/search" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">🔍</span>
+                站内搜索
+              </a>
               <button onClick={() => { navigator.clipboard.writeText('https://www.skillxm.cn'); alert('链接已复制！'); setMobileMenu(false); }} className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
                 <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">🔗</span>
                 分享给朋友
@@ -670,14 +678,9 @@ export default function HomePage() {
             <span className="text-gray-600">|</span>
             <a href="/privacy" className="hover:text-white transition-colors">隐私政策</a>
           </div>
-          {/* 友情链接 */}
+          {/* 版权信息 */}
           <div className="border-t border-gray-200 py-4 text-center text-sm text-gray-500">
-            <p className="mb-2">友情链接</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <a href="https://docs.skillxm.cn" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">小二郎文档站</a>
-              <a href="https://tool.skillxm.cn" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">在线工具箱</a>
-              <a href="https://ziwei.skillxm.cn" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors">紫微资源站</a>
-            </div>
+            <p>© 2026 教材工具箱. 专注小学教育，让每个孩子都能免费使用优质的教育工具。</p>
           </div>
         </div>
       </footer>

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { articles } from '../data';
+import { articles, defaultAuthor } from '../data';
 import type { Metadata } from 'next';
 import BlogPostPage from '../_components/BlogPostPage';
 
@@ -80,9 +80,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     "dateModified": article.date,
     "image": generateOgImage(article),
     "author": {
-      "@type": "Organization",
-      "name": "教材工具箱",
-      "url": "https://www.skillxm.cn"
+      "@type": "Person",
+      "name": article.author?.name || defaultAuthor.name,
+      "description": article.author?.bio || defaultAuthor.bio,
+      "url": "https://www.skillxm.cn/about"
     },
     "publisher": {
       "@type": "Organization",

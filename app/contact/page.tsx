@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import ContactForm from './ContactForm';
 import SiteLayout from '../_components/SiteLayout';
 
 export const metadata: Metadata = {
@@ -34,18 +35,28 @@ export default function ContactPage() {
 
         {/* 联系方式 */}
         <section className="mb-10">
-          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-8 text-center">
-            <div className="text-4xl mb-4">📧</div>
-            <h2 className="text-xl font-bold text-white mb-3">邮箱联系</h2>
-            <a
-              href="mailto:lang@skillxm.cn"
-              className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors"
-            >
-              lang@skillxm.cn
-            </a>
-            <p className="text-gray-300 mt-4 leading-relaxed">
-              如果您有任何问题、建议或合作意向，欢迎通过邮件联系我们。我们会在1-3个工作日内回复您的邮件。
-            </p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* 邮箱联系 */}
+            <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-8 text-center">
+              <div className="text-4xl mb-4">📧</div>
+              <h2 className="text-xl font-bold text-white mb-3">邮箱联系</h2>
+              <a
+                href="mailto:lang@skillxm.cn"
+                className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors"
+              >
+                lang@skillxm.cn
+              </a>
+              <p className="text-gray-300 mt-4 leading-relaxed">
+                如果您有任何问题、建议或合作意向，欢迎通过邮件联系我们。我们会在1-3个工作日内回复您的邮件。
+              </p>
+            </div>
+
+            {/* 在线表单 */}
+            <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+              <div className="text-4xl mb-4 text-center">📝</div>
+              <h2 className="text-xl font-bold text-white mb-3 text-center">在线留言</h2>
+              <ContactForm />
+            </div>
           </div>
         </section>
 

@@ -179,9 +179,56 @@ export default function AboutPage() {
         {/* 团队介绍 */}
         <section className="mb-12">
           <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
               <span className="text-2xl">👥</span> 团队介绍
             </h2>
+            
+            {/* 团队成员卡片 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+              {[
+                {
+                  name: '林远',
+                  role: '创始人 / 全栈开发者',
+                  avatar: '林',
+                  color: 'from-blue-500 to-purple-600',
+                  bio: '十余年开发经验，两个孩子的父亲'
+                },
+                {
+                  name: '周琳',
+                  role: 'UI 设计师',
+                  avatar: '周',
+                  color: 'from-pink-500 to-rose-600',
+                  bio: '专注用户体验设计'
+                },
+                {
+                  name: '陈老师',
+                  role: '教学内容顾问',
+                  avatar: '陈',
+                  color: 'from-emerald-500 to-teal-600',
+                  bio: '公立小学教师，负责内容把关'
+                },
+                {
+                  name: '明宇',
+                  role: '前端开发工程师',
+                  avatar: '明',
+                  color: 'from-orange-500 to-amber-600',
+                  bio: '互联网大厂前端开发经验'
+                },
+              ].map((member) => (
+                <div
+                  key={member.name}
+                  className="bg-slate-700/50 border border-white/10 rounded-xl p-6 text-center hover:border-white/20 transition-all hover:scale-105"
+                >
+                  <div className={`w-20 h-20 mx-auto rounded-full bg-gradient-to-br ${member.color} flex items-center justify-center text-white text-2xl font-bold mb-4 shadow-lg`}>
+                    {member.avatar}
+                  </div>
+                  <h3 className="text-white font-bold text-lg mb-1">{member.name}</h3>
+                  <p className="text-blue-400 text-sm mb-2">{member.role}</p>
+                  <p className="text-gray-500 text-xs">{member.bio}</p>
+                </div>
+              ))}
+            </div>
+            
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <div>
                 <h3 className="text-white font-medium mb-2">创始人故事</h3>

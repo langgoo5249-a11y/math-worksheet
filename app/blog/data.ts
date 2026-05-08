@@ -6,7 +6,19 @@ export interface Article {
   category: string;
   readTime: string;
   content: string;
+  author?: {
+    name: string;
+    avatar: string;
+    bio: string;
+  };
 }
+
+// 默认作者信息
+export const defaultAuthor = {
+  name: '林远',
+  avatar: '/authors/linyuan.jpg',
+  bio: '教材工具箱创始人，全栈开发者，两个孩子的父亲，专注小学教育工具开发'
+};
 
 export const categories = [
   '全部',

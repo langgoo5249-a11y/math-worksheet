@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { articles } from '../data';
+import { articles, defaultAuthor } from '../data';
 import SiteLayout from '@/app/_components/SiteLayout';
 import AdUnit from '@/app/_components/AdUnit';
 
@@ -148,8 +148,20 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           <h1 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
             {article.title}
           </h1>
-          <div className="flex items-center gap-4 text-sm text-gray-500">
-            <time>{article.date}</time>
+          <div className="flex items-center justify-between flex-wrap gap-4">
+            <div className="flex items-center gap-4 text-sm text-gray-500">
+              <time>{article.date}</time>
+            </div>
+            {/* 作者信息 */}
+            <div className="flex items-center gap-3 py-2 px-4 bg-slate-800/50 rounded-lg border border-white/10">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">
+                {(article.author?.name || defaultAuthor.name).charAt(0)}
+              </div>
+              <div>
+                <div className="text-white font-medium text-sm">{article.author?.name || defaultAuthor.name}</div>
+                <div className="text-gray-500 text-xs">{article.author?.bio || defaultAuthor.bio}</div>
+              </div>
+            </div>
           </div>
         </header>
 
@@ -188,16 +200,6 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             </ul>
           </div>
         )}
-
-        {/* 更多学习资源 */}
-        <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-100">
-          <h3 className="text-sm font-bold text-blue-800 mb-2">📚 更多学习资源</h3>
-          <div className="flex flex-wrap gap-3 text-sm">
-            <a href="https://docs.skillxm.cn" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">小二郎文档站 - 教育资料下载</a>
-            <a href="https://tool.skillxm.cn" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">在线工具箱 - 实用在线工具</a>
-            <a href="https://ziwei.skillxm.cn" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">紫微资源站 - 学习资源</a>
-          </div>
-        </div>
 
         {/* Back Button & Related Articles */}
         <div className="mt-12 pt-8 border-t border-white/10">
