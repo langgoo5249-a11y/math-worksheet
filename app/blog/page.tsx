@@ -19,9 +19,10 @@ const categoryColors: Record<string, string> = {
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState<Category>('全部');
 
-  const filteredArticles = activeCategory === '全部'
+  const filteredArticles = (activeCategory === '全部'
     ? articles
-    : articles.filter(a => a.category === activeCategory);
+    : articles.filter(a => a.category === activeCategory)
+  ).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
