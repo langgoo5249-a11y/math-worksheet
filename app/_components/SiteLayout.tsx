@@ -170,6 +170,27 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
                 <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">💝</span>
                 赞助支持
               </button>
+
+              {/* 页脚链接 */}
+              <div className="pt-3 pb-1 px-3">
+                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">关于</span>
+              </div>
+              <a href="/about" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">ℹ️</span>
+                关于我们
+              </a>
+              <a href="/contact" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">📧</span>
+                联系我们
+              </a>
+              <a href="/privacy" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">🔒</span>
+                隐私政策
+              </a>
+              <a href="/terms" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">📋</span>
+                服务条款
+              </a>
             </div>
           </div>
         </div>
