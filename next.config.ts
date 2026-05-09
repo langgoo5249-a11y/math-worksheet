@@ -6,9 +6,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  turbopack: {
-    root: "/workspace/skillxm-cn",
-  },
   // 缓存策略优化 - 为静态资源设置长期缓存
   headers: async () => [
     {
