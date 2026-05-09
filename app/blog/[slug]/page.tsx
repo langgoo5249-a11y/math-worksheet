@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     authors: [{ name: '教材工具箱' }],
     keywords: article.keywords || [article.category, '小学教育', '学习方法', '家长辅导'],
     alternates: {
-      canonical: `https://www.skillxm.cn/blog/${slug}`,
+      canonical: `https://www.skillxm.cn/blog/${slug}/`,
     },
     openGraph: {
       title: article.title,
@@ -88,15 +88,17 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     "publisher": {
       "@type": "Organization",
       "name": "教材工具箱",
-      "url": "https://www.skillxm.cn",
+      "url": "https://www.skillxm.cn/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.skillxm.cn/og-image.jpg"
+        "url": "https://www.skillxm.cn/favicon.svg",
+        "width": 512,
+        "height": 512
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.skillxm.cn/blog/${article.id}`
+      "@id": `https://www.skillxm.cn/blog/${article.id}/`
     },
     "articleSection": article.category,
     "wordCount": article.content.length,

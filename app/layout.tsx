@@ -43,9 +43,10 @@ export const metadata: Metadata = {
     images: ["https://www.skillxm.cn/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://www.skillxm.cn",
+    canonical: "https://www.skillxm.cn/",
     languages: {
-      'x-default': 'https://www.skillxm.cn',
+      'zh-CN': 'https://www.skillxm.cn/',
+      'x-default': 'https://www.skillxm.cn/',
     },
   },
   icons: {
@@ -79,11 +80,12 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "WebSite",
+        "@id": "https://www.skillxm.cn/#website",
         name: "教材工具箱",
-        url: "https://www.skillxm.cn",
+        url: "https://www.skillxm.cn/",
         description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
         inLanguage: "zh-CN",
-        dateModified: "2026-05-03",
+        dateModified: "2026-05-09",
         potentialAction: {
           "@type": "SearchAction",
           target: "https://www.skillxm.cn/search?q={search_term_string}",
@@ -98,10 +100,12 @@ export default function RootLayout({
         "@id": "https://www.skillxm.cn/#organization",
         name: "教材工具箱",
         url: "https://www.skillxm.cn",
-        dateModified: "2026-05-03",
+        dateModified: "2026-05-09",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.skillxm.cn/og-image.jpg",
+          url: "https://www.skillxm.cn/favicon.svg",
+          width: 512,
+          height: 512,
         },
         description: `免费在线教育工具集合，为小学生和家长提供数学练习卷、字帖、数独等${ACTIVE_TOOL_COUNT}款实用工具`,
         address: {
@@ -141,8 +145,8 @@ export default function RootLayout({
         "@type": "ItemList",
         "name": "教材工具箱 - 全部工具",
         "description": "教材工具箱提供的所有免费小学教学工具",
-        "dateModified": "2026-05-03",
-        "numberOfItems": 10,
+        "dateModified": "2026-05-09",
+        "numberOfItems": ACTIVE_TOOL_COUNT,
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "古诗词默写", "url": "https://www.skillxm.cn/tools/poem-memo" },
           { "@type": "ListItem", "position": 2, "name": "单元测试卷", "url": "https://www.skillxm.cn/tools/unit-test" },
