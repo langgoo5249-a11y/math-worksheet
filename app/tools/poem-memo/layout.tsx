@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import ToolBreadcrumb from '@/components/ToolBreadcrumb';
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
@@ -17,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "古诗词默写生成器 - 240首小学必背古诗词在线打印 | 教材工具箱",
       description: "免费生成小学必背古诗词默写练习卷，240首经典古诗词，三种默写模式PDF打印",
       type: "website",
-      images: [{ url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("古诗词默写生成器")}&category=${encodeURIComponent("语文工具")}&icon=📜`, width: 1200, height: 630, alt: "古诗词默写生成器 - 教材工具箱" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
     },
   };
 }
@@ -82,6 +83,7 @@ export default function PoemMemoLayout({ children }: { children: React.ReactNode
           })
         }}
       />
+      <ToolBreadcrumb toolName="古诗词默写" toolPath="/tools/poem-memo" />
       {children}
     </>
   );

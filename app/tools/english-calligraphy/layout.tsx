@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import ToolBreadcrumb from '@/components/ToolBreadcrumb';
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
@@ -17,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "英语字帖生成器 - 免费四线三格英语练习 | 教材工具箱",
       description: "免费生成四线三格英文字帖，支持手写体印刷体等多种字体，可自定义单词句子内容，PDF导出A4打印。适合小学生英语书写练习，帮助规范英文字母书写格式。",
       type: "website",
-      images: [{ url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("英语字帖生成器")}&category=${encodeURIComponent("英语工具")}&icon=🔤`, width: 1200, height: 630, alt: "英语字帖生成器 - 教材工具箱" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
     },
   };
 }
@@ -99,6 +100,7 @@ export default function EnglishCalligraphyLayout({ children }: { children: React
           })
         }}
       />
+      <ToolBreadcrumb toolName="英语字帖" toolPath="/tools/english-calligraphy" />
       {children}
     </>
   );

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import ToolBreadcrumb from '@/components/ToolBreadcrumb';
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
@@ -17,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "口算速练 - 免费在线口算计时挑战 | 教材工具箱",
       description: "免费在线口算速练工具，提供4个难度级别，涵盖加减乘除全运算类型，计时挑战即时反馈，适合小学一二年级到五六年级学生日常口算打卡训练。",
       type: "website",
-      images: [{ url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 教材工具箱" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
     },
   };
 }
@@ -85,6 +86,7 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
           })
         }}
       />
+      <ToolBreadcrumb toolName="口算速练" toolPath="/tools/mental-math" />
       {children}
     </>
   );

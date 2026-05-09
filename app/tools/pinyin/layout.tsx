@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import ToolBreadcrumb from '@/components/ToolBreadcrumb';
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
@@ -17,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "拼音注音练习 - 免费在线拼音学习工具 | 教材工具箱",
       description: "免费拼音学习工具，完整收录声母韵母和整体认读音节，采用四线三格标准格式，支持PDF导出A4打印。帮助小学生规范拼音书写，打好语文学习基础。",
       type: "website",
-      images: [{ url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("拼音注音练习")}&category=${encodeURIComponent("语文工具")}&icon=📝`, width: 1200, height: 630, alt: "拼音注音练习 - 教材工具箱" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
     },
   };
 }
@@ -97,6 +98,7 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
           })
         }}
       />
+      <ToolBreadcrumb toolName="拼音注音" toolPath="/tools/pinyin" />
       {children}
     </>
   );

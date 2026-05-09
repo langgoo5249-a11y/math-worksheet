@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import ToolBreadcrumb from '@/components/ToolBreadcrumb';
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
@@ -17,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "数学练习卷生成器 - 免费在线出题打印 | 教材工具箱",
       description: "免费在线生成小学1-6年级数学练习卷，支持加减乘除、竖式计算、填空题、应用题等11种题型，随机出题PDF打印",
       type: "website",
-      images: [{ url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数学练习卷生成器")}&category=${encodeURIComponent("数学工具")}&icon=🧮`, width: 1200, height: 630, alt: "数学练习卷生成器 - 教材工具箱" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
     },
   };
 }
@@ -85,6 +86,7 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
           })
         }}
       />
+      <ToolBreadcrumb toolName="数学练习卷" toolPath="/tools/math-worksheet" />
       {children}
     </>
   );
