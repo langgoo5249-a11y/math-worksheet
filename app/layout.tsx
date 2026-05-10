@@ -344,28 +344,16 @@ export default function RootLayout({
       <body className="min-h-screen antialiased">
         <CookieConsent />
         {children}
-        {/* 百度统计 — 仅在用户同意Cookie后加载 */}
+        {/* 百度统计 */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
+              var _hmt = _hmt || [];
               (function() {
-                function loadBaiduTongji() {
-                  var _hmt = _hmt || [];
-                  (function() {
-                    var hm = document.createElement("script");
-                    hm.src = "https://hm.baidu.com/hm.js?b1c5ccce83f4e80c4c12dea6bd544723";
-                    var s = document.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(hm, s);
-                  })();
-                }
-                var consent = localStorage.getItem('cookie-consent');
-                if (consent === 'accepted') {
-                  loadBaiduTongji();
-                } else {
-                  window.addEventListener('cookie-consent-accepted', function() {
-                    loadBaiduTongji();
-                  }, { once: true });
-                }
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?b1c5ccce83f4e80c4c12dea6bd544723";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
               })();
             `,
           }}
