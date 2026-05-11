@@ -37,11 +37,12 @@ export type Category = (typeof categories)[number];
 
 export const articles: Article[] = [
   {
-    id: "yinianjishuxue启蒙：从shushu到20以-0q64",
+    id: "yinianji-shuxue-qimeng-lujing",
     title: "一年级数学启蒙：从数数到20以内加减法的完整路径",
     description: "一年级数学启蒙怎么做？本文分享从数数到20以内加减法的完整学习路径，含具体教学步骤、时间节点和真实案例。",
     date: "2026-05-11",
     category: "数学学习",
+    keywords: ["一年级数学启蒙", "20以内加减法", "数学启蒙路径", "凑十法教学", "小学一年级数学", "孩子数学入门", "数学启蒙方法"],
     readTime: "10分钟",
     content: `作为一个陪娃走过这段路的家长，我想把自己摸索出的经验分享出来。
 
