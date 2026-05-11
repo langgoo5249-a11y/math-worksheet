@@ -55,6 +55,50 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "如何使用字帖生成器",
+            "description": "字帖生成器使用教程，5步快速生成田字格米字格汉字字帖，支持PDF打印",
+            "totalTime": "PT5M",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "输入要练习的汉字或词语",
+                "text": "支持自定义内容，也可选择常用生字"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "选择格子类型",
+                "text": "田字格、米字格、回宫格等"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "选择字体和字号",
+                "text": "楷体、宋体、黑体等"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "设置描红模式",
+                "text": "描红/临摹/空白三种模式"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "生成PDF打印",
+                "text": "一键导出A4格式字帖，直接打印练习"
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
               {

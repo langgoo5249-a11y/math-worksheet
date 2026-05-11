@@ -55,6 +55,50 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "如何使用口算速练工具",
+            "description": "口算速练工具使用教程，5步快速开始口算计时挑战，提升计算能力",
+            "totalTime": "PT5M",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "选择难度级别",
+                "text": "入门/进阶/挑战/极限四个级别"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "选择运算类型",
+                "text": "加减法、乘除法或混合运算"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "开始计时挑战",
+                "text": "点击开始按钮，系统自动出题并计时"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "逐题作答",
+                "text": "输入答案后自动跳转下一题"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "查看成绩统计",
+                "text": "完成后显示正确率、用时、排名等数据"
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
               {

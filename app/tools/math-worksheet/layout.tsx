@@ -55,6 +55,50 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "如何使用数学练习卷生成器",
+            "description": "数学练习卷生成器使用教程，5步快速生成小学1-6年级数学练习卷，支持PDF打印",
+            "totalTime": "PT5M",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "选择年级和题型",
+                "text": "选择1-6年级，勾选需要的题型如加减乘除、竖式计算等"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "设置题目数量和难度",
+                "text": "调整每页题目数，选择基础/提高/拓展难度"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "一键生成练习卷",
+                "text": "点击生成按钮，系统自动随机出题"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "在线预览和调整",
+                "text": "在页面中预览练习卷效果，不满意可重新生成"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 5,
+                "name": "导出PDF打印",
+                "text": "点击下载按钮，生成A4标准格式PDF文件，直接打印使用"
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
               {

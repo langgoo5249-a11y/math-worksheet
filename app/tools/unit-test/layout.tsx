@@ -10,13 +10,13 @@ export async function generateMetadata(): Promise<Metadata> {
   const canonicalUrl = `${protocol}://${host}${pathname}`;
   return {
     title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 教材工具箱",
-    description: "免费生成小学1-6年级单元测试卷，数学语文英语科学四科，305个单元PDF打印",
+    description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试期中期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印",
     keywords: "单元测试卷,期中试卷,期末试卷,小学数学试卷,小学语文试卷,小学英语试卷,小学科学试卷,试卷生成器,免费试卷打印,人教版试卷,三年级数学试卷,四年级语文试卷,五年级英语试卷,单元测试题,小学全科试卷,期中复习试卷,期末复习试卷",
     alternates: { canonical: canonicalUrl },
     openGraph: {
       url: canonicalUrl,
       title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 教材工具箱",
-      description: "免费生成小学1-6年级单元测试卷，数学语文英语科学四科，305个单元PDF打印",
+      description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试期中期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印",
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("单元测试卷生成器")}&category=${encodeURIComponent("综合工具")}&icon=📋`, width: 1200, height: 630, alt: "单元测试卷生成器 - 教材工具箱" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
     },
