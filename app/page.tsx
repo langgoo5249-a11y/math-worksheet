@@ -211,11 +211,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-      {/* 主 H1 - 页面标题，融合在页面顶部 */}
-      <h1 className="text-center text-2xl md:text-3xl font-bold text-white pt-16 pb-2 px-4">
-        教材工具箱 - 免费小学教学工具/试卷生成器/字帖生成器/古诗词默写
-      </h1>
-
       {/* ===== 顶部导航 ===== */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
