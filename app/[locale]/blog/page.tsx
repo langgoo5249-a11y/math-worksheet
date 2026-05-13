@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { useParams } from 'next/navigation';
@@ -8,6 +8,7 @@ import { articles, categories } from '../../blog/data';
 import type { Category } from '../../blog/data';
 import LanguageSwitcher from '../../_components/LanguageSwitcher';
 import { defaultLocale, type Locale } from '@/lib/i18n';
+import { translateShortText } from '@/lib/translation';
 
 const categoryColors: Record<string, string> = {
   '数学学习': 'bg-blue-500/20 text-blue-300 border-blue-500/30',
@@ -48,6 +49,46 @@ export default function BlogPage() {
   const locale = (params.locale as Locale) || defaultLocale;
   const t = useTranslations('blog');
   const [activeCategory, setActiveCategory] = useState<Category>('全部');
+  const isNonZh = locale !== 'zh';
+  const [translations, setTranslations] = useState<Record<string, { title: string; desc: string }>>({});
+
+  // 翻译所有文章的标题和描述
+  useEffect(() => {
+    if (!isNonZh) return;
+
+    const articlesToTranslate = articles;
+    let cancelled = false;
+
+    const translateAll = async () => {
+      // 分批翻译，每批 5 篇
+      for (let i = 0; i < articlesToTranslate.length; i += 5) {
+        if (cancelled) break;
+        const batch = articlesToTranslate.slice(i, i + 5);
+        const results = await Promise.all(
+          batch.map(async (article) => {
+            const [title, desc] = await Promise.all([
+              translateShortText(article.title, locale),
+              translateShortText(article.description, locale),
+            ]);
+            return { id: article.id, title, desc };
+          })
+        );
+        
+        if (!cancelled) {
+          setTranslations(prev => {
+            const next = { ...prev };
+            results.forEach(r => {
+              next[r.id] = { title: r.title, desc: r.desc };
+            });
+            return next;
+          });
+        }
+      }
+    };
+
+    translateAll();
+    return () => { cancelled = true; };
+  }, [locale, isNonZh]);
 
   const filteredArticles = (activeCategory === '全部'
     ? articles
@@ -148,12 +189,12 @@ export default function BlogPage() {
 
                 {/* Title */}
                 <h2 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors leading-snug">
-                  {article.title}
+                  {translations[article.id]?.title || article.title}
                 </h2>
 
                 {/* Description */}
                 <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
-                  {article.description}
+                  {translations[article.id]?.desc || article.description}
                 </p>
 
                 {/* Date & Arrow */}

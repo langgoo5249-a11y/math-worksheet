@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { articles, defaultAuthor } from '../../../blog/data';
@@ -7,6 +8,7 @@ import SiteLayout from '../../../_components/SiteLayout';
 import AdUnit from '../../../_components/AdUnit';
 import LanguageSwitcher from '../../../_components/LanguageSwitcher';
 import { type Locale } from '@/lib/i18n';
+import { useTranslation, translateShortText } from '@/lib/translation';
 
 interface BlogPostPageClientProps {
   slug: string;
@@ -99,6 +101,31 @@ function parseMarkdown(markdown: string): string {
 export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientProps) {
   const t = useTranslations('blog');
   const article = articles.find(a => a.id === slug);
+  const isNonZh = locale !== 'zh';
+
+  // 翻译状态
+  const [translatedTitle, setTranslatedTitle] = useState('');
+  const [translatedDesc, setTranslatedDesc] = useState('');
+  const [translatedBio, setTranslatedBio] = useState('');
+  const { translatedText: translatedContent, isTranslating, translate: translateContent } = useTranslation(locale);
+
+  // 翻译文章内容
+  useEffect(() => {
+    if (!article || !isNonZh) return;
+    
+    // 翻译标题和描述（短文本，快速）
+    translateShortText(article.title, locale).then(setTranslatedTitle);
+    translateShortText(article.description, locale).then(setTranslatedDesc);
+    translateShortText(article.author?.bio || defaultAuthor.bio, locale).then(setTranslatedBio);
+    
+    // 翻译正文（长文本，异步）
+    translateContent(article.content);
+  }, [article, locale, isNonZh, translateContent]);
+
+  const displayTitle = isNonZh && translatedTitle ? translatedTitle : (article?.title || '');
+  const displayDesc = isNonZh && translatedDesc ? translatedDesc : (article?.description || '');
+  const displayBio = isNonZh && translatedBio ? translatedBio : (article?.author?.bio || defaultAuthor.bio);
+  const displayContent = isNonZh && translatedContent ? translatedContent : (article?.content || '');
 
   const getBlogLink = (path: string) => {
     return locale === 'zh' ? path : `/${locale}${path}`;
@@ -188,10 +215,16 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
           {locale !== 'zh' && (
             <div className="mb-8 p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl">
               <div className="flex items-start gap-3">
-                <span className="text-amber-400 text-lg">⚠️</span>
+                <span className="text-amber-400 text-lg">🌐</span>
                 <div>
                   <p className="text-amber-200 font-medium mb-1">{t('languageNotice.title')}</p>
                   <p className="text-amber-200/70 text-sm">{t('languageNotice.description')}</p>
+                  {isTranslating && (
+                    <div className="mt-2 flex items-center gap-2">
+                      <div className="w-4 h-4 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" />
+                      <span className="text-amber-200/70 text-xs">Translating...</span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -208,7 +241,7 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
                 <Link href={getBlogLink('/blog')} className="hover:text-white transition-colors">{t('nav.blog')}</Link>
               </li>
               <li>/</li>
-              <li className="text-gray-300 truncate max-w-[200px]">{article.title}</li>
+              <li className="text-gray-300 truncate max-w-[200px]">{displayTitle}</li>
             </ol>
           </nav>
 
@@ -221,7 +254,11 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
               <span className="text-gray-500 text-sm">{article.readTime}</span>
             </div>
             <h1 className="text-2xl md:text-3xl font-bold text-white mb-4 leading-tight">
-              {article.title}
+              {isTranslating && !translatedTitle ? (
+                <span className="inline-block w-3/4 h-8 bg-slate-700 rounded animate-pulse" />
+              ) : (
+                displayTitle
+              )}
             </h1>
             <div className="flex items-center justify-between flex-wrap gap-4">
               <div className="flex items-center gap-4 text-sm text-gray-500">
@@ -234,17 +271,25 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
                 </div>
                 <div>
                   <div className="text-white font-medium text-sm">{article.author?.name || defaultAuthor.name}</div>
-                  <div className="text-gray-500 text-xs">{article.author?.bio || defaultAuthor.bio}</div>
+                  <div className="text-gray-500 text-xs">{displayBio}</div>
                 </div>
               </div>
             </div>
           </header>
 
           {/* Article Content */}
-          <div
-            className="prose prose-invert max-w-none"
-            dangerouslySetInnerHTML={{ __html: parseMarkdown(article.content) }}
-          />
+          {isTranslating && !translatedContent ? (
+            <div className="space-y-4">
+              {[...Array(8)].map((_, i) => (
+                <div key={i} className="h-4 bg-slate-700/50 rounded animate-pulse" style={{ width: `${85 - Math.random() * 30}%` }} />
+              ))}
+            </div>
+          ) : (
+            <div
+              className="prose prose-invert max-w-none"
+              dangerouslySetInnerHTML={{ __html: parseMarkdown(displayContent) }}
+            />
+          )}
 
           {/* 广告位 */}
           <AdUnit />
