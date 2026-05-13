@@ -2,9 +2,9 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
-import { useParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { getHomeToolCards, TOOLS } from '@/lib/toolRegistry';
-import { defaultLocale, type Locale } from '@/lib/i18n';
+import { defaultLocale, parseLocaleFromPath, localePath, type Locale } from '@/lib/i18n';
 import LanguageSwitcher from '../_components/LanguageSwitcher';
 
 // 轮播图数据
@@ -56,10 +56,8 @@ const getCarouselItems = (locale: Locale) => [
 // 功能介绍卡片图标
 const FEATURE_ICONS = ['⚡', '🖨️', '📐'];
 
-// 获取带 locale 前缀的链接
-const getLocaleLink = (path: string, locale: Locale) => {
-  return locale === 'zh' ? path : `/${locale}${path}`;
-};
+// 获取带 locale 前缀的链接（使用通用函数）
+// const localePath 已被 localePath 替代
 
 // 颜色映射
 const COLOR_MAP: Record<string, string> = {
@@ -71,8 +69,8 @@ const COLOR_MAP: Record<string, string> = {
 };
 
 export default function HomePage() {
-  const params = useParams();
-  const locale = (params.locale as Locale) || defaultLocale;
+  const pathname = usePathname();
+  const locale = parseLocaleFromPath(pathname);
   const t = useTranslations();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -180,11 +178,11 @@ export default function HomePage() {
                 )}
               </div>
 
-              <a href={getLocaleLink('/blog', locale)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+              <a href={localePath('/blog', locale)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 📰 {t('nav.blog')}
               </a>
 
-              <a href={getLocaleLink('/search', locale)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+              <a href={localePath('/search', locale)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 🔍 {t('nav.search')}
               </a>
 
@@ -262,7 +260,7 @@ export default function HomePage() {
                 <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">📖</span>
                 使用教程
               </button>
-              <a href={getLocaleLink('/search', locale)} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+              <a href={localePath('/search', locale)} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
                 <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">🔍</span>
                 {t('nav.search')}
               </a>
@@ -279,19 +277,19 @@ export default function HomePage() {
               <div className="pt-3 pb-1 px-3">
                 <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">关于</span>
               </div>
-              <a href={getLocaleLink('/about', locale)} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+              <a href={localePath('/about', locale)} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
                 <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">ℹ️</span>
                 {t('nav.about')}
               </a>
-              <a href={getLocaleLink('/contact', locale)} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+              <a href={localePath('/contact', locale)} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
                 <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">📧</span>
                 {t('nav.contact')}
               </a>
-              <a href={getLocaleLink('/privacy', locale)} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+              <a href={localePath('/privacy', locale)} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
                 <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">🔒</span>
                 {t('footer.privacy')}
               </a>
-              <a href={getLocaleLink('/terms', locale)} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+              <a href={localePath('/terms', locale)} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
                 <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">📋</span>
                 {t('footer.terms')}
               </a>
@@ -533,15 +531,15 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto">
           {/* 链接行 */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400 mb-4">
-            <a href={getLocaleLink('/about', locale)} className="hover:text-white transition-colors">{t('footer.about')}</a>
+            <a href={localePath('/about', locale)} className="hover:text-white transition-colors">{t('footer.about')}</a>
             <span className="text-gray-600">|</span>
-            <a href={getLocaleLink('/contact', locale)} className="hover:text-white transition-colors">{t('footer.contact')}</a>
+            <a href={localePath('/contact', locale)} className="hover:text-white transition-colors">{t('footer.contact')}</a>
             <span className="text-gray-600">|</span>
-            <a href={getLocaleLink('/blog', locale)} className="hover:text-white transition-colors">{t('nav.blog')}</a>
+            <a href={localePath('/blog', locale)} className="hover:text-white transition-colors">{t('nav.blog')}</a>
             <span className="text-gray-600">|</span>
-            <a href={getLocaleLink('/terms', locale)} className="hover:text-white transition-colors">{t('footer.terms')}</a>
+            <a href={localePath('/terms', locale)} className="hover:text-white transition-colors">{t('footer.terms')}</a>
             <span className="text-gray-600">|</span>
-            <a href={getLocaleLink('/privacy', locale)} className="hover:text-white transition-colors">{t('footer.privacy')}</a>
+            <a href={localePath('/privacy', locale)} className="hover:text-white transition-colors">{t('footer.privacy')}</a>
           </div>
           {/* 版权信息 */}
           <div className="border-t border-gray-200 py-4 text-center text-sm text-gray-500">

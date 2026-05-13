@@ -288,8 +288,27 @@ export default async function RootLayout({
         <meta name="msapplication-TileColor" content="#1e40af" />
         <meta name="theme-color" content="#1e40af" />
 
-        {/* hreflang GEO 信号 */}
+        {/* hreflang SEO + GEO 信号 */}
         <link rel="alternate" hrefLang="zh-CN" href="https://www.skillxm.cn/" />
+        <link rel="alternate" hrefLang="en" href="https://www.skillxm.cn/en/" />
+        <link rel="alternate" hrefLang="ja" href="https://www.skillxm.cn/ja/" />
+        <link rel="alternate" hrefLang="ko" href="https://www.skillxm.cn/ko/" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.skillxm.cn/" />
+
+        {/* 动态设置 html lang 属性（根据 URL 路径） */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var m = location.pathname.match(/^\\/(en|ja|ko)(\\/|$)/);
+                if (m) {
+                  var langMap = { en: 'en', ja: 'ja', ko: 'ko' };
+                  document.documentElement.lang = langMap[m[1]] || 'zh-CN';
+                }
+              })();
+            `,
+          }}
+        />
 
         {/* dns-prefetch 第三方资源 */}
         <link rel="dns-prefetch" href="https://hm.baidu.com" />

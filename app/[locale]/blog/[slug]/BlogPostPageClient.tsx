@@ -8,7 +8,7 @@ import SiteLayout from '../../../_components/SiteLayout';
 import AdUnit from '../../../_components/AdUnit';
 import LanguageSwitcher from '../../../_components/LanguageSwitcher';
 import GoogleTranslateWidget from '../../../_components/GoogleTranslateWidget';
-import { type Locale } from '@/lib/i18n';
+import { localePath, type Locale } from '@/lib/i18n';
 import { useTranslation, translateShortText } from '@/lib/translation';
 
 interface BlogPostPageClientProps {
@@ -128,17 +128,13 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
   const displayBio = isNonZh && translatedBio ? translatedBio : (article?.author?.bio || defaultAuthor.bio);
   const displayContent = isNonZh && translatedContent ? translatedContent : (article?.content || '');
 
-  const getBlogLink = (path: string) => {
-    return locale === 'zh' ? path : `/${locale}${path}`;
-  };
-
   if (!article) {
     return (
       <SiteLayout>
         <div className="text-center py-20">
           <p className="text-gray-400 text-xl mb-4">{t('articleNotFound')}</p>
           <Link
-            href={getBlogLink('/blog')}
+            href={localePath('/blog', locale)}
             className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
           >
             {t('backToBlog')}
@@ -196,13 +192,13 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
               <a href={locale === 'zh' ? '/' : `/${locale}`} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 {t('nav.home')}
               </a>
-              <a href={getBlogLink('/blog')} className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">
+              <a href={localePath('/blog', locale)} className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">
                 {t('nav.blog')}
               </a>
-              <a href={getBlogLink('/about')} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+              <a href={localePath('/about', locale)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 {t('nav.about')}
               </a>
-              <a href={getBlogLink('/contact')} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+              <a href={localePath('/contact', locale)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 {t('nav.contact')}
               </a>
               <div className="border-l border-white/10 ml-2 pl-2">
@@ -242,7 +238,7 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
               </li>
               <li>/</li>
               <li>
-                <Link href={getBlogLink('/blog')} className="hover:text-white transition-colors">{t('nav.blog')}</Link>
+                <Link href={localePath('/blog', locale)} className="hover:text-white transition-colors">{t('nav.blog')}</Link>
               </li>
               <li>/</li>
               <li className="text-gray-300 truncate max-w-[200px]">{displayTitle}</li>
@@ -306,7 +302,7 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
                 {relatedArticles.map((related) => (
                   <li key={related.id}>
                     <Link
-                      href={getBlogLink(`/blog/${related.id}`)}
+                      href={localePath(`/blog/${related.id}`, locale)}
                       className="flex items-start gap-3 group"
                     >
                       <span className="text-blue-400 mt-0.5">→</span>
@@ -328,7 +324,7 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
           {/* Back Button & Related Articles */}
           <div className="mt-12 pt-8 border-t border-white/10">
             <Link
-              href={getBlogLink('/blog')}
+              href={localePath('/blog', locale)}
               className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-white/10 text-gray-300 hover:text-white rounded-xl transition-colors"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -345,7 +341,7 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
                   {relatedArticles.slice(0, 6).map((related) => (
                     <Link
                       key={related.id}
-                      href={getBlogLink(`/blog/${related.id}`)}
+                      href={localePath(`/blog/${related.id}`, locale)}
                       className="bg-slate-800/50 border border-white/10 rounded-xl p-4 hover:border-white/20 hover:bg-slate-700/50 transition-all group"
                     >
                       <span className={`inline-block px-2 py-0.5 rounded-full text-xs font-medium mb-2 ${categoryColors[related.category] || 'bg-gray-500/20 text-gray-300'}`}>
@@ -368,7 +364,7 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
                 {latestArticles.slice(0, 4).map((latest) => (
                   <Link
                     key={latest.id}
-                    href={getBlogLink(`/blog/${latest.id}`)}
+                    href={localePath(`/blog/${latest.id}`, locale)}
                     className="bg-slate-800/30 border border-white/5 rounded-lg p-3 hover:border-white/10 transition-all group"
                   >
                     <span className={`inline-block px-1.5 py-0.5 rounded text-[10px] font-medium mb-1 ${categoryColors[latest.category] || 'bg-gray-500/20 text-gray-300'}`}>
@@ -388,13 +384,13 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
       <footer className="border-t border-white/10 py-8 px-4 mt-8">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400 mb-4">
-            <a href={getBlogLink('/about')} className="hover:text-white transition-colors">{t('nav.about')}</a>
+            <a href={localePath('/about', locale)} className="hover:text-white transition-colors">{t('nav.about')}</a>
             <span className="text-gray-600">|</span>
-            <a href={getBlogLink('/terms')} className="hover:text-white transition-colors">{t('nav.terms')}</a>
+            <a href={localePath('/terms', locale)} className="hover:text-white transition-colors">{t('nav.terms')}</a>
             <span className="text-gray-600">|</span>
-            <a href={getBlogLink('/contact')} className="hover:text-white transition-colors">{t('nav.contact')}</a>
+            <a href={localePath('/contact', locale)} className="hover:text-white transition-colors">{t('nav.contact')}</a>
             <span className="text-gray-600">|</span>
-            <a href={getBlogLink('/blog')} className="hover:text-white transition-colors">{t('nav.blog')}</a>
+            <a href={localePath('/blog', locale)} className="hover:text-white transition-colors">{t('nav.blog')}</a>
           </div>
           <div className="text-center text-gray-500 text-sm">
             {t('footer.copyright')}

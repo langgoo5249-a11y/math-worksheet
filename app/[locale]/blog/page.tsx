@@ -3,12 +3,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
-import { useParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { articles, categories } from '../../blog/data';
 import type { Category } from '../../blog/data';
 import LanguageSwitcher from '../../_components/LanguageSwitcher';
 import GoogleTranslateWidget from '../../_components/GoogleTranslateWidget';
-import { defaultLocale, type Locale } from '@/lib/i18n';
+import { parseLocaleFromPath, localePath, type Locale } from '@/lib/i18n';
 import { translateShortText } from '@/lib/translation';
 
 const categoryColors: Record<string, string> = {
@@ -46,8 +46,8 @@ interface BlogPageProps {
 }
 
 export default function BlogPage() {
-  const params = useParams();
-  const locale = (params.locale as Locale) || defaultLocale;
+  const pathname = usePathname();
+  const locale = parseLocaleFromPath(pathname);
   const t = useTranslations('blog');
   const [activeCategory, setActiveCategory] = useState<Category>('全部');
   const isNonZh = locale !== 'zh';
@@ -96,10 +96,6 @@ export default function BlogPage() {
     : articles.filter(a => a.category === activeCategory)
   ).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-  const getBlogLink = (path: string) => {
-    return locale === 'zh' ? path : `/${locale}${path}`;
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
       {/* Google Translate Widget for automatic translation */}
@@ -124,10 +120,10 @@ export default function BlogPage() {
               <span className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">
                 {t('nav.blog')}
               </span>
-              <a href={getBlogLink('/about')} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+              <a href={localePath('/about', locale)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 {t('nav.about')}
               </a>
-              <a href={getBlogLink('/contact')} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+              <a href={localePath('/contact', locale)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 {t('nav.contact')}
               </a>
               <div className="border-l border-white/10 ml-2 pl-2">
@@ -180,7 +176,7 @@ export default function BlogPage() {
             {filteredArticles.map((article) => (
               <Link
                 key={article.id}
-                href={getBlogLink(`/blog/${article.id}`)}
+                href={localePath(`/blog/${article.id}`, locale)}
                 className="text-left bg-slate-800/50 border border-white/10 rounded-2xl p-6 hover:border-white/20 hover:bg-slate-700/50 transition-all group"
               >
                 {/* Category & Read Time */}
@@ -224,13 +220,13 @@ export default function BlogPage() {
       <footer className="border-t border-white/10 py-8 px-4 mt-8">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400 mb-4">
-            <a href={getBlogLink('/about')} className="hover:text-white transition-colors">{t('nav.about')}</a>
+            <a href={localePath('/about', locale)} className="hover:text-white transition-colors">{t('nav.about')}</a>
             <span className="text-gray-600">|</span>
-            <a href={getBlogLink('/terms')} className="hover:text-white transition-colors">{t('nav.terms')}</a>
+            <a href={localePath('/terms', locale)} className="hover:text-white transition-colors">{t('nav.terms')}</a>
             <span className="text-gray-600">|</span>
-            <a href={getBlogLink('/contact')} className="hover:text-white transition-colors">{t('nav.contact')}</a>
+            <a href={localePath('/contact', locale)} className="hover:text-white transition-colors">{t('nav.contact')}</a>
             <span className="text-gray-600">|</span>
-            <a href={getBlogLink('/blog')} className="hover:text-white transition-colors">{t('nav.blog')}</a>
+            <a href={localePath('/blog', locale)} className="hover:text-white transition-colors">{t('nav.blog')}</a>
           </div>
           <div className="text-center text-gray-500 text-sm">
             {t('footer.copyright')}

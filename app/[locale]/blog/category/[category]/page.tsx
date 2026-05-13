@@ -4,7 +4,7 @@ import { articles, categories } from '../../../../blog/data';
 import type { Category } from '../../../../blog/data';
 import { getTranslations } from 'next-intl/server';
 import LanguageSwitcher from '../../../../_components/LanguageSwitcher';
-import { type Locale } from '@/lib/i18n';
+import { localePath, type Locale } from '@/lib/i18n';
 
 const BASE_URL = 'https://www.skillxm.cn';
 
@@ -103,10 +103,6 @@ export default async function CategoryPage({ params }: PageProps) {
   // 验证分类是否有效
   const isValidCategory = categoryList.includes(category as Exclude<Category, '全部'>);
 
-  const getBlogLink = (path: string) => {
-    return locale === 'zh' ? path : `/${locale}${path}`;
-  };
-
   if (!isValidCategory) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
@@ -129,7 +125,7 @@ export default async function CategoryPage({ params }: PageProps) {
             <h1 className="text-2xl font-bold text-white mb-4">{t('categoryNotFound')}</h1>
             <p className="text-gray-400 mb-8">{t('categoryNotFoundDesc')}</p>
             <Link
-              href={getBlogLink('/blog')}
+              href={localePath('/blog', locale)}
               className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
             >
               {t('backToBlog')}
@@ -230,13 +226,13 @@ export default async function CategoryPage({ params }: PageProps) {
                 <a href={locale === 'zh' ? '/' : `/${locale}`} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                   {t('nav.home')}
                 </a>
-                <a href={getBlogLink('/blog')} className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">
+                <a href={localePath('/blog', locale)} className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">
                   {t('nav.blog')}
                 </a>
-                <a href={getBlogLink('/about')} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                <a href={localePath('/about', locale)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                   {t('nav.about')}
                 </a>
-                <a href={getBlogLink('/contact')} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                <a href={localePath('/contact', locale)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                   {t('nav.contact')}
                 </a>
                 <div className="border-l border-white/10 ml-2 pl-2">
@@ -260,7 +256,7 @@ export default async function CategoryPage({ params }: PageProps) {
                 </li>
                 <li className="text-gray-600">/</li>
                 <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                  <Link href={getBlogLink('/blog')} itemProp="item" className="hover:text-white transition-colors">
+                  <Link href={localePath('/blog', locale)} itemProp="item" className="hover:text-white transition-colors">
                     <span itemProp="name">{t('nav.blog')}</span>
                   </Link>
                   <meta itemProp="position" content="2" />
@@ -289,7 +285,7 @@ export default async function CategoryPage({ params }: PageProps) {
               {categoryArticles.map((article) => (
                 <Link
                   key={article.id}
-                  href={getBlogLink(`/blog/${article.id}`)}
+                  href={localePath(`/blog/${article.id}`, locale)}
                   className="text-left bg-slate-800/50 border border-white/10 rounded-2xl p-6 hover:border-white/20 hover:bg-slate-700/50 transition-all group"
                 >
                   {/* Category & Read Time */}
@@ -339,7 +335,7 @@ export default async function CategoryPage({ params }: PageProps) {
                     return (
                       <Link
                         key={cat}
-                        href={getBlogLink(`/blog/category/${cat}`)}
+                        href={localePath(`/blog/category/${cat}`, locale)}
                         className={`px-4 py-2 rounded-full text-sm font-medium border transition-all hover:scale-105 ${categoryColors[cat] || 'bg-gray-500/20 text-gray-300 border-gray-500/30'}`}
                       >
                         {t(`categories.${getCategoryKey(cat)}`)}（{catCount}）
@@ -352,7 +348,7 @@ export default async function CategoryPage({ params }: PageProps) {
             {/* Back to Blog */}
             <div className="mt-10 text-center">
               <Link
-                href={getBlogLink('/blog')}
+                href={localePath('/blog', locale)}
                 className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-white/10 text-gray-300 hover:text-white rounded-xl transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -367,13 +363,13 @@ export default async function CategoryPage({ params }: PageProps) {
         <footer className="border-t border-white/10 py-8 px-4 mt-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400 mb-4">
-              <a href={getBlogLink('/about')} className="hover:text-white transition-colors">{t('nav.about')}</a>
+              <a href={localePath('/about', locale)} className="hover:text-white transition-colors">{t('nav.about')}</a>
               <span className="text-gray-600">|</span>
-              <a href={getBlogLink('/terms')} className="hover:text-white transition-colors">{t('nav.terms')}</a>
+              <a href={localePath('/terms', locale)} className="hover:text-white transition-colors">{t('nav.terms')}</a>
               <span className="text-gray-600">|</span>
-              <a href={getBlogLink('/contact')} className="hover:text-white transition-colors">{t('nav.contact')}</a>
+              <a href={localePath('/contact', locale)} className="hover:text-white transition-colors">{t('nav.contact')}</a>
               <span className="text-gray-600">|</span>
-              <a href={getBlogLink('/blog')} className="hover:text-white transition-colors">{t('nav.blog')}</a>
+              <a href={localePath('/blog', locale)} className="hover:text-white transition-colors">{t('nav.blog')}</a>
             </div>
             <div className="text-center text-gray-500 text-sm">
               {t('footer.copyright')}
