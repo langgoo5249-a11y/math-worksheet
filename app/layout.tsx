@@ -3,6 +3,7 @@ import { Noto_Sans_SC } from "next/font/google";
 import "./globals.css";
 import { TOOLS, generateSchemaApps, generateSchemaBreadcrumbs, ACTIVE_TOOL_COUNT } from "@/lib/toolRegistry";
 import CookieConsent from './_components/CookieConsent';
+import GoogleAnalytics from './_components/GoogleAnalytics';
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
@@ -281,6 +282,11 @@ export default async function RootLayout({
     <html lang="zh-CN" className={notoSansSC.className}>
       <head>
         <meta name="baidu-site-verification" content="codeva-nVZFsgvPZu" />
+
+        {/* Google Search Console 站点验证 */}
+        {/* 请在 https://search.google.com/search-console 添加站点后获取验证码 */}
+        {/* 替换下方 content 值为你的 GSC 验证码 */}
+        {/* <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE" /> */}
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
@@ -383,6 +389,8 @@ export default async function RootLayout({
             `,
           }}
         />
+        {/* Google Analytics 4 — 仅在用户同意Cookie后加载 */}
+        <GoogleAnalytics />
       </body>
     </html>
   );
