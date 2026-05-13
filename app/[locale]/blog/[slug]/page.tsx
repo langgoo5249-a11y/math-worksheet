@@ -33,18 +33,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const ogImage = generateOgImage(article);
   const siteName = t('siteName');
 
+  // 非中文版本的博客文章内容未翻译，使用 noindex 避免被 Google 判定为低质量内容
+  // 这是 AdSense 合规的关键修复
+  const isNonZh = locale !== 'zh';
+
   return {
     title: `${article.title} | ${siteName}`,
     description: article.description,
     authors: [{ name: siteName }],
     keywords: article.keywords || [article.category, t('keywords.primary'), t('keywords.secondary'), t('keywords.tertiary')],
-    alternates: {
-      canonical: `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}blog/${slug}/`,
+    // 非中文版本不索引，避免低质量内容判定
+    robots: isNonZh ? { index: false, follow: true } : undefined,
+    alternates: isNonZh ? undefined : {
+      canonical: `https://www.skillxm.cn/blog/${slug}/`,
       languages: {
         'zh-CN': `https://www.skillxm.cn/blog/${slug}/`,
-        'en': `https://www.skillxm.cn/en/blog/${slug}/`,
-        'ja': `https://www.skillxm.cn/ja/blog/${slug}/`,
-        'ko': `https://www.skillxm.cn/ko/blog/${slug}/`,
         'x-default': `https://www.skillxm.cn/blog/${slug}/`,
       },
     },

@@ -157,53 +157,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   });
 
-  // 博客文章 - 所有语言版本
+  // 博客文章 - 仅中文版本（非中文版本内容未翻译，使用 noindex）
   articles.forEach(article => {
-    SUPPORTED_LOCALES.forEach(locale => {
-      const url = locale === defaultLocale 
-        ? `${BASE_URL}/blog/${article.id}/` 
-        : `${BASE_URL}/${locale}/blog/${article.id}/`;
-      sitemapEntries.push({
-        url,
-        lastModified: article.date,
-        changeFrequency: 'monthly',
-        priority: 0.7,
-        alternates: {
-          languages: {
-            'zh-CN': `${BASE_URL}/blog/${article.id}/`,
-            'en': `${BASE_URL}/en/blog/${article.id}/`,
-            'ja': `${BASE_URL}/ja/blog/${article.id}/`,
-            'ko': `${BASE_URL}/ko/blog/${article.id}/`,
-            'x-default': `${BASE_URL}/blog/${article.id}/`,
-          },
+    const url = `${BASE_URL}/blog/${article.id}/`;
+    sitemapEntries.push({
+      url,
+      lastModified: article.date,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          'zh-CN': url,
+          'x-default': url,
         },
-      });
+      },
     });
   });
 
-  // 博客分类页面 - 所有语言版本
+  // 博客分类页面 - 仅中文版本
   categories
     .filter(c => c !== '全部')
     .forEach(cat => {
-      SUPPORTED_LOCALES.forEach(locale => {
-        const url = locale === defaultLocale 
-          ? `${BASE_URL}/blog/category/${cat}/` 
-          : `${BASE_URL}/${locale}/blog/category/${cat}/`;
-        sitemapEntries.push({
-          url,
-          lastModified: today,
-          changeFrequency: 'weekly',
-          priority: 0.8,
-          alternates: {
-            languages: {
-              'zh-CN': `${BASE_URL}/blog/category/${cat}/`,
-              'en': `${BASE_URL}/en/blog/category/${cat}/`,
-              'ja': `${BASE_URL}/ja/blog/category/${cat}/`,
-              'ko': `${BASE_URL}/ko/blog/category/${cat}/`,
-              'x-default': `${BASE_URL}/blog/category/${cat}/`,
-            },
+      const url = `${BASE_URL}/blog/category/${cat}/`;
+      sitemapEntries.push({
+        url,
+        lastModified: today,
+        changeFrequency: 'weekly',
+        priority: 0.8,
+        alternates: {
+          languages: {
+            'zh-CN': url,
+            'x-default': url,
           },
-        });
+        },
       });
     });
 
