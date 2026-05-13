@@ -1,0 +1,15 @@
+# Cloudflare Pages Configuration
+
+## Build Command
+npm run build
+
+## Build Output Directory
+out
+
+## 页面路由配置
+所有多语言页面已预生成在对应语言目录下：
+- `/` - 中文（默认）
+- `/zh/` - 中文
+- `/en/` - 英文
+- `/ja/` - 日文
+- `/ko/` - 韩文

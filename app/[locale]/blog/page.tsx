@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 import { articles, categories } from '../../blog/data';
 import type { Category } from '../../blog/data';
 import LanguageSwitcher from '../../_components/LanguageSwitcher';
-import { type Locale } from '@/lib/i18n';
+import { defaultLocale, type Locale } from '@/lib/i18n';
 
 const categoryColors: Record<string, string> = {
   '数学学习': 'bg-blue-500/20 text-blue-300 border-blue-500/30',
@@ -42,7 +43,9 @@ interface BlogPageProps {
   params: { locale: Locale };
 }
 
-export default function BlogPage({ params: { locale } }: BlogPageProps) {
+export default function BlogPage() {
+  const params = useParams();
+  const locale = (params.locale as Locale) || defaultLocale;
   const t = useTranslations('blog');
   const [activeCategory, setActiveCategory] = useState<Category>('全部');
 

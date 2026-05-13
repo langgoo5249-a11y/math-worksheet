@@ -2,9 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 import { getHomeToolCards, TOOLS } from '@/lib/toolRegistry';
+import { defaultLocale, type Locale } from '@/lib/i18n';
 import LanguageSwitcher from '../_components/LanguageSwitcher';
-import { type Locale } from '@/lib/i18n';
 
 // 轮播图数据
 const getCarouselItems = (locale: Locale) => [
@@ -64,7 +65,9 @@ const COLOR_MAP: Record<string, string> = {
   gray: 'bg-gray-400',
 };
 
-export default function HomePage({ params: { locale } }: { params: { locale: Locale } }) {
+export default function HomePage() {
+  const params = useParams();
+  const locale = (params.locale as Locale) || defaultLocale;
   const t = useTranslations();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [mobileMenu, setMobileMenu] = useState(false);
