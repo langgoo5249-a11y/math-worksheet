@@ -40,5 +40,5 @@ export default async function LocalizedMentalMathPage({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-  return <MentalMathPage />;
+  return <MentalMathPage locale={locale} />;
 }

@@ -40,5 +40,5 @@ export default async function LocalizedFlashcardsPage({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-  return <FlashcardsPage />;
+  return <FlashcardsPage locale={locale} />;
 }

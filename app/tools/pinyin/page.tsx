@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import ToolGuide from '@/components/ToolGuide';
 import { toolGuides } from '@/lib/toolGuides';
 import ToolNavBar from '@/components/ToolNavBar';
+import { type Locale } from '@/lib/i18n';
 
 // ===== 内置拼音词库（去重后共 530 条）=====
 const PY: Record<string, string> = {
@@ -597,7 +598,7 @@ const MODES = [
 
 const FONT_SIZES: Record<FontSize, number> = { sm: 20, md: 28, lg: 36 };
 
-export default function PinyinPage() {
+export default function PinyinPage({ locale }: { locale?: Locale } = {}) {
   const [text, setText] = useState('爸爸妈妈爷爷奶奶哥哥姐姐弟弟妹妹');
   const [mode, setMode] = useState<Mode>('learn');
   const [fontSize, setFontSize] = useState<FontSize>('md');
@@ -643,7 +644,7 @@ export default function PinyinPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
       {/* 导航栏 */}
-      <ToolNavBar currentPath="/tools/pinyin" title="拼音注音" />
+      <ToolNavBar currentPath="/tools/pinyin" title="拼音注音" locale={locale} />
 
       {/* 主内容 */}
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16">

@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react';
 import ToolNavBar from '@/components/ToolNavBar';
+import { type Locale } from '@/lib/i18n';
 import { exportToPDF } from '@/lib/pdfExport';
 import {
   unitTestData,
@@ -88,7 +89,7 @@ function shuffleArray<T>(arr: T[]): T[] {
 }
 
 // ===== 主组件 =====
-export default function UnitTestPage() {
+export default function UnitTestPage({ locale }: { locale?: Locale } = {}) {
   // 配置状态
   const [subject, setSubject] = useState<'数学' | '语文' | '英语' | '科学'>('数学');
   const [grade, setGrade] = useState(1);
@@ -222,7 +223,7 @@ export default function UnitTestPage() {
     <div className="min-h-screen bg-[#0f0f0f] text-white" style={{ fontFamily: '"Noto Sans SC", "Microsoft YaHei", sans-serif' }}>
 
       {/* ===== 顶部导航 ===== */}
-      <ToolNavBar currentPath="/tools/unit-test" title="单元测试卷" />
+      <ToolNavBar currentPath="/tools/unit-test" title="单元测试卷" locale={locale} />
 
       {/* ===== Hero 区域 ===== */}
       {!hasGenerated && (

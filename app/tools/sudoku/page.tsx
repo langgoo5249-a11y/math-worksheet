@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import ToolGuide from '@/components/ToolGuide';
 import { toolGuides } from '@/lib/toolGuides';
 import ToolNavBar from '@/components/ToolNavBar';
+import { type Locale } from '@/lib/i18n';
 
 type Difficulty = 'easy' | 'medium' | 'hard';
 type CellValue = number | null;
@@ -76,7 +77,7 @@ function fmtTime(secs: number): string {
   return `${m}:${String(s).padStart(2, '0')}`;
 }
 
-export default function SudokuPage() {
+export default function SudokuPage({ locale }: { locale?: Locale } = {}) {
   const [difficulty, setDifficulty] = useState<Difficulty>('easy');
   const [puzzle, setPuzzle] = useState<Grid>([]);
   const [solution, setSolution] = useState<number[][]>([]);
@@ -196,7 +197,7 @@ export default function SudokuPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Nav */}
-      <ToolNavBar currentPath="/tools/sudoku" title="数独游戏" />
+      <ToolNavBar currentPath="/tools/sudoku" title="数独游戏" locale={locale} />
 
       <div className="pt-20 pb-12 px-4">
         <div className="max-w-xl mx-auto">

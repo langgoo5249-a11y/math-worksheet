@@ -40,5 +40,5 @@ export default async function LocalizedEnglishCalligraphyPage({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-  return <EnglishCalligraphyPage />;
+  return <EnglishCalligraphyPage locale={locale} />;
 }

@@ -40,5 +40,5 @@ export default async function LocalizedPoemMemoPage({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-  return <PoemMemoPage />;
+  return <PoemMemoPage locale={locale} />;
 }

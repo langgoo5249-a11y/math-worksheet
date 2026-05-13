@@ -40,6 +40,5 @@ export default async function LocalizedMathWorksheetPage({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-  // 渲染原始工具页面
-  return <MathWorksheetPage />;
+  return <MathWorksheetPage locale={locale} />;
 }

@@ -40,5 +40,5 @@ export default async function LocalizedPinyinPage({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-  return <PinyinPage />;
+  return <PinyinPage locale={locale} />;
 }

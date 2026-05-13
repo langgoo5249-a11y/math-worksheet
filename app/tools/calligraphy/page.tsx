@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import ToolGuide from '@/components/ToolGuide';
 import { toolGuides } from '@/lib/toolGuides';
 import ToolNavBar from '@/components/ToolNavBar';
+import { type Locale } from '@/lib/i18n';
 
 type GridType = 'tian' | 'mi' | 'fang' | 'hengxian';
 
@@ -113,7 +114,7 @@ function GridCell({ char, showChar, fontFamily, gridType, size }: {
   );
 }
 
-export default function CalligraphyPage() {
+export default function CalligraphyPage({ locale }: { locale?: Locale } = {}) {
   const [text, setText] = useState('天地人和春夏秋冬');
   const [gridType, setGridType] = useState<GridType>('tian');
   const [rows, setRows] = useState(8);
@@ -302,7 +303,7 @@ export default function CalligraphyPage() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Nav */}
-      <ToolNavBar currentPath="/tools/calligraphy" title="字帖生成器" />
+      <ToolNavBar currentPath="/tools/calligraphy" title="字帖生成器" locale={locale} />
 
       <div className="pt-20 pb-12 px-4">
         <div className="max-w-5xl mx-auto">

@@ -40,5 +40,5 @@ export default async function LocalizedSudokuPage({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-  return <SudokuPage />;
+  return <SudokuPage locale={locale} />;
 }

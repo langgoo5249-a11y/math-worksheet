@@ -2,6 +2,7 @@
 
 import { useState, useRef, useMemo } from 'react';
 import ToolNavBar from '@/components/ToolNavBar';
+import { type Locale } from '@/lib/i18n';
 import { poems, gradeGroups, type Poem } from '@/lib/poemData';
 
 /* ============================================================
@@ -172,7 +173,7 @@ function MemoCell({
    主页面组件
    ============================================================ */
 
-export default function PoemMemoPage() {
+export default function PoemMemoPage({ locale }: { locale?: Locale } = {}) {
   /* ---- 状态 ---- */
   const [selectedGrade, setSelectedGrade] = useState<number | null>(null); // null = 全部
   const [searchQuery, setSearchQuery] = useState('');
@@ -519,7 +520,7 @@ export default function PoemMemoPage() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* ===== 导航栏（深色主题）===== */}
-      <ToolNavBar currentPath="/tools/poem-memo" title="古诗词默写" />
+      <ToolNavBar currentPath="/tools/poem-memo" title="古诗词默写" locale={locale} />
 
       {/* ===== 主内容 ===== */}
       <div className="pt-20 pb-12 px-4">

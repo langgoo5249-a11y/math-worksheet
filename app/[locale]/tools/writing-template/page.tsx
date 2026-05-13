@@ -40,5 +40,5 @@ export default async function LocalizedWritingTemplatePage({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-  return <WritingTemplatePage />;
+  return <WritingTemplatePage locale={locale} />;
 }

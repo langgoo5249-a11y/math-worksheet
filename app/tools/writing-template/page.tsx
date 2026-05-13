@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback } from 'react';
 import ToolGuide from '@/components/ToolGuide';
 import ToolNavBar from '@/components/ToolNavBar';
+import { type Locale } from '@/lib/i18n';
 import { toolGuides } from '@/lib/toolGuides';
 
 // ===== 类型定义 =====
@@ -117,7 +118,7 @@ const WEATHER_OPTIONS = ['☀️ 晴', '⛅ 多云', '🌧️ 雨', '❄️ 雪'
 // ===== 书信称呼选项 =====
 const LETTER_RECIPIENTS = ['亲爱的妈妈', '亲爱的爸爸', '敬爱的老师', '亲爱的同学', '亲爱的朋友'];
 
-export default function WritingTemplatePage() {
+export default function WritingTemplatePage({ locale }: { locale?: Locale } = {}) {
   // 配置状态
   const [essayType, setEssayType] = useState<EssayType>('picture');
   const [grade, setGrade] = useState<Grade>(3);
@@ -282,7 +283,7 @@ export default function WritingTemplatePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
       {/* ===== 顶部导航 ===== */}
-      <ToolNavBar currentPath="/tools/writing-template" title="作文模板" />
+      <ToolNavBar currentPath="/tools/writing-template" title="作文模板" locale={locale} />
 
       {/* ===== 主内容 ===== */}
       <main className="pt-20 pb-8 px-4">

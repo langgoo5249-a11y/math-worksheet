@@ -3,6 +3,7 @@
 import { useState, useRef, useCallback } from 'react';
 import ToolGuide from '@/components/ToolGuide';
 import ToolNavBar from '@/components/ToolNavBar';
+import { type Locale } from '@/lib/i18n';
 import { toolGuides } from '@/lib/toolGuides';
 
 // ===== 类型定义 =====
@@ -108,7 +109,7 @@ function parseCharsInput(input: string): CharItem[] {
 }
 
 // ===== 主组件 =====
-export default function FlashcardsPage() {
+export default function FlashcardsPage({ locale }: { locale?: Locale } = {}) {
   // 输入状态
   const [inputText, setInputText] = useState('');
   const [charItems, setCharItems] = useState<CharItem[]>([]);
@@ -459,7 +460,7 @@ export default function FlashcardsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
       {/* ===== 顶部导航 ===== */}
-      <ToolNavBar currentPath="/tools/flashcards" title="识字卡片" />
+      <ToolNavBar currentPath="/tools/flashcards" title="识字卡片" locale={locale} />
 
       <main className="pt-20 pb-8 px-4">
         <div className="max-w-7xl mx-auto">

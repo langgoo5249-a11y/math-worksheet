@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import ToolGuide from '@/components/ToolGuide';
 import ToolNavBar from '@/components/ToolNavBar';
+import { type Locale } from '@/lib/i18n';
 import { toolGuides } from '@/lib/toolGuides';
 
 // 难度配置
@@ -109,7 +110,7 @@ function generateQuestions(count: number, difficulty: Difficulty): Question[] {
   return Array.from({ length: count }, (_, i) => generateQuestion(i + 1, difficulty));
 }
 
-export default function MentalMathPage() {
+export default function MentalMathPage({ locale }: { locale?: Locale } = {}) {
   // 游戏状态
   const [difficulty, setDifficulty] = useState<Difficulty>('easy');
   const [questionCount, setQuestionCount] = useState(20);
@@ -256,7 +257,7 @@ export default function MentalMathPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
       {/* ===== 顶部导航 ===== */}
-      <ToolNavBar currentPath="/tools/mental-math" title="口算速练" />
+      <ToolNavBar currentPath="/tools/mental-math" title="口算速练" locale={locale} />
       
       <main className="pt-20 pb-8 px-4">
         <div className="max-w-4xl mx-auto">

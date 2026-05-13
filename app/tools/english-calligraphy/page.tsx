@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import ToolGuide from '@/components/ToolGuide';
 import { toolGuides } from '@/lib/toolGuides';
 import ToolNavBar from '@/components/ToolNavBar';
+import { type Locale } from '@/lib/i18n';
 
 type LineType = 'four-line' | 'three-line' | 'blank';
 
@@ -137,7 +138,7 @@ function btnClassSmall(active: boolean) {
     : 'flex-1 py-2 rounded-lg border-2 text-xs font-medium transition-all bg-gray-50 border-gray-200 text-gray-600 hover:border-gray-300';
 }
 
-export default function EnglishCalligraphyPage() {
+export default function EnglishCalligraphyPage({ locale }: { locale?: Locale } = {}) {
   const [text, setText] = useState('The quick brown fox jumps over the lazy dog');
   const [lineType, setLineType] = useState<LineType>('four-line');
   const [rowsPerWord, setRowsPerWord] = useState(3);
@@ -207,7 +208,7 @@ export default function EnglishCalligraphyPage() {
     <div className="min-h-screen bg-gray-100" style={{ fontFamily: '"Noto Sans SC", "Microsoft YaHei", sans-serif' }}>
 
       {/* ===== 顶部导航 ===== */}
-      <ToolNavBar currentPath="/tools/english-calligraphy" title="英语字帖" />
+      <ToolNavBar currentPath="/tools/english-calligraphy" title="英语字帖" locale={locale} />
 
       <div className="pt-20 pb-12 px-4">
         <div className="max-w-5xl mx-auto">

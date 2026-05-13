@@ -40,5 +40,5 @@ export default async function LocalizedUnitTestPage({
   params: Promise<{ locale: Locale }>;
 }) {
   const { locale } = await params;
-  return <UnitTestPage />;
+  return <UnitTestPage locale={locale} />;
 }

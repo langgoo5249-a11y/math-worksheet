@@ -19,6 +19,7 @@ import { exportToPDF } from '@/lib/pdfExport';
 import ToolGuide from '@/components/ToolGuide';
 import { toolGuides } from '@/lib/toolGuides';
 import ToolNavBar from '@/components/ToolNavBar';
+import { type Locale } from '@/lib/i18n';
 
 // 快捷配置预设
 const QUICK_PRESETS = [
@@ -52,7 +53,7 @@ function WorksheetSection({
   );
 }
 
-export default function MathWorksheetPage() {
+export default function MathWorksheetPage({ locale }: { locale?: Locale } = {}) {
   // ===== 出题配置 =====
   const [grade, setGrade] = useState(1);
   const [selectedTypes, setSelectedTypes] = useState<QuestionType[]>(['addition']);
@@ -195,7 +196,7 @@ export default function MathWorksheetPage() {
     <div className="min-h-screen bg-[#0f0f0f] text-white" style={{ fontFamily: '"Noto Sans SC", "Microsoft YaHei", sans-serif' }}>
       
       {/* ===== 顶部导航 ===== */}
-      <ToolNavBar currentPath="/tools/math-worksheet" title="数学练习卷" />
+      <ToolNavBar currentPath="/tools/math-worksheet" title="数学练习卷" locale={locale} />
 
       {/* ===== Hero 区域 ===== */}
       {!hasGenerated && (
