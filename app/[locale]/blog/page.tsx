@@ -7,6 +7,7 @@ import { useParams } from 'next/navigation';
 import { articles, categories } from '../../blog/data';
 import type { Category } from '../../blog/data';
 import LanguageSwitcher from '../../_components/LanguageSwitcher';
+import GoogleTranslateWidget from '../../_components/GoogleTranslateWidget';
 import { defaultLocale, type Locale } from '@/lib/i18n';
 import { translateShortText } from '@/lib/translation';
 
@@ -101,6 +102,9 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+      {/* Google Translate Widget for automatic translation */}
+      <GoogleTranslateWidget locale={locale} />
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
