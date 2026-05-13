@@ -3,6 +3,8 @@ import { Noto_Sans_SC } from "next/font/google";
 import "./globals.css";
 import { TOOLS, generateSchemaApps, generateSchemaBreadcrumbs, ACTIVE_TOOL_COUNT } from "@/lib/toolRegistry";
 import CookieConsent from './_components/CookieConsent';
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 
 const notoSansSC = Noto_Sans_SC({
@@ -70,11 +72,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // 获取默认中文消息
+  const messages = await getMessages({ locale: 'zh' });
   const schemaOrg = {
     "@context": "https://schema.org",
     "@graph": [
@@ -342,8 +346,10 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen antialiased">
-        <CookieConsent />
-        {children}
+        <NextIntlClientProvider messages={messages} locale="zh">
+          <CookieConsent />
+          {children}
+        </NextIntlClientProvider>
         {/* 百度统计 */}
         <script
           dangerouslySetInnerHTML={{

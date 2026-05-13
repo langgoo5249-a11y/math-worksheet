@@ -1,0 +1,136 @@
+import { notFound } from 'next/navigation';
+import { articles, defaultAuthor } from '../../../blog/data';
+import type { Metadata } from 'next';
+import BlogPostPageClient from './BlogPostPageClient';
+import { getTranslations } from 'next-intl/server';
+import { type Locale } from '@/lib/i18n';
+
+interface PageProps {
+  params: Promise<{ slug: string; locale: Locale }>;
+}
+
+export function generateStaticParams() {
+  return articles.map(a => ({ slug: a.id }));
+}
+
+// 为每篇文章生成独特的og:image
+function generateOgImage(article: { title: string; category: string; id: string }): string {
+  const encodedTitle = encodeURIComponent(article.title.slice(0, 50));
+  return `https://og.skillxm.cn/api/og?title=${encodedTitle}&category=${encodeURIComponent(article.category)}&id=${article.id}`;
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug, locale } = await params;
+  const article = articles.find(a => a.id === slug);
+  const t = await getTranslations({ locale, namespace: 'blog' });
+
+  if (!article) {
+    return {
+      title: t('articleNotFound'),
+    };
+  }
+
+  const ogImage = generateOgImage(article);
+  const siteName = t('siteName');
+
+  return {
+    title: `${article.title} | ${siteName}`,
+    description: article.description,
+    authors: [{ name: siteName }],
+    keywords: article.keywords || [article.category, t('keywords.primary'), t('keywords.secondary'), t('keywords.tertiary')],
+    alternates: {
+      canonical: `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}blog/${slug}/`,
+      languages: {
+        'zh-CN': `https://www.skillxm.cn/blog/${slug}/`,
+        'en': `https://www.skillxm.cn/en/blog/${slug}/`,
+        'ja': `https://www.skillxm.cn/ja/blog/${slug}/`,
+        'ko': `https://www.skillxm.cn/ko/blog/${slug}/`,
+        'x-default': `https://www.skillxm.cn/blog/${slug}/`,
+      },
+    },
+    openGraph: {
+      title: article.title,
+      description: article.description,
+      type: 'article',
+      publishedTime: article.date,
+      modifiedTime: article.date,
+      authors: [siteName],
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+          type: 'image/png',
+        },
+        {
+          url: 'https://www.skillxm.cn/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: siteName,
+        },
+      ],
+      siteName: siteName,
+      locale: locale === 'zh' ? 'zh_CN' : locale,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.description,
+      images: [ogImage],
+    },
+  };
+}
+
+export default async function Page({ params }: PageProps) {
+  const { slug, locale } = await params;
+  const article = articles.find(a => a.id === slug);
+  if (!article) notFound();
+
+  const t = await getTranslations({ locale, namespace: 'blog' });
+  const siteName = t('siteName');
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": article.title,
+    "description": article.description,
+    "datePublished": article.date,
+    "dateModified": article.date,
+    "image": generateOgImage(article),
+    "author": {
+      "@type": "Person",
+      "name": article.author?.name || defaultAuthor.name,
+      "description": article.author?.bio || defaultAuthor.bio,
+      "url": `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}about`
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": siteName,
+      "url": "https://www.skillxm.cn/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.skillxm.cn/favicon.svg",
+        "width": 512,
+        "height": 512
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.skillxm.cn/blog/${article.id}/`
+    },
+    "articleSection": article.category,
+    "wordCount": article.content.length,
+    "inLanguage": locale === 'zh' ? 'zh-CN' : locale,
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <BlogPostPageClient slug={slug} locale={locale} />
+    </>
+  );
+}

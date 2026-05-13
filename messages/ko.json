@@ -1,0 +1,189 @@
+{
+  "metadata": {
+    "title": "교재 도구상자 - 무료 초등학교 학습 도구/수학 워크시트/서예/암산",
+    "description": "교재 도구상자는 10개 이상의 무료 초등학교 학습 도구를 제공합니다. 수학 워크시트 생성기, 서예 연습지, 암산 트레이너, 병음 학습, 한자 카드, 고전 시, 단원 테스트 등. PDF 내보내기 지원, 등록 불필요. 초등학교 1~6학년 학생과 교사를 위한 도구입니다.",
+    "keywords": "교재 도구상자,초등학교 학습 도구,수학 워크시트 생성기,서예 연습,암산,병음 학습,한자 카드,고전 시,단원 테스트,무료 워크시트,교육 리소스,PDF 인쇄"
+  },
+  "nav": {
+    "home": "교재 도구상자",
+    "tools": "학습 도구",
+    "blog": "교육 블로그",
+    "about": "회사 소개",
+    "contact": "문의하기"
+  },
+  "footer": {
+    "about": "회사 소개",
+    "contact": "문의하기",
+    "terms": "이용 약관",
+    "privacy": "개인정보 처리방침",
+    "copyright": "© 2026 교재 도구상자 · 교육을 더 쉽게"
+  },
+  "language": {
+    "switch": "언어 전환",
+    "zh": "中文",
+    "en": "English",
+    "ja": "日本語",
+    "ko": "한국어"
+  },
+  "home": {
+    "hero": {
+      "title": "무료 학습 도구",
+      "subtitle": "수학 워크시트 · 서예 · 암산",
+      "ctaPrimary": "지금 사용하기"
+    },
+    "popularTools": "인기 도구",
+    "features": {
+      "instant": {
+        "title": "즉시 접근",
+        "description": "등록 없이 웹사이트를 열고 즉시 워크시트와 연습지를 생성할 수 있습니다."
+      },
+      "pdf": {
+        "title": "PDF 내보내기",
+        "description": "원클릭으로 고품질 PDF 파일을 내보내고 선명한 A4 인쇄 결과를 얻을 수 있습니다."
+      },
+      "templates": {
+        "title": "다양한 템플릿",
+        "description": "전자격자, 모눈종이, 줄노트 등 다양한 필요에 맞는 템플릿을 제공합니다."
+      }
+    },
+    "faq": {
+      "title": "자주 묻는 질문",
+      "free": {
+        "question": "이 도구들은 무료인가요?",
+        "answer": "네, 모든 도구는 완전히 무료로 사용할 수 있습니다. 등록이나 비용이 필요하지 않습니다."
+      },
+      "watermark": {
+        "question": "생성된 PDF에 워터마크가 있나요?",
+        "answer": "아니요. 생성된 PDF 파일은 워터마크 없이 깨끗하며 즉시 인쇄할 수 있습니다."
+      },
+      "grades": {
+        "question": "어떤 학년을 지원하나요?",
+        "answer": "주로 초등학교 1~6학년을 대상으로 하며, 일부 도구는 유치원과 중학생에게도 적합합니다."
+      }
+    }
+  },
+  "tools": {
+    "mathWorksheet": {
+      "name": "수학 워크시트",
+      "shortName": "수학",
+      "description": "초등학교 수학 워크시트를 즉시 생성합니다. 덧셈, 뺄셈, 곱셈, 나눗셈, 세로 계산 등 11가지 문제 유형을 지원합니다. PDF 내보내기 가능.",
+      "metaTitle": "수학 워크시트 생성기 - 무료 초등학교 수학 연습",
+      "metaDescription": "초등학생을 위한 무료 온라인 수학 워크시트 생성기. 산술, 분수, 방정식 등을 지원합니다. 1~6학년. 원클릭 PDF 인쇄."
+    },
+    "calligraphy": {
+      "name": "서예 연습지",
+      "shortName": "서예",
+      "description": "온라인으로 전자격자와 미격자를 생성합니다. 4가지 격자 스타일을 사용할 수 있습니다. 글씨 연습용으로 인쇄 가능합니다.",
+      "metaTitle": "서예 연습지 생성기 - 무료 중국어 쓰기 연습",
+      "metaDescription": "전자격자와 미격자 격자가 있는 중국어 문자 연습지를 만듭니다. 사용자 정의 가능한 내용. 무료 PDF 다운로드 및 인쇄."
+    },
+    "englishCalligraphy": {
+      "name": "영어 쓰기",
+      "shortName": "영어",
+      "description": "영어 단어나 문장을 입력하여 사선삼격 연습용지를 생성합니다. 여러 글꼴과 줄 높이를 지원합니다.",
+      "metaTitle": "영어 손글씨 연습 - 사선삼격 시트",
+      "metaDescription": "사선삼격이 있는 무료 영어 손글씨 연습 시트. 사용자 정의 단어와 문장. 초등학생을 위한 여러 글꼴 사용 가능."
+    },
+    "flashcards": {
+      "name": "한자 카드",
+      "shortName": "카드",
+      "description": "온라인으로 무료 중국어 문자 한자 카드를 생성합니다. 문자, 병음, 구문을 사용자 정의할 수 있습니다. 실물 카드용으로 인쇄 가능합니다.",
+      "metaTitle": "중국어 한자 카드 생성기 - 무료 문자 학습 카드",
+      "metaDescription": "사용자 정의 문자, 병음, 구문이 있는 중국어 문자 한자 카드를 온라인으로 만듭니다. 인쇄용 PDF 내보내기. 초기识字的에 최적입니다."
+    },
+    "mentalMath": {
+      "name": "암산 연습",
+      "shortName": "암산",
+      "description": "온라인 타이머 암산 연습. 4가지 난이도 수준을 지원하며 즉각적인 피드백을 제공합니다. 계산 속도 훈련에 최적입니다.",
+      "metaTitle": "암산 트레이너 - 온라인 타이머 계산 연습",
+      "metaDescription": "타이머가 있는 무료 온라인 암산 연습. 덧셈, 뺄셈, 곱셈, 나눗셈. 초등학생을 위한 챌린지 모드."
+    },
+    "pinyin": {
+      "name": "병음 연습",
+      "shortName": "병음",
+      "description": "병음 사선삼격 연습 시트를 생성합니다. 성모, 운모, 전체 인식 음절을 지원합니다. PDF 내보내기 가능.",
+      "metaTitle": "병음 쓰기 연습 - 사선 병음 시트",
+      "metaDescription": "사선 격자가 있는 무료 병음 연습 시트. 성모, 운모, 전체 인식 음절을 지원합니다. 초등학교 1학년 중국어 학습에 최적입니다."
+    },
+    "poemMemo": {
+      "name": "고전 시 연습",
+      "shortName": "시",
+      "description": "암송 연습을 위한 240개의 중국 고전 시. 초등학교 1~6학년 필수 시와 확장 독서를 포함합니다.",
+      "metaTitle": "고전 시 연습 - 초등학교 시 암송",
+      "metaDescription": "빈칸 채우기, 전문 암송, 줄 완성 모드가 있는 240개의 중국 고전 시. 초등학교 1~6학년을 포함합니다."
+    },
+    "sudoku": {
+      "name": "스도쿠 게임",
+      "shortName": "스도쿠",
+      "description": "여러 난이도 수준을 가진 온라인 스도쿠 게임. 숫자 키패드 입력으로 모든 연령대에 적합합니다.",
+      "metaTitle": "스도쿠 게임 - 무료 온라인 논리 퍼즐",
+      "metaDescription": "쉬움, 중간, 어려움 수준의 무료 온라인 스도쿠. 자동 답안 확인. 논리적 사고 훈련에 최적입니다."
+    },
+    "unitTest": {
+      "name": "단원 테스트",
+      "shortName": "테스트",
+      "description": "온라인으로 무료 초등학교 단원 테스트 용지를 생성합니다. 수학, 중국어, 영어, 과학을 지원합니다. 1~6학년을 포함합니다.",
+      "metaTitle": "단원 테스트 생성기 - 초등학교 테스트 용지",
+      "metaDescription": "수학, 중국어, 영어, 과학을 위한 무료 초등학교 단원 테스트 생성기. 1~6학년을 포함합니다. PDF 내보내기 가능."
+    },
+    "writingTemplate": {
+      "name": "작문 템플릿",
+      "shortName": "작문",
+      "description": "온라인으로 무료 작문 템플릿을 생성합니다. 그림 작문, 일기, 편지 형식 등 초등학교 작문 연습을 지원합니다.",
+      "metaTitle": "작문 템플릿 생성기 - 초등학교 작문 형식",
+      "metaDescription": "그림 작문, 일기, 편지, 독후감 등의 물료 작문 템플릿. 초등학생을 위한 A4 인쇄 형식."
+    }
+  },
+  "blog": {
+    "siteName": "교재 도구상자",
+    "title": "교육 블로그",
+    "description": "실용적인 교육 방법과 학습 팁을 공유하여 아이들의 성장을 돕습니다",
+    "nav": {
+      "home": "홈",
+      "blog": "교육 블로그",
+      "about": "회사 소개",
+      "contact": "문의하기",
+      "terms": "이용 약관"
+    },
+    "footer": {
+      "copyright": "© 2026 교재 도구상자"
+    },
+    "categories": {
+      "all": "전체",
+      "math": "수학 학습",
+      "chinese": "중국어 학습",
+      "english": "영어 학습",
+      "thinking": "사고력 훈련",
+      "studyMethods": "학습 방법",
+      "admissions": "입학 가이드",
+      "tools": "도구 및 리소스",
+      "about": "회사 소개",
+      "general": "종합 교육"
+    },
+    "articleCount": "{count}개의 글",
+    "currentCategory": "카테고리",
+    "readMore": "더 읽기",
+    "noArticles": "이 카테고리에 글이 없습니다",
+    "backToBlog": "블로그 목록으로 돌아가기",
+    "articleNotFound": "글을 찾을 수 없습니다",
+    "relatedArticles": "관련 글",
+    "latestArticles": "최신 글",
+    "categoryNotFound": "카테고리를 찾을 수 없습니다",
+    "categoryNotFoundDesc": "찾으시는 카테고리가 존재하지 않습니다",
+    "categoryPage": {
+      "title": "{category} - 교육 블로그",
+      "description": "{category} 컬렉션: {count}개의 오리지널 글에서 실용적인 교육 경험과 방법을 공유합니다",
+      "articleCount": "오리지널 글 {count}개",
+      "otherCategories": "다른 카테고리 보기"
+    },
+    "languageNotice": {
+      "title": "언어 안내",
+      "description": "이 글은 현재 중국어로만 제공됩니다"
+    },
+    "keywords": {
+      "primary": "초등 교육",
+      "secondary": "학습 방법",
+      "tertiary": "자녀 교육 팁"
+    }
+  }
+}

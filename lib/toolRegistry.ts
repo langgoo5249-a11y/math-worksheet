@@ -9,22 +9,26 @@
  * - Organization 描述中的工具数量
  */
 
+import { type Locale } from './i18n';
+
 export interface ToolConfig {
   /** 工具路径，如 /tools/math-worksheet */
   path: string;
-  /** 工具名称，如 数学练习卷 */
+  /** 工具ID，用于翻译 */
+  id: string;
+  /** 工具名称（中文） */
   name: string;
-  /** 导航栏显示名（简短），如 数学练习卷 */
+  /** 导航栏显示名（简短） */
   navName: string;
   /** 首页卡片图标 */
   icon: string;
-  /** 首页卡片简短描述 */
+  /** 首页卡片简短描述（中文） */
   desc: string;
   /** 首页卡片颜色 */
   color: string;
-  /** JSON-LD 中的完整名称 */
+  /** JSON-LD 中的完整名称（中文） */
   schemaName: string;
-  /** JSON-LD 中的描述 */
+  /** JSON-LD 中的描述（中文） */
   schemaDescription: string;
   /** JSON-LD 应用类型 */
   schemaCategory: 'EducationApplication' | 'GameApplication';
@@ -39,6 +43,7 @@ export interface ToolConfig {
 export const TOOLS: ToolConfig[] = [
   {
     path: '/tools/poem-memo',
+    id: 'poemMemo',
     name: '古诗词默写',
     navName: '古诗词默写',
     icon: '📜',
@@ -53,6 +58,7 @@ export const TOOLS: ToolConfig[] = [
   },
   {
     path: '/tools/unit-test',
+    id: 'unitTest',
     name: '单元测试卷',
     navName: '单元测试卷',
     icon: '📋',
@@ -67,6 +73,7 @@ export const TOOLS: ToolConfig[] = [
   },
   {
     path: '/tools/math-worksheet',
+    id: 'mathWorksheet',
     name: '数学练习卷',
     navName: '数学练习卷',
     icon: '🧮',
@@ -81,6 +88,7 @@ export const TOOLS: ToolConfig[] = [
   },
   {
     path: '/tools/calligraphy',
+    id: 'calligraphy',
     name: '字帖生成器',
     navName: '字帖生成器',
     icon: '✍️',
@@ -95,6 +103,7 @@ export const TOOLS: ToolConfig[] = [
   },
   {
     path: '/tools/english-calligraphy',
+    id: 'englishCalligraphy',
     name: '英语字帖',
     navName: '英语字帖',
     icon: '🔤',
@@ -109,6 +118,7 @@ export const TOOLS: ToolConfig[] = [
   },
   {
     path: '/tools/sudoku',
+    id: 'sudoku',
     name: '数独游戏',
     navName: '数独游戏',
     icon: '🧩',
@@ -123,6 +133,7 @@ export const TOOLS: ToolConfig[] = [
   },
   {
     path: '/tools/pinyin',
+    id: 'pinyin',
     name: '拼音注音',
     navName: '拼音注音',
     icon: '📝',
@@ -137,6 +148,7 @@ export const TOOLS: ToolConfig[] = [
   },
   {
     path: '/tools/mental-math',
+    id: 'mentalMath',
     name: '口算速练',
     navName: '口算速练',
     icon: '⚡',
@@ -151,6 +163,7 @@ export const TOOLS: ToolConfig[] = [
   },
   {
     path: '/tools/flashcards',
+    id: 'flashcards',
     name: '识字卡片',
     navName: '识字卡片',
     icon: '🃏',
@@ -165,6 +178,7 @@ export const TOOLS: ToolConfig[] = [
   },
   {
     path: '/tools/writing-template',
+    id: 'writingTemplate',
     name: '作文模板',
     navName: '作文模板',
     icon: '📄',
@@ -210,10 +224,12 @@ export function generateSchemaBreadcrumbs(): object[] {
   }));
 }
 
-/** 首页导航卡片数据 */
+/** 首页导航卡片数据 - 使用翻译键 */
 export function getHomeToolCards() {
   return TOOLS.filter(t => t.active).map(t => ({
     name: t.name,
+    nameKey: `tools.${t.id}.name`,
+    descKey: `tools.${t.id}.description`,
     icon: t.icon,
     desc: t.desc,
     link: t.path,
@@ -226,6 +242,28 @@ export function getHomeToolCards() {
 export function getNavBarLinks() {
   return TOOLS.filter(t => t.active).map(t => ({
     name: t.navName,
+    nameKey: `tools.${t.id}.shortName`,
     href: t.path,
   }));
+}
+
+/** 获取工具的多语言路径 */
+export function getToolPath(toolId: string, locale: Locale): string {
+  const tool = TOOLS.find(t => t.id === toolId);
+  if (!tool) return '/';
+  return locale === 'zh' ? tool.path : `/${locale}${tool.path}`;
+}
+
+/** 获取所有工具的多语言路径映射 */
+export function getToolPathMappings(toolId: string): Record<string, string> {
+  const tool = TOOLS.find(t => t.id === toolId);
+  if (!tool) return {};
+  
+  return {
+    'zh-CN': `https://www.skillxm.cn${tool.path}`,
+    'en': `https://www.skillxm.cn/en${tool.path}`,
+    'ja': `https://www.skillxm.cn/ja${tool.path}`,
+    'ko': `https://www.skillxm.cn/ko${tool.path}`,
+    'x-default': `https://www.skillxm.cn${tool.path}`,
+  };
 }
