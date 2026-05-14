@@ -541,6 +541,13 @@ export default function HomePage() {
             <span className="text-gray-600">|</span>
             <a href={localePath('/privacy', locale)} className="hover:text-white transition-colors">{t('footer.privacy')}</a>
           </div>
+          {/* 友情链接 */}
+          <div className="border-t border-gray-200 py-4 text-center text-sm text-gray-500">
+            <p className="mb-2 text-gray-400">{t('footer.friendLinks')}</p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href="https://www.tokenfind.cn/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-400 transition-colors">Token聚合平台</a>
+            </div>
+          </div>
           {/* 版权信息 */}
           <div className="border-t border-gray-200 py-4 text-center text-sm text-gray-500">
             <p>{t('footer.copyright')}</p>
