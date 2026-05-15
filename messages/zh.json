@@ -141,7 +141,9 @@
     "description": "分享实用的教育方法和学习技巧，助力孩子成长",
     "nav": {
       "home": "首页",
+      "tools": "学习工具",
       "blog": "教育博客",
+      "search": "搜索",
       "about": "关于我们",
       "contact": "联系我们",
       "terms": "服务条款"

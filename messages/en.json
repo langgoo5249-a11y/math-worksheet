@@ -141,7 +141,9 @@
     "description": "Sharing practical teaching methods and learning tips to help children grow",
     "nav": {
       "home": "Home",
+      "tools": "Learning Tools",
       "blog": "Education Blog",
+      "search": "Search",
       "about": "About Us",
       "contact": "Contact Us",
       "terms": "Terms of Service"
