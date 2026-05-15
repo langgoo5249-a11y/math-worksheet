@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { articles, categories } from './data';
 import type { Category } from './data';
+import { TOOLS } from '@/lib/toolRegistry';
 
 const categoryColors: Record<string, string> = {
   '数学学习': 'bg-blue-500/20 text-blue-300 border-blue-500/30',
@@ -40,7 +41,27 @@ export default function BlogPage() {
             </div>
             <div className="hidden lg:flex items-center gap-1">
               <a href="/" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">首页</a>
-              <a href="/blog" className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">教育博客</a>
+
+              {/* 学习工具下拉 */}
+              <div className="relative group">
+                <button className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                  🛠️ 学习工具
+                  <svg className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                </button>
+                <div className="absolute left-0 top-full mt-1 bg-slate-800 border border-white/10 rounded-xl shadow-2xl p-2 min-w-[200px] z-50 max-h-[60vh] overflow-y-auto opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  {TOOLS.filter(t => t.active).map(tool => (
+                    <a key={tool.path} href={tool.path} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                      <span className="w-7 h-7 bg-blue-500/20 rounded-lg flex items-center justify-center text-sm">{tool.icon}</span>
+                      <div><div className="text-white font-medium">{tool.name}</div><div className="text-xs text-gray-500">{tool.desc}</div></div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              <span className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">📰 教育博客</span>
+
+              <a href="/search" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">🔍 搜索</a>
+
               <a href="/about" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">关于我们</a>
               <a href="/contact" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">联系我们</a>
             </div>
