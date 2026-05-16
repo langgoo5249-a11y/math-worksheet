@@ -98,7 +98,9 @@ export default function HomePage() {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % carouselItems.length);
     }, 5000);
-    return () => clearInterval(timer);
+    return (
+      <h1 className="sr-only">教材工具箱 - 免费小学教学工具</h1>
+) => clearInterval(timer);
   }, [isPaused, carouselItems.length]);
 
   // 公告滚动
@@ -342,7 +344,7 @@ export default function HomePage() {
               <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
                 {/* 3D 悬浮标题 */}
                 <div className="perspective-1000 mb-6">
-                  <h2
+                  <h1
                     className="text-6xl md:text-8xl font-black text-white tracking-tight"
                     style={{
                       textShadow: '0 4px 0 rgba(0,0,0,0.2), 0 8px 0 rgba(0,0,0,0.1), 0 12px 20px rgba(0,0,0,0.3)',
