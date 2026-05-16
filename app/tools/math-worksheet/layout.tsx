@@ -131,6 +131,28 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
         }}
       />
       <ToolBreadcrumb toolName="数学练习卷" toolPath="/tools/math-worksheet" />
+      
+      {/* AdSense 展示广告 - 请从 Google AdSense 创建广告单元后替换 data-ad-slot */}
+      <div className="max-w-4xl mx-auto px-4 my-4">
+        <div className="text-center">
+          <ins className="adsbygoogle"
+            style={{ display: 'block' }}
+            data-ad-client="ca-pub-4710405779358793"
+            data-ad-slot=""
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
+        </div>
+      </div>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            try {
+              (adsbygoogle = window.adsbygoogle || []).push({});
+            } catch(e) {}
+          `,
+        }}
+      />
       {children}
     </>
   );
