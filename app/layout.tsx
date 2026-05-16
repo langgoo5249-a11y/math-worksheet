@@ -323,18 +323,35 @@ export default async function RootLayout({
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-        {/* Google Analytics 4 */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGPDNKW46W" />
+        {/* Google Consent Mode v2 - 默认拒绝 */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
+
+              // Consent Mode v2: 默认所有存储为 denied
+              gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied',
+                'functionality_storage': 'granted',
+                'personalization_storage': 'denied',
+                'security_storage': 'granted',
+                'wait_for_update': 500,
+              });
+
               gtag('js', new Date());
-              gtag('config', 'G-GGPDNKW46W');
+              gtag('config', 'G-GGPDNKW46W', {
+                send_page_view: true
+              });
             `,
           }}
         />
+
+        {/* Google Analytics 4 */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGPDNKW46W" />
 
         <script
           type="application/ld+json"
