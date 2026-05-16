@@ -98,9 +98,7 @@ export default function HomePage() {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % carouselItems.length);
     }, 5000);
-    return (
-      <h1 className="sr-only">教材工具箱 - 免费小学教学工具</h1>
-) => clearInterval(timer);
+    return () => clearInterval(timer);
   }, [isPaused, carouselItems.length]);
 
   // 公告滚动
