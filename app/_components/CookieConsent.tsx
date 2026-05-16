@@ -2,14 +2,16 @@
 import { useState, useEffect } from 'react';
 
 /**
- * CookieConsent — 真正控制追踪脚本加载
+ * CookieConsent — Google Consent Mode v2 整合
  * 
  * 同意机制：
- * - "接受全部" → localStorage 'accepted' → 触发自定义事件 'cookie-consent-accepted'
- * - "仅必要Cookie" → localStorage 'rejected' → 不触发追踪脚本
+ * - "接受全部" → Consent Mode v2 grant + 触发追踪脚本
+ * - "仅必要 Cookie" → Consent Mode v2 deny + 不触发追踪
  * 
- * layout.tsx 中的百度统计和 AdSense 脚本会检查此状态，
- * 仅在 consent=accepted 时才加载。
+ * Consent Mode v2:
+ * - 默认所有存储为 denied（在 layout.tsx 中设置）
+ * - 用户接受后更新为 granted
+ * - GA4 和 AdSense 接收 consent update 信号
  */
 export default function CookieConsent() {
   const [show, setShow] = useState(false);
@@ -19,14 +21,34 @@ export default function CookieConsent() {
     if (!consent) {
       setShow(true);
     } else if (consent === 'accepted') {
-      // 已接受，触发追踪脚本加载
+      // 恢复已接受的 consent 状态
+      updateConsent('granted');
       window.dispatchEvent(new Event('cookie-consent-accepted'));
     }
   }, []);
 
+  // 更新 Google Consent Mode v2 状态
+  const updateConsent = (state: 'granted' | 'denied') => {
+    try {
+      window.gtag('consent', 'update', {
+        'ad_storage': state,
+        'ad_user_data': state,
+        'ad_personalization': state,
+        'analytics_storage': state,
+        'functionality_storage': 'granted',
+        'personalization_storage': state,
+        'security_storage': 'granted',
+      });
+    } catch (e) {
+      // gtag 可能还未加载，忽略
+    }
+  };
+
   const accept = () => {
     localStorage.setItem('cookie-consent', 'accepted');
     setShow(false);
+    // Google Consent Mode v2: 更新为已授权
+    updateConsent('granted');
     // 通知 layout.tsx 可以加载追踪脚本
     window.dispatchEvent(new Event('cookie-consent-accepted'));
   };
@@ -34,6 +56,8 @@ export default function CookieConsent() {
   const reject = () => {
     localStorage.setItem('cookie-consent', 'rejected');
     setShow(false);
+    // Google Consent Mode v2: 保持拒绝
+    updateConsent('denied');
     // 不触发事件，追踪脚本不会加载
   };
 
