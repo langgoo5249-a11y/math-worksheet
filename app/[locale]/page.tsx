@@ -352,7 +352,7 @@ export default function HomePage() {
                     }}
                   >
                     {t('home.hero.title')}
-                  </h2>
+                  </h1>
                 </div>
 
                 {/* 副标题 */}
