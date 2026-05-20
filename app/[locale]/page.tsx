@@ -692,7 +692,7 @@ export default function HomePage() {
                 <span className="text-sm font-bold text-gray-800">微信小程序使用</span>
               </div>
               <div className="bg-gray-50 rounded-xl p-2 mb-2">
-                <img src="/miniapp-qrcode.svg" alt="微信小程序二维码" className="w-full h-auto rounded-lg" />
+                <img src="/miniapp-qrcode.jpg" alt="微信小程序二维码" className="w-full h-auto rounded-lg" />
               </div>
               <p className="text-xs text-gray-500 text-center">微信扫码 → 即刻使用</p>
             </div>
