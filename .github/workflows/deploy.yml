@@ -18,6 +18,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         
+      - name: Clean cache
+        run: rm -rf .next out node_modules/.cache
+        
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
