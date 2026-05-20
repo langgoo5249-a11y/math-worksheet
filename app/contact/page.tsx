@@ -168,6 +168,31 @@ export default function ContactPage() {
           </div>
         </section>
       </div>
+
+      {/* ===== 微信小程序浮动二维码 ===== */}
+      <div className="fixed right-4 bottom-24 z-50 group" id="miniapp-float">
+        <div className="relative">
+          {/* 展开的二维码卡片 */}
+          <div className="absolute bottom-full right-0 mb-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+            <div className="bg-white rounded-2xl shadow-2xl p-4 w-52 border border-gray-100">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-lg">📱</span>
+                <span className="text-sm font-bold text-gray-800">微信小程序使用</span>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-2 mb-2">
+                <img src="/miniapp-qrcode.jpg" alt="微信小程序二维码" className="w-full h-auto rounded-lg" />
+              </div>
+              <p className="text-xs text-gray-500 text-center">微信扫码 → 即刻使用</p>
+            </div>
+            {/* 小三角 */}
+            <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-r border-b border-gray-100 transform rotate-45"></div>
+          </div>
+          {/* 浮动按钮 */}
+          <div className="w-12 h-12 bg-green-500 hover:bg-green-600 rounded-full shadow-lg shadow-green-500/30 flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 hover:shadow-xl">
+            <span className="text-white text-xl">📱</span>
+          </div>
+        </div>
+      </div>
     </SiteLayout>
   );
 }
