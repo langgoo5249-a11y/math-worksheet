@@ -10,8 +10,8 @@ const path = require('path');
 const { execSync } = require('child_process');
 
 // 百度主动推送配置
-const BAIDU_PUSH_URL = 'http://data.zz.baidu.com/urls?site=https://biaoji.skillxm.cn&token=zJsDaj5ibt8ZlVgz';
-const SITE_BASE_URL = 'https://biaoji.skillxm.cn';
+const BAIDU_PUSH_URL = 'http://data.zz.baidu.com/urls?site=https://www.skillxm.cn&token=zJsDaj5ibt8ZlVgz';
+const SITE_BASE_URL = 'https://www.skillxm.cn';
 
 // 需要推送的URL列表
 const urlsToPush = [
