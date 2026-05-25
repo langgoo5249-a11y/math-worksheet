@@ -68,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 首页 - 所有语言版本
   SUPPORTED_LOCALES.forEach(locale => {
-    const url = locale === defaultLocale ? BASE_URL : `${BASE_URL}/${locale}/`;
+    const url = locale === defaultLocale ? `${BASE_URL}/` : `${BASE_URL}/${locale}/`;
     sitemapEntries.push({
       url,
       lastModified: today,

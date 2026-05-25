@@ -46,7 +46,7 @@ export async function generateMetadata({
       images: ["https://www.skillxm.cn/og-image.jpg"],
     },
     alternates: {
-      canonical: `https://www.skillxm.cn/${safeLocale === defaultLocale ? "" : safeLocale + "/"}`,
+      canonical: `https://www.skillxm.cn/${safeLocale === defaultLocale ? "/" : safeLocale + "/"}`,
       languages: {
         "zh-CN": "https://www.skillxm.cn/",
         "en": "https://www.skillxm.cn/en/",

@@ -22,7 +22,7 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "练学宝 - 免费小学教学工具/数学练习卷/字帖/口算生成器等",
   description: "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常练习与教师课堂教学使用。",
-  keywords: "教学工具箱,练学宝,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印",
+  keywords: "练学宝,练学宝,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印",
   openGraph: {
     title: "练学宝 - 免费小学教学工具/数学练习卷/字帖/口算生成器等",
     description: "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常练习与教师课堂教学使用。",
@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     canonical: "https://www.skillxm.cn/",
     languages: {
       'zh-CN': 'https://www.skillxm.cn/',
+      'en': 'https://www.skillxm.cn/en/',
+      'ja': 'https://www.skillxm.cn/ja/',
+      'ko': 'https://www.skillxm.cn/ko/',
       'x-default': 'https://www.skillxm.cn/',
     },
   },
