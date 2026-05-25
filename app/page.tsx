@@ -159,6 +159,7 @@ export default function HomePage() {
   const [showToolsMenu, setShowToolsMenu] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [showMiniQR, setShowMiniQR] = useState(false);
   const announcementRef = useRef<HTMLDivElement>(null);
 
   const handleCopy = () => {
@@ -849,10 +850,10 @@ export default function HomePage() {
       )}
 
       {/* ===== 微信小程序浮动二维码 ===== */}
-      <div className="fixed right-4 bottom-24 z-50 group" id="miniapp-float">
+      <div className="fixed right-4 bottom-24 z-50" id="miniapp-float">
         <div className="relative">
-          {/* 展开的二维码卡片 */}
-          <div className="absolute bottom-full right-0 mb-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+          {/* 展开的二维码卡片 - 桌面端hover触发，移动端通过state控制 */}
+          <div className={`absolute bottom-full right-0 mb-3 transition-all duration-300 transform ${showMiniQR ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible translate-y-2'} md:group-hover:opacity-100 md:group-hover:visible md:group-hover:translate-y-0`}>
             <div className="bg-white rounded-2xl shadow-2xl p-4 w-52 border border-gray-100">
               <div className="flex items-center gap-2 mb-3">
                 <span className="text-lg">📱</span>
@@ -866,8 +867,8 @@ export default function HomePage() {
             {/* 小三角 */}
             <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-r border-b border-gray-100 transform rotate-45"></div>
           </div>
-          {/* 浮动按钮 */}
-          <div className="w-12 h-12 bg-green-500 hover:bg-green-600 rounded-full shadow-lg shadow-green-500/30 flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 hover:shadow-xl">
+          {/* 浮动按钮 - 点击切换显示/隐藏 */}
+          <div className="group w-12 h-12 bg-green-500 hover:bg-green-600 active:bg-green-700 rounded-full shadow-lg shadow-green-500/30 flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 active:scale-95 hover:shadow-xl" onClick={() => setShowMiniQR(!showMiniQR)}>
             <span className="text-white text-xl">📱</span>
           </div>
         </div>
