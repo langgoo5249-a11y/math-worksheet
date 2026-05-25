@@ -41,7 +41,7 @@ export default function ToolNavBar({ currentPath = '', title, locale = defaultLo
   };
 
   // Logo 文字：非中文时使用翻译
-  const logoText = isEn ? t('nav.home') : '教材工具箱';
+  const logoText = isEn ? t('nav.home') : '练学宝';
   // 首页链接文字
   const homeText = isEn ? 'Home' : '首页';
 

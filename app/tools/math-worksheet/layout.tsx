@@ -9,16 +9,16 @@ export async function generateMetadata(): Promise<Metadata> {
   const pathname = headersList.get("x-invoke-path") ?? headersList.get("x-matched-path") ?? "/tools/math-worksheet";
   const canonicalUrl = `${protocol}://${host}${pathname}`;
   return {
-    title: "小学数学练习卷生成器 - 1-6年级免费在线出题PDF打印 | 教材工具箱",
+    title: "小学数学练习卷生成器 - 1-6年级免费在线出题PDF打印 | 练学宝",
     description: "免费在线生成小学1-6年级数学练习卷，支持加减乘除、竖式计算、填空题、应用题等11种题型，随机出题PDF打印",
     keywords: "数学练习卷,数学出题器,小学数学练习题,一年级数学练习,二年级口算题,三年级数学竖式,四年级应用题,五年级分数计算,六年级方程练习,加减乘除练习,竖式计算题,数学试卷打印,免费数学练习题,小学数学作业,数学练习卷生成器,在线出题,PDF打印,口算题生成,混合运算练习,数学填空题",
     alternates: { canonical: canonicalUrl },
     openGraph: {
       url: canonicalUrl,
-      title: "数学练习卷生成器 - 免费在线出题打印 | 教材工具箱",
+      title: "数学练习卷生成器 - 免费在线出题打印 | 练学宝",
       description: "免费在线生成小学1-6年级数学练习卷，支持加减乘除、竖式计算、填空题、应用题等11种题型，随机出题PDF打印",
       type: "website",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数学练习卷生成器")}&category=${encodeURIComponent("数学工具")}&icon=🧮`, width: 1200, height: 630, alt: "数学练习卷生成器 - 教材工具箱" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数学练习卷生成器")}&category=${encodeURIComponent("数学工具")}&icon=🧮`, width: 1200, height: 630, alt: "数学练习卷生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
     },
   };
 }
@@ -41,7 +41,7 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
         </ul>
         <h2>适用对象</h2>
         <p>小学1-6年级学生家长、小学数学教师、课后辅导机构老师。适合日常数学练习、单元测试出题、期末复习巩固、假期作业布置等场景使用。</p>
-        <p>访问 <a href="https://www.skillxm.cn">教材工具箱</a> 获取更多免费教学工具，包括字帖生成器、英语字帖、数独游戏、口算速练等。</p>
+        <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具，包括字帖生成器、英语字帖、数独游戏、口算速练等。</p>
         <h2>相关学习文章</h2>
         <ul>
           <li><a href="https://www.skillxm.cn/blog/yinianji-shuxue-qimeng">一年级数学启蒙：从数数到20以内加减法的完整路径</a></li>

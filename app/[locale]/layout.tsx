@@ -28,7 +28,7 @@ export async function generateMetadata({
       description: t("description"),
       type: "website",
       url: `https://www.skillxm.cn/${safeLocale === defaultLocale ? "" : safeLocale}`,
-      siteName: "教材工具箱",
+      siteName: "练学宝",
       locale: safeLocale === "zh" ? "zh_CN" : safeLocale,
       images: [
         {

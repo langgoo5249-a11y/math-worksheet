@@ -108,7 +108,7 @@ const FEATURE_CARDS = [
 const FAQ_ITEMS = [
   {
     q: '完全免费吗？',
-    a: '是的，教材工具箱所有功能完全免费使用，无需注册账号，无需付费，无任何隐藏费用。',
+    a: '是的，练学宝所有功能完全免费使用，无需注册账号，无需付费，无任何隐藏费用。',
   },
   {
     q: '生成的 PDF 会有水印或广告吗？',
@@ -222,7 +222,7 @@ export default function HomePage() {
                 📚
               </div>
               <a href="/" className="text-2xl font-bold text-white hover:opacity-80 transition-opacity">
-                教材工具箱
+                练学宝
               </a>
             </div>
 
@@ -293,7 +293,7 @@ export default function HomePage() {
             <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
               <div className="flex items-center gap-2">
                 <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-sm">📚</div>
-                <span className="text-lg font-bold text-white">教材工具箱</span>
+                <span className="text-lg font-bold text-white">练学宝</span>
               </div>
               <button onClick={() => setMobileMenu(false)} aria-label="关闭菜单" className="p-1.5 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -678,7 +678,7 @@ export default function HomePage() {
           </div>
           {/* 版权信息 */}
           <div className="border-t border-gray-200 py-4 text-center text-sm text-gray-500">
-            <p>© 2026 教材工具箱. 专注小学教育，让每个孩子都能免费使用优质的教育工具。</p>
+            <p>© 2026 练学宝. 专注小学教育，让每个孩子都能免费使用优质的教育工具。</p>
           </div>
         </div>
       </footer>

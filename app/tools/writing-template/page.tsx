@@ -612,7 +612,7 @@ export default function WritingTemplatePage({ locale }: { locale?: Locale } = {}
       {/* ===== 页脚 ===== */}
       <footer className="border-t border-white/10 py-6 px-4 mt-8">
         <div className="max-w-7xl mx-auto text-center text-gray-500 text-sm">
-          <p>📝 作文模板生成器 - 教材工具箱 | 免费在线生成作文稿纸模板</p>
+          <p>📝 作文模板生成器 - 练学宝 | 免费在线生成作文稿纸模板</p>
         </div>
       </footer>
 

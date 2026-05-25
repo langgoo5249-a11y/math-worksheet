@@ -36,7 +36,7 @@ export default function BlogPage() {
                 📚
               </div>
               <a href="/" className="text-lg font-bold text-white hover:opacity-80 transition-opacity">
-                教材工具箱
+                练学宝
               </a>
             </div>
             <div className="hidden lg:flex items-center gap-1">
@@ -162,7 +162,7 @@ export default function BlogPage() {
             <a href="/blog" className="hover:text-white transition-colors">教育博客</a>
           </div>
           <div className="text-center text-gray-500 text-sm">
-            &copy; 2026 教材工具箱
+            &copy; 2026 练学宝
           </div>
         </div>
       </footer>

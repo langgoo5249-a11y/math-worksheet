@@ -28,7 +28,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
                 📚
               </div>
               <a href="/" className="text-lg font-bold text-white hover:opacity-80 transition-opacity">
-                教材工具箱
+                练学宝
               </a>
             </div>
 
@@ -122,7 +122,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
             <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
               <div className="flex items-center gap-2">
                 <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-sm">📚</div>
-                <span className="text-base font-bold text-white">教材工具箱</span>
+                <span className="text-base font-bold text-white">练学宝</span>
               </div>
               <button onClick={() => setMobileMenu(false)} aria-label="关闭菜单" className="p-1.5 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -216,7 +216,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
             <a href="/privacy" className="hover:text-white transition-colors">隐私政策</a>
           </div>
           <div className="text-center text-gray-500 text-sm">
-            &copy; 2026 教材工具箱
+            &copy; 2026 练学宝
           </div>
         </div>
       </footer>

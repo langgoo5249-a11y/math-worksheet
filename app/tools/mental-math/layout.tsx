@@ -9,16 +9,16 @@ export async function generateMetadata(): Promise<Metadata> {
   const pathname = headersList.get("x-invoke-path") ?? headersList.get("x-matched-path") ?? "/tools/mental-math";
   const canonicalUrl = `${protocol}://${host}${pathname}`;
   return {
-    title: "口算速练 - 在线口算计时挑战 | 教材工具箱",
+    title: "口算速练 - 在线口算计时挑战 | 练学宝",
     description: "免费在线口算速练工具，提供4个难度级别，涵盖加减乘除全运算类型，计时挑战即时反馈，适合小学一二年级到五六年级学生日常口算打卡训练。",
     keywords: "口算速练,口算练习,口算计时,速算训练,数学口算,口算题,在线口算,一年级口算题,二年级口算练习,100道口算题,口算题生成器,口算天天练,20以内加减法口算,100以内口算,口算打卡,口算比赛,口算训练,口算测试",
     alternates: { canonical: canonicalUrl },
     openGraph: {
       url: canonicalUrl,
-      title: "口算速练 - 免费在线口算计时挑战 | 教材工具箱",
+      title: "口算速练 - 免费在线口算计时挑战 | 练学宝",
       description: "免费在线口算速练工具，提供4个难度级别，涵盖加减乘除全运算类型，计时挑战即时反馈，适合小学一二年级到五六年级学生日常口算打卡训练。",
       type: "website",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 教材工具箱" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
     },
   };
 }
@@ -41,7 +41,7 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
         </ul>
         <h2>适用对象</h2>
         <p>小学1-6年级学生、需要提升计算速度的中小学生、家长辅导孩子口算练习、教师课堂口算训练。适合每日口算打卡、课前热身练习、期末口算复习、假期计算能力巩固等场景。</p>
-        <p>访问 <a href="https://www.skillxm.cn">教材工具箱</a> 获取更多免费教学工具，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏等。</p>
+        <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏等。</p>
         <h2>相关学习文章</h2>
         <ul>
           <li><a href="https://www.skillxm.cn/blog/kousuan-sudu-tisheng">口算速度提升方法：从每分钟5题到20题</a></li>

@@ -9,11 +9,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const pathname = headersList.get("x-invoke-path") ?? headersList.get("x-matched-path") ?? "/tools/writing-template";
   const canonicalUrl = `${protocol}://${host}${pathname}`;
   return {
-    title: "作文模板生成器 - 看图写话/日记/作文格纸 | 教材工具箱",
+    title: "作文模板生成器 - 看图写话/日记/作文格纸 | 练学宝",
     description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。",
     keywords: "作文模板,看图写话,日记模板,作文格纸,小学作文,写作练习,作文纸打印,作文格子,三年级作文模板,看图写话练习纸,小学生日记格式,作文开头结尾,写人作文模板,记事作文模板,写景作文模板,作文素材,低年级写话,作文格子纸",
     alternates: { canonical: canonicalUrl },
-    openGraph: { url: canonicalUrl, title: "作文模板生成器 - 教材工具箱", description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。", images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 教材工具箱" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }] },
+    openGraph: { url: canonicalUrl, title: "作文模板生成器 - 练学宝", description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。", images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }] },
   };
 }
 
@@ -22,7 +22,7 @@ export default function WritingTemplateLayout({ children }: { children: React.Re
     <>
       <div className="sr-only">
         <h2>作文模板生成器 - 小学作文格纸免费打印</h2>
-        <p>免费生成小学作文格纸模板，看图写话、日记、作文格子纸。教材工具箱提供多种作文书写模板，涵盖小学低年级到高年级的写作练习需求，支持PDF格式免费打印。</p>
+        <p>免费生成小学作文格纸模板，看图写话、日记、作文格子纸。练学宝提供多种作文书写模板，涵盖小学低年级到高年级的写作练习需求，支持PDF格式免费打印。</p>
         <h2>核心功能</h2>
         <ul>
           <li>看图写话模板：专为小学低年级设计，配有图片区域和拼音格/田字格书写区域，适合一二年级看图写话练习</li>
@@ -32,7 +32,7 @@ export default function WritingTemplateLayout({ children }: { children: React.Re
         </ul>
         <h2>适用对象</h2>
         <p>作文模板生成器适合小学语文教师、学生家长以及小学各年级学生使用。无论是日常写作练习、考试作文训练还是家庭作业，都可以通过本工具快速生成规范的作文书写模板，培养孩子良好的书写习惯。</p>
-        <p>访问 <a href="https://www.skillxm.cn">教材工具箱</a> 获取更多免费教学工具。</p>
+        <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具。</p>
         <h2>相关学习文章</h2>
         <ul>
           <li><a href="https://www.skillxm.cn/blog/xiaoxue-zuowen-moban">小学作文不会写？3个模板轻松写出300字</a></li>

@@ -24,9 +24,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const ogImage = generateOgImage(article);
   
   return {
-    title: `${article.title} | 教材工具箱`,
+    title: `${article.title} | 练学宝`,
     description: article.description,
-    authors: [{ name: '教材工具箱' }],
+    authors: [{ name: '练学宝' }],
     keywords: article.keywords || [article.category, '小学教育', '学习方法', '家长辅导'],
     alternates: {
       canonical: `https://www.skillxm.cn/blog/${slug}/`,
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: 'article',
       publishedTime: article.date,
       modifiedTime: article.date,
-      authors: ['教材工具箱'],
+      authors: ['练学宝'],
       images: [
         {
           url: ogImage,
@@ -51,10 +51,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
           url: 'https://www.skillxm.cn/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: '教材工具箱',
+          alt: '练学宝',
         },
       ],
-      siteName: '教材工具箱',
+      siteName: '练学宝',
       locale: 'zh_CN',
     },
     twitter: {
@@ -87,7 +87,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     },
     "publisher": {
       "@type": "Organization",
-      "name": "教材工具箱",
+      "name": "练学宝",
       "url": "https://www.skillxm.cn/",
       "logo": {
         "@type": "ImageObject",

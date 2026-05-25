@@ -47,7 +47,7 @@ const categorySEOConfig: Record<string, {
     ability: '学习效率',
   },
   '关于我们': {
-    keywords: ['教材工具箱介绍', '教育工具团队', '关于我们', '教育理念', '团队介绍'],
+    keywords: ['练学宝介绍', '教育工具团队', '关于我们', '教育理念', '团队介绍'],
     topics: '团队介绍、教育理念、产品更新等核心内容',
     ability: '教育认知',
   },
@@ -83,7 +83,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   // 验证分类是否有效
   if (!categoryList.includes(category as (typeof categoryList)[number])) {
     return {
-      title: '分类未找到 - 教材工具箱',
+      title: '分类未找到 - 练学宝',
     };
   }
 
@@ -95,21 +95,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const categoryArticles = articles.filter(a => a.category === category);
   const count = categoryArticles.length;
-  const description = `教材工具箱${category}专栏：共${count}篇原创文章，涵盖${config.topics}。分享实用的${category}经验和方法，帮助小学生提升${config.ability}能力。`;
+  const description = `练学宝${category}专栏：共${count}篇原创文章，涵盖${config.topics}。分享实用的${category}经验和方法，帮助小学生提升${config.ability}能力。`;
 
   return {
-    title: `${category} - 教材工具箱教育博客`,
+    title: `${category} - 练学宝教育博客`,
     description,
     keywords: config.keywords,
     alternates: {
       canonical: `${BASE_URL}/blog/category/${category}/`,
     },
     openGraph: {
-      title: `${category} - 教材工具箱教育博客`,
+      title: `${category} - 练学宝教育博客`,
       description,
       type: 'website',
       url: `${BASE_URL}/blog/category/${category}/`,
-      siteName: '教材工具箱',
+      siteName: '练学宝',
       locale: 'zh_CN',
     },
   };
@@ -132,7 +132,7 @@ export default async function CategoryPage({ params }: PageProps) {
                   📚
                 </div>
                 <a href="/" className="text-lg font-bold text-white hover:opacity-80 transition-opacity">
-                  教材工具箱
+                  练学宝
                 </a>
               </div>
             </div>
@@ -165,18 +165,18 @@ export default async function CategoryPage({ params }: PageProps) {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const count = categoryArticles.length;
-  const description = `教材工具箱${category}专栏：共${count}篇原创文章，涵盖${config.topics}。分享实用的${category}经验和方法，帮助小学生提升${config.ability}能力。`;
+  const description = `练学宝${category}专栏：共${count}篇原创文章，涵盖${config.topics}。分享实用的${category}经验和方法，帮助小学生提升${config.ability}能力。`;
 
   // JSON-LD 结构化数据
   const collectionPageJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: `${category} - 教材工具箱教育博客`,
+    name: `${category} - 练学宝教育博客`,
     description,
     url: `${BASE_URL}/blog/category/${category}/`,
     isPartOf: {
       '@type': 'WebSite',
-      name: '教材工具箱',
+      name: '练学宝',
       url: BASE_URL,
     },
     mainEntity: {
@@ -243,7 +243,7 @@ export default async function CategoryPage({ params }: PageProps) {
                   📚
                 </div>
                 <a href="/" className="text-lg font-bold text-white hover:opacity-80 transition-opacity">
-                  教材工具箱
+                  练学宝
                 </a>
               </div>
               <div className="hidden lg:flex items-center gap-1">
@@ -399,7 +399,7 @@ export default async function CategoryPage({ params }: PageProps) {
               <a href="/blog" className="hover:text-white transition-colors">教育博客</a>
             </div>
             <div className="text-center text-gray-500 text-sm">
-              &copy; 2026 教材工具箱
+              &copy; 2026 练学宝
             </div>
           </div>
         </footer>

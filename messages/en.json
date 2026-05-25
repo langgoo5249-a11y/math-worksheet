@@ -1,11 +1,11 @@
 {
   "metadata": {
-    "title": "Teaching Toolbox - Free Elementary Learning Tools / Math Worksheets / Calligraphy / Mental Math",
-    "description": "Teaching Toolbox offers 10+ free elementary learning tools including math worksheet generator, calligraphy practice sheets, mental math trainer, pinyin learning, flashcards, classical poetry, unit tests, and more. PDF export available, no registration required. Suitable for grades 1-6 students and teachers.",
-    "keywords": "teaching toolbox, elementary learning tools, math worksheet generator, calligraphy practice, mental math, pinyin learning, flashcards, classical poetry, unit tests, free worksheets, educational resources, PDF print"
+    "title": "LianXueBao - Free Elementary Learning Tools / Math Worksheets / Calligraphy / Mental Math",
+    "description": "LianXueBao offers 10+ free elementary learning tools including math worksheet generator, calligraphy practice sheets, mental math trainer, pinyin learning, flashcards, classical poetry, unit tests, and more. PDF export available, no registration required. Suitable for grades 1-6 students and teachers.",
+    "keywords": "LianXueBao, elementary learning tools, math worksheet generator, calligraphy practice, mental math, pinyin learning, flashcards, classical poetry, unit tests, free worksheets, educational resources, PDF print"
   },
   "nav": {
-    "home": "Teaching Toolbox",
+    "home": "LianXueBao",
     "tools": "Learning Tools",
     "blog": "Education Blog",
     "search": "Search",
@@ -137,7 +137,7 @@
     }
   },
   "blog": {
-    "siteName": "Teaching Toolbox",
+    "siteName": "LianXueBao",
     "title": "Education Blog",
     "description": "Sharing practical teaching methods and learning tips to help children grow",
     "nav": {

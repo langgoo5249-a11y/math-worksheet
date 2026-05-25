@@ -137,7 +137,7 @@ export default function HomePage() {
 
   return (
     <>
-    <h1 className="sr-only">教材工具箱 - 免费小学教学工具</h1>
+    <h1 className="sr-only">练学宝 - 免费小学教学工具</h1>
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
       {/* ===== 顶部导航 ===== */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-white/10">

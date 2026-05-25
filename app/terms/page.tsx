@@ -2,22 +2,22 @@ import type { Metadata } from 'next';
 import SiteLayout from '../_components/SiteLayout';
 
 export const metadata: Metadata = {
-  title: '服务条款 - 教材工具箱',
-  description: '教材工具箱服务条款，包括使用规则、知识产权、免责声明和隐私保护等内容。',
+  title: '服务条款 - 练学宝',
+  description: '练学宝服务条款，包括使用规则、知识产权、免责声明和隐私保护等内容。',
   alternates: {
     canonical: 'https://www.skillxm.cn/terms',
   },
   openGraph: {
     url: 'https://www.skillxm.cn/terms/',
-    title: '服务条款 - 教材工具箱',
-    description: '教材工具箱服务条款，包括使用规则、知识产权、免责声明和隐私保护等内容。',
+    title: '服务条款 - 练学宝',
+    description: '练学宝服务条款，包括使用规则、知识产权、免责声明和隐私保护等内容。',
     type: 'website',
-    images: [{ url: 'https://www.skillxm.cn/og-image.jpg', width: 1200, height: 630, alt: '教材工具箱' }],
+    images: [{ url: 'https://www.skillxm.cn/og-image.jpg', width: 1200, height: 630, alt: '练学宝' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '服务条款 - 教材工具箱',
-    description: '教材工具箱服务条款，包括使用规则、知识产权、免责声明和隐私保护等内容。',
+    title: '服务条款 - 练学宝',
+    description: '练学宝服务条款，包括使用规则、知识产权、免责声明和隐私保护等内容。',
     images: ['https://www.skillxm.cn/og-image.jpg'],
   },
 };
@@ -39,7 +39,7 @@ export default function TermsPage() {
               <span className="text-xl">📖</span> 一、服务说明
             </h2>
             <p className="text-gray-300 leading-relaxed mb-3">
-              欢迎使用教材工具箱（以下简称&ldquo;本站&rdquo;）。本站提供免费的在线教育工具服务，包括但不限于数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板和拼音注音等工具。
+              欢迎使用练学宝（以下简称&ldquo;本站&rdquo;）。本站提供免费的在线教育工具服务，包括但不限于数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板和拼音注音等工具。
             </p>
             <p className="text-gray-300 leading-relaxed">
               本站所有工具均可免费使用，无需注册账号，无需付费。使用本站服务即表示您同意遵守以下服务条款。
@@ -83,7 +83,7 @@ export default function TermsPage() {
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <div>
                 <h3 className="text-white font-medium mb-2">3.1 工具代码</h3>
-                <p>本站所有工具的源代码、设计、界面和功能均归教材工具箱所有，受中华人民共和国著作权法保护。未经授权，不得复制、修改、分发本站代码。</p>
+                <p>本站所有工具的源代码、设计、界面和功能均归练学宝所有，受中华人民共和国著作权法保护。未经授权，不得复制、修改、分发本站代码。</p>
               </div>
               <div>
                 <h3 className="text-white font-medium mb-2">3.2 用户生成内容</h3>
@@ -173,7 +173,7 @@ export default function TermsPage() {
               <span className="text-xl">📝</span> 七、条款修改
             </h2>
             <p className="text-gray-300 leading-relaxed mb-3">
-              教材工具箱保留随时修改本服务条款的权利。修改后的条款将在本页面发布，并更新&ldquo;最后更新日期&rdquo;。继续使用本站服务即表示您同意修改后的条款。
+              练学宝保留随时修改本服务条款的权利。修改后的条款将在本页面发布，并更新&ldquo;最后更新日期&rdquo;。继续使用本站服务即表示您同意修改后的条款。
             </p>
             <p className="text-gray-300 leading-relaxed">
               建议您定期查看本页面，以了解最新的服务条款。如有任何疑问，请通过邮件与我们联系。

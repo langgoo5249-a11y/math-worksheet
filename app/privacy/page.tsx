@@ -2,22 +2,22 @@ import type { Metadata } from 'next';
 import SiteLayout from '../_components/SiteLayout';
 
 export const metadata: Metadata = {
-  title: '隐私政策 - 教材工具箱',
-  description: '教材工具箱隐私政策，说明我们如何收集、使用和保护您的信息。',
+  title: '隐私政策 - 练学宝',
+  description: '练学宝隐私政策，说明我们如何收集、使用和保护您的信息。',
   alternates: {
     canonical: 'https://www.skillxm.cn/privacy',
   },
   openGraph: {
     url: 'https://www.skillxm.cn/privacy/',
-    title: '隐私政策 - 教材工具箱',
-    description: '教材工具箱隐私政策，说明我们如何收集、使用和保护您的信息。',
+    title: '隐私政策 - 练学宝',
+    description: '练学宝隐私政策，说明我们如何收集、使用和保护您的信息。',
     type: 'website',
-    images: [{ url: 'https://www.skillxm.cn/og-image.jpg', width: 1200, height: 630, alt: '教材工具箱' }],
+    images: [{ url: 'https://www.skillxm.cn/og-image.jpg', width: 1200, height: 630, alt: '练学宝' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '隐私政策 - 教材工具箱',
-    description: '教材工具箱隐私政策，说明我们如何收集、使用和保护您的信息。',
+    title: '隐私政策 - 练学宝',
+    description: '练学宝隐私政策，说明我们如何收集、使用和保护您的信息。',
     images: ['https://www.skillxm.cn/og-image.jpg'],
   },
 };
@@ -40,7 +40,7 @@ export default function PrivacyPage() {
               <span className="text-xl">📋</span> 概述
             </h2>
             <p className="text-gray-300 leading-relaxed mb-3">
-              教材工具箱（以下简称"我们"或"本站"）非常重视用户隐私保护。本隐私政策旨在向您说明我们如何收集、使用、存储和保护您的信息，以及您享有的相关权利。
+              练学宝（以下简称"我们"或"本站"）非常重视用户隐私保护。本隐私政策旨在向您说明我们如何收集、使用、存储和保护您的信息，以及您享有的相关权利。
             </p>
             <p className="text-gray-300 leading-relaxed">
               使用本站服务即表示您同意本隐私政策中描述的信息收集和使用方式。如果您不同意本政策，请停止使用本站服务。

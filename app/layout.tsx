@@ -20,28 +20,28 @@ const notoSansSC = Noto_Sans_SC({
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "教材工具箱 - 免费小学教学工具/数学练习卷/字帖/口算生成器等",
-  description: "教材工具箱提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常练习与教师课堂教学使用。",
-  keywords: "教学工具箱,教材工具箱,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印",
+  title: "练学宝 - 免费小学教学工具/数学练习卷/字帖/口算生成器等",
+  description: "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常练习与教师课堂教学使用。",
+  keywords: "教学工具箱,练学宝,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印",
   openGraph: {
-    title: "教材工具箱 - 免费小学教学工具/数学练习卷/字帖/口算生成器等",
-    description: "教材工具箱提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常练习与教师课堂教学使用。",
+    title: "练学宝 - 免费小学教学工具/数学练习卷/字帖/口算生成器等",
+    description: "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常练习与教师课堂教学使用。",
     type: "website",
     url: "https://www.skillxm.cn",
-    siteName: "教材工具箱",
+    siteName: "练学宝",
     locale: "zh_CN",
     images: [
       {
         url: "https://www.skillxm.cn/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "教材工具箱 - 免费在线教育工具",
+        alt: "练学宝 - 免费在线教育工具",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "教材工具箱 - 免费小学数学练习卷生成器/字帖/作文模板",
+    title: "练学宝 - 免费小学数学练习卷生成器/字帖/作文模板",
     description: "免费在线教育工具，支持小学1-6年级数学练习卷、字帖、拼音卡片、数独、作文模板等，PDF导出即印即用，无需注册完全免费。",
     images: ["https://www.skillxm.cn/og-image.jpg"],
   },
@@ -86,7 +86,7 @@ export default async function RootLayout({
       {
         "@type": "WebSite",
         "@id": "https://www.skillxm.cn/#website",
-        name: "教材工具箱",
+        name: "练学宝",
         url: "https://www.skillxm.cn/",
         description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
         inLanguage: "zh-CN",
@@ -103,7 +103,7 @@ export default async function RootLayout({
       {
         "@type": "Organization",
         "@id": "https://www.skillxm.cn/#organization",
-        name: "教材工具箱",
+        name: "练学宝",
         url: "https://www.skillxm.cn",
         dateModified: "2026-05-09",
         logo: {
@@ -141,15 +141,15 @@ export default async function RootLayout({
         "@type": "WebPage",
         "@id": "https://www.skillxm.cn/#webpage",
         "url": "https://www.skillxm.cn",
-        "name": "教材工具箱 - 免费小学教学工具",
-        "description": "教材工具箱提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。",
+        "name": "练学宝 - 免费小学教学工具",
+        "description": "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。",
         "isPartOf": { "@id": "https://www.skillxm.cn/#website" },
         "about": { "@id": "https://www.skillxm.cn/#organization" }
       },
       {
         "@type": "ItemList",
-        "name": "教材工具箱 - 全部工具",
-        "description": "教材工具箱提供的所有免费小学教学工具",
+        "name": "练学宝 - 全部工具",
+        "description": "练学宝提供的所有免费小学教学工具",
         "dateModified": "2026-05-09",
         "numberOfItems": ACTIVE_TOOL_COUNT,
         "itemListElement": [
@@ -168,7 +168,7 @@ export default async function RootLayout({
       {
         "@type": "HowTo",
         "name": "如何使用数学练习卷生成器",
-        "description": "使用教材工具箱的数学练习卷生成器，只需5步即可生成可打印的数学练习卷",
+        "description": "使用练学宝的数学练习卷生成器，只需5步即可生成可打印的数学练习卷",
         "totalTime": "PT3M",
         "step": [
           {
@@ -203,10 +203,10 @@ export default async function RootLayout({
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "教材工具箱是免费的吗？",
+            "name": "练学宝是免费的吗？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "是的，教材工具箱所有功能完全免费使用，无需注册账号，不收取任何费用。我们承诺永久免费，让每个孩子都能享受到优质的教育工具。"
+              "text": "是的，练学宝所有功能完全免费使用，无需注册账号，不收取任何费用。我们承诺永久免费，让每个孩子都能享受到优质的教育工具。"
             }
           },
           {
@@ -262,7 +262,7 @@ export default async function RootLayout({
             "name": "生成的试卷可以商用吗？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "教材工具箱生成的练习卷和字帖仅供个人学习、家庭教育和课堂教学使用，不可用于商业用途。如需商用授权，请联系我们的客服团队获取许可。"
+              "text": "练学宝生成的练习卷和字帖仅供个人学习、家庭教育和课堂教学使用，不可用于商业用途。如需商用授权，请联系我们的客服团队获取许可。"
             }
           },
           {
@@ -270,7 +270,7 @@ export default async function RootLayout({
             "name": "数据安全吗？孩子信息会泄露吗？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "完全安全。教材工具箱所有功能在浏览器本地运行，不会收集、存储或上传任何用户数据。不需要输入姓名、电话等个人信息。我们使用百度统计了解匿名访问趋势，使用 Google AdSense 展示广告，用户可通过Cookie横幅选择关闭追踪，充分保护隐私安全。"
+              "text": "完全安全。练学宝所有功能在浏览器本地运行，不会收集、存储或上传任何用户数据。不需要输入姓名、电话等个人信息。我们使用百度统计了解匿名访问趋势，使用 Google AdSense 展示广告，用户可通过Cookie横幅选择关闭追踪，充分保护隐私安全。"
             }
           }
         ]

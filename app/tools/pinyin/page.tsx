@@ -825,7 +825,7 @@ export default function PinyinPage({ locale }: { locale?: Locale } = {}) {
           </div>
 
           <div className="bg-slate-100 px-8 py-3 text-center text-xs text-gray-400">
-            教材工具箱 · 拼音注音练习 · 免费使用
+            练学宝 · 拼音注音练习 · 免费使用
           </div>
         </div>
 

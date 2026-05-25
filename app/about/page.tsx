@@ -2,22 +2,22 @@ import type { Metadata } from 'next';
 import SiteLayout from '../_components/SiteLayout';
 
 export const metadata: Metadata = {
-  title: '关于我们 - 教材工具箱',
-  description: '了解教材工具箱的建站初衷、使命和团队。我们致力于为每个孩子提供免费、好用的在线教育工具。',
+  title: '关于我们 - 练学宝',
+  description: '了解练学宝的建站初衷、使命和团队。我们致力于为每个孩子提供免费、好用的在线教育工具。',
   alternates: {
     canonical: 'https://www.skillxm.cn/about',
   },
   openGraph: {
     url: 'https://www.skillxm.cn/about/',
-    title: '关于我们 - 教材工具箱',
-    description: '教材工具箱由一群热爱教育的家长开发者创建，致力于为小学生提供免费优质的教学工具。',
+    title: '关于我们 - 练学宝',
+    description: '练学宝由一群热爱教育的家长开发者创建，致力于为小学生提供免费优质的教学工具。',
     type: 'website',
-    images: [{ url: 'https://www.skillxm.cn/og-image.jpg', width: 1200, height: 630, alt: '教材工具箱' }],
+    images: [{ url: 'https://www.skillxm.cn/og-image.jpg', width: 1200, height: 630, alt: '练学宝' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '关于我们 - 教材工具箱',
-    description: '教材工具箱由一群热爱教育的家长开发者创建，致力于为小学生提供免费优质的教学工具。',
+    title: '关于我们 - 练学宝',
+    description: '练学宝由一群热爱教育的家长开发者创建，致力于为小学生提供免费优质的教学工具。',
     images: ['https://www.skillxm.cn/og-image.jpg'],
   },
 };
@@ -28,7 +28,7 @@ export default function AboutPage() {
       <div className="max-w-4xl mx-auto px-4 py-12">
         {/* 页面标题 */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">关于教材工具箱</h1>
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">关于练学宝</h1>
           <p className="text-gray-400 text-lg">一群家长开发者，为孩子们打造的免费教育工具平台</p>
         </div>
 
@@ -233,13 +233,13 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-white font-medium mb-2">创始人故事</h3>
                 <p className="mb-3">
-                  教材工具箱的创始人林远，是一名有十余年经验的全栈开发者，同时也是两个孩子的父亲。2025 年底，大儿子刚上小学一年级，林远发现每天辅导作业时，最费时间的不是教知识本身，而是找练习题、出卷子、打印字帖这些"准备工作"。市面上的教育 APP 要么收费贵，要么广告弹窗满天飞，孩子用着用着就被引导去玩游戏了。
+                  练学宝的创始人林远，是一名有十余年经验的全栈开发者，同时也是两个孩子的父亲。2025 年底，大儿子刚上小学一年级，林远发现每天辅导作业时，最费时间的不是教知识本身，而是找练习题、出卷子、打印字帖这些"准备工作"。市面上的教育 APP 要么收费贵，要么广告弹窗满天飞，孩子用着用着就被引导去玩游戏了。
                 </p>
                 <p className="mb-3">
-                  "我既然会写代码，为什么不自己做一个呢？"抱着这个想法，林远在业余时间开始开发第一个工具——数学练习卷生成器。起初只是给自己家用，后来分享给身边几位家长朋友，反响出乎意料地好。大家纷纷提出需求：能不能加个字帖生成？能不能做英语练习纸？于是工具越做越多，最终形成了现在的教材工具箱平台。
+                  "我既然会写代码，为什么不自己做一个呢？"抱着这个想法，林远在业余时间开始开发第一个工具——数学练习卷生成器。起初只是给自己家用，后来分享给身边几位家长朋友，反响出乎意料地好。大家纷纷提出需求：能不能加个字帖生成？能不能做英语练习纸？于是工具越做越多，最终形成了现在的练学宝平台。
                 </p>
                 <p>
-                  2026 年初，林远组建了"教材工具箱团队"，几位志同道合的朋友陆续加入：有从事 UI 设计工作的周琳，有在公立小学任教的陈老师（负责教学内容的准确性和实用性把关），还有一位在互联网大厂做前端的明宇。团队成员利用工作之余的时间维护和迭代，所有工具坚持免费开放。
+                  2026 年初，林远组建了"练学宝团队"，几位志同道合的朋友陆续加入：有从事 UI 设计工作的周琳，有在公立小学任教的陈老师（负责教学内容的准确性和实用性把关），还有一位在互联网大厂做前端的明宇。团队成员利用工作之余的时间维护和迭代，所有工具坚持免费开放。
                 </p>
               </div>
               <div>
@@ -251,7 +251,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-white font-medium mb-2">联系我们</h3>
                 <p className="mb-2">
-                  公司名称：教材工具箱<br />
+                  公司名称：练学宝<br />
                   地址：浙江省绍兴市嵊州三江街道花园社区75号<br />
                   电话：0575-64972527<br />
                   邮箱：<a href="mailto:lang@skillxm.cn" className="text-blue-400 hover:underline">lang@skillxm.cn</a>

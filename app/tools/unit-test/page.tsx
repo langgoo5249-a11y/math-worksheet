@@ -179,7 +179,7 @@ export default function UnitTestPage({ locale }: { locale?: Locale } = {}) {
     if (!printWindow || !previewRef.current) return;
     const title = getExamTitle(grade, semester, examType, availableUnits.filter(u => selectedUnits.includes(u.id)).map(u => u.unitName), subject);
     const content = previewRef.current.innerHTML;
-    printWindow.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>${title}</title><style>@page{margin:10mm;size:A4 portrait;}body{margin:0;font-family:'Microsoft YaHei','SimSun',sans-serif;color:#000;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}</style></head><body>${content}<p style="text-align:center;color:#999;font-size:12px;margin-top:20px;">来源：教材工具箱 | 免费下载：www.skillxm.cn</p></body></html>`);
+    printWindow.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>${title}</title><style>@page{margin:10mm;size:A4 portrait;}body{margin:0;font-family:'Microsoft YaHei','SimSun',sans-serif;color:#000;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}</style></head><body>${content}<p style="text-align:center;color:#999;font-size:12px;margin-top:20px;">来源：练学宝 | 免费下载：www.skillxm.cn</p></body></html>`);
     printWindow.document.close();
     printWindow.focus();
     printWindow.print();
@@ -694,7 +694,7 @@ export default function UnitTestPage({ locale }: { locale?: Locale } = {}) {
 
       {/* ===== 底部 ===== */}
       <footer className="print:hidden border-t border-white/10 py-8 px-4 text-center text-gray-500 text-sm">
-        <p>© 2026 教材工具箱 · 免费好用的单元测试卷生成器</p>
+        <p>© 2026 练学宝 · 免费好用的单元测试卷生成器</p>
       </footer>
 
       {/* 打印样式 */}

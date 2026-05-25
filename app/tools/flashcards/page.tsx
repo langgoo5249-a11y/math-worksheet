@@ -730,7 +730,7 @@ export default function FlashcardsPage({ locale }: { locale?: Locale } = {}) {
       <footer className="border-t border-white/10 py-6 px-4 mt-8">
         <div className="max-w-7xl mx-auto text-center text-gray-500 text-sm">
           <p>🃏 识字卡片生成器 - 免费在线生成识字卡片，支持自定义汉字、拼音、组词，可打印制作实体卡片</p>
-          <p className="mt-1">© 2024 教材工具箱</p>
+          <p className="mt-1">© 2024 练学宝</p>
         </div>
       </footer>
 

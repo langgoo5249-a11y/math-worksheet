@@ -9,16 +9,16 @@ export async function generateMetadata(): Promise<Metadata> {
   const pathname = headersList.get("x-invoke-path") ?? headersList.get("x-matched-path") ?? "/tools/unit-test";
   const canonicalUrl = `${protocol}://${host}${pathname}`;
   return {
-    title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 教材工具箱",
+    title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 练学宝",
     description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试期中期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印",
     keywords: "单元测试卷,期中试卷,期末试卷,小学数学试卷,小学语文试卷,小学英语试卷,小学科学试卷,试卷生成器,免费试卷打印,人教版试卷,三年级数学试卷,四年级语文试卷,五年级英语试卷,单元测试题,小学全科试卷,期中复习试卷,期末复习试卷",
     alternates: { canonical: canonicalUrl },
     openGraph: {
       url: canonicalUrl,
-      title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 教材工具箱",
+      title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 练学宝",
       description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试期中期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印",
       type: "website",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("单元测试卷生成器")}&category=${encodeURIComponent("综合工具")}&icon=📋`, width: 1200, height: 630, alt: "单元测试卷生成器 - 教材工具箱" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "教材工具箱" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("单元测试卷生成器")}&category=${encodeURIComponent("综合工具")}&icon=📋`, width: 1200, height: 630, alt: "单元测试卷生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
     },
   };
 }
@@ -28,7 +28,7 @@ export default function UnitTestLayout({ children }: { children: React.ReactNode
     <>
       <div className="sr-only">
         <h2>单元测试卷生成器 - 小学数语英科全科试卷免费打印</h2>
-        <p>免费生成小学1-6年级单元测试卷，数学语文英语科学四科，305个单元PDF打印。教材工具箱提供完整的小学单元测试卷生成服务，覆盖人教版、北师大版等主流教材版本，是小学教师备课和考试出题的得力助手。</p>
+        <p>免费生成小学1-6年级单元测试卷，数学语文英语科学四科，305个单元PDF打印。练学宝提供完整的小学单元测试卷生成服务，覆盖人教版、北师大版等主流教材版本，是小学教师备课和考试出题的得力助手。</p>
         <h2>核心功能</h2>
         <ul>
           <li>四科覆盖：支持数学、语文、英语、科学四个学科，满足小学全科测试需求</li>
@@ -39,7 +39,7 @@ export default function UnitTestLayout({ children }: { children: React.ReactNode
         </ul>
         <h2>适用对象</h2>
         <p>单元测试卷生成器适合小学各学科教师、教育培训机构以及学生家长使用。无论是日常单元测验、期中期末考试还是课后练习，都可以通过本工具快速生成高质量的测试试卷，节省教师备课时间，提高教学效率。</p>
-        <p>访问 <a href="https://www.skillxm.cn">教材工具箱</a> 获取更多免费教学工具。</p>
+        <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具。</p>
         <h2>相关学习文章</h2>
         <ul>
           <li><a href="https://www.skillxm.cn/blog/xiaoxue-shuxue-lianxi-ziyuan-huizong">最全小学数学练习资源汇总</a></li>

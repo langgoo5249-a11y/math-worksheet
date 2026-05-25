@@ -3,22 +3,22 @@ import ContactForm from './ContactForm';
 import SiteLayout from '../_components/SiteLayout';
 
 export const metadata: Metadata = {
-  title: '联系我们 - 教材工具箱',
-  description: '如果您有任何问题、建议或合作意向，欢迎通过邮件联系教材工具箱团队。',
+  title: '联系我们 - 练学宝',
+  description: '如果您有任何问题、建议或合作意向，欢迎通过邮件联系练学宝团队。',
   alternates: {
     canonical: 'https://www.skillxm.cn/contact',
   },
   openGraph: {
     url: 'https://www.skillxm.cn/contact/',
-    title: '联系我们 - 教材工具箱',
-    description: '如果您有任何问题、建议或合作意向，欢迎通过邮件联系教材工具箱团队。',
+    title: '联系我们 - 练学宝',
+    description: '如果您有任何问题、建议或合作意向，欢迎通过邮件联系练学宝团队。',
     type: 'website',
-    images: [{ url: 'https://www.skillxm.cn/og-image.jpg', width: 1200, height: 630, alt: '教材工具箱' }],
+    images: [{ url: 'https://www.skillxm.cn/og-image.jpg', width: 1200, height: 630, alt: '练学宝' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '联系我们 - 教材工具箱',
-    description: '如果您有任何问题、建议或合作意向，欢迎通过邮件联系教材工具箱团队。',
+    title: '联系我们 - 练学宝',
+    description: '如果您有任何问题、建议或合作意向，欢迎通过邮件联系练学宝团队。',
     images: ['https://www.skillxm.cn/og-image.jpg'],
   },
 };
