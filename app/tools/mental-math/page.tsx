@@ -8,6 +8,7 @@ import { toolGuides } from '@/lib/toolGuides';
 import { 
   getHistory, saveRecord, getStats, getTodayRecords, 
   getAccuracyTrend, getWeakPoints, getAIRecommendation, clearHistory,
+  generateParentReport, sendReportViaEmail, generateWeChatShareText,
   type PracticeRecord 
 } from '@/lib/mentalMathTracker';
 
@@ -193,6 +194,9 @@ export default function MentalMathPage({ locale }: { locale?: Locale } = {}) {
   const [aiRecommendation, setAiRecommendation] = useState({ recommendedDifficulty: 'easy', focusOperations: ['+', '-'], reason: '' });
   const [aiMode, setAiMode] = useState(false); // AI智能出题模式
   const [showClearConfirm, setShowClearConfirm] = useState(false);
+  const [parentEmail, setParentEmail] = useState('');
+  const [showEmailInput, setShowEmailInput] = useState(false);
+  const [emailSent, setEmailSent] = useState(false);
   
   // 当前题目
   const currentQuestion = questions[currentIndex];
@@ -781,6 +785,74 @@ export default function MentalMathPage({ locale }: { locale?: Locale } = {}) {
                       </div>
                     ))}
                   </div>
+                </div>
+              )}
+              
+              {/* 发送给家长 */}
+              {stats.totalPractice > 0 && (
+                <div className="bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/30 rounded-2xl p-6">
+                  <h3 className="text-lg font-bold text-white mb-4">👨‍👩‍👧 发送给家长</h3>
+                  <p className="text-gray-400 text-sm mb-4">将本周学习报告发送到家长邮箱，包含练习统计、薄弱点分析和改进建议</p>
+                  
+                  {!showEmailInput ? (
+                    <div className="flex flex-wrap gap-3">
+                      <button
+                        onClick={() => setShowEmailInput(true)}
+                        className="px-6 py-2.5 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl transition-colors text-sm"
+                      >
+                        📧 发送邮件报告
+                      </button>
+                      <button
+                        onClick={() => {
+                          const text = generateWeChatShareText();
+                          if (navigator.clipboard) {
+                            navigator.clipboard.writeText(text);
+                            alert('报告已复制到剪贴板，可以粘贴发送给家长！');
+                          }
+                        }}
+                        className="px-6 py-2.5 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl transition-colors text-sm"
+                      >
+                        📋 复制报告文本
+                      </button>
+                    </div>
+                  ) : !emailSent ? (
+                    <div className="flex gap-2">
+                      <input
+                        type="email"
+                        value={parentEmail}
+                        onChange={(e) => setParentEmail(e.target.value)}
+                        placeholder="请输入家长邮箱地址"
+                        className="flex-1 px-4 py-2.5 bg-slate-900 border border-white/20 rounded-xl text-white text-sm focus:border-blue-500 focus:outline-none"
+                      />
+                      <button
+                        onClick={() => {
+                          if (parentEmail && parentEmail.includes('@')) {
+                            sendReportViaEmail(parentEmail);
+                            setEmailSent(true);
+                          }
+                        }}
+                        className="px-6 py-2.5 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl transition-colors text-sm whitespace-nowrap"
+                      >
+                        📤 发送
+                      </button>
+                      <button
+                        onClick={() => { setShowEmailInput(false); setParentEmail(''); }}
+                        className="px-4 py-2.5 bg-slate-700 text-gray-300 rounded-xl text-sm hover:bg-slate-600"
+                      >
+                        取消
+                      </button>
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-3 text-green-400">
+                      <span>✅ 邮件客户端已打开，请在邮件客户端中确认发送</span>
+                      <button
+                        onClick={() => { setShowEmailInput(false); setParentEmail(''); setEmailSent(false); }}
+                        className="text-sm text-blue-400 hover:text-blue-300"
+                      >
+                        发送另一个
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
               

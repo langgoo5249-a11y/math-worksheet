@@ -10,13 +10,13 @@ export async function generateMetadata(): Promise<Metadata> {
   const canonicalUrl = `${protocol}://${host}${pathname}`;
   return {
     title: "口算速练 - 在线口算计时挑战 | 练学宝",
-    description: "免费在线口算速练工具，提供4个难度级别，涵盖加减乘除全运算类型，计时挑战即时反馈，适合小学一二年级到五六年级学生日常口算打卡训练。",
-    keywords: "口算速练,口算练习,口算计时,速算训练,数学口算,口算题,在线口算,一年级口算题,二年级口算练习,100道口算题,口算题生成器,口算天天练,20以内加减法口算,100以内口算,口算打卡,口算比赛,口算训练,口算测试",
+    description: "免费在线口算速练工具，支持AI智能出题、进度追踪、学习报告推送。4个难度级别涵盖加减乘除，自动分析薄弱点生成针对性练习，适合小学1-6年级学生日常口算打卡训练。",
+    keywords: "口算速练,口算练习,口算计时,速算训练,数学口算,口算题,在线口算,一年级口算题,二年级口算练习,100道口算题,口算题生成器,口算天天练,20以内加减法口算,100以内口算,口算打卡,口算比赛,口算训练,口算测试,AI口算出题,口算进度追踪,口算学习报告,口算薄弱点分析,智能口算练习",
     alternates: { canonical: canonicalUrl },
     openGraph: {
       url: canonicalUrl,
       title: "口算速练 - 免费在线口算计时挑战 | 练学宝",
-      description: "免费在线口算速练工具，提供4个难度级别，涵盖加减乘除全运算类型，计时挑战即时反馈，适合小学一二年级到五六年级学生日常口算打卡训练。",
+      description: "免费在线口算速练工具，支持AI智能出题、进度追踪、学习报告推送。4个难度级别涵盖加减乘除，自动分析薄弱点生成针对性练习。",
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
     },
@@ -124,7 +124,22 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
               {
                 "@type": "Question",
                 "name": "口算速练需要注册吗？",
-                "acceptedAnswer": { "@type": "Answer", "text": "不需要注册，打开网页即可开始练习，完全免费。" }
+                "acceptedAnswer": { "@type": "Answer", "text": "不需要注册，打开网页即可开始练习，完全免费。练习记录保存在浏览器本地，不会丢失。" }
+              },
+              {
+                "@type": "Question",
+                "name": "什么是AI智能出题？",
+                "acceptedAnswer": { "@type": "Answer", "text": "AI智能出题会分析孩子的历史练习数据，自动找出薄弱的运算类型（如乘法、除法），然后生成70%针对薄弱点+30%混合练习的题目，帮助孩子高效提升。" }
+              },
+              {
+                "@type": "Question",
+                "name": "学习报告功能怎么用？",
+                "acceptedAnswer": { "@type": "Answer", "text": "每次练习后系统自动记录成绩，在「学习报告」页面可以查看累计统计、7天正确率趋势、薄弱点分析，还可以将学习报告通过邮件发送给家长。" }
+              },
+              {
+                "@type": "Question",
+                "name": "家长如何接收孩子的学习报告？",
+                "acceptedAnswer": { "@type": "Answer", "text": "在学习报告页面点击「发送给家长」，输入邮箱地址即可将本周学习报告发送到家长邮箱，包含练习次数、正确率、薄弱点分析和改进建议。" }
               }
             ]
           })

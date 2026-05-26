@@ -237,3 +237,150 @@ function getOperationsByDifficulty(difficulty: string): string[] {
     default: return ['+', '-'];
   }
 }
+
+// 生成家长学习报告文本
+export function generateParentReport(): {
+  subject: string;
+  text: string;
+  html: string;
+} {
+  const stats = getStats();
+  const weekRecords = getWeekRecords();
+  const weakPoints = getWeakPoints();
+  const trend = getAccuracyTrend(7);
+  
+  const today = new Date();
+  const dateStr = `${today.getFullYear()}年${today.getMonth() + 1}月${today.getDate()}日`;
+  
+  // 本周统计
+  const weekPractice = weekRecords.length;
+  const weekQuestions = weekRecords.reduce((sum, r) => sum + r.questionCount, 0);
+  const weekCorrect = weekRecords.reduce((sum, r) => sum + r.correctCount, 0);
+  const weekAccuracy = weekQuestions > 0 ? Math.round((weekCorrect / weekQuestions) * 100) : 0;
+  const weekMinutes = Math.round(weekRecords.reduce((sum, r) => sum + r.elapsedTime, 0) / 60);
+  
+  // 薄弱点分析
+  const opNames: Record<string, string> = { '+': '加法', '-': '减法', '×': '乘法', '÷': '除法' };
+  const weakStr = weakPoints
+    .filter(wp => wp.errorRate > 15)
+    .map(wp => `${opNames[wp.operation] || wp.operation}（错误率${wp.errorRate}%）`)
+    .join('、') || '暂无明显薄弱点';
+  
+  // 改进建议
+  let suggestion = '';
+  if (weekAccuracy >= 90) {
+    suggestion = '孩子本周口算表现优秀，建议适当提升难度，挑战更高等级的练习。';
+  } else if (weekAccuracy >= 70) {
+    suggestion = '孩子本周口算表现良好，建议针对薄弱运算类型进行专项练习。';
+  } else if (weekAccuracy >= 50) {
+    suggestion = '孩子本周口算正确率偏低，建议从基础难度开始，每天坚持10分钟练习。';
+  } else if (weekPractice > 0) {
+    suggestion = '孩子本周口算需要加强练习，建议每天至少完成一轮口算训练，重点练习薄弱运算类型。';
+  } else {
+    suggestion = '本周暂无练习记录，建议每天花5-10分钟进行口算练习。';
+  }
+  
+  // 每日明细
+  const dailyDetail = trend
+    .filter(d => d.count > 0)
+    .map(d => `  ${d.date}：练习${d.count}次，正确率${d.accuracy}%`)
+    .join('\n');
+  
+  const subject = `📊 练学宝口算学习报告 - ${dateStr}`;
+  
+  const text = `练学宝 · 口算学习报告
+报告日期：${dateStr}
+
+【本周概览】
+练习次数：${weekPractice} 次
+做题总数：${weekQuestions} 题
+答对题数：${weekCorrect} 题
+平均正确率：${weekAccuracy}%
+练习时长：${weekMinutes} 分钟
+
+【累计统计】
+总练习次数：${stats.totalPractice} 次
+总做题数：${stats.totalQuestions} 题
+累计正确率：${stats.totalAccuracy}%
+最高正确率：${stats.bestAccuracy}%
+连续打卡：${stats.currentStreak} 天
+
+【薄弱点分析】
+${weakStr}
+
+【每日明细】
+${dailyDetail || '  本周暂无练习记录'}
+
+【改进建议】
+${suggestion}
+
+— 练学宝 www.skillxm.cn
+让每个孩子爱上口算 ✨`;
+
+  const html = `<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:600px;margin:0 auto;padding:20px;background:#f5f5f5}
+.card{background:#fff;border-radius:16px;padding:24px;margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+h1{font-size:20px;color:#1a1a2e;margin:0 0 4px}
+.subtitle{color:#666;font-size:13px;margin-bottom:20px}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.stat-item{text-align:center;padding:12px 8px;background:#f8f9fa;border-radius:12px}
+.stat-value{font-size:24px;font-weight:800;color:#1a1a2e}
+.stat-label{font-size:11px;color:#888;margin-top:4px}
+.section-title{font-size:15px;font-weight:700;color:#1a1a2e;margin:16px 0 8px;display:flex;align-items:center;gap:6px}
+.weak-item{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#fff5f5;border-radius:8px;margin-bottom:6px}
+.weak-name{font-size:13px;color:#333}
+.weak-rate{font-size:13px;font-weight:700;color:#e74c3c}
+.daily-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #f0f0f0;font-size:13px;color:#555}
+.suggestion{background:#f0f7ff;border-radius:12px;padding:14px;font-size:13px;color:#2c5282;line-height:1.6}
+.footer{text-align:center;padding:16px;font-size:12px;color:#aaa}
+.bar{height:6px;background:#eee;border-radius:3px;overflow:hidden;margin-top:4px}
+.bar-fill{height:100%;border-radius:3px}
+</style></head><body>
+<div class="card">
+<h1>📊 口算学习报告</h1>
+<div class="subtitle">练学宝 · ${dateStr}</div>
+<div class="stats-grid">
+<div class="stat-item"><div class="stat-value">${weekPractice}</div><div class="stat-label">本周练习</div></div>
+<div class="stat-item"><div class="stat-value">${weekAccuracy}%</div><div class="stat-label">正确率</div></div>
+<div class="stat-item"><div class="stat-value">${weekMinutes}</div><div class="stat-label">练习分钟</div></div>
+<div class="stat-item"><div class="stat-value">${stats.totalPractice}</div><div class="stat-label">累计练习</div></div>
+<div class="stat-item"><div class="stat-value">${stats.bestAccuracy}%</div><div class="stat-label">最高正确率</div></div>
+<div class="stat-item"><div class="stat-value">${stats.currentStreak}🔥</div><div class="stat-label">连续打卡</div></div>
+</div></div>
+<div class="card">
+<div class="section-title">🔍 薄弱点分析</div>
+${weakPoints.filter(wp => wp.errorRate > 0).map(wp => `<div class="weak-item"><span class="weak-name">${opNames[wp.operation] || wp.operation}</span><span class="weak-rate">错误率 ${wp.errorRate}%</span></div><div class="bar"><div class="bar-fill" style="width:${Math.min(wp.errorRate * 2, 100)}%;background:${wp.errorRate > 30 ? '#e74c3c' : wp.errorRate > 15 ? '#f39c12' : '#27ae60'}"></div></div>`).join('\n')}
+</div>
+<div class="card">
+<div class="section-title">📈 每日明细</div>
+${trend.filter(d => d.count > 0).map(d => `<div class="daily-row"><span>${d.date}</span><span>练习${d.count}次 · 正确率${d.accuracy}%</span></div>`).join('\n') || '<div style="color:#aaa;font-size:13px;text-align:center;padding:12px">本周暂无练习记录</div>'}
+</div>
+<div class="card">
+<div class="section-title">💡 改进建议</div>
+<div class="suggestion">${suggestion}</div>
+</div>
+<div class="footer">练学宝 www.skillxm.cn · 让每个孩子爱上口算 ✨</div>
+</body></html>`;
+
+  return { subject, text, html };
+}
+
+// 发送邮件给家长（使用 mailto 协议，无需后端）
+export function sendReportViaEmail(email: string): void {
+  const report = generateParentReport();
+  const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(report.subject)}&body=${encodeURIComponent(report.text)}`;
+  window.open(mailtoUrl, '_blank');
+}
+
+// 生成微信分享文本
+export function generateWeChatShareText(): string {
+  const stats = getStats();
+  const weekRecords = getWeekRecords();
+  const weekAccuracy = weekRecords.length > 0 
+    ? Math.round((weekRecords.reduce((sum, r) => sum + r.correctCount, 0) / weekRecords.reduce((sum, r) => sum + r.questionCount, 0)) * 100) 
+    : 0;
+  
+  return `📊 练学宝口算学习报告\n本周练习${weekRecords.length}次，正确率${weekAccuracy}%\n累计练习${stats.totalPractice}次，连续打卡${stats.currentStreak}天🔥\n\n快来练学宝一起练口算吧！\n👉 www.skillxm.cn/tools/mental-math/`;
+}
