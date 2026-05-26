@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { articles, categories } from './data';
 import type { Category } from './data';
@@ -19,6 +19,17 @@ const categoryColors: Record<string, string> = {
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState<Category>('全部');
+  const [mobileMenu, setMobileMenu] = useState(false);
+  
+  // 移动端菜单打开时锁定body滚动
+  useEffect(() => {
+    if (mobileMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenu]);
 
   const filteredArticles = (activeCategory === '全部'
     ? articles
@@ -65,9 +76,52 @@ export default function BlogPage() {
               <a href="/about" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">关于我们</a>
               <a href="/contact" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">联系我们</a>
             </div>
+            {/* 移动端汉堡菜单按钮 */}
+            <button
+              onClick={() => setMobileMenu(!mobileMenu)}
+              className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors"
+              aria-label={mobileMenu ? '关闭菜单' : '打开菜单'}
+            >
+              {mobileMenu ? '✕' : '☰'}
+            </button>
           </div>
         </div>
       </nav>
+
+      {/* 移动端侧滑菜单 */}
+      <div className={`lg:hidden fixed inset-0 z-50 transition-all duration-300 ${mobileMenu ? 'visible' : 'invisible'}`}>
+        <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${mobileMenu ? 'opacity-100' : 'opacity-0'}`} onClick={() => setMobileMenu(false)} />
+        <div className={`absolute right-0 top-0 h-full w-72 bg-slate-900 border-l border-white/10 shadow-2xl transition-transform duration-300 ${mobileMenu ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className="p-4 border-b border-white/10">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-base">📚</div>
+              <span className="text-lg font-bold text-white">练学宝</span>
+            </div>
+          </div>
+          <div className="p-3 space-y-1 overflow-y-auto" style={{ maxHeight: 'calc(100vh - 60px)' }}>
+            <a href="/" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+              <span>🏠</span><span>首页</span>
+            </a>
+            <div className="px-3 py-2 text-xs text-gray-500 font-bold uppercase">🛠️ 学习工具</div>
+            {TOOLS.filter(t => t.active).map(tool => (
+              <a key={tool.path} href={tool.path} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                <span className="w-7 h-7 bg-blue-500/20 rounded-lg flex items-center justify-center text-sm">{tool.icon}</span>
+                <span>{tool.name}</span>
+              </a>
+            ))}
+            <div className="border-t border-white/10 my-2" />
+            <a href="/search" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+              <span>🔍</span><span>搜索</span>
+            </a>
+            <a href="/about" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+              <span>ℹ️</span><span>关于我们</span>
+            </a>
+            <a href="/contact" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+              <span>📧</span><span>联系我们</span>
+            </a>
+          </div>
+        </div>
+      </div>
 
       <main className="pt-14">
         <div className="max-w-5xl mx-auto px-4 py-12">

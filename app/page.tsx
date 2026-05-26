@@ -152,6 +152,16 @@ const COLOR_MAP: Record<string, string> = {
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [mobileMenu, setMobileMenu] = useState(false);
+  
+  // 移动端菜单打开时锁定body滚动
+  useEffect(() => {
+    if (mobileMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [mobileMenu]);
   const [isPaused, setIsPaused] = useState(false);
   const [showDonate, setShowDonate] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
@@ -376,7 +386,7 @@ export default function HomePage() {
       {/* ===== 轮播大图区域 ===== */}
       <section className="pt-14">
         <div
-          className="relative h-[500px] md:h-[600px] overflow-hidden"
+          className="relative h-[380px] sm:h-[450px] md:h-[600px] overflow-hidden"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -417,9 +427,9 @@ export default function HomePage() {
               {/* 内容区域 */}
               <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
                 {/* 3D 悬浮标题 */}
-                <div className="perspective-1000 mb-6">
+                <div className="perspective-1000 mb-4 sm:mb-6">
                   <h2
-                    className="text-6xl md:text-8xl font-black text-white tracking-tight"
+                    className="text-4xl sm:text-5xl md:text-8xl font-black text-white tracking-tight"
                     style={{
                       textShadow: '0 4px 0 rgba(0,0,0,0.2), 0 8px 0 rgba(0,0,0,0.1), 0 12px 20px rgba(0,0,0,0.3)',
                       transform: 'translateZ(50px)',
@@ -430,22 +440,22 @@ export default function HomePage() {
                 </div>
 
                 {/* 副标题 */}
-                <p className="text-2xl md:text-3xl font-bold text-white/90 mb-4 drop-shadow-lg">
+                <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white/90 mb-3 sm:mb-4 drop-shadow-lg">
                   {item.subtitle}
                 </p>
 
                 {/* 描述 */}
-                <p className="text-lg text-white/80 mb-6 max-w-xl drop-shadow">
+                <p className="text-sm sm:text-base md:text-lg text-white/80 mb-4 sm:mb-6 max-w-xl drop-shadow">
                   {item.description}
                 </p>
 
                 {/* 免费提示 */}
-                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full mb-8 border border-white/30">
-                  <span className="text-white font-bold text-lg">🎁 所有资源免费生成，免费下载打印</span>
+                <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 sm:px-6 py-2 rounded-full mb-6 sm:mb-8 border border-white/30">
+                  <span className="text-white font-bold text-sm sm:text-lg">🎁 所有资源免费生成，免费下载打印</span>
                 </div>
 
                 {/* 大图标 */}
-                <div className="text-8xl mb-8 animate-bounce-slow drop-shadow-2xl">
+                <div className="text-6xl sm:text-7xl md:text-8xl mb-4 sm:mb-8 animate-bounce-slow drop-shadow-2xl">
                   {item.icon}
                 </div>
 

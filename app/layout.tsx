@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans_SC } from "next/font/google";
 import "./globals.css";
 import { TOOLS, generateSchemaApps, generateSchemaBreadcrumbs, ACTIVE_TOOL_COUNT } from "@/lib/toolRegistry";
@@ -19,10 +19,18 @@ const notoSansSC = Noto_Sans_SC({
 // 根布局保持静态预渲染，canonical 由各页面 layout 分别定义
 export const dynamic = "force-static";
 
+// 移动端 viewport 配置
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#1e40af",
+};
+
 export const metadata: Metadata = {
   title: "练学宝 - 免费小学教学工具/数学练习卷/字帖/口算生成器等",
-  description: "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常练习与教师课堂教学使用。",
-  keywords: "练学宝,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印",
+  description: "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练（支持AI智能出题和进度追踪）、拼音学习、识字卡片、古诗词默写、单元测试卷等。支持手机在线做题和PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常练习与教师课堂教学使用。",
+  keywords: "练学宝,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印,手机练习,在线做题,免费打印试卷,小学数学题,小学语文练习,英语字帖,数独游戏,AI口算出题,口算学习报告",
   openGraph: {
     title: "练学宝 - 免费小学教学工具/数学练习卷/字帖/口算生成器等",
     description: "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常练习与教师课堂教学使用。",
@@ -296,6 +304,13 @@ export default async function RootLayout({
         <meta name="msapplication-TileImage" content="/favicons/favicon-32x32.png" />
         <meta name="msapplication-TileColor" content="#1e40af" />
         <meta name="theme-color" content="#1e40af" />
+        {/* iOS PWA 配置 */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="练学宝" />
+        {/* 移动端 SEO: 应用安装提示 */}
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="format-detection" content="telephone=no" />
 
         {/* hreflang SEO + GEO 信号 */}
         <link rel="alternate" hrefLang="zh-CN" href="https://www.skillxm.cn/" />
