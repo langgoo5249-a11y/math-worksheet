@@ -167,7 +167,6 @@ export default function HomePage() {
   const [showTutorial, setShowTutorial] = useState(false);
   const [showShare, setShowShare] = useState(false);
   const [showToolsMenu, setShowToolsMenu] = useState(false);
-  const [isPaused, setIsPaused] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showMiniQR, setShowMiniQR] = useState(false);
