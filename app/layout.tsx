@@ -281,7 +281,7 @@ export default async function RootLayout({
             "name": "数据安全吗？孩子信息会泄露吗？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "完全安全。练学宝所有功能在浏览器本地运行，不会收集、存储或上传任何用户数据。不需要输入姓名、电话等个人信息。我们使用百度统计了解匿名访问趋势，使用 Google AdSense 展示广告，用户可通过Cookie横幅选择关闭追踪，充分保护隐私安全。"
+              "text": "完全安全。练学宝所有功能在浏览器本地运行，不会收集、存储或上传任何用户数据。不需要输入姓名、电话等个人信息。我们使用百度统计了解匿名访问趋势，用户可通过Cookie横幅选择关闭追踪，充分保护隐私安全。"
             }
           }
         ]
@@ -336,7 +336,6 @@ export default async function RootLayout({
 
         {/* dns-prefetch 第三方资源 */}
         <link rel="dns-prefetch" href="https://hm.baidu.com" />
-        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
         <link rel="dns-prefetch" href="https://zz.bdstatic.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
@@ -376,7 +375,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
         />
 
-        {/* Google AdSense — 仅在用户同意Cookie后加载 */}
+        {/* Google AdSense — 申请通过后取消注释
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -400,6 +399,7 @@ export default async function RootLayout({
             `,
           }}
         />
+        */
 
         {/* 百度主动推送 */}
         <script

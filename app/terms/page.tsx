@@ -147,20 +147,16 @@ export default function TermsPage() {
         <section className="mb-8">
           <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span className="text-xl">📢</span> 六、广告与第三方服务
+              <span className="text-xl">📢</span> 六、第三方服务
             </h2>
             <div className="space-y-4 text-gray-300 leading-relaxed">
               <div>
-                <h3 className="text-white font-medium mb-2">6.1 广告展示</h3>
-                <p>本站通过 Google AdSense 展示广告，以支持网站的持续运营和工具的免费开发。广告内容由 Google 根据用户兴趣和网页内容自动匹配，我们不对广告内容承担直接责任。</p>
+                <h3 className="text-white font-medium mb-2">6.1 第三方服务</h3>
+                <p>本站使用百度统计（Baidu Analytics）进行网站访问统计分析。百度统计会收集访问者的IP地址、浏览器类型、访问页面等匿名数据，仅用于了解网站使用情况。</p>
               </div>
               <div>
-                <h3 className="text-white font-medium mb-2">6.2 广告 Cookie</h3>
-                <p>Google AdSense 可能使用 Cookie 来展示个性化广告。您可以通过访问 <a href="https://adssettings.google.com" className="text-blue-400 hover:text-blue-300" target="_blank" rel="noopener noreferrer">Google 广告设置</a> 来管理广告偏好，或选择查看非个性化广告。更多信息请参阅我们的 <a href="/privacy/" className="text-blue-400 hover:text-blue-300">隐私政策</a>。</p>
-              </div>
-              <div>
-                <h3 className="text-white font-medium mb-2">6.3 第三方广告政策</h3>
-                <p>Google AdSense 的广告内容受 Google 广告政策约束。如果您发现不当广告，请通过邮件联系我们，我们会向 Google 反馈。</p>
+                <h3 className="text-white font-medium mb-2">6.2 Cookie 使用</h3>
+                <p>百度统计可能会在您的浏览器中设置Cookie，用于识别回头访客。您可以通过浏览器设置拒绝Cookie，但这可能影响统计数据的准确性。更多信息请参阅我们的 <a href="/privacy/" className="text-blue-400 hover:text-blue-300">隐私政策</a>。</p>
               </div>
             </div>
           </div>

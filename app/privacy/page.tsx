@@ -74,7 +74,6 @@ export default function PrivacyPage() {
                   <li><strong>分析型 Cookie</strong>：由百度统计设置，用于识别回头访客和统计网站流量。典型 Cookie 名称包括 Hm_lvt_*、Hm_lpvt_* 等，有效期通常为1年。</li>
                   <li><strong>Cloudflare Cookie</strong>：包括 __cf_bm（安全防护）和 cf_clearance（人机验证），用于防范恶意访问和保障网站安全。</li>
                   <li><strong>本地存储（LocalStorage）</strong>：本站工具可能使用浏览器的 LocalStorage 保存您的偏好设置（如选择的年级、题型等），这些数据仅存储在您的设备上，不会同步到服务器。</li>
-                  <li><strong>广告 Cookie</strong>：我们使用 Google AdSense 展示广告。Google AdSense 可能会使用 Cookie 和 Web Beacon（网络信标）根据用户之前对本网站或其他网站的访问情况展示广告。使用广告 Cookie 可使 Google 及其合作伙伴根据用户的访问记录和/或本网站及其他网站的兴趣偏好展示广告。您可以通过访问 <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Google 广告设置</a> 来停用个性化广告，也可以选择仅查看非个性化广告。非个性化广告不受 Cookie 追踪影响，仅根据当前页面内容展示。如需了解更多关于 Google 如何使用 Cookie 展示广告的信息，请访问 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Google 广告工作原理</a>。如需了解 Google 的隐私保护实践，请访问 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Google 隐私政策</a>。</li>
                 </ul>
               </div>
             </div>
@@ -127,23 +126,14 @@ export default function PrivacyPage() {
         <section className="mb-8">
           <div className="bg-gradient-to-r from-yellow-600/10 to-orange-600/10 border border-yellow-500/30 rounded-2xl p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-              <span className="text-xl">📢</span> 四、关于 Google AdSense 的特别说明
+              <span className="text-xl">📢</span> 四、关于广告的说明
             </h2>
             <div className="space-y-3 text-gray-300 leading-relaxed">
               <p>
-                本网站使用 Google AdSense 展示广告。作为 Google 发布商合作伙伴，我们在此向您明确披露以下信息：
+                本站计划在未来通过 Google AdSense 等广告服务展示非干扰式广告，以支持网站的持续运营和工具的免费开发。在正式投放广告前，我们会更新本政策并通过首页公告通知用户。
               </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Google AdSense 使用 Cookie 和类似技术（如 Web Beacon/网络信标）来根据用户之前对本网站或互联网上其他网站的访问情况展示广告。</li>
-                <li>Google 及其合作伙伴可能会使用广告 Cookie 来展示与您兴趣相关的个性化广告。这些 Cookie 使广告商能够根据您的浏览历史和兴趣偏好展示广告。</li>
-                <li>您可以访问 <a href="https://www.google.com/settings/ads/preferences" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Google 广告设置页面</a>（www.google.com/settings/ads/preferences）来停用个性化广告，或管理您的广告偏好设置。</li>
-                <li>即使您停用了个性化广告，您仍可能看到基于当前页面内容、地理位置或搜索查询等非个性化因素展示的广告。</li>
-                <li>您也可以通过浏览器的设置来管理或删除 Cookie。请注意，禁用 Cookie 可能会影响网站的广告展示和相关功能。</li>
-                <li>有关 Google 如何使用数据展示广告的详细信息，请访问 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Google 广告工作原理</a>。</li>
-                <li>有关 Google 的隐私保护实践，请访问 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Google 隐私政策</a>。</li>
-              </ul>
-              <p className="text-sm text-gray-400 mt-3">
-                本说明符合 Google AdSense 发布商政策要求。我们承诺广告展示不会干扰用户的正常使用体验，也不会在工具使用区域投放影响操作的广告。
+              <p>
+                目前，本站所有工具和内容均完全免费，不含任何广告。
               </p>
             </div>
           </div>
@@ -186,11 +176,6 @@ export default function PrivacyPage() {
                       <td className="py-2 pr-4">Cloudflare Pages</td>
                       <td className="py-2 pr-4">网站托管</td>
                       <td className="py-2"><a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">查看政策</a></td>
-                    </tr>
-                    <tr className="border-b border-white/5">
-                      <td className="py-2 pr-4">Google AdSense</td>
-                      <td className="py-2 pr-4">展示广告</td>
-                      <td className="py-2"><a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">查看政策</a></td>
                     </tr>
                   </tbody>
                 </table>
