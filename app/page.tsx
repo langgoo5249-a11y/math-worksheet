@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getHomeToolCards, TOOLS } from '@/lib/toolRegistry';
 
@@ -167,10 +167,10 @@ export default function HomePage() {
   const [showTutorial, setShowTutorial] = useState(false);
   const [showShare, setShowShare] = useState(false);
   const [showToolsMenu, setShowToolsMenu] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showMiniQR, setShowMiniQR] = useState(false);
-  const announcementRef = useRef<HTMLDivElement>(null);
 
   const handleCopy = () => {
     navigator.clipboard.writeText('https://www.skillxm.cn');
@@ -187,34 +187,9 @@ export default function HomePage() {
     return () => clearInterval(timer);
   }, [isPaused]);
 
-  // 公告滚动
-  useEffect(() => {
-    const container = announcementRef.current;
-    if (!container) return;
+  // 公告滚动 - 使用CSS动画实现
+  // 无需JS逻辑，CSS animation已在全局样式中定义
 
-    const content = container.querySelector('.announcement-content') as HTMLElement | null;
-    if (!content) return;
-
-    // 复制内容实现无缝滚动
-    content.innerHTML += content.innerHTML;
-
-    let animationId: number;
-    let offset = 0;
-    const speed = 1;
-
-    const animate = () => {
-      offset -= speed;
-      if (offset <= -content.scrollWidth / 2) {
-        offset = 0;
-      }
-      content.style.transform = `translateX(${offset}px)`;
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animationId = requestAnimationFrame(animate);
-
-    return () => cancelAnimationFrame(animationId);
-  }, []);
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
@@ -502,11 +477,18 @@ export default function HomePage() {
       </section>
 
       {/* ===== 公告滚动条 ===== */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-3">
-        <div ref={announcementRef} className="overflow-hidden">
-          <div className="announcement-content flex gap-12 whitespace-nowrap">
+      <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-3 overflow-hidden">
+        <div className="flex whitespace-nowrap marquee-container">
+          <div className="flex gap-12 marquee-content">
             {ANNOUNCEMENTS.map((text, i) => (
               <span key={i} className="text-white font-medium px-4">
+                {text}
+              </span>
+            ))}
+          </div>
+          <div className="flex gap-12 marquee-content" aria-hidden="true">
+            {ANNOUNCEMENTS.map((text, i) => (
+              <span key={`dup-${i}`} className="text-white font-medium px-4">
                 {text}
               </span>
             ))}

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { getHomeToolCards, TOOLS } from '@/lib/toolRegistry';
@@ -81,7 +81,6 @@ export default function HomePage() {
   const [showToolsMenu, setShowToolsMenu] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const announcementRef = useRef<HTMLDivElement>(null);
 
   // 获取当前语言的轮播图数据
   const carouselItems = getCarouselItems(locale);
@@ -101,33 +100,8 @@ export default function HomePage() {
     return () => clearInterval(timer);
   }, [isPaused, carouselItems.length]);
 
-  // 公告滚动
-  useEffect(() => {
-    const container = announcementRef.current;
-    if (!container) return;
-
-    const content = container.querySelector('.announcement-content') as HTMLElement | null;
-    if (!content) return;
-
-    content.innerHTML += content.innerHTML;
-
-    let animationId: number;
-    let offset = 0;
-    const speed = 1;
-
-    const animate = () => {
-      offset -= speed;
-      if (offset <= -content.scrollWidth / 2) {
-        offset = 0;
-      }
-      content.style.transform = `translateX(${offset}px)`;
-      animationId = requestAnimationFrame(animate);
-    };
-
-    animationId = requestAnimationFrame(animate);
-
-    return () => cancelAnimationFrame(animationId);
-  }, []);
+  // 公告滚动 - 使用CSS动画实现
+  // 无需JS逻辑，CSS animation已在全局样式中定义
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
@@ -408,9 +382,16 @@ export default function HomePage() {
       </section>
 
       {/* ===== 公告滚动条 ===== */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-3">
-        <div ref={announcementRef} className="overflow-hidden">
-          <div className="announcement-content flex gap-12 whitespace-nowrap">
+      <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-3 overflow-hidden">
+        <div className="flex whitespace-nowrap marquee-container">
+          <div className="flex gap-12 marquee-content">
+            <span className="text-white font-medium px-4">🎉 {t('home.hero.ctaPrimary')}</span>
+            <span className="text-white font-medium px-4">🆕 {t('home.hero.subtitle')}</span>
+            <span className="text-white font-medium px-4">📢 {t('home.popularTools')}</span>
+            <span className="text-white font-medium px-4">💡 {t('home.features.instant.title')}</span>
+            <span className="text-white font-medium px-4">🔥 {t('home.features.pdf.title')}</span>
+          </div>
+          <div className="flex gap-12 marquee-content" aria-hidden="true">
             <span className="text-white font-medium px-4">🎉 {t('home.hero.ctaPrimary')}</span>
             <span className="text-white font-medium px-4">🆕 {t('home.hero.subtitle')}</span>
             <span className="text-white font-medium px-4">📢 {t('home.popularTools')}</span>
