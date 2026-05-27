@@ -375,31 +375,7 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
         />
 
-        {/* Google AdSense — 申请通过后取消注释
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                function loadAdSense() {
-                  var s = document.createElement('script');
-                  s.async = true;
-                  s.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4710405779358793';
-                  s.crossOrigin = 'anonymous';
-                  document.head.appendChild(s);
-                }
-                var consent = localStorage.getItem('cookie-consent');
-                if (consent === 'accepted') {
-                  loadAdSense();
-                } else {
-                  window.addEventListener('cookie-consent-accepted', function() {
-                    loadAdSense();
-                  }, { once: true });
-                }
-              })();
-            `,
-          }}
-        />
-        */
+        {/* AdSense 代码（申请通过后在此处添加） */}
 
         {/* 百度主动推送 */}
         <script
