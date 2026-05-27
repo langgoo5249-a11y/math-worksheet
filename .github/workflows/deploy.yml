@@ -41,4 +41,5 @@ jobs:
           projectName: math-worksheet
           directory: out
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          # CF Pages生产分支配置为master，即使从main触发也部署到master
+          branch: master
