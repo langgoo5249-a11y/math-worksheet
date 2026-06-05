@@ -10,7 +10,10 @@
   "theme_color": "#1e40af",
   "lang": "zh-CN",
   "dir": "ltr",
-  "categories": ["education", "utilities"],
+  "categories": [
+    "education",
+    "utilities"
+  ],
   "icons": [
     {
       "src": "/favicons/android-chrome-192x192.png",
@@ -30,7 +33,22 @@
       "type": "image/svg+xml"
     }
   ],
-  "screenshots": [],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "练学宝首页 - 免费在线教育工具"
+    },
+    {
+      "src": "/favicons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "练学宝"
+    }
+  ],
   "related_applications": [],
   "prefer_related_applications": false
 }

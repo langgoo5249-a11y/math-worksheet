@@ -110,28 +110,7 @@ export default function EnglishCalligraphyLayout({ children }: { children: React
         }}
       />
       <ToolBreadcrumb toolName="英语字帖" toolPath="/tools/english-calligraphy" />
-      {/* AdSense ad unit */}
-      <div className="max-w-4xl mx-auto px-4 my-4">
-        <div className="text-center">
-          <ins className="adsbygoogle"
-            style={{ display: 'block' }}
-            data-ad-client="ca-pub-4710405779358793"
-            data-ad-slot=""
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          />
-        </div>
-      </div>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            try {
-              (adsbygoogle = window.adsbygoogle || []).push({});
-            } catch(e) {}
-          `,
-        }}
-      />
-      {children}
+
     </>
   );
 }
