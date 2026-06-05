@@ -1,8 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
+import { parseLocaleFromPath, type Locale } from '@/lib/i18n';
+import LanguageSwitcher from './LanguageSwitcher';
 
-export default function SiteLayout({ children }: { children: React.ReactNode }) {
+interface SiteLayoutProps {
+  children: React.ReactNode;
+  currentLocale?: Locale;
+}
+
+export default function SiteLayout({ children, currentLocale: initialLocale }: SiteLayoutProps) {
+  const pathname = usePathname();
+  const locale = initialLocale || parseLocaleFromPath(pathname);
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showToolsMenu, setShowToolsMenu] = useState(false);
   const [showDonate, setShowDonate] = useState(false);
@@ -102,6 +112,11 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
               <button onClick={() => setShowDonate(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 赞助支持
               </button>
+
+              {/* 语言切换器 */}
+              <div className="border-l border-white/10 ml-2 pl-2">
+                <LanguageSwitcher currentLocale={locale} />
+              </div>
             </div>
 
             {/* 移动端菜单按钮 */}
@@ -170,6 +185,14 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
                 <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">💝</span>
                 赞助支持
               </button>
+
+              {/* 语言切换 - 移动端 */}
+              <div className="pt-2 pb-1 px-3">
+                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">语言</span>
+              </div>
+              <div className="px-3 pb-2">
+                <LanguageSwitcher currentLocale={locale} />
+              </div>
 
               {/* 页脚链接 */}
               <div className="pt-3 pb-1 px-3">
