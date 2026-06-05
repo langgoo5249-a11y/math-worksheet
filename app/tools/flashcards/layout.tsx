@@ -12,7 +12,16 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "识字卡片生成器 - 汉字拼音识字卡 | 练学宝",
     description: "免费生成汉字识字卡片，自动标注拼音并提供常用组词，支持双面卡片PDF打印。适合小学语文教师和家长快速生成专业识字卡，用于课堂教学和家庭辅导。",
     keywords: "识字卡片,汉字卡片,拼音识字,识字练习,小学识字,免费识字卡,汉字学习,识字卡打印,一年级识字卡片,二年级生字卡片,学前识字,幼小衔接识字,汉字拼音卡片,识字卡片制作,生字卡片打印,识字游戏,学前班识字,幼儿园识字卡",
-    alternates: { canonical: canonicalUrl },
+    alternates: {
+    canonical: canonicalUrl,
+    languages: {
+      "zh-CN": "https://www.skillxm.cn/tools/flashcards/",
+      "en": "https://www.skillxm.cn/en/tools/flashcards/",
+      "ja": "https://www.skillxm.cn/ja/tools/flashcards/",
+      "ko": "https://www.skillxm.cn/ko/tools/flashcards/",
+      "x-default": "https://www.skillxm.cn/tools/flashcards/",
+    },
+  },
     openGraph: { url: canonicalUrl, title: "识字卡片生成器 - 练学宝", description: "免费生成汉字识字卡片，自动标注拼音并提供常用组词，支持双面卡片PDF打印。适合小学语文教师和家长快速生成专业识字卡，用于课堂教学和家庭辅导。", images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("识字卡片生成器")}&category=${encodeURIComponent("语文工具")}&icon=🃏`, width: 1200, height: 630, alt: "识字卡片生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }] },
   };
 }

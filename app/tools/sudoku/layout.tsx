@@ -12,7 +12,16 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "数独游戏在线玩 - 入门/进阶/挑战三档难度 | 练学宝",
     description: "免费在线数独游戏，提供入门进阶挑战三档难度，内置数字键盘和笔记模式，锻炼逻辑思维和专注力。适合小学生课余训练，无需下载打开浏览器即开即玩。",
     keywords: "数独游戏,在线数独,数独挑战,逻辑训练,益智游戏,免费数独,数独解题,儿童数独入门,简单数独打印,小学生数独题,数独技巧,数独入门教程,数独每日挑战,数独在线玩,益智数独,逻辑思维训练,儿童益智游戏",
-    alternates: { canonical: canonicalUrl },
+    alternates: {
+    canonical: canonicalUrl,
+    languages: {
+      "zh-CN": "https://www.skillxm.cn/tools/sudoku/",
+      "en": "https://www.skillxm.cn/en/tools/sudoku/",
+      "ja": "https://www.skillxm.cn/ja/tools/sudoku/",
+      "ko": "https://www.skillxm.cn/ko/tools/sudoku/",
+      "x-default": "https://www.skillxm.cn/tools/sudoku/",
+    },
+  },
     openGraph: {
       url: canonicalUrl,
       title: "数独游戏 - 免费在线数独挑战 | 练学宝",

@@ -12,7 +12,16 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "拼音学习工具 - 声母韵母/拼音注音/四线三格 | 练学宝",
     description: "免费拼音学习工具，完整收录声母韵母和整体认读音节，采用四线三格标准格式，支持PDF导出A4打印。帮助小学生规范拼音书写，打好语文学习基础。",
     keywords: "拼音练习,拼音注音,声母韵母,整体认读音节,拼音学习,小学拼音,拼音打印,一年级拼音练习,声母韵母练习,拼音四线三格,拼音描红,拼音书写,幼小衔接拼音,拼音启蒙,拼音学习资料,拼音练习纸,拼音测试题",
-    alternates: { canonical: canonicalUrl },
+    alternates: {
+    canonical: canonicalUrl,
+    languages: {
+      "zh-CN": "https://www.skillxm.cn/tools/pinyin/",
+      "en": "https://www.skillxm.cn/en/tools/pinyin/",
+      "ja": "https://www.skillxm.cn/ja/tools/pinyin/",
+      "ko": "https://www.skillxm.cn/ko/tools/pinyin/",
+      "x-default": "https://www.skillxm.cn/tools/pinyin/",
+    },
+  },
     openGraph: {
       url: canonicalUrl,
       title: "拼音注音练习 - 免费在线拼音学习工具 | 练学宝",

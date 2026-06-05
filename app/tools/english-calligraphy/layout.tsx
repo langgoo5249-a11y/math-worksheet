@@ -12,7 +12,16 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "英文字帖生成器 - 四线三格英文书写练习 | 练学宝",
     description: "免费生成四线三格英文字帖，支持手写体印刷体等多种字体，可自定义单词句子内容，PDF导出A4打印。适合小学生英语书写练习，帮助规范英文字母书写格式。",
     keywords: "英语字帖,四线三格,英语练习,英文字帖,英语书写,英语打印,免费英语字帖,英文字母描红,小学英语书写练习,英语字母练习,英语单词书写,英语手写体,英语印刷体,三年级英语字帖,英语书写规范,英语抄写本,英语练字",
-    alternates: { canonical: canonicalUrl },
+    alternates: {
+    canonical: canonicalUrl,
+    languages: {
+      "zh-CN": "https://www.skillxm.cn/tools/english-calligraphy/",
+      "en": "https://www.skillxm.cn/en/tools/english-calligraphy/",
+      "ja": "https://www.skillxm.cn/ja/tools/english-calligraphy/",
+      "ko": "https://www.skillxm.cn/ko/tools/english-calligraphy/",
+      "x-default": "https://www.skillxm.cn/tools/english-calligraphy/",
+    },
+  },
     openGraph: {
       url: canonicalUrl,
       title: "英语字帖生成器 - 免费四线三格英语练习 | 练学宝",

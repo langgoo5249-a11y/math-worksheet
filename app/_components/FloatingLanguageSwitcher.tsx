@@ -61,7 +61,7 @@ export default function FloatingLanguageSwitcher() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           disabled={isPending}
-          className="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-full shadow-lg flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 hover:shadow-xl disabled:opacity-50 group/title"
+          className="w-14 h-14 bg-blue-500 hover:bg-blue-600 rounded-full shadow-lg shadow-blue-500/30 flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 hover:shadow-xl disabled:opacity-50 group/title"
         >
           <span className="text-white text-xl">🌐</span>
           <span className="absolute bottom-full mb-2 px-3 py-1.5 bg-gray-800 text-white text-xs rounded-lg opacity-0 invisible group-hover/title:opacity-100 group-hover/title:visible transition-all duration-200 whitespace-nowrap shadow-lg right-0">

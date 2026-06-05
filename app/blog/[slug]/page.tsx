@@ -30,6 +30,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     keywords: article.keywords || [article.category, '小学教育', '学习方法', '家长辅导'],
     alternates: {
       canonical: `https://www.skillxm.cn/blog/${slug}/`,
+      languages: {
+        "zh-CN": `https://www.skillxm.cn/blog/${slug}/`,
+        "x-default": `https://www.skillxm.cn/blog/${slug}/`,
+      },
     },
     openGraph: {
       title: article.title,

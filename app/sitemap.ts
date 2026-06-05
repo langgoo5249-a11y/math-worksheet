@@ -95,7 +95,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         : `${BASE_URL}/${locale}${path}`;
       sitemapEntries.push({
         url,
-        lastModified: path === '/about/' ? today : '2026-04-23',
+        lastModified: today,
         changeFrequency: 'monthly',
         priority: path === '/about/' ? 0.6 : 0.3,
         alternates: {

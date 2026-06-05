@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: '隐私政策 - 练学宝',
   description: '练学宝隐私政策，说明我们如何收集、使用和保护您的信息。',
   alternates: {
-    canonical: 'https://www.skillxm.cn/privacy',
+    canonical: 'https://www.skillxm.cn/privacy/',
   },
   openGraph: {
     url: 'https://www.skillxm.cn/privacy/',

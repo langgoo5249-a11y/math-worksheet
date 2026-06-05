@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: '服务条款 - 练学宝',
   description: '练学宝服务条款，包括使用规则、知识产权、免责声明和隐私保护等内容。',
   alternates: {
-    canonical: 'https://www.skillxm.cn/terms',
+    canonical: 'https://www.skillxm.cn/terms/',
   },
   openGraph: {
     url: 'https://www.skillxm.cn/terms/',

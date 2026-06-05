@@ -12,7 +12,16 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 练学宝",
     description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试期中期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印",
     keywords: "单元测试卷,期中试卷,期末试卷,小学数学试卷,小学语文试卷,小学英语试卷,小学科学试卷,试卷生成器,免费试卷打印,人教版试卷,三年级数学试卷,四年级语文试卷,五年级英语试卷,单元测试题,小学全科试卷,期中复习试卷,期末复习试卷",
-    alternates: { canonical: canonicalUrl },
+    alternates: {
+    canonical: canonicalUrl,
+    languages: {
+      "zh-CN": "https://www.skillxm.cn/tools/unit-test/",
+      "en": "https://www.skillxm.cn/en/tools/unit-test/",
+      "ja": "https://www.skillxm.cn/ja/tools/unit-test/",
+      "ko": "https://www.skillxm.cn/ko/tools/unit-test/",
+      "x-default": "https://www.skillxm.cn/tools/unit-test/",
+    },
+  },
     openGraph: {
       url: canonicalUrl,
       title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 练学宝",
