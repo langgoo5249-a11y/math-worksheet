@@ -461,14 +461,14 @@ export default function HomePage() {
           <button
             onClick={() => goToSlide((currentSlide - 1 + CAROUSEL_ITEMS.length) % CAROUSEL_ITEMS.length)}
             aria-label="上一张"
-            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white text-2xl backdrop-blur-sm transition-colors z-20"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white text-lg sm:text-2xl backdrop-blur-sm transition-colors z-20"
           >
             ‹
           </button>
           <button
             onClick={() => goToSlide((currentSlide + 1) % CAROUSEL_ITEMS.length)}
             aria-label="下一张"
-            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white text-2xl backdrop-blur-sm transition-colors z-20"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-12 sm:h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white text-lg sm:text-2xl backdrop-blur-sm transition-colors z-20"
           >
             ›
           </button>
@@ -549,7 +549,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 功能介绍卡片 ===== */}
-      <section className="py-16 px-4 bg-slate-800/30">
+      <section className="py-10 sm:py-16 px-4 bg-slate-800/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-12">
             ✨ 为什么选择我们
@@ -558,7 +558,7 @@ export default function HomePage() {
             {FEATURE_CARDS.map((card, i) => (
               <div
                 key={i}
-                className="relative bg-slate-800/50 border border-white/10 rounded-2xl p-8 hover:border-white/20 transition-all hover:scale-105 group"
+                className="relative bg-slate-800/50 border border-white/10 rounded-2xl p-5 sm:p-8 hover:border-white/20 transition-all hover:scale-105 group"
               >
                 <div
                   className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${card.color} flex items-center justify-center text-3xl mb-5 shadow-lg`}
@@ -609,8 +609,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== 站内链接增强 - 热门工具与资源 ===== */}
-      <section className="py-12 px-4 bg-slate-800/50">
+      {/* ===== 热门工具与资源 ===== */}
+      <section className="py-8 sm:py-12 px-4 bg-slate-800/50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-bold text-white text-center mb-8">
             热门工具与资源
@@ -677,7 +677,7 @@ export default function HomePage() {
       {/* ===== 使用教程弹窗 ===== */}
       {showTutorial && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={() => setShowTutorial(false)}>
-          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8" onClick={e => e.stopPropagation()}>
+          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-4 sm:p-8" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold">📖 使用教程</h2>
               <button onClick={() => setShowTutorial(false)} aria-label="关闭使用教程" className="text-gray-400 hover:text-white text-2xl leading-none">×</button>
@@ -790,7 +790,7 @@ export default function HomePage() {
       {/* ===== 分享弹窗 ===== */}
       {showShare && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={() => setShowShare(false)}>
-          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-md w-full p-8" onClick={e => e.stopPropagation()}>
+          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-md w-full p-4 sm:p-8" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold">🔗 分享给朋友</h2>
               <button onClick={() => setShowShare(false)} aria-label="关闭分享弹窗" className="text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
@@ -817,7 +817,7 @@ export default function HomePage() {
       {/* ===== 赞助弹窗 ===== */}
       {showDonate && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={() => setShowDonate(false)}>
-          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-md w-full p-8" onClick={e => e.stopPropagation()}>
+          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-md w-full p-4 sm:p-8" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold">💝 赞助支持</h2>
               <button onClick={() => setShowDonate(false)} aria-label="关闭赞助弹窗" className="text-gray-400 hover:text-white text-2xl leading-none">×</button>
@@ -825,7 +825,7 @@ export default function HomePage() {
             <p className="text-gray-400 text-center mb-6">
               如果这些工具对您有帮助，欢迎赞助支持开发维护！
             </p>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="text-center">
                 <p className="text-sm text-gray-500 mb-2">微信支付</p>
                 <img src="/donate/wechat.png" alt="微信支付" className="w-full rounded-xl bg-white p-2" />

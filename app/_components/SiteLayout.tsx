@@ -224,7 +224,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       {/* ===== 赞助弹窗 ===== */}
       {showDonate && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={() => setShowDonate(false)}>
-          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-md w-full p-8" onClick={e => e.stopPropagation()}>
+          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-md w-full p-4 sm:p-8" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">赞助支持</h2>
               <button onClick={() => setShowDonate(false)} aria-label="关闭赞助弹窗" className="text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
@@ -232,7 +232,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
             <p className="text-gray-400 text-center mb-6">
               如果这些工具对您有帮助，欢迎赞助支持开发维护！
             </p>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="text-center">
                 <p className="text-sm text-gray-500 mb-2">微信支付</p>
                 <img src="/donate/wechat.png" alt="微信支付" className="w-full rounded-xl bg-white p-2" />
@@ -250,7 +250,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       {/* ===== 分享弹窗 ===== */}
       {showShare && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={() => setShowShare(false)}>
-          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-md w-full p-8" onClick={e => e.stopPropagation()}>
+          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-md w-full p-4 sm:p-8" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">分享给朋友</h2>
               <button onClick={() => setShowShare(false)} aria-label="关闭分享弹窗" className="text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
@@ -277,7 +277,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       {/* ===== 使用教程弹窗 ===== */}
       {showTutorial && (
         <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={() => setShowTutorial(false)}>
-          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-8" onClick={e => e.stopPropagation()}>
+          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-4 sm:p-8" onClick={e => e.stopPropagation()}>
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold text-white">使用教程</h2>
               <button onClick={() => setShowTutorial(false)} aria-label="关闭使用教程" className="text-gray-400 hover:text-white text-2xl leading-none">&times;</button>

@@ -202,10 +202,10 @@ export default function MathWorksheetPage({ locale }: { locale?: Locale } = {}) 
       {!hasGenerated && (
         <div className="print:hidden pt-24 pb-12 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
               数学练习卷生成器
             </h1>
-            <p className="text-xl text-gray-400 mb-10">
+            <p className="text-base sm:text-xl text-gray-400 mb-10">
               支持加减乘除、竖式计算等11种题型 · 田字格/方格/横线格多模板 · PDF即印即用
             </p>
 

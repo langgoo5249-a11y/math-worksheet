@@ -25,17 +25,17 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <SiteLayout>
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
         {/* 页面标题 */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">关于练学宝</h1>
-          <p className="text-gray-400 text-lg">一群家长开发者，为孩子们打造的免费教育工具平台</p>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">关于练学宝</h1>
+          <p className="text-gray-400 text-base sm:text-lg">一群家长开发者，为孩子们打造的免费教育工具平台</p>
         </div>
 
         {/* 建站初衷 */}
         <section className="mb-12">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-2xl">💡</span> 建站初衷
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
@@ -49,10 +49,9 @@ export default function AboutPage() {
 
         {/* 我们的使命 */}
         <section className="mb-12">
-          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <span className="text-2xl">🎯</span> 我们的使命
-            </h2>
+          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-4 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <span className="text-2xl">🎯</span> 我们的使命</h2>
             <p className="text-gray-200 leading-relaxed text-lg">
               让每个孩子都能免费使用优质的教育工具，不受经济条件限制。
             </p>
@@ -64,9 +63,8 @@ export default function AboutPage() {
 
         {/* 我们的工具 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <span className="text-2xl">🛠️</span> 我们的工具
-          </h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <span className="text-2xl">🛠️</span> 我们的工具</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               {
@@ -138,9 +136,8 @@ export default function AboutPage() {
 
         {/* 我们的承诺 */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <span className="text-2xl">🤝</span> 我们的承诺
-          </h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <span className="text-2xl">🤝</span> 我们的承诺</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               {
@@ -178,13 +175,12 @@ export default function AboutPage() {
 
         {/* 团队介绍 */}
         <section className="mb-12">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-              <span className="text-2xl">👥</span> 团队介绍
-            </h2>
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span className="text-2xl">👥</span> 团队介绍</h2>
             
             {/* 团队成员卡片 */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">
               {[
                 {
                   name: '林远',
@@ -219,7 +215,7 @@ export default function AboutPage() {
                   key={member.name}
                   className="bg-slate-700/50 border border-white/10 rounded-xl p-6 text-center hover:border-white/20 transition-all hover:scale-105"
                 >
-                  <div className={`w-20 h-20 mx-auto rounded-full bg-gradient-to-br ${member.color} flex items-center justify-center text-white text-2xl font-bold mb-4 shadow-lg`}>
+                  <div className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-full bg-gradient-to-br ${member.color} flex items-center justify-center text-white text-xl sm:text-2xl font-bold mb-4 shadow-lg`}>
                     {member.avatar}
                   </div>
                   <h3 className="text-white font-bold text-lg mb-1">{member.name}</h3>
@@ -266,26 +262,26 @@ export default function AboutPage() {
 
         {/* 技术保障 */}
         <section className="mb-12">
-          <div className="bg-slate-800 rounded-xl p-6">
+          <div className="bg-slate-800 rounded-xl p-4 sm:p-6">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-2xl">⚙️</span>
-              <h3 className="text-white text-lg font-bold">技术保障</h3>
+              <span className="text-xl sm:text-2xl">⚙️</span>
+              <h3 className="text-white text-base sm:text-lg font-bold">技术保障</h3>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-slate-700/50 rounded-lg p-4 text-center">
-                <div className="text-3xl mb-2">⚡</div>
-                <div className="text-white font-medium">极速加载</div>
-                <div className="text-slate-400 text-sm">全球CDN加速，毫秒级响应</div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+              <div className="bg-slate-700/50 rounded-lg p-3 sm:p-4 text-center">
+                <div className="text-2xl sm:text-3xl mb-2">⚡</div>
+                <div className="text-white font-medium text-sm sm:text-base">极速加载</div>
+                <div className="text-slate-400 text-xs sm:text-sm">全球CDN加速，毫秒级响应</div>
               </div>
-              <div className="bg-slate-700/50 rounded-lg p-4 text-center">
-                <div className="text-3xl mb-2">🛡️</div>
-                <div className="text-white font-medium">安全可靠</div>
-                <div className="text-slate-400 text-sm">数据本地处理，隐私安全保障</div>
+              <div className="bg-slate-700/50 rounded-lg p-3 sm:p-4 text-center">
+                <div className="text-2xl sm:text-3xl mb-2">🛡️</div>
+                <div className="text-white font-medium text-sm sm:text-base">安全可靠</div>
+                <div className="text-slate-400 text-xs sm:text-sm">数据本地处理，隐私安全保障</div>
               </div>
-              <div className="bg-slate-700/50 rounded-lg p-4 text-center">
-                <div className="text-3xl mb-2">📱</div>
-                <div className="text-white font-medium">全端适配</div>
-                <div className="text-slate-400 text-sm">手机平板电脑均可流畅使用</div>
+              <div className="bg-slate-700/50 rounded-lg p-3 sm:p-4 text-center">
+                <div className="text-2xl sm:text-3xl mb-2">📱</div>
+                <div className="text-white font-medium text-sm sm:text-base">全端适配</div>
+                <div className="text-slate-400 text-xs sm:text-sm">手机平板电脑均可流畅使用</div>
               </div>
             </div>
           </div>

@@ -25,16 +25,16 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <SiteLayout>
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <div className="max-w-3xl mx-auto px-4 py-8 sm:py-12">
         {/* 页面标题 */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">服务条款</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">服务条款</h1>
           <p className="text-gray-400">最后更新日期：2026年4月</p>
         </div>
 
         {/* 服务说明 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">📖</span> 一、服务说明
             </h2>
@@ -49,7 +49,7 @@ export default function TermsPage() {
 
         {/* 使用规则 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">📋</span> 二、使用规则
             </h2>
@@ -76,7 +76,7 @@ export default function TermsPage() {
 
         {/* 知识产权 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">©️</span> 三、知识产权
             </h2>
@@ -99,7 +99,7 @@ export default function TermsPage() {
 
         {/* 免责声明 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">⚠️</span> 四、免责声明
             </h2>
@@ -122,7 +122,7 @@ export default function TermsPage() {
 
         {/* 隐私保护 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">🔒</span> 五、隐私保护
             </h2>
@@ -145,7 +145,7 @@ export default function TermsPage() {
 
         {/* 广告说明 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">📢</span> 六、第三方服务
             </h2>
@@ -164,7 +164,7 @@ export default function TermsPage() {
 
         {/* 条款修改 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">📝</span> 七、条款修改
             </h2>
@@ -179,7 +179,7 @@ export default function TermsPage() {
 
         {/* 联系信息 */}
         <section>
-          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-8 text-center">
+          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-4 sm:p-8 text-center">
             <p className="text-gray-300 leading-relaxed mb-3">
               如果您对本服务条款有任何疑问，请通过邮件联系我们：
             </p>

@@ -91,7 +91,7 @@ export default function BlogPage() {
       {/* 移动端侧滑菜单 */}
       <div className={`lg:hidden fixed inset-0 z-50 transition-all duration-300 ${mobileMenu ? 'visible' : 'invisible'}`}>
         <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${mobileMenu ? 'opacity-100' : 'opacity-0'}`} onClick={() => setMobileMenu(false)} />
-        <div className={`absolute right-0 top-0 h-full w-72 bg-slate-900 border-l border-white/10 shadow-2xl transition-transform duration-300 ${mobileMenu ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className={`absolute right-0 top-0 h-full w-72 max-w-[85vw] bg-slate-900 border-l border-white/10 shadow-2xl transition-transform duration-300 ${mobileMenu ? 'translate-x-0' : 'translate-x-full'}`}>
           <div className="p-4 border-b border-white/10">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-base">📚</div>
@@ -124,11 +124,11 @@ export default function BlogPage() {
       </div>
 
       <main className="pt-14">
-        <div className="max-w-5xl mx-auto px-4 py-12">
+        <div className="max-w-5xl mx-auto px-4 py-8 sm:py-12">
           {/* Page Title */}
           <div className="text-center mb-10">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">教育博客</h1>
-            <p className="text-gray-400 text-lg">分享实用的教育方法和学习技巧，助力孩子成长</p>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">教育博客</h1>
+            <p className="text-gray-400 text-base sm:text-lg">分享实用的教育方法和学习技巧，助力孩子成长</p>
           </div>
 
           {/* Category Filter */}

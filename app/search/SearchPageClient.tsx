@@ -53,10 +53,10 @@ export default function SearchPageClient() {
 
   return (
     <SiteLayout>
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
         {/* 搜索框 */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white mb-6 text-center">🔍 站内搜索</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">🔍 站内搜索</h1>
           <form onSubmit={handleSearch} className="flex gap-3">
             <input
               type="text"

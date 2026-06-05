@@ -25,17 +25,17 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <SiteLayout>
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <div className="max-w-3xl mx-auto px-4 py-8 sm:py-12">
         {/* 页面标题 */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">隐私政策</h1>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">隐私政策</h1>
           <p className="text-gray-400">最后更新日期：2026年5月8日</p>
           <p className="text-gray-500 text-sm mt-2">生效日期：2026年5月8日</p>
         </div>
 
         {/* 概述 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">📋</span> 概述
             </h2>
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
 
         {/* 信息收集 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">🔍</span> 一、我们收集的信息
             </h2>
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
 
         {/* 信息使用 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">📊</span> 二、信息使用方式
             </h2>
@@ -107,7 +107,7 @@ export default function PrivacyPage() {
 
         {/* 信息共享 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">🤝</span> 三、信息共享与披露
             </h2>
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
 
         {/* Google AdSense 特别说明 */}
         <section className="mb-8">
-          <div className="bg-gradient-to-r from-yellow-600/10 to-orange-600/10 border border-yellow-500/30 rounded-2xl p-8">
+          <div className="bg-gradient-to-r from-yellow-600/10 to-orange-600/10 border border-yellow-500/30 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">📢</span> 四、关于广告的说明
             </h2>
@@ -141,7 +141,7 @@ export default function PrivacyPage() {
 
         {/* 第三方服务 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">🔗</span> 五、第三方服务
             </h2>
@@ -187,7 +187,7 @@ export default function PrivacyPage() {
 
         {/* 数据安全 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">🛡️</span> 六、数据安全
             </h2>
@@ -205,7 +205,7 @@ export default function PrivacyPage() {
 
         {/* 儿童隐私 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">👶</span> 七、儿童隐私保护
             </h2>
@@ -226,7 +226,7 @@ export default function PrivacyPage() {
 
         {/* 用户权利 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">⚖️</span> 八、您的权利
             </h2>
@@ -241,7 +241,7 @@ export default function PrivacyPage() {
 
         {/* 政策更新 */}
         <section className="mb-8">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">📝</span> 九、政策更新
             </h2>
@@ -256,7 +256,7 @@ export default function PrivacyPage() {
 
         {/* 联系信息 */}
         <section>
-          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-8 text-center">
+          <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-4 sm:p-8 text-center">
             <p className="text-gray-300 leading-relaxed mb-3">
               如果您对本隐私政策有任何疑问、意见或建议，请通过邮件联系我们：
             </p>

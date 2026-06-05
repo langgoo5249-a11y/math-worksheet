@@ -26,23 +26,23 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <SiteLayout>
-      <div className="max-w-3xl mx-auto px-4 py-12">
+      <div className="max-w-3xl mx-auto px-4 py-8 sm:py-12">
         {/* 页面标题 */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">联系我们</h1>
-          <p className="text-gray-400 text-lg">我们很乐意听取您的声音</p>
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">联系我们</h1>
+          <p className="text-gray-400 text-base sm:text-lg">我们很乐意听取您的声音</p>
         </div>
 
         {/* 联系方式 */}
         <section className="mb-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* 邮箱联系 */}
-            <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-8 text-center">
-              <div className="text-4xl mb-4">📧</div>
-              <h2 className="text-xl font-bold text-white mb-3">邮箱联系</h2>
+            <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-blue-500/30 rounded-2xl p-4 sm:p-8 text-center">
+              <div className="text-3xl sm:text-4xl mb-4">📧</div>
+              <h2 className="text-lg sm:text-xl font-bold text-white mb-3">邮箱联系</h2>
               <a
                 href="mailto:lang@skillxm.cn"
-                className="text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors"
+                className="text-lg sm:text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors"
               >
                 lang@skillxm.cn
               </a>
@@ -52,8 +52,8 @@ export default function ContactPage() {
             </div>
 
             {/* 在线表单 */}
-            <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
-              <div className="text-4xl mb-4 text-center">📝</div>
+            <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
+              <div className="text-3xl sm:text-4xl mb-4 text-center">📝</div>
               <h2 className="text-xl font-bold text-white mb-3 text-center">在线留言</h2>
               <ContactForm />
             </div>
@@ -62,9 +62,8 @@ export default function ContactPage() {
 
         {/* 常见联系原因 */}
         <section className="mb-10">
-          <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <span className="text-2xl">📋</span> 常见联系原因
-          </h2>
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <span className="text-2xl">📋</span> 常见联系原因</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               {
@@ -112,11 +111,10 @@ export default function ContactPage() {
 
         {/* 响应时间 */}
         <section className="mb-10">
-          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-8">
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-              <span className="text-2xl">⏰</span> 响应时间
-            </h2>
-            <div className="flex items-center gap-4 mb-4">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <span className="text-2xl">⏰</span> 响应时间</h2>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 mb-4">
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
@@ -147,8 +145,8 @@ export default function ContactPage() {
 
         {/* 温馨提示 */}
         <section>
-          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-8">
-            <h2 className="text-xl font-bold text-yellow-400 mb-3 flex items-center gap-2">
+          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-4 sm:p-8">
+            <h2 className="text-lg sm:text-xl font-bold text-yellow-400 mb-3 flex items-center gap-2">
               <span>💡</span> 温馨提示
             </h2>
             <ul className="space-y-2 text-gray-300 text-sm">
