@@ -3,6 +3,7 @@ import { locales, defaultLocale, type Locale } from "@/lib/i18n";
 import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import CookieConsent from "../_components/CookieConsent";
+import FloatingLanguageSwitcher from "../_components/FloatingLanguageSwitcher";
 
 // 生成静态参数
 export function generateStaticParams() {
@@ -103,6 +104,9 @@ export default async function LocaleLayout({
           </div>
         </div>
       </div>
+
+      {/* 语言切换器悬浮按钮 */}
+      <FloatingLanguageSwitcher />
 
       {/* 百度统计 */}
       <script
