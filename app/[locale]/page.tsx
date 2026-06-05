@@ -5,7 +5,6 @@ import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { getHomeToolCards, TOOLS } from '@/lib/toolRegistry';
 import { defaultLocale, parseLocaleFromPath, localePath, type Locale } from '@/lib/i18n';
-import LanguageSwitcher from '../_components/LanguageSwitcher';
 
 // 轮播图数据
 const getCarouselItems = (locale: Locale) => [
@@ -172,11 +171,7 @@ export default function HomePage() {
                 💝 赞助支持
               </button>
 
-              {/* 语言切换器 */}
-              <div className="border-l border-white/10 ml-2 pl-2">
-                <LanguageSwitcher currentLocale={locale} />
-              </div>
-            </div>
+                          </div>
 
             {/* 移动端菜单按钮 */}
             <button
@@ -192,7 +187,7 @@ export default function HomePage() {
         {/* 移动端菜单 */}
         <div className={`lg:hidden fixed inset-0 z-50 transition-all duration-300 ${mobileMenu ? 'visible' : 'invisible'}`}>
           <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${mobileMenu ? 'opacity-100' : 'opacity-0'}`} onClick={() => setMobileMenu(false)} />
-          <div className={`absolute right-0 top-0 h-full w-72 bg-slate-900 border-l border-white/10 shadow-2xl transition-transform duration-300 ${mobileMenu ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className={`absolute right-0 top-0 h-full w-72 max-w-[85vw] bg-slate-900 border-l border-white/10 shadow-2xl transition-transform duration-300 ${mobileMenu ? 'translate-x-0' : 'translate-x-full'}`}>
             <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
               <div className="flex items-center gap-2">
                 <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-sm">📚</div>
@@ -209,15 +204,7 @@ export default function HomePage() {
                 {t('nav.home')}
               </a>
 
-              {/* 语言切换 - 移动端 */}
-              <div className="pt-2 pb-1 px-3">
-                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">{t('language.switch')}</span>
-              </div>
-              <div className="px-3 pb-2">
-                <LanguageSwitcher currentLocale={locale} />
-              </div>
-
-              {/* 工具分组 */}
+                            {/* 工具分组 */}
               <div className="pt-2 pb-1 px-3">
                 <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">{t('nav.tools')}</span>
               </div>
@@ -277,7 +264,7 @@ export default function HomePage() {
       {/* ===== 轮播大图区域 ===== */}
       <section className="pt-14">
         <div
-          className="relative h-[500px] md:h-[600px] overflow-hidden"
+          className="relative h-[350px] sm:h-[400px] md:h-[600px] overflow-hidden"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -319,7 +306,7 @@ export default function HomePage() {
                 {/* 3D 悬浮标题 */}
                 <div className="perspective-1000 mb-6">
                   <h1
-                    className="text-6xl md:text-8xl font-black text-white tracking-tight"
+                    className="text-4xl sm:text-6xl md:text-8xl font-black text-white tracking-tight"
                     style={{
                       textShadow: '0 4px 0 rgba(0,0,0,0.2), 0 8px 0 rgba(0,0,0,0.1), 0 12px 20px rgba(0,0,0,0.3)',
                       transform: 'translateZ(50px)',
@@ -330,7 +317,7 @@ export default function HomePage() {
                 </div>
 
                 {/* 副标题 */}
-                <p className="text-2xl md:text-3xl font-bold text-white/90 mb-4 drop-shadow-lg">
+                <p className="text-lg sm:text-2xl md:text-3xl font-bold text-white/90 mb-4 drop-shadow-lg">
                   {t('home.hero.subtitle')}
                 </p>
 
@@ -402,9 +389,9 @@ export default function HomePage() {
       </section>
 
       {/* ===== 工具导航分类 ===== */}
-      <section className="py-16 px-4">
+      <section className="py-10 sm:py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-8 sm:mb-12">
             🛠️ {t('home.popularTools')}
           </h2>
 
@@ -445,7 +432,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 功能介绍卡片 ===== */}
-      <section className="py-16 px-4 bg-slate-800/30">
+      <section className="py-10 sm:py-16 px-4 bg-slate-800/30">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-12">
             ✨ {t('home.popularTools')}
@@ -474,7 +461,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 常见问题 FAQ ===== */}
-      <section className="py-16 px-4">
+      <section className="py-10 sm:py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-12">
             ❓ {t('home.faq.title')}

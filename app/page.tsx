@@ -272,7 +272,7 @@ export default function HomePage() {
           {/* 遮罩 */}
           <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${mobileMenu ? 'opacity-100' : 'opacity-0'}`} onClick={() => setMobileMenu(false)} />
           {/* 菜单面板 */}
-          <div className={`absolute right-0 top-0 h-full w-72 bg-slate-900 border-l border-white/10 shadow-2xl transition-transform duration-300 ${mobileMenu ? 'translate-x-0' : 'translate-x-full'}`}>
+          <div className={`absolute right-0 top-0 h-full w-72 max-w-[85vw] bg-slate-900 border-l border-white/10 shadow-2xl transition-transform duration-300 ${mobileMenu ? 'translate-x-0' : 'translate-x-full'}`}>
             {/* 头部 */}
             <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
               <div className="flex items-center gap-2">
@@ -496,7 +496,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 工具导航分类 ===== */}
-      <section className="py-16 px-4">
+      <section className="py-10 sm:py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-12">
             🛠️ 工具导航
@@ -574,7 +574,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== 常见问题 FAQ ===== */}
-      <section className="py-16 px-4">
+      <section className="py-10 sm:py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-12">
             ❓ 常见问题

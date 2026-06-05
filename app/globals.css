@@ -97,3 +97,34 @@ body {
     transform: translateX(-50%);
   }
 }
+
+/* 移动端触摸优化 */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 触摸滚动优化 */
+html {
+  -webkit-overflow-scrolling: touch;
+  touch-action: manipulation;
+}
+
+/* 安全区域适配 (iPhone notch / home indicator) */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* 移动端字体缩放优化 */
+@media (max-width: 640px) {
+  input, textarea, select, button {
+    font-size: 16px !important; /* 防止 iOS 缩放 */
+  }
+}
+
+/* 移动端表格/卡片横向滚动 */
+.mobile-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+}
