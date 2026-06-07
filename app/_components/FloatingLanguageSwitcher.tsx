@@ -32,7 +32,7 @@ export default function FloatingLanguageSwitcher() {
   };
 
   return (
-    <div className="fixed right-4 bottom-4 z-50 safe-bottom" id="language-float" style={{ paddingBottom: "max(1rem, env(safe-area-inset-bottom, 1rem))" }}>
+    <div className="fixed right-4 bottom-4 z-50" id="language-float" style={{ paddingBottom: "env(safe-area-inset-bottom, 8px)" }}>
       <div className="relative">
         {isOpen && (
           <>

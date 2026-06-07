@@ -403,7 +403,7 @@ export default async function RootLayout({
         </NextIntlClientProvider>
 
         {/* 微信小程序浮动二维码 */}
-        <div className="fixed right-4 bottom-24 z-50 group" id="miniapp-float">
+        <div className="fixed right-4 bottom-24 z-50 group" id="miniapp-float" style={{ paddingBottom: "env(safe-area-inset-bottom, 16px)" }}>
           <div className="relative">
             {/* 展开的二维码卡片 */}
             <div className="absolute bottom-full right-0 mb-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
