@@ -5,6 +5,7 @@ import { useState } from 'react';
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [showToolsMenu, setShowToolsMenu] = useState(false);
+  const [showContentMenu, setShowContentMenu] = useState(false);
   const [showDonate, setShowDonate] = useState(false);
   const [showTutorial, setShowTutorial] = useState(false);
   const [showShare, setShowShare] = useState(false);
@@ -102,6 +103,53 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
               <button onClick={() => setShowDonate(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 赞助支持
               </button>
+
+              {/* 内容板块下拉 */}
+              <div
+                className="relative"
+                onMouseEnter={() => setShowContentMenu(true)}
+                onMouseLeave={() => setShowContentMenu(false)}
+              >
+                <button className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                  内容板块
+                  <svg
+                    className={`w-3.5 h-3.5 transition-transform ${showContentMenu ? 'rotate-180' : ''}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {showContentMenu && (
+                  <div className="absolute right-0 top-full mt-1 bg-slate-800 border border-white/10 rounded-xl shadow-2xl p-2 min-w-[200px] z-50">
+                    <a href="/grade" className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                      <span className="w-7 h-7 bg-blue-500/20 rounded-lg flex items-center justify-center text-sm">🎓</span>
+                      <div><div className="text-white font-medium">年级专区</div><div className="text-xs text-gray-500">1-6年级完整学习方案</div></div>
+                    </a>
+                    <a href="/textbook" className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                      <span className="w-7 h-7 bg-purple-500/20 rounded-lg flex items-center justify-center text-sm">📚</span>
+                      <div><div className="text-white font-medium">教材同步</div><div className="text-xs text-gray-500">4个版本同步练习</div></div>
+                    </a>
+                    <a href="/knowledge" className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                      <span className="w-7 h-7 bg-yellow-500/20 rounded-lg flex items-center justify-center text-sm">💡</span>
+                      <div><div className="text-white font-medium">知识点专题</div><div className="text-xs text-gray-500">核心知识点详解</div></div>
+                    </a>
+                    <a href="/resources" className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                      <span className="w-7 h-7 bg-emerald-500/20 rounded-lg flex items-center justify-center text-sm">📁</span>
+                      <div><div className="text-white font-medium">练习卷资源库</div><div className="text-xs text-gray-500">20+套免费下载</div></div>
+                    </a>
+                    <a href="/parent-guide" className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                      <span className="w-7 h-7 bg-rose-500/20 rounded-lg flex items-center justify-center text-sm">👨‍👩‍👧</span>
+                      <div><div className="text-white font-medium">家长指导</div><div className="text-xs text-gray-500">幼小衔接/小升初</div></div>
+                    </a>
+                    <a href="/daily" className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                      <span className="w-7 h-7 bg-orange-500/20 rounded-lg flex items-center justify-center text-sm">📅</span>
+                      <div><div className="text-white font-medium">每日一练</div><div className="text-xs text-gray-500">每天15分钟打卡</div></div>
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
 
             {/* 移动端菜单按钮 */}
@@ -156,6 +204,38 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
                 </a>
               ))}
               <div className="pt-3 pb-1 px-3">
+                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">内容板块</span>
+              </div>
+              <a href="/grade" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-blue-500/15 rounded-lg flex items-center justify-center text-sm">🎓</span>
+                <div className="flex-1 min-w-0"><div className="font-medium">年级专区</div><div className="text-xs text-gray-500">1-6年级</div></div>
+              </a>
+              <a href="/textbook" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-purple-500/15 rounded-lg flex items-center justify-center text-sm">📚</span>
+                <div className="flex-1 min-w-0"><div className="font-medium">教材同步</div><div className="text-xs text-gray-500">4个版本</div></div>
+              </a>
+              <a href="/knowledge" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-yellow-500/15 rounded-lg flex items-center justify-center text-sm">💡</span>
+                <div className="flex-1 min-w-0"><div className="font-medium">知识点专题</div><div className="text-xs text-gray-500">核心知识</div></div>
+              </a>
+              <a href="/resources" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-emerald-500/15 rounded-lg flex items-center justify-center text-sm">📁</span>
+                <div className="flex-1 min-w-0"><div className="font-medium">练习卷资源库</div><div className="text-xs text-gray-500">免费下载</div></div>
+              </a>
+              <a href="/parent-guide" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-rose-500/15 rounded-lg flex items-center justify-center text-sm">👨‍👩‍👧</span>
+                <div className="flex-1 min-w-0"><div className="font-medium">家长指导</div><div className="text-xs text-gray-500">6大主题</div></div>
+              </a>
+              <a href="/daily" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-orange-500/15 rounded-lg flex items-center justify-center text-sm">📅</span>
+                <div className="flex-1 min-w-0"><div className="font-medium">每日一练</div><div className="text-xs text-gray-500">15分钟打卡</div></div>
+              </a>
+              <a href="/changelog" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">📝</span>
+                <div className="flex-1 min-w-0"><div className="font-medium">更新日志</div><div className="text-xs text-gray-500">最新动态</div></div>
+              </a>
+
+              <div className="pt-3 pb-1 px-3">
                 <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">更多</span>
               </div>
               <button onClick={() => { setShowTutorial(true); setMobileMenu(false); }} className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
@@ -204,7 +284,48 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
       {/* ===== 底部页脚 ===== */}
       <footer className="border-t border-white/10 py-8 px-4 mt-8">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400 mb-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-6 text-sm">
+            <div>
+              <div className="text-white font-medium mb-3">内容板块</div>
+              <ul className="space-y-1.5 text-gray-400">
+                <li><a href="/grade" className="hover:text-white transition-colors">年级专区</a></li>
+                <li><a href="/textbook" className="hover:text-white transition-colors">教材同步</a></li>
+                <li><a href="/knowledge" className="hover:text-white transition-colors">知识点专题</a></li>
+                <li><a href="/resources" className="hover:text-white transition-colors">资源库</a></li>
+                <li><a href="/parent-guide" className="hover:text-white transition-colors">家长指导</a></li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-white font-medium mb-3">学习</div>
+              <ul className="space-y-1.5 text-gray-400">
+                <li><a href="/daily" className="hover:text-white transition-colors">每日一练</a></li>
+                <li><a href="/blog" className="hover:text-white transition-colors">教育博客</a></li>
+                <li><a href="/changelog" className="hover:text-white transition-colors">更新日志</a></li>
+                <li><a href="/sitemap" className="hover:text-white transition-colors">网站地图</a></li>
+                <li><a href="/rss.xml" className="hover:text-white transition-colors">RSS订阅</a></li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-white font-medium mb-3">工具</div>
+              <ul className="space-y-1.5 text-gray-400">
+                <li><a href="/tools/math-worksheet" className="hover:text-white transition-colors">数学练习卷</a></li>
+                <li><a href="/tools/calligraphy" className="hover:text-white transition-colors">字帖生成器</a></li>
+                <li><a href="/tools/mental-math" className="hover:text-white transition-colors">口算速练</a></li>
+                <li><a href="/tools/sudoku" className="hover:text-white transition-colors">数独游戏</a></li>
+                <li><a href="/tools" className="hover:text-white transition-colors">全部工具</a></li>
+              </ul>
+            </div>
+            <div>
+              <div className="text-white font-medium mb-3">关于</div>
+              <ul className="space-y-1.5 text-gray-400">
+                <li><a href="/about" className="hover:text-white transition-colors">关于我们</a></li>
+                <li><a href="/contact" className="hover:text-white transition-colors">联系我们</a></li>
+                <li><a href="/privacy" className="hover:text-white transition-colors">隐私政策</a></li>
+                <li><a href="/terms" className="hover:text-white transition-colors">服务条款</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400 mb-3 pt-6 border-t border-white/5">
             <a href="/about" className="hover:text-white transition-colors">关于我们</a>
             <span className="text-gray-600">|</span>
             <a href="/contact" className="hover:text-white transition-colors">联系我们</a>
