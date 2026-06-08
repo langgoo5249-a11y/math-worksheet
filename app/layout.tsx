@@ -14,7 +14,8 @@ const notoSansSC = Noto_Sans_SC({
   weight: ["400", "500", "700"],
   variable: "--font-noto-sans-sc",
   display: "swap",
-  preload: true,
+  preload: false,
+  subsets: ['latin'],
 });
 
 // 根布局保持静态预渲染，canonical 由各页面 layout 分别定义

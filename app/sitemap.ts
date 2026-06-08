@@ -1,6 +1,11 @@
 import type { MetadataRoute } from 'next';
 import { articles, categories } from './blog/data';
 import { TOOLS } from '@/lib/toolRegistry';
+import { GRADES } from '@/lib/gradeConfig';
+import { TEXTBOOKS } from '@/lib/textbookConfig';
+import { KNOWLEDGE_POINTS } from '@/lib/knowledgeConfig';
+import { PARENT_GUIDE_TOPICS } from '@/lib/parentGuideConfig';
+import { getAllResources } from '@/lib/resourcesConfig';
 import { locales, defaultLocale } from '@/lib/i18n';
 
 // output: "export" 模式下需要声明为静态生成
@@ -192,6 +197,82 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       });
     });
+
+  // 年级专区
+  ['/grade/', '/textbook/', '/knowledge/', '/resources/', '/parent-guide/', '/daily/', '/changelog/', '/sitemap/'].forEach(path => {
+    const url = `${BASE_URL}${path}`;
+    sitemapEntries.push({
+      url,
+      lastModified: today,
+      changeFrequency: 'weekly',
+      priority: 0.85,
+      alternates: {
+        languages: { 'zh-CN': url, 'x-default': url },
+      },
+    });
+  });
+
+  // 年级详情页
+  GRADES.forEach(g => {
+    const url = `${BASE_URL}/grade/grade-${g.grade}/`;
+    sitemapEntries.push({
+      url,
+      lastModified: today,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+      alternates: { languages: { 'zh-CN': url, 'x-default': url } },
+    });
+  });
+
+  // 教材详情页
+  TEXTBOOKS.forEach(tb => {
+    tb.grades.forEach(g => {
+      const url = `${BASE_URL}/textbook/${tb.id}/${g.grade}/`;
+      sitemapEntries.push({
+        url,
+        lastModified: today,
+        changeFrequency: 'weekly',
+        priority: 0.8,
+        alternates: { languages: { 'zh-CN': url, 'x-default': url } },
+      });
+    });
+  });
+
+  // 知识点详情页
+  KNOWLEDGE_POINTS.forEach(kp => {
+    const url = `${BASE_URL}/knowledge/${kp.slug}/`;
+    sitemapEntries.push({
+      url,
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+      alternates: { languages: { 'zh-CN': url, 'x-default': url } },
+    });
+  });
+
+  // 资源详情页
+  getAllResources().forEach(r => {
+    const url = `${BASE_URL}/resources/${r.id}/`;
+    sitemapEntries.push({
+      url,
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.75,
+      alternates: { languages: { 'zh-CN': url, 'x-default': url } },
+    });
+  });
+
+  // 家长指导详情页
+  PARENT_GUIDE_TOPICS.forEach(t => {
+    const url = `${BASE_URL}/parent-guide/${t.id}/`;
+    sitemapEntries.push({
+      url,
+      lastModified: today,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: { languages: { 'zh-CN': url, 'x-default': url } },
+    });
+  });
 
   return sitemapEntries;
 }
