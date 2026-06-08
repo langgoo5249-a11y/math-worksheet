@@ -3,8 +3,13 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getHomeToolCards, TOOLS } from '@/lib/toolRegistry';
+import { GRADES } from '@/lib/gradeConfig';
+import { TEXTBOOKS } from '@/lib/textbookConfig';
+import { KNOWLEDGE_POINTS } from '@/lib/knowledgeConfig';
+import { PARENT_GUIDE_TOPICS, TOPIC_COLORS } from '@/lib/parentGuideConfig';
+import { getAllResources } from '@/lib/resourcesConfig';
 
-// 轮播图数据
+// ============ 轮播图数据 ============
 const CAROUSEL_ITEMS = [
   {
     id: 1,
@@ -71,18 +76,85 @@ const CAROUSEL_ITEMS = [
   },
 ];
 
-// 公告数据
+// ============ 公告数据 ============
 const ANNOUNCEMENTS = [
   '🎉 口算速练全新上线！支持4个难度级别，在线计时挑战',
+  '📚 新增教材同步专区！人教/北师/苏教/部编4个版本',
+  '💡 新增知识点专题库！凑十法、乘法口诀等10个核心知识点',
+  '📁 新增免费练习卷资源库！20+套高质量练习卷免费下载',
+  '👨‍👩‍👧 新增家长指导中心！幼小衔接/小升初全攻略',
+  '📅 新增每日一练！每天15分钟打卡养成好习惯',
   '🆕 识字卡片上线！自定义汉字卡片，支持拼音组词，可打印',
   '📝 作文模板生成器上线！看图写话、日记、书信等多种模板',
-  '📢 字帖生成器上线！支持楷体/宋体/黑体等多种字体',
-  '🧩 数独游戏全新上线，支持4个难度级别',
   '💡 小贴士：点击顶部菜单可快速访问各工具',
   '🔥 免费使用，无需注册，即开即用',
 ];
 
-// 功能介绍卡片
+// ============ 内容板块入口（6大主板块） ============
+const CONTENT_SECTIONS = [
+  {
+    icon: '🎓',
+    title: '年级学习专区',
+    subtitle: '1-6年级完整方案',
+    description: '每个年级配套核心知识点、推荐工具、学习路径',
+    href: '/grade',
+    gradient: 'from-blue-500 to-indigo-600',
+    accent: 'blue',
+    badge: '6个年级',
+  },
+  {
+    icon: '📚',
+    title: '教材同步练习',
+    subtitle: '4版本同步配套',
+    description: '人教版/北师大/苏教版/部编版，按教材单元组织',
+    href: '/textbook',
+    gradient: 'from-purple-500 to-fuchsia-600',
+    accent: 'purple',
+    badge: '4版本×6年级',
+  },
+  {
+    icon: '💡',
+    title: '知识点专题',
+    subtitle: '10个核心专题',
+    description: '凑十法、破十法、乘法口诀、百分数、声母韵母等',
+    href: '/knowledge',
+    gradient: 'from-amber-500 to-orange-600',
+    accent: 'amber',
+    badge: '10个专题',
+  },
+  {
+    icon: '📁',
+    title: '练习卷资源库',
+    subtitle: '免费下载',
+    description: '20+套高质量小学练习卷，按年级+学科+知识点分类',
+    href: '/resources',
+    gradient: 'from-emerald-500 to-teal-600',
+    accent: 'emerald',
+    badge: '20+套资源',
+  },
+  {
+    icon: '👨‍👩‍👧',
+    title: '家长指导中心',
+    subtitle: '6大主题',
+    description: '幼小衔接、学习习惯、辅导作业、小升初全攻略',
+    href: '/parent-guide',
+    gradient: 'from-rose-500 to-pink-600',
+    accent: 'rose',
+    badge: '6个主题',
+  },
+  {
+    icon: '📅',
+    title: '每日一练',
+    subtitle: '每天15分钟',
+    description: '按年级智能出题，每天一组练习题打卡',
+    href: '/daily',
+    gradient: 'from-cyan-500 to-blue-600',
+    accent: 'cyan',
+    badge: '天天打卡',
+  },
+];
+
+// ============ 功能介绍卡片 ============
 const FEATURE_CARDS = [
   {
     icon: '⚡',
@@ -104,7 +176,7 @@ const FEATURE_CARDS = [
   },
 ];
 
-// 常见问题 FAQ
+// ============ 常见问题 FAQ ============
 const FAQ_ITEMS = [
   {
     q: '完全免费吗？',
@@ -132,50 +204,20 @@ const FAQ_ITEMS = [
   },
 ];
 
-// 工具分类
-const TOOL_CATEGORIES = [
-  {
-    category: '📚 学习工具',
-    tools: getHomeToolCards(),
-  },
-];
-
-// 颜色映射
-const COLOR_MAP: Record<string, string> = {
-  blue: 'bg-blue-500 hover:bg-blue-600',
-  emerald: 'bg-emerald-500 hover:bg-emerald-600',
-  orange: 'bg-orange-500 hover:bg-orange-600',
-  rose: 'bg-rose-500 hover:bg-rose-600',
-  gray: 'bg-gray-400',
+// ============ 颜色映射 ============
+const ACCENT_COLORS: Record<string, { bg: string; text: string; border: string; ring: string }> = {
+  blue: { bg: 'bg-blue-500/10', text: 'text-blue-300', border: 'border-blue-500/30', ring: 'ring-blue-500/30' },
+  purple: { bg: 'bg-purple-500/10', text: 'text-purple-300', border: 'border-purple-500/30', ring: 'ring-purple-500/30' },
+  amber: { bg: 'bg-amber-500/10', text: 'text-amber-300', border: 'border-amber-500/30', ring: 'ring-amber-500/30' },
+  emerald: { bg: 'bg-emerald-500/10', text: 'text-emerald-300', border: 'border-emerald-500/30', ring: 'ring-emerald-500/30' },
+  rose: { bg: 'bg-rose-500/10', text: 'text-rose-300', border: 'border-rose-500/30', ring: 'ring-rose-500/30' },
+  cyan: { bg: 'bg-cyan-500/10', text: 'text-cyan-300', border: 'border-cyan-500/30', ring: 'ring-cyan-500/30' },
 };
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [mobileMenu, setMobileMenu] = useState(false);
-  
-  // 移动端菜单打开时锁定body滚动
-  useEffect(() => {
-    if (mobileMenu) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => { document.body.style.overflow = ''; };
-  }, [mobileMenu]);
   const [isPaused, setIsPaused] = useState(false);
-  const [showDonate, setShowDonate] = useState(false);
-  const [showTutorial, setShowTutorial] = useState(false);
-  const [showShare, setShowShare] = useState(false);
-  const [showToolsMenu, setShowToolsMenu] = useState(false);
-  const [copySuccess, setCopySuccess] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [showMiniQR, setShowMiniQR] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText('https://www.skillxm.cn');
-    setCopySuccess(true);
-    setTimeout(() => setCopySuccess(false), 2000);
-  };
 
   // 自动轮播
   useEffect(() => {
@@ -186,181 +228,19 @@ export default function HomePage() {
     return () => clearInterval(timer);
   }, [isPaused]);
 
-  // 公告滚动 - 使用CSS动画实现
-  // 无需JS逻辑，CSS animation已在全局样式中定义
+  const goToSlide = (index: number) => setCurrentSlide(index);
 
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
+  // 计算精选数据
+  const featuredResources = getAllResources().slice(0, 6);
+  const featuredKnowledge = KNOWLEDGE_POINTS.slice(0, 6);
+  const featuredParents = PARENT_GUIDE_TOPICS.slice(0, 4);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-      {/* ===== 顶部导航 ===== */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-14">
-            {/* Logo */}
-            <div className="flex items-center gap-2.5 shrink-0">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-base shadow-lg shadow-blue-500/20">
-                📚
-              </div>
-              <a href="/" className="text-2xl font-bold text-white hover:opacity-80 transition-opacity">
-                练学宝
-              </a>
-            </div>
-
-            {/* 桌面导航 */}
-            <div className="hidden lg:flex items-center gap-1">
-              <a href="/" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                首页
-              </a>
-
-              {/* 学习工具下拉 */}
-              <div className="relative"
-                onMouseEnter={() => setShowToolsMenu(true)}
-                onMouseLeave={() => setShowToolsMenu(false)}
-              >
-                <button className="flex items-center gap-1 px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                  🛠️ 学习工具
-                  <svg className={`w-3.5 h-3.5 transition-transform ${showToolsMenu ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
-                </button>
-                {showToolsMenu && (
-                  <div className="absolute left-0 top-full mt-1 bg-slate-800 border border-white/10 rounded-xl shadow-2xl p-2 min-w-[200px] z-50 max-h-[60vh] overflow-y-auto">
-                    {TOOLS.filter(t => t.active).map(tool => (
-                      <a key={tool.path} href={tool.path} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                        <span className="w-7 h-7 bg-blue-500/20 rounded-lg flex items-center justify-center text-sm">{tool.icon}</span>
-                        <div><div className="text-white font-medium">{tool.name}</div><div className="text-xs text-gray-500">{tool.desc}</div></div>
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <a href="/blog" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                📰 教育博客
-              </a>
-
-              <a href="/search" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                🔍 搜索
-              </a>
-
-              <button onClick={() => setShowTutorial(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                📖 使用教程
-              </button>
-              <button onClick={() => setShowShare(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                🔗 分享
-              </button>
-              <button onClick={() => setShowDonate(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                💝 赞助支持
-              </button>
-            </div>
-
-            {/* 移动端菜单按钮 */}
-            <button
-              onClick={() => setMobileMenu(!mobileMenu)}
-              aria-label={mobileMenu ? '关闭菜单' : '打开菜单'}
-              className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors"
-            >
-              {mobileMenu ? '✕' : '☰'}
-            </button>
-          </div>
-        </div>
-
-        {/* 移动端菜单 - 全屏侧滑 */}
-        <div className={`lg:hidden fixed inset-0 z-50 transition-all duration-300 ${mobileMenu ? 'visible' : 'invisible'}`}>
-          {/* 遮罩 */}
-          <div className={`absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 ${mobileMenu ? 'opacity-100' : 'opacity-0'}`} onClick={() => setMobileMenu(false)} />
-          {/* 菜单面板 */}
-          <div className={`absolute right-0 top-0 h-full w-72 max-w-[85vw] bg-slate-900 border-l border-white/10 shadow-2xl transition-transform duration-300 ${mobileMenu ? 'translate-x-0' : 'translate-x-full'}`}>
-            {/* 头部 */}
-            <div className="flex items-center justify-between px-5 py-4 border-b border-white/10">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center text-sm">📚</div>
-                <span className="text-lg font-bold text-white">练学宝</span>
-              </div>
-              <button onClick={() => setMobileMenu(false)} aria-label="关闭菜单" className="p-1.5 text-gray-400 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-              </button>
-            </div>
-
-            {/* 导航列表 */}
-            <div className="overflow-y-auto h-[calc(100%-60px)] py-3 px-3 space-y-1">
-              <a href="/" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-white bg-white/10 rounded-xl">
-                <span className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center">🏠</span>
-                首页
-              </a>
-
-              {/* 工具分组 */}
-              <div className="pt-2 pb-1 px-3">
-                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">学习工具</span>
-              </div>
-              {[
-                { icon: '🧮', name: '数学练习卷', desc: '一键出题', link: '/tools/math-worksheet', color: 'bg-blue-500/15' },
-                { icon: '✍️', name: '字帖生成器', desc: '田字格/米字格', link: '/tools/calligraphy', color: 'bg-emerald-500/15' },
-                { icon: '🔤', name: '英语字帖', desc: '四线三格', link: '/tools/english-calligraphy', color: 'bg-rose-500/15' },
-                { icon: '🧩', name: '数独游戏', desc: '逻辑训练', link: '/tools/sudoku', color: 'bg-orange-500/15' },
-                { icon: '⚡', name: '口算速练', desc: '计时练习', link: '/tools/mental-math', color: 'bg-yellow-500/15' },
-                { icon: '🃏', name: '识字卡片', desc: '汉字卡片', link: '/tools/flashcards', color: 'bg-purple-500/15' },
-                { icon: '📝', name: '作文模板', desc: '写作模板', link: '/tools/writing-template', color: 'bg-teal-500/15' },
-                { icon: '📝', name: '拼音注音', desc: '注音练习', link: '/tools/pinyin', color: 'bg-blue-500/15' },
-              ].map((tool) => (
-                <a key={tool.link} href={tool.link} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
-                  <span className={`w-8 h-8 ${tool.color} rounded-lg flex items-center justify-center text-sm`}>{tool.icon}</span>
-                  <div className="flex-1 min-w-0">
-                    <div className="font-medium">{tool.name}</div>
-                    <div className="text-xs text-gray-500">{tool.desc}</div>
-                  </div>
-                  <svg className="w-4 h-4 text-gray-600 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                </a>
-              ))}
-
-              <button onClick={() => { setShowTutorial(true); setMobileMenu(false); }} className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
-                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">📖</span>
-                使用教程
-              </button>
-              <a href="/search" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
-                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">🔍</span>
-                站内搜索
-              </a>
-              <button onClick={() => { navigator.clipboard.writeText('https://www.skillxm.cn'); alert('链接已复制！'); setMobileMenu(false); }} className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
-                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">🔗</span>
-                分享给朋友
-              </button>
-              <button onClick={() => { setShowDonate(true); setMobileMenu(false); }} className="w-full flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
-                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">💝</span>
-                赞助支持
-              </button>
-
-              {/* 关于页脚链接 */}
-              <div className="pt-3 pb-1 px-3">
-                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">关于</span>
-              </div>
-              <a href="/about" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
-                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">ℹ️</span>
-                关于我们
-              </a>
-              <a href="/contact" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
-                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">📧</span>
-                联系我们
-              </a>
-              <a href="/privacy" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
-                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">🔒</span>
-                隐私政策
-              </a>
-              <a href="/terms" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
-                <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">📋</span>
-                服务条款
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-
       {/* ===== 轮播大图区域 ===== */}
       <section className="pt-14">
         <div
-          className="relative h-[380px] sm:h-[450px] md:h-[600px] overflow-hidden"
+          className="relative h-[420px] sm:h-[500px] md:h-[600px] overflow-hidden"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -374,18 +254,12 @@ export default function HomePage() {
                   : 'opacity-0 scale-105 pointer-events-none'
               }`}
             >
-              {/* 背景渐变 */}
               <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-90`} />
-
-              {/* 装饰元素 */}
               <div className="absolute inset-0 overflow-hidden">
-                {/* 浮动数学符号 */}
                 <div className="absolute top-20 left-10 text-6xl opacity-20 animate-float">+</div>
                 <div className="absolute top-40 right-20 text-5xl opacity-20 animate-float-delay">−</div>
                 <div className="absolute bottom-32 left-1/4 text-7xl opacity-20 animate-float">×</div>
                 <div className="absolute bottom-20 right-1/3 text-5xl opacity-20 animate-float-delay">÷</div>
-
-                {/* 网格装饰 */}
                 <div className="absolute right-0 top-0 w-1/2 h-full opacity-10">
                   <svg viewBox="0 0 400 600" className="w-full h-full">
                     {[...Array(8)].map((_, i) => (
@@ -397,10 +271,7 @@ export default function HomePage() {
                   </svg>
                 </div>
               </div>
-
-              {/* 内容区域 */}
               <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-                {/* 3D 悬浮标题 */}
                 <div className="perspective-1000 mb-4 sm:mb-6">
                   <h2
                     className="text-4xl sm:text-5xl md:text-8xl font-black text-white tracking-tight"
@@ -412,28 +283,18 @@ export default function HomePage() {
                     {item.title}
                   </h2>
                 </div>
-
-                {/* 副标题 */}
                 <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white/90 mb-3 sm:mb-4 drop-shadow-lg">
                   {item.subtitle}
                 </p>
-
-                {/* 描述 */}
                 <p className="text-sm sm:text-base md:text-lg text-white/80 mb-4 sm:mb-6 max-w-xl drop-shadow">
                   {item.description}
                 </p>
-
-                {/* 免费提示 */}
                 <div className="flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 sm:px-6 py-2 rounded-full mb-6 sm:mb-8 border border-white/30">
                   <span className="text-white font-bold text-sm sm:text-lg">🎁 所有资源免费生成，免费下载打印</span>
                 </div>
-
-                {/* 大图标 */}
                 <div className="text-6xl sm:text-7xl md:text-8xl mb-4 sm:mb-8 animate-bounce-slow drop-shadow-2xl">
                   {item.icon}
                 </div>
-
-                {/* 按钮 */}
                 <button className="px-8 py-4 bg-white text-gray-900 font-bold text-lg rounded-full shadow-xl hover:scale-105 transition-transform">
                   立即使用 →
                 </button>
@@ -441,7 +302,6 @@ export default function HomePage() {
             </a>
           ))}
 
-          {/* 轮播指示器 */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
             {CAROUSEL_ITEMS.map((_, index) => (
               <button
@@ -457,7 +317,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* 左右箭头 */}
           <button
             onClick={() => goToSlide((currentSlide - 1 + CAROUSEL_ITEMS.length) % CAROUSEL_ITEMS.length)}
             aria-label="上一张"
@@ -476,18 +335,18 @@ export default function HomePage() {
       </section>
 
       {/* ===== 公告滚动条 ===== */}
-      <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-3 overflow-hidden">
+      <section className="bg-gradient-to-r from-blue-600 to-purple-600 py-3 overflow-hidden border-y border-white/10">
         <div className="flex whitespace-nowrap marquee-container">
           <div className="flex gap-12 marquee-content">
             {ANNOUNCEMENTS.map((text, i) => (
-              <span key={i} className="text-white font-medium px-4">
+              <span key={i} className="text-white font-medium px-4 text-sm sm:text-base">
                 {text}
               </span>
             ))}
           </div>
           <div className="flex gap-12 marquee-content" aria-hidden="true">
             {ANNOUNCEMENTS.map((text, i) => (
-              <span key={`dup-${i}`} className="text-white font-medium px-4">
+              <span key={`dup-${i}`} className="text-white font-medium px-4 text-sm sm:text-base">
                 {text}
               </span>
             ))}
@@ -495,51 +354,165 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== 工具导航分类 ===== */}
-      <section className="py-10 sm:py-16 px-4">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            🛠️ 工具导航
-          </h2>
+      {/* ===== 【NEW】6大内容板块入口 ===== */}
+      <section className="py-12 sm:py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/0 via-blue-900/5 to-slate-900/0 pointer-events-none" />
+        <div className="max-w-7xl mx-auto relative">
+          <div className="text-center mb-10 sm:mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 rounded-full text-xs sm:text-sm text-blue-300 mb-4">
+              <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" />
+              内容板块 · 探索学习新方式
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-3 sm:mb-4 tracking-tight">
+              开启孩子的
+              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"> 学习新世界</span>
+            </h2>
+            <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+              按年级、教材、知识点三个维度系统化组织，覆盖学习全链路
+            </p>
+          </div>
 
-          <div className="space-y-10">
-            {TOOL_CATEGORIES.map((cat) => (
-              <div key={cat.category}>
-                <h3 className="text-xl font-bold text-gray-300 mb-6 flex items-center gap-2">
-                  <span>{cat.category}</span>
-                </h3>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
+            {CONTENT_SECTIONS.map((section, i) => {
+              const colors = ACCENT_COLORS[section.accent];
+              return (
+                <Link
+                  key={section.title}
+                  href={section.href}
+                  className={`group relative ${colors.bg} hover:bg-opacity-20 border ${colors.border} hover:border-opacity-60 rounded-2xl sm:rounded-3xl p-4 sm:p-7 transition-all duration-300 hover:-translate-y-1 overflow-hidden`}
+                  style={{ animationDelay: `${i * 50}ms` }}
+                >
+                  {/* 背景光晕 */}
+                  <div className={`absolute -top-10 -right-10 w-32 h-32 sm:w-40 sm:h-40 bg-gradient-to-br ${section.gradient} opacity-20 blur-3xl group-hover:opacity-30 transition-opacity`} />
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  {cat.tools.map((tool) => (
-                    <a
-                      key={tool.name}
-                      href={tool.link}
-                      className={`group relative bg-slate-800/50 hover:bg-slate-700/50 border border-white/10 rounded-2xl p-6 transition-all ${
-                        tool.disabled ? 'opacity-60 cursor-not-allowed' : 'hover:scale-105 hover:border-white/20'
-                      }`}
-                      onClick={tool.disabled ? (e) => e.preventDefault() : undefined}
-                    >
-                      {/* 图标 */}
-                      <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
-                        {tool.icon}
+                  <div className="relative">
+                    <div className="flex items-start justify-between mb-3 sm:mb-4">
+                      <div className={`w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-gradient-to-br ${section.gradient} flex items-center justify-center text-2xl sm:text-3xl shadow-lg`}>
+                        {section.icon}
                       </div>
+                      <span className={`hidden sm:inline-block px-2 py-0.5 ${colors.bg} ${colors.text} text-xs rounded-full border ${colors.border}`}>
+                        {section.badge}
+                      </span>
+                    </div>
+                    <h3 className={`text-base sm:text-xl font-bold text-white mb-1 sm:mb-2 group-hover:${colors.text} transition-colors`}>
+                      {section.title}
+                    </h3>
+                    <p className={`text-xs sm:text-sm ${colors.text} font-medium mb-2 sm:mb-3`}>
+                      {section.subtitle}
+                    </p>
+                    <p className="text-xs sm:text-sm text-slate-400 leading-relaxed line-clamp-2">
+                      {section.description}
+                    </p>
+                    <div className={`mt-3 sm:mt-4 inline-flex items-center gap-1.5 text-xs sm:text-sm ${colors.text} font-medium group-hover:gap-2.5 transition-all`}>
+                      立即进入
+                      <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
-                      {/* 名称 */}
-                      <h4 className="text-lg font-bold text-white mb-2">
-                        {tool.name}
-                        {tool.disabled && <span className="ml-2 text-xs text-gray-400">(开发中)</span>}
-                      </h4>
+      {/* ===== 【NEW】年级学习专区 ===== */}
+      <section className="py-12 sm:py-16 px-4 bg-slate-800/30 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-end justify-between mb-6 sm:mb-10">
+            <div>
+              <div className="text-xs sm:text-sm text-blue-300 font-medium mb-2">📐 按年级精准学习</div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
+                年级学习专区
+              </h2>
+              <p className="text-slate-400 text-sm mt-2 hidden sm:block">每个年级都有完整的核心知识点、推荐工具、学习路径</p>
+            </div>
+            <Link href="/grade" className="hidden sm:flex items-center gap-1.5 text-sm text-blue-300 hover:text-blue-200 font-medium shrink-0">
+              查看全部
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
 
-                      {/* 描述 */}
-                      <p className="text-gray-400 text-sm">{tool.desc}</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+            {GRADES.map((g) => (
+              <Link
+                key={g.grade}
+                href={`/grade/grade-${g.grade}`}
+                className="group relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-white/10 hover:border-blue-500/60 rounded-2xl p-4 sm:p-5 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
+              >
+                <div className="absolute top-3 right-3 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center text-base sm:text-lg font-black text-blue-300 group-hover:scale-110 transition-transform">
+                  {g.grade}
+                </div>
+                <div className="mt-8 sm:mt-10">
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-1.5">{g.name}</h3>
+                  <p className="text-xs text-slate-400 mb-2 sm:mb-3">{g.ageRange}</p>
+                  <p className="text-xs text-blue-300 line-clamp-2 leading-relaxed">{g.description}</p>
+                </div>
+                <div className="mt-3 sm:mt-4 flex items-center gap-1 text-xs text-slate-500 group-hover:text-blue-300 transition-colors">
+                  <span>{g.subjects.length}个学科</span>
+                  <span className="w-1 h-1 bg-slate-600 rounded-full" />
+                  <span>{g.knowledgePoints.length}个要点</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
-                      {/* 箭头 */}
-                      {!tool.disabled && (
-                        <div className="absolute bottom-6 right-6 text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all">
-                          →
-                        </div>
-                      )}
-                    </a>
+      {/* ===== 【NEW】教材同步专区 ===== */}
+      <section className="py-12 sm:py-16 px-4 relative">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-end justify-between mb-6 sm:mb-10">
+            <div>
+              <div className="text-xs sm:text-sm text-purple-300 font-medium mb-2">📖 跟学校教材同步</div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
+                教材同步练习
+              </h2>
+              <p className="text-slate-400 text-sm mt-2 hidden sm:block">人教/北师/苏教/部编 4个版本，与学校进度完全同步</p>
+            </div>
+            <Link href="/textbook" className="hidden sm:flex items-center gap-1.5 text-sm text-purple-300 hover:text-purple-200 font-medium shrink-0">
+              查看全部
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {TEXTBOOKS.map((tb) => (
+              <div
+                key={tb.id}
+                className="group relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 border border-white/10 hover:border-purple-500/50 rounded-2xl p-5 transition-all hover:-translate-y-1"
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-xl flex items-center justify-center text-2xl shadow-lg shadow-purple-500/20">
+                    📚
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-base font-bold text-white">{tb.name}</h3>
+                    <p className="text-xs text-slate-400 truncate">{tb.publisher}</p>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-400 leading-relaxed mb-3 line-clamp-2">{tb.description}</p>
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {tb.scope.map((s) => (
+                    <span key={s} className="px-2 py-0.5 bg-purple-500/15 text-purple-300 text-xs rounded">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+                <div className="grid grid-cols-3 gap-1.5">
+                  {tb.grades.slice(0, 6).map((g) => (
+                    <Link
+                      key={g.grade}
+                      href={`/textbook/${tb.id}/${g.grade}`}
+                      className="px-2 py-1.5 bg-slate-800/60 hover:bg-purple-500/20 border border-white/5 hover:border-purple-500/30 rounded-lg text-center text-xs text-slate-300 hover:text-purple-200 transition-colors"
+                    >
+                      {g.grade}年级
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -548,25 +521,255 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== 【NEW】知识点专题 ===== */}
+      <section className="py-12 sm:py-16 px-4 bg-slate-800/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-end justify-between mb-6 sm:mb-10">
+            <div>
+              <div className="text-xs sm:text-sm text-amber-300 font-medium mb-2">🎯 核心知识点深度讲解</div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
+                知识点专题
+              </h2>
+              <p className="text-slate-400 text-sm mt-2 hidden sm:block">10个小学核心知识点，每个都配详解、例题、配套工具</p>
+            </div>
+            <Link href="/knowledge" className="hidden sm:flex items-center gap-1.5 text-sm text-amber-300 hover:text-amber-200 font-medium shrink-0">
+              查看全部
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            {featuredKnowledge.map((kp) => {
+              const subjectColors = {
+                math: { bg: 'bg-blue-500/10', text: 'text-blue-300', border: 'border-blue-500/30', icon: '🧮' },
+                chinese: { bg: 'bg-rose-500/10', text: 'text-rose-300', border: 'border-rose-500/30', icon: '📖' },
+                english: { bg: 'bg-emerald-500/10', text: 'text-emerald-300', border: 'border-emerald-500/30', icon: '🔤' },
+              }[kp.subject] || { bg: 'bg-blue-500/10', text: 'text-blue-300', border: 'border-blue-500/30', icon: '💡' };
+
+              return (
+                <Link
+                  key={kp.slug}
+                  href={`/knowledge/${kp.slug}`}
+                  className={`group relative ${subjectColors.bg} border ${subjectColors.border} hover:border-opacity-60 rounded-2xl p-4 sm:p-5 transition-all hover:-translate-y-1`}
+                >
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-800/60 rounded-xl flex items-center justify-center text-xl sm:text-2xl shrink-0">
+                      {kp.icon}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <h3 className={`text-base sm:text-lg font-bold text-white group-hover:${subjectColors.text} transition-colors`}>
+                          {kp.name}
+                        </h3>
+                        <span className={`px-1.5 py-0.5 ${subjectColors.bg} ${subjectColors.text} text-[10px] sm:text-xs rounded`}>
+                          {kp.grades.join('/')}年级
+                        </span>
+                      </div>
+                      <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">{kp.shortDesc}</p>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 工具导航分类 ===== */}
+      <section className="py-12 sm:py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12">
+            <div className="text-xs sm:text-sm text-cyan-300 font-medium mb-2">⚡ 即开即用的学习工具</div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
+              学习工具箱
+            </h2>
+            <p className="text-slate-400 text-sm mt-2 max-w-2xl mx-auto">10+ 款实用工具，覆盖数学、语文、英语三大主科</p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+            {getHomeToolCards().map((tool) => (
+              <a
+                key={tool.name}
+                href={tool.link}
+                className={`group relative bg-slate-800/50 hover:bg-slate-700/50 border border-white/10 hover:border-cyan-500/40 rounded-2xl p-4 sm:p-5 transition-all hover:-translate-y-1 ${
+                  tool.disabled ? 'opacity-60 cursor-not-allowed' : ''
+                }`}
+                onClick={tool.disabled ? (e) => e.preventDefault() : undefined}
+              >
+                <div className="text-3xl sm:text-4xl mb-3 group-hover:scale-110 transition-transform">
+                  {tool.icon}
+                </div>
+                <h4 className="text-sm sm:text-base font-bold text-white mb-1">
+                  {tool.name}
+                  {tool.disabled && <span className="ml-1.5 text-xs text-gray-400">(开发中)</span>}
+                </h4>
+                <p className="text-xs text-slate-400 line-clamp-2">{tool.desc}</p>
+                {!tool.disabled && (
+                  <div className="absolute bottom-3 right-3 text-slate-400 group-hover:text-cyan-300 group-hover:translate-x-1 transition-all text-lg">
+                    →
+                  </div>
+                )}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 【NEW】资源库精选 ===== */}
+      <section className="py-12 sm:py-16 px-4 bg-slate-800/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-end justify-between mb-6 sm:mb-10">
+            <div>
+              <div className="text-xs sm:text-sm text-emerald-300 font-medium mb-2">📁 高质量练习卷</div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
+                免费练习卷资源库
+              </h2>
+              <p className="text-slate-400 text-sm mt-2 hidden sm:block">20+ 套精心整理的练习卷，覆盖语数英全学科</p>
+            </div>
+            <Link href="/resources" className="hidden sm:flex items-center gap-1.5 text-sm text-emerald-300 hover:text-emerald-200 font-medium shrink-0">
+              查看全部
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            {featuredResources.map((r) => (
+              <Link
+                key={r.id}
+                href={`/resources/${r.id}`}
+                className="group relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 border border-white/10 hover:border-emerald-500/50 rounded-2xl p-4 sm:p-5 transition-all hover:-translate-y-1"
+              >
+                <div className="flex items-center gap-2 mb-2 flex-wrap">
+                  <span className="px-2 py-0.5 bg-blue-500/20 text-blue-300 text-xs rounded">
+                    {r.grade === 1 ? '一年级' : r.grade === 2 ? '二年级' : r.grade === 3 ? '三年级' : r.grade === 4 ? '四年级' : r.grade === 5 ? '五年级' : '六年级'}
+                  </span>
+                  <span className={`px-2 py-0.5 text-xs rounded ${
+                    r.difficulty === '基础' ? 'bg-emerald-500/20 text-emerald-300' :
+                    r.difficulty === '进阶' ? 'bg-yellow-500/20 text-yellow-300' :
+                    'bg-rose-500/20 text-rose-300'
+                  }`}>
+                    {r.difficulty}
+                  </span>
+                  <span className="ml-auto text-[10px] sm:text-xs text-slate-500">
+                    {r.subject === 'math' ? '🧮数学' : r.subject === 'chinese' ? '📖语文' : '🔤英语'}
+                  </span>
+                </div>
+                <h3 className="text-sm sm:text-base font-bold text-white mb-2 line-clamp-2 group-hover:text-emerald-300 transition-colors">
+                  {r.title}
+                </h3>
+                <p className="text-xs text-slate-400 line-clamp-2 mb-3">{r.description}</p>
+                <div className="flex items-center gap-3 text-[10px] sm:text-xs text-slate-500">
+                  <span>📄 {r.pageCount}页</span>
+                  <span>✏️ {r.questionCount}题</span>
+                  <span>⏱ {r.estimatedTime}</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 【NEW】家长指导 ===== */}
+      <section className="py-12 sm:py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex items-end justify-between mb-6 sm:mb-10">
+            <div>
+              <div className="text-xs sm:text-sm text-rose-300 font-medium mb-2">👨‍👩‍👧 家长的专属指南</div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
+                家长指导中心
+              </h2>
+              <p className="text-slate-400 text-sm mt-2 hidden sm:block">从幼小衔接到小升初，6大主题全攻略</p>
+            </div>
+            <Link href="/parent-guide" className="hidden sm:flex items-center gap-1.5 text-sm text-rose-300 hover:text-rose-200 font-medium shrink-0">
+              查看全部
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            {featuredParents.map((t) => {
+              const c = TOPIC_COLORS[t.color];
+              return (
+                <Link
+                  key={t.id}
+                  href={`/parent-guide/${t.id}`}
+                  className={`group relative ${c.bg} border ${c.border} hover:border-opacity-60 rounded-2xl p-4 sm:p-5 transition-all hover:-translate-y-1`}
+                >
+                  <div className="text-3xl sm:text-4xl mb-3 group-hover:scale-110 transition-transform">{t.icon}</div>
+                  <h3 className={`text-base sm:text-lg font-bold text-white mb-1.5 group-hover:${c.text} transition-colors`}>
+                    {t.title}
+                  </h3>
+                  <p className="text-[10px] sm:text-xs text-slate-400 mb-2">适用年龄：{t.ageRange}</p>
+                  <p className="text-xs text-slate-400 line-clamp-3 leading-relaxed">{t.description}</p>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 【NEW】每日一练入口 ===== */}
+      <section className="py-12 sm:py-16 px-4 bg-gradient-to-r from-cyan-900/30 via-blue-900/30 to-indigo-900/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.15),transparent_60%)] pointer-events-none" />
+        <div className="max-w-5xl mx-auto relative">
+          <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm border border-cyan-500/30 rounded-3xl p-6 sm:p-10 text-center">
+            <div className="text-5xl sm:text-6xl mb-4">📅</div>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-3 sm:mb-4 tracking-tight">
+              每日一练 · 15分钟打卡
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base mb-6 sm:mb-8 max-w-2xl mx-auto">
+              每天为孩子智能生成一组练习题，支持1-6年级数学口算。
+              每天15分钟，养成受益终身的学习习惯。
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
+              {[1, 2, 3, 4, 5, 6].map((g) => (
+                <Link
+                  key={g}
+                  href={`/daily?grade=${g}`}
+                  className="px-3 py-1.5 sm:px-4 sm:py-2 bg-cyan-500/15 hover:bg-cyan-500/25 border border-cyan-500/30 hover:border-cyan-500/50 rounded-full text-xs sm:text-sm text-cyan-200 hover:text-cyan-100 font-medium transition-colors"
+                >
+                  {g === 1 ? '一年级' : g === 2 ? '二年级' : g === 3 ? '三年级' : g === 4 ? '四年级' : g === 5 ? '五年级' : '六年级'}
+                </Link>
+              ))}
+            </div>
+            <Link
+              href="/daily"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold text-base sm:text-lg rounded-full shadow-xl shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-105 transition-all"
+            >
+              立即开始今日打卡
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ===== 功能介绍卡片 ===== */}
-      <section className="py-10 sm:py-16 px-4 bg-slate-800/30">
+      <section className="py-12 sm:py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white text-center mb-8 sm:mb-12 tracking-tight">
             ✨ 为什么选择我们
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {FEATURE_CARDS.map((card, i) => (
               <div
                 key={i}
-                className="relative bg-slate-800/50 border border-white/10 rounded-2xl p-5 sm:p-8 hover:border-white/20 transition-all hover:scale-105 group"
+                className="relative bg-slate-800/50 border border-white/10 rounded-2xl p-5 sm:p-7 hover:border-white/20 transition-all hover:-translate-y-1 group"
               >
                 <div
-                  className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${card.color} flex items-center justify-center text-3xl mb-5 shadow-lg`}
+                  className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${card.color} flex items-center justify-center text-2xl sm:text-3xl mb-4 sm:mb-5 shadow-lg`}
                 >
                   {card.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{card.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{card.desc}</p>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3">{card.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed">{card.desc}</p>
               </div>
             ))}
           </div>
@@ -574,9 +777,9 @@ export default function HomePage() {
       </section>
 
       {/* ===== 常见问题 FAQ ===== */}
-      <section className="py-10 sm:py-16 px-4">
+      <section className="py-12 sm:py-16 px-4 bg-slate-800/30">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white text-center mb-8 sm:mb-12 tracking-tight">
             ❓ 常见问题
           </h2>
           <div className="space-y-3">
@@ -587,9 +790,9 @@ export default function HomePage() {
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-6 py-5 text-left"
+                  className="w-full flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 text-left"
                 >
-                  <span className="text-white font-medium pr-4">{item.q}</span>
+                  <span className="text-white text-sm sm:text-base font-medium pr-4">{item.q}</span>
                   <span
                     className={`text-gray-400 text-xl flex-shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-45' : ''}`}
                   >
@@ -599,7 +802,7 @@ export default function HomePage() {
                 <div
                   className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-40' : 'max-h-0'}`}
                 >
-                  <p className="px-6 pb-5 text-gray-400 leading-relaxed">
+                  <p className="px-4 sm:px-6 pb-4 sm:pb-5 text-slate-400 text-sm leading-relaxed">
                     {item.a}
                   </p>
                 </div>
@@ -609,236 +812,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== 热门工具与资源 ===== */}
-      <section className="py-8 sm:py-12 px-4 bg-slate-800/50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-white text-center mb-8">
-            热门工具与资源
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <a href="/tools/math-worksheet" className="bg-slate-700/50 hover:bg-slate-600/50 border border-white/10 hover:border-white/20 rounded-xl p-4 text-center transition-all group">
-              <span className="text-2xl block mb-2">🧮</span>
-              <span className="text-gray-300 group-hover:text-white text-sm font-medium transition-colors">数学练习卷</span>
-            </a>
-            <a href="/tools/calligraphy" className="bg-slate-700/50 hover:bg-slate-600/50 border border-white/10 hover:border-white/20 rounded-xl p-4 text-center transition-all group">
-              <span className="text-2xl block mb-2">✍️</span>
-              <span className="text-gray-300 group-hover:text-white text-sm font-medium transition-colors">字帖生成器</span>
-            </a>
-            <a href="/tools/mental-math" className="bg-slate-700/50 hover:bg-slate-600/50 border border-white/10 hover:border-white/20 rounded-xl p-4 text-center transition-all group">
-              <span className="text-2xl block mb-2">⚡</span>
-              <span className="text-gray-300 group-hover:text-white text-sm font-medium transition-colors">口算速练</span>
-            </a>
-            <a href="/tools/sudoku" className="bg-slate-700/50 hover:bg-slate-600/50 border border-white/10 hover:border-white/20 rounded-xl p-4 text-center transition-all group">
-              <span className="text-2xl block mb-2">🧩</span>
-              <span className="text-gray-300 group-hover:text-white text-sm font-medium transition-colors">数独游戏</span>
-            </a>
-            <a href="/tools/english-calligraphy" className="bg-slate-700/50 hover:bg-slate-600/50 border border-white/10 hover:border-white/20 rounded-xl p-4 text-center transition-all group">
-              <span className="text-2xl block mb-2">🔤</span>
-              <span className="text-gray-300 group-hover:text-white text-sm font-medium transition-colors">英语字帖</span>
-            </a>
-            <a href="/tools/flashcards" className="bg-slate-700/50 hover:bg-slate-600/50 border border-white/10 hover:border-white/20 rounded-xl p-4 text-center transition-all group">
-              <span className="text-2xl block mb-2">🃏</span>
-              <span className="text-gray-300 group-hover:text-white text-sm font-medium transition-colors">识字卡片</span>
-            </a>
-            <a href="/blog" className="bg-slate-700/50 hover:bg-slate-600/50 border border-white/10 hover:border-white/20 rounded-xl p-4 text-center transition-all group">
-              <span className="text-2xl block mb-2">📰</span>
-              <span className="text-gray-300 group-hover:text-white text-sm font-medium transition-colors">教育博客</span>
-            </a>
-            <a href="/tools/writing-template" className="bg-slate-700/50 hover:bg-slate-600/50 border border-white/10 hover:border-white/20 rounded-xl p-4 text-center transition-all group">
-              <span className="text-2xl block mb-2">📝</span>
-              <span className="text-gray-300 group-hover:text-white text-sm font-medium transition-colors">作文模板</span>
-            </a>
+      {/* ===== 底部引导 ===== */}
+      <section className="py-10 sm:py-12 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-gradient-to-br from-slate-800/60 to-slate-900/60 border border-white/10 rounded-2xl p-6 sm:p-8">
+            <div className="text-4xl sm:text-5xl mb-3">🚀</div>
+            <h2 className="text-xl sm:text-2xl font-black text-white mb-2 sm:mb-3">开始今天的学习之旅</h2>
+            <p className="text-slate-400 text-sm sm:text-base mb-4 sm:mb-6">60万+家长和孩子的共同选择 · 完全免费 · 无需注册</p>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+              <Link href="/grade" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-blue-500 hover:bg-blue-400 text-white text-sm sm:text-base font-medium rounded-full transition-colors">
+                🎓 年级专区
+              </Link>
+              <Link href="/knowledge" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-amber-500 hover:bg-amber-400 text-white text-sm sm:text-base font-medium rounded-full transition-colors">
+                💡 知识点专题
+              </Link>
+              <Link href="/resources" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white text-sm sm:text-base font-medium rounded-full transition-colors">
+                📁 资源库
+              </Link>
+              <Link href="/parent-guide" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-rose-500 hover:bg-rose-400 text-white text-sm sm:text-base font-medium rounded-full transition-colors">
+                👨‍👩‍👧 家长指导
+              </Link>
+            </div>
           </div>
         </div>
       </section>
-
-      {/* ===== 底部页脚 ===== */}
-      <footer className="border-t border-white/10 py-8 px-4 mt-8">
-        <div className="max-w-6xl mx-auto">
-          {/* 链接行 */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400 mb-4">
-            <a href="/about" className="hover:text-white transition-colors">关于我们</a>
-            <span className="text-gray-600">|</span>
-            <a href="/contact" className="hover:text-white transition-colors">联系我们</a>
-            <span className="text-gray-600">|</span>
-            <a href="/blog" className="hover:text-white transition-colors">教育博客</a>
-            <span className="text-gray-600">|</span>
-            <a href="/terms" className="hover:text-white transition-colors">服务条款</a>
-            <span className="text-gray-600">|</span>
-            <a href="/privacy" className="hover:text-white transition-colors">隐私政策</a>
-          </div>
-          {/* 版权信息 */}
-          <div className="border-t border-gray-200 py-4 text-center text-sm text-gray-500">
-            <p>© 2026 练学宝. 专注小学教育，让每个孩子都能免费使用优质的教育工具。</p>
-          </div>
-        </div>
-      </footer>
-
-      {/* ===== 使用教程弹窗 ===== */}
-      {showTutorial && (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={() => setShowTutorial(false)}>
-          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto p-4 sm:p-8" onClick={e => e.stopPropagation()}>
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold">📖 使用教程</h2>
-              <button onClick={() => setShowTutorial(false)} aria-label="关闭使用教程" className="text-gray-400 hover:text-white text-2xl leading-none">×</button>
-            </div>
-
-            <div className="space-y-6">
-              {/* 数学练习卷 */}
-              <div className="bg-white/5 rounded-xl p-4">
-                <h3 className="text-lg font-bold text-blue-400 mb-3">🧮 数学练习卷生成器</h3>
-                <ol className="space-y-2 text-gray-300 text-sm list-decimal list-inside">
-                  <li>点击首页轮播图进入<span className="text-white">"数学练习卷"</span></li>
-                  <li>选择年级（1-6年级可选）</li>
-                  <li>勾选题型（加减乘除、竖式、填空等11种）</li>
-                  <li>设置数字范围和题目数量</li>
-                  <li>选择模板：田字格/方格/横线格/空白纸</li>
-                  <li>点击<span className="text-emerald-400 font-bold">"立即出题"</span>生成练习卷</li>
-                  <li>点击<span className="text-blue-400 font-bold">"导出PDF"</span>下载打印</li>
-                </ol>
-              </div>
-
-              {/* 字帖生成器 */}
-              <div className="bg-white/5 rounded-xl p-4">
-                <h3 className="text-lg font-bold text-emerald-400 mb-3">✍️ 字帖生成器</h3>
-                <ol className="space-y-2 text-gray-300 text-sm list-decimal list-inside">
-                  <li>点击首页轮播图进入<span className="text-white">"字帖生成器"</span></li>
-                  <li>输入要练习的汉字或词语</li>
-                  <li>选择模板：田字格/米字格/方格/横线格</li>
-                  <li>选择字体：楷体/宋体/黑体/仿宋等</li>
-                  <li>设置每行字数和行数</li>
-                  <li>点击<span className="text-emerald-400 font-bold">"生成字帖"</span></li>
-                  <li>点击<span className="text-blue-400 font-bold">"导出PDF"</span>下载打印</li>
-                </ol>
-              </div>
-
-              {/* 数独游戏 */}
-              <div className="bg-white/5 rounded-xl p-4">
-                <h3 className="text-lg font-bold text-orange-400 mb-3">🧩 数独游戏</h3>
-                <ol className="space-y-2 text-gray-300 text-sm list-decimal list-inside">
-                  <li>点击首页轮播图进入<span className="text-white">"数独游戏"</span></li>
-                  <li>选择难度：简单/中等/困难/专家</li>
-                  <li>点击空格，用数字键盘填入答案</li>
-                  <li>点击<span className="text-yellow-400 font-bold">"笔记"</span>模式可记录候选数</li>
-                  <li>点击<span className="text-blue-400 font-bold">"检查"</span>查看错误</li>
-                  <li>完成后点击<span className="text-emerald-400 font-bold">"新游戏"</span>继续挑战</li>
-                </ol>
-              </div>
-
-              {/* 口算速练 */}
-              <div className="bg-white/5 rounded-xl p-4">
-                <h3 className="text-lg font-bold text-yellow-400 mb-3">⚡ 口算速练</h3>
-                <ol className="space-y-2 text-gray-300 text-sm list-decimal list-inside">
-                  <li>点击首页轮播图进入<span className="text-white">"口算速练"</span></li>
-                  <li>选择难度：入门/简单/困难/专家</li>
-                  <li>设置题目数量（10/20/30/50题）</li>
-                  <li>点击<span className="text-emerald-400 font-bold">"开始挑战"</span>进入计时模式</li>
-                  <li>用数字键盘快速输入答案</li>
-                  <li>完成后查看成绩统计和错题回顾</li>
-                </ol>
-              </div>
-
-              {/* 识字卡片 */}
-              <div className="bg-white/5 rounded-xl p-4">
-                <h3 className="text-lg font-bold text-purple-400 mb-3">🃏 识字卡片</h3>
-                <ol className="space-y-2 text-gray-300 text-sm list-decimal list-inside">
-                  <li>点击首页轮播图进入<span className="text-white">"识字卡片"</span></li>
-                  <li>输入要学习的汉字（支持批量输入）</li>
-                  <li>或点击年级预设快速加载常用字</li>
-                  <li>选择卡片大小和样式</li>
-                  <li>点击卡片可翻转查看正反面</li>
-                  <li>点击<span className="text-blue-400 font-bold">"导出PDF"</span>打印制作实体卡片</li>
-                </ol>
-              </div>
-
-              {/* 作文模板 */}
-              <div className="bg-white/5 rounded-xl p-4">
-                <h3 className="text-lg font-bold text-teal-400 mb-3">📝 作文模板生成器</h3>
-                <ol className="space-y-2 text-gray-300 text-sm list-decimal list-inside">
-                  <li>点击首页轮播图进入<span className="text-white">"作文模板"</span></li>
-                  <li>选择作文类型：看图写话/日记/书信/读后感/议论文</li>
-                  <li>选择年级和稿纸样式</li>
-                  <li>输入标题，可开启写作提示</li>
-                  <li>实时预览作文稿纸效果</li>
-                  <li>点击<span className="text-blue-400 font-bold">"导出PDF"</span>下载打印</li>
-                </ol>
-              </div>
-
-              {/* 快捷出题 */}
-              <div className="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-4 border border-blue-500/30">
-                <h3 className="text-lg font-bold text-white mb-2">⚡ 快捷出题</h3>
-                <p className="text-gray-300 text-sm">
-                  首页底部提供<span className="text-yellow-400">快捷预设卡片</span>，一键生成10/20/50/100道题目，无需复杂配置！
-                </p>
-              </div>
-
-              {/* 温馨提示 */}
-              <div className="bg-white/5 rounded-xl p-4">
-                <h3 className="text-lg font-bold text-yellow-400 mb-2">💡 温馨提示</h3>
-                <ul className="space-y-1 text-gray-300 text-sm list-disc list-inside">
-                  <li>所有资源<span className="text-emerald-400 font-bold">完全免费</span>，无需注册</li>
-                  <li>PDF导出支持A4纸打印，适合家庭/学校使用</li>
-                  <li>建议使用Chrome/Edge浏览器获得最佳体验</li>
-                  <li>如觉得有帮助，欢迎<span className="text-pink-400">赞助支持</span>或<span className="text-blue-400">分享给朋友</span>！</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ===== 分享弹窗 ===== */}
-      {showShare && (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={() => setShowShare(false)}>
-          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-md w-full p-4 sm:p-8" onClick={e => e.stopPropagation()}>
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold">🔗 分享给朋友</h2>
-              <button onClick={() => setShowShare(false)} aria-label="关闭分享弹窗" className="text-gray-400 hover:text-white text-2xl leading-none">&times;</button>
-            </div>
-            <p className="text-gray-400 text-center mb-4">复制下方链接分享给您的朋友</p>
-            <div className="flex items-center gap-2 bg-white/5 rounded-xl p-3 border border-white/10">
-              <input
-                type="text"
-                value="https://www.skillxm.cn"
-                readOnly
-                className="flex-1 bg-transparent text-white text-sm outline-none"
-              />
-              <button
-                onClick={handleCopy}
-                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded-lg transition-colors shrink-0"
-              >
-                {copySuccess ? '已复制' : '复制'}
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* ===== 赞助弹窗 ===== */}
-      {showDonate && (
-        <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" onClick={() => setShowDonate(false)}>
-          <div className="bg-[#1a1a1a] border border-white/10 rounded-2xl max-w-md w-full p-4 sm:p-8" onClick={e => e.stopPropagation()}>
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold">💝 赞助支持</h2>
-              <button onClick={() => setShowDonate(false)} aria-label="关闭赞助弹窗" className="text-gray-400 hover:text-white text-2xl leading-none">×</button>
-            </div>
-            <p className="text-gray-400 text-center mb-6">
-              如果这些工具对您有帮助，欢迎赞助支持开发维护！
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="text-center">
-                <p className="text-sm text-gray-500 mb-2">微信支付</p>
-                <img src="/donate/wechat.png" alt="微信支付" className="w-full rounded-xl bg-white p-2" />
-              </div>
-              <div className="text-center">
-                <p className="text-sm text-gray-500 mb-2">支付宝</p>
-                <img src="/donate/alipay.jpg" alt="支付宝" className="w-full rounded-xl bg-white p-2" />
-              </div>
-            </div>
-            <p className="text-gray-500 text-xs text-center mt-4">感谢您的支持！❤️</p>
-          </div>
-        </div>
-      )}
 
       {/* ===== 自定义动画样式 ===== */}
       <style jsx global>{`
