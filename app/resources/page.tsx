@@ -2,14 +2,29 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SectionLayout from '@/app/_components/SectionLayout';
 import { RESOURCE_CATEGORIES, GRADE_LIST, getAllResources } from '@/lib/resourcesConfig';
+import {
+  generateItemListSchema,
+  generateOpenGraph,
+  generateTwitterCard,
+  SITE_INFO,
+} from '@/lib/seoUtils';
+
+const PAGE_URL = `${SITE_INFO.BASE_URL}/resources/`;
 
 export const metadata: Metadata = {
   title: '免费练习卷资源库 - 小学1-6年级各科练习卷下载 | 练学宝',
   description: '练学宝免费练习卷资源库：覆盖小学1-6年级数学、语文、英语全科练习卷，按年级+学科+知识点分类，所有资源支持PDF免费下载打印。',
-  keywords: ['小学练习卷', '免费练习卷下载', '一年级练习卷', '六年级练习卷', '数学练习卷', '语文练习卷', '英语练习卷', 'PDF下载'],
-  alternates: {
-    canonical: 'https://www.skillxm.cn/resources',
-  },
+  keywords: ['小学练习卷', '免费练习卷下载', '一年级练习卷', '六年级练习卷', '数学练习卷', '语文练习卷', '英语练习卷', 'PDF下载', '练习题库'],
+  alternates: { canonical: PAGE_URL },
+  openGraph: generateOpenGraph({
+    title: '免费练习卷资源库 - 小学1-6年级各科练习卷下载 | 练学宝',
+    description: '覆盖小学1-6年级数学语文英语全科练习卷，按年级+学科+知识点分类，所有资源支持PDF免费下载打印。',
+    url: PAGE_URL,
+  }),
+  twitter: generateTwitterCard({
+    title: '免费练习卷资源库 - 小学1-6年级各科练习卷 | 练学宝',
+    description: '覆盖小学1-6年级数学语文英语全科练习卷，全部PDF免费下载打印。',
+  }),
 };
 
 export default function ResourcesIndex() {
@@ -17,12 +32,59 @@ export default function ResourcesIndex() {
   const totalQuestions = all.reduce((s, r) => s + r.questionCount, 0);
   const totalPages = all.reduce((s, r) => s + r.pageCount, 0);
 
+  const itemListSchema = generateItemListSchema({
+    name: '练学宝免费练习卷资源库',
+    description: '小学1-6年级数学语文英语全科练习卷资源列表',
+    url: PAGE_URL,
+    items: all.map((r, i) => ({
+      name: r.title,
+      url: `${SITE_INFO.BASE_URL}/resources/${r.id}`,
+      position: i + 1,
+      description: r.description,
+    })),
+  });
+
+  const faqs = [
+    {
+      q: '练学宝资源库的练习卷是免费的吗？',
+      a: '是的，练学宝资源库所有练习卷完全免费，支持PDF免费下载打印，无需注册账号。所有内容由练学宝教学团队按教学大纲整理，质量有保证。',
+    },
+    {
+      q: '如何按年级找到对应练习卷？',
+      a: '资源库按学科分类（数学、语文、英语等），每套练习卷都标注了年级、知识点、题量、页数、难度和预计完成时间。点击进入详情页可查看完整介绍并跳转到配套工具即时生成同类练习。',
+    },
+    {
+      q: '练习卷可以打印吗？纸张大小有要求吗？',
+      a: '所有练习卷均支持PDF下载和直接打印。推荐使用A4纸打印，建议在打印设置中选择「实际大小」和「无边距」以获得最佳效果。',
+    },
+  ];
+
+  const faqSchema = {
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <SectionLayout
+      path="/resources/"
       breadcrumb={[{ label: '首页', href: '/' }, { label: '资源库' }]}
       icon="📁"
       title="免费练习卷资源库"
       description={`精选 ${all.length} 套高质量小学练习卷，覆盖1-6年级数学语文英语。共 ${totalPages} 页、${totalQuestions} 道题，全部PDF免费下载。`}
+      keywords={['小学练习卷', '免费练习卷下载', '数学练习卷', '语文练习卷', '英语练习卷', 'PDF下载', '练习题库']}
+      jsonLd={[itemListSchema, faqSchema]}
+      summary={`练学宝免费练习卷资源库收录 ${all.length} 套精选练习卷，覆盖小学1-6年级数学、语文、英语三大主科，共计 ${totalPages} 页、${totalQuestions}+ 道题。按学科分类组织，每套均标注年级、知识点、题量、难度和预计完成时间。所有练习卷均支持PDF免费下载打印，无需注册，永久免费。`}
+      keyPoints={[
+        `✅ 收录 ${all.length} 套高质量练习卷，覆盖 1-6 年级三大主科`,
+        `✅ 共 ${totalPages} 页、${totalQuestions}+ 道精选题目`,
+        `✅ 按学科分类（数学 / 语文 / 英语），按年级分层`,
+        `✅ 每套标注：年级、知识点、题量、难度、预计时间`,
+        `✅ 全部 PDF 免费下载打印，无需注册永久免费`,
+      ]}
     >
       {/* 数据概览 */}
       <section className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
@@ -57,6 +119,7 @@ export default function ResourcesIndex() {
               <Link
                 key={r.id}
                 href={`/resources/${r.id}`}
+                aria-label={r.title}
                 className="block p-5 bg-gradient-to-br from-slate-800/60 to-slate-900/60 hover:from-slate-700/70 hover:to-slate-800/70 border border-white/10 hover:border-blue-500/50 rounded-xl transition-all"
               >
                 <div className="flex items-center gap-2 mb-2 flex-wrap">
@@ -93,6 +156,19 @@ export default function ResourcesIndex() {
           <li>使用本站工具（数学练习卷、字帖、单元测试等）即时生成同类练习</li>
           <li>或下载PDF版打印使用（每份资源均有独立下载页）</li>
         </ol>
+      </section>
+
+      {/* FAQ - 帮助 AI 引擎抓取 */}
+      <section className="mt-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+        <h2 className="text-xl font-bold text-white mb-4">❓ 常见问题</h2>
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <details key={i} className="p-4 bg-slate-900/50 border border-white/5 rounded-lg">
+              <summary className="text-white font-medium cursor-pointer">{f.q}</summary>
+              <p className="mt-2 text-sm text-slate-300 leading-relaxed">{f.a}</p>
+            </details>
+          ))}
+        </div>
       </section>
     </SectionLayout>
   );

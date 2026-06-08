@@ -6,6 +6,12 @@ import RelatedTools from '@/app/_components/RelatedTools';
 import ShareButtons from '@/app/_components/ShareButtons';
 import { PARENT_GUIDE_TOPICS, TOPIC_COLORS, getTopicById } from '@/lib/parentGuideConfig';
 import { TOOLS } from '@/lib/toolRegistry';
+import {
+  generateArticleSchema,
+  generateOpenGraph,
+  generateTwitterCard,
+  SITE_INFO,
+} from '@/lib/seoUtils';
 
 export async function generateStaticParams() {
   return PARENT_GUIDE_TOPICS.map((t) => ({ id: t.id }));
@@ -15,13 +21,15 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const t = getTopicById(id);
   if (!t) return { title: '专题未找到' };
+  const pageUrl = `${SITE_INFO.BASE_URL}/parent-guide/${t.id}/`;
+  const title = `${t.title} - 家长指导 | 练学宝`;
   return {
-    title: `${t.title} - 家长指导 | 练学宝`,
+    title,
     description: t.description,
-    keywords: [t.title, '家长指导', '家庭教育', t.ageRange],
-    alternates: {
-      canonical: `https://www.skillxm.cn/parent-guide/${t.id}`,
-    },
+    keywords: [t.title, '家长指导', '家庭教育', t.ageRange, ...t.keyPoints.slice(0, 3)],
+    alternates: { canonical: pageUrl },
+    openGraph: generateOpenGraph({ title, description: t.description, url: pageUrl, type: 'article' }),
+    twitter: generateTwitterCard({ title, description: t.description }),
   };
 }
 
@@ -30,11 +38,44 @@ export default async function ParentGuideDetailPage({ params }: { params: Promis
   const t = getTopicById(id);
   if (!t) notFound();
 
+  const pageUrl = `${SITE_INFO.BASE_URL}/parent-guide/${t.id}/`;
   const c = TOPIC_COLORS[t.color];
   const relatedTopics = PARENT_GUIDE_TOPICS.filter(x => x.id !== t.id).slice(0, 4);
 
+  const articleSchema = generateArticleSchema({
+    title: t.title,
+    description: t.description,
+    url: pageUrl,
+    keywords: [t.title, '家长指导', '家庭教育', t.ageRange],
+  });
+
+  const faqs = [
+    {
+      q: `${t.title}适用多大孩子？`,
+      a: `本专题适用年龄段：${t.ageRange}。${t.relatedGrade ? `重点对应小学${t.relatedGrade}年级。` : '适合全学段参考。'}所有方法均按儿童认知发展规律设计，可根据孩子实际情况灵活调整。`,
+    },
+    {
+      q: `${t.title}有哪些核心要点？`,
+      a: `核心要点：${t.keyPoints.join('；')}。建议家长先理解核心理念，再按实战方法分步骤执行，每个方法坚持2-4周可看到效果。`,
+    },
+    {
+      q: `如何配合练学宝工具实践${t.title}？`,
+      a: `练学宝提供${t.relatedTools.length}款配套学习工具${t.relatedTools.length > 0 ? `（${t.relatedTools.map((tool) => tool.name).join('、')}）` : ''}，建议家长结合工具使用，让孩子在实际操作中巩固学习效果。`,
+    },
+  ];
+
+  const faqSchema = {
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <SectionLayout
+      path={`/parent-guide/${t.id}/`}
       breadcrumb={[
         { label: '首页', href: '/' },
         { label: '家长指导', href: '/parent-guide' },
@@ -43,6 +84,16 @@ export default async function ParentGuideDetailPage({ params }: { params: Promis
       icon={t.icon}
       title={t.title}
       description={t.description}
+      keywords={[t.title, '家长指导', '家庭教育', t.ageRange, ...t.keyPoints.slice(0, 3)]}
+      jsonLd={[articleSchema, faqSchema]}
+      summary={`${t.title}：${t.description} 适用年龄：${t.ageRange}。本页提供 ${t.keyPoints.length} 个核心要点、${t.practicalTips.length} 个实战方法、${t.relatedTools.length} 款配套学习工具。所有方法由练学宝教学团队综合儿童心理学、家庭教育理论整理，可直接落地执行。`}
+      keyPoints={[
+        `👶 适用年龄：${t.ageRange}${t.relatedGrade ? `（重点对应小学${t.relatedGrade}年级）` : ''}`,
+        `🎯 ${t.keyPoints.length} 个核心要点：${t.keyPoints.slice(0, 2).join('；')}`,
+        `🛠️ ${t.practicalTips.length} 个实战方法，每步可执行`,
+        `📱 配套 ${t.relatedTools.length} 款学习工具推荐`,
+        `💝 由练学宝教学团队综合儿童心理学理论整理`,
+      ]}
     >
       {/* 概览卡片 */}
       <section className={`mb-8 p-6 ${c.bg} border ${c.border} rounded-2xl`}>
@@ -92,6 +143,7 @@ export default async function ParentGuideDetailPage({ params }: { params: Promis
               <Link
                 key={tool.href}
                 href={tool.href}
+                aria-label={tool.name}
                 className="block p-3 bg-slate-800/60 hover:bg-slate-700/70 border border-white/10 hover:border-blue-500/50 rounded-lg text-center transition-all"
               >
                 <div className="text-2xl mb-1">{tool.icon}</div>
@@ -101,6 +153,19 @@ export default async function ParentGuideDetailPage({ params }: { params: Promis
           </div>
         </section>
       )}
+
+      {/* FAQ - 帮助 AI 引擎抓取 */}
+      <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+        <h2 className="text-xl font-bold text-white mb-4">❓ 常见问题</h2>
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <details key={i} className="p-4 bg-slate-900/50 border border-white/5 rounded-lg">
+              <summary className="text-white font-medium cursor-pointer">{f.q}</summary>
+              <p className="mt-2 text-sm text-slate-300 leading-relaxed">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
 
       {/* 相关推荐 */}
       <section className="mb-8">
@@ -112,6 +177,7 @@ export default async function ParentGuideDetailPage({ params }: { params: Promis
               <Link
                 key={rt.id}
                 href={`/parent-guide/${rt.id}`}
+                aria-label={rt.title}
                 className={`block p-4 ${rc.bg} hover:bg-opacity-80 border ${rc.border} rounded-xl transition-all`}
               >
                 <div className="text-2xl mb-2">{rt.icon}</div>

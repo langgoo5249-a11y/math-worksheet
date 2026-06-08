@@ -2,23 +2,85 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SectionLayout from '@/app/_components/SectionLayout';
 import { PARENT_GUIDE_TOPICS, TOPIC_COLORS } from '@/lib/parentGuideConfig';
+import {
+  generateItemListSchema,
+  generateOpenGraph,
+  generateTwitterCard,
+  SITE_INFO,
+} from '@/lib/seoUtils';
+
+const PAGE_URL = `${SITE_INFO.BASE_URL}/parent-guide/`;
 
 export const metadata: Metadata = {
   title: '家长指导中心 - 幼小衔接、学习习惯、小升初指导 | 练学宝',
   description: '练学宝家长指导中心：覆盖幼小衔接、学习习惯培养、辅导作业、时间管理、阅读习惯、小升初择校等家长关心的核心话题，提供可落地的实战方法。',
   keywords: ['家长指导', '幼小衔接', '学习习惯', '辅导作业', '时间管理', '小升初', '亲子教育', '家庭教育'],
-  alternates: {
-    canonical: 'https://www.skillxm.cn/parent-guide',
-  },
+  alternates: { canonical: PAGE_URL },
+  openGraph: generateOpenGraph({
+    title: '家长指导中心 - 幼小衔接、学习习惯、小升初 | 练学宝',
+    description: '6大主题、24个实战方法、20+学习工具推荐，覆盖幼小衔接到小升初家长关心的核心话题。',
+    url: PAGE_URL,
+  }),
+  twitter: generateTwitterCard({
+    title: '家长指导中心 - 练学宝',
+    description: '幼小衔接、学习习惯、辅导作业、时间管理、阅读习惯、小升初等家长关心的核心话题。',
+  }),
 };
 
 export default function ParentGuideIndex() {
+  const itemListSchema = generateItemListSchema({
+    name: '练学宝家长指导专题列表',
+    description: '覆盖幼小衔接到小升初的家长指导专题',
+    url: PAGE_URL,
+    items: PARENT_GUIDE_TOPICS.map((t, i) => ({
+      name: t.title,
+      url: `${SITE_INFO.BASE_URL}/parent-guide/${t.id}`,
+      position: i + 1,
+      description: t.description,
+    })),
+  });
+
+  const faqs = [
+    {
+      q: '幼小衔接最重要的是什么？',
+      a: '幼小衔接最重要的不是知识抢跑，而是生活自理能力、规则意识、专注力、阅读兴趣的培养。建议家长从大班下学期开始，用半年时间逐步调整孩子的作息、任务意识和社交能力。',
+    },
+    {
+      q: '如何培养孩子的学习习惯？',
+      a: '小学阶段最重要的是"习惯 > 知识"。建议家长从固定学习时间、固定学习位置、独立完成作业、及时复习巩固四个维度入手，每个习惯至少坚持21天。练学宝家长指导提供系统化的习惯培养方法。',
+    },
+    {
+      q: '辅导作业时总忍不住发火怎么办？',
+      a: '辅导作业时，家长应坚持"陪伴者"而非"督促者"的定位。具体方法：①先让孩子独立完成，再针对性辅导；②用提问代替直接给答案；③控制情绪，必要时离开现场冷静。练学宝提供详细辅导作业实战方法。',
+    },
+  ];
+
+  const faqSchema = {
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <SectionLayout
+      path="/parent-guide/"
       breadcrumb={[{ label: '首页', href: '/' }, { label: '家长指导' }]}
       icon="👨‍👩‍👧"
       title="家长指导中心"
       description="6 大主题、24 个实战方法、20+ 学习工具推荐。从幼小衔接到小升初，陪孩子走好小学每一步。"
+      keywords={['家长指导', '幼小衔接', '学习习惯', '辅导作业', '时间管理', '小升初', '家庭教育']}
+      jsonLd={[itemListSchema, faqSchema]}
+      summary={`练学宝家长指导中心收录 ${PARENT_GUIDE_TOPICS.length} 大主题、24 个实战方法、20+ 学习工具推荐。覆盖幼小衔接（幼儿园→一年级）、学习习惯培养、辅导作业、时间管理、阅读习惯、小升初择校等家长关心的核心话题。所有方法由练学宝教学团队综合儿童心理学、家庭教育理论整理，可落地、可执行。`}
+      keyPoints={[
+        `✅ ${PARENT_GUIDE_TOPICS.length} 大主题，覆盖幼小衔接到小升初全学段`,
+        '✅ 24 个可落地的实战方法，每篇含具体步骤',
+        '✅ 配套 20+ 学习工具推荐，配合方法使用更佳',
+        '✅ 核心理念：习惯 > 知识、兴趣 > 成绩、陪伴 > 督促',
+        '✅ 全部内容免费，由练学宝教学团队整理',
+      ]}
     >
       {/* 主题卡片网格 */}
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -28,6 +90,7 @@ export default function ParentGuideIndex() {
             <Link
               key={topic.id}
               href={`/parent-guide/${topic.id}`}
+              aria-label={topic.title}
               className={`block p-6 ${c.bg} hover:bg-opacity-80 border ${c.border} hover:border-opacity-60 rounded-2xl transition-all`}
             >
               <div className="text-4xl mb-3">{topic.icon}</div>
@@ -92,6 +155,19 @@ export default function ParentGuideIndex() {
             <div className="font-bold mb-1">🎯 小升初</div>
             <div className="text-xs text-slate-400">5-6 年级</div>
           </Link>
+        </div>
+      </section>
+
+      {/* FAQ - 帮助 AI 引擎抓取 */}
+      <section className="mt-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+        <h2 className="text-xl font-bold text-white mb-4">❓ 家长常见问题</h2>
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <details key={i} className="p-4 bg-slate-900/50 border border-white/5 rounded-lg">
+              <summary className="text-white font-medium cursor-pointer">{f.q}</summary>
+              <p className="mt-2 text-sm text-slate-300 leading-relaxed">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
     </SectionLayout>

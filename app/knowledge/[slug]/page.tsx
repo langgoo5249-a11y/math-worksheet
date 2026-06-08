@@ -3,6 +3,13 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import SectionLayout from '@/app/_components/SectionLayout';
 import { KNOWLEDGE_POINTS, getKnowledgePoint } from '@/lib/knowledgeConfig';
+import {
+  generateArticleSchema,
+  generateLearningResourceSchema,
+  generateOpenGraph,
+  generateTwitterCard,
+  SITE_INFO,
+} from '@/lib/seoUtils';
 
 export function generateStaticParams() {
   return KNOWLEDGE_POINTS.map((k) => ({ slug: k.slug }));
@@ -12,13 +19,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const kp = getKnowledgePoint(slug);
   if (!kp) return { title: '知识点未找到' };
+  const pageUrl = `${SITE_INFO.BASE_URL}/knowledge/${slug}/`;
   return {
     title: kp.metaTitle,
     description: kp.metaDescription,
     keywords: kp.metaKeywords,
-    alternates: {
-      canonical: `https://www.skillxm.cn/knowledge/${slug}/`,
-    },
+    alternates: { canonical: pageUrl },
+    openGraph: generateOpenGraph({
+      title: kp.metaTitle,
+      description: kp.metaDescription,
+      url: pageUrl,
+      type: 'article',
+    }),
+    twitter: generateTwitterCard({
+      title: kp.metaTitle,
+      description: kp.metaDescription,
+    }),
   };
 }
 
@@ -27,8 +43,52 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
   const kp = getKnowledgePoint(slug);
   if (!kp) notFound();
 
+  const pageUrl = `${SITE_INFO.BASE_URL}/knowledge/${slug}/`;
+
+  const articleSchema = generateArticleSchema({
+    title: kp.name,
+    description: kp.metaDescription,
+    url: pageUrl,
+    keywords: kp.metaKeywords,
+  });
+
+  const learningResourceSchema = generateLearningResourceSchema({
+    name: kp.name,
+    description: kp.shortDesc,
+    url: pageUrl,
+    educationalLevel: kp.grades.map((g) => `小学${g}年级`).join('、'),
+    learningResourceType: '知识点专题',
+    teaches: kp.keySteps,
+    keywords: kp.metaKeywords,
+  });
+
+  const faqs = [
+    {
+      q: `什么是${kp.name}？`,
+      a: kp.shortDesc,
+    },
+    {
+      q: `${kp.name}的${kp.subjectName}年级学习重点是什么？`,
+      a: `学习目标：${kp.learningGoal}。建议按照本页核心步骤进行学习，每天练习15-30分钟，2-4周可达到熟练掌握。`,
+    },
+    {
+      q: `${kp.name}的${kp.subjectName}年级常见错误有哪些？`,
+      a: `常见错误包括：${kp.commonMistakes.slice(0, 3).join('；')}。建议家长辅导时重点关注这些易错点。`,
+    },
+  ];
+
+  const faqSchema = {
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <SectionLayout
+      path={`/knowledge/${slug}/`}
       breadcrumb={[
         { label: '首页', href: '/' },
         { label: '知识点', href: '/knowledge' },
@@ -37,6 +97,16 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
       icon={kp.icon}
       title={kp.name}
       description={kp.shortDesc}
+      keywords={kp.metaKeywords}
+      jsonLd={[articleSchema, learningResourceSchema, faqSchema]}
+      summary={`${kp.name}（${kp.subjectName}）专题：${kp.shortDesc} 适用年级：${kp.grades.map((g) => `${g}年级`).join('、')}，难度：${kp.difficulty === 'easy' ? '基础' : kp.difficulty === 'medium' ? '进阶' : '拔高'}。本页提供完整学习目标、${kp.keySteps.length}步核心方法、${kp.commonMistakes.length}个常见错误、配套练习工具推荐。`}
+      keyPoints={[
+        `📚 ${kp.subjectName} · ${kp.difficulty === 'easy' ? '基础' : kp.difficulty === 'medium' ? '进阶' : '拔高'} · 适用${kp.grades.join('、')}年级`,
+        `🎯 学习目标：${kp.learningGoal}`,
+        `📝 ${kp.keySteps.length} 步核心方法，按步骤循序渐进`,
+        `⚠️ ${kp.commonMistakes.length} 个常见错误，提前规避`,
+        `🛠️ 配套练习工具：${kp.relatedTools.slice(0, 3).map((t) => t.name).join('、')}`,
+      ]}
     >
       {/* 概览卡片 */}
       <section className={`mb-10 p-6 bg-gradient-to-br ${
@@ -122,6 +192,7 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
             <Link
               key={tool.href}
               href={tool.href}
+              aria-label={tool.name}
               className="group flex items-center gap-3 p-4 bg-slate-800/50 hover:bg-slate-700/70 border border-white/10 hover:border-blue-500/50 rounded-xl transition-all"
             >
               <span className="text-2xl shrink-0">{tool.icon}</span>
@@ -132,6 +203,19 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
                 <div className="text-xs text-slate-400 mt-1">{tool.desc}</div>
               </div>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ - 帮助 AI 引擎抓取 */}
+      <section className="mb-10 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+        <h2 className="text-xl font-bold text-white mb-4">❓ 常见问题</h2>
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <details key={i} className="p-4 bg-slate-900/50 border border-white/5 rounded-lg">
+              <summary className="text-white font-medium cursor-pointer">{f.q}</summary>
+              <p className="mt-2 text-sm text-slate-300 leading-relaxed">{f.a}</p>
+            </details>
           ))}
         </div>
       </section>
@@ -147,6 +231,7 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
               <Link
                 key={k.id}
                 href={`/knowledge/${k.slug}`}
+                aria-label={k.name}
                 className="block p-3 bg-slate-800/50 hover:bg-slate-700/70 border border-white/10 rounded-lg transition-all"
               >
                 <div className="flex items-center gap-2">

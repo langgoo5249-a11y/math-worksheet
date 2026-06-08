@@ -1,14 +1,28 @@
 import type { Metadata } from 'next';
 import SectionLayout from '@/app/_components/SectionLayout';
 import { CHANGELOG } from '@/lib/changelogData';
+import {
+  generateOpenGraph,
+  generateTwitterCard,
+  SITE_INFO,
+} from '@/lib/seoUtils';
+
+const PAGE_URL = `${SITE_INFO.BASE_URL}/changelog/`;
 
 export const metadata: Metadata = {
   title: '更新日志 - 练学宝功能更新与新工具发布记录 | 练学宝',
   description: '练学宝更新日志：记录所有新工具上线、功能优化、Bug修复、新增资源。见证练学宝与孩子们一起成长。',
-  keywords: ['更新日志', '练学宝更新', '新功能', 'changelog'],
-  alternates: {
-    canonical: 'https://www.skillxm.cn/changelog',
-  },
+  keywords: ['更新日志', '练学宝更新', '新功能', 'changelog', '版本更新', '功能上线'],
+  alternates: { canonical: PAGE_URL },
+  openGraph: generateOpenGraph({
+    title: '更新日志 - 练学宝功能更新与新工具发布记录 | 练学宝',
+    description: '记录所有新工具上线、功能优化、Bug修复、新增资源。',
+    url: PAGE_URL,
+  }),
+  twitter: generateTwitterCard({
+    title: '更新日志 - 练学宝功能更新记录 | 练学宝',
+    description: '记录所有新工具上线、功能优化、Bug修复、新增资源。',
+  }),
 };
 
 const TYPE_CONFIG: Record<string, { label: string; color: string; icon: string }> = {
@@ -25,13 +39,62 @@ const COLOR_CLASSES: Record<string, { bg: string; text: string; border: string }
   orange: { bg: 'bg-orange-500/10', text: 'text-orange-300', border: 'border-orange-500/30' },
 };
 
+// 构造 Article schema - 把每个版本作为一篇文章
+const articleSchemas = CHANGELOG.map((entry) => ({
+  '@type': 'Article',
+  headline: `${entry.version} - ${entry.title}`,
+  description: entry.highlights.join('；'),
+  url: `${SITE_INFO.BASE_URL}/changelog/#${entry.version}`,
+  datePublished: entry.date,
+  dateModified: entry.date,
+  inLanguage: 'zh-CN',
+  author: { '@type': 'Organization', name: '练学宝团队', url: SITE_INFO.BASE_URL },
+  publisher: { '@type': 'Organization', name: '练学宝', logo: { '@type': 'ImageObject', url: SITE_INFO.SITE_LOGO } },
+  isPartOf: { '@id': `${SITE_INFO.BASE_URL}/#website` },
+}));
+
+const faqs = [
+  {
+    q: '练学宝的更新频率是多久？',
+    a: '练学宝保持每1-2周发布一次更新。更新内容涵盖：新工具上线、新功能发布、体验优化、问题修复等。所有更新均通过本更新日志对外公开。',
+  },
+  {
+    q: '如何第一时间获取练学宝更新？',
+    a: '推荐两种方式：①订阅 /rss.xml RSS订阅，新内容第一时间推送；②收藏 /changelog 本页，每1-2周回来看一次更新记录。',
+  },
+  {
+    q: '我可以反馈问题或建议吗？',
+    a: '非常欢迎！请通过 /contact 联系我们，或发送邮件至 lang@skillxm.cn。每条反馈都会被认真阅读，优秀建议会进入下一个版本的更新计划。',
+  },
+];
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
 export default function ChangelogPage() {
   return (
     <SectionLayout
+      path="/changelog/"
       breadcrumb={[{ label: '首页', href: '/' }, { label: '更新日志' }]}
       icon="📝"
       title="更新日志"
       description="记录练学宝每一次成长。新工具上线、功能优化、Bug修复，一目了然。"
+      keywords={['更新日志', '练学宝更新', '新功能', 'changelog', '版本更新']}
+      jsonLd={[...articleSchemas, faqSchema]}
+      summary={`练学宝更新日志 - 记录 ${CHANGELOG.length} 次版本发布。见证练学宝与孩子们一起成长。所有更新涵盖：新工具上线、新功能发布、体验优化、问题修复四大类。每1-2周发布一次更新，由练学宝教学与产品团队协作完成。`}
+      keyPoints={[
+        `📝 共 ${CHANGELOG.length} 次版本发布记录`,
+        '🔄 每1-2周发布一次更新，持续迭代',
+        '📅 涵盖：新工具上线、新功能发布、体验优化、Bug修复',
+        '🔔 推荐订阅 /rss.xml 第一时间获取更新',
+        '💌 反馈建议：lang@skillxm.cn',
+      ]}
     >
       <section className="relative">
         {/* 时间线主轴 */}
@@ -43,7 +106,11 @@ export default function ChangelogPage() {
             const colors = COLOR_CLASSES[type.color];
             const isLeft = idx % 2 === 0;
             return (
-              <div key={entry.version} className={`relative flex flex-col sm:flex-row ${isLeft ? '' : 'sm:flex-row-reverse'} gap-4 sm:gap-8`}>
+              <article
+                key={entry.version}
+                id={entry.version}
+                className={`relative flex flex-col sm:flex-row ${isLeft ? '' : 'sm:flex-row-reverse'} gap-4 sm:gap-8`}
+              >
                 {/* 时间线节点 */}
                 <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 w-3 h-3 bg-blue-500 rounded-full ring-4 ring-slate-900 z-10" />
 
@@ -61,7 +128,7 @@ export default function ChangelogPage() {
                       <span className={`px-2 py-0.5 ${colors.bg} ${colors.text} text-xs rounded`}>
                         {type.icon} {type.label}
                       </span>
-                      <span className="text-xs text-slate-400 ml-auto">{entry.date}</span>
+                      <time className="text-xs text-slate-400 ml-auto" dateTime={entry.date}>{entry.date}</time>
                     </div>
                     {/* 标题 */}
                     <h2 className={`text-lg sm:text-xl font-bold ${colors.text} mb-3`}>{entry.title}</h2>
@@ -94,7 +161,7 @@ export default function ChangelogPage() {
                     )}
                   </div>
                 </div>
-              </div>
+              </article>
             );
           })}
         </div>
@@ -109,6 +176,19 @@ export default function ChangelogPage() {
         <p className="text-xs text-slate-400">
           练学宝持续迭代中，每1-2周发布一次更新。如有问题或建议，欢迎 <a href="/contact" className="text-blue-400 hover:underline">联系我们</a>。
         </p>
+      </section>
+
+      {/* FAQ - 帮助 AI 引擎抓取 */}
+      <section className="mt-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+        <h2 className="text-xl font-bold text-white mb-4">❓ 常见问题</h2>
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <details key={i} className="p-4 bg-slate-900/50 border border-white/5 rounded-lg">
+              <summary className="text-white font-medium cursor-pointer">{f.q}</summary>
+              <p className="mt-2 text-sm text-slate-300 leading-relaxed">{f.a}</p>
+            </details>
+          ))}
+        </div>
       </section>
     </SectionLayout>
   );

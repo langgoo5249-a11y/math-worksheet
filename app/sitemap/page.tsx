@@ -1,37 +1,82 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import SectionLayout from '@/app/_components/SectionLayout';
 import { TOOLS } from '@/lib/toolRegistry';
 import { GRADES } from '@/lib/gradeConfig';
 import { TEXTBOOKS } from '@/lib/textbookConfig';
 import { KNOWLEDGE_POINTS } from '@/lib/knowledgeConfig';
 import { PARENT_GUIDE_TOPICS } from '@/lib/parentGuideConfig';
 import { getAllResources } from '@/lib/resourcesConfig';
+import {
+  generateOpenGraph,
+  generateTwitterCard,
+  SITE_INFO,
+} from '@/lib/seoUtils';
+
+const PAGE_URL = `${SITE_INFO.BASE_URL}/sitemap/`;
 
 export const metadata: Metadata = {
   title: '网站地图 - 练学宝全部页面导航 | 练学宝',
   description: '练学宝全站页面导航地图，包含10个学习工具、6个年级专区、4个教材版本、10个知识点专题、6个家长指导专题、20+练习卷资源，方便用户和搜索引擎发现所有内容。',
-  keywords: ['网站地图', '站点导航', '练学宝', 'sitemap'],
-  alternates: {
-    canonical: 'https://www.skillxm.cn/sitemap',
-  },
+  keywords: ['网站地图', '站点导航', '练学宝', 'sitemap', '全站导航'],
+  alternates: { canonical: PAGE_URL },
+  openGraph: generateOpenGraph({
+    title: '网站地图 - 练学宝全部页面导航 | 练学宝',
+    description: '练学宝全站页面导航地图，方便用户和搜索引擎发现所有内容。',
+    url: PAGE_URL,
+  }),
+  twitter: generateTwitterCard({
+    title: '网站地图 - 练学宝 | 练学宝',
+    description: '练学宝全站页面导航地图。',
+  }),
 };
 
 export default function SitemapIndex() {
   const resources = getAllResources();
+  const totalPages = TOOLS.length + GRADES.length + TEXTBOOKS.length * 6 + KNOWLEDGE_POINTS.length + resources.length + PARENT_GUIDE_TOPICS.length;
+
+  const faqs = [
+    {
+      q: '练学宝有多少个页面？',
+      a: `练学宝当前共收录 ${totalPages}+ 个核心页面，涵盖10+学习工具、6个年级专区、4个教材版本（24个年级详情页）、10个知识点专题、20+练习卷资源、6个家长指导专题，以及博客、每日一练、更新日志、RSS等板块。`,
+    },
+    {
+      q: '如何通过 XML Sitemap 发现所有页面？',
+      a: '访问 /sitemap.xml 获取 XML 格式的完整站点地图。该文件包含所有页面的 URL、最后修改时间、更新频率和优先级信息，专为搜索引擎爬虫设计。所有主流搜索引擎（Google、百度、Bing、搜狗）均支持此格式。',
+    },
+    {
+      q: '如何订阅练学宝的新内容？',
+      a: '推荐两种方式：①订阅 /rss.xml RSS 源，新文章、新工具第一时间推送；②收藏本页（/sitemap）随时查看全站导航。',
+    },
+  ];
+
+  const faqSchema = {
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
-      <nav className="text-sm text-slate-400 mb-4">
-        <Link href="/" className="hover:text-blue-400">首页</Link> / 网站地图
-      </nav>
-
-      <header className="mb-8 sm:mb-10">
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3">🗺️ 网站地图</h1>
-        <p className="text-base sm:text-lg text-slate-300">
-          收录练学宝全站核心页面。点击直达你需要的内容。
-        </p>
-      </header>
-
+    <SectionLayout
+      path="/sitemap/"
+      breadcrumb={[{ label: '首页', href: '/' }, { label: '网站地图' }]}
+      icon="🗺️"
+      title="网站地图"
+      description="收录练学宝全站核心页面。点击直达你需要的内容。"
+      keywords={['网站地图', '站点导航', '练学宝', 'sitemap']}
+      jsonLd={[faqSchema]}
+      summary={`练学宝全站页面导航地图 - 收录 ${totalPages}+ 个核心页面，方便用户、AI 搜索引擎、爬虫快速发现所有内容。覆盖10+学习工具、6个年级专区、4个教材版本（24个年级详情页）、10个知识点专题、20+练习卷资源、6个家长指导专题，以及博客、每日一练、更新日志、RSS等板块。`}
+      keyPoints={[
+        `🗺️ 共收录 ${totalPages}+ 个核心页面`,
+        '🛠️ 10+ 学习工具（数学练习卷、字帖、口算速练等）',
+        '🎓 6 个年级专区 + 4 个教材版本（24 个年级详情页）',
+        '💡 10 个知识点专题 + 20+ 练习卷资源 + 6 个家长指导',
+        '🤖 提供 XML Sitemap（/sitemap.xml）和 RSS（/rss.xml）',
+      ]}
+    >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* 学习工具 */}
         <section className="p-5 bg-slate-800/50 border border-white/10 rounded-2xl">
@@ -196,12 +241,25 @@ export default function SitemapIndex() {
 
       {/* SEO 提示 */}
       <section className="mt-10 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
-        <h2 className="text-lg font-bold text-white mb-2">🤖 给搜索引擎</h2>
+        <h2 className="text-lg font-bold text-white mb-2">🤖 给搜索引擎 / AI 爬虫</h2>
         <p className="text-sm text-slate-400">
           推荐使用 <a href="/sitemap.xml" className="text-blue-400 hover:underline">XML 格式的 sitemap</a>（位于 <code className="px-1 py-0.5 bg-slate-800 rounded">/sitemap.xml</code>），
           它包含了所有页面的优先级和更新频率信息。也可以订阅 <a href="/rss.xml" className="text-blue-400 hover:underline">RSS 订阅</a> 第一时间获取最新博客文章。
         </p>
       </section>
-    </main>
+
+      {/* FAQ - 帮助 AI 引擎抓取 */}
+      <section className="mt-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+        <h2 className="text-lg font-bold text-white mb-4">❓ 常见问题</h2>
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <details key={i} className="p-4 bg-slate-900/50 border border-white/5 rounded-lg">
+              <summary className="text-white font-medium cursor-pointer">{f.q}</summary>
+              <p className="mt-2 text-sm text-slate-300 leading-relaxed">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    </SectionLayout>
   );
 }

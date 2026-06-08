@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import SectionLayout from '@/app/_components/SectionLayout';
 import { GRADES, getGradeConfig } from '@/lib/gradeConfig';
 import { articles as blogPosts } from '@/app/blog/data';
+import { generateCourseSchema, generateOrganizationSchema } from '@/lib/seoUtils';
 
 export function generateStaticParams() {
   return GRADES.map((g) => ({ grade: `grade-${g.grade}` }));
@@ -21,6 +22,18 @@ export async function generateMetadata({ params }: { params: Promise<{ grade: st
     keywords: config.metaKeywords,
     alternates: {
       canonical: `https://www.skillxm.cn/grade/${slug}/`,
+    },
+    openGraph: {
+      title: config.metaTitle,
+      description: config.metaDescription,
+      url: `https://www.skillxm.cn/grade/${slug}/`,
+      type: 'article',
+      locale: 'zh_CN',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: config.metaTitle,
+      description: config.metaDescription,
     },
   };
 }
@@ -46,6 +59,22 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
       icon="🎓"
       title={`${config.name}学习专区 · 完整学习方案`}
       description={config.description}
+      keywords={config.metaKeywords}
+      path={`/grade/${slug}`}
+      datePublished="2025-12-01"
+      dateModified={new Date().toISOString().slice(0, 10)}
+      summary={`${config.name}（${config.ageRange}）是${config.semester}的${config.description.split('。')[0]}。本专区提供：核心知识点清单、配套学习工具、家长指导建议、相关博客文章${relatedBlogs.length > 0 ? '、' + relatedBlogs.length + ' 篇精选文章' : ''}。`}
+      keyPoints={config.knowledgePoints.slice(0, 5)}
+      jsonLd={[
+        generateCourseSchema({
+          name: config.metaTitle,
+          description: config.metaDescription,
+          url: `https://www.skillxm.cn/grade/${slug}/`,
+          educationalLevel: config.name,
+          teaches: config.knowledgePoints.slice(0, 8),
+        }),
+        generateOrganizationSchema(),
+      ]}
     >
       {/* 年级概览 */}
       <section className="mb-10 p-6 bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/20 rounded-2xl">
@@ -156,7 +185,7 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
       )}
 
       {/* 其他年级导航 */}
-      <section className="mb-6">
+      <section className="mb-6" aria-label="其他年级">
         <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">其他年级</h2>
         <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
           {GRADES.map((g) => (
@@ -168,28 +197,13 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
                   ? 'bg-blue-500/20 border-blue-500/50 text-blue-300'
                   : 'bg-slate-800/50 border-white/10 text-slate-300 hover:bg-slate-700/70 hover:border-blue-500/50'
               }`}
+              aria-label={`${g.name}学习专区`}
             >
               {g.name}
             </Link>
           ))}
         </div>
       </section>
-
-      {/* 隐藏结构化数据 */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Course',
-            name: config.metaTitle,
-            description: config.metaDescription,
-            provider: { '@type': 'Organization', name: '练学宝' },
-            educationalLevel: config.name,
-            inLanguage: 'zh-CN',
-          }),
-        }}
-      />
     </SectionLayout>
   );
 }

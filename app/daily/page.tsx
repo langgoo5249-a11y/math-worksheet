@@ -2,14 +2,29 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SectionLayout from '@/app/_components/SectionLayout';
 import { getDailyExercise } from '@/lib/dailyExercise';
+import {
+  generateCourseSchema,
+  generateOpenGraph,
+  generateTwitterCard,
+  SITE_INFO,
+} from '@/lib/seoUtils';
+
+const PAGE_URL = `${SITE_INFO.BASE_URL}/daily/`;
 
 export const metadata: Metadata = {
   title: '每日一练 - 小学数学口算每日打卡 | 练学宝',
   description: '练学宝每日一练：每天为孩子生成15分钟数学口算练习，按年级智能出题，包含答案解析与学习建议。坚持每日打卡，让学习成为习惯。',
-  keywords: ['每日一练', '口算打卡', '小学口算', '每日数学练习', '数学打卡', '口算练习'],
-  alternates: {
-    canonical: 'https://www.skillxm.cn/daily',
-  },
+  keywords: ['每日一练', '口算打卡', '小学口算', '每日数学练习', '数学打卡', '口算练习', '每日打卡'],
+  alternates: { canonical: PAGE_URL },
+  openGraph: generateOpenGraph({
+    title: '每日一练 - 小学数学口算每日打卡 | 练学宝',
+    description: '每天为孩子生成15分钟数学口算练习，按年级智能出题，包含答案解析与学习建议。',
+    url: PAGE_URL,
+  }),
+  twitter: generateTwitterCard({
+    title: '每日一练 - 小学数学口算每日打卡 | 练学宝',
+    description: '每天为孩子生成15分钟数学口算练习，按年级智能出题。',
+  }),
 };
 
 export default function DailyIndex({ searchParams }: { searchParams: Promise<{ grade?: string }> }) {
@@ -21,12 +36,55 @@ async function DailyIndexContent({ searchParams }: { searchParams: Promise<{ gra
   const grade = params.grade ? parseInt(params.grade) : 3;
   const today = getDailyExercise(grade);
 
+  const courseSchema = generateCourseSchema({
+    name: `${grade === 1 ? '一年级' : grade === 2 ? '二年级' : grade === 3 ? '三年级' : grade === 4 ? '四年级' : grade === 5 ? '五年级' : '六年级'}每日一练`,
+    description: `今天为${grade === 1 ? '一年级' : grade === 2 ? '二年级' : grade === 3 ? '三年级' : grade === 4 ? '四年级' : grade === 5 ? '五年级' : '六年级'}同学准备了${today.questions.length}道${today.topic}练习题，预计${today.estimatedTime}完成。`,
+    url: `${PAGE_URL}?grade=${grade}`,
+    educationalLevel: `小学${grade}年级（中国）`,
+    teaches: [today.topic, '数学口算', '每日打卡'],
+  });
+
+  const faqs = [
+    {
+      q: '练学宝每日一练是免费的吗？',
+      a: '是的，每日一练完全免费，无需注册账号。每天为孩子准备15分钟的口算练习，难度根据年级智能调整，包含答案解析。',
+    },
+    {
+      q: '每日一练的题目会重复吗？',
+      a: '每日一练每天生成新题目，连续打卡一年也不会重复。题目按教学大纲编排，难度递进，符合孩子认知发展规律。',
+    },
+    {
+      q: '可以按孩子年级定制吗？',
+      a: '可以。访问 /daily?grade=1 到 /daily?grade=6 即可选择对应年级（1-6年级）。三年级是默认年级。',
+    },
+  ];
+
+  const faqSchema = {
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <SectionLayout
+      path="/daily/"
       breadcrumb={[{ label: '首页', href: '/' }, { label: '每日一练' }]}
       icon="📅"
       title="每日一练"
       description={`今天${today.weekday}，为${grade === 1 ? '一年级' : grade === 2 ? '二年级' : grade === 3 ? '三年级' : grade === 4 ? '四年级' : grade === 5 ? '五年级' : '六年级'}同学准备了${today.questions.length}道${today.topic}练习题，预计${today.estimatedTime}完成。`}
+      keywords={['每日一练', '口算打卡', '小学口算', '每日数学练习', '数学打卡', '口算练习']}
+      jsonLd={[courseSchema, faqSchema]}
+      summary={`练学宝每日一练 - ${grade === 1 ? '一年级' : grade === 2 ? '二年级' : grade === 3 ? '三年级' : grade === 4 ? '四年级' : grade === 5 ? '五年级' : '六年级'}数学口算每日打卡。今天${today.weekday}为孩子准备了${today.questions.length}道${today.topic}练习题，预计${today.estimatedTime}完成。难度${today.difficulty}，每题均含答案解析。坚持每日打卡，让学习成为习惯。`}
+      keyPoints={[
+        `📅 今日 ${today.date} ${today.weekday} · ${today.questions.length}道 ${today.topic}`,
+        `🎯 难度：${today.difficulty} · 预计 ${today.estimatedTime} 完成`,
+        `📝 每天自动更新，连续打卡365天不重题`,
+        `✅ 每题含答案解析，错题可即时对照`,
+        `🎓 1-6 年级全覆盖，按学段智能出题`,
+      ]}
     >
       {/* 年级选择 */}
       <section className="mb-6 p-4 bg-slate-800/50 border border-white/10 rounded-2xl">
@@ -36,6 +94,7 @@ async function DailyIndexContent({ searchParams }: { searchParams: Promise<{ gra
             <Link
               key={g}
               href={`/daily?grade=${g}`}
+              aria-label={`${g === 1 ? '一年级' : g === 2 ? '二年级' : g === 3 ? '三年级' : g === 4 ? '四年级' : g === 5 ? '五年级' : '六年级'}每日一练`}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                 g === grade
                   ? 'bg-blue-500 text-white'
@@ -128,6 +187,19 @@ async function DailyIndexContent({ searchParams }: { searchParams: Promise<{ gra
         <p className="text-xs text-slate-400">
           建议家长把这个页面<strong>收藏到浏览器书签</strong>，每天晚饭后陪孩子一起做15分钟打卡，养成每日学习习惯。
         </p>
+      </section>
+
+      {/* FAQ - 帮助 AI 引擎抓取 */}
+      <section className="mt-6 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+        <h2 className="text-lg font-bold text-white mb-4">❓ 常见问题</h2>
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <details key={i} className="p-4 bg-slate-900/50 border border-white/5 rounded-lg">
+              <summary className="text-white font-medium cursor-pointer">{f.q}</summary>
+              <p className="mt-2 text-sm text-slate-300 leading-relaxed">{f.a}</p>
+            </details>
+          ))}
+        </div>
       </section>
     </SectionLayout>
   );

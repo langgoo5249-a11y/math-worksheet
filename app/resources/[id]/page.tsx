@@ -6,6 +6,12 @@ import RelatedTools from '@/app/_components/RelatedTools';
 import ShareButtons from '@/app/_components/ShareButtons';
 import { getAllResources, getResourceById, GRADE_LIST } from '@/lib/resourcesConfig';
 import { TOOLS } from '@/lib/toolRegistry';
+import {
+  generateLearningResourceSchema,
+  generateOpenGraph,
+  generateTwitterCard,
+  SITE_INFO,
+} from '@/lib/seoUtils';
 
 export async function generateStaticParams() {
   return getAllResources().map((r) => ({ id: r.id }));
@@ -15,13 +21,18 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const r = getResourceById(id);
   if (!r) return { title: '资源未找到' };
+  const pageUrl = `${SITE_INFO.BASE_URL}/resources/${r.id}/`;
+  const gradeName = GRADE_LIST.find(g => g.grade === r.grade)?.name || '';
+  const title = `${r.title} - 免费PDF下载 | 练学宝`;
+  const description = `${r.description} 包含${r.questionCount}道题、${r.pageCount}页，适合${gradeName}${r.knowledgePoint}专项练习。`;
+
   return {
-    title: `${r.title} - 免费PDF下载 | 练学宝`,
-    description: `${r.description} 包含${r.questionCount}道题、${r.pageCount}页，适合${GRADE_LIST.find(g => g.grade === r.grade)?.name}${r.knowledgePoint}专项练习。`,
-    keywords: [r.title, ...r.tags, `${GRADE_LIST.find(g => g.grade === r.grade)?.name}${r.knowledgePoint}`],
-    alternates: {
-      canonical: `https://www.skillxm.cn/resources/${r.id}`,
-    },
+    title,
+    description,
+    keywords: [r.title, ...r.tags, `${gradeName}${r.knowledgePoint}`, '小学练习卷', 'PDF下载'],
+    alternates: { canonical: pageUrl },
+    openGraph: generateOpenGraph({ title, description, url: pageUrl, type: 'article' }),
+    twitter: generateTwitterCard({ title, description }),
   };
 }
 
@@ -30,11 +41,47 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
   const r = getResourceById(id);
   if (!r) notFound();
 
+  const pageUrl = `${SITE_INFO.BASE_URL}/resources/${r.id}/`;
   const gradeName = GRADE_LIST.find(g => g.grade === r.grade)?.name || '';
   const subjectName = { math: '数学', chinese: '语文', english: '英语', science: '科学' }[r.subject];
 
+  const learningResourceSchema = generateLearningResourceSchema({
+    name: r.title,
+    description: `${r.description} 适合${gradeName}${r.knowledgePoint}专项练习。`,
+    url: pageUrl,
+    educationalLevel: `${gradeName}（小学${r.grade}年级）`,
+    learningResourceType: '练习卷/练习册',
+    teaches: [r.knowledgePoint, ...(r.tags || [])],
+    keywords: [r.title, ...r.tags],
+  });
+
+  const faqs = [
+    {
+      q: `${r.title}包含多少道题？`,
+      a: `本练习卷共${r.pageCount}页、${r.questionCount}道精选题目，预计完成时间${r.estimatedTime}。题目按${r.knowledgePoint}知识点的难易梯度编排，建议每周1-2次、连续4周完成练习，可显著提升${r.knowledgePoint}的掌握程度。`,
+    },
+    {
+      q: `这份练习卷适合哪个年级？`,
+      a: `本练习卷专为${gradeName}${r.knowledgePoint}设计，难度等级为${r.difficulty}。如孩子觉得题目偏难或偏易，可调整进度或先练习相邻难度的题目。`,
+    },
+    {
+      q: `如何打印练习卷？`,
+      a: '推荐使用A4纸打印本PDF练习卷。打印设置请选择「实际大小」和「无边距」以获得最佳效果。建议家长先打印一份样张检查排版，确认无误后再批量打印。',
+    },
+  ];
+
+  const faqSchema = {
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <SectionLayout
+      path={`/resources/${r.id}/`}
       breadcrumb={[
         { label: '首页', href: '/' },
         { label: '资源库', href: '/resources' },
@@ -43,6 +90,16 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
       icon={r.subject === 'math' ? '🧮' : r.subject === 'chinese' ? '📖' : '🔤'}
       title={r.title}
       description={r.description}
+      keywords={[r.title, ...r.tags, `${gradeName}${r.knowledgePoint}`, '小学练习卷', 'PDF下载']}
+      jsonLd={[learningResourceSchema, faqSchema]}
+      summary={`${r.title}：${gradeName}${r.knowledgePoint}专项练习卷，${r.pageCount}页、${r.questionCount}道题、难度${r.difficulty}、预计${r.estimatedTime}完成。配套练学宝${subjectName}相关工具使用效果更佳，支持PDF免费下载打印。`}
+      keyPoints={[
+        `📚 ${gradeName} · ${subjectName} · ${r.knowledgePoint}专项练习`,
+        `✏️ ${r.questionCount}道精选题 · ${r.pageCount}页 · 难度${r.difficulty}`,
+        `⏱ 预计完成时间：${r.estimatedTime}`,
+        `🛠️ 配套工具：${r.subject === 'math' ? '数学练习卷生成器、口算速练' : r.subject === 'chinese' ? '字帖生成器、拼音注音、作文模板' : '英语字帖生成器、单词卡片'}`,
+        `📥 PDF免费下载打印 · 无需注册 · 永久免费`,
+      ]}
     >
       {/* 资源信息卡片 */}
       <section className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-8">
@@ -225,6 +282,19 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
           {(!['math', 'chinese', 'english'].includes(r.subject) || !['10以内加减法', '凑十法', '乘法口诀', '万以内加减法', '简易方程', '百分数应用题', '声母韵母', '看图写话', '26个英语字母'].includes(r.knowledgePoint)) && (
             <p>这是一份针对{gradeName}{r.knowledgePoint}的专项练习，配合本站工具使用效果更佳。</p>
           )}
+        </div>
+      </section>
+
+      {/* FAQ - 帮助 AI 引擎抓取 */}
+      <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+        <h2 className="text-xl font-bold text-white mb-4">❓ 常见问题</h2>
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <details key={i} className="p-4 bg-slate-900/50 border border-white/5 rounded-lg">
+              <summary className="text-white font-medium cursor-pointer">{f.q}</summary>
+              <p className="mt-2 text-sm text-slate-300 leading-relaxed">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 
