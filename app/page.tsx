@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import SiteLayout from './_components/SiteLayout';
 import { getHomeToolCards, TOOLS } from '@/lib/toolRegistry';
 import { GRADES } from '@/lib/gradeConfig';
 import { TEXTBOOKS } from '@/lib/textbookConfig';
@@ -236,9 +237,10 @@ export default function HomePage() {
   const featuredParents = PARENT_GUIDE_TOPICS.slice(0, 4);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+    <SiteLayout>
+      <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
       {/* ===== 轮播大图区域 ===== */}
-      <section className="pt-14">
+      <section className="pt-0">
         <div
           className="relative h-[420px] sm:h-[500px] md:h-[600px] overflow-hidden"
           onMouseEnter={() => setIsPaused(true)}
@@ -865,6 +867,7 @@ export default function HomePage() {
           perspective: 1000px;
         }
       `}</style>
-    </div>
+      </div>
+    </SiteLayout>
   );
 }
