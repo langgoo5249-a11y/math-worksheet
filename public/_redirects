@@ -1,3 +1,6 @@
 # Cloudflare Pages redirects
 # 旧路径重定向到工具页
 /mental-math /tools/mental-math/ 308
+
+# ads.txt 由 Next.js 路由 app/ads.txt/route.ts 服务
+# /ads.txt 和 /ads.txt/ 都由该路由处理，避免任何重定向冲突
