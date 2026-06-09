@@ -109,7 +109,7 @@ export default function BlogPost({ articleId, onBack }: BlogPostProps) {
           </li>
           <li>/</li>
           <li>
-            <button onClick={onBack} className="hover:text-white transition-colors">教育博客</button>
+            <button onClick={onBack} className="hover:text-white transition-colors">知识分享</button>
           </li>
           <li>/</li>
           <li className="text-gray-300 truncate max-w-[200px]">{article.title}</li>

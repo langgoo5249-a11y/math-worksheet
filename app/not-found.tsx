@@ -20,7 +20,7 @@ export default function NotFound() {
             href="/blog"
             className="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-600 font-medium rounded-lg border border-blue-600 hover:bg-blue-50 transition-colors"
           >
-            浏览博客
+            浏览知识分享
           </Link>
         </div>
         <div className="mt-8 pt-8 border-t border-gray-200">

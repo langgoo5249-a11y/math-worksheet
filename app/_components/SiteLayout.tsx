@@ -97,6 +97,9 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
               <button onClick={() => setShowTutorial(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 使用教程
               </button>
+              <a href="/blog" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                知识分享
+              </a>
               <button onClick={() => setShowShare(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
                 分享
               </button>
@@ -230,6 +233,10 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
                 <span className="w-8 h-8 bg-orange-500/15 rounded-lg flex items-center justify-center text-sm">📅</span>
                 <div className="flex-1 min-w-0"><div className="font-medium">每日一练</div><div className="text-xs text-gray-500">15分钟打卡</div></div>
               </a>
+              <a href="/blog" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
+                <span className="w-8 h-8 bg-cyan-500/15 rounded-lg flex items-center justify-center text-sm">📖</span>
+                <div className="flex-1 min-w-0"><div className="font-medium">知识分享</div><div className="text-xs text-gray-500">教育干货文章</div></div>
+              </a>
               <a href="/changelog" onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
                 <span className="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center text-sm">📝</span>
                 <div className="flex-1 min-w-0"><div className="font-medium">更新日志</div><div className="text-xs text-gray-500">最新动态</div></div>
@@ -299,7 +306,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
               <div className="text-white font-medium mb-3">学习</div>
               <ul className="space-y-1.5 text-gray-400">
                 <li><a href="/daily" className="hover:text-white transition-colors">每日一练</a></li>
-                <li><a href="/blog" className="hover:text-white transition-colors">教育博客</a></li>
+                <li><a href="/blog" className="hover:text-white transition-colors">知识分享</a></li>
                 <li><a href="/changelog" className="hover:text-white transition-colors">更新日志</a></li>
                 <li><a href="/sitemap" className="hover:text-white transition-colors">网站地图</a></li>
                 <li><a href="/rss.xml" className="hover:text-white transition-colors">RSS订阅</a></li>
@@ -330,7 +337,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
             <span className="text-gray-600">|</span>
             <a href="/contact" className="hover:text-white transition-colors">联系我们</a>
             <span className="text-gray-600">|</span>
-            <a href="/blog" className="hover:text-white transition-colors">教育博客</a>
+            <a href="/blog" className="hover:text-white transition-colors">知识分享</a>
             <span className="text-gray-600">|</span>
             <a href="/terms" className="hover:text-white transition-colors">服务条款</a>
             <span className="text-gray-600">|</span>

@@ -69,7 +69,7 @@ export default function BlogPage() {
                 </div>
               </div>
 
-              <span className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">📰 教育博客</span>
+              <span className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">📰 知识分享</span>
 
               <a href="/search" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">🔍 搜索</a>
 
@@ -127,7 +127,7 @@ export default function BlogPage() {
         <div className="max-w-5xl mx-auto px-4 py-8 sm:py-12">
           {/* Page Title */}
           <div className="text-center mb-10">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">教育博客</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">知识分享</h1>
             <p className="text-gray-400 text-base sm:text-lg">分享实用的教育方法和学习技巧，助力孩子成长</p>
           </div>
 
@@ -213,7 +213,7 @@ export default function BlogPage() {
             <span className="text-gray-600">|</span>
             <a href="/contact" className="hover:text-white transition-colors">联系我们</a>
             <span className="text-gray-600">|</span>
-            <a href="/blog" className="hover:text-white transition-colors">教育博客</a>
+            <a href="/blog" className="hover:text-white transition-colors">知识分享</a>
           </div>
           <div className="text-center text-gray-500 text-sm">
             &copy; 2026 练学宝

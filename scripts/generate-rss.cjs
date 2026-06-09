@@ -57,7 +57,7 @@ ${recent.map(a => `  <item>
     <guid isPermaLink="true">${BASE_URL}/blog/${a.id}/</guid>
     <description>${escapeXml(a.description)}</description>
     <pubDate>${new Date(a.date + 'T08:00:00Z').toUTCString()}</pubDate>
-    <category>教育博客</category>
+    <category>知识分享</category>
   </item>`).join('\n')}
 </channel>
 </rss>`;

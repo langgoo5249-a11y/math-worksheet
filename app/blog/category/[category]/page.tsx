@@ -98,14 +98,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const description = `练学宝${category}专栏：共${count}篇原创文章，涵盖${config.topics}。分享实用的${category}经验和方法，帮助小学生提升${config.ability}能力。`;
 
   return {
-    title: `${category} - 练学宝教育博客`,
+    title: `${category} - 练学宝知识分享`,
     description,
     keywords: config.keywords,
     alternates: {
       canonical: `${BASE_URL}/blog/category/${category}/`,
     },
     openGraph: {
-      title: `${category} - 练学宝教育博客`,
+      title: `${category} - 练学宝知识分享`,
       description,
       type: 'website',
       url: `${BASE_URL}/blog/category/${category}/`,
@@ -171,7 +171,7 @@ export default async function CategoryPage({ params }: PageProps) {
   const collectionPageJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: `${category} - 练学宝教育博客`,
+    name: `${category} - 练学宝知识分享`,
     description,
     url: `${BASE_URL}/blog/category/${category}/`,
     isPartOf: {
@@ -209,7 +209,7 @@ export default async function CategoryPage({ params }: PageProps) {
       {
         '@type': 'ListItem',
         position: 2,
-        name: '教育博客',
+        name: '知识分享',
         item: `${BASE_URL}/blog/`,
       },
       {
@@ -248,7 +248,7 @@ export default async function CategoryPage({ params }: PageProps) {
               </div>
               <div className="hidden lg:flex items-center gap-1">
                 <a href="/" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">首页</a>
-                <a href="/blog" className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">教育博客</a>
+                <a href="/blog" className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">知识分享</a>
                 <a href="/about" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">关于我们</a>
                 <a href="/contact" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">联系我们</a>
               </div>
@@ -270,7 +270,7 @@ export default async function CategoryPage({ params }: PageProps) {
                 <li className="text-gray-600">/</li>
                 <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
                   <Link href="/blog" itemProp="item" className="hover:text-white transition-colors">
-                    <span itemProp="name">教育博客</span>
+                    <span itemProp="name">知识分享</span>
                   </Link>
                   <meta itemProp="position" content="2" />
                 </li>
@@ -396,7 +396,7 @@ export default async function CategoryPage({ params }: PageProps) {
               <span className="text-gray-600">|</span>
               <a href="/contact" className="hover:text-white transition-colors">联系我们</a>
               <span className="text-gray-600">|</span>
-              <a href="/blog" className="hover:text-white transition-colors">教育博客</a>
+              <a href="/blog" className="hover:text-white transition-colors">知识分享</a>
             </div>
             <div className="text-center text-gray-500 text-sm">
               &copy; 2026 练学宝

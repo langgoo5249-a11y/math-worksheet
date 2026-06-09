@@ -130,7 +130,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             </li>
             <li>/</li>
             <li>
-              <Link href="/blog" className="hover:text-white transition-colors">教育博客</Link>
+              <Link href="/blog" className="hover:text-white transition-colors">知识分享</Link>
             </li>
             <li>/</li>
             <li className="text-gray-300 truncate max-w-[200px]">{article.title}</li>

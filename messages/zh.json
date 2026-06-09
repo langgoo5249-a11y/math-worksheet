@@ -7,7 +7,7 @@
   "nav": {
     "home": "练学宝",
     "tools": "学习工具",
-    "blog": "教育资讯",
+    "blog": "知识分享",
     "search": "搜索",
     "about": "关于我们",
     "contact": "联系我们"
@@ -138,12 +138,12 @@
   },
   "blog": {
     "siteName": "练学宝",
-    "title": "教育博客",
+    "title": "知识分享",
     "description": "分享实用的教育方法和学习技巧，助力孩子成长",
     "nav": {
       "home": "首页",
       "tools": "学习工具",
-      "blog": "教育博客",
+      "blog": "知识分享",
       "search": "搜索",
       "about": "关于我们",
       "contact": "联系我们",
@@ -175,7 +175,7 @@
     "categoryNotFound": "分类未找到",
     "categoryNotFoundDesc": "您访问的分类不存在",
     "categoryPage": {
-      "title": "{category} - 教育博客",
+      "title": "{category} - 知识分享",
       "description": "{category}专栏：共{count}篇原创文章，分享实用的教育经验和方法",
       "articleCount": "共 {count} 篇原创文章",
       "otherCategories": "浏览其他分类"

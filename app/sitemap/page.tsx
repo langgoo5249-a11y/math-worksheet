@@ -199,7 +199,7 @@ export default function SitemapIndex() {
             <span>📚</span> 内容板块
           </h2>
           <ul className="space-y-1.5 text-sm">
-            <li><Link href="/blog" className="text-slate-300 hover:text-blue-400">✏️ 教育博客（80+篇）</Link></li>
+            <li><Link href="/blog" className="text-slate-300 hover:text-blue-400">✏️ 知识分享（80+篇）</Link></li>
             <li><Link href="/daily" className="text-slate-300 hover:text-blue-400">📅 每日一练</Link></li>
             <li><Link href="/changelog" className="text-slate-300 hover:text-blue-400">📝 更新日志</Link></li>
             <li><Link href="/sitemap" className="text-slate-300 hover:text-blue-400">🗺️ 网站地图</Link></li>
