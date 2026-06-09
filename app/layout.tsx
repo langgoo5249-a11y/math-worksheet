@@ -340,6 +340,8 @@ export default async function RootLayout({
         <link rel="dns-prefetch" href="https://zz.bdstatic.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://lf1-cdn-tos.bytegoofy.com" />
+        <link rel="preconnect" href="https://lf1-cdn-tos.bytegoofy.com" crossOrigin="anonymous" />
 
         {/* Google Consent Mode v2 - 默认拒绝 */}
         <script
@@ -392,6 +394,21 @@ export default async function RootLayout({
                 }
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(bp, s);
+              })();
+            `,
+          }}
+        />
+
+        {/* 头条搜索（字节跳动）主动推送 - 当用户浏览页面时，链接自动推送给头条搜索蜘蛛，加快收录 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(){
+                var el = document.createElement('script');
+                el.src = 'https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?278b7bc276aa0b514ff5c4e28d63b1e083f58bd22a48d8e0e73447efb03530befd9a9dcb5ced4d7780eb6f3bbd089073c2a6d54440560d63862bbf4ec01bba3a';
+                el.id = 'ttzz';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(el, s);
               })();
             `,
           }}
