@@ -6,13 +6,29 @@
   <atom:link href="https://www.skillxm.cn/rss.xml" rel="self" type="application/rss+xml" />
   <description>练学宝为小学1-6年级学生提供数学口算、字帖练习、单元测试、拼音注音等免费学习工具，以及丰富的练习卷资源和家长指导。</description>
   <language>zh-CN</language>
-  <lastBuildDate>Mon, 08 Jun 2026 07:01:53 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 09 Jun 2026 00:28:56 GMT</lastBuildDate>
   <generator>练学宝 RSS Generator</generator>
   <image>
     <url>https://www.skillxm.cn/favicon.svg</url>
     <title>练学宝 - 小学数学语文英语学习工具与练习资源</title>
     <link>https://www.skillxm.cn/</link>
   </image>
+  <item>
+    <title>3年级数学应用题总是扣分？这套条件拆解+问题倒推四步法让我儿子从62分提到92分</title>
+    <link>https://www.skillxm.cn/blog/san-ji-yingyongti-sijie-fa-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/san-ji-yingyongti-sijie-fa-2026/</guid>
+    <description>小学3年级数学应用题怎么教？本文分享我从62分到92分的真实提分案例，详解条件拆解+问题倒推四步法，含具体训练脚本、错题统计和练习卷生成器使用建议。</description>
+    <pubDate>Tue, 09 Jun 2026 08:00:00 GMT</pubDate>
+    <category>教育博客</category>
+  </item>
+  <item>
+    <title>孩子看图写话只写一句话？北大附小老师教的五感观察法让儿子从20字写到150字</title>
+    <link>https://www.skillxm.cn/blog/kantuxiehua-wuguan-guancha-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/kantuxiehua-wuguan-guancha-2026/</guid>
+    <description>小学一二年级看图写话怎么教？孩子写作文没素材、写不长怎么办？本文分享北大附小语文老师亲授的五感观察法（视觉+听觉+触觉+嗅觉+味觉），含真实案例、3周训练脚本和作文模板使用建议。</description>
+    <pubDate>Tue, 09 Jun 2026 08:00:00 GMT</pubDate>
+    <category>教育博客</category>
+  </item>
   <item>
     <title>小学语文阅读理解总丢分？我研究了3年的「5W1H拆解法」，让我儿子从扣8分到只扣1分</title>
     <link>https://www.skillxm.cn/blog/xiaoxue-yuedu-zhenti-jieti-jiqiao-2026/</link>
@@ -395,22 +411,6 @@
     <guid isPermaLink="true">https://www.skillxm.cn/blog/gushi-shici-moxie-lianxi-fangfa/</guid>
     <description>小学阶段需要背诵多少首古诗词？如何高效进行古诗词默写练习？本文分享完整的古诗词背诵清单和三种高效的默写练习方法，帮助孩子轻松掌握必背古诗词。</description>
     <pubDate>Mon, 27 Apr 2026 08:00:00 GMT</pubDate>
-    <category>教育博客</category>
-  </item>
-  <item>
-    <title>免费字帖生成器推荐：田字格米字格一键生成打印</title>
-    <link>https://www.skillxm.cn/blog/mianfei-zitie-shengchengqi-tuijian/</link>
-    <guid isPermaLink="true">https://www.skillxm.cn/blog/mianfei-zitie-shengchengqi-tuijian/</guid>
-    <description>还在花冤枉钱买字帖？这款免费字帖生成器支持田字格、米字格等多种格式，输入文字即可一键生成可打印的字帖，还有英语四线三格字帖功能，小学阶段写字练习全搞定。</description>
-    <pubDate>Sun, 26 Apr 2026 08:00:00 GMT</pubDate>
-    <category>教育博客</category>
-  </item>
-  <item>
-    <title>小学单元测试卷怎么出？这套免费工具帮你省下买试卷的钱</title>
-    <link>https://www.skillxm.cn/blog/danyuan-ceshijuan-shengcheng-gongju/</link>
-    <guid isPermaLink="true">https://www.skillxm.cn/blog/danyuan-ceshijuan-shengcheng-gongju/</guid>
-    <description>老师出卷太耗时？家长买试卷太花钱？这款免费单元测试卷生成器覆盖语数英科四科305个单元，一键生成专业试卷，还有配套答案和解析，小学教学必备工具。</description>
-    <pubDate>Sun, 26 Apr 2026 08:00:00 GMT</pubDate>
     <category>教育博客</category>
   </item>
 </channel>
