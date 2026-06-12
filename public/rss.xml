@@ -6,13 +6,21 @@
   <atom:link href="https://www.skillxm.cn/rss.xml" rel="self" type="application/rss+xml" />
   <description>练学宝为小学1-6年级学生提供数学口算、字帖练习、单元测试、拼音注音等免费学习工具，以及丰富的练习卷资源和家长指导。</description>
   <language>zh-CN</language>
-  <lastBuildDate>Wed, 10 Jun 2026 00:36:00 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 12 Jun 2026 00:54:13 GMT</lastBuildDate>
   <generator>练学宝 RSS Generator</generator>
   <image>
     <url>https://www.skillxm.cn/favicon.svg</url>
     <title>练学宝 - 小学数学语文英语学习工具与练习资源</title>
     <link>https://www.skillxm.cn/</link>
   </image>
+  <item>
+    <title>小学数学错题本正确使用方法：90%家长都做错了，3组对比数据告诉你差别有多大</title>
+    <link>https://www.skillxm.cn/blog/xiaoxue-shuxue-cuotiben-zhengque-shiyong-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/xiaoxue-shuxue-cuotiben-zhengque-shiyong-2026/</guid>
+    <description>小学数学错题本怎么整理才有效？为什么孩子抄了100道错题还是考不好？本文用3个真实案例+3组对比数据，揭秘错题本的5个常见错误和3步正确方法，附可打印错题本模板。</description>
+    <pubDate>Thu, 11 Jun 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
   <item>
     <title>孩子单位换算总丢分？这份长度+质量+时间单位换算大全让我儿子从扣8分到不扣分</title>
     <link>https://www.skillxm.cn/blog/xiaoxue-danwei-huansuan-zhinan-2026/</link>
@@ -403,14 +411,6 @@
     <guid isPermaLink="true">https://www.skillxm.cn/blog/shudu-100tian-xunlian-jilu/</guid>
     <description>一位家长详细记录了孩子100天数独训练的全过程，包含用时变化、正确率数据和数学成绩的关联分析。</description>
     <pubDate>Tue, 28 Apr 2026 08:00:00 GMT</pubDate>
-    <category>知识分享</category>
-  </item>
-  <item>
-    <title>我给孩子买了10套逻辑思维训练书，说说真实感受</title>
-    <link>https://www.skillxm.cn/blog/luoji-siwei-xunlian-shu-pingce/</link>
-    <guid isPermaLink="true">https://www.skillxm.cn/blog/luoji-siwei-xunlian-shu-pingce/</guid>
-    <description>一位家长分享购买和使用10套逻辑思维训练书的真实体验，包含每套书的优缺点和适合人群。</description>
-    <pubDate>Mon, 27 Apr 2026 08:00:00 GMT</pubDate>
     <category>知识分享</category>
   </item>
 </channel>
