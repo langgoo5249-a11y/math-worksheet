@@ -5,6 +5,7 @@ import { TOOLS, generateSchemaApps, generateSchemaBreadcrumbs, ACTIVE_TOOL_COUNT
 import CookieConsent from './_components/CookieConsent';
 import GoogleAnalytics from './_components/GoogleAnalytics';
 import FloatingLanguageSwitcher from './_components/FloatingLanguageSwitcher';
+import MiniappModal from './_components/MiniappModal';
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
@@ -469,6 +470,9 @@ export default async function RootLayout({
         />
         {/* Google Analytics 4 — 仅在用户同意Cookie后加载 */}
         <GoogleAnalytics />
+
+        {/* 微信小程序二维码弹窗 */}
+        <MiniappModal />
       </body>
     </html>
   );
