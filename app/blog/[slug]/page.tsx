@@ -131,7 +131,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         "item": "https://www.skillxm.cn/blog/${article.id}/"
       }
     ]
-  };  }
+  };
 
   return (
     <>
