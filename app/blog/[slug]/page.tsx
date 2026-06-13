@@ -107,32 +107,31 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     "articleSection": article.category,
     "wordCount": article.content.length,
   };
-  
-    const breadcrumbSchema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "练学宝",
-          "item": "https://www.skillxm.cn/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "知识分享",
-          "item": "https://www.skillxm.cn/blog/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": article.title,
-          "item": "https://www.skillxm.cn/blog/${article.id}/"
-        }
-      ]
-    };
-  }
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "练学宝",
+        "item": "https://www.skillxm.cn/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "知识分享",
+        "item": "https://www.skillxm.cn/blog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": article.title,
+        "item": "https://www.skillxm.cn/blog/${article.id}/"
+      }
+    ]
+  };  }
 
   return (
     <>
