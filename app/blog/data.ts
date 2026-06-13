@@ -31,6 +31,9 @@ export const categories = [
   '升学指导',
   '工具推荐',
   '关于我们',
+  '综合教育',
+  '数学',
+  '工具教程',
 ] as const;
 
 export type Category = (typeof categories)[number];
