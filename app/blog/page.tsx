@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { articles, categories } from './data';
 import type { Category } from './data';
@@ -18,7 +19,26 @@ const categoryColors: Record<string, string> = {
 };
 
 export default function BlogPage() {
+  const pathname = usePathname();
   const [activeCategory, setActiveCategory] = useState<Category>('全部');
+  
+  useEffect(() => {
+    document.title = '知识分享 - 实用教育方法和学习技巧 | 练学宝';
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', '练学宝知识分享：90+篇原创教育文章，涵盖数学学习、语文学习、英语学习、思维训练等，助力孩子成长。');
+    }
+    // 设置canonical
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', 'https://www.skillxm.cn/blog/');
+    } else {
+      const link = document.createElement('link');
+      link.rel = 'canonical';
+      link.href = 'https://www.skillxm.cn/blog/';
+      document.head.appendChild(link);
+    }
+  }, []);
   const [mobileMenu, setMobileMenu] = useState(false);
   
   // 移动端菜单打开时锁定body滚动
