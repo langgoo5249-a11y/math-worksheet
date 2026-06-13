@@ -150,7 +150,7 @@ export default async function Page({ params }: PageProps) {
         "item": `https://www.skillxm.cn/blog/${article.id}/`
       }
     ]
-  };    };
+  };
 
   return (
     <>
