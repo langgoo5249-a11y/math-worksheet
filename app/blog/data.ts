@@ -37,7 +37,7 @@ export type Category = (typeof categories)[number];
 
 export const articles: Article[] = [
   {
-    id: "haizi写zi歪歪扭扭-这份lianzi时间-kyum",
+    id: "haizi-xie-zi-wai-wai-niu-niu-lian-zi-shi-jian",
     title: "孩子写字歪歪扭扭？这份练字时间表让80%的家长后悔没早看到",
     description: "孩子写字歪歪扭扭怎么办？本文分享一份科学练字时间表，含真实案例、阶段性成果数据和字帖生成器使用方法。",
     date: "2026-06-05",
@@ -137,7 +137,7 @@ export const articles: Article[] = [
 记住，练字不只是为了考试卷面分，更是培养孩子专注力和耐心的过程。坚持下去，你会看到孩子的变化。`,
   },
   {
-    id: "haizi写zi歪歪扭扭-这份lianzi时间-qlb2",
+    id: "haizi-xie-zi-wai-wai-niu-niu-lian-zi-shi-jian-2",
     title: "孩子写字歪歪扭扭？这份练字时间表让80%的家长后悔没早看到",
     description: "孩子写字歪歪扭扭怎么办？本文分享一份科学练字时间表，含真实案例、阶段性成果数据和字帖生成器使用方法。",
     date: "2026-06-03",
@@ -237,7 +237,7 @@ export const articles: Article[] = [
 记住，练字不只是为了考试卷面分，更是培养孩子专注力和耐心的过程。坚持下去，你会看到孩子的变化。`,
   },
   {
-    id: "yinianjishuxue启蒙：从shushu到20以-hog9",
+    id: "yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi",
     title: "一年级数学启蒙：从数数到20以内加减法的完整路径",
     description: "一年级数学启蒙怎么做？本文分享从数数到20以内加减法的完整学习路径，含具体教学步骤、时间节点和真实案例。",
     date: "2026-06-01",
@@ -319,7 +319,7 @@ export const articles: Article[] = [
 数学启蒙没有捷径，但有方法。按照这个阶段规划，稳扎稳打，孩子的数学基础会打得非常扎实。`,
   },
   {
-    id: "yinianjishuxue启蒙：从shushu到20以-rbb1",
+    id: "yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi-2",
     title: "一年级数学启蒙：从数数到20以内加减法的完整路径",
     description: "一年级数学启蒙怎么做？本文分享从数数到20以内加减法的完整学习路径，含具体教学步骤、时间节点和真实案例。",
     date: "2026-05-29",
