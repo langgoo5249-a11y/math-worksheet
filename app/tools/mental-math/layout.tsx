@@ -155,7 +155,7 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
         }}
       />
       <ToolBreadcrumb toolName="口算速练" toolPath="/tools/mental-math" />
-
+      {children}
     </>
   );
 }

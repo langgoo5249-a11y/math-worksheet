@@ -108,7 +108,7 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
         }}
       />
       <ToolBreadcrumb toolName="拼音注音" toolPath="/tools/pinyin" />
-
+      {children}
     </>
   );
 }

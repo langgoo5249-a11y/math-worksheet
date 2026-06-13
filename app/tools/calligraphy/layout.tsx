@@ -140,7 +140,7 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
         }}
       />
       <ToolBreadcrumb toolName="字帖生成器" toolPath="/tools/calligraphy" />
-
+      {children}
     </>
   );
 }

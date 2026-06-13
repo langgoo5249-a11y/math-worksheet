@@ -137,7 +137,7 @@ export default function PoemMemoLayout({ children }: { children: React.ReactNode
         }}
       />
       <ToolBreadcrumb toolName="古诗词默写" toolPath="/tools/poem-memo" />
-
+      {children}
     </>
   );
 }

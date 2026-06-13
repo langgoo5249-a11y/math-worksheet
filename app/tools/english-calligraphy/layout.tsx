@@ -110,7 +110,7 @@ export default function EnglishCalligraphyLayout({ children }: { children: React
         }}
       />
       <ToolBreadcrumb toolName="英语字帖" toolPath="/tools/english-calligraphy" />
-
+      {children}
     </>
   );
 }

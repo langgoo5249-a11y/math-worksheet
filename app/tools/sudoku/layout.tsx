@@ -111,7 +111,7 @@ export default function SudokuLayout({ children }: { children: React.ReactNode }
         }}
       />
       <ToolBreadcrumb toolName="数独游戏" toolPath="/tools/sudoku" />
-
+      {children}
     </>
   );
 }

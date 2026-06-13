@@ -101,7 +101,7 @@ export default function FlashcardsLayout({ children }: { children: React.ReactNo
         }}
       />
       <ToolBreadcrumb toolName="识字卡片" toolPath="/tools/flashcards" />
-
+      {children}
     </>
   );
 }

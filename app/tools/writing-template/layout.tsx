@@ -102,7 +102,7 @@ export default function WritingTemplateLayout({ children }: { children: React.Re
         }}
       />
       <ToolBreadcrumb toolName="作文模板" toolPath="/tools/writing-template" />
-
+      {children}
     </>
   );
 }

@@ -140,8 +140,7 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
         }}
       />
       <ToolBreadcrumb toolName="数学练习卷" toolPath="/tools/math-worksheet" />
-      
-
+      {children}
     </>
   );
 }
