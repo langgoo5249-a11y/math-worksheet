@@ -126,31 +126,31 @@ export default async function Page({ params }: PageProps) {
     "wordCount": article.content.length,
     "inLanguage": locale === 'zh' ? 'zh-CN' : locale,
   };
-        const breadcrumbSchema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": siteName,
-          "item": "https://www.skillxm.cn/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": t('nav.blog'),
-          "item": `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}blog/`
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": article.title,
-          "item": `https://www.skillxm.cn/blog/${article.id}/`
-        }
-      ]
-    };
-    };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": siteName,
+        "item": "https://www.skillxm.cn/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": t('nav.blog'),
+        "item": `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}blog/`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": article.title,
+        "item": `https://www.skillxm.cn/blog/${article.id}/`
+      }
+    ]
+  };    };
 
   return (
     <>
