@@ -25,7 +25,7 @@ const SITE_DESC = '练学宝为小学1-6年级学生提供数学口算、字帖�
 
 // 按日期倒序
 articles.sort((a, b) => b.date.localeCompare(a.date));
-const recent = articles.slice(0, 50);
+const recent = articles;
 
 const escapeXml = (str) => str
   .replace(/&/g, '&amp;')
