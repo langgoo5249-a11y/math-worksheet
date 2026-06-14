@@ -31,12 +31,12 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "练学宝 - 免费小学教学工具/数学练习卷/字帖/口算生成器等",
-  description: "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练（支持AI智能出题和进度追踪）、拼音学习、识字卡片、古诗词默写、单元测试卷等。支持手机在线做题和PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常练习与教师课堂教学使用。",
-  keywords: "练学宝,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印,手机练习,在线做题,免费打印试卷,小学数学题,小学语文练习,英语字帖,数独游戏,AI口算出题,口算学习报告",
+  title: "练学宝 - 免费小学教学工具/中文学习/数学练习卷/字帖/口算",
+  description: "练学宝是儿童中文学习网站，提供10+款免费小学中文学习与数学教学工具，包括数学练习卷生成器、字帖生成器、口算速练（支持AI智能出题和进度追踪）、拼音学习、识字卡片、古诗词默写、单元测试卷等。支持手机在线做题和PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常中文学习与数学练习使用。",
+  keywords: "练学宝,中文学习,小学中文学习,儿童中文学习网站,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印,手机练习,在线做题,免费打印试卷,小学数学题,小学语文练习,英语字帖,数独游戏,AI口算出题,口算学习报告",
   openGraph: {
-    title: "练学宝 - 免费小学教学工具/数学练习卷/字帖/口算生成器等",
-    description: "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常练习与教师课堂教学使用。",
+    title: "练学宝 - 儿童中文学习网站|免费小学教学工具|数学练习卷|字帖|口算",
+    description: "练学宝是优质的儿童中文学习网站，提供拼音学习、识字卡片、古诗词默写、字帖生成器等中文学习工具，以及数学练习卷、口算速练等10+款免费小学教学工具，支持PDF导出打印，无需注册即开即用。",
     type: "website",
     url: "https://www.skillxm.cn",
     siteName: "练学宝",
@@ -126,7 +126,7 @@ export default async function RootLayout({
           width: 512,
           height: 512,
         },
-        description: `免费在线教育工具集合，为小学生和家长提供数学练习卷、字帖、数独等${ACTIVE_TOOL_COUNT}款实用工具`,
+        description: `练学宝是儿童中文学习网站，提供小学中文学习工具与数学教学工具。包括拼音学习、识字卡片、古诗词默写、字帖生成器等中文学习资源，以及数学练习卷、口算速练、数独游戏等${ACTIVE_TOOL_COUNT}款实用工具`,
         address: {
           "@type": "PostalAddress",
           addressCountry: "CN",
@@ -142,12 +142,27 @@ export default async function RootLayout({
           "@type": "Country",
           name: "CN",
         },
+        sameAs: [
+          "https://github.com/jm6-lang/math-worksheet",
+        ],
+        foundingDate: "2025-12-01",
         contactPoint: {
           "@type": "ContactPoint",
           email: "lang@skillxm.cn",
           contactType: "customer support",
-          availableLanguage: "Chinese",
+          availableLanguage: ["Chinese", "English", "Japanese", "Korean"],
         },
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.skillxm.cn/#person-linyuan",
+        name: "林远",
+        description: "练学宝中文学习与小学数学教育内容作者，专注于儿童中文学习方法和小学数学教学研究",
+        jobTitle: "教育内容作者",
+        affiliation: {
+          "@id": "https://www.skillxm.cn/#organization"
+        },
+        url: "https://www.skillxm.cn/about",
       },
       ...generateSchemaApps(),
       ...generateSchemaBreadcrumbs(),
@@ -286,7 +301,42 @@ export default async function RootLayout({
               "@type": "Answer",
               "text": "完全安全。练学宝所有功能在浏览器本地运行，不会收集、存储或上传任何用户数据。不需要输入姓名、电话等个人信息。我们使用百度统计了解匿名访问趋势，用户可通过Cookie横幅选择关闭追踪，充分保护隐私安全。"
             }
-          }
+          },
+          {
+            "@type": "Question",
+            "name": "练学宝适合儿童中文学习吗？有哪些中文学习工具？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "非常适合。练学宝是专业的儿童中文学习网站，提供多款小学中文学习工具：拼音注音工具帮助孩子掌握声母韵母和整体认读音节；字帖生成器支持汉字笔顺描红练习；识字卡片覆盖小学1-6年级全部生字；古诗词默写工具辅助记忆课内必背古诗词；作文模板提供看图写话、日记、读后感等写作指导。所有工具完全免费，支持PDF打印。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "小学生中文学习应该从哪里开始？练学宝如何帮助孩子学中文？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "小学中文学习建议按照教育部《义务教育语文课程标准》的梯度推进：一年级重点学拼音和基础汉字（练学宝拼音注音+字帖描红），二年级加强识字和朗读（识字卡片+古诗朗读），三年级开始阅读理解和写作（作文模板+古诗词默写）。练学宝为每个阶段提供了对应的免费工具，家长可以根据孩子的年级和学习进度选择使用。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "练学宝和市面其他儿童中文学习网站有什么不同？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "练学宝与市面上其他儿童中文学习网站的核心差异在于：一、完全免费，无需注册即开即用，没有付费墙或会员限制；二、工具可直接导出高质量PDF打印，适合家庭教育场景；三、覆盖中文学习（拼音、识字、写字、古诗词、写作）和数学学习（口算、竖式计算、单元测试）两大主科；四、支持手机和电脑多端使用，操作简单，小学生也能独立使用。"
+            }
+          },
+        ],
+      },
+      {
+        "@type": "SpeakableSpecification",
+        "xpath": [
+          "/html/head/title",
+          "/html/head/meta[@name='description']/@content"
+        ],
+        "cssSelector": [
+          "h1",
+          ".sr-only"
         ]
       },
     ],

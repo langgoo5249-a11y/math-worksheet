@@ -205,7 +205,7 @@ export function generateOrganizationSchema() {
       width: 512,
       height: 512,
     },
-    description: '练学宝是免费小学教学工具平台，提供数学练习卷生成器、字帖生成器、口算速练、拼音注音、识字卡片、古诗词默写、单元测试卷等10+款工具，以及年级专区、教材同步、知识点专题、练习卷资源库、家长指导等内容板块。',
+    description: '练学宝是儿童中文学习网站，提供小学中文学习工具与数学教学工具。包括拼音学习、识字卡片、古诗词默写、字帖生成器等中文学习资源，以及数学练习卷、口算速练、数独游戏等10+款免费工具。',
     foundingDate: '2025-12-01',
     address: {
       '@type': 'PostalAddress',
@@ -219,7 +219,32 @@ export function generateOrganizationSchema() {
       contactType: 'customer support',
       availableLanguage: ['Chinese', 'English', 'Japanese', 'Korean'],
     },
-    sameAs: [],
+    sameAs: [
+      'https://github.com/jm6-lang/math-worksheet',
+    ],
+  };
+}
+
+// ========== Person 结构化数据（作者信息）==========
+export function generatePersonSchema(opts: {
+  name: string;
+  description: string;
+  jobTitle?: string;
+  url?: string;
+  sameAs?: string[];
+}) {
+  return {
+    '@type': 'Person',
+    name: opts.name,
+    description: opts.description,
+    jobTitle: opts.jobTitle || '教育内容作者',
+    url: opts.url || BASE_URL,
+    sameAs: opts.sameAs || [],
+    affiliation: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: BASE_URL,
+    },
   };
 }
 
