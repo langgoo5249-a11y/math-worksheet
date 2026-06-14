@@ -120,7 +120,7 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
     translateShortText(article.author?.bio || defaultAuthor.bio, locale).then(setTranslatedBio);
     
     // 翻译正文（长文本，异步）
-    translateContent(article.content);
+    translateContent(article.content || '');
   }, [article, locale, isNonZh, translateContent]);
 
   const displayTitle = isNonZh && translatedTitle ? translatedTitle : (article?.title || '');
