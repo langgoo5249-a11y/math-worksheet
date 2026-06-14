@@ -36,7 +36,7 @@ export default function SearchPageClient() {
       article.title.toLowerCase().includes(lowerQuery) ||
       article.description.toLowerCase().includes(lowerQuery) ||
       article.category.toLowerCase().includes(lowerQuery) ||
-      article.content.toLowerCase().includes(lowerQuery)
+      (article.content || '').toLowerCase().includes(lowerQuery)
     );
 
     return { tools: matchedTools, articles: matchedArticles };

@@ -105,7 +105,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       "@id": `https://www.skillxm.cn/blog/${article.id}/`
     },
     "articleSection": article.category,
-    "wordCount": article.content.length,
+    "wordCount": article.content?.length || 0,
   };
 
   const breadcrumbSchema = {

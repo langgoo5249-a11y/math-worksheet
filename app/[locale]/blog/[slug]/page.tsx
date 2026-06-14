@@ -123,7 +123,7 @@ export default async function Page({ params }: PageProps) {
       "@id": `https://www.skillxm.cn/blog/${article.id}/`
     },
     "articleSection": article.category,
-    "wordCount": article.content.length,
+    "wordCount": article.content?.length || 0,
     "inLanguage": locale === 'zh' ? 'zh-CN' : locale,
   };
 
