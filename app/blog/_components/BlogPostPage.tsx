@@ -168,7 +168,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
         {/* Article Content */}
         <div
           className="prose prose-invert max-w-none"
-          dangerouslySetInnerHTML={{ __html: parseMarkdown(article.content) }}
+          dangerouslySetInnerHTML={{ __html: parseMarkdown(article.content || '') }}
         />
 
         {/* 广告位 */}
