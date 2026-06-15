@@ -28,6 +28,21 @@ try {
   console.warn('[WARN] RSS generation failed:', e.message);
 }
 
+// 0.5 关键：删除多语言 wrapper 目录（en/, ja/, ko/, zh/）
+// 原因：Cloudflare Pages 不会对已存在的静态文件应用 _redirects 规则。
+//       Next.js 静态导出生成了 out/en/index.html、out/ja/index.html 等文件，
+//       会让 _redirects 中的 301 重定向失效。
+//       删除这些目录后，访问 /en/ /ja/ /ko/ /zh/ 时 Cloudflare 才会查找 _redirects 并 301 跳转到中文版。
+//       2026-06-15 SEO 修复：解决多语言 wrapper 页面产生 4x 重复内容导致 Google 降权的问题。
+const localeDirs = ['en', 'ja', 'ko', 'zh'];
+for (const locale of localeDirs) {
+  const localeDir = path.join(outDir, locale);
+  if (fs.existsSync(localeDir)) {
+    fs.rmSync(localeDir, { recursive: true, force: true });
+    console.log(`[CLEANUP] Removed out/${locale}/ - Cloudflare will use _redirects 301 rules`);
+  }
+}
+
 // 1. Copy Cloudflare-specific files - 关键文件必须成功
 // ads.txt 由 Next.js app/ads.txt/route.ts 路由处理并生成到 out/ads.txt
 const criticalFiles = [
