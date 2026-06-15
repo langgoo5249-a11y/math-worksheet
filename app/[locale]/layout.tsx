@@ -53,10 +53,6 @@ export async function generateMetadata({
     alternates: {
       // canonical 强制指向中文版，避免多语言版本产生重复内容
       canonical: "https://www.skillxm.cn/",
-      languages: {
-        "zh-CN": "https://www.skillxm.cn/",
-        "x-default": "https://www.skillxm.cn/",
-      },
     },
   };
 }

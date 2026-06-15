@@ -79,36 +79,37 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { category } = await params;
+  const decodedCategory = decodeURIComponent(category) as Category;
 
-  // 验证分类是否有效
-  if (!categoryList.includes(category as (typeof categoryList)[number])) {
+  // 验证分类是否有效（使用全部 categories 而非 categoryList，因为 decodedCategory 类型包含"全部"）
+  if (!(categories as readonly string[]).includes(decodedCategory) || decodedCategory === '全部') {
     return {
       title: '分类未找到 - 练学宝',
     };
   }
 
-  const config = categorySEOConfig[category] || {
+  const config = categorySEOConfig[decodedCategory] || {
     keywords: [],
     topics: '相关教育内容',
     ability: '综合',
   };
 
-  const categoryArticles = articles.filter(a => a.category === category);
+  const categoryArticles = articles.filter(a => a.category === decodedCategory);
   const count = categoryArticles.length;
-  const description = `练学宝${category}专栏：共${count}篇原创文章，涵盖${config.topics}。分享实用的${category}经验和方法，帮助小学生提升${config.ability}能力。`;
+  const description = `练学宝${decodedCategory}专栏：共${count}篇原创文章，涵盖${config.topics}。分享实用的${decodedCategory}经验和方法，帮助小学生提升${config.ability}能力。`;
 
   return {
-    title: `${category} - 练学宝知识分享`,
+    title: `${decodedCategory} - 练学宝知识分享`,
     description,
     keywords: config.keywords,
     alternates: {
-      canonical: `${BASE_URL}/blog/category/${category}/`,
+      canonical: `${BASE_URL}/blog/category/${decodedCategory}/`,
     },
     openGraph: {
-      title: `${category} - 练学宝知识分享`,
+      title: `${decodedCategory} - 练学宝知识分享`,
       description,
       type: 'website',
-      url: `${BASE_URL}/blog/category/${category}/`,
+      url: `${BASE_URL}/blog/category/${decodedCategory}/`,
       siteName: '练学宝',
       locale: 'zh_CN',
     },
@@ -117,9 +118,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function CategoryPage({ params }: PageProps) {
   const { category } = await params;
+  // 对 URL 编码的中文分类名进行解码（确保兼容不同浏览器/蜘蛛的编码方式）
+  const decodedCategory = decodeURIComponent(category) as Category;
 
   // 验证分类是否有效
-  const isValidCategory = categoryList.includes(category as (typeof categoryList)[number]);
+  const isValidCategory = (categories as readonly string[]).includes(decodedCategory) && decodedCategory !== '全部';
 
   if (!isValidCategory) {
     return (
@@ -154,26 +157,26 @@ export default async function CategoryPage({ params }: PageProps) {
     );
   }
 
-  const config = categorySEOConfig[category] || {
+  const config = categorySEOConfig[decodedCategory] || {
     keywords: [],
     topics: '相关教育内容',
     ability: '综合',
   };
 
   const categoryArticles = articles
-    .filter(a => a.category === category)
+    .filter(a => a.category === decodedCategory)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   const count = categoryArticles.length;
-  const description = `练学宝${category}专栏：共${count}篇原创文章，涵盖${config.topics}。分享实用的${category}经验和方法，帮助小学生提升${config.ability}能力。`;
+  const description = `练学宝${decodedCategory}专栏：共${count}篇原创文章，涵盖${config.topics}。分享实用的${decodedCategory}经验和方法，帮助小学生提升${config.ability}能力。`;
 
   // JSON-LD 结构化数据
   const collectionPageJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: `${category} - 练学宝知识分享`,
+    name: `${decodedCategory} - 练学宝知识分享`,
     description,
-    url: `${BASE_URL}/blog/category/${category}/`,
+    url: `${BASE_URL}/blog/category/${decodedCategory}/`,
     isPartOf: {
       '@type': 'WebSite',
       name: '练学宝',
@@ -215,8 +218,8 @@ export default async function CategoryPage({ params }: PageProps) {
       {
         '@type': 'ListItem',
         position: 3,
-        name: category,
-        item: `${BASE_URL}/blog/category/${category}/`,
+        name: decodedCategory,
+        item: `${BASE_URL}/blog/category/${decodedCategory}/`,
       },
     ],
   };
@@ -276,7 +279,7 @@ export default async function CategoryPage({ params }: PageProps) {
                 </li>
                 <li className="text-gray-600">/</li>
                 <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                  <span itemProp="name" className="text-gray-300">{category}</span>
+                  <span itemProp="name" className="text-gray-300">{decodedCategory}</span>
                   <meta itemProp="position" content="3" />
                 </li>
               </ol>
@@ -284,18 +287,18 @@ export default async function CategoryPage({ params }: PageProps) {
 
             {/* Page Header */}
             <header className="text-center mb-10">
-              <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium border mb-4 ${categoryColors[category] || 'bg-gray-500/20 text-gray-300 border-gray-500/30'}`}>
-                {category}
+              <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium border mb-4 ${categoryColors[decodedCategory] || 'bg-gray-500/20 text-gray-300 border-gray-500/30'}`}>
+                {decodedCategory}
               </span>
-              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">{category}</h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">{decodedCategory}</h1>
               <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                共 {count} 篇原创文章，分享实用的{category}经验和方法
+                共 {count} 篇原创文章，分享实用的{decodedCategory}经验和方法
               </p>
             </header>
 
             {/* sr-only SEO 文本块 */}
             <div className="sr-only">
-              <h2>{category}专栏文章列表</h2>
+              <h2>{decodedCategory}专栏文章列表</h2>
               <p>{description}</p>
               <p>关键词：{config.keywords.join('、')}</p>
               <ul>
@@ -356,7 +359,7 @@ export default async function CategoryPage({ params }: PageProps) {
               <h2 className="text-xl font-bold text-white mb-6">浏览其他分类</h2>
               <div className="flex flex-wrap gap-3">
                 {categoryList
-                  .filter(c => c !== category)
+                  .filter(c => c !== decodedCategory)
                   .map((cat) => {
                     const catCount = articles.filter(a => a.category === cat).length;
                     return (

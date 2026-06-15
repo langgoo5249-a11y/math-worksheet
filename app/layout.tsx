@@ -427,7 +427,19 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
         />
 
-        {/* AdSense 代码（申请通过后在此处添加） */}
+        {/* AdSense 自动广告代码 */}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4710405779358793" crossOrigin="anonymous" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-4710405779358793",
+                enable_page_level_ads: true,
+                overlays: {bottom: true}
+              });
+            `,
+          }}
+        />
 
         {/* 百度主动推送 */}
         <script

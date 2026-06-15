@@ -239,6 +239,8 @@ export default function HomePage() {
   return (
     <SiteLayout>
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+      {/* 首页核心主题 H1（搜索引擎识别）sr-only 隐藏视觉，但不影响 SEO */}
+      <h1 className="sr-only">练学宝 - 免费小学在线学习工具，涵盖数学计算、语文练字、练习卷下载</h1>
       {/* ===== 轮播大图区域 ===== */}
       <section className="pt-0">
         <div
