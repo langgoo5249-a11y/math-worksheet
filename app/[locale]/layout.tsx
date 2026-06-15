@@ -23,6 +23,11 @@ export async function generateMetadata({
     title: t("title"),
     description: t("description"),
     keywords: t("keywords"),
+    robots: {
+      // 多语言 wrapper 页面：避免与中文原页内容重复，统一指向中文版本
+      index: false,
+      follow: true,
+    },
     openGraph: {
       title: t("title"),
       description: t("description"),
@@ -46,12 +51,10 @@ export async function generateMetadata({
       images: ["https://www.skillxm.cn/og-image.jpg"],
     },
     alternates: {
-      canonical: `https://www.skillxm.cn/${safeLocale === defaultLocale ? "/" : safeLocale + "/"}`,
+      // canonical 强制指向中文版，避免多语言版本产生重复内容
+      canonical: "https://www.skillxm.cn/",
       languages: {
         "zh-CN": "https://www.skillxm.cn/",
-        "en": "https://www.skillxm.cn/en/",
-        "ja": "https://www.skillxm.cn/ja/",
-        "ko": "https://www.skillxm.cn/ko/",
         "x-default": "https://www.skillxm.cn/",
       },
     },

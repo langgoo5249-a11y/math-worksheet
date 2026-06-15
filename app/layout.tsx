@@ -58,11 +58,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.skillxm.cn/",
+    // 关键：/en/, /ja/, /ko/ 路由已 301 重定向到 /（中文版），
+    // 不再作为独立语言版本对外提供，因此 hreflang 简化为只有 zh-CN 和 x-default
     languages: {
       'zh-CN': 'https://www.skillxm.cn/',
-      'en': 'https://www.skillxm.cn/en/',
-      'ja': 'https://www.skillxm.cn/ja/',
-      'ko': 'https://www.skillxm.cn/ko/',
       'x-default': 'https://www.skillxm.cn/',
     },
   },
@@ -364,11 +363,10 @@ export default async function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="format-detection" content="telephone=no" />
 
-        {/* hreflang SEO + GEO 信号 */}
+        {/* hreflang SEO + GEO 信号
+            注意：/en/, /ja/, /ko/ 路由已被 _redirects 301 重定向到 /（中文版），
+            不再作为独立语言版本对外提供，因此 hreflang 简化为只有 zh-CN 和 x-default */}
         <link rel="alternate" hrefLang="zh-CN" href="https://www.skillxm.cn/" />
-        <link rel="alternate" hrefLang="en" href="https://www.skillxm.cn/en/" />
-        <link rel="alternate" hrefLang="ja" href="https://www.skillxm.cn/ja/" />
-        <link rel="alternate" hrefLang="ko" href="https://www.skillxm.cn/ko/" />
         <link rel="alternate" hrefLang="x-default" href="https://www.skillxm.cn/" />
 
         {/* 动态设置 html lang 属性（根据 URL 路径） */}

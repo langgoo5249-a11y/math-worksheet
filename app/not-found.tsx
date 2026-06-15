@@ -1,3 +1,30 @@
+// 根级 404 页面 - 不在 [locale] 路径下的 404
+// 这是最常见的 404，Cloudflare Pages 会用此页面作为默认 404 响应
+
+export const dynamic = "force-static";
+
+export const metadata = {
+  // 404 页面绝对不能被索引
+  robots: {
+    index: false,
+    follow: false,
+    nocache: true,
+    googleBot: {
+      index: false,
+      follow: false,
+      "max-video-preview": -1,
+      "max-image-preview": "none",
+      "max-snippet": -1,
+    },
+  },
+  // 404 没有规范的 URL，禁用 canonical
+  alternates: {
+    canonical: undefined,
+  },
+  title: "页面未找到 - 练学宝",
+  description: "您访问的页面不存在或已被移除。",
+};
+
 import Link from 'next/link';
 
 export default function NotFound() {
