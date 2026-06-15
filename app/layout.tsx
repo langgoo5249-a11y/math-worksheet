@@ -58,12 +58,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.skillxm.cn/",
-    // 关键：/en/, /ja/, /ko/ 路由已 301 重定向到 /（中文版），
-    // 不再作为独立语言版本对外提供，因此 hreflang 简化为只有 zh-CN 和 x-default
-    languages: {
-      'zh-CN': 'https://www.skillxm.cn/',
-      'x-default': 'https://www.skillxm.cn/',
-    },
+    // hreflang 由 <link> 标签在 <head> 中硬编码（避免与 metadata API 重复）
   },
   icons: {
     icon: [
