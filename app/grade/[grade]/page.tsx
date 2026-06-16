@@ -1,431 +1,462 @@
-import type { Metadata, Viewport } from "next";
-import { Noto_Sans_SC } from "next/font/google";
-import "./globals.css";
-import { TOOLS, generateSchemaApps, generateSchemaBreadcrumbs, ACTIVE_TOOL_COUNT } from "@/lib/toolRegistry";
-import CookieConsent from './_components/CookieConsent';
-import GoogleAnalytics from './_components/GoogleAnalytics';
-import FloatingLanguageSwitcher from './_components/FloatingLanguageSwitcher';
-import MiniappModal from './_components/MiniappModal';
-import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import SectionLayout from '@/app/_components/SectionLayout';
+import { GRADES, getGradeConfig } from '@/lib/gradeConfig';
+import { articles as blogPosts } from '@/app/blog/data';
+import { generateCourseSchema, generateOrganizationSchema } from '@/lib/seoUtils';
 
+export function generateStaticParams() {
+  return GRADES.map((g) => ({ grade: `grade-${g.grade}` }));
+}
 
-const notoSansSC = Noto_Sans_SC({
-  // 不限制 subsets，next/font/google 默认下载完整字体包（含 CJK 中文字符）
-  weight: ["400", "500", "700"],
-  variable: "--font-noto-sans-sc",
-  display: "swap",
-  preload: false,
-  subsets: ['latin'],
-});
+export async function generateMetadata({ params }: { params: Promise<{ grade: string }> }): Promise<Metadata> {
+  const { grade: slug } = await params;
+  const gradeNum = parseInt(slug.replace('grade-', ''), 10);
+  const config = getGradeConfig(gradeNum);
+  if (!config) return { title: '年级未找到' };
 
-// 根布局保持静态预渲染，canonical 由各页面 layout 分别定义
-export const dynamic = "force-static";
-
-// 移动端 viewport 配置
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 5,
-  themeColor: "#1e40af",
-};
-
-export const metadata: Metadata = {
-  title: "练学宝 - 免费小学教学工具/中文学习/数学练习卷/字帖/口算",
-  description: "练学宝是儿童中文学习网站，提供10+款免费小学中文学习与数学教学工具，包括数学练习卷生成器、字帖生成器、口算速练（支持AI智能出题和进度追踪）、拼音学习、识字卡片、古诗词默写、单元测试卷等。支持手机在线做题和PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常中文学习与数学练习使用。",
-  keywords: "练学宝,中文学习,小学中文学习,儿童中文学习网站,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印,手机练习,在线做题,免费打印试卷,小学数学题,小学语文练习,英语字帖,数独游戏,AI口算出题,口算学习报告",
-  openGraph: {
-    title: "练学宝 - 儿童中文学习网站|免费小学教学工具|数学练习卷|字帖|口算",
-    description: "练学宝是优质的儿童中文学习网站，提供拼音学习、识字卡片、古诗词默写、字帖生成器等中文学习工具，以及数学练习卷、口算速练等10+款免费小学教学工具，支持PDF导出打印，无需注册即开即用。",
-    type: "website",
-    url: "https://www.skillxm.cn",
-    siteName: "练学宝",
-    locale: "zh_CN",
-    images: [
-      {
-        url: "https://www.skillxm.cn/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "练学宝 - 免费在线教育工具",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "练学宝 - 免费小学数学练习卷生成器/字帖/作文模板",
-    description: "免费在线教育工具，支持小学1-6年级数学练习卷、字帖、拼音卡片、数独、作文模板等，PDF导出即印即用，无需注册完全免费。",
-    images: ["https://www.skillxm.cn/og-image.jpg"],
-  },
-  alternates: {
-    canonical: "https://www.skillxm.cn/",
-    // hreflang 由 <link> 标签在 <head> 中硬编码（避免与 metadata API 重复）
-  },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "16x16 32x32 48x48 256x256", type: "image/x-icon" },
-      { url: "/favicon.svg", type: "image/svg+xml" },
-    ],
-    apple: "/favicons/apple-touch-icon.png",
-  },
-  manifest: "/manifest.json",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+  return {
+    title: config.metaTitle,
+    description: config.metaDescription,
+    keywords: config.metaKeywords,
+    alternates: {
+      canonical: `https://www.skillxm.cn/grade/${slug}/`,
     },
-  },
-};
-
-export default async function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  // 获取默认中文消息
-  const messages = await getMessages({ locale: 'zh' });
-  const schemaOrg = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://www.skillxm.cn/#website",
-        name: "练学宝",
-        url: "https://www.skillxm.cn/",
-        description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
-        inLanguage: "zh-CN",
-        dateModified: "2026-06-05",
-        potentialAction: {
-          "@type": "SearchAction",
-          target: "https://www.skillxm.cn/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        },
-        publisher: {
-          "@id": "https://www.skillxm.cn/#organization"
-        },
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://www.skillxm.cn/#organization",
-        name: "练学宝",
-        url: "https://www.skillxm.cn",
-        dateModified: "2026-06-05",
-        logo: {
-          "@type": "ImageObject",
-          url: "https://www.skillxm.cn/favicon.svg",
-          width: 512,
-          height: 512,
-        },
-        description: `练学宝是儿童中文学习网站，提供小学中文学习工具与数学教学工具。包括拼音学习、识字卡片、古诗词默写、字帖生成器等中文学习资源，以及数学练习卷、口算速练、数独游戏等${ACTIVE_TOOL_COUNT}款实用工具`,
-        address: {
-          "@type": "PostalAddress",
-          addressCountry: "CN",
-          addressRegion: "浙江",
-          addressLocality: "绍兴",
-        },
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: 30.0,
-          longitude: 120.5833,
-        },
-        areaServed: {
-          "@type": "Country",
-          name: "CN",
-        },
-        sameAs: [
-          "https://github.com/jm6-lang/math-worksheet",
-        ],
-        foundingDate: "2025-12-01",
-        contactPoint: {
-          "@type": "ContactPoint",
-          email: "lang@skillxm.cn",
-          contactType: "customer support",
-          availableLanguage: ["Chinese", "English", "Japanese", "Korean"],
-        },
-      },
-      {
-        "@type": "Person",
-        "@id": "https://www.skillxm.cn/#person-linyuan",
-        name: "林远",
-        description: "练学宝中文学习与小学数学教育内容作者，专注于儿童中文学习方法和小学数学教学研究",
-        jobTitle: "教育内容作者",
-        affiliation: {
-          "@id": "https://www.skillxm.cn/#organization"
-        },
-        url: "https://www.skillxm.cn/about",
-      },
-      ...generateSchemaApps(),
-      ...generateSchemaBreadcrumbs(),
-      {
-        "@type": "WebPage",
-        "@id": "https://www.skillxm.cn/#webpage",
-        "url": "https://www.skillxm.cn",
-        "name": "练学宝 - 免费小学教学工具",
-        "description": "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。",
-        "isPartOf": { "@id": "https://www.skillxm.cn/#website" },
-        "about": { "@id": "https://www.skillxm.cn/#organization" }
-      },
-      {
-        "@type": "ItemList",
-        "name": "练学宝 - 全部工具",
-        "description": "练学宝提供的所有免费小学教学工具",
-        "dateModified": "2026-05-09",
-        "numberOfItems": ACTIVE_TOOL_COUNT,
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "古诗词默写", "url": "https://www.skillxm.cn/tools/poem-memo" },
-          { "@type": "ListItem", "position": 2, "name": "单元测试卷", "url": "https://www.skillxm.cn/tools/unit-test" },
-          { "@type": "ListItem", "position": 3, "name": "数学练习卷", "url": "https://www.skillxm.cn/tools/math-worksheet" },
-          { "@type": "ListItem", "position": 4, "name": "字帖生成器", "url": "https://www.skillxm.cn/tools/calligraphy" },
-          { "@type": "ListItem", "position": 5, "name": "英语字帖", "url": "https://www.skillxm.cn/tools/english-calligraphy" },
-          { "@type": "ListItem", "position": 6, "name": "数独游戏", "url": "https://www.skillxm.cn/tools/sudoku" },
-          { "@type": "ListItem", "position": 7, "name": "拼音注音", "url": "https://www.skillxm.cn/tools/pinyin" },
-          { "@type": "ListItem", "position": 8, "name": "口算速练", "url": "https://www.skillxm.cn/tools/mental-math" },
-          { "@type": "ListItem", "position": 9, "name": "识字卡片", "url": "https://www.skillxm.cn/tools/flashcards" },
-          { "@type": "ListItem", "position": 10, "name": "作文模板", "url": "https://www.skillxm.cn/tools/writing-template" }
-        ]
-      },
-      {
-        "@type": "HowTo",
-        "name": "如何使用数学练习卷生成器",
-        "description": "使用练学宝的数学练习卷生成器，只需5步即可生成可打印的数学练习卷",
-        "totalTime": "PT3M",
-        "step": [
-          {
-            "@type": "HowToStep",
-            "name": "选择题型和年级",
-            "text": "在工具页面选择需要的题型（加法、减法、乘法、除法等）和对应的年级（1-6年级）"
-          },
-          {
-            "@type": "HowToStep",
-            "name": "设置题目数量和数字范围",
-            "text": "设定每次生成的题目数量（10/20/50/100道）和数字范围（10以内到10000以内）"
-          },
-          {
-            "@type": "HowToStep",
-            "name": "选择模板样式",
-            "text": "从田字格、方格纸、横线格、空白纸4种模板中选择适合的打印样式"
-          },
-          {
-            "@type": "HowToStep",
-            "name": "点击生成",
-            "text": "点击「立即出题」按钮，系统会随机生成不重复的数学练习卷"
-          },
-          {
-            "@type": "HowToStep",
-            "name": "预览并导出PDF",
-            "text": "预览生成的练习卷，确认无误后点击「下载PDF」或「直接打印」按钮"
-          }
-        ]
-      },
-      {
-        "@type": "SpeakableSpecification",
-        "xpath": [
-          "/html/head/title",
-          "/html/head/meta[@name='description']/@content"
-        ],
-        "cssSelector": [
-          "h1",
-          ".sr-only"
-        ]
-      },
-    ],
+    openGraph: {
+      title: config.metaTitle,
+      description: config.metaDescription,
+      url: `https://www.skillxm.cn/grade/${slug}/`,
+      type: 'article',
+      locale: 'zh_CN',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: config.metaTitle,
+      description: config.metaDescription,
+    },
   };
+}
+
+// 根据年级生成 FAQ 数据
+function generateGradeFaqs(config: ReturnType<typeof getGradeConfig>) {
+  if (!config) return [];
+  const grade = config.grade;
+  const subjectNames = config.subjects.map(s => s.name).join('、');
+  const mathItems = config.subjects.find(s => s.name === '数学')?.items.slice(0, 4).join('、') ?? '';
+  const chineseItems = config.subjects.find(s => s.name === '语文')?.items.slice(0, 4).join('、') ?? '';
+
+  const faqs = [
+    {
+      q: `${config.name}数学主要学什么？`,
+      a: `${config.name}数学主要学习${mathItems}等内容。${config.description.split('。')[0]}。建议使用口算速练和数学练习卷生成器每天进行10-15分钟练习。`,
+    },
+    {
+      q: `${config.name}语文重点掌握哪些内容？`,
+      a: `${config.name}语文重点掌握${chineseItems}等内容。建议配合字帖生成器练习书写，使用古诗词默写工具巩固古诗。`,
+    },
+    {
+      q: `${config.name}每天应该练习多长时间？`,
+      a: `建议${config.name}学生每天练习${grade <= 2 ? '20-30分钟' : grade <= 4 ? '30-45分钟' : '45-60分钟'}。其中数学练习${grade <= 2 ? '10分钟' : '15-20分钟'}，语文练习${grade <= 2 ? '10分钟' : '15分钟'}，英语${grade >= 3 ? '10-15分钟' : ''}。所有练习卷均可在练学宝免费下载打印。`,
+    },
+    {
+      q: `${config.name}口算速度应该达到什么标准？`,
+      a: `${grade === 1 ? '一年级口算达标标准为每分钟8-10题（10以内加减法）' : grade === 2 ? '二年级口算达标标准为每分钟10-15题（100以内加减法和表内乘除法）' : grade <= 4 ? `${config.name}口算达标标准为每分钟12-18题（${grade === 3 ? '万以内加减法' : '三位数乘除法'}）` : `${config.name}口算达标标准为每分钟15-20题（${grade === 5 ? '小数乘除法' : '百分数和比例'}）`}。使用口算速练工具可计时训练并自动统计正确率。`,
+    },
+    {
+      q: `${config.name}需要报课外辅导班吗？`,
+      a: `${grade <= 2 ? '一二年级通常不需要报辅导班，重点放在培养学习习惯和基础计算能力上。每天坚持使用练学宝的免费工具练习即可。' : grade <= 4 ? '三四年级如果某科有明显薄弱环节，可考虑针对性补习，但日常练习仍以练学宝为主，辅以单元测试卷检测学习效果。' : '五六年级面临小升初压力，建议根据孩子实际情况选择。练学宝提供全套免费小升初复习资源，包括模拟试卷、知识点汇总等。'}`,
+    },
+    {
+      q: `练学宝的${config.name}练习题是免费的吗？`,
+      a: `完全免费。练学宝所有${config.name}练习卷、口算题、字帖、试卷等资源均可免费下载PDF打印，无需注册登录，不限制使用次数。`,
+    },
+  ];
+
+  // 英语相关（3年级以上）
+  if (grade >= 3) {
+    const engItems = config.subjects.find(s => s.name === '英语')?.items.slice(0, 4).join('、') ?? '';
+    faqs.splice(2, 0, {
+      q: `${config.name}英语从零开始怎么学？`,
+      a: `${config.name}英语重点学习${engItems}。建议每天听读15分钟，使用英语字帖练习单词书写，配合识字卡片记忆核心单词。${grade === 3 ? '三年级是英语启蒙关键期，重点是培养兴趣和语感。' : `${config.name}英语要开始注重${grade >= 5 ? '语法和写作' : '阅读和句型'}训练。`}`,
+    });
+  }
+
+  return faqs;
+}
+
+// 生成学期学习计划
+function generateSemesterPlan(config: ReturnType<typeof getGradeConfig>) {
+  if (!config) return null;
+  const grade = config.grade;
+
+  return {
+    firstSemester: {
+      title: `${config.name}上学期学习重点`,
+      tips: grade <= 2
+        ? ['开学前两周适应课堂节奏，建立每天课后练习的习惯', '期中前完成基础计算能力达标', '期末前一个月开始系统复习']
+        : grade <= 4
+        ? ['开学第一个月复习巩固上学期薄弱知识点', '期中检测薄弱科目，针对性补强', '期末前两周完成全部单元复习']
+        : ['开学即进入状态，制定小升初备考计划', '每月进行一次模拟测试，追踪进步', '期末前系统梳理全学段知识点'],
+    },
+    secondSemester: {
+      title: `${config.name}下学期学习重点`,
+      tips: grade <= 2
+        ? ['寒假保持每天15分钟口算练习，避免开学退步', '下学期开始逐步增加练习量和难度', '暑假做好升年级准备，预习下一级内容']
+        : grade <= 4
+        ? ['寒假完成上学期错题回顾', '下学期重点攻克新知识点（如乘法口诀/分数/面积）', '暑假利用练学宝预习工具提前了解下一级内容']
+        : ['寒假集中复习小升初重点', '下学期全力冲刺，每周至少2次模拟测试', '暑假做好小升初衔接准备'],
+    },
+  };
+}
+
+export default async function GradePage({ params }: { params: Promise<{ grade: string }> }) {
+  const { grade: slug } = await params;
+  const gradeNum = parseInt(slug.replace('grade-', ''), 10);
+  const config = getGradeConfig(gradeNum);
+  if (!config) notFound();
+
+  const relatedBlogs = blogPosts
+    .filter((p) => config.blogCategories.some((c) => p.category === c))
+    .slice(0, 6);
+
+  const faqs = generateGradeFaqs(config);
+  const semesterPlan = generateSemesterPlan(config);
+
+  const faqSchema = faqs.length > 0 ? {
+    '@type': 'FAQPage' as const,
+    'mainEntity': faqs.map((f) => ({
+      '@type': 'Question' as const,
+      'name': f.q,
+      'acceptedAnswer': { '@type': 'Answer' as const, 'text': f.a },
+    })),
+  } : null;
 
   return (
-    <html lang="zh-CN" className={notoSansSC.className}>
-      <head>
-        <meta name="baidu-site-verification" content="codeva-nVZFsgvPZu" />
+    <SectionLayout
+      breadcrumb={[
+        { label: '首页', href: '/' },
+        { label: '年级专区', href: '/grade' },
+        { label: config.name },
+      ]}
+      icon="🎓"
+      title={`${config.name}学习专区 · 完整学习方案`}
+      description={config.description}
+      keywords={config.metaKeywords}
+      path={`/grade/${slug}`}
+      datePublished="2025-12-01"
+      dateModified={new Date().toISOString().slice(0, 10)}
+      summary={`${config.name}（${config.ageRange}）是${config.semester}的${config.description.split('。')[0]}。本专区提供：核心知识点清单、配套学习工具推荐、上下学期学习计划、家长辅导指南、FAQ常见问题解答${relatedBlogs.length > 0 ? '、' + relatedBlogs.length + ' 篇精选教育文章' : ''}。所有练习资源均可免费下载PDF打印。`}
+      keyPoints={config.knowledgePoints.slice(0, 5)}
+      jsonLd={[
+        generateCourseSchema({
+          name: config.metaTitle,
+          description: config.metaDescription,
+          url: `https://www.skillxm.cn/grade/${slug}/`,
+          educationalLevel: config.name,
+          teaches: config.knowledgePoints.slice(0, 8),
+        }),
+        ...(faqSchema ? [faqSchema] : []),
+        generateOrganizationSchema(),
+      ]}
+    >
+      {/* ========== 年级概览 ========== */}
+      <section className="mb-10 p-6 bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/20 rounded-2xl">
+        <p className="text-slate-200 leading-relaxed text-base sm:text-lg">
+          {config.longDescription}
+        </p>
+        <div className="flex flex-wrap gap-3 mt-4 text-sm">
+          <span className="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full">适合年龄：{config.ageRange}</span>
+          <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full">覆盖：{config.semester}</span>
+          {config.subjects.length > 0 && (
+            <span className="px-3 py-1 bg-green-500/20 text-green-300 rounded-full">
+              {config.subjects.length}大学科：{config.subjects.map(s => s.name).join('、')}
+            </span>
+          )}
+        </div>
+      </section>
 
-        <meta name="google-site-verification" content="6szVJUGCDvvDDcBkDLV0n6kD_KU1EyOWnO7MSw-5ERM" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
-        <meta name="msapplication-TileImage" content="/favicons/favicon-32x32.png" />
-        <meta name="msapplication-TileColor" content="#1e40af" />
-        <meta name="theme-color" content="#1e40af" />
-        {/* iOS PWA 配置 */}
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="apple-mobile-web-app-title" content="练学宝" />
-        {/* 移动端 SEO: 应用安装提示 */}
-        <meta name="mobile-web-app-capable" content="yes" />
-        <meta name="format-detection" content="telephone=no" />
-
-        {/* hreflang SEO + GEO 信号
-            注意：/en/, /ja/, /ko/ 路由已被 _redirects 301 重定向到 /（中文版），
-            不再作为独立语言版本对外提供，因此 hreflang 简化为只有 zh-CN 和 x-default */}
-        <link rel="alternate" hrefLang="zh-CN" href="https://www.skillxm.cn/" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.skillxm.cn/" />
-
-        {/* 动态设置 html lang 属性（根据 URL 路径） */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                var m = location.pathname.match(/^\\/(en|ja|ko)(\\/|$)/);
-                if (m) {
-                  var langMap = { en: 'en', ja: 'ja', ko: 'ko' };
-                  document.documentElement.lang = langMap[m[1]] || 'zh-CN';
-                }
-              })();
-            `,
-          }}
-        />
-
-        {/* dns-prefetch 第三方资源 */}
-        <link rel="dns-prefetch" href="https://hm.baidu.com" />
-        <link rel="dns-prefetch" href="https://zz.bdstatic.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="dns-prefetch" href="https://lf1-cdn-tos.bytegoofy.com" />
-        <link rel="preconnect" href="https://lf1-cdn-tos.bytegoofy.com" crossOrigin="anonymous" />
-
-        {/* Google Consent Mode v2 - 默认拒绝 */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-
-              // Consent Mode v2: 默认所有存储为 denied
-              gtag('consent', 'default', {
-                'ad_storage': 'denied',
-                'ad_user_data': 'denied',
-                'ad_personalization': 'denied',
-                'analytics_storage': 'denied',
-                'functionality_storage': 'granted',
-                'personalization_storage': 'denied',
-                'security_storage': 'granted',
-                'wait_for_update': 500,
-              });
-
-              gtag('js', new Date());
-              gtag('config', 'G-GGPDNKW46W', {
-                send_page_view: true
-              });
-            `,
-          }}
-        />
-
-        {/* Google Analytics 4 */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGPDNKW46W" />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
-        />
-
-        {/* AdSense 自动广告代码 */}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4710405779358793" crossOrigin="anonymous" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-4710405779358793",
-                enable_page_level_ads: true,
-                overlays: {bottom: true}
-              });
-            `,
-          }}
-        />
-
-        {/* 百度主动推送 */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(){
-                var bp = document.createElement('script');
-                var curProtocol = window.location.protocol.split(':')[0];
-                if (curProtocol === 'https') {
-                  bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-                } else {
-                  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-                }
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(bp, s);
-              })();
-            `,
-          }}
-        />
-
-        {/* 头条搜索（字节跳动）主动推送 - 当用户浏览页面时，链接自动推送给头条搜索蜘蛛，加快收录 */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(){
-                var el = document.createElement('script');
-                el.src = 'https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?278b7bc276aa0b514ff5c4e28d63b1e083f58bd22a48d8e0e73447efb03530befd9a9dcb5ced4d7780eb6f3bbd089073c2a6d54440560d63862bbf4ec01bba3a';
-                el.id = 'ttzz';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(el, s);
-              })();
-            `,
-          }}
-        />
-      </head>
-      <body className="min-h-screen antialiased">
-        <NextIntlClientProvider messages={messages} locale="zh">
-          <CookieConsent />
-          {children}
-        </NextIntlClientProvider>
-
-        {/* 微信小程序浮动二维码 */}
-        <div className="fixed right-4 bottom-24 z-50 group" id="miniapp-float" style={{ paddingBottom: "env(safe-area-inset-bottom, 16px)" }}>
-          <div className="relative">
-            {/* 展开的二维码卡片 */}
-            <div className="absolute bottom-full right-0 mb-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-              <div className="bg-white rounded-2xl shadow-2xl p-4 w-52 border border-gray-100">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-lg">📱</span>
-                  <span className="text-sm font-bold text-gray-800">微信小程序使用</span>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-2 mb-2">
-                  <img src="/miniapp-qrcode.jpg" alt="微信小程序二维码" className="w-full h-auto rounded-lg" />
-                </div>
-                <p className="text-xs text-gray-500 text-center">微信扫码 → 即刻使用</p>
-              </div>
-              {/* 小三角 */}
-              <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-r border-b border-gray-100 transform rotate-45"></div>
+      {/* ========== 学期学习计划 ========== */}
+      {semesterPlan && (
+        <section className="mb-10">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
+            📅 {config.name}上下学期学习计划
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-5 bg-orange-500/10 border border-orange-500/20 rounded-2xl">
+              <h3 className="text-lg font-semibold text-orange-300 mb-3 flex items-center gap-2">
+                🍂 {semesterPlan.firstSemester.title}
+              </h3>
+              <ul className="space-y-2">
+                {semesterPlan.firstSemester.tips.map((tip, i) => (
+                  <li key={i} className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-orange-400 shrink-0 mt-0.5">{i + 1}.</span>
+                    <span>{tip}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            {/* 浮动按钮 */}
-            <div className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full shadow-lg shadow-green-500/30 flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 hover:shadow-xl group/title">
-              <span className="text-white text-xl">📱</span>
-              <span className="absolute bottom-full mb-2 px-3 py-1.5 bg-gray-800 text-white text-xs rounded-lg opacity-0 invisible group-hover/title:opacity-100 group-hover/title:visible transition-all duration-200 whitespace-nowrap shadow-lg">
-                小程序使用
-                <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"></div>
-              </span>
+            <div className="p-5 bg-green-500/10 border border-green-500/20 rounded-2xl">
+              <h3 className="text-lg font-semibold text-green-300 mb-3 flex items-center gap-2">
+                🌱 {semesterPlan.secondSemester.title}
+              </h3>
+              <ul className="space-y-2">
+                {semesterPlan.secondSemester.tips.map((tip, i) => (
+                  <li key={i} className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-green-400 shrink-0 mt-0.5">{i + 1}.</span>
+                    <span>{tip}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+        </section>
+      )}
+
+      {/* ========== 学科模块 ========== */}
+      <section className="mb-10">
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
+          📚 {config.name}学习内容与知识点
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {config.subjects.map((s) => (
+            <div key={s.name} className="p-5 bg-slate-800/50 border border-white/10 rounded-xl hover:border-blue-500/30 transition-colors">
+              <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                <span className="text-2xl">{s.icon}</span>
+                {s.name}
+              </h3>
+              <ul className="space-y-1.5">
+                {s.items.map((item) => (
+                  <li key={item} className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-blue-400 mt-0.5 shrink-0">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
+      </section>
 
-        {/* 语言切换器悬浮按钮 */}
-        <FloatingLanguageSwitcher />
+      {/* ========== 推荐工具 ========== */}
+      <section className="mb-10">
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
+          🛠️ {config.name}推荐学习工具（全部免费）
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {config.recommendTools.map((tool) => (
+            <Link
+              key={tool.href}
+              href={tool.href}
+              className="group flex items-start gap-3 p-4 bg-slate-800/50 hover:bg-slate-700/70 border border-white/10 hover:border-blue-500/50 rounded-xl transition-all"
+            >
+              <span className="text-2xl shrink-0">{tool.icon}</span>
+              <div className="flex-1 min-w-0">
+                <div className="font-medium text-white group-hover:text-blue-400 transition-colors">
+                  {tool.name}
+                </div>
+                <div className="text-xs text-slate-400 mt-1">{tool.desc}</div>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <p className="mt-4 text-sm text-slate-400 text-center">
+          💡 以上工具全部免费，无需注册，支持PDF下载打印。点击任意工具即可开始使用。
+        </p>
+      </section>
 
-        {/* 百度统计 */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              var _hmt = _hmt || [];
-              (function() {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?b1c5ccce83f4e80c4c12dea6bd544723";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-              })();
-            `,
-          }}
-        />
-        {/* Google Analytics 4 — 仅在用户同意Cookie后加载 */}
-        <GoogleAnalytics />
+      {/* ========== 核心知识点 ========== */}
+      <section className="mb-10">
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
+          🎯 {config.name}核心知识点清单
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {config.knowledgePoints.map((kp) => (
+            <div
+              key={kp}
+              className="px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-slate-200 hover:border-blue-500/30 transition-colors"
+            >
+              <span className="text-blue-400 mr-2">▸</span>
+              {kp}
+            </div>
+          ))}
+        </div>
+      </section>
 
-        {/* 微信小程序二维码弹窗 */}
-        <MiniappModal />
-      </body>
-    </html>
+      {/* ========== 家长辅导指南 ========== */}
+      <section className="mb-10">
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
+          👨‍👩‍👧 {config.name}家长辅导指南
+        </h2>
+        <div className="p-6 bg-yellow-500/10 border border-yellow-500/20 rounded-2xl">
+          <div className="space-y-4">
+            {gradeNum <= 2 && (
+              <>
+                <div className="flex gap-3">
+                  <span className="text-2xl shrink-0">1️⃣</span>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">培养每天固定练习时间</h3>
+                    <p className="text-sm text-slate-300">低年级重在养成习惯。建议每天固定一个时间段（如晚饭后），坚持15-20分钟。使用口算速练和字帖生成器，让练习变得有趣。</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-2xl shrink-0">2️⃣</span>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">多鼓励少批评</h3>
+                    <p className="text-sm text-slate-300">一二年级孩子自信心脆弱，多鼓励"做对了"而不是批评"做错了"。使用练学宝的计时模式做游戏化练习，孩子在不知不觉中提升计算速度。</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-2xl shrink-0">3️⃣</span>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">拼音和识字是重中之重</h3>
+                    <p className="text-sm text-slate-300">拼音熟练度直接影响后期阅读速度。每天用拼音注音工具做5分钟拼读练习，用识字卡片巩固300个常用字。</p>
+                  </div>
+                </div>
+              </>
+            )}
+            {gradeNum >= 3 && gradeNum <= 4 && (
+              <>
+                <div className="flex gap-3">
+                  <span className="text-2xl shrink-0">1️⃣</span>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">关注"三年级滑坡"现象</h3>
+                    <p className="text-sm text-slate-300">三年级数学难度陡增（万以内加减法、多位数乘除法），很多孩子出现成绩下滑。关键在于每天坚持练习，使用单元测试卷定期检测薄弱环节。</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-2xl shrink-0">2️⃣</span>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">英语学习从兴趣开始</h3>
+                    <p className="text-sm text-slate-300">三年级开始学英语，重点是培养兴趣和语感。每天听读15分钟，使用英语字帖练习单词书写，不必急于求成。</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-2xl shrink-0">3️⃣</span>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">作文从300字起步</h3>
+                    <p className="text-sm text-slate-300">三年级作文要求从"写话"过渡到"写文"。使用作文模板工具，先搭框架再填充内容，逐步提升写作能力。</p>
+                  </div>
+                </div>
+              </>
+            )}
+            {gradeNum >= 5 && (
+              <>
+                <div className="flex gap-3">
+                  <span className="text-2xl shrink-0">1️⃣</span>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">制定小升初备考计划</h3>
+                    <p className="text-sm text-slate-300">{gradeNum === 5 ? '五年级是小升初准备的起点，现在开始系统梳理知识点，到六年级就不会手忙脚乱。' : '六年级是冲刺阶段，每月至少做2次模拟测试，查漏补缺。'}使用单元测试卷工具定期检测，追踪进步。</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-2xl shrink-0">2️⃣</span>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">数学攻克应用题难关</h3>
+                    <p className="text-sm text-slate-300">{gradeNum === 5 ? '五年级应用题从两步变为三步，对阅读理解能力要求高。' : '六年级的百分数应用题、比例应用题是小升初必考。'}每日用数学练习卷生成器做5道应用题专项训练。</p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <span className="text-2xl shrink-0">3️⃣</span>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">英语打好小升初基础</h3>
+                    <p className="text-sm text-slate-300">小升初英语要求掌握{gradeNum === 5 ? '1500+' : '1800+'}个单词和所有基本时态。使用英语字帖每天练习10个单词，配合口算速练工具保持数学手感。</p>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* ========== 相关博客 ========== */}
+      {relatedBlogs.length > 0 && (
+        <section className="mb-10">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
+            📝 {config.name}家长必读 · 教育文章
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {relatedBlogs.map((post) => (
+              <Link
+                key={post.id}
+                href={`/blog/${post.id}`}
+                className="group block p-4 bg-slate-800/50 hover:bg-slate-700/70 border border-white/10 hover:border-blue-500/50 rounded-xl transition-all"
+              >
+                <div className="text-xs text-slate-400 mb-2">
+                  {post.category} · {post.readTime} · {post.date}
+                </div>
+                <div className="font-medium text-white group-hover:text-blue-400 transition-colors line-clamp-2">
+                  {post.title}
+                </div>
+                <div className="text-sm text-slate-400 mt-2 line-clamp-2">
+                  {post.description}
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-4 text-center">
+            <Link
+              href="/blog"
+              className="inline-block text-blue-400 hover:text-blue-300 text-sm"
+            >
+              查看更多{config.name}学习建议 →
+            </Link>
+          </div>
+        </section>
+      )}
+
+      {/* ========== FAQ区（GEO关键） ========== */}
+      {faqs.length > 0 && (
+        <section className="mb-10 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+            ❓ {config.name}学习常见问题
+          </h2>
+          <div className="space-y-3">
+            {faqs.map((faq, i) => (
+              <details
+                key={i}
+                className="group p-4 bg-slate-900/50 border border-white/5 hover:border-white/10 rounded-lg transition-colors"
+                open={i === 0}
+              >
+                <summary className="cursor-pointer text-white font-medium hover:text-blue-300 list-none flex items-center justify-between">
+                  <span>{faq.q}</span>
+                  <span className="text-slate-400 group-open:rotate-180 transition-transform shrink-0 ml-2">▼</span>
+                </summary>
+                <p className="mt-3 text-sm text-slate-300 leading-relaxed pl-2 border-l-2 border-blue-500/30">
+                  {faq.a}
+                </p>
+              </details>
+            ))}
+          </div>
+          <p className="mt-4 text-sm text-slate-400">
+            📌 更多问题？查看<a href="/blog" className="text-blue-400 hover:text-blue-300">练学宝博客</a>获取详细学习指导。
+          </p>
+        </section>
+      )}
+
+      {/* ========== 其他年级导航 ========== */}
+      <section className="mb-6" aria-label="其他年级">
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">🔗 其他年级专区</h2>
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
+          {GRADES.map((g) => (
+            <Link
+              key={g.grade}
+              href={`/grade/grade-${g.grade}`}
+              className={`p-3 text-center rounded-lg border transition-all text-sm ${
+                g.grade === config.grade
+                  ? 'bg-blue-500/20 border-blue-500/50 text-blue-300 font-medium'
+                  : 'bg-slate-800/50 border-white/10 text-slate-300 hover:bg-slate-700/70 hover:border-blue-500/50'
+              }`}
+              aria-label={`${g.name}学习专区 - ${g.ageRange}`}
+            >
+              {g.name}
+            </Link>
+          ))}
+        </div>
+        <p className="mt-3 text-center text-xs text-slate-400">
+          练学宝为小学1-6年级提供全套免费学习资源，包括数学练习卷、口算速练、字帖生成、拼音学习、英语字帖等工具。
+        </p>
+      </section>
+    </SectionLayout>
   );
 }
