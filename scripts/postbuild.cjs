@@ -155,6 +155,79 @@ function fixDeepNestedRoutes(dir) {
 }
 fixDeepNestedRoutes(path.join(outDir, 'textbook'));
 
+// 7. 修复脚本加载顺序问题
+// Next.js 将运行时脚本放在 RSC payload 内联脚本之前，导致竞态条件
+// 修复：将内联 RSC payload 脚本（包括 INIT [0] 和 PUSH [1]）移到运行时脚本之前
+function fixScriptLoadingOrder(dir) {
+  if (!fs.existsSync(dir)) return;
+  
+  const htmlFiles = [];
+  function findHtmlFiles(d) {
+    const items = fs.readdirSync(d);
+    for (const item of items) {
+      const fullPath = path.join(d, item);
+      const stat = fs.statSync(fullPath);
+      if (stat.isDirectory()) {
+        findHtmlFiles(fullPath);
+      } else if (item.endsWith('.html')) {
+        htmlFiles.push(fullPath);
+      }
+    }
+  }
+  findHtmlFiles(dir);
+  
+  let fixedCount = 0;
+  for (const file of htmlFiles) {
+    let content = fs.readFileSync(file, 'utf-8');
+    const original = content;
+    
+    // 找到运行时脚本
+    const runtimeScriptRegex = /<script src="([^"]+)" id="_R_" async=""><\/script>/;
+    const match = content.match(runtimeScriptRegex);
+    
+    if (match) {
+      const runtimeScript = match[0];
+      // 收集运行时脚本之后的所有内联 __next_f 脚本（包括 INIT [0] 和 PUSH [1]）
+      const afterRuntime = content.split(runtimeScript)[1];
+      const inlineRegex = /<script>(?:\(self\.__next_f|self\.__next_f)[^<]*<\/script>/g;
+      const allInlineScripts = [];
+      let inlineMatch;
+      
+      while ((inlineMatch = inlineRegex.exec(afterRuntime)) !== null) {
+        allInlineScripts.push(inlineMatch[0]);
+      }
+      
+      if (allInlineScripts.length > 0) {
+        // 从原位置移除所有内联脚本
+        let newContent = content;
+        for (const script of allInlineScripts) {
+          newContent = newContent.replace(script, '');
+        }
+        
+        // 将内联脚本插入到运行时脚本之前
+        const inlineScriptsStr = allInlineScripts.join('');
+        newContent = newContent.replace(
+          runtimeScript,
+          inlineScriptsStr + runtimeScript
+        );
+        
+        content = newContent;
+        fixedCount++;
+      }
+    }
+    
+    if (content !== original) {
+      fs.writeFileSync(file, content, 'utf-8');
+    }
+  }
+  
+  if (fixedCount > 0) {
+    console.log(`[FIX] Reordered scripts in ${fixedCount} HTML file(s) - inline RSC payload before runtime`);
+  }
+}
+
+fixScriptLoadingOrder(outDir);
+
 console.log('\n[POSTBUILD] All critical files verified. Build is deployment-ready.');
 console.log('[POSTBUILD] ads.txt is present at: /ads.txt (static) + /ads.txt/ (dynamic route)');
 console.log('[POSTBUILD] Google AdSense can now find ads.txt via multiple paths.');
