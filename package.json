@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node scripts/postbuild.cjs && node scripts/push-to-baidu.cjs",
+    "build": "node scripts/prebuild-check.cjs && next build && node scripts/postbuild.cjs && node scripts/push-to-baidu.cjs",
     "start": "next start",
     "lint": "eslint"
   },
