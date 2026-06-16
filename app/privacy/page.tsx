@@ -128,12 +128,32 @@ export default function PrivacyPage() {
             <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
               <span className="text-xl">📢</span> 四、关于广告的说明
             </h2>
-            <div className="space-y-3 text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-gray-300 leading-relaxed">
               <p>
-                本站计划在未来通过 Google AdSense 等广告服务展示非干扰式广告，以支持网站的持续运营和工具的免费开发。在正式投放广告前，我们会更新本政策并通过首页公告通知用户。
+                本站已使用 Google AdSense 展示广告，以支持网站的持续运营和工具的免费开发。Google AdSense 是 Google 提供的广告服务，通过在本站展示相关广告来帮助网站获得收益。
               </p>
-              <p>
-                目前，本站所有工具和内容均完全免费，不含任何广告。
+              <div>
+                <h3 className="text-white font-medium mb-2">Google AdSense Cookie 使用说明</h3>
+                <ul className="list-disc list-inside space-y-1 ml-4">
+                  <li>Google 使用 Cookie 来在本站投放广告，以便根据用户对本站和其他网站的访问情况来展示更相关的广告。</li>
+                  <li>Google 使用 <strong>DoubleClick DART Cookie</strong>，它使 Google 能够根据用户访问本站及互联网上其他网站的情况来投放广告。</li>
+                  <li>用户可以通过访问 <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Google 广告设置</a> 来选择退出 DART Cookie 的使用。</li>
+                  <li>Google 还可能使用其他第三方广告供应商和广告联盟（如 AdSense 认证的广告网络）在本站投放广告。这些第三方供应商也可能在您的浏览器中放置 Cookie 或使用 Web Beacon 等技术来收集信息以展示相关广告。</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-white font-medium mb-2">用户退出选项</h3>
+                <p>
+                  您可以通过以下方式选择退出个性化广告：
+                </p>
+                <ul className="list-disc list-inside space-y-1 ml-4 mt-1">
+                  <li>访问 <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Google 广告设置</a> 页面，关闭个性化广告。</li>
+                  <li>访问 <a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">www.aboutads.info</a>，了解如何退出多家广告联盟的个性化广告。</li>
+                  <li>通过浏览器设置禁用所有 Cookie（但这可能影响网站的正常使用体验）。</li>
+                </ul>
+              </div>
+              <p className="text-sm text-gray-400 mt-2">
+                本站核心工具永久免费，广告收入仅用于覆盖服务器成本和持续开发。感谢您的理解与支持。
               </p>
             </div>
           </div>
