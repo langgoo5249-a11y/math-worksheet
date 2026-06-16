@@ -23,7 +23,15 @@ const BASE_URL = 'https://www.skillxm.cn';
 //     /en/, /ja/, /ko/ 通过 _redirects 301 跳转到 /（或对应路径），
 //     [locale]/layout.tsx 给这些页面统一设置 noindex。
 //     因此 sitemap 排除这些被重定向的 URL，避免 Googlebot 浪费抓取预算。
+//   - 2026-06-16 修复：过滤含中文/非ASCII字符的 blog slug 和 category，
+//     避免 Next.js 静态导出时中文路由编码不匹配导致软404。
 // =====================================================================
+
+// URL slug 安全校验：仅允许 ASCII 字母、数字、连字符和下划线
+// Next.js 静态导出（output: "export"）不支持中文等非 ASCII 路由
+function isValidUrlSlug(s: string): boolean {
+  return /^[a-zA-Z0-9_-]+$/.test(s);
+}
 
 // 单个 sitemap 条目
 type SitemapEntryOptions = {
@@ -96,18 +104,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
   });
 
-  // ========== 博客文章（94 篇，2026-06-15）==========
-  articles.forEach(article => {
-    sitemapEntries.push(makeEntry(`/blog/${article.id}/`, {
-      lastModified: article.date,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    }));
-  });
+  // ========== 博客文章（2026-06-16: 过滤含中文 slug，避免静态导出软404）==========
+  articles
+    .filter(a => isValidUrlSlug(a.id))
+    .forEach(article => {
+      sitemapEntries.push(makeEntry(`/blog/${article.id}/`, {
+        lastModified: article.date,
+        changeFrequency: 'monthly',
+        priority: 0.7,
+      }));
+    });
 
-  // ========== 博客分类 ==========
+  // ========== 博客分类（2026-06-16: 过滤中文分类名，Next.js 静态导出不支持非ASCII路由）==========
   categories
-    .filter(c => c !== '全部')
+    .filter(c => c !== '全部' && isValidUrlSlug(c))
     .forEach(cat => {
       sitemapEntries.push(makeEntry(`/blog/category/${cat}/`, {
         lastModified: today,
