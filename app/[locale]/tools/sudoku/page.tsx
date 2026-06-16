@@ -1,7 +1,7 @@
-import { Metadata } from 'next';
+﻿import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { locales, type Locale } from '@/lib/i18n';
-import SudokuPage from '@/app/tools/sudoku/page';
+import SudokuPage from '@/app/tools/sudoku/ToolPage';
 
 // 生成静态参数
 export function generateStaticParams() {
