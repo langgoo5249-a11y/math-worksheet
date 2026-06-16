@@ -7,21 +7,10 @@ export function generateStaticParams() {
   return articles.map(a => ({ slug: a.id }));
 }
 
-// 为每篇文章生成独特的og:image
-function generateOgImage(article: { title: string; category: string; id: string }): string {
-  // 使用动态OG图片生成服务
-  // 这里使用placeholder服务，实际部署时可替换为自定义图片生成服务
-  const encodedTitle = encodeURIComponent(article.title.slice(0, 50));
-  return `https://og.skillxm.cn/api/og?title=${encodedTitle}&category=${encodeURIComponent(article.category)}&id=${article.id}`;
-}
-
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const article = articles.find(a => a.id === slug);
   if (!article) return { title: '文章未找到' };
-  
-  // 为每篇文章生成独特的og:image
-  const ogImage = generateOgImage(article);
   
   return {
     title: `${article.title} | 练学宝`,
@@ -38,24 +27,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     openGraph: {
       title: article.title,
       description: article.description,
+      url: `https://www.skillxm.cn/blog/${slug}/`,
       type: 'article',
       publishedTime: article.date,
       modifiedTime: article.date,
       authors: ['练学宝'],
       images: [
         {
-          url: ogImage,
-          width: 1200,
-          height: 630,
-          alt: article.title,
-          type: 'image/png',
-        },
-        // 备用默认图片
-        {
           url: 'https://www.skillxm.cn/og-image.jpg',
           width: 1200,
           height: 630,
-          alt: '练学宝',
+          alt: article.title,
         },
       ],
       siteName: '练学宝',
@@ -65,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
-      images: [ogImage],
+      images: ['https://www.skillxm.cn/og-image.jpg'],
     },
   };
 }
@@ -82,7 +64,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     "description": article.description,
     "datePublished": article.date,
     "dateModified": article.date,
-    "image": generateOgImage(article),
+    "image": "https://www.skillxm.cn/og-image.jpg",
     "author": {
       "@type": "Person",
       "name": article.author?.name || defaultAuthor.name,
