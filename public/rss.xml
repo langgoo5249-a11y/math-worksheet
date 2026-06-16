@@ -6,13 +6,29 @@
   <atom:link href="https://www.skillxm.cn/rss.xml" rel="self" type="application/rss+xml" />
   <description>练学宝为小学1-6年级学生提供数学口算、字帖练习、单元测试、拼音注音等免费学习工具，以及丰富的练习卷资源和家长指导。</description>
   <language>zh-CN</language>
-  <lastBuildDate>Mon, 15 Jun 2026 08:06:34 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 16 Jun 2026 01:48:19 GMT</lastBuildDate>
   <generator>练学宝 RSS Generator</generator>
   <image>
     <url>https://www.skillxm.cn/favicon.svg</url>
     <title>练学宝 - 小学数学语文英语学习工具与练习资源</title>
     <link>https://www.skillxm.cn/</link>
   </image>
+  <item>
+    <title>小学口算速度提升秘籍：每天10分钟，让孩子从掰手指到心算如飞</title>
+    <link>https://www.skillxm.cn/blog/kousuan-sudu-tisheng-miji-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/kousuan-sudu-tisheng-miji-2026/</guid>
+    <description>孩子口算慢、总掰手指？本文分享一套经过200+家庭验证的口算提速训练法，含真实训练数据、分阶段计划和免费口算练习工具推荐，帮助小学生快速提升计算速度。</description>
+    <pubDate>Tue, 16 Jun 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>小学数学练习卷怎么选？这份免费在线生成指南让辅导效率翻倍</title>
+    <link>https://www.skillxm.cn/blog/shuxue-lianxijuan-shengcheng-shiyong-zhinan-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/shuxue-lianxijuan-shengcheng-shiyong-zhinan-2026/</guid>
+    <description>家长辅导孩子数学不知道出什么题？本文详解如何免费生成针对性数学练习卷，含真实使用案例、分年级选题策略和打印技巧，帮助家长精准辅导孩子薄弱环节。</description>
+    <pubDate>Tue, 16 Jun 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
   <item>
     <title>孩子写字歪歪扭扭？这份练字时间表让80%的家长后悔没早看到</title>
     <link>https://www.skillxm.cn/blog/haizi写zi歪歪扭扭-这份lianzi时间-y7pj/</link>
