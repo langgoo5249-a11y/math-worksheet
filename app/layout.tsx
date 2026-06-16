@@ -297,7 +297,7 @@ export default async function RootLayout({
         <meta name="baidu-site-verification" content="codeva-nVZFsgvPZu" />
 
         {/* Google Search Console 站点验证 */}
-        {/* Google Search Console 验证 - 如未配置，请到 https://search.google.com/search-console 添加站点获取验证码 */}
+        {/* 请到 https://search.google.com/search-console 添加站点，获取验证码后替换下方 content 值 */}
         <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
@@ -313,12 +313,7 @@ export default async function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="format-detection" content="telephone=no" />
 
-        {/* hreflang SEO + GEO 信号 */}
-        <link rel="alternate" hrefLang="zh-CN" href="https://www.skillxm.cn/" />
-        <link rel="alternate" hrefLang="en" href="https://www.skillxm.cn/en/" />
-        <link rel="alternate" hrefLang="ja" href="https://www.skillxm.cn/ja/" />
-        <link rel="alternate" hrefLang="ko" href="https://www.skillxm.cn/ko/" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.skillxm.cn/" />
+        {/* hreflang 由 Next.js metadata.alternates 自动生成，请勿手动添加 */}
 
         {/* 动态设置 html lang 属性（根据 URL 路径） */}
         <script
