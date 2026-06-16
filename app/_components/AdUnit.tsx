@@ -31,8 +31,7 @@ export default function AdUnit({ slot = '', format = 'auto', responsive = true }
     return () => clearTimeout(timer);
   }, [slot]);
 
-  // 广告申请通过前，始终显示推荐内容替代
-  if (!slot || true) {
+  if (!slot) {
     return (
       <div className="my-6 p-4 bg-slate-800/30 rounded-xl border border-white/5">
         <p className="text-xs text-gray-500 text-center mb-3">📚 推荐阅读</p>
