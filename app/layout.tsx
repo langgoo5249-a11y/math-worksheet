@@ -240,9 +240,7 @@ export default async function RootLayout({
       <head>
         <meta name="baidu-site-verification" content="codeva-nVZFsgvPZu" />
 
-        {/* Google Search Console 站点验证 */}
-        {/* Google Search Console 验证 - 如未配置，请到 https://search.google.com/search-console 添加站点获取验证码 */}
-        <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE" />
+        <meta name="google-site-verification" content="6szVJUGCDvvDDcBkDLV0n6kD_KU1EyOWnO7MSw-5ERM" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
