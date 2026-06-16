@@ -311,8 +311,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <meta name="baidu-site-verification" content="codeva-nVZFsgvPZu" />
 
         {/* Google Search Console 站点验证 */}
-        {/* 请到 https://search.google.com/search-console 添加站点，获取验证码后替换下方 content 值 */}
-        <meta name="google-site-verification" content="YOUR_GSC_VERIFICATION_CODE" />
+        <meta name="google-site-verification" content="6szVJUGCDvvDDcBkDLV0n6kD_KU1EyOWnO7MSw-5ERM" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
