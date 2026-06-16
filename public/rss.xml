@@ -6,7 +6,7 @@
   <atom:link href="https://www.skillxm.cn/rss.xml" rel="self" type="application/rss+xml" />
   <description>练学宝为小学1-6年级学生提供数学口算、字帖练习、单元测试、拼音注音等免费学习工具，以及丰富的练习卷资源和家长指导。</description>
   <language>zh-CN</language>
-  <lastBuildDate>Tue, 16 Jun 2026 09:59:46 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 16 Jun 2026 23:53:56 GMT</lastBuildDate>
   <generator>练学宝 RSS Generator</generator>
   <image>
     <url>https://www.skillxm.cn/favicon.svg</url>
@@ -26,6 +26,22 @@
     <link>https://www.skillxm.cn/blog/shuxue-lianxijuan-shengcheng-shiyong-zhinan-2026/</link>
     <guid isPermaLink="true">https://www.skillxm.cn/blog/shuxue-lianxijuan-shengcheng-shiyong-zhinan-2026/</guid>
     <description>家长辅导孩子数学不知道出什么题？本文详解如何免费生成针对性数学练习卷，含真实使用案例、分年级选题策略和打印技巧，帮助家长精准辅导孩子薄弱环节。</description>
+    <pubDate>Tue, 16 Jun 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>田字格字帖怎么用才有效？我给孩子练了半年，总结出5个写好字的关键步骤</title>
+    <link>https://www.skillxm.cn/blog/tianzige-zitie-shiyong-fangfa-zhinan/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/tianzige-zitie-shiyong-fangfa-zhinan/</guid>
+    <description>很多家长给孩子买了字帖却不知道怎么用，每天描红却没进步。本文分享我用田字格字帖训练孩子半年的真实经验，从握笔到结构的5个关键步骤，含训练时间表、字格比例分析和常见错误纠正方法。</description>
+    <pubDate>Tue, 16 Jun 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>小学生口算速度怎么提高？从5分钟20道到1分钟30道的训练方法</title>
+    <link>https://www.skillxm.cn/blog/xiaoxuesheng-kousuan-sudu-tisheng-fangfa/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/xiaoxuesheng-kousuan-sudu-tisheng-fangfa/</guid>
+    <description>孩子口算太慢考试做不完怎么办？本文分享一套经过实际验证的口算训练方法，从基础口算到速算技巧的5个训练阶段，含每日练习量、错题管理和家长辅导策略，附速算技巧表和常见错误分析。</description>
     <pubDate>Tue, 16 Jun 2026 08:00:00 GMT</pubDate>
     <category>知识分享</category>
   </item>
@@ -395,22 +411,6 @@
     <guid isPermaLink="true">https://www.skillxm.cn/blog/naokexue-jiedu-shuxue-nengli/</guid>
     <description>从认知神经科学的角度解读儿童数学能力差异的成因，帮助家长建立科学的数学教育观念。</description>
     <pubDate>Tue, 05 May 2026 08:00:00 GMT</pubDate>
-    <category>知识分享</category>
-  </item>
-  <item>
-    <title>小学一年级数学期中复习重点：10个必考知识点</title>
-    <link>https://www.skillxm.cn/blog/xiaoxueyinianjishuxuefuxi-10/</link>
-    <guid isPermaLink="true">https://www.skillxm.cn/blog/xiaoxueyinianjishuxuefuxi-10/</guid>
-    <description>期中考试临近，本文整理了一年级数学的10个必考知识点，帮助孩子高效复习，轻松应考。</description>
-    <pubDate>Mon, 04 May 2026 08:00:00 GMT</pubDate>
-    <category>知识分享</category>
-  </item>
-  <item>
-    <title>小学生每天放学后的时间怎么安排最合理？我研究了20个学霸家庭的时间表</title>
-    <link>https://www.skillxm.cn/blog/fangxuehou-shijian-anpai-diaocha/</link>
-    <guid isPermaLink="true">https://www.skillxm.cn/blog/fangxuehou-shijian-anpai-diaocha/</guid>
-    <description>通过调研20个成绩优异的小学生家庭的时间安排，总结出不同年级的最优放学后时间分配方案。</description>
-    <pubDate>Mon, 04 May 2026 08:00:00 GMT</pubDate>
     <category>知识分享</category>
   </item>
 </channel>
