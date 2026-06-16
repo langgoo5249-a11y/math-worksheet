@@ -1,5 +1,5 @@
-﻿import ToolPage from './ToolPage';
+import ToolPage from './ToolPage';
 
-export default function Page() {
+export default async function Page() {
   return <ToolPage />;
 }
