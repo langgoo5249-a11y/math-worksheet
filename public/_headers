@@ -20,6 +20,27 @@
   Content-Type: text/html; charset=utf-8
   Cache-Control: public, max-age=86400
 
+# 博客文章：静态内容，CDN 缓存 1 天，离线时返回旧版本
+/blog/*
+  Cache-Control: public, max-age=0, s-maxage=86400, stale-while-revalidate=86400
+
+# 工具页面：变化很少，CDN 缓存 12 小时
+/tools/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+
+# 静态资源：图片、JS、CSS 长期缓存
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=86400
+
+/*.png
+  Cache-Control: public, max-age=86400
+
+/*.svg
+  Cache-Control: public, max-age=86400
+
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
