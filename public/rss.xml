@@ -6,13 +6,29 @@
   <atom:link href="https://www.skillxm.cn/rss.xml" rel="self" type="application/rss+xml" />
   <description>练学宝为小学1-6年级学生提供数学口算、字帖练习、单元测试、拼音注音等免费学习工具，以及丰富的练习卷资源和家长指导。</description>
   <language>zh-CN</language>
-  <lastBuildDate>Tue, 16 Jun 2026 01:48:19 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 17 Jun 2026 04:38:23 GMT</lastBuildDate>
   <generator>练学宝 RSS Generator</generator>
   <image>
     <url>https://www.skillxm.cn/favicon.svg</url>
     <title>练学宝 - 小学数学语文英语学习工具与练习资源</title>
     <link>https://www.skillxm.cn/</link>
   </image>
+  <item>
+    <title>小学四年级分数计算怎么学？我用「切披萨法」让孩子两周掌握分数加减法</title>
+    <link>https://www.skillxm.cn/blog/xiaoxue-fenshu-jisuan-jiaoxue-fangfa-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/xiaoxue-fenshu-jisuan-jiaoxue-fangfa-2026/</guid>
+    <description>孩子四年级学分数计算总是混淆通分约分？本文分享「切披萨法」可视化教学策略，含真实辅导案例、分步骤教学流程和免费练习工具推荐，帮助家长轻松教会孩子分数加减法。</description>
+    <pubDate>Wed, 17 Jun 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>暑假每天练字多长时间最有效？我陪孩子用田字格字帖记录了100天练字变化</title>
+    <link>https://www.skillxm.cn/blog/shujia-lianzi-100tian-jihua-xiaoguo-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/shujia-lianzi-100tian-jihua-xiaoguo-2026/</guid>
+    <description>暑假练字是弯道超车的好机会，但每天练多久才能看到效果？本文分享一位妈妈陪孩子100天练字的真实记录，含逐月进度对比、田字格字帖使用技巧和免费练字工具推荐，帮助家长制定科学的暑假练字计划。</description>
+    <pubDate>Wed, 17 Jun 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
   <item>
     <title>小学口算速度提升秘籍：每天10分钟，让孩子从掰手指到心算如飞</title>
     <link>https://www.skillxm.cn/blog/kousuan-sudu-tisheng-miji-2026/</link>
@@ -31,8 +47,8 @@
   </item>
   <item>
     <title>孩子写字歪歪扭扭？这份练字时间表让80%的家长后悔没早看到</title>
-    <link>https://www.skillxm.cn/blog/haizi写zi歪歪扭扭-这份lianzi时间-y7pj/</link>
-    <guid isPermaLink="true">https://www.skillxm.cn/blog/haizi写zi歪歪扭扭-这份lianzi时间-y7pj/</guid>
+    <link>https://www.skillxm.cn/blog/haizi-lianzi-shijianbiao-y7pj/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/haizi-lianzi-shijianbiao-y7pj/</guid>
     <description>孩子写字歪歪扭扭怎么办？本文分享一份科学练字时间表，含真实案例、阶段性成果数据和字帖生成器使用方法。</description>
     <pubDate>Mon, 15 Jun 2026 08:00:00 GMT</pubDate>
     <category>知识分享</category>
