@@ -1,0 +1,17 @@
+# CODEOWNERS - 代码所有权保护
+# 所有代码文件需要 jm6-lang 审批才能合并到 main 分支
+# 配合 GitHub 分支保护规则使用：Settings → Branches → Add rule → "Require review from Code Owners"
+
+# 全局：所有文件归 jm6-lang 所有
+* @jm6-lang
+
+# 核心业务逻辑（额外保护）
+/app/ @jm6-lang
+/components/ @jm6-lang
+/lib/ @jm6-lang
+
+# 配置文件（最高保护级别，修改前必须审批）
+/next.config.ts @jm6-lang
+/package.json @jm6-lang
+/tsconfig.json @jm6-lang
+/middleware.ts @jm6-lang
