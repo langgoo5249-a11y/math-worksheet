@@ -94,19 +94,6 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
                 )}
               </div>
 
-              <button onClick={() => setShowTutorial(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                使用教程
-              </button>
-              <a href="/blog" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                知识分享
-              </a>
-              <button onClick={() => setShowShare(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                分享
-              </button>
-              <button onClick={() => setShowDonate(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
-                赞助支持
-              </button>
-
               {/* 内容板块下拉 */}
               <div
                 className="relative"
@@ -153,6 +140,19 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
                   </div>
                 )}
               </div>
+
+              <button onClick={() => setShowTutorial(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                使用教程
+              </button>
+              <a href="/blog" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                知识分享
+              </a>
+              <button onClick={() => setShowShare(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                分享
+              </button>
+              <button onClick={() => setShowDonate(true)} className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">
+                赞助支持
+              </button>
             </div>
 
             {/* 移动端菜单按钮 */}
