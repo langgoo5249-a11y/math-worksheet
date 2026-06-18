@@ -11,6 +11,69 @@ import {
   SITE_INFO,
 } from '@/lib/seoUtils';
 
+function parseMarkdown(markdown: string): string {
+  let html = markdown;
+
+  // Headers
+  html = html.replace(/^### (.+)$/gm, '<h3 class="text-lg font-bold text-white mt-8 mb-3">$1</h3>');
+  html = html.replace(/^## (.+)$/gm, '<h2 class="text-xl font-bold text-white mt-8 mb-4">$1</h2>');
+
+  // Bold
+  html = html.replace(/\*\*(.+?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>');
+
+  // Italic
+  html = html.replace(/(?<!\*)\*([^*]+?)\*(?!\*)/g, '<em>$1</em>');
+
+  // Code blocks
+  html = html.replace(/```([\s\S]*?)```/g, '<pre class="bg-slate-900 border border-white/10 rounded-xl p-4 my-4 overflow-x-auto"><code class="text-sm text-green-400">$1</code></pre>');
+
+  // Inline code
+  html = html.replace(/`([^`]+?)`/g, '<code class="bg-slate-700 px-1.5 py-0.5 rounded text-sm text-blue-300">$1</code>');
+
+  // Unordered lists
+  html = html.replace(/^- (.+)$/gm, '<li class="text-gray-300 leading-relaxed ml-4 list-disc">$1</li>');
+
+  // Ordered lists
+  html = html.replace(/^\d+\. (.+)$/gm, '<li class="text-gray-300 leading-relaxed ml-4 list-decimal">$1</li>');
+
+  // Table rows
+  html = html.replace(/^\|(.+)\|$/gm, (match) => {
+    const cells = match.split('|').filter(c => c.trim());
+    if (cells.every(c => /^[\s-:]+$/.test(c))) {
+      return '<!-- table separator -->';
+    }
+    const cellHtml = cells.map(c => `<td class="border border-white/10 px-3 py-2 text-gray-300 text-sm">${c.trim()}</td>`).join('');
+    return `<tr>${cellHtml}</tr>`;
+  });
+
+  // Wrap consecutive <tr> in table
+  html = html.replace(/((?:<tr>[\s\S]*?<\/tr>\s*)+)/g, '<table class="w-full border-collapse my-4 rounded-xl overflow-hidden">$1</table>');
+
+  // Paragraphs
+  const lines = html.split('\n');
+  const result: string[] = [];
+  for (const line of lines) {
+    const trimmed = line.trim();
+    if (
+      trimmed === '' ||
+      trimmed.startsWith('<h') ||
+      trimmed.startsWith('<li') ||
+      trimmed.startsWith('<tr') ||
+      trimmed.startsWith('<table') ||
+      trimmed.startsWith('</table') ||
+      trimmed.startsWith('<!--') ||
+      trimmed.startsWith('<pre') ||
+      trimmed.startsWith('<div')
+    ) {
+      result.push(line);
+    } else {
+      result.push(`<p class="text-gray-300 leading-relaxed mb-4">${trimmed}</p>`);
+    }
+  }
+
+  return result.join('\n');
+}
+
 export function generateStaticParams() {
   return KNOWLEDGE_POINTS.map((k) => ({ slug: k.slug }));
 }
@@ -268,6 +331,19 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
           </span>
         </div>
       </section>
+
+      {/* 深度内容（扩展阅读） */}
+      {kp.extendedContent && (
+        <section className="mb-10 p-6 bg-slate-800/30 border border-white/10 rounded-2xl">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <span>📖</span>深度学习
+          </h2>
+          <article
+            className="prose-knowledge"
+            dangerouslySetInnerHTML={{ __html: parseMarkdown(kp.extendedContent) }}
+          />
+        </section>
+      )}
 
       {/* 学习目标 */}
       <section className="mb-10 p-6 bg-slate-800/50 border border-white/10 rounded-2xl">

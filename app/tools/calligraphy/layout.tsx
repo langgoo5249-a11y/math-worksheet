@@ -141,6 +141,11 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
         }}
       />
       <ToolBreadcrumb toolName="字帖生成器" toolPath="/tools/calligraphy" />
+      <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
+        <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">
+          免费在线生成田字格、米字格汉字字帖，支持楷体/宋体/黑体等多种字体，自定义内容输入，一键PDF导出A4打印。适合小学生日常练字和书法初学者描红练习。
+        </p>
+      </div>
       {children}
     </>
   );

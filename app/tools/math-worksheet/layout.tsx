@@ -141,6 +141,11 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
         }}
       />
       <ToolBreadcrumb toolName="数学练习卷" toolPath="/tools/math-worksheet" />
+      <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
+        <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">
+          免费生成小学1-6年级数学练习卷，支持加减乘除、竖式计算、填空题、应用题等11种题型，随机出题PDF打印，可自定义年级和难度。
+        </p>
+      </div>
       {children}
     </>
   );

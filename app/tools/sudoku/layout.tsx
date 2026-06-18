@@ -112,6 +112,11 @@ export default function SudokuLayout({ children }: { children: React.ReactNode }
         }}
       />
       <ToolBreadcrumb toolName="数独游戏" toolPath="/tools/sudoku" />
+      <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
+        <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">
+          免费在线数独游戏，提供入门/进阶/挑战三档难度，内置数字键盘和笔记模式，锻炼逻辑思维和专注力，无需下载打开即玩。
+        </p>
+      </div>
       {children}
     </>
   );

@@ -109,6 +109,11 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
         }}
       />
       <ToolBreadcrumb toolName="拼音注音" toolPath="/tools/pinyin" />
+      <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
+        <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">
+          拼音学习工具，完整收录声母韵母和整体认读音节，四线三格标准格式，PDF导出A4打印。帮助小学生规范拼音书写，打好语文基础。
+        </p>
+      </div>
       {children}
     </>
   );

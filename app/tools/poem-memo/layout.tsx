@@ -138,6 +138,11 @@ export default function PoemMemoLayout({ children }: { children: React.ReactNode
         }}
       />
       <ToolBreadcrumb toolName="古诗词默写" toolPath="/tools/poem-memo" />
+      <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
+        <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">
+          收录240首小学必背古诗词，支持填空默写、全诗默写、上下句默写三种模式，田字格方格横线格PDF打印，语文教师和家长必备复习工具。
+        </p>
+      </div>
       {children}
     </>
   );
