@@ -50,6 +50,7 @@ const criticalFiles = [
   { name: '_headers', required: true },
   // ads.txt 不再从这里复制，由 Next.js route handler 生成
   { name: 'robots.txt', required: true },
+  { name: 'llms.txt', required: true },
   { name: 'favicon.ico', required: false },
   { name: 'favicon.svg', required: false },
   { name: 'manifest.json', required: false },

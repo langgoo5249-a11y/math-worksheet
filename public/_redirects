@@ -31,3 +31,9 @@
 # /zh 是默认语言，等同于 / ；为避免双内容也做 301
 /zh/                 https://www.skillxm.cn/                  301
 /zh                  https://www.skillxm.cn/                  301
+
+# ===========================================
+# 重复博客文章 301 重定向（去重修复）
+# ===========================================
+/blog/haizi-xie-zi-wai-wai-niu-niu-lian-zi-shi-jian-2    /blog/haizi-xie-zi-wai-wai-niu-niu-lian-zi-shi-jian/    301
+/blog/yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi-2  /blog/yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi/  301

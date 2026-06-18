@@ -10,9 +10,11 @@ interface Tool {
 }
 
 interface BlogPageClientProps {
-  type: 'categoryFilter' | 'menuTrigger' | 'mobileMenu';
+  type: 'categoryFilter' | 'menuTrigger' | 'mobileMenu' | 'showMore';
   categories?: readonly string[];
   tools?: Tool[];
+  totalArticles?: number;
+  initialCount?: number;
 }
 
 const categoryColors: Record<string, string> = {
@@ -27,31 +29,53 @@ const categoryColors: Record<string, string> = {
   '关于我们': 'bg-pink-500/20 text-pink-300 border-pink-500/30 hover:bg-pink-500/30',
 };
 
-export default function BlogPageClient({ type, categories = [], tools = [] }: BlogPageClientProps) {
+export default function BlogPageClient({ type, categories = [], tools = [], totalArticles = 0, initialCount = 15 }: BlogPageClientProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('全部');
+  const [shownCount, setShownCount] = useState(initialCount);
 
   const handleCategoryChange = useCallback((category: string) => {
     setActiveCategory(category);
 
     const cards = document.querySelectorAll('[data-category]');
+    let visibleCount = 0;
     cards.forEach((card) => {
       const el = card as HTMLElement;
-      if (category === '全部' || card.getAttribute('data-category') === category) {
+      const matchesCategory = category === '全部' || card.getAttribute('data-category') === category;
+      const isShown = parseInt(el.getAttribute('data-index') || '0') < shownCount;
+      if (matchesCategory && isShown) {
         el.style.display = '';
+        visibleCount++;
+      } else if (!matchesCategory) {
+        el.style.display = 'none';
       } else {
         el.style.display = 'none';
       }
     });
 
-    const visibleCount = category === '全部'
-      ? cards.length
-      : document.querySelectorAll(`[data-category="${category}"]`).length;
     const countEl = document.querySelector('[data-article-count]');
     if (countEl) {
-      countEl.textContent = `共 ${visibleCount} 篇文章`;
+      const totalForCategory = category === '全部'
+        ? cards.length
+        : document.querySelectorAll(`[data-category="${category}"]`).length;
+      countEl.textContent = `共 ${totalForCategory} 篇文章`;
     }
-  }, []);
+  }, [shownCount]);
+
+  const handleShowMore = useCallback(() => {
+    const newCount = shownCount + 15;
+    setShownCount(newCount);
+
+    const cards = document.querySelectorAll('[data-category]');
+    cards.forEach((card) => {
+      const el = card as HTMLElement;
+      const idx = parseInt(el.getAttribute('data-index') || '0');
+      const matchesCategory = activeCategory === '全部' || card.getAttribute('data-category') === activeCategory;
+      if (idx < newCount && matchesCategory) {
+        el.style.display = '';
+      }
+    });
+  }, [shownCount, activeCategory]);
 
   if (type === 'menuTrigger') {
     return (
@@ -120,6 +144,21 @@ export default function BlogPageClient({ type, categories = [], tools = [] }: Bl
             {category}
           </button>
         ))}
+      </div>
+    );
+  }
+
+  if (type === 'showMore') {
+    if (shownCount >= totalArticles) return null;
+    const remaining = totalArticles - shownCount;
+    return (
+      <div className="text-center mt-8">
+        <button
+          onClick={handleShowMore}
+          className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl border border-white/20 transition-all font-medium"
+        >
+          加载更多文章（还有 {remaining} 篇）
+        </button>
       </div>
     );
   }

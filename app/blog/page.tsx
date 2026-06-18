@@ -87,12 +87,13 @@ export default function BlogPage() {
 
           {/* Article Cards - 服务端渲染，确保搜索引擎能抓取所有文章链接 */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {sortedArticles.map((article) => (
+            {sortedArticles.map((article, index) => (
               <Link
                 key={article.id}
                 href={`/blog/${article.id}`}
                 data-category={article.category}
-                className="text-left bg-slate-800/50 border border-white/10 rounded-2xl p-6 hover:border-white/20 hover:bg-slate-700/50 transition-all group"
+                data-index={index}
+                className={`text-left bg-slate-800/50 border border-white/10 rounded-2xl p-6 hover:border-white/20 hover:bg-slate-700/50 transition-all group ${index >= 15 ? 'blog-hidden' : ''}`}
               >
                 {/* Category & Read Time */}
                 <div className="flex items-center gap-3 mb-3">
@@ -112,9 +113,15 @@ export default function BlogPage() {
                   {article.description}
                 </p>
 
-                {/* Date & Arrow */}
+                {/* Author & Date */}
                 <div className="flex items-center justify-between">
-                  <time className="text-gray-500 text-xs">{article.date}</time>
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-[10px] font-bold">
+                      {(article.author?.name || '林').charAt(0)}
+                    </div>
+                    <span className="text-gray-500 text-xs">{article.author?.name || '林远'}</span>
+                    <time className="text-gray-500 text-xs">{article.date}</time>
+                  </div>
                   <span className="text-gray-400 group-hover:text-blue-400 group-hover:translate-x-1 transition-all">
                     阅读全文 &rarr;
                   </span>
@@ -122,6 +129,9 @@ export default function BlogPage() {
               </Link>
             ))}
           </div>
+
+          {/* Show More Button - 客户端交互 */}
+          <BlogPageClient type="showMore" totalArticles={sortedArticles.length} initialCount={15} />
         </div>
       </main>
 

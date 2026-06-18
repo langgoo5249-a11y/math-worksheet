@@ -1,149 +1,48 @@
-# 练学宝 - 免费小学在线学习工具
+# 练学宝 (skillxm.cn)
+> 免费在线小学教育工具平台，提供10+款数学练习、语文学习、英语练习工具
 
-## 关于网站
+## 站点概述
 
-**练学宝** 是一个专注于小学教育的免费在线工具网站，提供各种学习工具和教育资源，帮助小学生、家长和老师轻松完成日常学习任务。
-
-- 官网：https://www.skillxm.cn/
-- 域名：skillxm.cn (中文拼音：练学宝)
-- 创始人：林远，两个孩子的父亲，全栈开发者
+练学宝是一个面向中国小学1-6年级学生的免费在线教育平台。无需注册，即开即用。所有工具完全免费，支持PDF导出打印和手机在线做题。
 
 ## 核心工具
 
-### 数学学习工具
+- **数学练习卷生成器** (`/tools/math-worksheet`) — 支持11种题型（加减乘除、竖式、混合运算等），1-6年级，自定义题量和数字范围，田字格/方格/横线格/空白4种模板
+- **字帖生成器** (`/tools/calligraphy`) — 中文汉字字帖，支持自定义文字、田字格/米字格/方格，可调节字号和格子大小
+- **英语字帖** (`/tools/english-calligraphy`) — 26个字母大小写、单词、句子练习，四线三格标准格式
+- **口算速练** (`/tools/mental-math`) — AI智能出题，计时练习，支持加减乘除混合，自动批改和成绩报告
+- **古诗词默写** (`/tools/poem-memo`) — 小学必背75首古诗词，支持按年级筛选，自动生成填空练习
+- **拼音注音** (`/tools/pinyin`) — 汉字转拼音，四线三格标注，声母韵母整体认读音节练习
+- **识字卡片** (`/tools/flashcards`) — 小学1-6年级核心汉字卡片，含拼音、笔画、组词
+- **数独游戏** (`/tools/sudoku`) — 4×4/6×6/9×9三种难度，适合培养逻辑思维
+- **单元测试卷** (`/tools/unit-test`) — 同步教材单元卷，覆盖人教版/北师大版/苏教版/部编版
+- **作文模板** (`/tools/writing-template`) — 看图写话、日记、读后感等多种作文模板
 
-1. **[数学练习题生成器](https://www.skillxm.cn/tools/math-worksheet/)**
-   - 支持加减乘除、竖式计算、填空题等多种题型
-   - 自定义范围、题量、每页行数
-   - 支持小数、分数、带余数除法
-   - 一键生成PDF打印
+## 内容结构
 
-2. **[口算速练](https://www.skillxm.cn/tools/mental-math/)**
-   - 在线计时口算挑战
-   - 四个难度级别
-   - 即时反馈得分
+- `/blog/` — 教育方法博客，100+篇原创文章，涵盖数学学习、语文学习、英语学习、思维训练、学习方法、升学指导
+- `/grade/grade-1/` ~ `/grade/grade-6/` — 按年级整理的学习资源
+- `/textbook/pep/` `/textbook/bsd/` `/textbook/suer/` `/textbook/bubian/` — 按教材版本（人教版/北师大版/苏教版/部编版）同步练习
+- `/knowledge/` — 知识点专题详解（凑十法、破十法、乘法口诀、百分数、阅读理解等）
+- `/resources/` — 分年级分科目的练习资源
+- `/parent-guide/` — 家长辅导指南（幼小衔接、学习习惯、作业辅导、时间管理等）
 
-3. **[数独游戏](https://www.skillxm.cn/tools/sudoku/)**
-   - 简单/中等/困难三个难度
-   - 在线玩支持PDF打印
-   - 锻炼逻辑思维能力
+## 技术信息
 
-### 语文学习工具
-
-1. **[汉字字帖生成器](https://www.skillxm.cn/tools/calligraphy/)**
-   - 田字格、米字格、方格多种模板
-   - 自定义汉字内容
-   - 支持拼音、笔画显示
-   - PDF导出打印
-
-2. **[识字卡片](https://www.skillxm.cn/tools/flashcards/)**
-   - 自定义汉字卡片
-   - 拼音组词显示
-   - 可打印制作卡片
-
-3. **[拼音卡片生成器](https://www.skillxm.cn/tools/pinyin/)**
-   - 声母韵母整体认读音节
-   - 声母韵母组合卡片
-   - 在线学习打印制作
-
-### 英语学习工具
-
-1. **[英语字帖生成器](https://www.skillxm.cn/tools/english-calligraphy/)**
-   - 标准四线三格
-   - 自定义单词内容
-   - PDF导出打印
-
-### 作文写作工具
-
-1. **[作文模板生成器](https://www.skillxm.cn/tools/writing-template/)**
-   - 看图写话、日记、书信等多种模板
-   - 辅助写作练习，提高写作能力
-
-## 学习专区
-
-### [年级专区](https://www.skillxm.cn/grade/)
-
-每个年级都有专属的学习方案：
-
-- 一年级：拼音入门、100以内加减法
-- 二年级：乘法口诀、生字书写
-- 三年级：四则混合运算、作文入门
-- 四年级：简便计算、阅读理解
-- 五年级：小数分数、应用题
-- 六年级：总复习、升学准备
-
-### [教材同步练习](https://www.skillxm.cn/textbook/)
-
-支持四大版本教材同步：
-
-- 人教版
-- 北师大版
-- 苏教版
-- 部编版
-
-按教材单元组织练习题，方便同步学习。
-
-### [知识点专题](https://www.skillxm.cn/knowledge/)
-
-核心知识点专题练习：
-
-- 凑十法
-- 破十法
-- 乘法口诀
-- 九九乘法表
-- 百分数
-- 小数四则运算
-- 分数四则运算
-- 声母韵母
-- 整体认读音节
-- 多音字
-
-### [练习卷资源库](https://www.skillxm.cn/resources/)
-
-免费下载高质量练习卷：
-
-- 20+套单元测试卷、期中期末试卷
-- 语文数学英语全覆盖
-- 直接下载PDF打印
-
-### [家长指导中心](https://www.skillxm.cn/parent-guide/)
-
-给家长的实用建议：
-
-- 幼小衔接准备
-- 学习习惯培养
-- 时间管理
-- 错题本使用方法
-- 小升初攻略
-
-## 知识分享博客
-
-https://www.skillxm.cn/blog/
-
-涵盖分类：
-
-- [数学学习](https://www.skillxm.cn/blog/category/%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0/) - 小学数学学习方法和技巧
-- [语文学习](https://www.skillxm.cn/blog/category/%E8%AF%AD%E6%96%87%E5%AD%A6%E4%B9%A0/) - 语文阅读理解和作文写作
-- [英语学习](https://www.skillxm.cn/blog/category/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/) - 小学英语学习方法
-- [思维训练](https://www.skillxm.cn/blog/category/%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/) - 逻辑思维培养
-- [学习方法](https://www.skillxm.cn/blog/category/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/) - 高效学习方法
-- [升学指导](https://www.skillxm.cn/blog/category/%E5%8D%87%E5%AD%A6%E6%8C%87%E5%AF%BC/) - 幼小衔接/小升初攻略
-
-## 特点
-
-- ✅ **完全免费** - 所有工具免费使用，无需注册账号
-- ✅ **无需付费** - 没有任何隐藏收费，不限制使用次数
-- ✅ **即开即用** - 浏览器直接打开，无需下载安装
-- ✅ **PDF导出** - 支持导出PDF打印，方便纸质练习
-- ✅ **专注小学** - 专注1-6年级，不做无关内容
-- ✅ **持续更新** - 定期添加新工具和新内容
+- 框架: Next.js (App Router, Static Export)
+- 部署: Cloudflare Pages
+- 语言: 主要中文 (zh-CN)
+- 支持设备: 桌面端 + 移动端响应式
+- API: 无后端API，纯静态站点
 
 ## 联系方式
 
-- 网站：https://www.skillxm.cn/
-- 关于我们：https://www.skillxm.cn/about/
-- 联系我们：https://www.skillxm.cn/contact/
+- 邮箱: lang@skillxm.cn
+- 地址: 浙江绍兴
 
-## 版权
+## 相关链接
 
-© 2026 练学宝. All rights reserved.
+- [博客首页](https://www.skillxm.cn/blog/)
+- [关于我们](https://www.skillxm.cn/about/)
+- [RSS订阅](https://www.skillxm.cn/rss.xml)
+- [站点地图](https://www.skillxm.cn/sitemap.xml)

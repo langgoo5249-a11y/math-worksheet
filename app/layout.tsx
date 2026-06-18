@@ -333,11 +333,11 @@ export default async function RootLayout({
           }}
         />
 
-        {/* 百度主动推送 */}
+        {/* 百度主动推送 - 延迟到页面加载后执行 */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function(){
+              window.addEventListener('load', function(){
                 var bp = document.createElement('script');
                 var curProtocol = window.location.protocol.split(':')[0];
                 if (curProtocol === 'https') {
@@ -347,22 +347,22 @@ export default async function RootLayout({
                 }
                 var s = document.getElementsByTagName("script")[0];
                 s.parentNode.insertBefore(bp, s);
-              })();
+              });
             `,
           }}
         />
 
-        {/* 头条搜索（字节跳动）主动推送 - 当用户浏览页面时，链接自动推送给头条搜索蜘蛛，加快收录 */}
+        {/* 头条搜索（字节跳动）主动推送 - 延迟到页面加载后执行 */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              (function(){
+              window.addEventListener('load', function(){
                 var el = document.createElement('script');
                 el.src = 'https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?278b7bc276aa0b514ff5c4e28d63b1e083f58bd22a48d8e0e73447efb03530befd9a9dcb5ced4d7780eb6f3bbd089073c2a6d54440560d63862bbf4ec01bba3a';
                 el.id = 'ttzz';
                 var s = document.getElementsByTagName('script')[0];
                 s.parentNode.insertBefore(el, s);
-              })();
+              });
             `,
           }}
         />
@@ -384,7 +384,7 @@ export default async function RootLayout({
                   <span className="text-sm font-bold text-gray-800">微信小程序使用</span>
                 </div>
                 <div className="bg-gray-50 rounded-xl p-2 mb-2">
-                  <img src="/miniapp-qrcode.jpg" alt="微信小程序二维码" className="w-full h-auto rounded-lg" />
+                  <img src="/miniapp-qrcode.jpg" alt="微信小程序二维码" className="w-full h-auto rounded-lg" width="200" height="200" loading="lazy" />
                 </div>
                 <p className="text-xs text-gray-500 text-center">微信扫码 → 即刻使用</p>
               </div>

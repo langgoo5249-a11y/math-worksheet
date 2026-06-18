@@ -128,3 +128,8 @@ html {
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
 }
+
+/* 博客分页 - 隐藏超出初始数量的文章卡片 */
+.blog-hidden {
+  display: none;
+}

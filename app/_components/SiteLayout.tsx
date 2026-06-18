@@ -363,11 +363,11 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="text-center">
                 <p className="text-sm text-gray-500 mb-2">微信支付</p>
-                <img src="/donate/wechat.png" alt="微信支付" className="w-full rounded-xl bg-white p-2" />
+                <img src="/donate/wechat.png" alt="微信支付" className="w-full rounded-xl bg-white p-2" width="300" height="300" loading="lazy" />
               </div>
               <div className="text-center">
                 <p className="text-sm text-gray-500 mb-2">支付宝</p>
-                <img src="/donate/alipay.jpg" alt="支付宝" className="w-full rounded-xl bg-white p-2" />
+                <img src="/donate/alipay.jpg" alt="支付宝" className="w-full rounded-xl bg-white p-2" width="300" height="300" loading="lazy" />
               </div>
             </div>
             <p className="text-gray-500 text-xs text-center mt-4">感谢您的支持！</p>
