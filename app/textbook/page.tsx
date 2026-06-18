@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: '小学教材同步练习专区，覆盖人教版（PEP）、北师大版、苏教版、部编版（统编版）1-6年级数学语文英语练习卷，与课堂进度完全同步。',
   keywords: ['小学教材同步练习', '人教版', '北师大版', '苏教版', '部编版', 'PEP', '小学数学下册', '小学语文下册', '教材同步'],
   alternates: {
-    canonical: 'https://www.skillxm.cn/textbook',
+    canonical: 'https://www.skillxm.cn/textbook/',
   },
   openGraph: {
     title: '小学教材同步练习专区 - 练学宝',

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: '练学宝为小学1-6年级学生提供完整的学习专区，包含各年级数学语文英语的练习题、学习工具、知识点汇总。所有内容免费，支持PDF下载打印。',
   keywords: ['小学年级学习', '一年级学习', '二年级学习', '三年级学习', '四年级学习', '五年级学习', '六年级学习', '小升初', '年级专区'],
   alternates: {
-    canonical: 'https://www.skillxm.cn/grade',
+    canonical: 'https://www.skillxm.cn/grade/',
   },
   openGraph: {
     title: '小学年级学习专区 - 练学宝',

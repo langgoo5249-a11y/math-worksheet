@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t("parentGuideDetailTitle"),
     description: t("parentGuideDetailDesc"),
     alternates: {
-      canonical: `https://www.skillxm.cn/parent-guide/${id}`,
+      canonical: `https://www.skillxm.cn/parent-guide/${id}/`,
       languages: {
         "zh-CN": `https://www.skillxm.cn/parent-guide/${id}`,
         en: `https://www.skillxm.cn/en/parent-guide/${id}`,

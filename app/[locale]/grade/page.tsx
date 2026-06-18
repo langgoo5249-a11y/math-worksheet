@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t("gradeTitle"),
     description: t("gradeDesc"),
     alternates: {
-      canonical: "https://www.skillxm.cn/grade",
+      canonical: "https://www.skillxm.cn/grade/",
       languages: {
         "zh-CN": "https://www.skillxm.cn/grade",
         en: "https://www.skillxm.cn/en/grade",

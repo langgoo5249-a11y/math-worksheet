@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t("textbookDetailTitle"),
     description: t("textbookDetailDesc"),
     alternates: {
-      canonical: "https://www.skillxm.cn/textbook",
+      canonical: "https://www.skillxm.cn/textbook/",
       languages: {
         "zh-CN": "https://www.skillxm.cn/textbook",
         en: "https://www.skillxm.cn/en/textbook",

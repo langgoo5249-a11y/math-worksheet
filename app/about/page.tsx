@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: '关于我们 - 练学宝',
   description: '了解练学宝的建站初衷、使命和团队。我们致力于为每个孩子提供免费、好用的在线教育工具。',
   alternates: {
-    canonical: 'https://www.skillxm.cn/about',
+    canonical: 'https://www.skillxm.cn/about/',
   },
   openGraph: {
     url: 'https://www.skillxm.cn/about/',
@@ -143,7 +143,7 @@ export default function AboutPage() {
               {
                 icon: '🆓',
                 title: '永久免费',
-                desc: '所有功能永久免费使用，不设任何付费门槛，不搞会员制，不收订阅费。',
+                desc: '所有功能永久免费使用，不设任何付费门槛，不搞会员制，不收订阅费。通过 Google AdSense 非侵入式广告维持网站运营和工具开发。',
               },
               {
                 icon: '🛡️',

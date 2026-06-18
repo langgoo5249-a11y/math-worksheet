@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: '联系我们 - 练学宝',
   description: '如果您有任何问题、建议或合作意向，欢迎通过邮件联系练学宝团队。',
   alternates: {
-    canonical: 'https://www.skillxm.cn/contact',
+    canonical: 'https://www.skillxm.cn/contact/',
   },
   openGraph: {
     url: 'https://www.skillxm.cn/contact/',

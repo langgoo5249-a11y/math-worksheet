@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t("privacyTitle"),
     description: t("privacyDesc"),
     alternates: {
-      canonical: "https://www.skillxm.cn/privacy",
+      canonical: "https://www.skillxm.cn/privacy/",
       languages: {
         "zh-CN": "https://www.skillxm.cn/privacy",
         en: "https://www.skillxm.cn/en/privacy",
