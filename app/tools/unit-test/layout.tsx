@@ -94,6 +94,11 @@ export default function UnitTestLayout({ children }: { children: React.ReactNode
         }}
       />
       <ToolBreadcrumb toolName="单元测试卷" toolPath="/tools/unit-test" />
+      <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
+        <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">
+          免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试/期中/期末三种类型，PDF排版规范一键打印。
+        </p>
+      </div>
       {children}
     </>
   );

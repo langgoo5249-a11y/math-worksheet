@@ -110,6 +110,11 @@ export default function EnglishCalligraphyLayout({ children }: { children: React
         }}
       />
       <ToolBreadcrumb toolName="英语字帖" toolPath="/tools/english-calligraphy" />
+      <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
+        <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">
+          免费生成四线三格英文字帖，支持手写体、印刷体等多种字体，自定义单词句子内容，PDF导出A4打印。帮助小学生规范英文字母书写格式。
+        </p>
+      </div>
       {children}
     </>
   );

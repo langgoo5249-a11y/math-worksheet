@@ -155,6 +155,11 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
         }}
       />
       <ToolBreadcrumb toolName="口算速练" toolPath="/tools/mental-math" />
+      <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
+        <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">
+          在线口算计时训练工具，AI智能出题、进度追踪、学习报告推送，4个难度级别涵盖加减乘除，适合小学1-6年级日常口算打卡训练。
+        </p>
+      </div>
       {children}
     </>
   );

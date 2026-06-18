@@ -102,6 +102,11 @@ export default function WritingTemplateLayout({ children }: { children: React.Re
         }}
       />
       <ToolBreadcrumb toolName="作文模板" toolPath="/tools/writing-template" />
+      <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
+        <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">
+          免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等格式，支持田字格方格横线格，PDF导出A4打印。
+        </p>
+      </div>
       {children}
     </>
   );

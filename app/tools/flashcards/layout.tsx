@@ -101,6 +101,11 @@ export default function FlashcardsLayout({ children }: { children: React.ReactNo
         }}
       />
       <ToolBreadcrumb toolName="识字卡片" toolPath="/tools/flashcards" />
+      <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
+        <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">
+          免费生成汉字识字卡片，自动标注拼音并提供常用组词，支持双面卡片PDF打印。适合小学语文教师和家长快速生成专业识字卡。
+        </p>
+      </div>
       {children}
     </>
   );
