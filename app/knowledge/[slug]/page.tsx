@@ -38,6 +38,147 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
+// Simple markdown renderer for detailed sections content
+function renderMarkdownContent(content: string) {
+  const lines = content.split('\n');
+  const elements: React.ReactNode[] = [];
+  let i = 0;
+  let tableRows: string[][] = [];
+  let inTable = false;
+  let inOrderedList = false;
+  let inUnorderedList = false;
+  let listItems: string[] = [];
+  let listKey = 0;
+
+  const flushList = () => {
+    if (inOrderedList && listItems.length > 0) {
+      elements.push(
+        <ol key={`ol-${listKey}`} className="list-decimal list-inside space-y-1 my-2 text-slate-200 text-sm leading-relaxed">
+          {listItems.map((item, idx) => (
+            <li key={idx}>{renderInline(item)}</li>
+          ))}
+        </ol>
+      );
+    } else if (inUnorderedList && listItems.length > 0) {
+      elements.push(
+        <ul key={`ul-${listKey}`} className="list-disc list-inside space-y-1 my-2 text-slate-200 text-sm leading-relaxed">
+          {listItems.map((item, idx) => (
+            <li key={idx}>{renderInline(item)}</li>
+          ))}
+        </ul>
+      );
+    }
+    listItems = [];
+    inOrderedList = false;
+    inUnorderedList = false;
+    listKey++;
+  };
+
+  const flushTable = () => {
+    if (inTable && tableRows.length >= 2) {
+      const [header, ...rows] = tableRows;
+      elements.push(
+        <div key={`tbl-${listKey}`} className="overflow-x-auto my-3">
+          <table className="w-full text-sm text-slate-200 border-collapse">
+            <thead>
+              <tr className="bg-slate-700/50">
+                {header.map((h, idx) => (
+                  <th key={idx} className="border border-slate-600 px-3 py-2 text-left font-medium">{h.trim()}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, ri) => (
+                <tr key={ri} className={ri % 2 === 0 ? 'bg-slate-800/30' : 'bg-slate-800/10'}>
+                  {row.map((cell, ci) => (
+                    <td key={ci} className="border border-slate-600 px-3 py-2">{cell.trim()}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
+    tableRows = [];
+    inTable = false;
+    listKey++;
+  };
+
+  const renderInline = (text: string): React.ReactNode => {
+    // Handle **bold** syntax
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+    return parts.map((part, idx) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={idx} className="text-white">{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+  };
+
+  while (i < lines.length) {
+    const line = lines[i];
+
+    // Table detection
+    if (line.startsWith('|') && line.endsWith('|')) {
+      flushList();
+      if (!inTable) inTable = true;
+      const cells = line.split('|').filter(c => c.trim() !== '');
+      // Skip separator rows (e.g. |---|---|---|)
+      if (!cells.every(c => /^[-:]+$/.test(c.trim()))) {
+        tableRows.push(cells);
+      }
+      i++;
+      continue;
+    } else {
+      flushTable();
+    }
+
+    // Ordered list detection
+    const orderedMatch = line.match(/^(\d+)[\.\、]\s+(.+)/);
+    if (orderedMatch) {
+      flushTable();
+      if (!inOrderedList) { flushList(); inOrderedList = true; }
+      listItems.push(orderedMatch[2]);
+      i++;
+      continue;
+    } else {
+      if (inOrderedList) flushList();
+    }
+
+    // Unordered list detection
+    const unorderedMatch = line.match(/^[-*]\s+(.+)/);
+    if (unorderedMatch) {
+      flushTable();
+      if (!inUnorderedList) { flushList(); inUnorderedList = true; }
+      listItems.push(unorderedMatch[1]);
+      i++;
+      continue;
+    } else {
+      if (inUnorderedList) flushList();
+    }
+
+    // Empty line = paragraph break
+    if (line.trim() === '') {
+      i++;
+      continue;
+    }
+
+    // Regular paragraph
+    elements.push(
+      <p key={`p-${i}`} className="text-slate-200 text-sm leading-relaxed mb-2">
+        {renderInline(line)}
+      </p>
+    );
+    i++;
+  }
+
+  flushList();
+  flushTable();
+
+  return <>{elements}</>;
+}
+
 export default async function KnowledgePointPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const kp = getKnowledgePoint(slug);
@@ -181,6 +322,25 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
         </h2>
         <p className="text-slate-200 leading-relaxed">{kp.practiceAdvice}</p>
       </section>
+
+      {/* 详细教学内容（1500+字深度长文） */}
+      {kp.detailedSections && kp.detailedSections.length > 0 && (
+        <section className="mb-10">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <span>📖</span>深度学习：{kp.name}完全指南
+          </h2>
+          <div className="space-y-8">
+            {kp.detailedSections.map((section, idx) => (
+              <div key={idx} className="p-5 bg-slate-800/30 border border-white/10 rounded-xl">
+                <h3 className="text-lg font-bold text-white mb-3">{section.title}</h3>
+                <div className="text-slate-300 leading-relaxed">
+                  {renderMarkdownContent(section.content)}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* 配套工具 */}
       <section className="mb-10">

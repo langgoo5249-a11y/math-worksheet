@@ -38,6 +38,7 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
       <div className="sr-only">
         <h2>拼音学习工具 - 声母韵母四线三格练习免费打印</h2>
         <p>免费拼音学习工具，声母韵母练习，四线三格标准格式PDF打印。练学宝提供专业的拼音书写练习工具，涵盖声母、韵母、整体认读音节全部内容，采用标准四线三格格式，帮助小学生规范拼音书写。</p>
+        <p><strong>一句话摘要：</strong>练学宝拼音学习工具是一款免费在线拼音练习工具，完整收录23个声母、24个韵母和16个整体认读音节，采用四线三格标准格式支持PDF打印，适合一年级学生拼音启蒙。</p>
         <h2>核心功能</h2>
         <ul>
           <li>声母练习：完整收录23个声母（b p m f d t n l g k h j q x zh ch sh r z c s y w），提供标准四线三格书写练习</li>

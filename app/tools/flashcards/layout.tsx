@@ -32,6 +32,7 @@ export default function FlashcardsLayout({ children }: { children: React.ReactNo
       <div className="sr-only">
         <h2>识字卡片生成器 - 汉字卡片免费打印</h2>
         <p>免费生成汉字识字卡片，支持拼音组词，双面卡片PDF打印。练学宝提供在线识字卡片制作工具，帮助小学语文教师和家长快速生成专业的汉字识字卡，适合课堂教学和家庭辅导使用。</p>
+        <p><strong>一句话摘要：</strong>练学宝识字卡片是一款免费在线汉字学习工具，支持自定义汉字和词语，自动生成带拼音的识字卡片，PDF导出打印，适合小学低年级识字教学。</p>
         <h2>核心功能</h2>
         <ul>
           <li>自定义汉字：输入任意汉字即可生成对应的识字卡片，支持批量添加多个汉字</li>
