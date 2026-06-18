@@ -342,6 +342,18 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
         </section>
       )}
 
+      {/* 扩展阅读（兼容旧版 extendedContent） */}
+      {kp.extendedContent && (
+        <section className="mb-10">
+          <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+            <span>🔍</span>扩展阅读
+          </h2>
+          <div className="p-5 bg-slate-800/30 border border-white/10 rounded-xl text-slate-300 leading-relaxed">
+            {renderMarkdownContent(kp.extendedContent)}
+          </div>
+        </section>
+      )}
+
       {/* 配套工具 */}
       <section className="mb-10">
         <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">

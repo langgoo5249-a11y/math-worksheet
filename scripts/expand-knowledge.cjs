@@ -13,11 +13,14 @@ const detailedContentMap = JSON.parse(fs.readFileSync(sectionsPath, 'utf8'));
 const configPath = path.join(__dirname, '..', 'lib', 'knowledgeConfig.ts');
 let config = fs.readFileSync(configPath, 'utf8');
 
-// Add detailedSections to interface
-config = config.replace(
-  '  relatedTools: { name: string; href: string; icon: string; desc: string }[];\n}',
-  '  relatedTools: { name: string; href: string; icon: string; desc: string }[];\n  detailedSections: KnowledgeSection[];\n}\n\ninterface KnowledgeSection {\n  title: string;\n  content: string;\n}'
-);
+// Add detailedSections to interface (handles both old and extendedContent variants)
+if (!config.includes('detailedSections:')) {
+  config = config.replace(
+    /(  relatedTools: \{ name: string; href: string; icon: string; desc: string \}\[\];[\s\S]*?)(\n}\n*export const KNOWLEDGE_POINTS)/,
+    '$1\n  detailedSections: KnowledgeSection[];\n}\n\ninterface KnowledgeSection {\n  title: string;\n  content: string;\n}\n\nexport const KNOWLEDGE_POINTS'
+  );
+  console.log('Added detailedSections to KnowledgePoint interface');
+}
 
 // Insert detailedSections for each knowledge point
 for (const [slug, sections] of Object.entries(detailedContentMap)) {
@@ -25,6 +28,13 @@ for (const [slug, sections] of Object.entries(detailedContentMap)) {
   const match = config.match(slugPattern);
   if (!match) {
     console.log(`WARNING: Could not find slug: ${slug}`);
+    continue;
+  }
+
+  // Skip if already injected for this slug
+  const alreadyInjected = config.slice(match.index, match.index + 2000).includes('detailedSections:');
+  if (alreadyInjected) {
+    console.log(`SKIP: detailedSections already exists for: ${slug}`);
     continue;
   }
 
