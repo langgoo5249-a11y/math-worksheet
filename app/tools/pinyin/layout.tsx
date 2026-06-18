@@ -36,10 +36,10 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
   return (
     <>
       <div className="sr-only">
-        <h2>拼音学习工具 - 声母韵母四线三格练习免费打印</h2>
+        <p>拼音学习工具 - 声母韵母四线三格练习免费打印</p>
         <p>免费拼音学习工具，声母韵母练习，四线三格标准格式PDF打印。练学宝提供专业的拼音书写练习工具，涵盖声母、韵母、整体认读音节全部内容，采用标准四线三格格式，帮助小学生规范拼音书写。</p>
         <p><strong>一句话摘要：</strong>练学宝拼音学习工具是一款免费在线拼音练习工具，完整收录23个声母、24个韵母和16个整体认读音节，采用四线三格标准格式支持PDF打印，适合一年级学生拼音启蒙。</p>
-        <h2>核心功能</h2>
+        <p>核心功能</p>
         <ul>
           <li>声母练习：完整收录23个声母（b p m f d t n l g k h j q x zh ch sh r z c s y w），提供标准四线三格书写练习</li>
           <li>韵母练习：完整收录24个韵母（单韵母、复韵母、鼻韵母），帮助学生掌握韵母的正确书写方式</li>
@@ -47,10 +47,10 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
           <li>四线三格标准格式：采用标准四线三格排版，与教材格式一致，培养学生规范的拼音书写习惯</li>
           <li>PDF导出：一键生成PDF文件，方便打印使用，支持A4纸张标准格式，可反复练习</li>
         </ul>
-        <h2>适用对象</h2>
+        <p>适用对象</p>
         <p>拼音学习工具适合小学一年级语文教师、幼儿园大班教师、学生家长以及从事拼音教学的培训机构使用。无论是课堂教学、课后辅导还是家庭早教，都可以通过本工具生成专业的拼音书写练习纸，帮助孩子打好拼音基础。</p>
         <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具。</p>
-        <h2>相关学习文章</h2>
+        <p>相关学习文章</p>
         <ul>
           <li><a href="https://www.skillxm.cn/blog/pinyin-xuexi-luxiantu">一年级拼音学习完整攻略</a></li>
           <li><a href="https://www.skillxm.cn/blog/yinianji-pinyin-shizi-kousuan-gonglue">一年级家长必看：拼音+识字+口算全攻略</a></li>

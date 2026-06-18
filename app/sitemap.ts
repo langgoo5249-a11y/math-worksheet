@@ -78,7 +78,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/contact/', priority: 0.4, freq: 'monthly' },
     { path: '/terms/', priority: 0.3, freq: 'yearly' },
     { path: '/privacy/', priority: 0.3, freq: 'yearly' },
-    { path: '/ads.txt/', priority: 0.1, freq: 'yearly' },
   ];
   staticPages.forEach(({ path, priority, freq }) => {
     sitemapEntries.push(makeEntry(path, {
@@ -104,9 +103,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
   });
 
-  // ========== 博客文章（2026-06-16: 过滤含中文 slug，避免静态导出软404）==========
+  // ========== 博客文章（过滤无效slug、重复标题）==========
+  const seenTitles = new Set<string>();
   articles
     .filter(a => isValidUrlSlug(a.id))
+    .filter(a => {
+      if (seenTitles.has(a.title)) return false;
+      seenTitles.add(a.title);
+      return true;
+    })
     .forEach(article => {
       sitemapEntries.push(makeEntry(`/blog/${article.id}/`, {
         lastModified: article.date,

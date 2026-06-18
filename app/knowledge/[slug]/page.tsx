@@ -332,18 +332,7 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
         </div>
       </section>
 
-      {/* 深度内容（扩展阅读） */}
-      {kp.extendedContent && (
-        <section className="mb-10 p-6 bg-slate-800/30 border border-white/10 rounded-2xl">
-          <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <span>📖</span>深度学习
-          </h2>
-          <article
-            className="prose-knowledge"
-            dangerouslySetInnerHTML={{ __html: parseMarkdown(kp.extendedContent) }}
-          />
-        </section>
-      )}
+      {/* 详细教学内容（1500+字深度长文） */}
 
       {/* 学习目标 */}
       <section className="mb-10 p-6 bg-slate-800/50 border border-white/10 rounded-2xl">
@@ -414,18 +403,6 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
                 </div>
               </div>
             ))}
-          </div>
-        </section>
-      )}
-
-      {/* 扩展阅读（兼容旧版 extendedContent） */}
-      {kp.extendedContent && (
-        <section className="mb-10">
-          <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
-            <span>🔍</span>扩展阅读
-          </h2>
-          <div className="p-5 bg-slate-800/30 border border-white/10 rounded-xl text-slate-300 leading-relaxed">
-            {renderMarkdownContent(kp.extendedContent)}
           </div>
         </section>
       )}

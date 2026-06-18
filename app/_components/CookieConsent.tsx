@@ -14,14 +14,22 @@ import { useState, useEffect } from 'react';
  * - GA4 和 AdSense 接收 consent update 信号
  */
 export default function CookieConsent() {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(() => {
+    // SSR-safe: read localStorage synchronously during initial state
+    // This prevents the banner from flashing on every page navigation
+    if (typeof window === 'undefined') return false;
+    try {
+      const consent = localStorage.getItem('cookie-consent');
+      return !consent; // only show if no consent recorded
+    } catch {
+      return false;
+    }
+  });
 
   useEffect(() => {
+    if (!show) return; // already hidden by initial state
     const consent = localStorage.getItem('cookie-consent');
-    if (!consent) {
-      setShow(true);
-    } else if (consent === 'accepted') {
-      // 恢复已接受的 consent 状态
+    if (consent === 'accepted') {
       updateConsent('granted');
       window.dispatchEvent(new Event('cookie-consent-accepted'));
     }

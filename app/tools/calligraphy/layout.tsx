@@ -37,10 +37,10 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
     <>
       {/* 服务端渲染的 SEO 内容 -- 搜索引擎可直接抓取 */}
       <div className="sr-only">
-        <h2>字帖生成器 - 田字格米字格汉字字帖免费打印</h2>
+        <p>字帖生成器 - 田字格米字格汉字字帖免费打印</p>
         <p>免费在线生成田字格米字格汉字字帖，支持楷体宋体黑体，自定义内容输入，PDF导出A4打印。适合小学生练字、书法初学者描红练习，输入任意汉字即可生成标准字帖模板，支持笔画顺序展示，一键打印高清字帖。</p>
         <p><strong>一句话摘要：</strong>练学宝字帖生成器是一款免费在线汉字书写练习工具，支持自定义内容和多种格子样式，PDF导出打印，适合小学生练字和书法入门。</p>
-        <h2>核心功能</h2>
+        <p>核心功能</p>
         <ul>
           <li>四种格子样式：田字格、米字格、回宫格、空白格，满足不同练字阶段需求</li>
           <li>三种字体选择：楷体、宋体、黑体，适合不同书写风格练习</li>
@@ -49,10 +49,10 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
           <li>描红与临摹模式：支持描红练习和空白临摹两种模式切换</li>
           <li>完全免费：无需注册登录，打开即用，不限制使用次数</li>
         </ul>
-        <h2>适用对象</h2>
+        <p>适用对象</p>
         <p>小学1-6年级学生、书法初学者、汉字书写需要提升的中小学生、语文教师布置练字作业。适合日常练字、书法兴趣培养、汉字书写规范训练等场景。</p>
         <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、英语字帖、数独游戏、口算速练等。</p>
-        <h2>相关学习文章</h2>
+        <p>相关学习文章</p>
         <ul>
           <li><a href="https://www.skillxm.cn/blog/haizi-lianzi-shijianbiao">孩子写字歪歪扭扭？练字时间表和方法</a></li>
           <li><a href="https://www.skillxm.cn/blog/ertong-lianzi-nianling">小学生练字最佳年龄和方法</a></li>

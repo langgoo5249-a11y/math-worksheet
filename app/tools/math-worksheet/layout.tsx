@@ -37,10 +37,10 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
     <>
       {/* 服务端渲染的 SEO 内容 -- 搜索引擎可直接抓取 */}
       <div className="sr-only">
-        <h2>小学数学练习卷生成器 - 免费在线出题打印</h2>
+        <p>小学数学练习卷生成器 - 免费在线出题打印</p>
         <p>免费在线生成小学1-6年级数学练习卷，支持加减乘除竖式计算、分数方程等11种题型，随机出题PDF打印。教师和家长可一键生成个性化数学练习题，覆盖一年级到六年级全学段，支持简单、中等、困难三档难度调节，答案页独立打印，方便批改。</p>
         <p><strong>一句话摘要：</strong>练学宝数学练习卷生成器是一款免费在线出题工具，支持11种题型和1-6年级全学段，可一键生成个性化数学练习卷并导出PDF打印，适合教师和家长日常使用。</p>
-        <h2>核心功能</h2>
+        <p>核心功能</p>
         <ul>
           <li>11种题型：加法、减法、乘法、除法、加减混合、乘除混合、四则混合、竖式计算、填空题、比较大小、应用题</li>
           <li>1-6年级全覆盖：自动匹配各年级知识点范围，一年级20以内加减法到六年级分数方程</li>
@@ -49,14 +49,14 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
           <li>随机出题：每次生成题目不重复，避免学生死记硬背</li>
           <li>完全免费：无需注册登录，打开即用，不限制使用次数</li>
         </ul>
-        <h2>适用对象</h2>
+        <p>适用对象</p>
         <p>小学1-6年级学生家长、小学数学教师、课后辅导机构老师。适合日常数学练习、单元测试出题、期末复习巩固、假期作业布置等场景使用。</p>
         <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具，包括字帖生成器、英语字帖、数独游戏、口算速练等。</p>
-        <h2>相关学习文章</h2>
+        <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/yinianji-shuxue-qimeng">一年级数学启蒙：从数数到20以内加减法的完整路径</a></li>
-          <li><a href="https://www.skillxm.cn/blog/kousuan-sudu-tisheng">口算速度提升方法：从每分钟5题到20题</a></li>
-          <li><a href="https://www.skillxm.cn/blog/shuxue-nixi-anli">从班级倒数到前五：数学逆袭之路</a></li>
+          <li><a href="https://www.skillxm.cn/blog/yinianji-shuxue-ruxue">一年级数学入学准备：从数数到20以内加减法的完整路径</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kousuan-sudu-tisheng-shizhan-20ti">口算速度提升实战：从每分钟5题到20题</a></li>
+          <li><a href="https://www.skillxm.cn/blog/xueba-xuexi-xiguan">学霸学习习惯养成方法</a></li>
           <li><a href="https://www.skillxm.cn/blog/shushi-jisuan-jiaoxue">小学数学竖式计算全攻略</a></li>
         </ul>
       </div>

@@ -3,7 +3,8 @@
 import { useState, useEffect, useCallback } from 'react';
 
 const STORAGE_KEY = 'miniapp_modal_dismissed';
-const SESSION_INTERVAL = 24 * 60 * 60 * 1000; // 24小时后再次弹出
+const SESSION_INTERVAL = 365 * 24 * 60 * 60 * 1000; // 365天后再次弹出（避免频繁打扰回访用户）
+const SHOW_DELAY = 8000; // 8秒延迟，让用户先体验核心功能
 
 export default function MiniappModal() {
   const [visible, setVisible] = useState(false);
@@ -18,11 +19,11 @@ export default function MiniappModal() {
         }
       }
       // 延迟1.5秒弹出，避免影响首屏加载
-      const timer = setTimeout(() => setVisible(true), 1500);
+      const timer = setTimeout(() => setVisible(true), SHOW_DELAY);
       return () => clearTimeout(timer);
     } catch {
       // localStorage 不可用时直接弹出
-      const timer = setTimeout(() => setVisible(true), 1500);
+      const timer = setTimeout(() => setVisible(true), SHOW_DELAY);
       return () => clearTimeout(timer);
     }
   }, []);

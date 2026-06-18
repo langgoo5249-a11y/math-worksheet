@@ -37,10 +37,10 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
     <>
       {/* 服务端渲染的 SEO 内容 -- 搜索引擎可直接抓取 */}
       <div className="sr-only">
-        <h2>口算速练 - 在线计时口算练习</h2>
+        <p>口算速练 - 在线计时口算练习</p>
         <p>免费在线口算速练，4个难度级别，计时挑战即时反馈，一二年级到五六年级全覆盖。通过限时口算训练快速提升计算能力，支持加减乘除全运算类型，答题即时判定对错，训练结束自动统计正确率和用时，适合日常口算打卡练习。</p>
         <p><strong>一句话摘要：</strong>练学宝口算速练是一款免费在线口算计时练习工具，支持4个难度级别和加减乘除全运算类型，AI智能出题自动分析薄弱点，适合小学1-6年级学生日常口算打卡训练。</p>
-        <h2>核心功能</h2>
+        <p>核心功能</p>
         <ul>
           <li>4个难度级别：入门级（10以内加减）、基础级（20以内加减）、提高级（100以内加减乘除）、挑战级（大数运算混合），匹配不同年级水平</li>
           <li>计时挑战模式：倒计时答题，营造紧迫感，提升计算速度和专注力</li>
@@ -49,14 +49,14 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
           <li>成绩统计报告：训练结束后自动统计正确率、答题数量、用时等数据</li>
           <li>完全免费：无需注册登录，打开即练，不限制练习次数</li>
         </ul>
-        <h2>适用对象</h2>
+        <p>适用对象</p>
         <p>小学1-6年级学生、需要提升计算速度的中小学生、家长辅导孩子口算练习、教师课堂口算训练。适合每日口算打卡、课前热身练习、期末口算复习、假期计算能力巩固等场景。</p>
         <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏等。</p>
-        <h2>相关学习文章</h2>
+        <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/kousuan-sudu-tisheng">口算速度提升方法：从每分钟5题到20题</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kousuan-sudu-tisheng-shizhan-20ti">口算速度提升实战：从每分钟5题到20题</a></li>
           <li><a href="https://www.skillxm.cn/blog/kousuan-xunlian-fangfa">如何培养孩子的口算能力</a></li>
-          <li><a href="https://www.skillxm.cn/blog/kousuan-app-ceping-dibi">市面主流口算APP测评对比</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kousuan-xunlian-fangfa">口算训练方法与技巧</a></li>
           <li><a href="https://www.skillxm.cn/blog/shuxue-siwei-shudu-kousuan-shuangguan">数学思维训练：数独+口算双管齐下</a></li>
         </ul>
       </div>

@@ -37,10 +37,10 @@ export default function EnglishCalligraphyLayout({ children }: { children: React
     <>
       {/* 服务端渲染的 SEO 内容 -- 搜索引擎可直接抓取 */}
       <div className="sr-only">
-        <h2>英语字帖生成器 - 四线三格英文字帖免费打印</h2>
+        <p>英语字帖生成器 - 四线三格英文字帖免费打印</p>
         <p>免费生成四线三格英文字帖，多种字体，PDF导出A4打印。适合小学生英语书写练习，支持输入单词、句子、课文内容生成标准四线三格英文字帖，帮助规范英文字母书写格式，提升英语书写水平。</p>
         <p><strong>一句话摘要：</strong>练学宝英语字帖是一款免费在线英语书写练习工具，支持26个字母、单词和句子的四线三格标准书写，PDF导出打印，适合小学生英语书写启蒙。</p>
-        <h2>核心功能</h2>
+        <p>核心功能</p>
         <ul>
           <li>四线三格标准格式：符合英语书写规范的四线三格模板，帮助掌握字母占格规则</li>
           <li>多种英文字体：提供手写体、印刷体等多种英文字体选择</li>
@@ -49,10 +49,10 @@ export default function EnglishCalligraphyLayout({ children }: { children: React
           <li>大小写字母练习：支持单独练习大写字母、小写字母及完整单词书写</li>
           <li>完全免费：无需注册登录，打开即用，不限制使用次数</li>
         </ul>
-        <h2>适用对象</h2>
+        <p>适用对象</p>
         <p>小学3-6年级学生、英语初学者、英文字母书写需要规范的中学生、英语教师布置书写练习作业。适合英语课堂书写训练、课后练习、英语书写竞赛准备等场景。</p>
         <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、汉字字帖、数独游戏、口算速练等。</p>
-        <h2>相关学习文章</h2>
+        <p>相关学习文章</p>
         <ul>
           <li><a href="https://www.skillxm.cn/blog/xiaoxue-yingyu-shuxie">小学英语四线三格书写规范</a></li>
           <li><a href="https://www.skillxm.cn/blog/ziran-pindu-rumen">英语自然拼读入门</a></li>
