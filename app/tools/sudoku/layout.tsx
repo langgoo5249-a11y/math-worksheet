@@ -65,6 +65,38 @@ export default function SudokuLayout({ children }: { children: React.ReactNode }
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "如何玩数独游戏",
+            "description": "数独游戏使用教程，3步开始在线数独挑战，锻炼逻辑思维和专注力",
+            "totalTime": "PT1M",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "选择难度等级",
+                "text": "选择入门（4x4）、进阶（6x6）或挑战（9x9）难度等级"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "点击数字填入格子",
+                "text": "使用内置数字键盘点击空格填入数字，确保每行每列每宫数字不重复"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "验证答案并记录用时",
+                "text": "系统自动验证答案正确性，并记录解题用时"
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
               {

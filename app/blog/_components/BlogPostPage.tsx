@@ -165,6 +165,25 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           </div>
         </header>
 
+        {/* GEO优化：前置摘要 — 帮助AI搜索引擎提取关键信息 */}
+        <div className="mb-8 p-5 bg-blue-500/10 border border-blue-500/20 rounded-xl">
+          <p className="text-blue-300 text-sm font-medium mb-2">📋 核心要点</p>
+          <p className="text-gray-200 text-sm leading-relaxed">
+            {article.description}
+          </p>
+          <div className="flex flex-wrap gap-2 mt-3">
+            <span className="text-xs text-gray-500 bg-slate-800/50 px-2 py-1 rounded">
+              {article.category}
+            </span>
+            <span className="text-xs text-gray-500 bg-slate-800/50 px-2 py-1 rounded">
+              {article.readTime}
+            </span>
+            <span className="text-xs text-gray-500 bg-slate-800/50 px-2 py-1 rounded">
+              作者：{article.author?.name || defaultAuthor.name}
+            </span>
+          </div>
+        </div>
+
         {/* Article Content */}
         <div
           className="prose prose-invert max-w-none"

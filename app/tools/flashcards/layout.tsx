@@ -55,6 +55,44 @@ export default function FlashcardsLayout({ children }: { children: React.ReactNo
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "如何生成识字卡片",
+            "description": "识字卡片生成器使用教程，4步快速生成汉字识字卡片，支持PDF打印",
+            "totalTime": "PT3M",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "输入汉字",
+                "text": "输入需要学习的汉字，支持批量添加多个汉字"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "查看拼音和组词",
+                "text": "系统自动为每个汉字标注拼音并提供常用组词"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "预览卡片效果",
+                "text": "预览正面汉字+拼音、背面组词+笔画的双面卡片效果"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "导出PDF打印",
+                "text": "一键生成双面卡片PDF，打印裁剪后即可使用"
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
               {

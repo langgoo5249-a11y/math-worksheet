@@ -56,6 +56,44 @@ export default function WritingTemplateLayout({ children }: { children: React.Re
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "如何使用作文模板生成器",
+            "description": "作文模板生成器使用教程，4步快速生成小学作文格纸模板，支持PDF打印",
+            "totalTime": "PT3M",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "选择模板类型",
+                "text": "选择看图写话、日记、作文格子纸等模板类型"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "设置格式和字数",
+                "text": "选择田字格、方格、横线格等格式，设置300-500字等篇幅"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "预览模板效果",
+                "text": "在页面中预览作文格纸模板效果"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "导出PDF打印",
+                "text": "一键生成A4格式PDF文件，直接打印使用"
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
               {

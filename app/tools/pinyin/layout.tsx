@@ -62,6 +62,44 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "如何使用拼音学习工具",
+            "description": "拼音学习工具使用教程，4步快速生成拼音四线三格练习纸，支持PDF打印",
+            "totalTime": "PT3M",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "选择拼音类型",
+                "text": "选择声母、韵母或整体认读音节类型"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "选择具体拼音内容",
+                "text": "从23个声母、24个韵母或16个整体认读音节中选择需要练习的内容"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "预览四线三格练习纸",
+                "text": "预览标准四线三格格式的拼音书写练习纸效果"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "导出PDF打印",
+                "text": "一键生成A4格式PDF文件，直接打印使用"
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
               {

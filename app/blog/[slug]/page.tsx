@@ -49,6 +49,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: article.description,
       images: ['https://www.skillxm.cn/og-image.jpg'],
     },
+    other: {
+      'article:tag': article.keywords?.join(',') || [article.category, '小学教育', '学习方法', '家长辅导'].join(','),
+    },
   };
 }
 
@@ -110,7 +113,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         "@type": "ListItem",
         "position": 3,
         "name": article.title,
-        "item": "https://www.skillxm.cn/blog/${article.id}/"
+        "item": `https://www.skillxm.cn/blog/${article.id}/`
       }
     ]
   };

@@ -64,6 +64,44 @@ export default function EnglishCalligraphyLayout({ children }: { children: React
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "如何使用英语字帖生成器",
+            "description": "英语字帖生成器使用教程，4步快速生成四线三格英语书写练习纸，支持PDF打印",
+            "totalTime": "PT3M",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "position": 1,
+                "name": "选择字体样式",
+                "text": "从手写体、印刷体等多种英文字体中选择适合的书写风格"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 2,
+                "name": "输入练习内容",
+                "text": "输入英文单词、短语或句子，支持自定义任意内容"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 3,
+                "name": "预览并调整设置",
+                "text": "调整行高、字体大小等参数，预览四线三格效果"
+              },
+              {
+                "@type": "HowToStep",
+                "position": 4,
+                "name": "导出PDF打印",
+                "text": "一键生成A4格式PDF文件，直接打印使用"
+              }
+            ]
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
               {

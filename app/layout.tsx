@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_SC } from "next/font/google";
 import "./globals.css";
-import { TOOLS, generateSchemaApps, generateSchemaBreadcrumbs, ACTIVE_TOOL_COUNT } from "@/lib/toolRegistry";
+import { TOOLS, ACTIVE_TOOL_COUNT } from "@/lib/toolRegistry";
 import CookieConsent from './_components/CookieConsent';
 import GoogleAnalytics from './_components/GoogleAnalytics';
 import FloatingLanguageSwitcher from './_components/FloatingLanguageSwitcher';
@@ -98,7 +98,7 @@ export default async function RootLayout({
         url: "https://www.skillxm.cn/",
         description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
         inLanguage: "zh-CN",
-        dateModified: "2026-06-05",
+        dateModified: "2026-06-19",
         potentialAction: {
           "@type": "SearchAction",
           target: "https://www.skillxm.cn/search?q={search_term_string}",
@@ -113,7 +113,7 @@ export default async function RootLayout({
         "@id": "https://www.skillxm.cn/#organization",
         name: "练学宝",
         url: "https://www.skillxm.cn",
-        dateModified: "2026-06-05",
+        dateModified: "2026-06-19",
         logo: {
           "@type": "ImageObject",
           url: "https://www.skillxm.cn/favicon.svg",
@@ -158,69 +158,6 @@ export default async function RootLayout({
         },
         url: "https://www.skillxm.cn/about",
       },
-      ...generateSchemaApps(),
-      ...generateSchemaBreadcrumbs(),
-      {
-        "@type": "WebPage",
-        "@id": "https://www.skillxm.cn/#webpage",
-        "url": "https://www.skillxm.cn",
-        "name": "练学宝 - 免费小学教学工具",
-        "description": "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。",
-        "isPartOf": { "@id": "https://www.skillxm.cn/#website" },
-        "about": { "@id": "https://www.skillxm.cn/#organization" }
-      },
-      {
-        "@type": "ItemList",
-        "name": "练学宝 - 全部工具",
-        "description": "练学宝提供的所有免费小学教学工具",
-        "dateModified": "2026-05-09",
-        "numberOfItems": ACTIVE_TOOL_COUNT,
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "古诗词默写", "url": "https://www.skillxm.cn/tools/poem-memo" },
-          { "@type": "ListItem", "position": 2, "name": "单元测试卷", "url": "https://www.skillxm.cn/tools/unit-test" },
-          { "@type": "ListItem", "position": 3, "name": "数学练习卷", "url": "https://www.skillxm.cn/tools/math-worksheet" },
-          { "@type": "ListItem", "position": 4, "name": "字帖生成器", "url": "https://www.skillxm.cn/tools/calligraphy" },
-          { "@type": "ListItem", "position": 5, "name": "英语字帖", "url": "https://www.skillxm.cn/tools/english-calligraphy" },
-          { "@type": "ListItem", "position": 6, "name": "数独游戏", "url": "https://www.skillxm.cn/tools/sudoku" },
-          { "@type": "ListItem", "position": 7, "name": "拼音注音", "url": "https://www.skillxm.cn/tools/pinyin" },
-          { "@type": "ListItem", "position": 8, "name": "口算速练", "url": "https://www.skillxm.cn/tools/mental-math" },
-          { "@type": "ListItem", "position": 9, "name": "识字卡片", "url": "https://www.skillxm.cn/tools/flashcards" },
-          { "@type": "ListItem", "position": 10, "name": "作文模板", "url": "https://www.skillxm.cn/tools/writing-template" }
-        ]
-      },
-      {
-        "@type": "HowTo",
-        "name": "如何使用数学练习卷生成器",
-        "description": "使用练学宝的数学练习卷生成器，只需5步即可生成可打印的数学练习卷",
-        "totalTime": "PT3M",
-        "step": [
-          {
-            "@type": "HowToStep",
-            "name": "选择题型和年级",
-            "text": "在工具页面选择需要的题型（加法、减法、乘法、除法等）和对应的年级（1-6年级）"
-          },
-          {
-            "@type": "HowToStep",
-            "name": "设置题目数量和数字范围",
-            "text": "设定每次生成的题目数量（10/20/50/100道）和数字范围（10以内到10000以内）"
-          },
-          {
-            "@type": "HowToStep",
-            "name": "选择模板样式",
-            "text": "从田字格、方格纸、横线格、空白纸4种模板中选择适合的打印样式"
-          },
-          {
-            "@type": "HowToStep",
-            "name": "点击生成",
-            "text": "点击「立即出题」按钮，系统会随机生成不重复的数学练习卷"
-          },
-          {
-            "@type": "HowToStep",
-            "name": "预览并导出PDF",
-            "text": "预览生成的练习卷，确认无误后点击「下载PDF」或「直接打印」按钮"
-          }
-        ]
-      },
       {
         "@type": "SpeakableSpecification",
         "xpath": [
@@ -232,12 +169,79 @@ export default async function RootLayout({
           ".sr-only"
         ]
       },
+      {
+        "@type": "ItemList",
+        "name": "练学宝 - 全部工具",
+        "description": "练学宝提供的所有免费小学教学工具",
+        "dateModified": "2026-06-19",
+        "numberOfItems": ACTIVE_TOOL_COUNT,
+        "itemListElement": TOOLS.filter(t => t.active).map((tool, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": tool.name,
+          "url": `https://www.skillxm.cn${tool.path}`
+        }))
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "练学宝是免费的吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "是的，练学宝所有工具完全免费，无需注册即可使用。数学练习卷、字帖生成器、口算速练等工具均可免费生成并导出PDF打印。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "练学宝适合多大的孩子使用？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "练学宝主要面向小学1-6年级学生，涵盖数学计算、语文练字、拼音学习、识字卡片、古诗词默写等核心学科内容。同时提供幼小衔接和思维训练内容，适合5-12岁儿童。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "生成的练习卷可以打印吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "可以。所有工具生成的练习卷、字帖、口算题等均支持PDF导出和一键打印，方便家长和老师使用。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "需要下载APP吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "不需要。练学宝是纯网页工具，在手机和电脑浏览器中直接打开即可使用，无需下载安装任何APP。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "练学宝支持哪些教材版本？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "练学宝支持人教版、北师大版、苏教版、部编版等主流教材版本，覆盖1-6年级上下册共305个单元，各版本知识点同步练习。"
+            }
+          }
+        ]
+      },
     ],
   };
 
   return (
     <html lang="zh-CN" className={notoSansSC.className}>
       <head>
+        <meta charSet="UTF-8" />
+        {/* 关键资源预加载 - 优化 Core Web Vitals (LCP) */}
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
+        <link rel="preload" as="image" href="https://www.skillxm.cn/og-image.jpg" fetchPriority="high" />
+        {/* DNS 预解析 - 加速第三方服务 */}
+        <link rel="dns-prefetch" href="https://hm.baidu.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <meta name="baidu-site-verification" content="codeva-nVZFsgvPZu" />
 
         <meta name="google-site-verification" content="6szVJUGCDvvDDcBkDLV0n6kD_KU1EyOWnO7MSw-5ERM" />
