@@ -323,19 +323,8 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
         />
 
-        {/* AdSense 自动广告代码 */}
+        {/* AdSense 广告代码 - 仅加载基础库，由 AdUnit 组件触发具体广告 */}
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4710405779358793" crossOrigin="anonymous" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (adsbygoogle = window.adsbygoogle || []).push({
-                google_ad_client: "ca-pub-4710405779358793",
-                enable_page_level_ads: true,
-                overlays: {bottom: true}
-              });
-            `,
-          }}
-        />
 
         {/* 百度主动推送 - 延迟到页面加载后执行 */}
         <script
@@ -371,7 +360,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen antialiased">
+      <body className="min-h-screen antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages} locale="zh">
           <CookieConsent />
           {children}
