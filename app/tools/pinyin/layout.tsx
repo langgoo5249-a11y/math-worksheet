@@ -29,6 +29,12 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("拼音注音练习")}&category=${encodeURIComponent("语文工具")}&icon=📝`, width: 1200, height: 630, alt: "拼音注音练习 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "拼音注音练习 - 免费在线拼音学习工具 | 练学宝",
+      description: "免费拼音学习工具，完整收录声母韵母和整体认读音节，采用四线三格标准格式，支持PDF导出A4打印。帮助小学生规范拼音书写，打好语文学习基础。",
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("拼音注音练习")}&category=${encodeURIComponent("语文工具")}&icon=📝`, width: 1200, height: 630, alt: "拼音注音练习 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+    },
   };
 }
 

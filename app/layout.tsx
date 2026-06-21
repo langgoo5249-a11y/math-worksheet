@@ -98,7 +98,7 @@ export default async function RootLayout({
         url: "https://www.skillxm.cn/",
         description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
         inLanguage: "zh-CN",
-        dateModified: "2026-06-19",
+        dateModified: "2026-06-21",
         potentialAction: {
           "@type": "SearchAction",
           target: "https://www.skillxm.cn/search?q={search_term_string}",
@@ -113,7 +113,7 @@ export default async function RootLayout({
         "@id": "https://www.skillxm.cn/#organization",
         name: "练学宝",
         url: "https://www.skillxm.cn",
-        dateModified: "2026-06-19",
+        dateModified: "2026-06-21",
         logo: {
           "@type": "ImageObject",
           url: "https://www.skillxm.cn/favicon.svg",
@@ -151,8 +151,23 @@ export default async function RootLayout({
         "@type": "Person",
         "@id": "https://www.skillxm.cn/#person-linyuan",
         name: "林远",
-        description: "练学宝中文学习与小学数学教育内容作者，专注于儿童中文学习方法和小学数学教学研究",
+        description: "练学宝创始人，具备教育技术和全栈开发双重背景。两个孩子的父亲，持续关注小学教育技术领域，致力于为家长和老师提供免费优质的教育资源。",
         jobTitle: "教育内容作者",
+        sameAs: [
+          "https://github.com/jm6-lang",
+          "https://www.skillxm.cn/about"
+        ],
+        alumniOf: {
+          "@type": "Organization",
+          "name": "练学宝"
+        },
+        knowsAbout: [
+          "小学教育",
+          "教育技术",
+          "数学启蒙",
+          "语文写字教学",
+          "英语自然拼读"
+        ],
         affiliation: {
           "@id": "https://www.skillxm.cn/#organization"
         },
@@ -173,7 +188,7 @@ export default async function RootLayout({
         "@type": "ItemList",
         "name": "练学宝 - 全部工具",
         "description": "练学宝提供的所有免费小学教学工具",
-        "dateModified": "2026-06-19",
+        "dateModified": "2026-06-21",
         "numberOfItems": ACTIVE_TOOL_COUNT,
         "itemListElement": TOOLS.filter(t => t.active).map((tool, i) => ({
           "@type": "ListItem",

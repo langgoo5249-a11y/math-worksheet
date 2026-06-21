@@ -29,6 +29,12 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "口算速练 - 免费在线口算计时挑战 | 练学宝",
+      description: "免费在线口算速练工具，支持AI智能出题、进度追踪、学习报告推送。4个难度级别涵盖加减乘除，自动分析薄弱点生成针对性练习。",
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+    },
   };
 }
 

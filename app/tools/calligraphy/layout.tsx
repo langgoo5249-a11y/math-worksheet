@@ -29,6 +29,12 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("字帖生成器")}&category=${encodeURIComponent("语文工具")}&icon=✍️`, width: 1200, height: 630, alt: "字帖生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "字帖生成器 - 免费在线田字格米字格练字 | 练学宝",
+      description: "免费在线生成田字格米字格汉字字帖，支持楷体宋体黑体，自定义内容输入，PDF导出A4打印。适合小学生日常练字和书法初学者描红练习，输入任意汉字即可生成标准字帖模板。",
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("字帖生成器")}&category=${encodeURIComponent("语文工具")}&icon=✍️`, width: 1200, height: 630, alt: "字帖生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+    },
   };
 }
 

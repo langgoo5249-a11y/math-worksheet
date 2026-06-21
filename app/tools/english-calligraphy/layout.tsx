@@ -29,6 +29,12 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("英语字帖生成器")}&category=${encodeURIComponent("英语工具")}&icon=🔤`, width: 1200, height: 630, alt: "英语字帖生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "英语字帖生成器 - 免费四线三格英语练习 | 练学宝",
+      description: "免费生成四线三格英文字帖，支持手写体印刷体等多种字体，可自定义单词句子内容，PDF导出A4打印。适合小学生英语书写练习，帮助规范英文字母书写格式。",
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("英语字帖生成器")}&category=${encodeURIComponent("英语工具")}&icon=🔤`, width: 1200, height: 630, alt: "英语字帖生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+    },
   };
 }
 

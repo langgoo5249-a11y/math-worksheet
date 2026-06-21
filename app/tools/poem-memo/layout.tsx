@@ -29,6 +29,12 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("古诗词默写生成器")}&category=${encodeURIComponent("语文工具")}&icon=📜`, width: 1200, height: 630, alt: "古诗词默写生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "古诗词默写生成器 - 240首小学必背古诗词在线打印 | 练学宝",
+      description: "免费生成小学1-6年级必背古诗词默写练习卷，收录240首经典古诗词，支持填空默写、全诗默写、上下句默写三种模式，田字格方格横线格PDF打印，语文教师和家长必备复习工具",
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("古诗词默写生成器")}&category=${encodeURIComponent("语文工具")}&icon=📜`, width: 1200, height: 630, alt: "古诗词默写生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+    },
   };
 }
 

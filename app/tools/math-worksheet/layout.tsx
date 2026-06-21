@@ -29,6 +29,12 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数学练习卷生成器")}&category=${encodeURIComponent("数学工具")}&icon=🧮`, width: 1200, height: 630, alt: "数学练习卷生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "数学练习卷生成器 - 免费在线出题打印 | 练学宝",
+      description: "免费在线生成小学1-6年级数学练习卷，支持加减乘除、竖式计算、填空题、应用题等11种题型，随机出题PDF打印",
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数学练习卷生成器")}&category=${encodeURIComponent("数学工具")}&icon=🧮`, width: 1200, height: 630, alt: "数学练习卷生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+    },
   };
 }
 

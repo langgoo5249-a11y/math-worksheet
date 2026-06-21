@@ -29,6 +29,12 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("单元测试卷生成器")}&category=${encodeURIComponent("综合工具")}&icon=📋`, width: 1200, height: 630, alt: "单元测试卷生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 练学宝",
+      description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试期中期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印",
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("单元测试卷生成器")}&category=${encodeURIComponent("综合工具")}&icon=📋`, width: 1200, height: 630, alt: "单元测试卷生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+    },
   };
 }
 

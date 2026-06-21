@@ -239,6 +239,49 @@ export default function HomePage() {
   return (
     <SiteLayout>
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "练学宝是什么？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "练学宝是一个免费的在线教育工具平台，为小学生提供口算速练、字帖生成、数学练习卷等10种学习工具。所有工具免费使用，无需注册，访问网站即可开始使用。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "练学宝的工具需要付费吗？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "不需要。练学宝所有工具完全免费，无需注册登录。我们致力于降低家庭教育成本，让每个孩子都能获得优质的学习辅助工具。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "练学宝有哪些学习工具？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "练学宝提供口算速练、数学练习卷生成器、田字格字帖生成器、英语四线三格字帖、拼音练习、数独游戏、看图写话、古诗词默写、识字卡片、单元测试卷生成器等10个工具，覆盖小学语数英核心学科。"
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "练学宝的内容是否与学校教学大纲一致？",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "是的。练学宝所有工具和内容均参考教育部《义务教育课程标准（2022年版）》编写，确保与学校教学大纲保持一致。工具覆盖小学1-6年级各学科核心知识点。"
+                }
+              }
+            ]
+          })
+        }}
+      />
       {/* 首页核心主题 H1（搜索引擎识别）sr-only 隐藏视觉，但不影响 SEO */}
       <h1 className="sr-only">练学宝 - 免费小学在线学习工具，涵盖数学计算、语文练字、练习卷下载</h1>
       {/* ===== 轮播大图区域 ===== */}

@@ -23,6 +23,12 @@ export async function generateMetadata(): Promise<Metadata> {
     },
   },
     openGraph: { url: canonicalUrl, title: "作文模板生成器 - 练学宝", description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。", images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }] },
+    twitter: {
+      card: "summary_large_image",
+      title: "作文模板生成器 - 练学宝",
+      description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。",
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+    },
   };
 }
 

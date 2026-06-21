@@ -29,6 +29,12 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数独游戏")}&category=${encodeURIComponent("思维训练")}&icon=🧩`, width: 1200, height: 630, alt: "数独游戏 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: "数独游戏 - 免费在线数独挑战 | 练学宝",
+      description: "免费在线数独游戏，提供入门进阶挑战三档难度，内置数字键盘和笔记模式，锻炼逻辑思维和专注力。适合小学生课余训练，无需下载打开浏览器即开即玩。",
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数独游戏")}&category=${encodeURIComponent("思维训练")}&icon=🧩`, width: 1200, height: 630, alt: "数独游戏 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+    },
   };
 }
 
