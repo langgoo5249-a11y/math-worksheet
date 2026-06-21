@@ -2,23 +2,11 @@
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
   Access-Control-Allow-Origin: *
-  Content-Security-Policy:
-  X-Frame-Options:
-  X-Content-Type-Options:
-  X-XSS-Protection:
-  Permissions-Policy:
-  Referrer-Policy:
 
 /robots.txt
   Content-Type: text/plain; charset=utf-8
   Cache-Control: public, max-age=3600
   Access-Control-Allow-Origin: *
-  Content-Security-Policy:
-  X-Frame-Options:
-  X-Content-Type-Options:
-  X-XSS-Protection:
-  Permissions-Policy:
-  Referrer-Policy:
 
 /sitemap.xml
   Content-Type: application/xml; charset=utf-8
@@ -53,19 +41,53 @@
 /*.svg
   Cache-Control: public, max-age=86400
 
-/*
+# ============================================
+# 安全头：仅对 HTML 页面生效
+# 关键修复：之前使用 /* 通配符导致 CSP 等安全头被注入到 ads.txt (text/plain)，
+# 导致 Google AdSense 验证失败。现改为精确匹配 HTML 页面路径。
+# ============================================
+
+# 首页
+/
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
 
-# 404 页面应该返回 404 状态码
-# 注意：Cloudflare Pages 会自动为找不到的文件返回 404
-# 但 SPA fallback 会让 404.html 走 200 状态码
-# 这里我们用 X-Robots-Tag 告诉搜索引擎这是 404 页面
+# 博客页面
+/blog/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 工具页面
+/tools/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 其他 HTML 页面（.html 直接访问）
+/*.html
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 全局 HSTS（对所有资源安全，包括 ads.txt）
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# 404 页面
 /404.html
   X-Robots-Tag: noindex, nofollow
   Cache-Control: public, max-age=0, must-revalidate
