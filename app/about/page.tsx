@@ -25,6 +25,25 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <SiteLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "关于练学宝 - 免费小学教育工具平台",
+            "description": "练学宝是一个免费的在线教育工具平台，为小学生提供口算练习、字帖生成、数学练习卷等学习工具。创始团队拥有教育技术和软件开发背景。",
+            "url": "https://www.skillxm.cn/about",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "练学宝",
+              "foundingDate": "2024",
+              "url": "https://www.skillxm.cn",
+              "description": "免费在线教育工具平台"
+            }
+          })
+        }}
+      />
       <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
         {/* 页面标题 */}
         <div className="text-center mb-12">
@@ -44,6 +63,59 @@ export default function AboutPage() {
             <p className="text-gray-300 leading-relaxed">
               更让人头疼的是，很多工具充斥着弹窗和推广链接，严重干扰孩子的学习体验。于是，我们决定自己动手，开发一套免费、好用的在线教育工具，让每一个孩子都能平等地享受优质的教育资源。
             </p>
+          </div>
+        </section>
+
+        {/* 我们的专业背景 */}
+        <section className="mb-12">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <span className="text-2xl">🎓</span> 我们的专业背景
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              练学宝创建于2024年，创始团队拥有教育技术和软件开发双重背景。团队中既有从事互联网开发十余年的全栈工程师，也有在公立小学任教多年的资深教师负责教学内容审核。所有工具和内容均参考教育部《义务教育课程标准（2022年版）》编写，确保教学方法与学校教学大纲保持一致。
+            </p>
+            <p className="text-gray-300 leading-relaxed">
+              我们持续关注教育领域的最新研究成果，包括北京师范大学认知神经科学与学习国家重点实验室的研究、中国科学院心理研究所的学术成果，以及《心理学报》和《PNAS》等国际期刊发表的认知与学习相关研究，将认知科学和学习理论融入工具设计，让每个孩子都能获得科学、高效的学习体验。
+            </p>
+          </div>
+        </section>
+
+        {/* 权威参考来源 */}
+        <section className="mb-12">
+          <div className="bg-slate-800/50 border border-white/10 rounded-2xl p-4 sm:p-8">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-4 flex items-center gap-2">
+              <span className="text-2xl">📚</span> 权威参考来源
+            </h2>
+            <p className="text-gray-300 leading-relaxed mb-4">
+              练学宝的内容创作参考以下权威来源，确保信息的准确性和可靠性:
+            </p>
+            <ul className="space-y-2 text-gray-300">
+              <li className="flex items-start gap-2">
+                <span className="text-blue-400 mt-1">•</span>
+                <span>教育部《义务教育课程标准（2022年版）》—— 课程内容与教学目标的标准依据</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-400 mt-1">•</span>
+                <span>教育部《2024年全国教育事业发展统计公报》—— 全国教育数据权威来源</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-400 mt-1">•</span>
+                <span>北京师范大学认知神经科学与学习国家重点实验室 —— 学习与认知发展研究</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-400 mt-1">•</span>
+                <span>中国科学院心理研究所 —— 儿童心理发展与教育心理学研究</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-400 mt-1">•</span>
+                <span>《心理学报》—— 中国心理学领域权威学术期刊</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-400 mt-1">•</span>
+                <span>PNAS（美国国家科学院院刊）—— 国际顶级综合性学术期刊</span>
+              </li>
+            </ul>
           </div>
         </section>
 

@@ -190,6 +190,21 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           dangerouslySetInnerHTML={{ __html: parseMarkdown(article.content || '') }}
         />
 
+        {/* 参考来源 */}
+        {article.citations && article.citations.length > 0 && (
+          <div className="mt-8 p-6 bg-slate-800/50 rounded-xl border border-white/10">
+            <h3 className="text-lg font-bold text-white mb-3">📚 参考来源</h3>
+            <ul className="space-y-1.5">
+              {article.citations.map((citation, idx) => (
+                <li key={idx} className="text-gray-400 text-sm flex items-start gap-2">
+                  <span className="text-blue-400 mt-0.5 shrink-0">[{idx + 1}]</span>
+                  <span>{citation}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         {/* 广告位 */}
         <AdUnit />
 
