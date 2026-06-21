@@ -44,8 +44,8 @@ export type Category = (typeof categories)[number];
 
 export const articles: Article[] = [
   {
-    id: "haizi写zi歪歪扭扭-这份lianzi时间-vljj",
-    title: "孩子写字歪歪扭扭？这份练字时间表让的家长后悔没早看到",
+    id: "haizi-xiezi-waiwainiuniu-lianzi-shijianbiao",
+    title: "孩子写字歪歪扭扭？这份练字时间表让很多家长后悔没早看到",
     description: "孩子写字歪歪扭扭怎么办？本文分享一份科学练字时间表，含真实案例、阶段性成果数据和字帖生成器使用方法。",
     date: "2026-06-19",
     category: "语文学习",
