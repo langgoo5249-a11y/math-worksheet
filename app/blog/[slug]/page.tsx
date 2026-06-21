@@ -51,6 +51,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     other: {
       'article:tag': article.keywords?.join(',') || [article.category, '小学教育', '学习方法', '家长辅导'].join(','),
+      'datePublished': article.date,
+      'date': article.dateModified || article.date,
     },
   };
 }
@@ -66,7 +68,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     "headline": article.title,
     "description": article.description,
     "datePublished": article.date,
-    "dateModified": article.date,
+    "dateModified": article.dateModified || article.date,
     "image": "https://www.skillxm.cn/og-image.jpg",
     "author": {
       "@type": "Person",
