@@ -1,39 +1,28 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import ToolBreadcrumb from '@/components/ToolBreadcrumb';
+import ToolPageSchema from '@/app/_components/ToolPageSchema';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const host = headersList.get("host") ?? "www.skillxm.cn";
-  const protocol = host.includes("localhost") ? "http" : "https";
-  const pathname = headersList.get("x-invoke-path") ?? headersList.get("x-matched-path") ?? "/tools/unit-test";
-  const canonicalUrl = `${protocol}://${host}${pathname}`;
+    const canonicalUrl = 'https://www.skillxm.cn/tools/unit-test/';
   return {
     title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 练学宝",
     description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试期中期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印",
     keywords: "单元测试卷,期中试卷,期末试卷,小学数学试卷,小学语文试卷,小学英语试卷,小学科学试卷,试卷生成器,免费试卷打印,人教版试卷,三年级数学试卷,四年级语文试卷,五年级英语试卷,单元测试题,小学全科试卷,期中复习试卷,期末复习试卷",
     alternates: {
     canonical: canonicalUrl,
-    languages: {
-      "zh-CN": "https://www.skillxm.cn/tools/unit-test/",
-      "en": "https://www.skillxm.cn/en/tools/unit-test/",
-      "ja": "https://www.skillxm.cn/ja/tools/unit-test/",
-      "ko": "https://www.skillxm.cn/ko/tools/unit-test/",
-      "x-default": "https://www.skillxm.cn/tools/unit-test/",
-    },
   },
     openGraph: {
       url: canonicalUrl,
       title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 练学宝",
       description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试期中期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印",
       type: "website",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("单元测试卷生成器")}&category=${encodeURIComponent("综合工具")}&icon=📋`, width: 1200, height: 630, alt: "单元测试卷生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("单元测试卷生成器")}&category=${encodeURIComponent("综合工具")}&icon=📋`, width: 1200, height: 630, alt: "单元测试卷生成器 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 练学宝",
       description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试期中期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("单元测试卷生成器")}&category=${encodeURIComponent("综合工具")}&icon=📋`, width: 1200, height: 630, alt: "单元测试卷生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("单元测试卷生成器")}&category=${encodeURIComponent("综合工具")}&icon=📋`, width: 1200, height: 630, alt: "单元测试卷生成器 - 练学宝" }],
     },
   };
 }
@@ -44,7 +33,7 @@ export default function UnitTestLayout({ children }: { children: React.ReactNode
       <div className="sr-only">
         <p>单元测试卷生成器 - 小学数语英科全科试卷免费打印</p>
         <p>免费生成小学1-6年级单元测试卷，数学语文英语科学四科，305个单元PDF打印。练学宝提供完整的小学单元测试卷生成服务，覆盖人教版、北师大版等主流教材版本，是小学教师备课和考试出题的得力助手。</p>
-        <p><strong>一句话摘要：</strong>练学宝单元测试卷生成器是一款免费在线出题工具，覆盖小学1-6年级数学语文英语科学四科305个单元，支持自动组卷和PDF打印，适合教师单元检测和家长辅导。</p>
+        <p>练学宝单元测试卷生成器是一款免费在线出题工具，覆盖小学1-6年级数学语文英语科学四科305个单元，支持自动组卷和PDF打印，适合教师单元检测和家长辅导。</p>
         <p>核心功能</p>
         <ul>
           <li>四科覆盖：支持数学、语文、英语、科学四个学科，满足小学全科测试需求</li>
@@ -100,6 +89,7 @@ export default function UnitTestLayout({ children }: { children: React.ReactNode
           })
         }}
       />
+            <ToolPageSchema toolPath="/tools/unit-test/" />
       <ToolBreadcrumb toolName="单元测试卷" toolPath="/tools/unit-test" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

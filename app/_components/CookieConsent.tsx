@@ -43,7 +43,7 @@ export default function CookieConsent() {
         'ad_user_data': state,
         'ad_personalization': state,
         'analytics_storage': state,
-        'functionality_storage': 'granted',
+        'functionality_storage': state,
         'personalization_storage': state,
         'security_storage': 'granted',
       });

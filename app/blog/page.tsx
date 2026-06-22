@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { articles, categories } from './data';
 import { TOOLS } from '@/lib/toolRegistry';
 import BlogPageClient from './BlogPageClient';
+import MiniappFooterButton from '../_components/MiniappFooterButton';
 
 const categoryColors: Record<string, string> = {
   '数学学习': 'bg-blue-500/20 text-blue-300 border-blue-500/30',
@@ -202,13 +203,15 @@ export default function BlogPage() {
       <footer className="border-t border-white/10 py-8 px-4 mt-8">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400 mb-4">
-            <a href="/about" className="hover:text-white transition-colors">关于我们</a>
+            <a href="/about/" className="hover:text-white transition-colors">关于我们</a>
             <span className="text-gray-600">|</span>
-            <a href="/terms" className="hover:text-white transition-colors">服务条款</a>
+            <a href="/terms/" className="hover:text-white transition-colors">服务条款</a>
             <span className="text-gray-600">|</span>
-            <a href="/contact" className="hover:text-white transition-colors">联系我们</a>
+            <a href="/contact/" className="hover:text-white transition-colors">联系我们</a>
             <span className="text-gray-600">|</span>
-            <a href="/blog" className="hover:text-white transition-colors">知识分享</a>
+            <a href="/blog/" className="hover:text-white transition-colors">知识分享</a>
+            <span className="text-gray-600">|</span>
+            <MiniappFooterButton />
           </div>
           <div className="text-center text-gray-500 text-sm">
             &copy; 2026 练学宝

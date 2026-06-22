@@ -1,39 +1,28 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import ToolBreadcrumb from '@/components/ToolBreadcrumb';
+import ToolPageSchema from '@/app/_components/ToolPageSchema';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const host = headersList.get("host") ?? "www.skillxm.cn";
-  const protocol = host.includes("localhost") ? "http" : "https";
-  const pathname = headersList.get("x-invoke-path") ?? headersList.get("x-matched-path") ?? "/tools/mental-math";
-  const canonicalUrl = `${protocol}://${host}${pathname}`;
+    const canonicalUrl = 'https://www.skillxm.cn/tools/mental-math/';
   return {
     title: "口算速练 - 在线口算计时挑战 | 练学宝",
     description: "免费在线口算速练工具，支持AI智能出题、进度追踪、学习报告推送。4个难度级别涵盖加减乘除，自动分析薄弱点生成针对性练习，适合小学1-6年级学生日常口算打卡训练。",
     keywords: "口算速练,口算练习,心算训练,速算练习,在线口算,数学口算题,计时口算,口算天天练,一年级口算,二年级口算,三年级口算,口算题生成,免费口算练习,口算速度提升,手机口算练习",
     alternates: {
     canonical: canonicalUrl,
-    languages: {
-      "zh-CN": "https://www.skillxm.cn/tools/mental-math/",
-      "en": "https://www.skillxm.cn/en/tools/mental-math/",
-      "ja": "https://www.skillxm.cn/ja/tools/mental-math/",
-      "ko": "https://www.skillxm.cn/ko/tools/mental-math/",
-      "x-default": "https://www.skillxm.cn/tools/mental-math/",
-    },
   },
     openGraph: {
       url: canonicalUrl,
       title: "口算速练 - 免费在线口算计时挑战 | 练学宝",
       description: "免费在线口算速练工具，支持AI智能出题、进度追踪、学习报告推送。4个难度级别涵盖加减乘除，自动分析薄弱点生成针对性练习。",
       type: "website",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "口算速练 - 免费在线口算计时挑战 | 练学宝",
       description: "免费在线口算速练工具，支持AI智能出题、进度追踪、学习报告推送。4个难度级别涵盖加减乘除，自动分析薄弱点生成针对性练习。",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }],
     },
   };
 }
@@ -45,7 +34,7 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
       <div className="sr-only">
         <p>口算速练 - 在线计时口算练习</p>
         <p>免费在线口算速练，4个难度级别，计时挑战即时反馈，一二年级到五六年级全覆盖。通过限时口算训练快速提升计算能力，支持加减乘除全运算类型，答题即时判定对错，训练结束自动统计正确率和用时，适合日常口算打卡练习。</p>
-        <p><strong>一句话摘要：</strong>练学宝口算速练是一款免费在线口算计时练习工具，支持4个难度级别和加减乘除全运算类型，AI智能出题自动分析薄弱点，适合小学1-6年级学生日常口算打卡训练。</p>
+        <p>练学宝口算速练是一款免费在线口算计时练习工具，支持4个难度级别和加减乘除全运算类型，AI智能出题自动分析薄弱点，适合小学1-6年级学生日常口算打卡训练。</p>
         <p>核心功能</p>
         <ul>
           <li>4个难度级别：入门级（10以内加减）、基础级（20以内加减）、提高级（100以内加减乘除）、挑战级（大数运算混合），匹配不同年级水平</li>
@@ -161,6 +150,7 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
           })
         }}
       />
+            <ToolPageSchema toolPath="/tools/mental-math/" />
       <ToolBreadcrumb toolName="口算速练" toolPath="/tools/mental-math" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

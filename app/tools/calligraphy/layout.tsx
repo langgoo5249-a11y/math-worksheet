@@ -1,39 +1,28 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import ToolBreadcrumb from '@/components/ToolBreadcrumb';
+import ToolPageSchema from '@/app/_components/ToolPageSchema';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const host = headersList.get("host") ?? "www.skillxm.cn";
-  const protocol = host.includes("localhost") ? "http" : "https";
-  const pathname = headersList.get("x-invoke-path") ?? headersList.get("x-matched-path") ?? "/tools/calligraphy";
-  const canonicalUrl = `${protocol}://${host}${pathname}`;
+    const canonicalUrl = 'https://www.skillxm.cn/tools/calligraphy/';
   return {
     title: "免费字帖生成器 - 田字格/米字格/楷体字帖 | 练学宝",
     description: "免费在线生成田字格米字格汉字字帖，支持楷体宋体黑体，自定义内容输入，PDF导出A4打印。适合小学生日常练字和书法初学者描红练习，输入任意汉字即可生成标准字帖模板。",
     keywords: "字帖生成器,练字帖生成,田字格字帖,米字格练习,汉字书写练习,楷体字帖打印,小学生练字,免费字帖下载,自定义字帖,硬笔书法练习,笔画笔顺,生字练习,描红字帖,书法入门,PDF字帖打印",
     alternates: {
     canonical: canonicalUrl,
-    languages: {
-      "zh-CN": "https://www.skillxm.cn/tools/calligraphy/",
-      "en": "https://www.skillxm.cn/en/tools/calligraphy/",
-      "ja": "https://www.skillxm.cn/ja/tools/calligraphy/",
-      "ko": "https://www.skillxm.cn/ko/tools/calligraphy/",
-      "x-default": "https://www.skillxm.cn/tools/calligraphy/",
-    },
   },
     openGraph: {
       url: canonicalUrl,
       title: "字帖生成器 - 免费在线田字格米字格练字 | 练学宝",
       description: "免费在线生成田字格米字格汉字字帖，支持楷体宋体黑体，自定义内容输入，PDF导出A4打印。适合小学生日常练字和书法初学者描红练习，输入任意汉字即可生成标准字帖模板。",
       type: "website",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("字帖生成器")}&category=${encodeURIComponent("语文工具")}&icon=✍️`, width: 1200, height: 630, alt: "字帖生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("字帖生成器")}&category=${encodeURIComponent("语文工具")}&icon=✍️`, width: 1200, height: 630, alt: "字帖生成器 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "字帖生成器 - 免费在线田字格米字格练字 | 练学宝",
       description: "免费在线生成田字格米字格汉字字帖，支持楷体宋体黑体，自定义内容输入，PDF导出A4打印。适合小学生日常练字和书法初学者描红练习，输入任意汉字即可生成标准字帖模板。",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("字帖生成器")}&category=${encodeURIComponent("语文工具")}&icon=✍️`, width: 1200, height: 630, alt: "字帖生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("字帖生成器")}&category=${encodeURIComponent("语文工具")}&icon=✍️`, width: 1200, height: 630, alt: "字帖生成器 - 练学宝" }],
     },
   };
 }
@@ -45,7 +34,7 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
       <div className="sr-only">
         <p>字帖生成器 - 田字格米字格汉字字帖免费打印</p>
         <p>免费在线生成田字格米字格汉字字帖，支持楷体宋体黑体，自定义内容输入，PDF导出A4打印。适合小学生练字、书法初学者描红练习，输入任意汉字即可生成标准字帖模板，支持笔画顺序展示，一键打印高清字帖。</p>
-        <p><strong>一句话摘要：</strong>练学宝字帖生成器是一款免费在线汉字书写练习工具，支持自定义内容和多种格子样式，PDF导出打印，适合小学生练字和书法入门。</p>
+        <p>练学宝字帖生成器是一款免费在线汉字书写练习工具，支持自定义内容和多种格子样式，PDF导出打印，适合小学生练字和书法入门。</p>
         <p>核心功能</p>
         <ul>
           <li>四种格子样式：田字格、米字格、回宫格、空白格，满足不同练字阶段需求</li>
@@ -146,6 +135,7 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
           })
         }}
       />
+            <ToolPageSchema toolPath="/tools/calligraphy/" />
       <ToolBreadcrumb toolName="字帖生成器" toolPath="/tools/calligraphy" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

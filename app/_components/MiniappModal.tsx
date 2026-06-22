@@ -3,29 +3,16 @@
 import { useState, useEffect, useCallback } from 'react';
 
 const STORAGE_KEY = 'miniapp_modal_dismissed';
-const SESSION_INTERVAL = 24 * 60 * 60 * 1000; // 24小时后再次弹出
-const SHOW_DELAY = 1500; // 1.5秒延迟弹出
 
 export default function MiniappModal() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    try {
-      const dismissed = localStorage.getItem(STORAGE_KEY);
-      if (dismissed) {
-        const dismissedAt = parseInt(dismissed, 10);
-        if (Date.now() - dismissedAt < SESSION_INTERVAL) {
-          return; // 24小时内不再弹出
-        }
-      }
-      // 延迟1.5秒弹出，避免影响首屏加载
-      const timer = setTimeout(() => setVisible(true), SHOW_DELAY);
-      return () => clearTimeout(timer);
-    } catch {
-      // localStorage 不可用时直接弹出
-      const timer = setTimeout(() => setVisible(true), SHOW_DELAY);
-      return () => clearTimeout(timer);
-    }
+    if (typeof window === 'undefined') return;
+
+    const handleOpen = () => setVisible(true);
+    window.addEventListener('open-miniapp-modal', handleOpen);
+    return () => window.removeEventListener('open-miniapp-modal', handleOpen);
   }, []);
 
   const handleClose = useCallback(() => {

@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_SC } from "next/font/google";
 import "./globals.css";
-import { TOOLS, ACTIVE_TOOL_COUNT } from "@/lib/toolRegistry";
 import CookieConsent from './_components/CookieConsent';
+import ConsentAwareScripts from './_components/ConsentAwareScripts';
 import GoogleAnalytics from './_components/GoogleAnalytics';
 import FloatingLanguageSwitcher from './_components/FloatingLanguageSwitcher';
 import MiniappModal from './_components/MiniappModal';
@@ -120,7 +120,7 @@ export default async function RootLayout({
           width: 512,
           height: 512,
         },
-        description: `练学宝是儿童中文学习网站，提供小学中文学习工具与数学教学工具。包括拼音学习、识字卡片、古诗词默写、字帖生成器等中文学习资源，以及数学练习卷、口算速练、数独游戏等${ACTIVE_TOOL_COUNT}款实用工具`,
+        description: `练学宝是儿童中文学习网站，提供小学中文学习工具与数学教学工具。包括拼音学习、识字卡片、古诗词默写、字帖生成器等中文学习资源，以及数学练习卷、口算速练、数独游戏等10+款实用工具`,
         address: {
           "@type": "PostalAddress",
           addressCountry: "CN",
@@ -182,64 +182,6 @@ export default async function RootLayout({
         "cssSelector": [
           "h1",
           ".sr-only"
-        ]
-      },
-      {
-        "@type": "ItemList",
-        "name": "练学宝 - 全部工具",
-        "description": "练学宝提供的所有免费小学教学工具",
-        "dateModified": "2026-06-21",
-        "numberOfItems": ACTIVE_TOOL_COUNT,
-        "itemListElement": TOOLS.filter(t => t.active).map((tool, i) => ({
-          "@type": "ListItem",
-          "position": i + 1,
-          "name": tool.name,
-          "url": `https://www.skillxm.cn${tool.path}`
-        }))
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "练学宝是免费的吗？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "是的，练学宝所有工具完全免费，无需注册即可使用。数学练习卷、字帖生成器、口算速练等工具均可免费生成并导出PDF打印。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "练学宝适合多大的孩子使用？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "练学宝主要面向小学1-6年级学生，涵盖数学计算、语文练字、拼音学习、识字卡片、古诗词默写等核心学科内容。同时提供幼小衔接和思维训练内容，适合5-12岁儿童。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "生成的练习卷可以打印吗？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "可以。所有工具生成的练习卷、字帖、口算题等均支持PDF导出和一键打印，方便家长和老师使用。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "需要下载APP吗？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "不需要。练学宝是纯网页工具，在手机和电脑浏览器中直接打开即可使用，无需下载安装任何APP。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "练学宝支持哪些教材版本？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "练学宝支持人教版、北师大版、苏教版、部编版等主流教材版本，覆盖1-6年级上下册共305个单元，各版本知识点同步练习。"
-            }
-          }
         ]
       },
     ],
@@ -330,50 +272,11 @@ export default async function RootLayout({
           }}
         />
 
-        {/* Google Analytics 4 */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GGPDNKW46W" />
-
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
         />
 
-        {/* AdSense 广告代码 - 仅加载基础库，由 AdUnit 组件触发具体广告 */}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4710405779358793" crossOrigin="anonymous" />
-
-        {/* 百度主动推送 - 延迟到页面加载后执行 */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.addEventListener('load', function(){
-                var bp = document.createElement('script');
-                var curProtocol = window.location.protocol.split(':')[0];
-                if (curProtocol === 'https') {
-                  bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-                } else {
-                  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-                }
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(bp, s);
-              });
-            `,
-          }}
-        />
-
-        {/* 头条搜索（字节跳动）主动推送 - 延迟到页面加载后执行 */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.addEventListener('load', function(){
-                var el = document.createElement('script');
-                el.src = 'https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?278b7bc276aa0b514ff5c4e28d63b1e083f58bd22a48d8e0e73447efb03530befd9a9dcb5ced4d7780eb6f3bbd089073c2a6d54440560d63862bbf4ec01bba3a';
-                el.id = 'ttzz';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(el, s);
-              });
-            `,
-          }}
-        />
       </head>
       <body className="min-h-screen antialiased" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages} locale="zh">
@@ -381,54 +284,13 @@ export default async function RootLayout({
           {children}
         </NextIntlClientProvider>
 
-        {/* 微信小程序浮动二维码 */}
-        <div className="fixed right-4 bottom-24 z-50 group" id="miniapp-float" style={{ paddingBottom: "env(safe-area-inset-bottom, 16px)" }}>
-          <div className="relative">
-            {/* 展开的二维码卡片 */}
-            <div className="absolute bottom-full right-0 mb-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-              <div className="bg-white rounded-2xl shadow-2xl p-4 w-52 border border-gray-100">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-lg">📱</span>
-                  <span className="text-sm font-bold text-gray-800">微信小程序使用</span>
-                </div>
-                <div className="bg-gray-50 rounded-xl p-2 mb-2">
-                  <img src="/miniapp-qrcode.jpg" alt="微信小程序二维码" className="w-full h-auto rounded-lg" width="200" height="200" loading="lazy" />
-                </div>
-                <p className="text-xs text-gray-500 text-center">微信扫码 → 即刻使用</p>
-              </div>
-              {/* 小三角 */}
-              <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-r border-b border-gray-100 transform rotate-45"></div>
-            </div>
-
-            {/* 浮动按钮 */}
-            <div className="w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full shadow-lg shadow-green-500/30 flex items-center justify-center cursor-pointer transition-all duration-200 hover:scale-110 hover:shadow-xl group/title">
-              <span className="text-white text-xl">📱</span>
-              <span className="absolute bottom-full mb-2 px-3 py-1.5 bg-gray-800 text-white text-xs rounded-lg opacity-0 invisible group-hover/title:opacity-100 group-hover/title:visible transition-all duration-200 whitespace-nowrap shadow-lg">
-                小程序使用
-                <div className="absolute top-full left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-800 rotate-45"></div>
-              </span>
-            </div>
-          </div>
-        </div>
-
         {/* 语言切换器悬浮按钮 */}
         <FloatingLanguageSwitcher />
 
-        {/* 百度统计 */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              var _hmt = _hmt || [];
-              (function() {
-                var hm = document.createElement("script");
-                hm.src = "https://hm.baidu.com/hm.js?b1c5ccce83f4e80c4c12dea6bd544723";
-                var s = document.getElementsByTagName("script")[0];
-                s.parentNode.insertBefore(hm, s);
-              })();
-            `,
-          }}
-        />
-        {/* Google Analytics 4 — 仅在用户同意Cookie后加载 */}
+        {/* 仅在用户同意 Cookie 后加载的第三方脚本（AdSense、百度统计、百度/头条推送） */}
+        <ConsentAwareScripts />
+
+        {/* Google Analytics 4 — 通过 Consent Mode v2 管理 */}
         <GoogleAnalytics />
 
         {/* 微信小程序二维码弹窗 */}

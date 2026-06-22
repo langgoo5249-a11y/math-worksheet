@@ -1,39 +1,28 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import ToolBreadcrumb from '@/components/ToolBreadcrumb';
+import ToolPageSchema from '@/app/_components/ToolPageSchema';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const host = headersList.get("host") ?? "www.skillxm.cn";
-  const protocol = host.includes("localhost") ? "http" : "https";
-  const pathname = headersList.get("x-invoke-path") ?? headersList.get("x-matched-path") ?? "/tools/poem-memo";
-  const canonicalUrl = `${protocol}://${host}${pathname}`;
+    const canonicalUrl = 'https://www.skillxm.cn/tools/poem-memo/';
   return {
     title: "古诗词默写生成器 - 240首小学必背古诗词在线打印 | 练学宝",
     description: "免费生成小学1-6年级必背古诗词默写练习卷，收录240首经典古诗词，支持填空默写、全诗默写、上下句默写三种模式，田字格方格横线格PDF打印，语文教师和家长必备复习工具",
     keywords: "古诗词默写,小学古诗词,必背古诗,古诗打印,默写练习,古诗词填空,唐诗三百首,宋词,古诗文默写,小学必背古诗75首,小学必背古诗80首,一年级古诗,二年级古诗,三年级古诗,古诗词上下句默写,古诗默写练习卷,古诗词复习,语文古诗默写",
     alternates: {
     canonical: canonicalUrl,
-    languages: {
-      "zh-CN": "https://www.skillxm.cn/tools/poem-memo/",
-      "en": "https://www.skillxm.cn/en/tools/poem-memo/",
-      "ja": "https://www.skillxm.cn/ja/tools/poem-memo/",
-      "ko": "https://www.skillxm.cn/ko/tools/poem-memo/",
-      "x-default": "https://www.skillxm.cn/tools/poem-memo/",
-    },
   },
     openGraph: {
       url: canonicalUrl,
       title: "古诗词默写生成器 - 240首小学必背古诗词在线打印 | 练学宝",
       description: "免费生成小学1-6年级必背古诗词默写练习卷，收录240首经典古诗词，支持填空默写、全诗默写、上下句默写三种模式，田字格方格横线格PDF打印，语文教师和家长必备复习工具",
       type: "website",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("古诗词默写生成器")}&category=${encodeURIComponent("语文工具")}&icon=📜`, width: 1200, height: 630, alt: "古诗词默写生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("古诗词默写生成器")}&category=${encodeURIComponent("语文工具")}&icon=📜`, width: 1200, height: 630, alt: "古诗词默写生成器 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "古诗词默写生成器 - 240首小学必背古诗词在线打印 | 练学宝",
       description: "免费生成小学1-6年级必背古诗词默写练习卷，收录240首经典古诗词，支持填空默写、全诗默写、上下句默写三种模式，田字格方格横线格PDF打印，语文教师和家长必备复习工具",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("古诗词默写生成器")}&category=${encodeURIComponent("语文工具")}&icon=📜`, width: 1200, height: 630, alt: "古诗词默写生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("古诗词默写生成器")}&category=${encodeURIComponent("语文工具")}&icon=📜`, width: 1200, height: 630, alt: "古诗词默写生成器 - 练学宝" }],
     },
   };
 }
@@ -44,7 +33,7 @@ export default function PoemMemoLayout({ children }: { children: React.ReactNode
       <div className="sr-only">
         <p>古诗词默写生成器 - 240首小学必背古诗词在线打印</p>
         <p>免费生成小学必背古诗词默写练习卷，240首经典古诗词，三种默写模式PDF打印。练学宝收录小学1-6年级全部必背古诗词，支持填空默写、全诗默写、上下句默写等多种练习方式，是语文教师和学生家长必备的古诗词复习工具。</p>
-        <p><strong>一句话摘要：</strong>练学宝古诗词默写是一款免费在线诗词学习工具，收录小学必背240首古诗词，支持填空默写和全文背诵两种模式，适合小学生古诗文积累和考前复习。</p>
+        <p>练学宝古诗词默写是一款免费在线诗词学习工具，收录小学必背240首古诗词，支持填空默写和全文背诵两种模式，适合小学生古诗文积累和考前复习。</p>
         <p>核心功能</p>
         <ul>
           <li>240首古诗词：完整收录小学阶段必背古诗词，涵盖唐诗、宋词、元曲等经典篇目</li>
@@ -143,6 +132,7 @@ export default function PoemMemoLayout({ children }: { children: React.ReactNode
           })
         }}
       />
+            <ToolPageSchema toolPath="/tools/poem-memo/" />
       <ToolBreadcrumb toolName="古诗词默写" toolPath="/tools/poem-memo" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

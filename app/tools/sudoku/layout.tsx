@@ -1,39 +1,28 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import ToolBreadcrumb from '@/components/ToolBreadcrumb';
+import ToolPageSchema from '@/app/_components/ToolPageSchema';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const host = headersList.get("host") ?? "www.skillxm.cn";
-  const protocol = host.includes("localhost") ? "http" : "https";
-  const pathname = headersList.get("x-invoke-path") ?? headersList.get("x-matched-path") ?? "/tools/sudoku";
-  const canonicalUrl = `${protocol}://${host}${pathname}`;
+    const canonicalUrl = 'https://www.skillxm.cn/tools/sudoku/';
   return {
     title: "数独游戏在线玩 - 入门/进阶/挑战三档难度 | 练学宝",
     description: "免费在线数独游戏，提供入门进阶挑战三档难度，内置数字键盘和笔记模式，锻炼逻辑思维和专注力。适合小学生课余训练，无需下载打开浏览器即开即玩。",
     keywords: "数独游戏,在线数独,数独挑战,逻辑训练,益智游戏,免费数独,数独解题,儿童数独入门,简单数独打印,小学生数独题,数独技巧,数独入门教程,数独每日挑战,数独在线玩,益智数独,逻辑思维训练,儿童益智游戏",
     alternates: {
     canonical: canonicalUrl,
-    languages: {
-      "zh-CN": "https://www.skillxm.cn/tools/sudoku/",
-      "en": "https://www.skillxm.cn/en/tools/sudoku/",
-      "ja": "https://www.skillxm.cn/ja/tools/sudoku/",
-      "ko": "https://www.skillxm.cn/ko/tools/sudoku/",
-      "x-default": "https://www.skillxm.cn/tools/sudoku/",
-    },
   },
     openGraph: {
       url: canonicalUrl,
       title: "数独游戏 - 免费在线数独挑战 | 练学宝",
       description: "免费在线数独游戏，提供入门进阶挑战三档难度，内置数字键盘和笔记模式，锻炼逻辑思维和专注力。适合小学生课余训练，无需下载打开浏览器即开即玩。",
       type: "website",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数独游戏")}&category=${encodeURIComponent("思维训练")}&icon=🧩`, width: 1200, height: 630, alt: "数独游戏 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数独游戏")}&category=${encodeURIComponent("思维训练")}&icon=🧩`, width: 1200, height: 630, alt: "数独游戏 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "数独游戏 - 免费在线数独挑战 | 练学宝",
       description: "免费在线数独游戏，提供入门进阶挑战三档难度，内置数字键盘和笔记模式，锻炼逻辑思维和专注力。适合小学生课余训练，无需下载打开浏览器即开即玩。",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数独游戏")}&category=${encodeURIComponent("思维训练")}&icon=🧩`, width: 1200, height: 630, alt: "数独游戏 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数独游戏")}&category=${encodeURIComponent("思维训练")}&icon=🧩`, width: 1200, height: 630, alt: "数独游戏 - 练学宝" }],
     },
   };
 }
@@ -45,7 +34,7 @@ export default function SudokuLayout({ children }: { children: React.ReactNode }
       <div className="sr-only">
         <p>数独游戏 - 在线益智逻辑训练</p>
         <p>免费在线数独游戏，3档难度，锻炼逻辑思维，适合小学生课余训练。无需下载安装，打开浏览器即可玩数独，支持入门、进阶、挑战三个难度等级，内置数字键盘方便手机操作，即时验证答案正误，帮助提升逻辑推理和专注力。</p>
-        <p><strong>一句话摘要：</strong>练学宝数独游戏是一款免费在线数独益智工具，支持4x4、6x6、9x9多种难度级别，自动生成唯一解题目，适合培养孩子的逻辑思维和专注力。</p>
+        <p>练学宝数独游戏是一款免费在线数独益智工具，支持4x4、6x6、9x9多种难度级别，自动生成唯一解题目，适合培养孩子的逻辑思维和专注力。</p>
         <p>核心功能</p>
         <ul>
           <li>3档难度等级：入门（适合初学者）、进阶（有一定基础）、挑战（高难度），循序渐进提升</li>
@@ -149,6 +138,7 @@ export default function SudokuLayout({ children }: { children: React.ReactNode }
           })
         }}
       />
+            <ToolPageSchema toolPath="/tools/sudoku/" />
       <ToolBreadcrumb toolName="数独游戏" toolPath="/tools/sudoku" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

@@ -1,33 +1,22 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import ToolBreadcrumb from '@/components/ToolBreadcrumb';
+import ToolPageSchema from '@/app/_components/ToolPageSchema';
 
 export async function generateMetadata(): Promise<Metadata> {
-  const headersList = await headers();
-  const host = headersList.get("host") ?? "www.skillxm.cn";
-  const protocol = host.includes("localhost") ? "http" : "https";
-  const pathname = headersList.get("x-invoke-path") ?? headersList.get("x-matched-path") ?? "/tools/writing-template";
-  const canonicalUrl = `${protocol}://${host}${pathname}`;
+    const canonicalUrl = 'https://www.skillxm.cn/tools/writing-template/';
   return {
     title: "作文模板生成器 - 看图写话/日记/作文格纸 | 练学宝",
     description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。",
     keywords: "作文模板,看图写话,日记模板,作文格纸,小学作文,写作练习,作文纸打印,作文格子,三年级作文模板,看图写话练习纸,小学生日记格式,作文开头结尾,写人作文模板,记事作文模板,写景作文模板,作文素材,低年级写话,作文格子纸",
     alternates: {
     canonical: canonicalUrl,
-    languages: {
-      "zh-CN": "https://www.skillxm.cn/tools/writing-template/",
-      "en": "https://www.skillxm.cn/en/tools/writing-template/",
-      "ja": "https://www.skillxm.cn/ja/tools/writing-template/",
-      "ko": "https://www.skillxm.cn/ko/tools/writing-template/",
-      "x-default": "https://www.skillxm.cn/tools/writing-template/",
-    },
   },
-    openGraph: { url: canonicalUrl, title: "作文模板生成器 - 练学宝", description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。", images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }] },
+    openGraph: { url: canonicalUrl, title: "作文模板生成器 - 练学宝", description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。", images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }] },
     twitter: {
       card: "summary_large_image",
       title: "作文模板生成器 - 练学宝",
       description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }, { url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }],
     },
   };
 }
@@ -38,7 +27,7 @@ export default function WritingTemplateLayout({ children }: { children: React.Re
       <div className="sr-only">
         <p>作文模板生成器 - 小学作文格纸免费打印</p>
         <p>免费生成小学作文格纸模板，看图写话、日记、作文格子纸。练学宝提供多种作文书写模板，涵盖小学低年级到高年级的写作练习需求，支持PDF格式免费打印。</p>
-        <p><strong>一句话摘要：</strong>练学宝作文模板是一款免费在线作文辅助工具，提供看图写话、日记、记叙文等多种作文模板，支持自定义内容和稿纸样式，PDF导出打印，适合小学生作文入门训练。</p>
+        <p>练学宝作文模板是一款免费在线作文辅助工具，提供看图写话、日记、记叙文等多种作文模板，支持自定义内容和稿纸样式，PDF导出打印，适合小学生作文入门训练。</p>
         <p>核心功能</p>
         <ul>
           <li>看图写话模板：专为小学低年级设计，配有图片区域和拼音格/田字格书写区域，适合一二年级看图写话练习</li>
@@ -146,6 +135,7 @@ export default function WritingTemplateLayout({ children }: { children: React.Re
           })
         }}
       />
+            <ToolPageSchema toolPath="/tools/writing-template/" />
       <ToolBreadcrumb toolName="作文模板" toolPath="/tools/writing-template" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

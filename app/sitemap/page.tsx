@@ -128,7 +128,7 @@ export default function SitemapIndex() {
                 <ul className="ml-3 space-y-1">
                   {tb.grades.map((g) => (
                     <li key={g.grade}>
-                      <Link href={`/textbook/${tb.id}/${g.grade}`} className="text-slate-300 hover:text-blue-400">
+                      <Link href={`/textbook/${tb.id}/grade-${g.grade}/`} className="text-slate-300 hover:text-blue-400">
                         {g.grade === 1 ? '一年级' : g.grade === 2 ? '二年级' : g.grade === 3 ? '三年级' : g.grade === 4 ? '四年级' : g.grade === 5 ? '五年级' : '六年级'}
                       </Link>
                     </li>

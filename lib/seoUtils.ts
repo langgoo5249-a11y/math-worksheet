@@ -3,7 +3,7 @@
 
 const BASE_URL = 'https://www.skillxm.cn';
 const SITE_NAME = '练学宝';
-const SITE_AUTHOR = '练学宝团队';
+const SITE_AUTHOR = '林远';
 const SITE_LOGO = 'https://www.skillxm.cn/favicon.svg';
 
 // ========== FAQ 页面结构化数据 ==========
@@ -87,9 +87,15 @@ export function generateArticleSchema(opts: {
     datePublished: opts.datePublished || '2026-01-01',
     dateModified: opts.dateModified || new Date().toISOString().slice(0, 10),
     author: {
-      '@type': 'Organization',
+      '@type': 'Person',
+      '@id': `${BASE_URL}/#person-linyuan`,
       name: SITE_AUTHOR,
-      url: BASE_URL,
+      url: `${BASE_URL}/about`,
+      affiliation: {
+        '@type': 'Organization',
+        name: SITE_NAME,
+        url: BASE_URL,
+      },
     },
     publisher: {
       '@type': 'Organization',
@@ -153,7 +159,6 @@ export function generateItemListSchema(opts: {
     url: opts.url,
     numberOfItems: opts.items.length,
     itemListElement: opts.items.map((item, i) => ({
-      '@type:': 'ListItem',
       '@type': 'ListItem',
       position: item.position || i + 1,
       name: item.name,

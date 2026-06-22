@@ -555,7 +555,7 @@ export default function HomePage() {
                   {tb.grades.slice(0, 6).map((g) => (
                     <Link
                       key={g.grade}
-                      href={`/textbook/${tb.id}/${g.grade}`}
+                      href={`/textbook/${tb.id}/grade-${g.grade}/`}
                       className="px-2 py-1.5 bg-slate-800/60 hover:bg-purple-500/20 border border-white/5 hover:border-purple-500/30 rounded-lg text-center text-xs text-slate-300 hover:text-purple-200 transition-colors"
                     >
                       {g.grade}年级

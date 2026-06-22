@@ -51,8 +51,12 @@ export async function generateMetadata({
       images: ["https://www.skillxm.cn/og-image.jpg"],
     },
     alternates: {
-      // canonical 强制指向中文版，避免多语言版本产生重复内容
-      canonical: "https://www.skillxm.cn/",
+      // 多语言 wrapper 页面本身设置为 noindex，这里使用自引用 canonical
+      // 避免与中文原页的 hreflang 信号冲突
+      canonical:
+        safeLocale === defaultLocale
+          ? 'https://www.skillxm.cn/'
+          : `https://www.skillxm.cn/${safeLocale}/`,
     },
   };
 }

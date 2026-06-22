@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import MiniappFooterButton from './MiniappFooterButton';
 
 export default function SiteLayout({ children }: { children: React.ReactNode }) {
   const [mobileMenu, setMobileMenu] = useState(false);
@@ -315,11 +316,12 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
             <div>
               <div className="text-white font-medium mb-3">工具</div>
               <ul className="space-y-1.5 text-gray-400">
-                <li><a href="/tools/math-worksheet" className="hover:text-white transition-colors">数学练习卷</a></li>
-                <li><a href="/tools/calligraphy" className="hover:text-white transition-colors">字帖生成器</a></li>
-                <li><a href="/tools/mental-math" className="hover:text-white transition-colors">口算速练</a></li>
-                <li><a href="/tools/sudoku" className="hover:text-white transition-colors">数独游戏</a></li>
-                <li><a href="/tools" className="hover:text-white transition-colors">全部工具</a></li>
+                <li><a href="/tools/math-worksheet/" className="hover:text-white transition-colors">数学练习卷</a></li>
+                <li><a href="/tools/calligraphy/" className="hover:text-white transition-colors">字帖生成器</a></li>
+                <li><a href="/tools/mental-math/" className="hover:text-white transition-colors">口算速练</a></li>
+                <li><a href="/tools/sudoku/" className="hover:text-white transition-colors">数独游戏</a></li>
+                <li><a href="/tools/" className="hover:text-white transition-colors">全部工具</a></li>
+                <li><MiniappFooterButton /></li>
               </ul>
             </div>
             <div>

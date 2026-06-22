@@ -660,7 +660,7 @@ export default function MathWorksheetPage({ locale }: { locale?: Locale } = {}) 
 
       {/* ===== 底部 ===== */}
       <footer className="print:hidden border-t border-white/10 py-8 px-4 text-center text-gray-500 text-sm">
-        <p>© 2026 算个题吧 · 免费好用的数学练习卷生成器</p>
+        <p>© 2026 练学宝 · 免费好用的数学练习卷生成器</p>
       </footer>
 
       {/* 使用指南（ToolGuide组件） */}
