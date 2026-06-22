@@ -177,34 +177,6 @@ const FEATURE_CARDS = [
   },
 ];
 
-// ============ 常见问题 FAQ ============
-const FAQ_ITEMS = [
-  {
-    q: '完全免费吗？',
-    a: '是的，练学宝所有功能完全免费使用，无需注册账号，无需付费，无任何隐藏费用。',
-  },
-  {
-    q: '生成的 PDF 会有水印或广告吗？',
-    a: '不会。导出的 PDF 干净整洁，没有任何水印、品牌标识或广告，适合直接打印使用。',
-  },
-  {
-    q: '支持哪些年级和题型？',
-    a: '数学练习卷覆盖小学 1-6 年级，支持加减乘除、竖式计算、填空题、比大小、应用题等 11 种题型，可按年级和难度灵活配置。',
-  },
-  {
-    q: '可以自定义内容吗？',
-    a: '可以。字帖生成器支持自定义汉字、词语或句子；数学练习卷支持自定义数字范围、题目数量和混合题型。',
-  },
-  {
-    q: '生成的练习卷会重复吗？',
-    a: '每次生成均为随机出题，同一配置下每次结果不同，避免机械重复，真正达到练习效果。',
-  },
-  {
-    q: '适合哪些人使用？',
-    a: '适合小学学生、家长（辅导孩子作业）、学校教师（布置练习作业）以及想自主练习的成年人。',
-  },
-];
-
 // ============ 颜色映射 ============
 const ACCENT_COLORS: Record<string, { bg: string; text: string; border: string; ring: string }> = {
   blue: { bg: 'bg-blue-500/10', text: 'text-blue-300', border: 'border-blue-500/30', ring: 'ring-blue-500/30' },
@@ -218,7 +190,6 @@ const ACCENT_COLORS: Record<string, { bg: string; text: string; border: string; 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   // 自动轮播
   useEffect(() => {
@@ -239,49 +210,26 @@ export default function HomePage() {
   return (
     <SiteLayout>
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "练学宝是什么？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "练学宝是一个免费的在线教育工具平台，为小学生提供口算速练、字帖生成、数学练习卷等10种学习工具。所有工具免费使用，无需注册，访问网站即可开始使用。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "练学宝的工具需要付费吗？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "不需要。练学宝所有工具完全免费，无需注册登录。我们致力于降低家庭教育成本，让每个孩子都能获得优质的学习辅助工具。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "练学宝有哪些学习工具？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "练学宝提供口算速练、数学练习卷生成器、田字格字帖生成器、英语四线三格字帖、拼音练习、数独游戏、看图写话、古诗词默写、识字卡片、单元测试卷生成器等10个工具，覆盖小学语数英核心学科。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "练学宝的内容是否与学校教学大纲一致？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "是的。练学宝所有工具和内容均参考教育部《义务教育课程标准（2022年版）》编写，确保与学校教学大纲保持一致。工具覆盖小学1-6年级各学科核心知识点。"
-                }
-              }
-            ]
-          })
-        }}
-      />
+      {/* ===== Hero 区域 ===== */}
+      <section className="pt-8 pb-4 px-4 text-center relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-600/20 via-transparent to-transparent pointer-events-none" />
+        <div className="max-w-4xl mx-auto relative">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-3">
+            练学宝 - 免费小学在线学习工具
+          </h1>
+          <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-5">
+            10+款免费小学教学工具，覆盖数学计算、语文练字、练习卷下载，即开即用无需注册
+          </p>
+          <div className="flex flex-wrap justify-center gap-3 mb-2">
+            <Link href="/tools" className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-full text-sm transition-colors shadow-lg shadow-blue-600/25">
+              探索所有工具
+            </Link>
+            <Link href="/about" className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full text-sm border border-white/20 transition-colors">
+              了解更多
+            </Link>
+          </div>
+        </div>
+      </section>
       {/* 首页核心主题 H1（搜索引擎识别）sr-only 隐藏视觉，但不影响 SEO */}
       <h1 className="sr-only">练学宝 - 免费小学在线学习工具，涵盖数学计算、语文练字、练习卷下载</h1>
       {/* ===== 轮播大图区域 ===== */}
@@ -823,38 +771,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== 常见问题 FAQ ===== */}
+      {/* ===== CTA 引导区域 ===== */}
       <section className="py-12 sm:py-16 px-4 bg-slate-800/30">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white text-center mb-8 sm:mb-12 tracking-tight">
-            ❓ 常见问题
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white text-center mb-4 sm:mb-6 tracking-tight">
+            想了解更多？
           </h2>
-          <div className="space-y-3">
-            {FAQ_ITEMS.map((item, i) => (
-              <div
-                key={i}
-                className="bg-slate-800/50 border border-white/10 rounded-xl overflow-hidden hover:border-white/20 transition-colors"
-              >
-                <button
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                  className="w-full flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5 text-left"
-                >
-                  <span className="text-white text-sm sm:text-base font-medium pr-4">{item.q}</span>
-                  <span
-                    className={`text-gray-400 text-xl flex-shrink-0 transition-transform duration-300 ${openFaq === i ? 'rotate-45' : ''}`}
-                  >
-                    +
-                  </span>
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-300 ${openFaq === i ? 'max-h-40' : 'max-h-0'}`}
-                >
-                  <p className="px-4 sm:px-6 pb-4 sm:pb-5 text-slate-400 text-sm leading-relaxed">
-                    {item.a}
-                  </p>
-                </div>
-              </div>
-            ))}
+          <p className="text-slate-400 text-sm sm:text-base mb-8 max-w-xl mx-auto">
+            了解练学宝的完整功能，或探索所有学习工具，找到最适合孩子的学习方式
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="/about"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-400 hover:to-indigo-400 text-white font-bold text-base sm:text-lg rounded-full shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 transition-all"
+            >
+              关于练学宝
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+            <Link
+              href="/tools"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-base sm:text-lg rounded-full hover:scale-105 transition-all"
+            >
+              探索所有工具
+              <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>

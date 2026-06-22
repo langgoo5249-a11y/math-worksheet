@@ -11,12 +11,12 @@ import { getMessages } from "next-intl/server";
 
 
 const notoSansSC = Noto_Sans_SC({
-  // 不限制 subsets，next/font/google 默认下载完整字体包（含 CJK 中文字符）
+  // 使用 cyrillic 子集以获取完整字体（Noto Sans SC 是 CJK 字体，latin 子集不适用）
   weight: ["400", "500", "700"],
   variable: "--font-noto-sans-sc",
   display: "swap",
-  preload: false,
-  subsets: ['latin'],
+  preload: true,
+  subsets: ['cyrillic'],
 });
 
 // 根布局保持静态预渲染，canonical 由各页面 layout 分别定义
@@ -175,6 +175,7 @@ export default async function RootLayout({
       },
       {
         "@type": "SpeakableSpecification",
+        "@id": "https://www.skillxm.cn/#speakable",
         "xpath": [
           "/html/head/title",
           "/html/head/meta[@name='description']/@content"
@@ -195,10 +196,6 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
         <link rel="preload" as="image" href="https://www.skillxm.cn/og-image.jpg" fetchPriority="high" />
-        {/* DNS 预解析 - 加速第三方服务 */}
-        <link rel="dns-prefetch" href="https://hm.baidu.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <meta name="baidu-site-verification" content="codeva-nVZFsgvPZu" />
 
         <meta name="google-site-verification" content="6szVJUGCDvvDDcBkDLV0n6kD_KU1EyOWnO7MSw-5ERM" />
