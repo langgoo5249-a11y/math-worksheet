@@ -37,13 +37,13 @@ export default function WritingTemplateLayout({ children }: { children: React.Re
         </ul>
         <p>适用对象</p>
         <p>作文模板生成器适合小学语文教师、学生家长以及小学各年级学生使用。无论是日常写作练习、考试作文训练还是家庭作业，都可以通过本工具快速生成规范的作文书写模板，培养孩子良好的书写习惯。</p>
-        <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/xiaoxue-zuowen-moban">小学作文不会写？3个模板轻松写出300字</a></li>
-          <li><a href="https://www.skillxm.cn/blog/sannianji-zuowen-rumen">三年级作文入门方法</a></li>
-          <li><a href="https://www.skillxm.cn/blog/kantu-xiehua-xunlian">如何辅导孩子看图写话</a></li>
-          <li><a href="https://www.skillxm.cn/blog/xiaoxue-zuowen-fudao-moban-shengcheng">小学作文辅导：写作不再难</a></li>
+          <li><a href="https://www.skillxm.cn/blog/xiaoxue-zuowen-moban/">小学作文不会写？3个模板轻松写出300字</a></li>
+          <li><a href="https://www.skillxm.cn/blog/sannianji-zuowen-rumen/">三年级作文入门方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kantu-xiehua-xunlian/">如何辅导孩子看图写话</a></li>
+          <li><a href="https://www.skillxm.cn/blog/xiaoxue-zuowen-fudao-moban-shengcheng/">小学作文辅导：写作不再难</a></li>
         </ul>
       </div>
       <script

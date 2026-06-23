@@ -46,13 +46,13 @@ export default function SudokuLayout({ children }: { children: React.ReactNode }
         </ul>
         <p>适用对象</p>
         <p>小学3-6年级学生、逻辑思维训练爱好者、数独入门学习者、课余时间需要益智活动的中小学生。适合课间休息、家庭亲子互动、逻辑思维训练、数学兴趣培养等场景。</p>
-        <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、字帖生成器、英语字帖、口算速练等。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、字帖生成器、英语字帖、口算速练等。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/shudu-100tian-xunlian-jilu">坚持数独训练100天的变化</a></li>
-          <li><a href="https://www.skillxm.cn/blog/shudu-shuxue-bangzhu">数独游戏对儿童思维发展的5大好处</a></li>
-          <li><a href="https://www.skillxm.cn/blog/youxiao-xianjie-luoji-siwei-peiyang">有效衔接阶段逻辑思维培养方法</a></li>
-          <li><a href="https://www.skillxm.cn/blog/shuxue-siwei-shudu-kousuan-shuangguan">数学思维训练：数独+口算双管齐下</a></li>
+          <li><a href="https://www.skillxm.cn/blog/shudu-100tian-xunlian-jilu/">坚持数独训练100天的变化</a></li>
+          <li><a href="https://www.skillxm.cn/blog/shudu-shuxue-bangzhu/">数独游戏对儿童思维发展的5大好处</a></li>
+          <li><a href="https://www.skillxm.cn/blog/youxiao-xianjie-luoji-siwei-peiyang/">有效衔接阶段逻辑思维培养方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/shuxue-siwei-shudu-kousuan-shuangguan/">数学思维训练：数独+口算双管齐下</a></li>
         </ul>
       </div>
       <script

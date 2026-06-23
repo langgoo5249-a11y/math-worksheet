@@ -46,13 +46,13 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
         </ul>
         <p>适用对象</p>
         <p>小学1-6年级学生家长、小学数学教师、课后辅导机构老师。适合日常数学练习、单元测试出题、期末复习巩固、假期作业布置等场景使用。</p>
-        <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具，包括字帖生成器、英语字帖、数独游戏、口算速练等。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具，包括字帖生成器、英语字帖、数独游戏、口算速练等。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/yinianji-shuxue-ruxue">一年级数学入学准备：从数数到20以内加减法的完整路径</a></li>
-          <li><a href="https://www.skillxm.cn/blog/kousuan-sudu-tisheng-shizhan-20ti">口算速度提升实战：从每分钟5题到20题</a></li>
-          <li><a href="https://www.skillxm.cn/blog/xueba-xuexi-xiguan">学霸学习习惯养成方法</a></li>
-          <li><a href="https://www.skillxm.cn/blog/shushi-jisuan-jiaoxue">小学数学竖式计算全攻略</a></li>
+          <li><a href="https://www.skillxm.cn/blog/yinianji-shuxue-ruxue/">一年级数学入学准备：从数数到20以内加减法的完整路径</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kousuan-sudu-tisheng-shizhan-20ti/">口算速度提升实战：从每分钟5题到20题</a></li>
+          <li><a href="https://www.skillxm.cn/blog/xueba-xuexi-xiguan/">学霸学习习惯养成方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/shushi-jisuan-jiaoxue/">小学数学竖式计算全攻略</a></li>
         </ul>
       </div>
       <script

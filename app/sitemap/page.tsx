@@ -85,7 +85,7 @@ export default function SitemapIndex() {
             <span className="text-xs text-slate-400 font-normal">({TOOLS.length})</span>
           </h2>
           <ul className="space-y-1.5 text-sm">
-            <li><Link href="/tools" className="text-slate-300 hover:text-blue-400">全部工具</Link></li>
+            <li><Link href="/tools/" className="text-slate-300 hover:text-blue-400">全部工具</Link></li>
             {TOOLS.map((t) => (
               <li key={t.path}>
                 <Link href={t.path} className="text-slate-300 hover:text-blue-400">
@@ -103,7 +103,7 @@ export default function SitemapIndex() {
             <span className="text-xs text-slate-400 font-normal">({GRADES.length})</span>
           </h2>
           <ul className="space-y-1.5 text-sm">
-            <li><Link href="/grade" className="text-slate-300 hover:text-blue-400">年级专区首页</Link></li>
+            <li><Link href="/grade/" className="text-slate-300 hover:text-blue-400">年级专区首页</Link></li>
             {GRADES.map((g) => (
               <li key={g.grade}>
                 <Link href={`/grade/grade-${g.grade}`} className="text-slate-300 hover:text-blue-400">
@@ -121,7 +121,7 @@ export default function SitemapIndex() {
             <span className="text-xs text-slate-400 font-normal">({TEXTBOOKS.length * 6})</span>
           </h2>
           <ul className="space-y-1.5 text-sm">
-            <li><Link href="/textbook" className="text-slate-300 hover:text-blue-400">教材专区首页</Link></li>
+            <li><Link href="/textbook/" className="text-slate-300 hover:text-blue-400">教材专区首页</Link></li>
             {TEXTBOOKS.map((tb) => (
               <li key={tb.id}>
                 <div className="text-slate-200 font-medium mt-2 mb-1">{tb.name}</div>
@@ -146,7 +146,7 @@ export default function SitemapIndex() {
             <span className="text-xs text-slate-400 font-normal">({KNOWLEDGE_POINTS.length})</span>
           </h2>
           <ul className="space-y-1.5 text-sm">
-            <li><Link href="/knowledge" className="text-slate-300 hover:text-blue-400">知识点专题首页</Link></li>
+            <li><Link href="/knowledge/" className="text-slate-300 hover:text-blue-400">知识点专题首页</Link></li>
             {KNOWLEDGE_POINTS.map((k) => (
               <li key={k.slug}>
                 <Link href={`/knowledge/${k.slug}`} className="text-slate-300 hover:text-blue-400">
@@ -164,7 +164,7 @@ export default function SitemapIndex() {
             <span className="text-xs text-slate-400 font-normal">({resources.length})</span>
           </h2>
           <ul className="space-y-1.5 text-sm max-h-96 overflow-y-auto">
-            <li><Link href="/resources" className="text-slate-300 hover:text-blue-400">资源库首页</Link></li>
+            <li><Link href="/resources/" className="text-slate-300 hover:text-blue-400">资源库首页</Link></li>
             {resources.map((r) => (
               <li key={r.id}>
                 <Link href={`/resources/${r.id}`} className="text-slate-300 hover:text-blue-400 line-clamp-1">
@@ -182,7 +182,7 @@ export default function SitemapIndex() {
             <span className="text-xs text-slate-400 font-normal">({PARENT_GUIDE_TOPICS.length})</span>
           </h2>
           <ul className="space-y-1.5 text-sm">
-            <li><Link href="/parent-guide" className="text-slate-300 hover:text-blue-400">家长指导首页</Link></li>
+            <li><Link href="/parent-guide/" className="text-slate-300 hover:text-blue-400">家长指导首页</Link></li>
             {PARENT_GUIDE_TOPICS.map((t) => (
               <li key={t.id}>
                 <Link href={`/parent-guide/${t.id}`} className="text-slate-300 hover:text-blue-400">
@@ -199,10 +199,10 @@ export default function SitemapIndex() {
             <span>📚</span> 内容板块
           </h2>
           <ul className="space-y-1.5 text-sm">
-            <li><Link href="/blog" className="text-slate-300 hover:text-blue-400">✏️ 知识分享（80+篇）</Link></li>
-            <li><Link href="/daily" className="text-slate-300 hover:text-blue-400">📅 每日一练</Link></li>
-            <li><Link href="/changelog" className="text-slate-300 hover:text-blue-400">📝 更新日志</Link></li>
-            <li><Link href="/sitemap" className="text-slate-300 hover:text-blue-400">🗺️ 网站地图</Link></li>
+            <li><Link href="/blog/" className="text-slate-300 hover:text-blue-400">✏️ 知识分享（80+篇）</Link></li>
+            <li><Link href="/daily/" className="text-slate-300 hover:text-blue-400">📅 每日一练</Link></li>
+            <li><Link href="/changelog/" className="text-slate-300 hover:text-blue-400">📝 更新日志</Link></li>
+            <li><Link href="/sitemap/" className="text-slate-300 hover:text-blue-400">🗺️ 网站地图</Link></li>
             <li><a href="/rss.xml" className="text-slate-300 hover:text-blue-400">📡 RSS 订阅</a></li>
             <li><a href="/sitemap.xml" className="text-slate-300 hover:text-blue-400">🤖 XML Sitemap（搜索引擎）</a></li>
           </ul>
@@ -214,11 +214,11 @@ export default function SitemapIndex() {
             <span>ℹ️</span> 关于
           </h2>
           <ul className="space-y-1.5 text-sm">
-            <li><Link href="/about" className="text-slate-300 hover:text-blue-400">关于练学宝</Link></li>
-            <li><Link href="/contact" className="text-slate-300 hover:text-blue-400">联系我们</Link></li>
-            <li><Link href="/privacy" className="text-slate-300 hover:text-blue-400">隐私政策</Link></li>
-            <li><Link href="/terms" className="text-slate-300 hover:text-blue-400">服务条款</Link></li>
-            <li><Link href="/search" className="text-slate-300 hover:text-blue-400">🔍 全站搜索</Link></li>
+            <li><Link href="/about/" className="text-slate-300 hover:text-blue-400">关于练学宝</Link></li>
+            <li><Link href="/contact/" className="text-slate-300 hover:text-blue-400">联系我们</Link></li>
+            <li><Link href="/privacy/" className="text-slate-300 hover:text-blue-400">隐私政策</Link></li>
+            <li><Link href="/terms/" className="text-slate-300 hover:text-blue-400">服务条款</Link></li>
+            <li><Link href="/search/" className="text-slate-300 hover:text-blue-400">🔍 全站搜索</Link></li>
           </ul>
         </section>
 

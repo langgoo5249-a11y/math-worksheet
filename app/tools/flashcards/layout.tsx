@@ -37,12 +37,12 @@ export default function FlashcardsLayout({ children }: { children: React.ReactNo
         </ul>
         <p>适用对象</p>
         <p>识字卡片生成器适合小学语文教师、幼儿园教师、学生家长以及从事汉字教学的培训机构使用。无论是课堂教学、课后辅导还是家庭早教，都可以通过本工具快速生成专业的识字卡片，提高汉字学习效率。</p>
-        <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/shizi-fangfa-tisheng">小学识字方法大比拼</a></li>
-          <li><a href="https://www.skillxm.cn/blog/pinyin-xuexi-luxiantu">一年级拼音学习完整攻略</a></li>
-          <li><a href="https://www.skillxm.cn/blog/yinianji-pinyin-shizi-kousuan-gonglue">一年级家长必看：拼音+识字+口算全攻略</a></li>
+          <li><a href="https://www.skillxm.cn/blog/shizi-fangfa-tisheng/">小学识字方法大比拼</a></li>
+          <li><a href="https://www.skillxm.cn/blog/pinyin-xuexi-luxiantu/">一年级拼音学习完整攻略</a></li>
+          <li><a href="https://www.skillxm.cn/blog/yinianji-pinyin-shizi-kousuan-gonglue/">一年级家长必看：拼音+识字+口算全攻略</a></li>
         </ul>
       </div>
       <script

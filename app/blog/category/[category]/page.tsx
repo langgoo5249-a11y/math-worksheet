@@ -85,6 +85,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!(categories as readonly string[]).includes(decodedCategory) || decodedCategory === '全部') {
     return {
       title: '分类未找到 - 练学宝',
+      robots: { index: false, follow: true },
     };
   }
 
@@ -251,9 +252,9 @@ export default async function CategoryPage({ params }: PageProps) {
               </div>
               <div className="hidden lg:flex items-center gap-1">
                 <a href="/" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">首页</a>
-                <a href="/blog" className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">知识分享</a>
-                <a href="/about" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">关于我们</a>
-                <a href="/contact" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">联系我们</a>
+                <a href="/blog/" className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">知识分享</a>
+                <a href="/about/" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">关于我们</a>
+                <a href="/contact/" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">联系我们</a>
               </div>
             </div>
           </div>
@@ -272,7 +273,7 @@ export default async function CategoryPage({ params }: PageProps) {
                 </li>
                 <li className="text-gray-600">/</li>
                 <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem">
-                  <Link href="/blog" itemProp="item" className="hover:text-white transition-colors">
+                  <Link href="/blog/" itemProp="item" className="hover:text-white transition-colors">
                     <span itemProp="name">知识分享</span>
                   </Link>
                   <meta itemProp="position" content="2" />
@@ -393,13 +394,13 @@ export default async function CategoryPage({ params }: PageProps) {
         <footer className="border-t border-white/10 py-8 px-4 mt-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400 mb-4">
-              <a href="/about" className="hover:text-white transition-colors">关于我们</a>
+              <a href="/about/" className="hover:text-white transition-colors">关于我们</a>
               <span className="text-gray-600">|</span>
-              <a href="/terms" className="hover:text-white transition-colors">服务条款</a>
+              <a href="/terms/" className="hover:text-white transition-colors">服务条款</a>
               <span className="text-gray-600">|</span>
-              <a href="/contact" className="hover:text-white transition-colors">联系我们</a>
+              <a href="/contact/" className="hover:text-white transition-colors">联系我们</a>
               <span className="text-gray-600">|</span>
-              <a href="/blog" className="hover:text-white transition-colors">知识分享</a>
+              <a href="/blog/" className="hover:text-white transition-colors">知识分享</a>
             </div>
             <div className="text-center text-gray-500 text-sm">
               &copy; 2026 练学宝

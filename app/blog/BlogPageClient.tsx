@@ -118,10 +118,10 @@ export default function BlogPageClient({ type, categories = [], tools = [], tota
               </a>
             ))}
             <div className="border-t border-white/10 my-3" />
-            <a href="/blog" className="block px-4 py-3 text-white bg-white/10 rounded-lg font-medium">📰 知识分享</a>
-            <a href="/search" className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">🔍 搜索</a>
-            <a href="/about" className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">关于我们</a>
-            <a href="/contact" className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">联系我们</a>
+            <a href="/blog/" className="block px-4 py-3 text-white bg-white/10 rounded-lg font-medium">📰 知识分享</a>
+            <a href="/search/" className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">🔍 搜索</a>
+            <a href="/about/" className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">关于我们</a>
+            <a href="/contact/" className="block px-4 py-3 text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">联系我们</a>
           </div>
         </div>
       </div>

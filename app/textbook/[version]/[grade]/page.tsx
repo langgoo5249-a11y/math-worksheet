@@ -499,7 +499,7 @@ export default async function TextbookGradePage({ params }: { params: Promise<{ 
             ))}
           </div>
           <p className="mt-4 text-sm text-slate-400">
-            📌 更多教程同步问题？查看<a href="/textbook" className="text-blue-400 hover:text-blue-300">所有教材版本</a>或访问<a href="/blog" className="text-blue-400 hover:text-blue-300">练学宝博客</a>。
+            📌 更多教程同步问题？查看<a href="/textbook/" className="text-blue-400 hover:text-blue-300">所有教材版本</a>或访问<a href="/blog/" className="text-blue-400 hover:text-blue-300">练学宝博客</a>。
           </p>
         </section>
       )}

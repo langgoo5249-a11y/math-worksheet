@@ -120,10 +120,10 @@ export default function BlogPage() {
 
               <span className="px-3 py-1.5 text-sm text-white bg-white/10 rounded-lg font-medium">📰 知识分享</span>
 
-              <a href="/search" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">🔍 搜索</a>
+              <a href="/search/" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">🔍 搜索</a>
 
-              <a href="/about" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">关于我们</a>
-              <a href="/contact" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">联系我们</a>
+              <a href="/about/" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">关于我们</a>
+              <a href="/contact/" className="px-3 py-1.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors">联系我们</a>
             </div>
             {/* 移动端汉堡菜单按钮 - 由客户端组件处理 */}
             <BlogPageClient type="menuTrigger" />

@@ -138,7 +138,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             </li>
             <li>/</li>
             <li>
-              <Link href="/blog" className="hover:text-white transition-colors">知识分享</Link>
+              <Link href="/blog/" className="hover:text-white transition-colors">知识分享</Link>
             </li>
             <li>/</li>
             <li className="text-gray-300 truncate max-w-[200px]">{article.title}</li>
@@ -267,7 +267,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             <a href="https://github.com/jm6-lang/math-worksheet" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors">
               <span className="text-blue-400">⌂</span> GitHub
             </a>
-            <a href="/about" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors">
+            <a href="/about/" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors">
               <span className="text-blue-400">ℹ</span> 关于练学宝
             </a>
           </div>

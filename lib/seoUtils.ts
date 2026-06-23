@@ -6,6 +6,17 @@ const SITE_NAME = '练学宝';
 const SITE_AUTHOR = '林远';
 const SITE_LOGO = 'https://www.skillxm.cn/favicon.svg';
 
+// 确保页面 URL 以 / 结尾（不影响带查询参数、锚点或文件后缀的 URL）
+function ensureTrailingSlash(url: string): string {
+  if (!url) return url;
+  if (url.endsWith('/')) return url;
+  // 含查询参数或锚点的 URL 不处理
+  if (url.includes('?') || url.includes('#')) return url;
+  // 文件 URL（含扩展名，如 og-image.jpg）不处理
+  if (/\.[a-zA-Z0-9]+$/.test(url)) return url;
+  return `${url}/`;
+}
+
 // ========== FAQ 页面结构化数据 ==========
 export function generateFAQSchema(faqs: { q: string; a: string }[]) {
   return {
@@ -29,7 +40,7 @@ export function generateBreadcrumbSchema(items: { label: string; href?: string }
       '@type': 'ListItem',
       position: idx + 1,
       name: item.label,
-      item: item.href ? `${BASE_URL}${item.href}` : undefined,
+      item: item.href ? ensureTrailingSlash(`${BASE_URL}${item.href}`) : undefined,
     })),
   };
 }
@@ -48,11 +59,11 @@ export function generateCourseSchema(opts: {
     '@type': 'Course',
     name: opts.name,
     description: opts.description,
-    url: opts.url,
+    url: ensureTrailingSlash(opts.url),
     provider: {
       '@type': 'Organization',
       name: opts.provider || SITE_NAME,
-      sameAs: BASE_URL,
+      sameAs: `${BASE_URL}/`,
     },
     educationalLevel: opts.educationalLevel,
     teaches: opts.teaches,
@@ -82,7 +93,7 @@ export function generateArticleSchema(opts: {
     '@type': 'Article',
     headline: opts.title,
     description: opts.description,
-    url: opts.url,
+    url: ensureTrailingSlash(opts.url),
     image: opts.image || `${BASE_URL}/og-image.jpg`,
     datePublished: opts.datePublished || '2026-01-01',
     dateModified: opts.dateModified || new Date().toISOString().slice(0, 10),
@@ -90,11 +101,11 @@ export function generateArticleSchema(opts: {
       '@type': 'Person',
       '@id': `${BASE_URL}/#person-linyuan`,
       name: SITE_AUTHOR,
-      url: `${BASE_URL}/about`,
+      url: `${BASE_URL}/about/`,
       affiliation: {
         '@type': 'Organization',
         name: SITE_NAME,
-        url: BASE_URL,
+        url: `${BASE_URL}/`,
       },
     },
     publisher: {
@@ -107,7 +118,7 @@ export function generateArticleSchema(opts: {
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': opts.url,
+      '@id': ensureTrailingSlash(opts.url),
     },
     keywords: opts.keywords?.join(','),
     inLanguage: 'zh-CN',
@@ -130,7 +141,7 @@ export function generateLearningResourceSchema(opts: {
     '@type': 'LearningResource',
     name: opts.name,
     description: opts.description,
-    url: opts.url,
+    url: ensureTrailingSlash(opts.url),
     educationalLevel: opts.educationalLevel,
     learningResourceType: opts.learningResourceType,
     teaches: opts.teaches,
@@ -140,7 +151,7 @@ export function generateLearningResourceSchema(opts: {
     provider: {
       '@type': 'Organization',
       name: SITE_NAME,
-      url: BASE_URL,
+      url: `${BASE_URL}/`,
     },
   };
 }
@@ -156,13 +167,13 @@ export function generateItemListSchema(opts: {
     '@type': 'ItemList',
     name: opts.name,
     description: opts.description,
-    url: opts.url,
+    url: ensureTrailingSlash(opts.url),
     numberOfItems: opts.items.length,
     itemListElement: opts.items.map((item, i) => ({
       '@type': 'ListItem',
       position: item.position || i + 1,
       name: item.name,
-      url: item.url,
+      url: ensureTrailingSlash(item.url),
       description: item.description,
     })),
   };
@@ -181,10 +192,10 @@ export function generateWebPageSchema(opts: {
 }) {
   return {
     '@type': 'WebPage',
-    '@id': opts.url,
+    '@id': ensureTrailingSlash(opts.url),
     name: opts.name,
     description: opts.description,
-    url: opts.url,
+    url: ensureTrailingSlash(opts.url),
     inLanguage: opts.inLanguage || 'zh-CN',
     keywords: opts.keywords?.join(','),
     primaryImageOfPage: opts.primaryImage || `${BASE_URL}/og-image.jpg`,
@@ -203,7 +214,7 @@ export function generateOrganizationSchema() {
     '@type': 'Organization',
     '@id': `${BASE_URL}/#organization`,
     name: SITE_NAME,
-    url: BASE_URL,
+    url: `${BASE_URL}/`,
     logo: {
       '@type': 'ImageObject',
       url: SITE_LOGO,
@@ -243,12 +254,12 @@ export function generatePersonSchema(opts: {
     name: opts.name,
     description: opts.description,
     jobTitle: opts.jobTitle || '教育内容作者',
-    url: opts.url || BASE_URL,
+    url: opts.url ? ensureTrailingSlash(opts.url) : `${BASE_URL}/`,
     sameAs: opts.sameAs || [],
     affiliation: {
       '@type': 'Organization',
       name: SITE_NAME,
-      url: BASE_URL,
+      url: `${BASE_URL}/`,
     },
   };
 }
@@ -285,7 +296,7 @@ export function generateOpenGraph(opts: {
   return {
     title: opts.title,
     description: opts.description,
-    url: opts.url,
+    url: ensureTrailingSlash(opts.url),
     siteName: SITE_NAME,
     locale: 'zh_CN',
     type: opts.type || 'website',
@@ -314,16 +325,16 @@ export function generateTwitterCard(opts: {
 }
 
 export function generateCanonical(path: string) {
-  return `${BASE_URL}${path}`;
+  return ensureTrailingSlash(`${BASE_URL}${path}`);
 }
 
 export function generateHreflangAlternates(path: string = '') {
   return {
-    'zh-CN': `${BASE_URL}${path}`,
-    'en': `${BASE_URL}/en${path}`,
-    'ja': `${BASE_URL}/ja${path}`,
-    'ko': `${BASE_URL}/ko${path}`,
-    'x-default': `${BASE_URL}${path}`,
+    'zh-CN': ensureTrailingSlash(`${BASE_URL}${path}`),
+    'en': ensureTrailingSlash(`${BASE_URL}/en${path}`),
+    'ja': ensureTrailingSlash(`${BASE_URL}/ja${path}`),
+    'ko': ensureTrailingSlash(`${BASE_URL}/ko${path}`),
+    'x-default': ensureTrailingSlash(`${BASE_URL}${path}`),
   };
 }
 

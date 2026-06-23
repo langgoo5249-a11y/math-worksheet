@@ -44,13 +44,13 @@ export default function UnitTestLayout({ children }: { children: React.ReactNode
         </ul>
         <p>适用对象</p>
         <p>单元测试卷生成器适合小学各学科教师、教育培训机构以及学生家长使用。无论是日常单元测验、期中期末考试还是课后练习，都可以通过本工具快速生成高质量的测试试卷，节省教师备课时间，提高教学效率。</p>
-        <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/xiaoxue-shuxue-lianxi-ziyuan-huizong">最全小学数学练习资源汇总</a></li>
-          <li><a href="https://www.skillxm.cn/blog/lianxijuan-xuanze">如何选择适合孩子的练习卷</a></li>
-          <li><a href="https://www.skillxm.cn/blog/qimo-fuxi-gonglue-mianfei-gongju">期末复习攻略：用免费工具高效备考</a></li>
-          <li><a href="https://www.skillxm.cn/blog/danyuan-ceshijuan-shengcheng-gongju">小学单元测试卷怎么出</a></li>
+          <li><a href="https://www.skillxm.cn/blog/xiaoxue-shuxue-lianxi-ziyuan-huizong/">最全小学数学练习资源汇总</a></li>
+          <li><a href="https://www.skillxm.cn/blog/lianxijuan-xuanze/">如何选择适合孩子的练习卷</a></li>
+          <li><a href="https://www.skillxm.cn/blog/qimo-fuxi-gonglue-mianfei-gongju/">期末复习攻略：用免费工具高效备考</a></li>
+          <li><a href="https://www.skillxm.cn/blog/danyuan-ceshijuan-shengcheng-gongju/">小学单元测试卷怎么出</a></li>
         </ul>
       </div>
       <script

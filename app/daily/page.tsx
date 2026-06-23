@@ -170,7 +170,7 @@ async function DailyIndexContent({ searchParams }: { searchParams: Promise<{ gra
             <div className="text-sm text-white">年级专区</div>
             <div className="text-xs text-slate-400 mt-1">系统学习</div>
           </Link>
-          <Link href="/resources" className="block p-3 bg-orange-500/10 hover:bg-orange-500/20 border border-orange-500/20 rounded-lg text-center transition-colors">
+          <Link href="/resources/" className="block p-3 bg-orange-500/10 hover:bg-orange-500/20 border border-orange-500/20 rounded-lg text-center transition-colors">
             <div className="text-2xl mb-1">📁</div>
             <div className="text-sm text-white">资源库</div>
             <div className="text-xs text-slate-400 mt-1">下载打印</div>

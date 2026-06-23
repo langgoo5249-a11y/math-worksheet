@@ -19,7 +19,7 @@ const CAROUSEL_ITEMS = [
     description: '支持加减乘除、竖式计算、填空题等多种题型',
     icon: '🧮',
     gradient: 'from-blue-600 via-indigo-600 to-purple-600',
-    link: '/tools/math-worksheet',
+    link: '/tools/math-worksheet/',
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const CAROUSEL_ITEMS = [
     description: '田字格、米字格、方格多种模板，自定义内容',
     icon: '✍️',
     gradient: 'from-emerald-500 via-teal-500 to-cyan-500',
-    link: '/tools/calligraphy',
+    link: '/tools/calligraphy/',
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const CAROUSEL_ITEMS = [
     description: '标准四线三格英文字母练习，支持PDF导出',
     icon: '🔤',
     gradient: 'from-rose-500 via-pink-500 to-red-500',
-    link: '/tools/english-calligraphy',
+    link: '/tools/english-calligraphy/',
   },
   {
     id: 4,
@@ -46,7 +46,7 @@ const CAROUSEL_ITEMS = [
     description: '多难度级别，计时挑战，自动校验',
     icon: '🧩',
     gradient: 'from-orange-500 via-red-500 to-pink-500',
-    link: '/tools/sudoku',
+    link: '/tools/sudoku/',
   },
   {
     id: 5,
@@ -55,7 +55,7 @@ const CAROUSEL_ITEMS = [
     description: '多难度级别，在线计时口算练习，即时反馈',
     icon: '⚡',
     gradient: 'from-yellow-500 via-amber-500 to-orange-500',
-    link: '/tools/mental-math',
+    link: '/tools/mental-math/',
   },
   {
     id: 6,
@@ -64,7 +64,7 @@ const CAROUSEL_ITEMS = [
     description: '自定义汉字卡片，支持拼音组词，可打印制作',
     icon: '🃏',
     gradient: 'from-purple-500 via-violet-500 to-indigo-500',
-    link: '/tools/flashcards',
+    link: '/tools/flashcards/',
   },
   {
     id: 7,
@@ -73,7 +73,7 @@ const CAROUSEL_ITEMS = [
     description: '看图写话、日记、书信等多种模板，辅助写作练习',
     icon: '📝',
     gradient: 'from-teal-500 via-cyan-500 to-blue-500',
-    link: '/tools/writing-template',
+    link: '/tools/writing-template/',
   },
 ];
 
@@ -98,7 +98,7 @@ const CONTENT_SECTIONS = [
     title: '年级学习专区',
     subtitle: '1-6年级完整方案',
     description: '每个年级配套核心知识点、推荐工具、学习路径',
-    href: '/grade',
+    href: '/grade/',
     gradient: 'from-blue-500 to-indigo-600',
     accent: 'blue',
     badge: '6个年级',
@@ -108,7 +108,7 @@ const CONTENT_SECTIONS = [
     title: '教材同步练习',
     subtitle: '4版本同步配套',
     description: '人教版/北师大/苏教版/部编版，按教材单元组织',
-    href: '/textbook',
+    href: '/textbook/',
     gradient: 'from-purple-500 to-fuchsia-600',
     accent: 'purple',
     badge: '4版本×6年级',
@@ -118,7 +118,7 @@ const CONTENT_SECTIONS = [
     title: '知识点专题',
     subtitle: '10个核心专题',
     description: '凑十法、破十法、乘法口诀、百分数、声母韵母等',
-    href: '/knowledge',
+    href: '/knowledge/',
     gradient: 'from-amber-500 to-orange-600',
     accent: 'amber',
     badge: '10个专题',
@@ -128,7 +128,7 @@ const CONTENT_SECTIONS = [
     title: '练习卷资源库',
     subtitle: '免费下载',
     description: '20+套高质量小学练习卷，按年级+学科+知识点分类',
-    href: '/resources',
+    href: '/resources/',
     gradient: 'from-emerald-500 to-teal-600',
     accent: 'emerald',
     badge: '20+套资源',
@@ -138,7 +138,7 @@ const CONTENT_SECTIONS = [
     title: '家长指导中心',
     subtitle: '6大主题',
     description: '幼小衔接、学习习惯、辅导作业、小升初全攻略',
-    href: '/parent-guide',
+    href: '/parent-guide/',
     gradient: 'from-rose-500 to-pink-600',
     accent: 'rose',
     badge: '6个主题',
@@ -148,7 +148,7 @@ const CONTENT_SECTIONS = [
     title: '每日一练',
     subtitle: '每天15分钟',
     description: '按年级智能出题，每天一组练习题打卡',
-    href: '/daily',
+    href: '/daily/',
     gradient: 'from-cyan-500 to-blue-600',
     accent: 'cyan',
     badge: '天天打卡',
@@ -221,17 +221,15 @@ export default function HomePage() {
             10+款免费小学教学工具，覆盖数学计算、语文练字、练习卷下载，即开即用无需注册
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-2">
-            <Link href="/tools" className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-full text-sm transition-colors shadow-lg shadow-blue-600/25">
+            <Link href="/tools/" className="px-5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded-full text-sm transition-colors shadow-lg shadow-blue-600/25">
               探索所有工具
             </Link>
-            <Link href="/about" className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full text-sm border border-white/20 transition-colors">
+            <Link href="/about/" className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full text-sm border border-white/20 transition-colors">
               了解更多
             </Link>
           </div>
         </div>
       </section>
-      {/* 首页核心主题 H1（搜索引擎识别）sr-only 隐藏视觉，但不影响 SEO */}
-      <h1 className="sr-only">练学宝 - 免费小学在线学习工具，涵盖数学计算、语文练字、练习卷下载</h1>
       {/* ===== 轮播大图区域 ===== */}
       <section className="pt-0">
         <div
@@ -423,7 +421,7 @@ export default function HomePage() {
               </h2>
               <p className="text-slate-400 text-sm mt-2 hidden sm:block">每个年级都有完整的核心知识点、推荐工具、学习路径</p>
             </div>
-            <Link href="/grade" className="hidden sm:flex items-center gap-1.5 text-sm text-blue-300 hover:text-blue-200 font-medium shrink-0">
+            <Link href="/grade/" className="hidden sm:flex items-center gap-1.5 text-sm text-blue-300 hover:text-blue-200 font-medium shrink-0">
               查看全部
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -435,7 +433,7 @@ export default function HomePage() {
             {GRADES.map((g) => (
               <Link
                 key={g.grade}
-                href={`/grade/grade-${g.grade}`}
+                href={`/grade/grade-${g.grade}/`}
                 className="group relative bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-white/10 hover:border-blue-500/60 rounded-2xl p-4 sm:p-5 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-500/10"
               >
                 <div className="absolute top-3 right-3 w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full flex items-center justify-center text-base sm:text-lg font-black text-blue-300 group-hover:scale-110 transition-transform">
@@ -468,7 +466,7 @@ export default function HomePage() {
               </h2>
               <p className="text-slate-400 text-sm mt-2 hidden sm:block">人教/北师/苏教/部编 4个版本，与学校进度完全同步</p>
             </div>
-            <Link href="/textbook" className="hidden sm:flex items-center gap-1.5 text-sm text-purple-300 hover:text-purple-200 font-medium shrink-0">
+            <Link href="/textbook/" className="hidden sm:flex items-center gap-1.5 text-sm text-purple-300 hover:text-purple-200 font-medium shrink-0">
               查看全部
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -527,7 +525,7 @@ export default function HomePage() {
               </h2>
               <p className="text-slate-400 text-sm mt-2 hidden sm:block">10个小学核心知识点，每个都配详解、例题、配套工具</p>
             </div>
-            <Link href="/knowledge" className="hidden sm:flex items-center gap-1.5 text-sm text-amber-300 hover:text-amber-200 font-medium shrink-0">
+            <Link href="/knowledge/" className="hidden sm:flex items-center gap-1.5 text-sm text-amber-300 hover:text-amber-200 font-medium shrink-0">
               查看全部
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -546,7 +544,7 @@ export default function HomePage() {
               return (
                 <Link
                   key={kp.slug}
-                  href={`/knowledge/${kp.slug}`}
+                  href={`/knowledge/${kp.slug}/`}
                   className={`group relative ${subjectColors.bg} border ${subjectColors.border} hover:border-opacity-60 rounded-2xl p-4 sm:p-5 transition-all hover:-translate-y-1`}
                 >
                   <div className="flex items-start gap-3">
@@ -623,7 +621,7 @@ export default function HomePage() {
               </h2>
               <p className="text-slate-400 text-sm mt-2 hidden sm:block">20+ 套精心整理的练习卷，覆盖语数英全学科</p>
             </div>
-            <Link href="/resources" className="hidden sm:flex items-center gap-1.5 text-sm text-emerald-300 hover:text-emerald-200 font-medium shrink-0">
+            <Link href="/resources/" className="hidden sm:flex items-center gap-1.5 text-sm text-emerald-300 hover:text-emerald-200 font-medium shrink-0">
               查看全部
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -635,7 +633,7 @@ export default function HomePage() {
             {featuredResources.map((r) => (
               <Link
                 key={r.id}
-                href={`/resources/${r.id}`}
+                href={`/resources/${r.id}/`}
                 className="group relative bg-gradient-to-br from-slate-800/60 to-slate-900/60 border border-white/10 hover:border-emerald-500/50 rounded-2xl p-4 sm:p-5 transition-all hover:-translate-y-1"
               >
                 <div className="flex items-center gap-2 mb-2 flex-wrap">
@@ -679,7 +677,7 @@ export default function HomePage() {
               </h2>
               <p className="text-slate-400 text-sm mt-2 hidden sm:block">从幼小衔接到小升初，6大主题全攻略</p>
             </div>
-            <Link href="/parent-guide" className="hidden sm:flex items-center gap-1.5 text-sm text-rose-300 hover:text-rose-200 font-medium shrink-0">
+            <Link href="/parent-guide/" className="hidden sm:flex items-center gap-1.5 text-sm text-rose-300 hover:text-rose-200 font-medium shrink-0">
               查看全部
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -693,7 +691,7 @@ export default function HomePage() {
               return (
                 <Link
                   key={t.id}
-                  href={`/parent-guide/${t.id}`}
+                  href={`/parent-guide/${t.id}/`}
                   className={`group relative ${c.bg} border ${c.border} hover:border-opacity-60 rounded-2xl p-4 sm:p-5 transition-all hover:-translate-y-1`}
                 >
                   <div className="text-3xl sm:text-4xl mb-3 group-hover:scale-110 transition-transform">{t.icon}</div>
@@ -734,7 +732,7 @@ export default function HomePage() {
               ))}
             </div>
             <Link
-              href="/daily"
+              href="/daily/"
               className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold text-base sm:text-lg rounded-full shadow-xl shadow-cyan-500/30 hover:shadow-cyan-500/50 hover:scale-105 transition-all"
             >
               立即开始今日打卡
@@ -782,7 +780,7 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="/about"
+              href="/about/"
               className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-400 hover:to-indigo-400 text-white font-bold text-base sm:text-lg rounded-full shadow-xl shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-105 transition-all"
             >
               关于练学宝
@@ -791,7 +789,7 @@ export default function HomePage() {
               </svg>
             </Link>
             <Link
-              href="/tools"
+              href="/tools/"
               className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-base sm:text-lg rounded-full hover:scale-105 transition-all"
             >
               探索所有工具
@@ -811,16 +809,16 @@ export default function HomePage() {
             <h2 className="text-xl sm:text-2xl font-black text-white mb-2 sm:mb-3">开始今天的学习之旅</h2>
             <p className="text-slate-400 text-sm sm:text-base mb-4 sm:mb-6">60万+家长和孩子的共同选择 · 完全免费 · 无需注册</p>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-              <Link href="/grade" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-blue-500 hover:bg-blue-400 text-white text-sm sm:text-base font-medium rounded-full transition-colors">
+              <Link href="/grade/" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-blue-500 hover:bg-blue-400 text-white text-sm sm:text-base font-medium rounded-full transition-colors">
                 🎓 年级专区
               </Link>
-              <Link href="/knowledge" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-amber-500 hover:bg-amber-400 text-white text-sm sm:text-base font-medium rounded-full transition-colors">
+              <Link href="/knowledge/" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-amber-500 hover:bg-amber-400 text-white text-sm sm:text-base font-medium rounded-full transition-colors">
                 💡 知识点专题
               </Link>
-              <Link href="/resources" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white text-sm sm:text-base font-medium rounded-full transition-colors">
+              <Link href="/resources/" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white text-sm sm:text-base font-medium rounded-full transition-colors">
                 📁 资源库
               </Link>
-              <Link href="/parent-guide" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-rose-500 hover:bg-rose-400 text-white text-sm sm:text-base font-medium rounded-full transition-colors">
+              <Link href="/parent-guide/" className="px-4 sm:px-5 py-2 sm:py-2.5 bg-rose-500 hover:bg-rose-400 text-white text-sm sm:text-base font-medium rounded-full transition-colors">
                 👨‍👩‍👧 家长指导
               </Link>
             </div>

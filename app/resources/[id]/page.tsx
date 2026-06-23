@@ -228,13 +228,13 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
           {r.subject === 'math' && r.knowledgePoint === '10以内加减法' && (
             <>
               <p>10以内加减法是一年级数学的起点，孩子需要通过<strong>实物操作</strong>（如小棒、计数器）理解加减法含义，再过渡到抽象计算。</p>
-              <p>练习建议：每天10-15题，配合<Link href="/knowledge/凑十法" className="text-blue-400 hover:underline">凑十法</Link>等技巧，1-2周可熟练掌握。</p>
+              <p>练习建议：每天10-15题，配合<Link href="/knowledge/coushi-fa/" className="text-blue-400 hover:underline">凑十法</Link>等技巧，1-2周可熟练掌握。</p>
             </>
           )}
           {r.subject === 'math' && r.knowledgePoint === '凑十法' && (
             <>
               <p>凑十法是20以内进位加法的核心方法：把<strong>小数凑成10</strong>，再加上余下的数。例如 9+5=9+1+4=10+4=14。</p>
-              <p>练习建议：先练"拆小数"（把5拆成1和4），再练"凑十"一步到位。配合<Link href="/knowledge/凑十法" className="text-blue-400 hover:underline">凑十法专题</Link>效果更佳。</p>
+              <p>练习建议：先练"拆小数"（把5拆成1和4），再练"凑十"一步到位。配合<Link href="/knowledge/coushi-fa/" className="text-blue-400 hover:underline">凑十法专题</Link>效果更佳。</p>
             </>
           )}
           {r.subject === 'math' && r.knowledgePoint === '乘法口诀' && (

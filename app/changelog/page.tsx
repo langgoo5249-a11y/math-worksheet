@@ -174,7 +174,7 @@ export default function ChangelogPage() {
           订阅 <a href="/rss.xml" className="text-blue-400 hover:underline">RSS 订阅</a>，新文章、新工具、新资源第一时间推送。
         </p>
         <p className="text-xs text-slate-400">
-          练学宝持续迭代中，每1-2周发布一次更新。如有问题或建议，欢迎 <a href="/contact" className="text-blue-400 hover:underline">联系我们</a>。
+          练学宝持续迭代中，每1-2周发布一次更新。如有问题或建议，欢迎 <a href="/contact/" className="text-blue-400 hover:underline">联系我们</a>。
         </p>
       </section>
 

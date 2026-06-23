@@ -636,7 +636,7 @@ export default function MathWorksheetPage({ locale }: { locale?: Locale } = {}) 
                   <div className="font-bold text-gray-200 text-sm group-hover:text-white transition-colors">二年级竖式计算生成器</div>
                   <div className="text-xs text-gray-500 mt-1">调整年级为二年级</div>
                 </a>
-                <a href="/blog/xiaoxue-shuxue-cuotiben-zhengque-shiyong-2026" className="block bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-500/30 rounded-xl p-4 transition-all group">
+                <a href="/blog/xiaoxue-shuxue-cuotiben-zhengque-shiyong-2026/" className="block bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-500/30 rounded-xl p-4 transition-all group">
                   <div className="text-2xl mb-2">✖️</div>
                   <div className="font-bold text-gray-200 text-sm group-hover:text-white transition-colors">数学错题本使用</div>
                   <div className="text-xs text-gray-500 mt-1">正确使用方法指南</div>

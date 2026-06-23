@@ -46,13 +46,13 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
         </ul>
         <p>适用对象</p>
         <p>小学1-6年级学生、需要提升计算速度的中小学生、家长辅导孩子口算练习、教师课堂口算训练。适合每日口算打卡、课前热身练习、期末口算复习、假期计算能力巩固等场景。</p>
-        <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏等。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏等。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/kousuan-sudu-tisheng-shizhan-20ti">口算速度提升实战：从每分钟5题到20题</a></li>
-          <li><a href="https://www.skillxm.cn/blog/kousuan-xunlian-fangfa">如何培养孩子的口算能力</a></li>
-          <li><a href="https://www.skillxm.cn/blog/kousuan-xunlian-fangfa">口算训练方法与技巧</a></li>
-          <li><a href="https://www.skillxm.cn/blog/shuxue-siwei-shudu-kousuan-shuangguan">数学思维训练：数独+口算双管齐下</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kousuan-sudu-tisheng-shizhan-20ti/">口算速度提升实战：从每分钟5题到20题</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kousuan-xunlian-fangfa/">如何培养孩子的口算能力</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kousuan-xunlian-fangfa/">口算训练方法与技巧</a></li>
+          <li><a href="https://www.skillxm.cn/blog/shuxue-siwei-shudu-kousuan-shuangguan/">数学思维训练：数独+口算双管齐下</a></li>
         </ul>
       </div>
       <script

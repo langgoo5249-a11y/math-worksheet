@@ -44,12 +44,12 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
         </ul>
         <p>适用对象</p>
         <p>拼音学习工具适合小学一年级语文教师、幼儿园大班教师、学生家长以及从事拼音教学的培训机构使用。无论是课堂教学、课后辅导还是家庭早教，都可以通过本工具生成专业的拼音书写练习纸，帮助孩子打好拼音基础。</p>
-        <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/pinyin-xuexi-luxiantu">一年级拼音学习完整攻略</a></li>
-          <li><a href="https://www.skillxm.cn/blog/yinianji-pinyin-shizi-kousuan-gonglue">一年级家长必看：拼音+识字+口算全攻略</a></li>
-          <li><a href="https://www.skillxm.cn/blog/shizi-fangfa-tisheng">小学识字方法大比拼</a></li>
+          <li><a href="https://www.skillxm.cn/blog/pinyin-xuexi-luxiantu/">一年级拼音学习完整攻略</a></li>
+          <li><a href="https://www.skillxm.cn/blog/yinianji-pinyin-shizi-kousuan-gonglue/">一年级家长必看：拼音+识字+口算全攻略</a></li>
+          <li><a href="https://www.skillxm.cn/blog/shizi-fangfa-tisheng/">小学识字方法大比拼</a></li>
         </ul>
       </div>
       <script

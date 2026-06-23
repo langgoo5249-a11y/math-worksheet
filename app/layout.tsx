@@ -112,7 +112,7 @@ export default async function RootLayout({
         "@type": "Organization",
         "@id": "https://www.skillxm.cn/#organization",
         name: "练学宝",
-        url: "https://www.skillxm.cn",
+        url: "https://www.skillxm.cn/",
         dateModified: "2026-06-21",
         logo: {
           "@type": "ImageObject",
@@ -155,7 +155,7 @@ export default async function RootLayout({
         jobTitle: "教育内容作者",
         sameAs: [
           "https://github.com/jm6-lang",
-          "https://www.skillxm.cn/about"
+          "https://www.skillxm.cn/about/"
         ],
         alumniOf: {
           "@type": "Organization",
@@ -171,7 +171,7 @@ export default async function RootLayout({
         affiliation: {
           "@id": "https://www.skillxm.cn/#organization"
         },
-        url: "https://www.skillxm.cn/about",
+        url: "https://www.skillxm.cn/about/",
       },
       {
         "@type": "SpeakableSpecification",

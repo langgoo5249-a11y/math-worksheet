@@ -429,7 +429,7 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
             ))}
           </div>
           <p className="mt-4 text-sm text-slate-400">
-            📌 更多问题？查看<a href="/blog" className="text-blue-400 hover:text-blue-300">练学宝博客</a>获取详细学习指导。
+            📌 更多问题？查看<a href="/blog/" className="text-blue-400 hover:text-blue-300">练学宝博客</a>获取详细学习指导。
           </p>
         </section>
       )}

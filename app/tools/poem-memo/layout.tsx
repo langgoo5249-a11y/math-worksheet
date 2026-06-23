@@ -44,12 +44,12 @@ export default function PoemMemoLayout({ children }: { children: React.ReactNode
         </ul>
         <p>适用对象</p>
         <p>古诗词默写生成器适合小学语文教师、学生家长以及小学各年级学生使用。无论是日常古诗词背诵检查、期中期末考试复习还是假期作业布置，都可以通过本工具快速生成专业的古诗词默写练习卷，提高古诗词学习效率。</p>
-        <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/gushi-shici-moxie-lianxi-fangfa">小学1-6年级必背古诗词完整清单及默写方法</a></li>
-          <li><a href="https://www.skillxm.cn/blog/pinyin-xuexi-luxiantu">一年级拼音学习完整攻略</a></li>
-          <li><a href="https://www.skillxm.cn/blog/sannianji-zuowen-rumen">三年级作文入门方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/gushi-shici-moxie-lianxi-fangfa/">小学1-6年级必背古诗词完整清单及默写方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/pinyin-xuexi-luxiantu/">一年级拼音学习完整攻略</a></li>
+          <li><a href="https://www.skillxm.cn/blog/sannianji-zuowen-rumen/">三年级作文入门方法</a></li>
         </ul>
       </div>
       <script
