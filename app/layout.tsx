@@ -272,8 +272,14 @@ export default async function RootLayout({
         <link rel="dns-prefetch" href="https://zz.bdstatic.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
         <link rel="dns-prefetch" href="https://lf1-cdn-tos.bytegoofy.com" />
         <link rel="preconnect" href="https://lf1-cdn-tos.bytegoofy.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
+
+        {/* Google Search Console 所有权验证 */}
+        <meta name="google-site-verification" content="REPLACE_WITH_YOUR_GSC_VERIFICATION_CODE" />
 
         {/* Google Consent Mode v2 - 默认拒绝 */}
         <script

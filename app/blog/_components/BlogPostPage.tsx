@@ -238,6 +238,18 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           dangerouslySetInnerHTML={{ __html: parseMarkdown(article.content || '') }}
         />
 
+        {/* AdSense In-Content Ad Unit */}
+        <div className="my-8 p-4 bg-slate-800/20 border border-white/5 rounded-xl text-center">
+          <ins
+            className="adsbygoogle"
+            style={{ display: 'block', textAlign: 'center' }}
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+            data-ad-slot="1234567890"
+          />
+        </div>
+
         {/* 参考来源 */}
         {article.citations && article.citations.length > 0 && (
           <div className="mt-8 p-6 bg-slate-800/50 rounded-xl border border-white/10">

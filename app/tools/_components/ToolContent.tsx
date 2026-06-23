@@ -19,8 +19,10 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 
   const related = relatedToolsMap[toolId] || [];
   // 生成 lastModified 日期 — 帮助 Passage Ranking 和 Freshness 信号
+  // 在 force-static 构建模式下，此日期随每次部署自动更新
   const now = new Date();
   const lastModified = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const lastModifiedISO = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}T00:00:00+08:00`;
 
   return (
     <div className="max-w-4xl mx-auto px-4 pb-12 space-y-6">
@@ -136,9 +138,20 @@ export default function ToolContent({ toolId }: ToolContentProps) {
           </div>
         </div>
         <div className="mt-4 pt-4 border-t border-white/10 text-center">
-          <Link href="/about" className="inline-flex items-center gap-1 text-xs text-blue-400 hover:text-blue-300 transition-colors">
-            了解更多关于练学宝团队 →
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            <Link href="/about" className="inline-flex items-center gap-1 text-xs text-blue-400 hover:text-blue-300 transition-colors">
+              了解更多关于练学宝团队 →
+            </Link>
+            <Link href="/blog/" className="inline-flex items-center gap-1 text-xs text-purple-400 hover:text-purple-300 transition-colors">
+              📖 查看学习方法文章 →
+            </Link>
+            <Link href="/tools/" className="inline-flex items-center gap-1 text-xs text-emerald-400 hover:text-emerald-300 transition-colors">
+              🔧 浏览全部学习工具 →
+            </Link>
+            <Link href="/privacy/" className="inline-flex items-center gap-1 text-xs text-gray-500 hover:text-gray-400 transition-colors">
+              隐私政策
+            </Link>
+          </div>
         </div>
       </section>
 
