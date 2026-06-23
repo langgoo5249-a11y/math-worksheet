@@ -160,4 +160,4 @@ Sitemap: https://www.skillxm.cn/sitemap.xml
 Sitemap: https://www.skillxm.cn/rss.xml
 
 # ---------- Host ----------
-Host: https://www.skillxm.cn
+Host: www.skillxm.cn
