@@ -26,6 +26,8 @@ export interface ToolPageContent {
   gradeAdvice: GradeAdvice[];
   educationTips: string[];
   faqs: FAQ[];
+  /** 相关工具推荐：toolId + 推荐理由（可选） */
+  relatedTools?: { toolId: string; reason: string }[];
 }
 
 export const toolPageContents: Record<string, ToolPageContent> = {

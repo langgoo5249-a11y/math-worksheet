@@ -70,12 +70,62 @@ export default function ToolsPage() {
         />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="text-center mb-10 sm:mb-14">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
+            <h1 id="tools-page-title" className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 tracking-tight">
               全部学习工具
             </h1>
             <p className="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
               练学宝目前上线 {activeTools.length} 款免费小学教学工具，覆盖数学、语文、英语核心学科，无需注册即可使用。
             </p>
+          </div>
+
+          {/* 学科分类导航 — Passage Ranking 优化 */}
+          <div id="tools-by-subject" className="mb-10 sm:mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+              <div className="bg-blue-500/5 border border-blue-500/20 rounded-xl p-4">
+                <h2 className="text-blue-400 font-bold text-sm mb-2">🔢 数学工具</h2>
+                <p className="text-gray-500 text-xs leading-relaxed">口算速练、数学练习卷、数独游戏、单元测试卷，系统提升计算与应用能力</p>
+              </div>
+              <div className="bg-emerald-500/5 border border-emerald-500/20 rounded-xl p-4">
+                <h2 className="text-emerald-400 font-bold text-sm mb-2">📝 语文工具</h2>
+                <p className="text-gray-500 text-xs leading-relaxed">字帖生成器、拼音注音、识字卡片、古诗词默写、看图写话，夯实语文基础</p>
+              </div>
+              <div className="bg-rose-500/5 border border-rose-500/20 rounded-xl p-4">
+                <h2 className="text-rose-400 font-bold text-sm mb-2">🌐 英语工具</h2>
+                <p className="text-gray-500 text-xs leading-relaxed">四线三格英文字帖，规范字母书写，衔接小学英语教学大纲</p>
+              </div>
+              <div className="bg-purple-500/5 border border-purple-500/20 rounded-xl p-4">
+                <h2 className="text-purple-400 font-bold text-sm mb-2">💡 教学辅助</h2>
+                <p className="text-gray-500 text-xs leading-relaxed">全学科单元测试卷、分年级字帖，一套工具覆盖日常教学全场景</p>
+              </div>
+            </div>
+          </div>
+
+          {/* 工具使用指南 */}
+          <div id="tools-usage-guide" className="mb-10 bg-slate-800/30 border border-white/10 rounded-2xl p-6">
+            <h2 className="text-lg font-bold text-white mb-4">📘 使用指南</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex gap-3">
+                <span className="text-2xl shrink-0">1️⃣</span>
+                <div>
+                  <h3 className="text-white font-medium text-sm mb-1">选择工具</h3>
+                  <p className="text-gray-500 text-xs leading-relaxed">根据孩子的年级和当前学习需求，从下方工具列表中选择合适的工具</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-2xl shrink-0">2️⃣</span>
+                <div>
+                  <h3 className="text-white font-medium text-sm mb-1">设置参数</h3>
+                  <p className="text-gray-500 text-xs leading-relaxed">选择年级、难度、题型等参数，点击生成按钮即可创建个性化学习材料</p>
+                </div>
+              </div>
+              <div className="flex gap-3">
+                <span className="text-2xl shrink-0">3️⃣</span>
+                <div>
+                  <h3 className="text-white font-medium text-sm mb-1">打印使用</h3>
+                  <p className="text-gray-500 text-xs leading-relaxed">一键导出PDF，直接打印。所有工具无需注册，不限使用次数</p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -107,7 +157,29 @@ export default function ToolsPage() {
             ))}
           </div>
 
-          <div className="mt-12 sm:mt-16 p-6 sm:p-8 bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl">
+          <div id="tools-faq" className="mt-12 mb-12 bg-slate-800/30 border border-white/10 rounded-2xl p-6 sm:p-8">
+            <h2 className="text-lg font-bold text-white mb-4">❓ 常见问题</h2>
+            <div className="space-y-3">
+              <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                <h3 className="text-gray-200 font-medium text-sm mb-1">Q: 练学宝的工具收费吗？</h3>
+                <p className="text-gray-400 text-xs leading-relaxed">A: 全部工具永久免费，无需注册即可使用。练学宝通过家长捐赠和赞助维持运营，不对用户收费。</p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                <h3 className="text-gray-200 font-medium text-sm mb-1">Q: 打印出来的练习纸字迹清晰吗？</h3>
+                <p className="text-gray-400 text-xs leading-relaxed">A: 所有工具支持PDF导出，矢量化输出确保打印清晰。经300+家庭测试，字体和格子大小适配A4纸张，家用打印机可直接使用。</p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                <h3 className="text-gray-200 font-medium text-sm mb-1">Q: 工具内容是否与小学教材同步？</h3>
+                <p className="text-gray-400 text-xs leading-relaxed">A: 是的。各工具内容参考《义务教育课程标准（2022年版）》和人教版/统编版教材，由一线小学教师审核，确保与课堂进度一致。</p>
+              </div>
+              <div className="bg-white/5 border border-white/10 rounded-xl p-4">
+                <h3 className="text-gray-200 font-medium text-sm mb-1">Q: 我能在学校班级中使用这些工具吗？</h3>
+                <p className="text-gray-400 text-xs leading-relaxed">A: 可以。练学宝工具支持班级使用，教师可批量生成练习卷发给全班学生。如有定制需求，请通过联系方式提出。</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-6 sm:p-8 bg-gradient-to-br from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl">
             <h2 className="text-xl sm:text-2xl font-bold text-white mb-3">没有找到需要的工具？</h2>
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-4">
               练学宝持续更新小学教学工具。如果你希望增加新功能，欢迎通过联系方式告诉我们，我们会优先开发用户呼声最高的工具。
