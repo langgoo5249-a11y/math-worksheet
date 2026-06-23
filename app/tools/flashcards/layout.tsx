@@ -163,7 +163,7 @@ export default function FlashcardsLayout({ children }: { children: React.ReactNo
       {/* 可见 SEO 内容区域 -- 爬虫可直接抓取 */}
       <section className="max-w-4xl mx-auto px-4 mt-12 mb-8 print:hidden">
         <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl p-6 md:p-8 text-slate-300 leading-relaxed">
-          <h2 className="text-xl font-bold text-slate-100 mb-4">识字卡片生成器 - 免费汉字卡片与拼音识字在线制作</h2>
+          <h1 className="text-xl font-bold text-slate-100 mb-4">识字卡片生成器 - 免费汉字卡片与拼音识字在线制作</h1>
 
           <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">工具介绍</h3>
           <p className="mb-3">
