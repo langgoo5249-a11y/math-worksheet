@@ -6,6 +6,7 @@ import ConsentAwareScripts from './_components/ConsentAwareScripts';
 import GoogleAnalytics from './_components/GoogleAnalytics';
 import FloatingLanguageSwitcher from './_components/FloatingLanguageSwitcher';
 import MiniappModal from './_components/MiniappModal';
+import FloatingMiniappButton from './_components/FloatingMiniappButton';
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
@@ -321,6 +322,9 @@ export default async function RootLayout({
 
         {/* 微信小程序二维码弹窗 */}
         <MiniappModal />
+
+        {/* 右下角浮动微信小程序按钮 */}
+        <FloatingMiniappButton />
       </body>
     </html>
   );
