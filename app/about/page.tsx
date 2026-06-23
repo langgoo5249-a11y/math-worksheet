@@ -215,7 +215,7 @@ export default function AboutPage() {
               {
                 icon: '🆓',
                 title: '永久免费',
-                desc: '所有功能永久免费使用，不设任何付费门槛，不搞会员制，不收订阅费。通过 Google AdSense 非侵入式广告维持网站运营和工具开发。',
+                desc: '所有功能永久免费使用，不设任何付费门槛，不搞会员制，不收订阅费。',
               },
               {
                 icon: '🛡️',

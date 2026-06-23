@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 
-const ADSENSE_CLIENT = 'ca-pub-4710405779358793';
 const BAIDU_HM_ID = 'b1c5ccce83f4e80c4c12dea6bd544723';
 const BAIDU_PUSH_SRC = 'https://zz.bdstatic.com/linksubmit/push.js';
 const TOUTIAO_PUSH_SRC =
@@ -32,8 +31,8 @@ function injectInlineScript(code: string) {
 /**
  * ConsentAwareScripts
  *
- * 根据用户 Cookie 同意状态，按需注入 AdSense、百度统计、百度推送、头条推送。
- * 用户点击"接受全部"前，这些第三方追踪/广告脚本不会被加载，满足隐私合规要求。
+ * 根据用户 Cookie 同意状态，按需注入百度统计、百度推送、头条推送。
+ * 用户点击"接受全部"前，这些第三方追踪脚本不会被加载，满足隐私合规要求。
  */
 export default function ConsentAwareScripts() {
   const [accepted, setAccepted] = useState(false);
@@ -56,12 +55,6 @@ export default function ConsentAwareScripts() {
 
   useEffect(() => {
     if (!accepted) return;
-
-    // AdSense 基础库
-    injectExternalScript(
-      `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`,
-      { crossOrigin: 'anonymous' }
-    );
 
     // 百度统计
     injectInlineScript(

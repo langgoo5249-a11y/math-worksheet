@@ -142,6 +142,58 @@ export default function FlashcardsLayout({ children }: { children: React.ReactNo
         </p>
       </div>
       {children}
+
+      {/* 可见 SEO 内容区域 -- 爬虫可直接抓取 */}
+      <section className="max-w-4xl mx-auto px-4 mt-12 mb-8 print:hidden">
+        <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl p-6 md:p-8 text-slate-300 leading-relaxed">
+          <h2 className="text-xl font-bold text-slate-100 mb-4">识字卡片生成器 - 免费汉字卡片与拼音识字在线制作</h2>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">工具介绍</h3>
+          <p className="mb-3">
+            练学宝<strong>识字卡片</strong>生成器是一款专为幼儿和小学低年级学生设计的汉字学习工具。本工具支持输入任意汉字，系统自动标注标准拼音并提供常用组词，生成专业的<strong>生字卡片</strong>供打印使用。无论是幼儿园大班的<strong>拼音识字</strong>启蒙，还是小学一二年级的课后生字巩固，本工具都能提供高效的学习支持。
+          </p>
+          <p className="mb-3">
+            与传统购买的识字卡不同，本工具允许完全自定义卡片内容，家长可以根据孩子的课本生字表或薄弱环节有针对性地制作卡片。生成的卡片采用双面设计，正面显示汉字和拼音，背面显示组词和笔画信息，方便进行翻卡测试和记忆训练。所有功能完全免费，无需注册登录，批量生成后即可导出PDF打印。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">使用指南</h3>
+          <p className="mb-2">制作识字卡片只需简单几步：</p>
+          <ul className="list-disc list-inside space-y-1 mb-3 ml-2">
+            <li><strong>输入汉字：</strong>在输入框中填写需要学习的汉字，支持批量添加多个汉字，建议每次制作10-20张卡片。</li>
+            <li><strong>查看拼音和组词：</strong>系统自动为每个汉字标注标准拼音并提供常用组词，也可手动编辑调整。</li>
+            <li><strong>预览卡片效果：</strong>确认正面汉字+拼音、背面组词+笔画的双面卡片排版是否符合需求。</li>
+            <li><strong>导出PDF打印：</strong>一键生成双面卡片PDF，使用A4纸打印后沿裁切线剪开即可使用。</li>
+            <li><strong>翻卡练习：</strong>将卡片正面朝上让孩子认读，翻转到背面核对组词和笔画，反复练习加深记忆。</li>
+          </ul>
+          <p className="mb-3">
+            建议家长每周根据课本生字表制作一批新卡片，每天利用碎片时间进行5-10分钟的翻卡练习。对于容易混淆的形近字，可以单独制作对比卡片进行专项训练。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">常见问题 FAQ</h3>
+          <div className="space-y-3">
+            <div>
+              <p className="font-medium text-slate-200">Q1：识字卡片生成器怎么用？</p>
+              <p className="text-sm">输入想要学习的汉字，系统自动标注拼音并提供常用组词，支持批量添加多个汉字，生成双面卡片PDF。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q2：识字卡片可以打印吗？</p>
+              <p className="text-sm">可以，生成双面卡片PDF文件，正面显示汉字和拼音，背面显示组词和笔画，打印裁剪后即可使用。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q3：适合多大孩子使用？</p>
+              <p className="text-sm">适合幼儿园大班到小学低年级（5-8岁）的识字启蒙和巩固练习。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q4：识字卡片生成器收费吗？</p>
+              <p className="text-sm">完全免费，无需注册，所有功能均可免费使用，不限制生成次数。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q5：可以自定义卡片内容吗？</p>
+              <p className="text-sm">可以，支持输入任意汉字，系统自动标注拼音和组词，也可以手动编辑调整内容。</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

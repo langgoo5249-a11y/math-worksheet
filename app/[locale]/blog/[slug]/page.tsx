@@ -33,8 +33,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const ogImage = generateOgImage(article);
   const siteName = t('siteName');
 
-  // 非中文版本的博客文章内容未翻译，使用 noindex 避免被 Google 判定为低质量内容
-  // 这是 AdSense 合规的关键修复
+  // 非中文版本的博客文章内容未翻译，使用 noindex 避免被搜索引擎判定为低质量内容
   const isNonZh = locale !== 'zh';
 
   return {
@@ -56,7 +55,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: article.description,
       type: 'article',
       publishedTime: article.date,
-      modifiedTime: article.date,
+      modifiedTime: article.dateModified || article.date,
       authors: [siteName],
       images: [
         {
@@ -99,13 +98,13 @@ export default async function Page({ params }: PageProps) {
     "headline": article.title,
     "description": article.description,
     "datePublished": article.date,
-    "dateModified": article.date,
+    "dateModified": article.dateModified || article.date,
     "image": generateOgImage(article),
     "author": {
       "@type": "Person",
       "name": article.author?.name || defaultAuthor.name,
       "description": article.author?.bio || defaultAuthor.bio,
-      "url": `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}about`
+      "url": `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}about/`
     },
     "publisher": {
       "@type": "Organization",

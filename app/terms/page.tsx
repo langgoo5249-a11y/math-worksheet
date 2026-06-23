@@ -136,12 +136,8 @@ export default function TermsPage() {
                 <p>本站使用百度统计（Baidu Analytics）对网站访问量进行统计分析。百度统计会收集访问者的IP地址、浏览器类型、访问页面等匿名数据，仅用于了解网站使用情况，不会关联到具体个人。</p>
               </div>
               <div>
-                <h3 className="text-white font-medium mb-2">5.3 广告服务</h3>
-                <p>本站使用 Google AdSense 展示广告以支持运营。Google 及广告联盟可能使用 Cookie 在您的浏览器中投放个性化广告。您可以在 Google 广告设置中选择退出个性化广告。详情请参阅 <a href="/privacy/" className="text-blue-400 hover:text-blue-300">隐私政策</a>。</p>
-              </div>
-              <div>
-                <h3 className="text-white font-medium mb-2">5.4 Cookie 使用</h3>
-                <p>百度统计及 Google AdSense 等第三方服务可能会在您的浏览器中设置 Cookie。您可以通过浏览器设置拒绝 Cookie，但这可能影响统计数据的准确性和个性化广告的展示。更多信息请参阅我们的 <a href="/privacy/" className="text-blue-400 hover:text-blue-300">隐私政策</a>。</p>
+                <h3 className="text-white font-medium mb-2">5.3 Cookie 使用</h3>
+                <p>百度统计等第三方服务可能会在您的浏览器中设置 Cookie。您可以通过浏览器设置拒绝 Cookie，但这可能影响统计数据的准确性。更多信息请参阅我们的 <a href="/privacy/" className="text-blue-400 hover:text-blue-300">隐私政策</a>。</p>
               </div>
             </div>
           </div>

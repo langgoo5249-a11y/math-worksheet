@@ -11,12 +11,11 @@ import { getMessages } from "next-intl/server";
 
 
 const notoSansSC = Noto_Sans_SC({
-  // 使用 cyrillic 子集以获取完整字体（Noto Sans SC 是 CJK 字体，latin 子集不适用）
   weight: ["400", "500", "700"],
   variable: "--font-noto-sans-sc",
   display: "swap",
-  preload: true,
-  subsets: ['cyrillic'],
+  preload: false,
+  subsets: ['latin'],
 });
 
 // 根布局保持静态预渲染，canonical 由各页面 layout 分别定义
@@ -32,7 +31,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "练学宝 - 免费小学教学工具/中文学习/数学练习卷/字帖/口算",
-  description: "练学宝是儿童中文学习网站，提供10+款免费小学中文学习与数学教学工具，包括数学练习卷生成器、字帖生成器、口算速练（支持AI智能出题和进度追踪）、拼音学习、识字卡片、古诗词默写、单元测试卷等。支持手机在线做题和PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常中文学习与数学练习使用。",
+  description: "练学宝是儿童中文学习网站，提供10+款免费小学教学工具，包括数学练习卷、字帖、口算速练、拼音、识字卡片、古诗词默写等，支持手机在线做题与PDF打印，无需注册即开即用。",
   keywords: "练学宝,中文学习,小学中文学习,儿童中文学习网站,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印,手机练习,在线做题,免费打印试卷,小学数学题,小学语文练习,英语字帖,数独游戏,AI口算出题,口算学习报告",
   openGraph: {
     title: "练学宝 - 儿童中文学习网站|免费小学教学工具|数学练习卷|字帖|口算",
@@ -194,7 +193,6 @@ export default async function RootLayout({
         <meta charSet="UTF-8" />
         {/* 关键资源预加载 - 优化 Core Web Vitals (LCP) */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
         <link rel="preload" as="image" href="https://www.skillxm.cn/og-image.jpg" fetchPriority="high" />
         <meta name="baidu-site-verification" content="codeva-nVZFsgvPZu" />
 
@@ -213,11 +211,42 @@ export default async function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="format-detection" content="telephone=no" />
 
-        {/* hreflang SEO + GEO 信号
+        {/* hreflang SEO + GEO 信号 - 动态指向当前页面 URL
             注意：/en/, /ja/, /ko/ 路由已被 _redirects 301 重定向到 /（中文版），
-            不再作为独立语言版本对外提供，因此 hreflang 简化为只有 zh-CN 和 x-default */}
-        <link rel="alternate" hrefLang="zh-CN" href="https://www.skillxm.cn/" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.skillxm.cn/" />
+            不再作为独立语言版本对外提供，因此 hreflang 简化为只有 zh-CN 和 x-default。
+            由于根布局为 force-static，无法在服务端获取当前路径，
+            通过客户端脚本动态设置 hreflang 指向当前页面自身 URL，
+            避免所有子页面 hreflang 错误指向首页，同时消除与页面级 metadata 的重复。 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function updateHreflang() {
+                  var path = location.pathname;
+                  if (path && !path.endsWith('/') && !/\\.[a-zA-Z0-9]+$/.test(path) && !path.includes('?') && !path.includes('#')) {
+                    path = path + '/';
+                  }
+                  var url = 'https://www.skillxm.cn' + path;
+                  var existing = document.querySelectorAll('link[rel="alternate"][hreflang]');
+                  for (var i = 0; i < existing.length; i++) { existing[i].remove(); }
+                  var langs = ['zh-CN', 'x-default'];
+                  for (var j = 0; j < langs.length; j++) {
+                    var link = document.createElement('link');
+                    link.rel = 'alternate';
+                    link.hreflang = langs[j];
+                    link.href = url;
+                    document.head.appendChild(link);
+                  }
+                }
+                if (document.readyState === 'loading') {
+                  document.addEventListener('DOMContentLoaded', updateHreflang);
+                } else {
+                  updateHreflang();
+                }
+              })();
+            `,
+          }}
+        />
 
         {/* 动态设置 html lang 属性（根据 URL 路径） */}
         <script

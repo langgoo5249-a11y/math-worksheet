@@ -143,6 +143,58 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
         </p>
       </div>
       {children}
+
+      {/* 可见 SEO 内容区域 -- 爬虫可直接抓取 */}
+      <section className="max-w-4xl mx-auto px-4 mt-12 mb-8 print:hidden">
+        <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl p-6 md:p-8 text-slate-300 leading-relaxed">
+          <h2 className="text-xl font-bold text-slate-100 mb-4">字帖生成器 - 免费田字格米字格练字帖在线打印</h2>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">工具介绍</h3>
+          <p className="mb-3">
+            练学宝<strong>字帖生成器</strong>是一款专业的在线汉字书写练习工具，专为小学生和书法初学者设计。本工具支持<strong>田字格</strong>、<strong>米字格</strong>、回宫格和空白格四种经典格子样式，帮助孩子在不同练字阶段掌握正确的笔画位置和结构比例。无论是刚入学的一年级新生，还是希望提升书写水平的高年级学生，都能通过本工具获得针对性的练字支持。
+          </p>
+          <p className="mb-3">
+            本工具提供楷体、宋体、黑体三种常用字体，并支持<strong>描红字帖</strong>和临摹两种练习模式。描红模式适合初学者熟悉笔画走势，临摹模式则适合巩固书写技能。用户可以输入任意汉字、词语、古诗或课文内容，系统会自动生成标准格式的练字帖，一键导出高清PDF文件，A4纸张直接打印即可使用。所有功能完全免费，无需注册登录。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">使用指南</h3>
+          <p className="mb-2">使用字帖生成器制作专属练字帖非常简单：</p>
+          <ul className="list-disc list-inside space-y-1 mb-3 ml-2">
+            <li><strong>输入练习内容：</strong>在输入框中填写需要练习的汉字、词语或句子，支持批量输入多个内容。</li>
+            <li><strong>选择格子类型：</strong>初学者建议使用田字格或米字格，掌握结构后可切换到回宫格或空白格。</li>
+            <li><strong>设置字体和模式：</strong>楷书适合规范书写训练，描红模式适合初学阶段，临摹模式适合进阶练习。</li>
+            <li><strong>调整排版参数：</strong>可设置每行字数、字体大小等参数，确保打印效果符合个人需求。</li>
+            <li><strong>导出PDF打印：</strong>预览满意后点击下载，保存PDF文件并用A4纸打印，即可获得专业级<strong>练字帖</strong>。</li>
+          </ul>
+          <p className="mb-3">
+            建议家长根据孩子的课本生字表每周生成一份字帖，每天练习15-20分钟。对于书法兴趣培养，可以选择米字格进行笔画精练；对于日常作业辅助，田字格是最佳选择。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">常见问题 FAQ</h3>
+          <div className="space-y-3">
+            <div>
+              <p className="font-medium text-slate-200">Q1：字帖生成器支持哪些格子样式？</p>
+              <p className="text-sm">支持田字格、米字格、回宫格、空白格四种格子样式，满足不同练字阶段需求。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q2：可以自定义字帖内容吗？</p>
+              <p className="text-sm">可以，支持输入任意汉字、词语、古诗、课文内容生成字帖，完全自定义。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q3：字帖生成器是免费的吗？</p>
+              <p className="text-sm">完全免费，无需注册登录，不限制使用次数，生成的字帖可自由打印。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q4：支持哪些字体？</p>
+              <p className="text-sm">支持楷体、宋体、黑体三种字体，适合不同书写风格练习。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q5：描红和临摹有什么区别？</p>
+              <p className="text-sm">描红模式显示灰色范字供描摹，适合初学；临摹模式仅显示范字轮廓或空白格，适合巩固书写技能。</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

@@ -163,17 +163,17 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {r.subject === 'math' && (
             <>
-              <Link href="/tools/math-worksheet" className="block p-4 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 rounded-lg text-center transition-colors">
+              <Link href="/tools/math-worksheet/" className="block p-4 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 rounded-lg text-center transition-colors">
                 <div className="text-2xl mb-1">🧮</div>
                 <div className="text-white font-medium text-sm">生成同类练习</div>
                 <div className="text-xs text-slate-400 mt-1">数学练习卷生成器</div>
               </Link>
-              <Link href="/tools/mental-math" className="block p-4 bg-orange-500/20 hover:bg-orange-500/30 border border-orange-500/30 rounded-lg text-center transition-colors">
+              <Link href="/tools/mental-math/" className="block p-4 bg-orange-500/20 hover:bg-orange-500/30 border border-orange-500/30 rounded-lg text-center transition-colors">
                 <div className="text-2xl mb-1">⚡</div>
                 <div className="text-white font-medium text-sm">在线口算</div>
                 <div className="text-xs text-slate-400 mt-1">口算速练</div>
               </Link>
-              <Link href="/tools/unit-test" className="block p-4 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 rounded-lg text-center transition-colors">
+              <Link href="/tools/unit-test/" className="block p-4 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 rounded-lg text-center transition-colors">
                 <div className="text-2xl mb-1">📋</div>
                 <div className="text-white font-medium text-sm">单元测试</div>
                 <div className="text-xs text-slate-400 mt-1">单元测试卷</div>
@@ -182,17 +182,17 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
           )}
           {r.subject === 'chinese' && (
             <>
-              <Link href="/tools/calligraphy" className="block p-4 bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/30 rounded-lg text-center transition-colors">
+              <Link href="/tools/calligraphy/" className="block p-4 bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/30 rounded-lg text-center transition-colors">
                 <div className="text-2xl mb-1">✍️</div>
                 <div className="text-white font-medium text-sm">字帖练习</div>
                 <div className="text-xs text-slate-400 mt-1">字帖生成器</div>
               </Link>
-              <Link href="/tools/pinyin" className="block p-4 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 rounded-lg text-center transition-colors">
+              <Link href="/tools/pinyin/" className="block p-4 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 rounded-lg text-center transition-colors">
                 <div className="text-2xl mb-1">📝</div>
                 <div className="text-white font-medium text-sm">拼音注音</div>
                 <div className="text-xs text-slate-400 mt-1">拼音练习生成器</div>
               </Link>
-              <Link href="/tools/writing-template" className="block p-4 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 rounded-lg text-center transition-colors">
+              <Link href="/tools/writing-template/" className="block p-4 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 rounded-lg text-center transition-colors">
                 <div className="text-2xl mb-1">📄</div>
                 <div className="text-white font-medium text-sm">作文模板</div>
                 <div className="text-xs text-slate-400 mt-1">看图写话/作文</div>
@@ -201,17 +201,17 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
           )}
           {r.subject === 'english' && (
             <>
-              <Link href="/tools/english-calligraphy" className="block p-4 bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/30 rounded-lg text-center transition-colors">
+              <Link href="/tools/english-calligraphy/" className="block p-4 bg-rose-500/20 hover:bg-rose-500/30 border border-rose-500/30 rounded-lg text-center transition-colors">
                 <div className="text-2xl mb-1">🔤</div>
                 <div className="text-white font-medium text-sm">英语字帖</div>
                 <div className="text-xs text-slate-400 mt-1">四线三格练习</div>
               </Link>
-              <Link href="/tools/flashcards" className="block p-4 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 rounded-lg text-center transition-colors">
+              <Link href="/tools/flashcards/" className="block p-4 bg-blue-500/20 hover:bg-blue-500/30 border border-blue-500/30 rounded-lg text-center transition-colors">
                 <div className="text-2xl mb-1">🃏</div>
                 <div className="text-white font-medium text-sm">单词卡片</div>
                 <div className="text-xs text-slate-400 mt-1">识字卡片</div>
               </Link>
-              <Link href="/tools/unit-test" className="block p-4 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 rounded-lg text-center transition-colors">
+              <Link href="/tools/unit-test/" className="block p-4 bg-purple-500/20 hover:bg-purple-500/30 border border-purple-500/30 rounded-lg text-center transition-colors">
                 <div className="text-2xl mb-1">📋</div>
                 <div className="text-white font-medium text-sm">英语测试</div>
                 <div className="text-xs text-slate-400 mt-1">单元测试卷</div>

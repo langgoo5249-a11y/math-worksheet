@@ -147,7 +147,7 @@ export default async function CategoryPage({ params }: PageProps) {
             <h1 className="text-2xl font-bold text-white mb-4">分类未找到</h1>
             <p className="text-gray-400 mb-8">您访问的分类不存在</p>
             <Link
-              href="/blog"
+              href="/blog/"
               className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
             >
               返回博客列表
@@ -379,7 +379,7 @@ export default async function CategoryPage({ params }: PageProps) {
             {/* Back to Blog */}
             <div className="mt-10 text-center">
               <Link
-                href="/blog"
+                href="/blog/"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-white/10 text-gray-300 hover:text-white rounded-xl transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

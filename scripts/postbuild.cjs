@@ -44,11 +44,9 @@ for (const locale of localeDirs) {
 }
 
 // 1. Copy Cloudflare-specific files - 关键文件必须成功
-// ads.txt 由 Next.js app/ads.txt/route.ts 路由处理并生成到 out/ads.txt
 const criticalFiles = [
   { name: '_redirects', required: true },
   { name: '_headers', required: true },
-  // ads.txt 不再从这里复制，由 Next.js route handler 生成
   { name: 'robots.txt', required: true },
   { name: 'llms.txt', required: true },
   { name: 'favicon.ico', required: false },
@@ -72,20 +70,7 @@ for (const { name, required } of criticalFiles) {
   }
 }
 
-// 2. 关键：ads.txt 完整性验证 - 这是 Google AdSense 申请的关键文件
-// ads.txt 由 Next.js 路由 app/ads.txt/route.ts 生成，输出到 out/ads.txt
-const adsTxtPath = path.join(outDir, 'ads.txt');
-if (!fs.existsSync(adsTxtPath)) {
-  die('CRITICAL: out/ads.txt is missing! Next.js route handler app/ads.txt/route.ts did not generate the file. Build aborted to prevent broken deployment.');
-}
-const adsContent = fs.readFileSync(adsTxtPath, 'utf-8');
-if (!adsContent.includes('google.com') || !adsContent.includes('pub-')) {
-  die(`CRITICAL: out/ads.txt content is invalid: ${adsContent.slice(0, 100)}`);
-}
-const adsBytes = fs.statSync(adsTxtPath).size;
-console.log(`[VERIFY] out/ads.txt: ${adsBytes} bytes - VALID (served by Next.js route handler)`);
-
-// 3. 验证 Cloudflare 关键配置文件
+// 2. 验证 Cloudflare 关键配置文件
 for (const cf of ['_redirects', '_headers', 'robots.txt']) {
   const cfPath = path.join(outDir, cf);
   if (!fs.existsSync(cfPath)) {
@@ -94,25 +79,14 @@ for (const cf of ['_redirects', '_headers', 'robots.txt']) {
   console.log(`[VERIFY] out/${cf}: ${fs.statSync(cfPath).size} bytes - OK`);
 }
 
-// 4. 验证根 HTML 文件存在
+// 3. 验证根 HTML 文件存在
 const indexPath = path.join(outDir, 'index.html');
 if (!fs.existsSync(indexPath)) {
   die('CRITICAL: out/index.html is missing! Next.js build did not produce root page.');
 }
 console.log(`[VERIFY] out/index.html: ${fs.statSync(indexPath).size} bytes - OK`);
 
-// 5. 验证 ads.txt 路由兜底也被生成（app/ads.txt/route.ts 静态导出）
-const adsRoutePath = path.join(outDir, 'ads.txt');
-// 静态文件已存在，路由是双保险（生成到 out/ads.txt/）
-const adsRouteDir = path.join(outDir, 'ads.txt');
-if (fs.existsSync(adsRouteDir)) {
-  const stat = fs.statSync(adsRouteDir);
-  if (stat.isDirectory()) {
-    console.log(`[VERIFY] out/ads.txt/ route directory exists - dynamic fallback OK`);
-  }
-}
-
-// 6. 修复嵌套路由 HTML 文件
+// 4. 修复嵌套路由 HTML 文件
 // Next.js static export creates both /tools/calligraphy.html and /tools/calligraphy/ dir
 // Cloudflare Pages matches the directory first (no index.html inside = 404)
 // Solution: copy .html content into the directory as index.html
@@ -172,5 +146,3 @@ function fixDeepNestedRoutes(dir) {
 fixDeepNestedRoutes(path.join(outDir, 'textbook'));
 
 console.log('\n[POSTBUILD] All critical files verified. Build is deployment-ready.');
-console.log('[POSTBUILD] ads.txt is present at: /ads.txt (static) + /ads.txt/ (dynamic route)');
-console.log('[POSTBUILD] Google AdSense can now find ads.txt via multiple paths.');

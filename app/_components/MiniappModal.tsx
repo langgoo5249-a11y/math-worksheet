@@ -3,6 +3,8 @@
 import { useState, useEffect, useCallback } from 'react';
 
 const STORAGE_KEY = 'miniapp_modal_dismissed';
+const POPUP_DELAY = 1500; // 延迟1.5秒弹出
+const COOLDOWN_MS = 24 * 60 * 60 * 1000; // 24小时只弹一次
 
 export default function MiniappModal() {
   const [visible, setVisible] = useState(false);
@@ -10,9 +12,29 @@ export default function MiniappModal() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
+    // 检查是否在24小时内已关闭过弹窗
+    try {
+      const lastDismissed = localStorage.getItem(STORAGE_KEY);
+      if (lastDismissed) {
+        const elapsed = Date.now() - Number(lastDismissed);
+        if (elapsed < COOLDOWN_MS) return; // 24小时内已弹过，不再弹出
+      }
+    } catch {
+      // localStorage 不可用时静默处理
+    }
+
+    // 延迟弹出，避免影响页面初始加载
+    const timer = setTimeout(() => {
+      setVisible(true);
+    }, POPUP_DELAY);
+
     const handleOpen = () => setVisible(true);
     window.addEventListener('open-miniapp-modal', handleOpen);
-    return () => window.removeEventListener('open-miniapp-modal', handleOpen);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('open-miniapp-modal', handleOpen);
+    };
   }, []);
 
   const handleClose = useCallback(() => {
@@ -68,6 +90,7 @@ export default function MiniappModal() {
               src="/miniapp-qrcode.jpg"
               alt="微信小程序二维码"
               className="w-full h-auto rounded-xl"
+              loading="lazy"
             />
           </div>
         </div>

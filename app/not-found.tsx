@@ -44,7 +44,7 @@ export default function NotFound() {
             返回首页
           </Link>
           <Link
-            href="/blog"
+            href="/blog/"
             className="inline-flex items-center justify-center px-6 py-3 bg-white text-blue-600 font-medium rounded-lg border border-blue-600 hover:bg-blue-50 transition-colors"
           >
             浏览知识分享
@@ -53,10 +53,10 @@ export default function NotFound() {
         <div className="mt-8 pt-8 border-t border-gray-200">
           <p className="text-sm text-gray-400 mb-3">热门工具</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/tools/math-worksheet" className="text-sm text-blue-500 hover:underline">数学练习卷</Link>
-            <Link href="/tools/calligraphy" className="text-sm text-blue-500 hover:underline">字帖生成器</Link>
-            <Link href="/tools/sudoku" className="text-sm text-blue-500 hover:underline">数独游戏</Link>
-            <Link href="/tools/pinyin" className="text-sm text-blue-500 hover:underline">拼音学习</Link>
+            <Link href="/tools/math-worksheet/" className="text-sm text-blue-500 hover:underline">数学练习卷</Link>
+            <Link href="/tools/calligraphy/" className="text-sm text-blue-500 hover:underline">字帖生成器</Link>
+            <Link href="/tools/sudoku/" className="text-sm text-blue-500 hover:underline">数独游戏</Link>
+            <Link href="/tools/pinyin/" className="text-sm text-blue-500 hover:underline">拼音学习</Link>
           </div>
         </div>
       </div>

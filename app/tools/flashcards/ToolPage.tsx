@@ -803,12 +803,12 @@ export default function FlashcardsPage({ locale }: { locale?: Locale } = {}) {
             <span>🔗</span> 相关工具推荐
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <a href="/tools/pinyin" className="block bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-500/30 rounded-xl p-4 transition-all group">
+            <a href="/tools/pinyin/" className="block bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-500/30 rounded-xl p-4 transition-all group">
               <div className="text-2xl mb-2">📚</div>
               <div className="font-bold text-gray-200 text-sm group-hover:text-white transition-colors">拼音学习工具</div>
               <div className="text-xs text-gray-500 mt-1">声母韵母练习</div>
             </a>
-            <a href="/tools/calligraphy" className="block bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-500/30 rounded-xl p-4 transition-all group">
+            <a href="/tools/calligraphy/" className="block bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-500/30 rounded-xl p-4 transition-all group">
               <div className="text-2xl mb-2">✍️</div>
               <div className="font-bold text-gray-200 text-sm group-hover:text-white transition-colors">字帖生成器</div>
               <div className="text-xs text-gray-500 mt-1">田字格米字格练字</div>

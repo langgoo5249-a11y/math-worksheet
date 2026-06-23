@@ -538,17 +538,17 @@ export default function CalligraphyPage({ locale }: { locale?: Locale } = {}) {
             <span>🔗</span> 相关工具推荐
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <a href="/tools/pinyin" className="block bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl p-4 transition-all group">
+            <a href="/tools/pinyin/" className="block bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl p-4 transition-all group">
               <div className="text-2xl mb-2">📚</div>
               <div className="font-bold text-gray-700 text-sm group-hover:text-blue-600 transition-colors">拼音学习工具</div>
               <div className="text-xs text-gray-400 mt-1">声母韵母练习</div>
             </a>
-            <a href="/tools/flashcards" className="block bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl p-4 transition-all group">
+            <a href="/tools/flashcards/" className="block bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl p-4 transition-all group">
               <div className="text-2xl mb-2">🃏</div>
               <div className="font-bold text-gray-700 text-sm group-hover:text-blue-600 transition-colors">识字卡片生成器</div>
               <div className="text-xs text-gray-400 mt-1">自定义汉字卡片</div>
             </a>
-            <a href="/tools/writing-template" className="block bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl p-4 transition-all group">
+            <a href="/tools/writing-template/" className="block bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl p-4 transition-all group">
               <div className="text-2xl mb-2">📝</div>
               <div className="font-bold text-gray-700 text-sm group-hover:text-blue-600 transition-colors">作文模板生成器</div>
               <div className="text-xs text-gray-400 mt-1">多种写作模板</div>

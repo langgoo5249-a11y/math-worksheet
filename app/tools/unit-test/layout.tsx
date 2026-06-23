@@ -97,6 +97,58 @@ export default function UnitTestLayout({ children }: { children: React.ReactNode
         </p>
       </div>
       {children}
+
+      {/* 可见 SEO 内容区域 -- 爬虫可直接抓取 */}
+      <section className="max-w-4xl mx-auto px-4 mt-12 mb-8 print:hidden">
+        <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl p-6 md:p-8 text-slate-300 leading-relaxed">
+          <h2 className="text-xl font-bold text-slate-100 mb-4">单元测试卷生成器 - 免费小学单元测试、语文数学英语全科试卷</h2>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">工具介绍</h3>
+          <p className="mb-3">
+            练学宝<strong>单元测试卷</strong>生成器是一款面向小学全科教学的免费在线出题工具，覆盖<strong>数学单元测试</strong>、<strong>语文单元测试</strong>、英语和科学四个学科，完整收录1-6年级共305个单元的测试题目。本工具支持单元测试、期中测试、期末测试三种考试类型，并提供基础、提高、拓展三档难度，满足不同学校和学生的差异化需求。
+          </p>
+          <p className="mb-3">
+            教师手动编写单元测试卷往往耗时费力，且难以保证题目质量和覆盖面。本工具基于主流教材版本的知识点体系，自动生成结构完整、难度适中的测试试卷，包含选择题、填空题、判断题、计算题、应用题等多种题型。教师只需选择学科、年级、单元和难度，即可在几秒钟内获得一份排版规范的试卷，大幅提升备课和出题效率。所有试卷均可免费导出PDF打印。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">使用指南</h3>
+          <p className="mb-2">使用单元测试卷生成器制作试卷非常简单：</p>
+          <ul className="list-disc list-inside space-y-1 mb-3 ml-2">
+            <li><strong>选择学科和年级：</strong>从数学、语文、英语、科学四科中选择，再确定1-6年级中的对应学段。</li>
+            <li><strong>选择单元和考试类型：</strong>按教学进度选择当前单元，考试类型可选择单元测试、期中测试或期末测试。</li>
+            <li><strong>设置难度等级：</strong>基础难度适合大部分学生，提高难度适合中等以上学生，拓展难度适合拔尖训练。</li>
+            <li><strong>预览试卷效果：</strong>在线查看试卷排版和题目内容，确认题量、难度和知识点覆盖是否符合要求。</li>
+            <li><strong>导出PDF打印：</strong>一键生成A4标准格式PDF试卷，直接打印分发给学生，答案另行提供方便批改。</li>
+          </ul>
+          <p className="mb-3">
+            建议教师在每个单元教学结束后生成一份单元测试卷，检验学生掌握情况。期中考试前可生成综合复习卷，期末考试前可生成模拟测试卷。家长也可利用本工具为孩子进行家庭自测，及时发现学习薄弱环节。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">常见问题 FAQ</h3>
+          <div className="space-y-3">
+            <div>
+              <p className="font-medium text-slate-200">Q1：单元测试卷覆盖哪些学科？</p>
+              <p className="text-sm">覆盖数学、语文、英语、科学四科，完整支持小学全科测试需求。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q2：支持哪些教材版本？</p>
+              <p className="text-sm">主要覆盖人教版1-6年级上下册共305个单元，满足大部分学校的教学进度。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q3：可以生成期中期末试卷吗？</p>
+              <p className="text-sm">可以，除单元测试外，还支持期中测试卷和期末测试卷三种考试类型。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q4：试卷有不同难度吗？</p>
+              <p className="text-sm">有，提供基础、提高、拓展三个难度等级，适应不同学生的学习水平。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q5：单元测试卷生成器免费吗？</p>
+              <p className="text-sm">完全免费，所有功能均可免费使用，PDF导出打印不收取任何费用。</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

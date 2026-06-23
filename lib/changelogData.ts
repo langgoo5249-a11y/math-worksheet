@@ -98,9 +98,8 @@ export const CHANGELOG: ChangelogEntry[] = [
     version: 'v2.1.0',
     date: '2026-04-15',
     type: 'feature',
-    title: 'AdSense 接入与界面优化',
+    title: '界面优化与合规完善',
     highlights: [
-      'Google AdSense 接入完成',
       '隐私政策与服务条款完善',
       'Cookie 同意提示',
       '多语言切换组件',

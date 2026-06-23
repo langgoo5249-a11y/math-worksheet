@@ -143,6 +143,58 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
         </p>
       </div>
       {children}
+
+      {/* 可见 SEO 内容区域 -- 爬虫可直接抓取 */}
+      <section className="max-w-4xl mx-auto px-4 mt-12 mb-8 print:hidden">
+        <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl p-6 md:p-8 text-slate-300 leading-relaxed">
+          <h2 className="text-xl font-bold text-slate-100 mb-4">数学练习卷生成器 - 免费在线出题打印</h2>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">工具介绍</h3>
+          <p className="mb-3">
+            练学宝<strong>数学练习卷生成器</strong>是一款专为小学生设计的免费在线出题工具，覆盖小学1-6年级全部数学知识点。无论是简单的20以内加减法，还是复杂的分数方程和四则混合运算，本工具都能一键生成高质量的<strong>小学数学练习题</strong>。教师和家长无需手动编题，只需选择年级、题型和难度，系统即可自动随机出题，每次生成的题目都不重复，有效避免学生死记硬背。
+          </p>
+          <p className="mb-3">
+            本工具支持11种经典题型，包括加法、减法、乘法、除法、加减混合、乘除混合、四则混合、竖式计算、填空题、比较大小和应用题。每个年级自动匹配对应的知识点范围，一年级侧重<strong>口算题生成</strong>和基础运算，六年级则涵盖分数、小数和简易方程。所有题目均经过算法优化，确保数值合理、难度适中，符合各年级教学大纲要求。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">使用指南</h3>
+          <p className="mb-2">使用数学练习卷生成器非常简单，只需按照以下步骤操作：</p>
+          <ul className="list-disc list-inside space-y-1 mb-3 ml-2">
+            <li><strong>选择年级：</strong>从一年级到六年级中选择对应的学段，系统会自动匹配该年级的知识点范围。</li>
+            <li><strong>勾选题型：</strong>根据练习需求选择一种或多种题型，建议初学者每次选择2-3种题型进行专项训练。</li>
+            <li><strong>调节难度：</strong>提供简单、中等、困难三档难度，简单适合巩固基础，困难适合挑战提升。</li>
+            <li><strong>设置题量：</strong>可自由设置每页题目数量，默认30题，适合一次练习的时长。</li>
+            <li><strong>生成与打印：</strong>点击生成按钮预览练习卷，满意后导出<strong>PDF打印</strong>文件，答案页独立分离方便批改。</li>
+          </ul>
+          <p className="mb-3">
+            建议家长每周为孩子生成2-3份练习卷，每次练习控制在15-20分钟，既能保持学习节奏，又不会造成负担。教师也可利用本工具快速布置课堂小测或假期作业，大幅提升备课效率。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">常见问题 FAQ</h3>
+          <div className="space-y-3">
+            <div>
+              <p className="font-medium text-slate-200">Q1：数学练习卷生成器支持哪些年级？</p>
+              <p className="text-sm">支持小学1-6年级全学段，一年级从20以内加减法开始，六年级涵盖分数方程，自动匹配各年级知识点。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q2：生成的练习卷可以打印吗？</p>
+              <p className="text-sm">可以，一键生成A4标准格式PDF文件，答案页独立分离，方便教师批改和家长辅导。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q3：每次生成的题目会重复吗？</p>
+              <p className="text-sm">不会，系统采用随机算法出题，同一配置下每次生成的题目都不同，确保练习效果。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q4：这个工具是免费的吗？</p>
+              <p className="text-sm">完全免费，无需注册登录，打开即用，不限制使用次数和打印份数。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q5：支持哪些题型？</p>
+              <p className="text-sm">支持加法、减法、乘法、除法、加减混合、乘除混合、四则混合、竖式计算、填空题、比较大小、应用题共11种题型。</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

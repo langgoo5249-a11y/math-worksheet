@@ -146,6 +146,58 @@ export default function SudokuLayout({ children }: { children: React.ReactNode }
         </p>
       </div>
       {children}
+
+      {/* 可见 SEO 内容区域 -- 爬虫可直接抓取 */}
+      <section className="max-w-4xl mx-auto px-4 mt-12 mb-8 print:hidden">
+        <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl p-6 md:p-8 text-slate-300 leading-relaxed">
+          <h2 className="text-xl font-bold text-slate-100 mb-4">数独游戏 - 免费在线数独题目与逻辑思维训练</h2>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">工具介绍</h3>
+          <p className="mb-3">
+            练学宝<strong>数独游戏</strong>是一款专为儿童和学生设计的在线益智工具，通过经典的数字填充游戏锻炼<strong>逻辑思维训练</strong>能力和专注力。本工具提供入门、进阶、挑战三个难度等级，从简单的4x4宫格到标准的9x9宫格，循序渐进地提升孩子的推理能力。<strong>儿童数独</strong>入门难度特别适合小学低年级学生，规则简单易懂，操作界面友好。
+          </p>
+          <p className="mb-3">
+            数独的核心规则是在每一行、每一列和每一个小宫格中填入1-9（或1-4/1-6）的数字，且不能重复。这种规则看似简单，却能有效训练孩子的观察力、排除法和逻辑推理能力。研究表明，坚持数独练习的学生在数学思维测试中表现更优。本工具内置虚拟数字键盘，支持手机平板触屏操作，即时验证答案并高亮错误，让孩子在游戏中轻松提升思维能力。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">使用指南</h3>
+          <p className="mb-2">开始数独挑战非常简单：</p>
+          <ul className="list-disc list-inside space-y-1 mb-3 ml-2">
+            <li><strong>选择难度等级：</strong>初学者建议从入门（4x4）开始，熟悉规则后尝试进阶（6x6），有一定基础后再挑战标准（9x9）。</li>
+            <li><strong>观察已知数字：</strong>先扫描整个盘面，找出某一行、列或宫格中已填入数字最多的区域，从这里开始推理。</li>
+            <li><strong>使用排除法：</strong>根据已有数字排除不可能的选择，逐步缩小每个空格的可选数字范围。</li>
+            <li><strong>利用笔记模式：</strong>对于不确定的空格，可以使用笔记功能标记候选数字，方便后续推理。</li>
+            <li><strong>验证与计时：</strong>填入数字后系统即时验证对错，错误会高亮提示。建议记录每次解题用时，挑战更快速度。</li>
+          </ul>
+          <p className="mb-3">
+            建议每天玩1-2局数独，每局控制在10-20分钟。家长可以与孩子一起解题，既增进亲子关系，又共同锻炼逻辑思维。课间休息或假期时间都是玩数独的好时机。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">常见问题 FAQ</h3>
+          <div className="space-y-3">
+            <div>
+              <p className="font-medium text-slate-200">Q1：数独游戏有几个难度？</p>
+              <p className="text-sm">有入门、进阶、挑战三个难度等级，入门适合初学者，挑战适合有一定基础的玩家。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q2：数独游戏适合小学生吗？</p>
+              <p className="text-sm">适合，小学3-6年级学生可以通过数独锻炼逻辑思维和专注力，入门难度一二年级也可以尝试。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q3：可以在手机上玩吗？</p>
+              <p className="text-sm">可以，网站采用响应式设计，手机平板电脑都能正常操作，内置数字键盘方便触屏输入。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q4：数独游戏收费吗？</p>
+              <p className="text-sm">完全免费，无需下载安装，打开浏览器即可玩，不限制游戏次数。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q5：有提示功能吗？</p>
+              <p className="text-sm">有即时验证功能，填入数字后会自动检查是否正确，错误会高亮提示，帮助快速定位问题。</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

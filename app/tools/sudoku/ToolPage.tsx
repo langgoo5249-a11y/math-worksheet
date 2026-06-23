@@ -428,17 +428,17 @@ export default function SudokuPage({ locale }: { locale?: Locale } = {}) {
             <span>🔗</span> 相关工具推荐
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <a href="/tools/mental-math" className="block bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl p-4 transition-all group">
+            <a href="/tools/mental-math/" className="block bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl p-4 transition-all group">
               <div className="text-2xl mb-2">⚡</div>
               <div className="font-bold text-gray-700 text-sm group-hover:text-blue-600 transition-colors">口算速练</div>
               <div className="text-xs text-gray-400 mt-1">计时挑战训练</div>
             </a>
-            <a href="/tools/math-worksheet" className="block bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl p-4 transition-all group">
+            <a href="/tools/math-worksheet/" className="block bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl p-4 transition-all group">
               <div className="text-2xl mb-2">🧮</div>
               <div className="font-bold text-gray-700 text-sm group-hover:text-blue-600 transition-colors">数学练习卷生成器</div>
               <div className="text-xs text-gray-400 mt-1">PDF打印练习卷</div>
             </a>
-            <a href="/tools/writing-template" className="block bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl p-4 transition-all group">
+            <a href="/tools/writing-template/" className="block bg-gray-50 hover:bg-blue-50 border border-gray-200 hover:border-blue-300 rounded-xl p-4 transition-all group">
               <div className="text-2xl mb-2">📝</div>
               <div className="font-bold text-gray-700 text-sm group-hover:text-blue-600 transition-colors">作文模板生成器</div>
               <div className="text-xs text-gray-400 mt-1">多种写作模板</div>

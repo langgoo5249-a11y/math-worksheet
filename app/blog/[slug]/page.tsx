@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `https://www.skillxm.cn/blog/${slug}/`,
       type: 'article',
       publishedTime: article.date,
-      modifiedTime: article.date,
+      modifiedTime: article.dateModified || article.date,
       authors: ['练学宝'],
       images: [
         {
@@ -74,7 +74,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       "@type": "Person",
       "name": article.author?.name || defaultAuthor.name,
       "description": article.author?.bio || defaultAuthor.bio,
-      "url": "https://www.skillxm.cn/about"
+      "url": "https://www.skillxm.cn/about/"
     },
     "publisher": {
       "@type": "Organization",

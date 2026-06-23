@@ -56,7 +56,7 @@ export default function ToolsPage() {
       '@type': 'ListItem',
       position: i + 1,
       name: tool.name,
-      url: `https://www.skillxm.cn${tool.path}`,
+      url: `https://www.skillxm.cn${tool.path.endsWith('/') ? tool.path : tool.path + '/'}`,
       description: tool.desc,
     })),
   };
@@ -82,7 +82,7 @@ export default function ToolsPage() {
             {activeTools.map((tool) => (
               <Link
                 key={tool.path}
-                href={`${tool.path}/`}
+                href={tool.path.endsWith('/') ? tool.path : `${tool.path}/`}
                 className="group relative bg-slate-800/50 hover:bg-slate-700/50 border border-white/10 hover:border-cyan-500/40 rounded-2xl p-5 sm:p-6 transition-all hover:-translate-y-1"
               >
                 <div className={`absolute top-0 right-0 w-24 h-24 bg-gradient-to-br ${toolColors[tool.color] || toolColors.blue} opacity-10 blur-2xl rounded-full group-hover:opacity-20 transition-opacity`} />

@@ -149,6 +149,58 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
         </p>
       </div>
       {children}
+
+      {/* 可见 SEO 内容区域 -- 爬虫可直接抓取 */}
+      <section className="max-w-4xl mx-auto px-4 mt-12 mb-8 print:hidden">
+        <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl p-6 md:p-8 text-slate-300 leading-relaxed">
+          <h2 className="text-xl font-bold text-slate-100 mb-4">拼音学习工具 - 免费声母韵母练习与四线三格拼音注音</h2>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">工具介绍</h3>
+          <p className="mb-3">
+            练学宝<strong>拼音学习</strong>工具是一款专为幼小衔接和小学一年级学生设计的拼音练习工具，完整收录23个<strong>声母</strong>、24个<strong>韵母</strong>和16个整体认读音节。本工具采用标准<strong>四线三格</strong>格式，与小学语文教材完全一致，帮助孩子从认读拼音过渡到规范书写，打好语文学习的基础。
+          </p>
+          <p className="mb-3">
+            拼音是小学语文学习的第一个难关，很多孩子能够认读拼音却在书写时出现问题，如占格错误、笔画顺序不对等。本工具提供每个拼音字母的标准<strong>拼音标注</strong>和书写示范，孩子可以在四线三格中反复描摹和练习，逐步养成规范的书写习惯。无论是幼儿园大班的拼音启蒙，还是一年级上学期的课堂巩固，本工具都能提供有效的练习支持。所有内容完全免费，可导出PDF反复打印练习。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">使用指南</h3>
+          <p className="mb-2">使用拼音学习工具进行规范练习非常简单：</p>
+          <ul className="list-disc list-inside space-y-1 mb-3 ml-2">
+            <li><strong>选择拼音类型：</strong>先练习23个声母，再学习24个韵母，最后掌握16个整体认读音节，循序渐进。</li>
+            <li><strong>观察书写示范：</strong>仔细查看每个拼音字母在四线三格中的占格位置和笔画顺序，这是规范书写的关键。</li>
+            <li><strong>描摹练习：</strong>初学者可先沿灰色示范字母描摹，熟悉后再进行独立书写练习。</li>
+            <li><strong>听写测试：</strong>家长读出拼音，让孩子在空白四线三格中写出对应的字母，检验掌握程度。</li>
+            <li><strong>导出PDF打印：</strong>将需要重点练习的拼音内容生成PDF文件，打印后反复练习，直到完全掌握。</li>
+          </ul>
+          <p className="mb-3">
+            建议每天练习5-8个拼音字母，每次10-15分钟。声母和韵母分别掌握后，再进行拼读组合练习。整体认读音节需要单独记忆，不要尝试拆分拼读。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">常见问题 FAQ</h3>
+          <div className="space-y-3">
+            <div>
+              <p className="font-medium text-slate-200">Q1：拼音学习工具包含哪些内容？</p>
+              <p className="text-sm">完整收录23个声母、24个韵母和16个整体认读音节，涵盖小学一年级拼音学习全部内容。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q2：拼音练习纸是什么格式？</p>
+              <p className="text-sm">采用标准四线三格格式，与教材格式一致，帮助孩子养成规范的拼音书写习惯。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q3：可以打印拼音练习纸吗？</p>
+              <p className="text-sm">可以，一键生成PDF文件，A4纸张直接打印，可反复练习。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q4：适合什么时候开始学拼音？</p>
+              <p className="text-sm">适合幼小衔接阶段（大班下学期）和小学一年级上学期使用，是语文学习的基础。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q5：拼音学习工具免费吗？</p>
+              <p className="text-sm">完全免费，无需注册登录，所有拼音练习内容均可免费使用和打印。</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

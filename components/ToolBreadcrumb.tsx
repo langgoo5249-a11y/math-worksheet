@@ -18,7 +18,7 @@ export default function ToolBreadcrumb({ toolName, toolPath }: ToolBreadcrumbPro
           </svg>
         </li>
         <li>
-          <Link href="/blog" className="hover:text-gray-300 transition-colors">学习工具</Link>
+          <Link href="/tools/" className="hover:text-gray-300 transition-colors">学习工具</Link>
         </li>
         <li>
           <svg className="w-3 h-3 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">

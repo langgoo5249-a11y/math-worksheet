@@ -861,7 +861,7 @@ export default function PoemMemoPage({ locale }: { locale?: Locale } = {}) {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <a
-              href="/tools/calligraphy"
+              href="/tools/calligraphy/"
               className="block bg-gray-50 hover:bg-amber-50 border border-gray-200 hover:border-amber-300 rounded-xl p-4 transition-all group"
             >
               <div className="text-2xl mb-2">✍️</div>
@@ -871,7 +871,7 @@ export default function PoemMemoPage({ locale }: { locale?: Locale } = {}) {
               <div className="text-xs text-gray-400 mt-1">田字格/米字格练字</div>
             </a>
             <a
-              href="/tools/math-worksheet"
+              href="/tools/math-worksheet/"
               className="block bg-gray-50 hover:bg-amber-50 border border-gray-200 hover:border-amber-300 rounded-xl p-4 transition-all group"
             >
               <div className="text-2xl mb-2">🧮</div>
@@ -881,7 +881,7 @@ export default function PoemMemoPage({ locale }: { locale?: Locale } = {}) {
               <div className="text-xs text-gray-400 mt-1">口算/竖式/应用题</div>
             </a>
             <a
-              href="/tools/writing-template"
+              href="/tools/writing-template/"
               className="block bg-gray-50 hover:bg-amber-50 border border-gray-200 hover:border-amber-300 rounded-xl p-4 transition-all group"
             >
               <div className="text-2xl mb-2">📝</div>
@@ -891,7 +891,7 @@ export default function PoemMemoPage({ locale }: { locale?: Locale } = {}) {
               <div className="text-xs text-gray-400 mt-1">作文格纸生成</div>
             </a>
             <a
-              href="/tools/pinyin"
+              href="/tools/pinyin/"
               className="block bg-gray-50 hover:bg-amber-50 border border-gray-200 hover:border-amber-300 rounded-xl p-4 transition-all group"
             >
               <div className="text-2xl mb-2">📚</div>

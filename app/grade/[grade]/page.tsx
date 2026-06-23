@@ -396,7 +396,7 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
           </div>
           <div className="mt-4 text-center">
             <Link
-              href="/blog"
+              href="/blog/"
               className="inline-block text-blue-400 hover:text-blue-300 text-sm"
             >
               查看更多{config.name}学习建议 →

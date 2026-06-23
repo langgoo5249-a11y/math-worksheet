@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { articles, defaultAuthor } from '../data';
 import SiteLayout from '@/app/_components/SiteLayout';
-import AdUnit from '@/app/_components/AdUnit';
 
 interface BlogPostPageProps {
   slug: string;
@@ -90,7 +89,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
         <div className="text-center py-20">
           <p className="text-gray-400 text-xl mb-4">文章未找到</p>
           <Link
-            href="/blog"
+            href="/blog/"
             className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
           >
             返回博客列表
@@ -273,9 +272,6 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           </div>
         </div>
 
-        {/* 广告位 */}
-        <AdUnit />
-
         {/* 相关文章推荐 - 增强版 */}
         {relatedArticles.length > 0 && (
           <div className="mt-8 p-6 bg-slate-800/50 rounded-xl border border-white/10">
@@ -306,7 +302,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
         {/* Back Button & Related Articles */}
         <div className="mt-12 pt-8 border-t border-white/10">
           <Link
-            href="/blog"
+            href="/blog/"
             className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-white/10 text-gray-300 hover:text-white rounded-xl transition-colors"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">

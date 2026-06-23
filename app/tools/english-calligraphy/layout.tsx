@@ -151,6 +151,58 @@ export default function EnglishCalligraphyLayout({ children }: { children: React
         </p>
       </div>
       {children}
+
+      {/* 可见 SEO 内容区域 -- 爬虫可直接抓取 */}
+      <section className="max-w-4xl mx-auto px-4 mt-12 mb-8 print:hidden">
+        <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl p-6 md:p-8 text-slate-300 leading-relaxed">
+          <h2 className="text-xl font-bold text-slate-100 mb-4">英语字帖生成器 - 免费四线三格英文字母练习在线打印</h2>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">工具介绍</h3>
+          <p className="mb-3">
+            练学宝<strong>英语字帖</strong>生成器是一款专为小学生设计的英文书写练习工具，采用标准的<strong>四线三格</strong>格式，帮助孩子掌握英文字母的正确占格规则。本工具支持手写体、印刷体等多种英文字体，可输入任意单词、短语或句子生成个性化练习纸，是<strong>英语书写</strong>启蒙和规范训练的得力助手。
+          </p>
+          <p className="mb-3">
+            小学三年级开始系统学习英语书写，很多孩子在字母占格、笔画顺序和字母间距上存在困难。本工具生成的<strong>英文字母练习</strong>纸严格遵循四线三格规范，大写字母占上两格，小写字母根据形状分别占中间一格或上中下三格。通过反复描摹和临摹，孩子能够逐步养成规范的英文书写习惯，为日后的英语学习和考试卷面整洁打下坚实基础。所有功能完全免费，无需注册。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">使用指南</h3>
+          <p className="mb-2">使用英语字帖生成器制作练习纸非常简单：</p>
+          <ul className="list-disc list-inside space-y-1 mb-3 ml-2">
+            <li><strong>选择字体样式：</strong>手写体（Cursive）适合培养连笔书写能力，印刷体（Print）适合初学阶段规范字母形状。</li>
+            <li><strong>输入练习内容：</strong>可以输入课本单词表、重点句子或自定义内容，建议每次练习20-30个单词为宜。</li>
+            <li><strong>设置行高和字号：</strong>低年级学生建议调大行高和字号，便于描摹；高年级可适当缩小，提升书写密度。</li>
+            <li><strong>预览四线三格效果：</strong>确认字母占格和排版是否符合需求，不满意可随时调整参数。</li>
+            <li><strong>导出PDF打印：</strong>一键生成A4格式PDF文件，使用普通A4纸打印即可，建议使用稍厚的纸张以获得更好的书写手感。</li>
+          </ul>
+          <p className="mb-3">
+            建议家长根据学校教学进度每周生成1-2份英语字帖，每天练习10-15分钟。初学阶段以26个字母的单独书写为主，进阶后可练习常用单词和课本句子。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">常见问题 FAQ</h3>
+          <div className="space-y-3">
+            <div>
+              <p className="font-medium text-slate-200">Q1：英语字帖是什么格式？</p>
+              <p className="text-sm">采用标准四线三格格式，符合英语书写规范，帮助孩子掌握字母占格规则。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q2：支持哪些英文字体？</p>
+              <p className="text-sm">提供手写体、印刷体等多种英文字体选择，适合不同学习阶段的书写需求。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q3：可以自定义字帖内容吗？</p>
+              <p className="text-sm">可以，支持输入任意英文单词、短语、句子生成字帖，比如课文内容或单词表。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q4：英语字帖适合几年级？</p>
+              <p className="text-sm">主要适合小学3-6年级学生，英文字母书写需要规范的中学生也可以使用。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q5：英语字帖生成器免费吗？</p>
+              <p className="text-sm">完全免费，无需注册，生成的字帖可自由打印使用，不限制次数。</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

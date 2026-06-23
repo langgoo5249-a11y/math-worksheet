@@ -257,7 +257,7 @@ export default async function TextbookGradePage({ params }: { params: Promise<{ 
                   </div>
                   {tb.scope.includes('数学') && (
                     <Link
-                      href="/tools/math-worksheet"
+                      href="/tools/math-worksheet/"
                       className="shrink-0 text-xs text-orange-300 hover:text-orange-200 bg-orange-500/10 px-2 py-1 rounded"
                     >
                       练一练
@@ -282,7 +282,7 @@ export default async function TextbookGradePage({ params }: { params: Promise<{ 
                   </div>
                   {tb.scope.includes('数学') && (
                     <Link
-                      href="/tools/math-worksheet"
+                      href="/tools/math-worksheet/"
                       className="shrink-0 text-xs text-green-300 hover:text-green-200 bg-green-500/10 px-2 py-1 rounded"
                     >
                       练一练
@@ -294,7 +294,7 @@ export default async function TextbookGradePage({ params }: { params: Promise<{ 
           </div>
         </div>
         <p className="mt-3 text-sm text-slate-400">
-          💡 每学完一个单元，点击右侧"练一练"即可生成对应难度练习卷。也可使用<a href="/tools/unit-test" className="text-blue-400 hover:text-blue-300">单元测试卷工具</a>做整章检测。
+          💡 每学完一个单元，点击右侧"练一练"即可生成对应难度练习卷。也可使用<a href="/tools/unit-test/" className="text-blue-400 hover:text-blue-300">单元测试卷工具</a>做整章检测。
         </p>
       </section>
 
@@ -316,17 +316,17 @@ export default async function TextbookGradePage({ params }: { params: Promise<{ 
                 <span className="text-white text-sm">{unit}</span>
                 <div className="flex gap-2 mt-1">
                   {tb.scope.includes('数学') && (
-                    <Link href="/tools/math-worksheet" className="text-xs text-blue-400 hover:text-blue-300">
+                    <Link href="/tools/math-worksheet/" className="text-xs text-blue-400 hover:text-blue-300">
                       数学练习
                     </Link>
                   )}
                   {tb.scope.includes('语文') && (
-                    <Link href="/tools/calligraphy" className="text-xs text-purple-400 hover:text-purple-300">
+                    <Link href="/tools/calligraphy/" className="text-xs text-purple-400 hover:text-purple-300">
                       生字练习
                     </Link>
                   )}
                   {(tb.scope.includes('语文') || tb.scope.includes('英语')) && (
-                    <Link href="/tools/unit-test" className="text-xs text-green-400 hover:text-green-300">
+                    <Link href="/tools/unit-test/" className="text-xs text-green-400 hover:text-green-300">
                       单元测试
                     </Link>
                   )}

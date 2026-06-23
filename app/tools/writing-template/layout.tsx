@@ -143,6 +143,58 @@ export default function WritingTemplateLayout({ children }: { children: React.Re
         </p>
       </div>
       {children}
+
+      {/* 可见 SEO 内容区域 -- 爬虫可直接抓取 */}
+      <section className="max-w-4xl mx-auto px-4 mt-12 mb-8 print:hidden">
+        <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl p-6 md:p-8 text-slate-300 leading-relaxed">
+          <h2 className="text-xl font-bold text-slate-100 mb-4">作文模板生成器 - 免费看图写话、日记模板与小学作文格纸</h2>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">工具介绍</h3>
+          <p className="mb-3">
+            练学宝<strong>作文模板</strong>生成器是一款专为小学生写作训练设计的辅助工具，涵盖<strong>看图写话</strong>、日记、记叙文、读后感等多种作文格式。本工具提供田字格、方格、横线格三种书写模板，支持300字到600字不同篇幅设置，帮助孩子从低年级写话过渡到高年级作文，逐步培养规范的写作习惯。
+          </p>
+          <p className="mb-3">
+            小学低年级学生刚开始接触写作时，常常面临不知从何下笔的困难。<strong>看图写话</strong>模板配有图片区域和拼音格书写区域，引导孩子观察图片内容并按照"时间、地点、人物、事件"的结构进行表达。日记模板则包含日期、天气、星期等标准栏目，帮助孩子养成记录生活的习惯。<strong>小学作文</strong>格纸模板适合中高年级，标准格子排版让卷面更加整洁规范。所有模板均可免费导出PDF打印。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">使用指南</h3>
+          <p className="mb-2">使用作文模板生成器制作写作练习纸非常简单：</p>
+          <ul className="list-disc list-inside space-y-1 mb-3 ml-2">
+            <li><strong>选择模板类型：</strong>一二年级建议选择看图写话模板，三年级以上可选择日记模板或作文格纸。</li>
+            <li><strong>设置格式和字数：</strong>低年级建议使用田字格和300字篇幅，高年级可选择方格或横线格以及500-600字篇幅。</li>
+            <li><strong>预览模板效果：</strong>在页面中查看作文格纸的排版效果，确认格子大小和行距是否适合孩子的书写习惯。</li>
+            <li><strong>导出PDF打印：</strong>一键生成A4格式PDF文件，建议使用稍厚的纸张打印，获得更好的书写体验。</li>
+            <li><strong>配合写作指导：</strong>家长可根据模板类型给予孩子相应的写作提示，如看图写话时引导孩子描述图中人物的动作和表情。</li>
+          </ul>
+          <p className="mb-3">
+            建议低年级学生每周完成1-2篇看图写话，中高年级每周写1篇日记和1篇命题作文。坚持使用规范模板，孩子的写作条理性和卷面整洁度都会明显提升。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">常见问题 FAQ</h3>
+          <div className="space-y-3">
+            <div>
+              <p className="font-medium text-slate-200">Q1：作文模板有哪些类型？</p>
+              <p className="text-sm">提供看图写话、日记、书信、读后感等多种作文模板，涵盖小学低年级到高年级的写作需求。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q2：看图写话模板适合几年级？</p>
+              <p className="text-sm">专为小学一二年级设计，配有图片区域和书写区域，适合低年级看图写话练习。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q3：作文格子纸支持哪些格式？</p>
+              <p className="text-sm">支持田字格、方格、横线格等多种书写格式，满足不同年级和场景的写作需求。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q4：可以设置不同字数吗？</p>
+              <p className="text-sm">可以，支持300字、400字、500字、600字等不同篇幅的作文格子纸。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q5：作文模板生成器免费吗？</p>
+              <p className="text-sm">完全免费，无需注册，所有模板均可免费使用和打印，不限制次数。</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

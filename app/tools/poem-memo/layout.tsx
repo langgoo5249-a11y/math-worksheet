@@ -140,6 +140,58 @@ export default function PoemMemoLayout({ children }: { children: React.ReactNode
         </p>
       </div>
       {children}
+
+      {/* 可见 SEO 内容区域 -- 爬虫可直接抓取 */}
+      <section className="max-w-4xl mx-auto px-4 mt-12 mb-8 print:hidden">
+        <div className="bg-slate-800/30 border border-slate-700/40 rounded-xl p-6 md:p-8 text-slate-300 leading-relaxed">
+          <h2 className="text-xl font-bold text-slate-100 mb-4">古诗词默写生成器 - 240首小学必背古诗词填空与在线打印</h2>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">工具介绍</h3>
+          <p className="mb-3">
+            练学宝<strong>古诗词默写</strong>生成器是一款专为小学生古诗文学习设计的复习工具，完整收录240首<strong>小学必背古诗</strong>，涵盖唐诗、宋词、元曲等经典篇目。本工具支持填空默写、全诗默写、上下句默写三种练习模式，并提供田字格、方格、横线格三种书写格式，是语文教师备课和家长辅导的必备工具。
+          </p>
+          <p className="mb-3">
+            古诗文积累是小学语文教学的重要内容，也是考试中的必考题型。很多孩子在背诵时流利顺畅，但在默写时却出现错别字、漏字或顺序错误。本工具通过<strong>古诗填空</strong>模式，将诗句中的关键字词留空让孩子填写，既能检验背诵效果，又能强化对重点字词的记忆。全诗默写模式则适合考前冲刺和阶段性复习，帮助孩子全面巩固诗词内容。所有练习卷均可免费导出PDF打印。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">使用指南</h3>
+          <p className="mb-2">使用古诗词默写生成器制作练习卷非常简单：</p>
+          <ul className="list-disc list-inside space-y-1 mb-3 ml-2">
+            <li><strong>选择年级和册次：</strong>按1-6年级上下册筛选需要练习的古诗词，确保与学校教学进度同步。</li>
+            <li><strong>选择默写模式：</strong>初学阶段建议使用填空默写，巩固阶段使用全诗默写，考前复习使用上下句默写。</li>
+            <li><strong>选择书写格式：</strong>低年级建议使用田字格，中高年级可使用方格或横线格，与平时作业格式保持一致。</li>
+            <li><strong>预览默写卷：</strong>在线查看默写卷效果，确认留空位置和诗词内容是否正确。</li>
+            <li><strong>导出PDF打印：</strong>一键生成A4格式默写卷，打印后让孩子在规定时间内完成，模拟真实考试场景。</li>
+          </ul>
+          <p className="mb-3">
+            建议每学完一个单元就生成一份对应的默写练习，及时检验掌握情况。期中期末考试前一周，可集中生成全诗默写卷进行系统复习。对于容易写错的字词，建议单独抄写强化记忆。
+          </p>
+
+          <h3 className="text-lg font-semibold text-slate-200 mt-6 mb-2">常见问题 FAQ</h3>
+          <div className="space-y-3">
+            <div>
+              <p className="font-medium text-slate-200">Q1：收录了多少首古诗词？</p>
+              <p className="text-sm">收录240首经典古诗词，完整覆盖小学1-6年级必背古诗词及课外拓展篇目。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q2：支持哪些默写模式？</p>
+              <p className="text-sm">支持填空默写、全诗默写、上下句默写三种模式，从易到难满足不同学习阶段需求。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q3：可以按年级筛选古诗吗？</p>
+              <p className="text-sm">可以，所有古诗词按年级分类，一年级到六年级的古诗词均可单独选择。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q4：生成的默写卷可以打印吗？</p>
+              <p className="text-sm">可以，一键生成PDF文件，支持田字格、方格、横线格三种书写格式，A4纸直接打印。</p>
+            </div>
+            <div>
+              <p className="font-medium text-slate-200">Q5：古诗词默写生成器收费吗？</p>
+              <p className="text-sm">完全免费，无需注册，所有功能均可免费使用，不限制生成和打印次数。</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

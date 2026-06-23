@@ -155,12 +155,12 @@ async function DailyIndexContent({ searchParams }: { searchParams: Promise<{ gra
       <section className="mb-6 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
         <h2 className="text-lg font-bold text-white mb-4">🛠️ 配套练习工具</h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          <Link href="/tools/mental-math" className="block p-3 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/20 rounded-lg text-center transition-colors">
+          <Link href="/tools/mental-math/" className="block p-3 bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/20 rounded-lg text-center transition-colors">
             <div className="text-2xl mb-1">⚡</div>
             <div className="text-sm text-white">口算速练</div>
             <div className="text-xs text-slate-400 mt-1">计时挑战</div>
           </Link>
-          <Link href="/tools/math-worksheet" className="block p-3 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 rounded-lg text-center transition-colors">
+          <Link href="/tools/math-worksheet/" className="block p-3 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/20 rounded-lg text-center transition-colors">
             <div className="text-2xl mb-1">🧮</div>
             <div className="text-sm text-white">数学练习卷</div>
             <div className="text-xs text-slate-400 mt-1">PDF打印</div>

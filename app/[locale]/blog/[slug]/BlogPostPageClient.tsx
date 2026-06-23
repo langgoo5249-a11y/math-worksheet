@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import { articles, defaultAuthor } from '../../../blog/data';
 import SiteLayout from '../../../_components/SiteLayout';
-import AdUnit from '../../../_components/AdUnit';
 import LanguageSwitcher from '../../../_components/LanguageSwitcher';
 import GoogleTranslateWidget from '../../../_components/GoogleTranslateWidget';
 import { localePath, type Locale } from '@/lib/i18n';
@@ -290,9 +289,6 @@ export default function BlogPostPageClient({ slug, locale }: BlogPostPageClientP
               dangerouslySetInnerHTML={{ __html: parseMarkdown(displayContent) }}
             />
           )}
-
-          {/* 广告位 */}
-          <AdUnit />
 
           {/* 相关文章推荐 - 增强版 */}
           {relatedArticles.length > 0 && (
