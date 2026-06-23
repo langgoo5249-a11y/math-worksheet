@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ToolBreadcrumb from '@/components/ToolBreadcrumb';
 import ToolPageSchema from '@/app/_components/ToolPageSchema';
+import ToolContent from '@/app/tools/_components/ToolContent';
 
 export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/unit-test/';
@@ -159,6 +160,8 @@ export default function UnitTestLayout({ children }: { children: React.ReactNode
           </p>
         </div>
       </section>
+
+      <ToolContent toolId="unit-test" />
     </>
   );
 }

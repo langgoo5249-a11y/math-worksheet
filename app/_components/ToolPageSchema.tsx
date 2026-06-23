@@ -6,13 +6,15 @@ interface ToolPageSchemaProps {
 
 /**
  * 为单个工具页注入 SoftwareApplication + BreadcrumbList 结构化数据。
- * 与 layout 中的 HowTo/FAQPage 配合，增强 GEO/AI 搜索引擎对工具的理解。
+ * 包含 dateModified/datePublished 增强内容新鲜度信号。
  */
 export default function ToolPageSchema({ toolPath }: ToolPageSchemaProps) {
   const normalizedPath = toolPath.replace(/\/$/, '');
   const tool = TOOLS.find((t) => t.path === normalizedPath && t.active);
   const toolUrl = `https://www.skillxm.cn${normalizedPath}/`;
   if (!tool) return null;
+
+  const dateModified = new Date().toISOString().split('T')[0];
 
   const schemas = {
     '@context': 'https://schema.org',
@@ -24,6 +26,8 @@ export default function ToolPageSchema({ toolPath }: ToolPageSchemaProps) {
         operatingSystem: 'Web Browser',
         url: toolUrl,
         description: tool.schemaDescription,
+        dateModified,
+        datePublished: '2025-11-01',
         offers: {
           '@type': 'Offer',
           price: '0',
@@ -39,12 +43,18 @@ export default function ToolPageSchema({ toolPath }: ToolPageSchemaProps) {
           {
             '@type': 'ListItem',
             position: 1,
-            name: '首页',
+            name: '练学宝首页',
             item: 'https://www.skillxm.cn/',
           },
           {
             '@type': 'ListItem',
             position: 2,
+            name: '免费教学工具',
+            item: 'https://www.skillxm.cn/tools/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
             name: tool.name,
             item: toolUrl,
           },
