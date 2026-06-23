@@ -279,26 +279,22 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://lf1-cdn-tos.bytegoofy.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
 
-        {/* Google Search Console 所有权验证 */}
-        <meta name="google-site-verification" content="REPLACE_WITH_YOUR_GSC_VERIFICATION_CODE" />
-
-        {/* Google Consent Mode v2 - 默认拒绝 */}
+        {/* Google Consent Mode v2 - 中国站无GDPR要求，默认全部 granted */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
 
-              // Consent Mode v2: 默认所有存储为 denied
+              // Consent Mode v2: 中国用户为主，无GDPR合规要求，默认全部 granted
               gtag('consent', 'default', {
-                'ad_storage': 'denied',
-                'ad_user_data': 'denied',
-                'ad_personalization': 'denied',
-                'analytics_storage': 'denied',
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'analytics_storage': 'granted',
                 'functionality_storage': 'granted',
-                'personalization_storage': 'denied',
+                'personalization_storage': 'granted',
                 'security_storage': 'granted',
-                'wait_for_update': 500,
               });
 
               gtag('js', new Date());

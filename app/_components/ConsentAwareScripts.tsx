@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const BAIDU_HM_ID = 'b1c5ccce83f4e80c4c12dea6bd544723';
 const BAIDU_PUSH_SRC = 'https://zz.bdstatic.com/linksubmit/push.js';
 const TOUTIAO_PUSH_SRC =
   'https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?278b7bc276aa0b514ff5c4e28d63b1e083f58bd22a48d8e0e73447efb03530befd9a9dcb5ced4d7780eb6f3bbd089073c2a6d54440560d63862bbf4ec01bba3a';
 
-// AdSense 发布商 ID — 请替换为实际 ID
+// AdSense 发布商 ID
 const ADSENSE_PUB_ID = 'ca-pub-XXXXXXXXXXXXXXXX';
 
 function injectExternalScript(src: string, attrs?: Record<string, string>) {
@@ -34,38 +34,20 @@ function injectInlineScript(code: string) {
 /**
  * ConsentAwareScripts
  *
- * 根据用户 Cookie 同意状态，按需注入 AdSense、百度统计、百度推送、头条推送。
- * 用户点击"接受全部"前，这些第三方追踪脚本不会被加载，满足隐私合规要求。
+ * 简化版：中国用户为主，Consent Mode 默认全部 granted，
+ * 所以所有追踪脚本在页面加载后直接注入，不需要等待用户同意。
  */
 export default function ConsentAwareScripts() {
-  const [accepted, setAccepted] = useState(false);
-
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    try {
-      if (localStorage.getItem('cookie-consent') === 'accepted') {
-        setAccepted(true);
-      }
-    } catch {
-      // localStorage 不可用时不注入第三方脚本
-    }
-
-    const handleAccept = () => setAccepted(true);
-    window.addEventListener('cookie-consent-accepted', handleAccept);
-    return () => window.removeEventListener('cookie-consent-accepted', handleAccept);
-  }, []);
-
-  useEffect(() => {
-    if (!accepted) return;
-
-    // Google AdSense Core Script（需用户同意后加载，符合 GDPR/CCPA 合规）
+    // Google AdSense Core Script
     injectExternalScript(
       `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUB_ID}`,
       { crossorigin: 'anonymous', 'data-ad-client': ADSENSE_PUB_ID }
     );
 
-    // 延迟初始化 AdSense 广告单元（等待页面完全加载后再激活，避免异步加载时遗漏）
+    // 延迟初始化 AdSense 广告单元
     injectInlineScript(
       `window.addEventListener('load',function(){try{var ads=document.querySelectorAll('.adsbygoogle:not([data-adsbygoogle-status])');for(var i=0;i<ads.length;i++){(adsbygoogle=window.adsbygoogle||[]).push({})};}catch(e){console.log('AdSense init deferred:',e)}});`
     );
@@ -84,7 +66,7 @@ export default function ConsentAwareScripts() {
     injectInlineScript(
       `window.addEventListener('load',function(){var el=document.createElement('script');el.src='${TOUTIAO_PUSH_SRC}';el.id='ttzz';var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(el,s);});`
     );
-  }, [accepted]);
+  }, []);
 
   return null;
 }
