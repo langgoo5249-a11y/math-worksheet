@@ -30,10 +30,12 @@ export default function MiniappModal() {
 
     const handleOpen = () => setVisible(true);
     window.addEventListener('open-miniapp-modal', handleOpen);
+    document.addEventListener('open-miniapp-modal', handleOpen);
 
     return () => {
       clearTimeout(timer);
       window.removeEventListener('open-miniapp-modal', handleOpen);
+      document.removeEventListener('open-miniapp-modal', handleOpen);
     };
   }, []);
 

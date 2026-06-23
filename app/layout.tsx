@@ -138,6 +138,8 @@ export default async function RootLayout({
         },
         sameAs: [
           "https://github.com/jm6-lang/math-worksheet",
+          "https://www.skillxm.cn/",
+          "https://www.xiaohongshu.com/user/profile/6723c8e3000000001c02b1a8",
         ],
         foundingDate: "2025-12-01",
         contactPoint: {
@@ -155,7 +157,8 @@ export default async function RootLayout({
         jobTitle: "教育内容作者",
         sameAs: [
           "https://github.com/jm6-lang",
-          "https://www.skillxm.cn/about/"
+          "https://www.skillxm.cn/about/",
+          "https://www.xiaohongshu.com/user/profile/6723c8e3000000001c02b1a8",
         ],
         alumniOf: {
           "@type": "Organization",

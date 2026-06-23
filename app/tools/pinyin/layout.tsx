@@ -6,8 +6,8 @@ import ToolContent from '@/app/tools/_components/ToolContent';
 export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/pinyin/';
   return {
-    title: "拼音学习工具 - 声母韵母/拼音注音/四线三格 | 练学宝",
-    description: "免费拼音学习工具，完整收录声母韵母和整体认读音节，采用四线三格标准格式，支持PDF导出A4打印。帮助小学生规范拼音书写，打好语文学习基础。",
+    title: "拼音学习工具在线练习 - 声母韵母整体认读音节四线三格 | 练学宝",
+    description: "免费拼音学习工具，完整收录23个声母、24个韵母、16个整体认读音节，采用四线三格标准格式，支持在线答题和PDF导出打印。帮助小学一年级学生规范拼音书写，打好语文基础。",
     keywords: "拼音练习,拼音注音,声母韵母,整体认读音节,拼音学习,小学拼音,拼音打印,一年级拼音练习,声母韵母练习,拼音四线三格,拼音描红,拼音书写,幼小衔接拼音,拼音启蒙,拼音学习资料,拼音练习纸,拼音测试题",
     alternates: {
     canonical: canonicalUrl,
@@ -142,7 +142,23 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
           })
         }}
       />
-            <ToolPageSchema toolPath="/tools/pinyin/" />
+            <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SpeakableSpecification",
+            "@id": "https://www.skillxm.cn/tools/pinyin/#speakable",
+            "cssSelector": [
+              "h1",
+              "h2",
+              ".seo-content h3",
+              ".seo-content p"
+            ]
+          })
+        }}
+      />
+      <ToolPageSchema toolPath="/tools/pinyin/" />
       <ToolBreadcrumb toolName="拼音注音" toolPath="/tools/pinyin" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

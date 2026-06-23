@@ -6,8 +6,8 @@ import ToolContent from '@/app/tools/_components/ToolContent';
 export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/sudoku/';
   return {
-    title: "数独游戏在线玩 - 入门/进阶/挑战三档难度 | 练学宝",
-    description: "免费在线数独游戏，提供入门进阶挑战三档难度，内置数字键盘和笔记模式，锻炼逻辑思维和专注力。适合小学生课余训练，无需下载打开浏览器即开即玩。",
+    title: "数独游戏在线玩免费 - 4x4/6x6/9x9入门到挑战儿童益智 | 练学宝",
+    description: "免费在线数独游戏，提供4x4入门、6x6进阶、9x9挑战三档难度，内置提示和计时功能，锻炼儿童逻辑思维和专注力。适合小学生课余益智训练，无需下载打开浏览器即开即玩。",
     keywords: "数独游戏,在线数独,数独挑战,逻辑训练,益智游戏,免费数独,数独解题,儿童数独入门,简单数独打印,小学生数独题,数独技巧,数独入门教程,数独每日挑战,数独在线玩,益智数独,逻辑思维训练,儿童益智游戏",
     alternates: {
     canonical: canonicalUrl,
@@ -139,7 +139,23 @@ export default function SudokuLayout({ children }: { children: React.ReactNode }
           })
         }}
       />
-            <ToolPageSchema toolPath="/tools/sudoku/" />
+            <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SpeakableSpecification",
+            "@id": "https://www.skillxm.cn/tools/sudoku/#speakable",
+            "cssSelector": [
+              "h1",
+              "h2",
+              ".seo-content h3",
+              ".seo-content p"
+            ]
+          })
+        }}
+      />
+      <ToolPageSchema toolPath="/tools/sudoku/" />
       <ToolBreadcrumb toolName="数独游戏" toolPath="/tools/sudoku" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

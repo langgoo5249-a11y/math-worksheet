@@ -6,8 +6,8 @@ import ToolContent from '@/app/tools/_components/ToolContent';
 export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/english-calligraphy/';
   return {
-    title: "英文字帖生成器 - 四线三格英文书写练习 | 练学宝",
-    description: "免费生成四线三格英文字帖，支持手写体印刷体等多种字体，可自定义单词句子内容，PDF导出A4打印。适合小学生英语书写练习，帮助规范英文字母书写格式。",
+    title: "英文字帖生成器在线打印 - 四线三格衡水体字母单词练习 | 练学宝",
+    description: "免费生成四线三格英文字帖，支持衡水体、手写印刷体，可自定义26个字母、单词、句子内容，一键导出PDF打印。适合小学3-6年级英语书写练习，规范字母占格提升卷面分。",
     keywords: "英语字帖,四线三格,英语练习,英文字帖,英语书写,英语打印,免费英语字帖,英文字母描红,小学英语书写练习,英语字母练习,英语单词书写,英语手写体,英语印刷体,三年级英语字帖,英语书写规范,英语抄写本,英语练字",
     alternates: {
     canonical: canonicalUrl,
@@ -144,7 +144,23 @@ export default function EnglishCalligraphyLayout({ children }: { children: React
           })
         }}
       />
-            <ToolPageSchema toolPath="/tools/english-calligraphy/" />
+            <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SpeakableSpecification",
+            "@id": "https://www.skillxm.cn/tools/english-calligraphy/#speakable",
+            "cssSelector": [
+              "h1",
+              "h2",
+              ".seo-content h3",
+              ".seo-content p"
+            ]
+          })
+        }}
+      />
+      <ToolPageSchema toolPath="/tools/english-calligraphy/" />
       <ToolBreadcrumb toolName="英语字帖" toolPath="/tools/english-calligraphy" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

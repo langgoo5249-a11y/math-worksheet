@@ -6,8 +6,8 @@ import ToolContent from '@/app/tools/_components/ToolContent';
 export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/unit-test/';
   return {
-    title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 练学宝",
-    description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试期中期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印",
+    title: "小学单元测试卷生成器免费 - 数语英科全科试卷在线打印 | 练学宝",
+    description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试、期中、期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印。教师出题和家长辅导必备。",
     keywords: "单元测试卷,期中试卷,期末试卷,小学数学试卷,小学语文试卷,小学英语试卷,小学科学试卷,试卷生成器,免费试卷打印,人教版试卷,三年级数学试卷,四年级语文试卷,五年级英语试卷,单元测试题,小学全科试卷,期中复习试卷,期末复习试卷",
     alternates: {
     canonical: canonicalUrl,
@@ -90,7 +90,23 @@ export default function UnitTestLayout({ children }: { children: React.ReactNode
           })
         }}
       />
-            <ToolPageSchema toolPath="/tools/unit-test/" />
+            <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SpeakableSpecification",
+            "@id": "https://www.skillxm.cn/tools/unit-test/#speakable",
+            "cssSelector": [
+              "h1",
+              "h2",
+              ".seo-content h3",
+              ".seo-content p"
+            ]
+          })
+        }}
+      />
+      <ToolPageSchema toolPath="/tools/unit-test/" />
       <ToolBreadcrumb toolName="单元测试卷" toolPath="/tools/unit-test" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

@@ -6,8 +6,8 @@ import ToolContent from '@/app/tools/_components/ToolContent';
 export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/calligraphy/';
   return {
-    title: "免费字帖生成器 - 田字格/米字格/楷体字帖 | 练学宝",
-    description: "免费在线生成田字格米字格汉字字帖，支持楷体宋体黑体，自定义内容输入，PDF导出A4打印。适合小学生日常练字和书法初学者描红练习，输入任意汉字即可生成标准字帖模板。",
+    title: "免费字帖生成器在线打印 - 田字格米字格描红练字帖 | 练学宝",
+    description: "免费在线生成田字格、米字格汉字字帖，支持楷体描红和临摹双模式，自定义输入任意汉字、古诗、课文内容，一键导出PDF打印。适合小学1-6年级学生日常练字和书法入门，无需注册即用。",
     keywords: "字帖生成器,练字帖生成,田字格字帖,米字格练习,汉字书写练习,楷体字帖打印,小学生练字,免费字帖下载,自定义字帖,硬笔书法练习,笔画笔顺,生字练习,描红字帖,书法入门,PDF字帖打印",
     alternates: {
     canonical: canonicalUrl,
@@ -136,7 +136,23 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
           })
         }}
       />
-            <ToolPageSchema toolPath="/tools/calligraphy/" />
+            <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SpeakableSpecification",
+            "@id": "https://www.skillxm.cn/tools/calligraphy/#speakable",
+            "cssSelector": [
+              "h1",
+              "h2",
+              ".seo-content h3",
+              ".seo-content p"
+            ]
+          })
+        }}
+      />
+      <ToolPageSchema toolPath="/tools/calligraphy/" />
       <ToolBreadcrumb toolName="字帖生成器" toolPath="/tools/calligraphy" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

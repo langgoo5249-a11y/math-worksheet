@@ -6,8 +6,8 @@ import ToolContent from '@/app/tools/_components/ToolContent';
 export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/poem-memo/';
   return {
-    title: "古诗词默写生成器 - 240首小学必背古诗词在线打印 | 练学宝",
-    description: "免费生成小学1-6年级必背古诗词默写练习卷，收录240首经典古诗词，支持填空默写、全诗默写、上下句默写三种模式，田字格方格横线格PDF打印，语文教师和家长必备复习工具",
+    title: "古诗词默写生成器免费 - 240首小学必背古诗填空全诗打印 | 练学宝",
+    description: "免费生成小学1-6年级必背古诗词默写练习卷，收录240首经典古诗词，支持填空默写、全诗默写、上下句默写三种模式，田字格方格横线格PDF打印。语文教师和家长必备古诗复习工具。",
     keywords: "古诗词默写,小学古诗词,必背古诗,古诗打印,默写练习,古诗词填空,唐诗三百首,宋词,古诗文默写,小学必背古诗75首,小学必背古诗80首,一年级古诗,二年级古诗,三年级古诗,古诗词上下句默写,古诗默写练习卷,古诗词复习,语文古诗默写",
     alternates: {
     canonical: canonicalUrl,
@@ -133,7 +133,23 @@ export default function PoemMemoLayout({ children }: { children: React.ReactNode
           })
         }}
       />
-            <ToolPageSchema toolPath="/tools/poem-memo/" />
+            <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SpeakableSpecification",
+            "@id": "https://www.skillxm.cn/tools/poem-memo/#speakable",
+            "cssSelector": [
+              "h1",
+              "h2",
+              ".seo-content h3",
+              ".seo-content p"
+            ]
+          })
+        }}
+      />
+      <ToolPageSchema toolPath="/tools/poem-memo/" />
       <ToolBreadcrumb toolName="古诗词默写" toolPath="/tools/poem-memo" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

@@ -6,8 +6,8 @@ import ToolContent from '@/app/tools/_components/ToolContent';
 export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/math-worksheet/';
   return {
-    title: "小学数学练习卷生成器 - 1-6年级免费在线出题PDF打印 | 练学宝",
-    description: "免费在线生成小学1-6年级数学练习卷，支持加减乘除、竖式计算、填空题、应用题等11种题型，随机出题PDF打印",
+    title: "小学数学练习卷生成器免费 - 1-6年级在线出题PDF打印 | 练学宝",
+    description: "免费在线生成小学1-6年级数学练习卷，支持加减乘除、竖式计算、四则混合、填空题、应用题等11种题型，随机出题不重复，一键导出PDF打印。教师和家长必备出题工具。",
     keywords: "数学练习卷生成器,小学数学练习题,口算题生成,竖式计算打印,数学作业PDF,加减乘除出题,1-6年级数学试卷,免费数学出题器,在线数学练习,应用题生成器,数学每日一练,数学思维训练,混合运算练习题,小学数学题库,免费打印试卷",
     alternates: {
     canonical: canonicalUrl,
@@ -136,7 +136,23 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
           })
         }}
       />
-            <ToolPageSchema toolPath="/tools/math-worksheet/" />
+            <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SpeakableSpecification",
+            "@id": "https://www.skillxm.cn/tools/math-worksheet/#speakable",
+            "cssSelector": [
+              "h1",
+              "h2",
+              ".seo-content h3",
+              ".seo-content p"
+            ]
+          })
+        }}
+      />
+      <ToolPageSchema toolPath="/tools/math-worksheet/" />
       <ToolBreadcrumb toolName="数学练习卷" toolPath="/tools/math-worksheet" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">

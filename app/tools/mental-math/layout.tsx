@@ -6,8 +6,8 @@ import ToolContent from '@/app/tools/_components/ToolContent';
 export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/mental-math/';
   return {
-    title: "口算速练 - 在线口算计时挑战 | 练学宝",
-    description: "免费在线口算速练工具，支持AI智能出题、进度追踪、学习报告推送。4个难度级别涵盖加减乘除，自动分析薄弱点生成针对性练习，适合小学1-6年级学生日常口算打卡训练。",
+    title: "口算速练在线计时 - 小学1-6年级心算训练免费打卡 | 练学宝",
+    description: "免费在线口算速练工具，支持计时挑战和AI智能出题，4个难度级别涵盖加减乘除和混合运算，自动分析薄弱点生成针对性练习。适合小学1-6年级学生每天5分钟心算训练。",
     keywords: "口算速练,口算练习,心算训练,速算练习,在线口算,数学口算题,计时口算,口算天天练,一年级口算,二年级口算,三年级口算,口算题生成,免费口算练习,口算速度提升,手机口算练习",
     alternates: {
     canonical: canonicalUrl,
@@ -151,7 +151,23 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
           })
         }}
       />
-            <ToolPageSchema toolPath="/tools/mental-math/" />
+            <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SpeakableSpecification",
+            "@id": "https://www.skillxm.cn/tools/mental-math/#speakable",
+            "cssSelector": [
+              "h1",
+              "h2",
+              ".seo-content h3",
+              ".seo-content p"
+            ]
+          })
+        }}
+      />
+      <ToolPageSchema toolPath="/tools/mental-math/" />
       <ToolBreadcrumb toolName="口算速练" toolPath="/tools/mental-math" />
       <div className="max-w-4xl mx-auto px-4 mt-4 mb-2">
         <p className="text-sm text-slate-400 bg-slate-800/40 border border-slate-700/50 rounded-lg px-4 py-3 leading-relaxed">
