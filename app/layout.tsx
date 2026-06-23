@@ -17,6 +17,7 @@ const notoSansSC = Noto_Sans_SC({
   preload: false,
   subsets: ['latin'],
   fallback: ['system-ui', 'PingFang SC', 'Microsoft YaHei', 'sans-serif'],
+  adjustFontFallback: false,
 });
 
 // 根布局保持静态预渲染，canonical 由各页面 layout 分别定义
