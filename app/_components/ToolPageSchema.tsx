@@ -11,6 +11,7 @@ interface ToolPageSchemaProps {
 export default function ToolPageSchema({ toolPath }: ToolPageSchemaProps) {
   const normalizedPath = toolPath.replace(/\/$/, '');
   const tool = TOOLS.find((t) => t.path === normalizedPath && t.active);
+  const toolUrl = `https://www.skillxm.cn${normalizedPath}/`;
   if (!tool) return null;
 
   const schemas = {
@@ -21,7 +22,7 @@ export default function ToolPageSchema({ toolPath }: ToolPageSchemaProps) {
         name: tool.schemaName,
         applicationCategory: tool.schemaCategory,
         operatingSystem: 'Web Browser',
-        url: `https://www.skillxm.cn${tool.path}`,
+        url: toolUrl,
         description: tool.schemaDescription,
         offers: {
           '@type': 'Offer',
@@ -45,7 +46,7 @@ export default function ToolPageSchema({ toolPath }: ToolPageSchemaProps) {
             '@type': 'ListItem',
             position: 2,
             name: tool.name,
-            item: `https://www.skillxm.cn${tool.path}`,
+            item: toolUrl,
           },
         ],
       },
