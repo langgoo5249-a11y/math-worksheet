@@ -9,6 +9,9 @@
 /blog/xiaoxue-zuowen-moban/ /blog/zuowen-moban-kongfu-wufu/ 301
 /blog/haizi-lianzi-shijianbiao/ /blog/haizi-xiezi-waiwainiuniu-lianzi-shijianbiao/ 301
 
+# .html 后缀兼容重定向（静态导出产物为 index.html 目录方式）
+/ai-overview.html /ai-overview/ 301
+
 # ads.txt 由 Next.js 路由 app/ads.txt/route.ts 服务
 # /ads.txt 和 /ads.txt/ 都由该路由处理，避免任何重定向冲突
 
