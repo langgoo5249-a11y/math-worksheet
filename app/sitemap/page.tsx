@@ -205,6 +205,7 @@ export default function SitemapIndex() {
             <li><Link href="/sitemap/" className="text-slate-300 hover:text-blue-400">🗺️ 网站地图</Link></li>
             <li><a href="/rss.xml" className="text-slate-300 hover:text-blue-400">📡 RSS 订阅</a></li>
             <li><a href="/sitemap.xml" className="text-slate-300 hover:text-blue-400">🤖 XML Sitemap（搜索引擎）</a></li>
+            <li><Link href="/ai-overview/" className="text-slate-300 hover:text-blue-400">🧠 AI 搜索引擎概览</Link></li>
           </ul>
         </section>
 

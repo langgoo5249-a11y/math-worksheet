@@ -202,5 +202,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
   });
 
+  // ========== AI 搜索引擎优化概览页 ==========
+  sitemapEntries.push(makeEntry('/ai-overview/', {
+    lastModified: SITE_LASTMOD,
+    changeFrequency: 'weekly',
+    priority: 0.9,
+  }));
+
   return sitemapEntries;
 }
