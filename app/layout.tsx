@@ -6,6 +6,7 @@ import ConsentAwareScripts from './_components/ConsentAwareScripts';
 import GoogleAnalytics from './_components/GoogleAnalytics';
 import FloatingLanguageSwitcher from './_components/FloatingLanguageSwitcher';
 import FloatingMiniappButton from './_components/FloatingMiniappButton';
+import MiniappModal from './_components/MiniappModal';
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
@@ -328,6 +329,9 @@ export default async function RootLayout({
 
         {/* ⚠️ 微信小程序入口 - 核心功能不可删除 */}
         <FloatingMiniappButton />
+
+        {/* ⚠️ 微信小程序自动弹窗 - 24小时弹出一次，核心功能不可删除 */}
+        <MiniappModal />
       </body>
     </html>
   );
