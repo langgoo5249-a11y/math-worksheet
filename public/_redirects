@@ -2,6 +2,13 @@
 # 旧路径重定向到工具页
 /mental-math /tools/mental-math/ 308
 
+# 旧URL重定向到正确路径（修复Bing报告的404错误）
+/tools/oral-math/ /tools/mental-math/ 301
+/tools/english-cursive/ /tools/english-calligraphy/ 301
+/tools/flashcard/ /tools/flashcards/ 301
+/blog/xiaoxue-zuowen-moban/ /blog/zuowen-moban-kongfu-wufu/ 301
+/blog/haizi-lianzi-shijianbiao/ /blog/haizi-xiezi-waiwainiuniu-lianzi-shijianbiao/ 301
+
 # ads.txt 由 Next.js 路由 app/ads.txt/route.ts 服务
 # /ads.txt 和 /ads.txt/ 都由该路由处理，避免任何重定向冲突
 
