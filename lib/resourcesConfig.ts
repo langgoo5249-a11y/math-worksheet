@@ -27,7 +27,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'math-g1-add-sub-10',
         title: '一年级10以内加减法专项练习卷（50题）',
-        description: '10以内加减法口算练习，配合凑十法、破十法图示，适合一年级上学期使用。',
+        description: '一年级10以内加减法口算专项练习卷（50题），配合凑十法、破十法图示讲解，含看图列式、比大小、认识数字等题型，难度基础，适合一年级上学期使用，A4纸PDF免费下载打印，无需注册，可重复打印，配练学宝口算速练工具计时训练，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步。',
         subject: 'math',
         grade: 1,
         knowledgePoint: '10以内加减法',
@@ -41,7 +41,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'math-g1-add-20-carry',
         title: '一年级20以内进位加法（凑十法）专项',
-        description: '20以内进位加法专项练习，凑十法步骤详解与变式训练，含100题。',
+        description: '一年级20以内进位加法（凑十法）专项练习卷，含凑十法步骤详解、变式训练与典型例题，共100题，难度基础，适合一年级下学期使用，A4纸PDF免费下载打印，无需注册，可重复打印，配练学宝口算速练与数学练习卷工具巩固，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步。',
         subject: 'math',
         grade: 1,
         knowledgePoint: '凑十法',
@@ -55,7 +55,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'math-g2-mul-table',
         title: '二年级九九乘法表背诵与练习',
-        description: '完整九九乘法表填空练习，含口诀背诵卡与应用题。',
+        description: '二年级完整九九乘法表填空练习卷，含口诀背诵卡、表内乘除法与应用题，共120题，难度基础，适合二年级上学期使用，A4纸PDF免费下载打印，配套练学宝口算速练工具计时训练与数学练习卷生成器，无需注册，可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'math',
         grade: 2,
         knowledgePoint: '乘法口诀',
@@ -69,7 +69,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'math-g3-add-sub-10000',
         title: '三年级万以内加减法竖式计算专练',
-        description: '万以内加减法竖式计算，含进位、退位、验算三大步骤。',
+        description: '三年级万以内加减法竖式计算专练卷，含进位加法、退位减法、验算三大步骤与混合运算，共80题，难度进阶，适合三年级使用，A4纸PDF免费下载打印，配套数学练习卷生成器与单元测试卷工具检测，无需注册，可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'math',
         grade: 3,
         knowledgePoint: '万以内加减法',
@@ -83,7 +83,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'math-g4-big-num',
         title: '四年级大数的认识与比较练习',
-        description: '亿以内数的读写、改写、大小比较，含分级、数位训练。',
+        description: '四年级大数的认识与比较练习卷，含亿以内数的读写、改写、大小比较、分级与数位训练，共60题，难度进阶，适合四年级上学期使用，A4纸PDF免费下载打印，无需注册，可重复打印，配套数学练习卷生成器巩固训练，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'math',
         grade: 4,
         knowledgePoint: '大数的认识',
@@ -97,7 +97,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'math-g5-decimal',
         title: '五年级小数乘除法竖式与简算',
-        description: '小数乘除法竖式计算，含整数乘法运算定律推广到小数。',
+        description: '五年级小数乘除法竖式与简算练习卷，含小数乘法、小数除法及整数乘法运算定律推广到小数，共80题，难度进阶，适合五年级使用，A4纸PDF免费下载打印，配套数学练习卷工具与单元测试卷检测，无需注册可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'math',
         grade: 5,
         knowledgePoint: '小数乘除法',
@@ -111,7 +111,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'math-g5-equation',
         title: '五年级解简易方程100题专练',
-        description: '解简易方程100题，含ax±b=c、ax±bx=c等类型，含检验步骤。',
+        description: '五年级解简易方程100题专练卷，含ax±b=c、ax±bx=c等类型与检验步骤，难度拔高，适合小升初拔高训练，共100题，A4纸PDF免费下载打印，配套单元测试卷工具检测学习效果，无需注册可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'math',
         grade: 5,
         knowledgePoint: '简易方程',
@@ -125,7 +125,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'math-g6-percent',
         title: '六年级百分数应用题专项',
-        description: '百分数应用题专项：求一个数比另一个数多/少百分之几、折扣、税率等。',
+        description: '六年级百分数应用题专项练习卷，含求一个数比另一个数多/少百分之几、折扣、税率、利率等典型题型，共60题，难度拔高，适合小升初冲刺，PDF免费下载打印，无需注册，配套数学练习卷与单元测试卷工具巩固，家长辅导好帮手，配答案详解，可重复打印，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'math',
         grade: 6,
         knowledgePoint: '百分数应用题',
@@ -139,7 +139,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'math-g6-circle',
         title: '六年级圆的周长和面积应用题',
-        description: '圆的周长和面积计算，含组合图形、扇形、解决问题。',
+        description: '六年级圆的周长和面积应用题练习卷，含圆周长面积计算、组合图形、扇形及解决问题，共50题，难度拔高，适合小升初拔高训练，A4纸PDF免费下载打印，配套数学练习卷工具巩固，无需注册可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排，覆盖期中期末测试。',
         subject: 'math',
         grade: 6,
         knowledgePoint: '圆的周长和面积',
@@ -158,7 +158,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'chi-g1-pinyin',
         title: '一年级声母韵母四线三格练习纸',
-        description: '23个声母+24个韵母标准四线三格书写练习，含描红和独立书写。',
+        description: '一年级声母韵母四线三格标准书写练习纸，含23个声母+24个韵母的描红与独立书写，共47个拼音字母，难度基础，适合一年级拼音入门使用，A4纸PDF免费下载打印，配套拼音注音与字帖生成器工具，无需注册可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'chinese',
         grade: 1,
         knowledgePoint: '声母韵母',
@@ -172,7 +172,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'chi-g2-look-write',
         title: '二年级看图写话20篇（带范文）',
-        description: '看图写话练习20篇，每篇含4-6张图、范文、点评、写话提示。',
+        description: '二年级看图写话练习20篇，每篇含4-6张图、范文、点评与写话提示，培养观察与表达能力，共20篇，难度基础，适合二年级作文入门，A4纸PDF免费下载打印，配套作文模板与字帖生成器工具，无需注册，可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'chinese',
         grade: 2,
         knowledgePoint: '看图写话',
@@ -186,7 +186,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'chi-g3-reading',
         title: '三年级阅读理解30篇（附答案）',
-        description: '三年级阅读理解30篇，含记叙文、说明文、童话寓言、文言启蒙。',
+        description: '三年级阅读理解练习30篇，含记叙文、说明文、童话寓言与文言启蒙，附详细答案与解析，共90题，难度进阶，适合三年级使用，A4纸PDF免费下载打印，配套识字卡片积累词汇与字帖生成器，无需注册，可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'chinese',
         grade: 3,
         knowledgePoint: '阅读理解',
@@ -200,7 +200,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'chi-g4-composition',
         title: '四年级作文500字范文20篇',
-        description: '四年级各类作文范文：写人、记事、写景、状物、想象、读后感。',
+        description: '四年级各类作文范文20篇，涵盖写人、记事、写景、状物、想象、读后感六大类型，每篇500字左右配点评，难度进阶，适合四年级作文进阶，PDF免费下载打印，配套作文模板与字帖生成器工具，无需注册，可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'chinese',
         grade: 4,
         knowledgePoint: '作文500字',
@@ -214,7 +214,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'chi-g5-ancient',
         title: '五年级必背古诗80首（默写版）',
-        description: '五年级必背古诗80首默写练习，含原文、注释、译文、默写。',
+        description: '五年级必背古诗80首默写练习卷，含原文、注释、译文与默写训练，共80首古诗，难度进阶，适合五年级古诗积累与小升初复习，A4纸PDF免费下载打印，配套古诗词默写工具与字帖生成器，无需注册，可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'chinese',
         grade: 5,
         knowledgePoint: '古诗默写',
@@ -228,7 +228,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'chi-g6-composition',
         title: '六年级小升初作文范文30篇',
-        description: '小升初作文30篇精选范文：命题作文、半命题、话题作文、应用文全覆盖。',
+        description: '六年级小升初作文精选范文30篇，覆盖命题作文、半命题、话题作文与应用文四大类型，每篇600字以上配点评，难度拔高，适合小升初冲刺，PDF免费下载打印，配套作文模板工具，无需注册，可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排，覆盖期中期末测试。',
         subject: 'chinese',
         grade: 6,
         knowledgePoint: '小升初作文',
@@ -247,7 +247,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'eng-g1-alphabet',
         title: '一年级26个字母四线三格书写练习',
-        description: '26个英文字母大小写四线三格书写，含描红、笔顺、发音。',
+        description: '一年级26个英文字母大小写四线三格书写练习纸，含字母描红、笔顺示范与发音标注，共52个字母，难度基础，适合英语零基础入门，A4纸PDF免费下载打印，配套英语字帖工具，无需注册可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排，覆盖期中期末测试。',
         subject: 'english',
         grade: 1,
         knowledgePoint: '26个英语字母',
@@ -261,7 +261,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'eng-g2-words',
         title: '二年级英语单词100个默写卷',
-        description: '二年级必背英语单词100个，四线三格默写练习。',
+        description: '二年级必背英语单词100个默写卷，含四线三格默写练习与中文释义，按颜色数字动物家庭等主题分类，共100词，难度基础，适合二年级英语积累，A4纸PDF免费下载打印，配套英语字帖与识字卡片工具，无需注册可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步。',
         subject: 'english',
         grade: 2,
         knowledgePoint: '英语单词',
@@ -275,7 +275,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'eng-g3-tense',
         title: '三年级英语时态专项练习',
-        description: '三年级英语时态：一般现在时、现在进行时专项，含选择、填空、造句。',
+        description: '三年级英语时态专项练习卷，含一般现在时与现在进行时，题型包括选择、填空与造句，共80题，难度进阶，适合三年级英语语法入门，PDF免费下载打印，配套英语字帖与识字卡片工具，无需注册，可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排，覆盖期中期末测试。',
         subject: 'english',
         grade: 3,
         knowledgePoint: '时态',
@@ -289,7 +289,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'eng-g4-reading',
         title: '四年级英语阅读理解30篇',
-        description: '四年级英语阅读理解30篇，含记叙文、说明文、应用文。',
+        description: '四年级英语阅读理解练习30篇，含记叙文、说明文与应用文，附答案与词汇解析，共90题，难度进阶，适合四年级英语能力提升，A4纸PDF免费下载打印，配套识字卡片积累词汇与英语字帖工具，无需注册，家长辅导好帮手，配答案详解，可重复打印，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'english',
         grade: 4,
         knowledgePoint: '阅读理解',
@@ -303,7 +303,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'eng-g5-composition',
         title: '五年级英语小作文50词范文20篇',
-        description: '五年级英语小作文范文20篇：My Day、My Family、My Hobby 等话题。',
+        description: '五年级英语小作文范文20篇，覆盖My Day、My Family、My Hobby等常见话题，每篇50词左右配中文翻译，难度进阶，适合五年级英语写作入门，PDF免费下载打印，配套英语字帖与作文模板工具，无需注册，可重复打印，家长辅导好帮手，配答案详解，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步。',
         subject: 'english',
         grade: 5,
         knowledgePoint: '英语作文',
@@ -317,7 +317,7 @@ export const RESOURCE_CATEGORIES: ResourceCategory[] = [
       {
         id: 'eng-g6-exam',
         title: '六年级小升初英语模拟卷10套',
-        description: '六年级小升初英语模拟卷10套，含听力、语法、阅读、作文四大板块。',
+        description: '六年级小升初英语模拟卷10套，含听力、语法、阅读理解与作文四大板块，共200题，附答案与听力文本，难度拔高，适合小升初冲刺模拟，PDF免费下载打印，无需注册可重复使用，配套英语字帖与识字卡片工具，家长辅导好帮手，配答案详解，可重复打印，永久免费，题型循序渐进，含详细解析与批改参考，与课堂进度同步，按教学大纲编排。',
         subject: 'english',
         grade: 6,
         knowledgePoint: '小升初英语',

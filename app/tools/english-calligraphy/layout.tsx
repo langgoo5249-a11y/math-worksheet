@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/english-calligraphy/';
   return {
     title: "英文字帖生成器在线打印 - 四线三格衡水体字母单词练习 | 练学宝",
-    description: "免费生成四线三格英文字帖，支持衡水体、手写印刷体，可自定义26个字母、单词、句子内容，一键导出PDF打印。适合小学3-6年级英语书写练习，规范字母占格提升卷面分。",
+    description: "免费生成四线三格英文字帖，支持衡水体、手写印刷体两种字体，可自定义26个字母、单词、句子内容，一键导出PDF打印。适合小学3-6年级英语书写练习和课后作业，与课本同步，帮助养成规范书写习惯，教师家长免费使用，可批量生成全班字帖，支持自定义行数和字数可重复打印永久免费。",
     keywords: "英语字帖,四线三格,英语练习,英文字帖,英语书写,英语打印,免费英语字帖,英文字母描红,小学英语书写练习,英语字母练习,英语单词书写,英语手写体,英语印刷体,三年级英语字帖,英语书写规范,英语抄写本,英语练字",
     alternates: {
     canonical: canonicalUrl,
@@ -15,14 +15,14 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       url: canonicalUrl,
       title: "英语字帖生成器 - 免费四线三格英语练习 | 练学宝",
-      description: "免费生成四线三格英文字帖，支持手写体印刷体等多种字体，可自定义单词句子内容，PDF导出A4打印。适合小学生英语书写练习，帮助规范英文字母书写格式。",
+      description: "免费生成四线三格英文字帖，支持衡水体、手写印刷体两种字体，可自定义26个字母、单词、句子内容，一键导出PDF打印。适合小学3-6年级英语书写练习和课后作业，与课本同步，帮助养成规范书写习惯，教师家长免费使用，可批量生成全班字帖，支持自定义行数和字数可重复打印永久免费。",
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("英语字帖生成器")}&category=${encodeURIComponent("英语工具")}&icon=🔤`, width: 1200, height: 630, alt: "英语字帖生成器 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "英语字帖生成器 - 免费四线三格英语练习 | 练学宝",
-      description: "免费生成四线三格英文字帖，支持手写体印刷体等多种字体，可自定义单词句子内容，PDF导出A4打印。适合小学生英语书写练习，帮助规范英文字母书写格式。",
+      description: "免费生成四线三格英文字帖，支持衡水体、手写印刷体两种字体，可自定义26个字母、单词、句子内容，一键导出PDF打印。适合小学3-6年级英语书写练习和课后作业，与课本同步，帮助养成规范书写习惯，教师家长免费使用，可批量生成全班字帖，支持自定义行数和字数可重复打印永久免费。",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("英语字帖生成器")}&category=${encodeURIComponent("英语工具")}&icon=🔤`, width: 1200, height: 630, alt: "英语字帖生成器 - 练学宝" }],
     },
   };

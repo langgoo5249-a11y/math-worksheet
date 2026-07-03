@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/sudoku/';
   return {
     title: "数独游戏在线玩免费 - 4x4/6x6/9x9入门到挑战儿童益智 | 练学宝",
-    description: "免费在线数独游戏，提供4x4入门、6x6进阶、9x9挑战三档难度，内置提示和计时功能，锻炼儿童逻辑思维和专注力。适合小学生课余益智训练，无需下载打开浏览器即开即玩。",
+    description: "免费在线数独游戏，提供4x4入门、6x6进阶、9x9挑战三档难度，内置提示和计时功能，锻炼儿童逻辑思维和专注力。适合小学2-6年级学生课外益智训练，无需下载安装，手机电脑直接在线玩，培养数学推理能力和空间想象力，每日一题养成思考习惯，配解题步骤提示适合自学入门永久免费。",
     keywords: "数独游戏,在线数独,数独挑战,逻辑训练,益智游戏,免费数独,数独解题,儿童数独入门,简单数独打印,小学生数独题,数独技巧,数独入门教程,数独每日挑战,数独在线玩,益智数独,逻辑思维训练,儿童益智游戏",
     alternates: {
     canonical: canonicalUrl,
@@ -15,14 +15,14 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       url: canonicalUrl,
       title: "数独游戏 - 免费在线数独挑战 | 练学宝",
-      description: "免费在线数独游戏，提供入门进阶挑战三档难度，内置数字键盘和笔记模式，锻炼逻辑思维和专注力。适合小学生课余训练，无需下载打开浏览器即开即玩。",
+      description: "免费在线数独游戏，提供4x4入门、6x6进阶、9x9挑战三档难度，内置提示和计时功能，锻炼儿童逻辑思维和专注力。适合小学2-6年级学生课外益智训练，无需下载安装，手机电脑直接在线玩，培养数学推理能力和空间想象力，每日一题养成思考习惯，配解题步骤提示适合自学入门永久免费。",
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数独游戏")}&category=${encodeURIComponent("思维训练")}&icon=🧩`, width: 1200, height: 630, alt: "数独游戏 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "数独游戏 - 免费在线数独挑战 | 练学宝",
-      description: "免费在线数独游戏，提供入门进阶挑战三档难度，内置数字键盘和笔记模式，锻炼逻辑思维和专注力。适合小学生课余训练，无需下载打开浏览器即开即玩。",
+      description: "免费在线数独游戏，提供4x4入门、6x6进阶、9x9挑战三档难度，内置提示和计时功能，锻炼儿童逻辑思维和专注力。适合小学2-6年级学生课外益智训练，无需下载安装，手机电脑直接在线玩，培养数学推理能力和空间想象力，每日一题养成思考习惯，配解题步骤提示适合自学入门永久免费。",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数独游戏")}&category=${encodeURIComponent("思维训练")}&icon=🧩`, width: 1200, height: 630, alt: "数独游戏 - 练学宝" }],
     },
   };

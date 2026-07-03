@@ -7,16 +7,16 @@ export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/writing-template/';
   return {
     title: "作文模板生成器免费 - 看图写话日记作文格纸PDF打印 | 练学宝",
-    description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，可设置300-600字篇幅，一键导出PDF打印。适合小学1-6年级写作练习。",
+    description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，可设置300-600字篇幅，一键导出PDF打印。适合小学1-6年级语文写作练习和课后作业，与课堂教学同步使用，家长教师免费使用可重复打印，支持自定义格数和行距永久免费。",
     keywords: "作文模板,看图写话,日记模板,作文格纸,小学作文,写作练习,作文纸打印,作文格子,三年级作文模板,看图写话练习纸,小学生日记格式,作文开头结尾,写人作文模板,记事作文模板,写景作文模板,作文素材,低年级写话,作文格子纸",
     alternates: {
     canonical: canonicalUrl,
   },
-    openGraph: { url: canonicalUrl, title: "作文模板生成器 - 练学宝", description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。", images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }] },
+    openGraph: { url: canonicalUrl, title: "作文模板生成器 - 练学宝", description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，可设置300-600字篇幅，一键导出PDF打印。适合小学1-6年级语文写作练习和课后作业，与课堂教学同步使用，家长教师免费使用可重复打印，支持自定义格数和行距永久免费。", images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }] },
     twitter: {
       card: "summary_large_image",
       title: "作文模板生成器 - 练学宝",
-      description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，PDF导出A4打印。适合小学低年级到高年级写作练习。",
+      description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，可设置300-600字篇幅，一键导出PDF打印。适合小学1-6年级语文写作练习和课后作业，与课堂教学同步使用，家长教师免费使用可重复打印，支持自定义格数和行距永久免费。",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }],
     },
   };

@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/unit-test/';
   return {
     title: "小学单元测试卷生成器免费 - 数语英科全科试卷在线打印 | 练学宝",
-    description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试、期中、期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印。教师出题和家长辅导必备。",
+    description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试、期中、期末三种类型，基础提高拓展三档难度，一键导出PDF打印答案分离。与主流教材同步，适合家长在家模拟考试训练，配详细解析和评分标准可重复打印永久免费，教师可用于课堂测验。",
     keywords: "单元测试卷,期中试卷,期末试卷,小学数学试卷,小学语文试卷,小学英语试卷,小学科学试卷,试卷生成器,免费试卷打印,人教版试卷,三年级数学试卷,四年级语文试卷,五年级英语试卷,单元测试题,小学全科试卷,期中复习试卷,期末复习试卷",
     alternates: {
     canonical: canonicalUrl,
@@ -15,14 +15,14 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       url: canonicalUrl,
       title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 练学宝",
-      description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试期中期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印",
+      description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试、期中、期末三种类型，基础提高拓展三档难度，一键导出PDF打印答案分离。与主流教材同步，适合家长在家模拟考试训练，配详细解析和评分标准可重复打印永久免费，教师可用于课堂测验。",
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("单元测试卷生成器")}&category=${encodeURIComponent("综合工具")}&icon=📋`, width: 1200, height: 630, alt: "单元测试卷生成器 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "小学单元测试卷生成器 - 数语英科全科试卷免费打印 | 练学宝",
-      description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试期中期末三种类型，基础提高拓展三档难度，PDF排版规范一键打印",
+      description: "免费生成小学1-6年级单元测试卷，覆盖数学语文英语科学四科305个单元，支持单元测试、期中、期末三种类型，基础提高拓展三档难度，一键导出PDF打印答案分离。与主流教材同步，适合家长在家模拟考试训练，配详细解析和评分标准可重复打印永久免费，教师可用于课堂测验。",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("单元测试卷生成器")}&category=${encodeURIComponent("综合工具")}&icon=📋`, width: 1200, height: 630, alt: "单元测试卷生成器 - 练学宝" }],
     },
   };
