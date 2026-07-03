@@ -238,7 +238,6 @@ export function generateOrganizationSchema() {
     sameAs: [
       'https://github.com/jm6-lang/math-worksheet',
       'https://www.xiaohongshu.com/user/profile/6723c8e3000000001c02b1a8',
-      'https://space.bilibili.com/3494368303471960',
     ],
   };
 }

@@ -142,8 +142,6 @@ export default async function RootLayout({
           "https://github.com/jm6-lang/math-worksheet",
           "https://www.skillxm.cn/",
           "https://www.xiaohongshu.com/user/profile/6723c8e3000000001c02b1a8",
-          "https://www.skillxm.cn/ai-overview/",
-          "https://space.bilibili.com/3494368303471960",
         ],
         foundingDate: "2025-12-01",
         contactPoint: {
