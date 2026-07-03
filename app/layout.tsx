@@ -100,7 +100,7 @@ export default async function RootLayout({
         url: "https://www.skillxm.cn/",
         description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
         inLanguage: "zh-CN",
-        dateModified: "2026-06-21",
+        dateModified: "2026-07-03",
         potentialAction: {
           "@type": "SearchAction",
           target: "https://www.skillxm.cn/search?q={search_term_string}",
@@ -115,7 +115,7 @@ export default async function RootLayout({
         "@id": "https://www.skillxm.cn/#organization",
         name: "练学宝",
         url: "https://www.skillxm.cn/",
-        dateModified: "2026-06-21",
+        dateModified: "2026-07-03",
         logo: {
           "@type": "ImageObject",
           url: "https://www.skillxm.cn/favicon.svg",
@@ -142,6 +142,8 @@ export default async function RootLayout({
           "https://github.com/jm6-lang/math-worksheet",
           "https://www.skillxm.cn/",
           "https://www.xiaohongshu.com/user/profile/6723c8e3000000001c02b1a8",
+          "https://www.skillxm.cn/ai-overview/",
+          "https://space.bilibili.com/3494368303471960",
         ],
         foundingDate: "2025-12-01",
         contactPoint: {
@@ -217,42 +219,12 @@ export default async function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="format-detection" content="telephone=no" />
 
-        {/* hreflang SEO + GEO 信号 - 动态指向当前页面 URL
+        {/* hreflang SEO + GEO 信号 - 静态服务端输出
             注意：/en/, /ja/, /ko/ 路由已被 _redirects 301 重定向到 /（中文版），
             不再作为独立语言版本对外提供，因此 hreflang 简化为只有 zh-CN 和 x-default。
-            由于根布局为 force-static，无法在服务端获取当前路径，
-            通过客户端脚本动态设置 hreflang 指向当前页面自身 URL，
-            避免所有子页面 hreflang 错误指向首页，同时消除与页面级 metadata 的重复。 */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                function updateHreflang() {
-                  var path = location.pathname;
-                  if (path && !path.endsWith('/') && !/\\.[a-zA-Z0-9]+$/.test(path) && !path.includes('?') && !path.includes('#')) {
-                    path = path + '/';
-                  }
-                  var url = 'https://www.skillxm.cn' + path;
-                  var existing = document.querySelectorAll('link[rel="alternate"][hreflang]');
-                  for (var i = 0; i < existing.length; i++) { existing[i].remove(); }
-                  var langs = ['zh-CN', 'x-default'];
-                  for (var j = 0; j < langs.length; j++) {
-                    var link = document.createElement('link');
-                    link.rel = 'alternate';
-                    link.hreflang = langs[j];
-                    link.href = url;
-                    document.head.appendChild(link);
-                  }
-                }
-                if (document.readyState === 'loading') {
-                  document.addEventListener('DOMContentLoaded', updateHreflang);
-                } else {
-                  updateHreflang();
-                }
-              })();
-            `,
-          }}
-        />
+            指向首页 URL 作为全局语言声明，AI爬虫不执行JS，必须服务端静态输出。 */}
+        <link rel="alternate" hrefLang="zh-CN" href="https://www.skillxm.cn/" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.skillxm.cn/" />
 
         {/* 动态设置 html lang 属性（根据 URL 路径） */}
         <script
