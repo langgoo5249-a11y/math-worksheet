@@ -464,6 +464,7 @@ export default function FlashcardsPage({ locale }: { locale?: Locale } = {}) {
 
       <main className="pt-20 pb-8 px-4">
         <div className="max-w-7xl mx-auto">
+          <h1 className="text-3xl md:text-4xl font-black text-white mb-6">识字卡片生成器</h1>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
 
             {/* ===== 左侧：输入和配置面板 ===== */}
