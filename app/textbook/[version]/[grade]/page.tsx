@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ version: 
 
   const pageUrl = `${SITE_INFO.BASE_URL}/textbook/${version}/${grade}/`;
   const title = `${tb.name}${gradeNum}年级${tb.scope[0]}同步练习_${tb.fullName}_免费下载打印 | 练学宝`;
-  const description = `${tb.fullName}小学${gradeNum}年级${tb.scope.join('、')}下册上册同步练习卷免费下载，共${gradeInfo.units.length}个单元，按教材单元组织，与课堂进度完全同步，PDF打印下载。辅导孩子作业好帮手。`;
+  const description = `${tb.fullName}小学${gradeNum}年级${tb.scope.join('、')}下册上册同步练习卷免费下载，共${gradeInfo.units.length}个单元，按教材单元组织，与课堂进度完全同步，涵盖数学语文英语科学全科，支持PDF一键打印，配答案详解可重复打印，适合家长课后辅导和考前复习，永久免费无需注册。`;
 
   return {
     title,

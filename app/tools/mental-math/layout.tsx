@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
     const canonicalUrl = 'https://www.skillxm.cn/tools/mental-math/';
   return {
     title: "口算速练在线计时 - 小学1-6年级心算训练免费打卡 | 练学宝",
-    description: "免费在线口算速练工具，支持计时挑战和AI智能出题，4个难度级别涵盖10以内加减法到乘除法混合运算，自动分析薄弱点生成针对性练习。适合小学1-6年级学生每日训练计算速度和准确率，无需注册即开即用，自动批改省心省力，配成绩记录追踪进步情况，手机电脑均可使用，永久免费。",
+    description: "免费在线口算速练工具，支持计时挑战和AI智能出题，4个难度级别涵盖10以内加减法到乘除法混合运算，自动分析薄弱点生成针对性练习。适合小学1-6年级学生每日训练计算速度和准确率，无需注册即开即用，自动批改省心省力，配成绩记录追踪进步情况，手机电脑均可使用，永久免费即开即用，适合家长课后辅导和教师课堂训练使用。",
     keywords: "口算速练,口算练习,心算训练,速算练习,在线口算,数学口算题,计时口算,口算天天练,一年级口算,二年级口算,三年级口算,口算题生成,免费口算练习,口算速度提升,手机口算练习",
     alternates: {
     canonical: canonicalUrl,
@@ -15,14 +15,14 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       url: canonicalUrl,
       title: "口算速练 - 免费在线口算计时挑战 | 练学宝",
-      description: "免费在线口算速练工具，支持计时挑战和AI智能出题，4个难度级别涵盖10以内加减法到乘除法混合运算，自动分析薄弱点生成针对性练习。适合小学1-6年级学生每日训练计算速度和准确率，无需注册即开即用，自动批改省心省力，配成绩记录追踪进步情况，手机电脑均可使用，永久免费。",
+      description: "免费在线口算速练工具，支持计时挑战和AI智能出题，4个难度级别涵盖10以内加减法到乘除法混合运算，自动分析薄弱点生成针对性练习。适合小学1-6年级学生每日训练计算速度和准确率，无需注册即开即用，自动批改省心省力，配成绩记录追踪进步情况，手机电脑均可使用，永久免费即开即用，适合家长课后辅导和教师课堂训练使用。",
       type: "website",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "口算速练 - 免费在线口算计时挑战 | 练学宝",
-      description: "免费在线口算速练工具，支持计时挑战和AI智能出题，4个难度级别涵盖10以内加减法到乘除法混合运算，自动分析薄弱点生成针对性练习。适合小学1-6年级学生每日训练计算速度和准确率，无需注册即开即用，自动批改省心省力，配成绩记录追踪进步情况，手机电脑均可使用，永久免费。",
+      description: "免费在线口算速练工具，支持计时挑战和AI智能出题，4个难度级别涵盖10以内加减法到乘除法混合运算，自动分析薄弱点生成针对性练习。适合小学1-6年级学生每日训练计算速度和准确率，无需注册即开即用，自动批改省心省力，配成绩记录追踪进步情况，手机电脑均可使用，永久免费即开即用，适合家长课后辅导和教师课堂训练使用。",
       images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }],
     },
   };
