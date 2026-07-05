@@ -245,7 +245,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             style={{ display: 'block', textAlign: 'center' }}
             data-ad-layout="in-article"
             data-ad-format="fluid"
-            data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+            data-ad-client="ca-pub-4710405779358793"
             data-ad-slot="1234567890"
           />
         </div>

@@ -8,7 +8,7 @@ const TOUTIAO_PUSH_SRC =
   'https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?278b7bc276aa0b514ff5c4e28d63b1e083f58bd22a48d8e0e73447efb03530befd9a9dcb5ced4d7780eb6f3bbd089073c2a6d54440560d63862bbf4ec01bba3a';
 
 // AdSense 发布商 ID
-const ADSENSE_PUB_ID = 'ca-pub-XXXXXXXXXXXXXXXX';
+const ADSENSE_PUB_ID = 'ca-pub-4710405779358793';
 
 function injectExternalScript(src: string, attrs?: Record<string, string>) {
   if (typeof document === 'undefined') return;
