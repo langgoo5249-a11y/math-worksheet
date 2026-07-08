@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import Link from 'next/link';
 
 interface Tool {
   path: string;
@@ -9,15 +10,27 @@ interface Tool {
   icon: string;
 }
 
+interface ArticleMeta {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  readTime: string;
+  date: string;
+  authorName?: string;
+}
+
 interface BlogPageClientProps {
-  type: 'categoryFilter' | 'menuTrigger' | 'mobileMenu' | 'showMore';
+  type: 'categoryFilter' | 'menuTrigger' | 'mobileMenu' | 'showMore' | 'articleGrid';
   categories?: readonly string[];
   tools?: Tool[];
   totalArticles?: number;
   initialCount?: number;
+  articles?: ArticleMeta[];
+  categoryColors?: Record<string, string>;
 }
 
-const categoryColors: Record<string, string> = {
+const defaultCategoryColors: Record<string, string> = {
   '全部': 'bg-white/10 text-white border-white/20 hover:bg-white/20',
   '数学学习': 'bg-blue-500/20 text-blue-300 border-blue-500/30 hover:bg-blue-500/30',
   '语文学习': 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30 hover:bg-emerald-500/30',
@@ -29,53 +42,27 @@ const categoryColors: Record<string, string> = {
   '关于我们': 'bg-pink-500/20 text-pink-300 border-pink-500/30 hover:bg-pink-500/30',
 };
 
-export default function BlogPageClient({ type, categories = [], tools = [], totalArticles = 0, initialCount = 15 }: BlogPageClientProps) {
+export default function BlogPageClient({ 
+  type, 
+  categories = [], 
+  tools = [], 
+  totalArticles = 0, 
+  initialCount = 15,
+  articles = [],
+  categoryColors = defaultCategoryColors,
+}: BlogPageClientProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('全部');
   const [shownCount, setShownCount] = useState(initialCount);
 
   const handleCategoryChange = useCallback((category: string) => {
     setActiveCategory(category);
-
-    const cards = document.querySelectorAll('[data-category]');
-    let visibleCount = 0;
-    cards.forEach((card) => {
-      const el = card as HTMLElement;
-      const matchesCategory = category === '全部' || card.getAttribute('data-category') === category;
-      const isShown = parseInt(el.getAttribute('data-index') || '0') < shownCount;
-      if (matchesCategory && isShown) {
-        el.style.display = '';
-        visibleCount++;
-      } else if (!matchesCategory) {
-        el.style.display = 'none';
-      } else {
-        el.style.display = 'none';
-      }
-    });
-
-    const countEl = document.querySelector('[data-article-count]');
-    if (countEl) {
-      const totalForCategory = category === '全部'
-        ? cards.length
-        : document.querySelectorAll(`[data-category="${category}"]`).length;
-      countEl.textContent = `共 ${totalForCategory} 篇文章`;
-    }
-  }, [shownCount]);
+    setShownCount(initialCount);
+  }, [initialCount]);
 
   const handleShowMore = useCallback(() => {
-    const newCount = shownCount + 15;
-    setShownCount(newCount);
-
-    const cards = document.querySelectorAll('[data-category]');
-    cards.forEach((card) => {
-      const el = card as HTMLElement;
-      const idx = parseInt(el.getAttribute('data-index') || '0');
-      const matchesCategory = activeCategory === '全部' || card.getAttribute('data-category') === activeCategory;
-      if (idx < newCount && matchesCategory) {
-        el.style.display = '';
-      }
-    });
-  }, [shownCount, activeCategory]);
+    setShownCount((c) => c + 15);
+  }, []);
 
   if (type === 'menuTrigger') {
     return (
@@ -128,6 +115,95 @@ export default function BlogPageClient({ type, categories = [], tools = [], tota
     );
   }
 
+  if (type === 'articleGrid') {
+    const filtered = activeCategory === '全部'
+      ? articles
+      : articles.filter(a => a.category === activeCategory);
+    const shown = filtered.slice(0, shownCount);
+    const hasMore = shownCount < filtered.length;
+
+    return (
+      <>
+        {/* Category Filter */}
+        <div className="flex flex-wrap gap-2 mb-6">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => handleCategoryChange(category)}
+              className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                activeCategory === category
+                  ? (categoryColors[category] || 'bg-white/20 text-white border-white/30')
+                  : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10 hover:text-gray-300'
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+
+        {/* Article Count */}
+        <div className="mb-6 text-sm text-gray-500">
+          共 {filtered.length} 篇文章
+        </div>
+
+        {/* Article Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {shown.map((article) => (
+            <Link
+              key={article.id}
+              href={`/blog/${article.id}/`}
+              className="text-left bg-slate-800/50 border border-white/10 rounded-2xl p-6 hover:border-white/20 hover:bg-slate-700/50 transition-all group"
+            >
+              {/* Category & Read Time */}
+              <div className="flex items-center gap-3 mb-3">
+                <span className={`px-2.5 py-0.5 rounded-full text-xs font-medium border ${categoryColors[article.category] || 'bg-gray-500/20 text-gray-300 border-gray-500/30'}`}>
+                  {article.category}
+                </span>
+                <span className="text-gray-500 text-xs">{article.readTime}</span>
+              </div>
+
+              {/* Title */}
+              <h2 className="text-lg font-bold text-white mb-2 group-hover:text-blue-400 transition-colors leading-snug">
+                {article.title}
+              </h2>
+
+              {/* Description */}
+              <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                {article.description}
+              </p>
+
+              {/* Author & Date */}
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-[10px] font-bold">
+                    {(article.authorName || '林').charAt(0)}
+                  </div>
+                  <span className="text-gray-500 text-xs">{article.authorName || '林远'}</span>
+                  <time className="text-gray-500 text-xs">{article.date}</time>
+                </div>
+                <span className="text-gray-400 group-hover:text-blue-400 group-hover:translate-x-1 transition-all">
+                  阅读全文 &rarr;
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        {/* Show More Button */}
+        {hasMore && (
+          <div className="text-center mt-8">
+            <button
+              onClick={handleShowMore}
+              className="px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-xl border border-white/20 transition-all font-medium"
+            >
+              加载更多文章（还有 {filtered.length - shownCount} 篇）
+            </button>
+          </div>
+        )}
+      </>
+    );
+  }
+
   if (type === 'categoryFilter') {
     return (
       <div className="flex flex-wrap gap-2 mb-6">
@@ -137,7 +213,7 @@ export default function BlogPageClient({ type, categories = [], tools = [], tota
             onClick={() => handleCategoryChange(category)}
             className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
               activeCategory === category
-                ? (categoryColors[category] || 'bg-white/20 text-white border-white/30')
+                ? (defaultCategoryColors[category] || 'bg-white/20 text-white border-white/30')
                 : 'bg-white/5 text-gray-400 border-white/10 hover:bg-white/10 hover:text-gray-300'
             }`}
           >

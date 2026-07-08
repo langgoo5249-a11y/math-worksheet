@@ -154,7 +154,6 @@ Allow: /_next/data/
 Disallow: /_components/
 Disallow: /admin/
 Allow: /manifest.json
-Disallow: /*.json$
 
 # ---------- Sitemap ----------
 Sitemap: https://www.skillxm.cn/sitemap.xml

@@ -189,14 +189,14 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
                 <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">学习工具</span>
               </div>
               {[
-                { icon: '🧮', name: '数学练习卷', desc: '一键出题', link: '/tools/math-worksheet', color: 'bg-blue-500/15' },
-                { icon: '✍️', name: '字帖生成器', desc: '田字格/米字格', link: '/tools/calligraphy', color: 'bg-emerald-500/15' },
-                { icon: '🔤', name: '英语字帖', desc: '四线三格', link: '/tools/english-calligraphy', color: 'bg-rose-500/15' },
-                { icon: '🧩', name: '数独游戏', desc: '逻辑训练', link: '/tools/sudoku', color: 'bg-orange-500/15' },
-                { icon: '⚡', name: '口算速练', desc: '计时练习', link: '/tools/mental-math', color: 'bg-yellow-500/15' },
-                { icon: '🃏', name: '识字卡片', desc: '汉字卡片', link: '/tools/flashcards', color: 'bg-purple-500/15' },
-                { icon: '📝', name: '作文模板', desc: '写作模板', link: '/tools/writing-template', color: 'bg-teal-500/15' },
-                { icon: '📝', name: '拼音注音', desc: '注音练习', link: '/tools/pinyin', color: 'bg-blue-500/15' },
+                { icon: '🧮', name: '数学练习卷', desc: '一键出题', link: '/tools/math-worksheet/', color: 'bg-blue-500/15' },
+                { icon: '✍️', name: '字帖生成器', desc: '田字格/米字格', link: '/tools/calligraphy/', color: 'bg-emerald-500/15' },
+                { icon: '🔤', name: '英语字帖', desc: '四线三格', link: '/tools/english-calligraphy/', color: 'bg-rose-500/15' },
+                { icon: '🧩', name: '数独游戏', desc: '逻辑训练', link: '/tools/sudoku/', color: 'bg-orange-500/15' },
+                { icon: '⚡', name: '口算速练', desc: '计时练习', link: '/tools/mental-math/', color: 'bg-yellow-500/15' },
+                { icon: '🃏', name: '识字卡片', desc: '汉字卡片', link: '/tools/flashcards/', color: 'bg-purple-500/15' },
+                { icon: '📝', name: '作文模板', desc: '写作模板', link: '/tools/writing-template/', color: 'bg-teal-500/15' },
+                { icon: '📝', name: '拼音注音', desc: '注音练习', link: '/tools/pinyin/', color: 'bg-blue-500/15' },
               ].map((tool) => (
                 <a key={tool.link} href={tool.link} onClick={() => setMobileMenu(false)} className="flex items-center gap-3 px-3 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/5 rounded-xl transition-colors">
                   <span className={`w-8 h-8 ${tool.color} rounded-lg flex items-center justify-center text-sm`}>{tool.icon}</span>
