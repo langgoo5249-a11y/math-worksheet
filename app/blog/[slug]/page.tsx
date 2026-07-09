@@ -70,10 +70,13 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     "datePublished": article.date,
     "dateModified": article.dateModified || article.date,
     "image": "https://www.skillxm.cn/og-image.jpg",
+    "inLanguage": "zh-CN",
+    "isAccessibleForFree": true,
     "author": {
       "@type": "Person",
       "name": article.author?.name || defaultAuthor.name,
-      "description": article.author?.bio || defaultAuthor.bio,
+      "description": article.author?.credentials || article.author?.bio || defaultAuthor.bio,
+      "jobTitle": article.author?.title || defaultAuthor.title,
       "url": "https://www.skillxm.cn/about/"
     },
     "publisher": {
@@ -92,7 +95,26 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       "@id": `https://www.skillxm.cn/blog/${article.id}/`
     },
     "articleSection": article.category,
-    "wordCount": article.content?.length || 0,
+    "articleBody": article.content || "",
+    "wordCount": article.content ? (article.content.match(/[\u4e00-\u9fff]/g) || []).length : 0,
+    "keywords": article.keywords?.join(',') || article.category,
+    "about": {
+      "@type": "Thing",
+      "name": article.category,
+      "description": article.description
+    },
+    ...(article.citations && article.citations.length > 0 ? {
+      "citation": article.citations.map(c => ({
+        "@type": "CreativeWork",
+        "name": c
+      }))
+    } : {}),
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".summary", "h2"]
+    },
+    "license": "https://www.skillxm.cn/",
+    "acquireLicensePage": "https://www.skillxm.cn/contact/",
   };
 
   const breadcrumbSchema = {

@@ -81,6 +81,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  other: {
+    'ai-content-declaration': 'AI-assisted',
+    'ai-generated': 'no',
+    'ai-reviewed': 'yes',
+  },
 };
 
 export default async function RootLayout({
