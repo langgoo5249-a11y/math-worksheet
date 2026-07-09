@@ -4,6 +4,10 @@
 #       以及 OpenAI/Anthropic/Perplexity/Google AI 等 AI 引擎爬虫
 # ===========================================
 
+# ---------- Google AdSense 广告爬虫 ----------
+User-agent: Mediapartners-Google
+Allow: /
+
 # ---------- 默认规则：允许所有爬虫 ----------
 User-agent: *
 Allow: /
