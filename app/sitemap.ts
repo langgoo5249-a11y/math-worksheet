@@ -13,7 +13,8 @@ export const dynamic = 'force-static';
 const BASE_URL = 'https://www.skillxm.cn';
 
 // 站点级固定更新日期（用于没有独立更新时间的静态页）
-const SITE_LASTMOD = '2026-06-21';
+// 2026-07-09: 更新至最新部署日期，确保 Google 能正确识别页面新鲜度
+const SITE_LASTMOD = '2026-07-09';
 
 // =====================================================================
 // Sitemap 配置说明
@@ -98,12 +99,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ========== 博客首页 ==========
   sitemapEntries.push(makeEntry('/blog/', {
+    lastModified: SITE_LASTMOD,
     changeFrequency: 'daily',
     priority: 0.9,
   }));
 
   // ========== 工具聚合页 ==========
   sitemapEntries.push(makeEntry('/tools/', {
+    lastModified: SITE_LASTMOD,
     changeFrequency: 'weekly',
     priority: 0.85,
   }));
@@ -138,6 +141,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter(c => c !== '全部' && isValidUrlSlug(c))
     .forEach(cat => {
       sitemapEntries.push(makeEntry(`/blog/category/${cat}/`, {
+        lastModified: SITE_LASTMOD,
         changeFrequency: 'weekly',
         priority: 0.8,
       }));
@@ -155,6 +159,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   aggregatePages.forEach(({ path, priority, freq }) => {
     sitemapEntries.push(makeEntry(path, {
+      lastModified: SITE_LASTMOD,
       changeFrequency: freq,
       priority,
     }));
@@ -163,6 +168,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ========== 年级详情页 ==========
   GRADES.forEach(g => {
     sitemapEntries.push(makeEntry(`/grade/grade-${g.grade}/`, {
+      lastModified: SITE_LASTMOD,
       changeFrequency: 'weekly',
       priority: 0.8,
     }));
@@ -172,6 +178,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   TEXTBOOKS.forEach(tb => {
     tb.grades.forEach(g => {
       sitemapEntries.push(makeEntry(`/textbook/${tb.id}/grade-${g.grade}/`, {
+        lastModified: SITE_LASTMOD,
         changeFrequency: 'weekly',
         priority: 0.8,
       }));
@@ -181,6 +188,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ========== 知识点详情页 ==========
   KNOWLEDGE_POINTS.forEach(kp => {
     sitemapEntries.push(makeEntry(`/knowledge/${kp.slug}/`, {
+      lastModified: SITE_LASTMOD,
       changeFrequency: 'monthly',
       priority: 0.75,
     }));
@@ -189,6 +197,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ========== 资源详情页 ==========
   getAllResources().forEach(r => {
     sitemapEntries.push(makeEntry(`/resources/${r.id}/`, {
+      lastModified: SITE_LASTMOD,
       changeFrequency: 'monthly',
       priority: 0.75,
     }));
@@ -197,6 +206,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ========== 家长指导详情页 ==========
   PARENT_GUIDE_TOPICS.forEach(t => {
     sitemapEntries.push(makeEntry(`/parent-guide/${t.id}/`, {
+      lastModified: SITE_LASTMOD,
       changeFrequency: 'monthly',
       priority: 0.7,
     }));

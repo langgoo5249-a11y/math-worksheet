@@ -149,12 +149,13 @@ Allow: /tools/
 
 # ---------- 不希望被索引的内部路径 ----------
 Disallow: /api/
-Disallow: /_next/
 # Cloudflare 内部端点，不应被爬虫索引
 Disallow: /cdn-cgi/
 # 允许爬虫访问 Next.js 静态 JS/CSS/字体资源（对渲染和 GEO 抓取至关重要）
+# 注意：Allow 放在 Disallow 之前，确保最具体规则优先匹配
 Allow: /_next/static/
 Allow: /_next/data/
+Disallow: /_next/
 Disallow: /_components/
 Disallow: /admin/
 Allow: /manifest.json

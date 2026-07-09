@@ -14,6 +14,12 @@ export const metadata: Metadata = {
     type: "website",
     images: [{ url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "知识分享 - 小学数学语文英语学习方法 | 练学宝",
+    description: "小学数学语文英语学习方法文章集锦，覆盖一年级到六年级学习指南，包含口算训练、字帖练习、阅读理解、作文写作等实用教程。",
+    images: ["https://www.skillxm.cn/og-image.jpg"],
+  },
 };
 
 export default function BlogLayout({

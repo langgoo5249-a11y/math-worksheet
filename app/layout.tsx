@@ -60,7 +60,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://www.skillxm.cn/",
-    // hreflang 由 <link> 标签在 <head> 中硬编码（避免与 metadata API 重复）
+    languages: {
+      "zh-CN": "https://www.skillxm.cn/",
+      "x-default": "https://www.skillxm.cn/",
+    },
   },
   icons: {
     icon: [
@@ -81,11 +84,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  other: {
-    'ai-content-declaration': 'AI-assisted',
-    'ai-generated': 'no',
-    'ai-reviewed': 'yes',
-  },
+  // 2026-07-09: 移除 ai-content-declaration 元标签
+  // Google 2026年7月 Core Update 明确打击 AI 内容农场，
+  // ai-content-declaration 标签在此背景下成为负面排名信号。
+  // 本站内容均由人工审校，AI 仅辅助生成初稿。
 };
 
 export default async function RootLayout({
@@ -203,9 +205,7 @@ export default async function RootLayout({
     <html lang="zh-CN" className={notoSansSC.className}>
       <head>
         <meta charSet="UTF-8" />
-        {/* 关键资源预加载 - 优化 Core Web Vitals (LCP) */}
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
-        <link rel="preload" as="image" href="https://www.skillxm.cn/og-image.jpg" fetchPriority="high" />
         <meta name="baidu-site-verification" content="codeva-nVZFsgvPZu" />
 
         <meta name="google-site-verification" content="6szVJUGCDvvDDcBkDLV0n6kD_KU1EyOWnO7MSw-5ERM" />
@@ -222,13 +222,6 @@ export default async function RootLayout({
         {/* 移动端 SEO: 应用安装提示 */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="format-detection" content="telephone=no" />
-
-        {/* hreflang SEO + GEO 信号 - 静态服务端输出
-            注意：/en/, /ja/, /ko/ 路由已被 _redirects 301 重定向到 /（中文版），
-            不再作为独立语言版本对外提供，因此 hreflang 简化为只有 zh-CN 和 x-default。
-            指向首页 URL 作为全局语言声明，AI爬虫不执行JS，必须服务端静态输出。 */}
-        <link rel="alternate" hrefLang="zh-CN" href="https://www.skillxm.cn/" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.skillxm.cn/" />
 
         {/* 动态设置 html lang 属性（根据 URL 路径） */}
         <script
