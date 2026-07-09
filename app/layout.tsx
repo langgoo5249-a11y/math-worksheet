@@ -223,6 +223,10 @@ export default async function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="format-detection" content="telephone=no" />
 
+        {/* hreflang: 单语言站点，仅声明 zh-CN + x-default */}
+        <link rel="alternate" hrefLang="zh-CN" href="https://www.skillxm.cn/" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.skillxm.cn/" />
+
         {/* 动态设置 html lang 属性（根据 URL 路径） */}
         <script
           dangerouslySetInnerHTML={{
