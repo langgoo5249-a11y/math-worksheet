@@ -145,4 +145,27 @@ function fixDeepNestedRoutes(dir) {
 }
 fixDeepNestedRoutes(path.join(outDir, 'textbook'));
 
+// 5. 复制 Cloudflare Pages Functions 到输出目录
+// 注意：Pages Functions 的响应不受 _headers 文件规则影响，
+// 可精确控制 HTTP 头部，用于绕过区域级安全头（如 nosniff）。
+const functionsDir = path.join(process.cwd(), 'functions');
+const outFunctionsDir = path.join(outDir, 'functions');
+if (fs.existsSync(functionsDir)) {
+  if (!fs.existsSync(outFunctionsDir)) {
+    fs.mkdirSync(outFunctionsDir, { recursive: true });
+  }
+  const funcFiles = fs.readdirSync(functionsDir);
+  for (const f of funcFiles) {
+    fs.copyFileSync(path.join(functionsDir, f), path.join(outFunctionsDir, f));
+    console.log(`[OK] Copied functions/${f} to out/functions/`);
+  }
+  // 删除静态 ads.txt，让 Function 接管该路径
+  // Cloudflare Pages Functions 优先级高于静态文件
+  const staticAdsTxt = path.join(outDir, 'ads.txt');
+  if (fs.existsSync(staticAdsTxt)) {
+    fs.unlinkSync(staticAdsTxt);
+    console.log('[OK] Removed out/ads.txt - Function will handle /ads.txt requests');
+  }
+}
+
 console.log('\n[POSTBUILD] All critical files verified. Build is deployment-ready.');
