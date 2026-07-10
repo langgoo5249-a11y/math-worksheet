@@ -11,6 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: "拼音练习,拼音注音,声母韵母,整体认读音节,拼音学习,小学拼音,拼音打印,一年级拼音练习,声母韵母练习,拼音四线三格,拼音描红,拼音书写,幼小衔接拼音,拼音启蒙,拼音学习资料,拼音练习纸,拼音测试题",
     alternates: {
     canonical: canonicalUrl,
+    languages: {
+      "zh-CN": canonicalUrl,
+      "x-default": canonicalUrl,
+    },
   },
     openGraph: {
       url: canonicalUrl,

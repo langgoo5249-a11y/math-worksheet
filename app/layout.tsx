@@ -88,6 +88,10 @@ export const metadata: Metadata = {
   // Google 2026年7月 Core Update 明确打击 AI 内容农场，
   // ai-content-declaration 标签在此背景下成为负面排名信号。
   // 本站内容均由人工审校，AI 仅辅助生成初稿。
+  other: {
+    'datePublished': '2025-12-01',
+    'dateModified': '2026-07-10',
+  },
 };
 
 export default async function RootLayout({
@@ -107,7 +111,7 @@ export default async function RootLayout({
         url: "https://www.skillxm.cn/",
         description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
         inLanguage: "zh-CN",
-        dateModified: "2026-07-03",
+        dateModified: "2026-07-10",
         potentialAction: {
           "@type": "SearchAction",
           target: "https://www.skillxm.cn/search?q={search_term_string}",
@@ -185,6 +189,20 @@ export default async function RootLayout({
           "@id": "https://www.skillxm.cn/#organization"
         },
         url: "https://www.skillxm.cn/about/",
+        hasCredential: [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "全栈开发工程师",
+            "description": "具备前端、后端及云基础设施全栈开发能力，负责练学宝平台技术架构设计",
+            "credentialCategory": "professional certification"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "教育内容创作者",
+            "description": "持续产出小学教育领域原创内容，涵盖数学、语文、英语三大学科学习方法",
+            "credentialCategory": "occupational credential"
+          }
+        ],
       },
       {
         "@type": "SpeakableSpecification",

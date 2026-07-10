@@ -11,6 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: "英语字帖,四线三格,英语练习,英文字帖,英语书写,英语打印,免费英语字帖,英文字母描红,小学英语书写练习,英语字母练习,英语单词书写,英语手写体,英语印刷体,三年级英语字帖,英语书写规范,英语抄写本,英语练字",
     alternates: {
     canonical: canonicalUrl,
+    languages: {
+      "zh-CN": canonicalUrl,
+      "x-default": canonicalUrl,
+    },
   },
     openGraph: {
       url: canonicalUrl,

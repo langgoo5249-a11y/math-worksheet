@@ -1,48 +1,26 @@
-# 练学宝 (skillxm.cn)
-> 免费在线小学教育工具平台，提供10+款数学练习、语文学习、英语练习工具
+# 练学宝 (skillxm.cn) — LLM 内容索引
+> 最后更新: 2026-07-10
+> 本文件为 AI 搜索引擎（ChatGPT、Perplexity、Claude、Gemini、豆包等）提供站点内容目录。
 
-## 站点概述
+## 关于练学宝
+练学宝是免费的在线小学教育工具平台，提供10+款教学工具覆盖数学、语文、英语三大学科。
+所有工具免费使用，无需注册，支持手机在线练习和PDF打印。
 
-练学宝是一个面向中国小学1-6年级学生的免费在线教育平台。无需注册，即开即用。所有工具完全免费，支持PDF导出打印和手机在线做题。
+## 快速链接
+- [完整内容索引 (llms-full.txt)](https://www.skillxm.cn/llms-full.txt)
+- [站点地图 (sitemap.xml)](https://www.skillxm.cn/sitemap.xml)
+- [博客文章 (108篇)](https://www.skillxm.cn/blog/)
+- [全部工具](https://www.skillxm.cn/tools/)
+- [关于我们](https://www.skillxm.cn/about/)
 
 ## 核心工具
-
-- **数学练习卷生成器** (`/tools/math-worksheet`) — 支持11种题型（加减乘除、竖式、混合运算等），1-6年级，自定义题量和数字范围，田字格/方格/横线格/空白4种模板
-- **字帖生成器** (`/tools/calligraphy`) — 中文汉字字帖，支持自定义文字、田字格/米字格/方格，可调节字号和格子大小
-- **英语字帖** (`/tools/english-calligraphy`) — 26个字母大小写、单词、句子练习，四线三格标准格式
-- **口算速练** (`/tools/mental-math`) — AI智能出题，计时练习，支持加减乘除混合，自动批改和成绩报告
-- **古诗词默写** (`/tools/poem-memo`) — 小学必背75首古诗词，支持按年级筛选，自动生成填空练习
-- **拼音注音** (`/tools/pinyin`) — 汉字转拼音，四线三格标注，声母韵母整体认读音节练习
-- **识字卡片** (`/tools/flashcards`) — 小学1-6年级核心汉字卡片，含拼音、笔画、组词
-- **数独游戏** (`/tools/sudoku`) — 4×4/6×6/9×9三种难度，适合培养逻辑思维
-- **单元测试卷** (`/tools/unit-test`) — 同步教材单元卷，覆盖人教版/北师大版/苏教版/部编版
-- **作文模板** (`/tools/writing-template`) — 看图写话、日记、读后感等多种作文模板
-
-## 内容结构
-
-- `/blog/` — 教育方法博客，100+篇原创文章，涵盖数学学习、语文学习、英语学习、思维训练、学习方法、升学指导
-- `/grade/grade-1/` ~ `/grade/grade-6/` — 按年级整理的学习资源
-- `/textbook/pep/` `/textbook/bsd/` `/textbook/suer/` `/textbook/bubian/` — 按教材版本（人教版/北师大版/苏教版/部编版）同步练习
-- `/knowledge/` — 知识点专题详解（凑十法、破十法、乘法口诀、百分数、阅读理解等）
-- `/resources/` — 分年级分科目的练习资源
-- `/parent-guide/` — 家长辅导指南（幼小衔接、学习习惯、作业辅导、时间管理等）
-
-## 技术信息
-
-- 框架: Next.js (App Router, Static Export)
-- 部署: Cloudflare Pages
-- 语言: 主要中文 (zh-CN)
-- 支持设备: 桌面端 + 移动端响应式
-- API: 无后端API，纯静态站点
-
-## 联系方式
-
-- 邮箱: lang@skillxm.cn
-- 地址: 浙江绍兴
-
-## 相关链接
-
-- [博客首页](https://www.skillxm.cn/blog/)
-- [关于我们](https://www.skillxm.cn/about/)
-- [RSS订阅](https://www.skillxm.cn/rss.xml)
-- [站点地图](https://www.skillxm.cn/sitemap.xml)
+- 口算速练: https://www.skillxm.cn/tools/mental-math/
+- 数学练习卷生成器: https://www.skillxm.cn/tools/math-worksheet/
+- 字帖生成器: https://www.skillxm.cn/tools/calligraphy/
+- 英语字帖: https://www.skillxm.cn/tools/english-calligraphy/
+- 拼音学习: https://www.skillxm.cn/tools/pinyin/
+- 数独游戏: https://www.skillxm.cn/tools/sudoku/
+- 作文模板: https://www.skillxm.cn/tools/writing-template/
+- 古诗词默写: https://www.skillxm.cn/tools/poem-memo/
+- 识字卡片: https://www.skillxm.cn/tools/flashcards/
+- 单元测试卷: https://www.skillxm.cn/tools/unit-test/

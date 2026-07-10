@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   keywords: "知识分享,小学学习方法,数学学习,语文学习,英语学习,教育资讯,小学教育,学习技巧",
   alternates: {
     canonical: 'https://www.skillxm.cn/blog/',
+    languages: {
+      "zh-CN": "https://www.skillxm.cn/blog/",
+      "x-default": "https://www.skillxm.cn/blog/",
+    },
   },
   openGraph: {
     url: 'https://www.skillxm.cn/blog/',

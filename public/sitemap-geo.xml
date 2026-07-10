@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:geo="https://www.skillxm.cn/geo/1.0">
-<!-- sitemap-geo.xml — GEO专用站点地图，为AI搜索引擎提供结构化索引，最后更新: 2026-07-09 -->
+<!-- sitemap-geo.xml — GEO专用站点地图，为AI搜索引擎提供结构化索引，最后更新: 2026-07-10 -->
 
-<url><loc>https://www.skillxm.cn/</loc><lastmod>2026-07-09</lastmod><changefreq>daily</changefreq><priority>1.0</priority><geo:ai_content_declaration>AI-assisted</geo:ai_content_declaration><geo:content_type>tool_directory</geo:content_type></url>
+<url><loc>https://www.skillxm.cn/</loc><lastmod>2026-07-10</lastmod><changefreq>daily</changefreq><priority>1.0</priority><geo:content_type>tool_directory</geo:content_type></url>
 <url><loc>https://www.skillxm.cn/about/</loc><lastmod>2026-07-09</lastmod><changefreq>monthly</changefreq><priority>0.6</priority><geo:content_type>about_page</geo:content_type><geo:has_authoritative_sources>true</geo:has_authoritative_sources></url>
 <url><loc>https://www.skillxm.cn/blog/</loc><lastmod>2026-07-09</lastmod><changefreq>daily</changefreq><priority>0.9</priority><geo:content_type>blog_index</geo:content_type></url>
 <url><loc>https://www.skillxm.cn/tools/mental-math/</loc><changefreq>weekly</changefreq><priority>0.8</priority><geo:content_type>interactive_tool</geo:content_type><geo:tool_name>口算速练</geo:tool_name></url>

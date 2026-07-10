@@ -11,6 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: "数独游戏,在线数独,数独挑战,逻辑训练,益智游戏,免费数独,数独解题,儿童数独入门,简单数独打印,小学生数独题,数独技巧,数独入门教程,数独每日挑战,数独在线玩,益智数独,逻辑思维训练,儿童益智游戏",
     alternates: {
     canonical: canonicalUrl,
+    languages: {
+      "zh-CN": canonicalUrl,
+      "x-default": canonicalUrl,
+    },
   },
     openGraph: {
       url: canonicalUrl,

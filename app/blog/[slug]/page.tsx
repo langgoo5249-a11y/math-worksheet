@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${article.title} | 练学宝`,
     description: article.description,
-    authors: [{ name: '练学宝' }],
+    authors: [{ name: article.author?.name || defaultAuthor.name }],
     keywords: article.keywords || [article.category, '小学教育', '学习方法', '家长辅导'],
     alternates: {
       canonical: `https://www.skillxm.cn/blog/${slug}/`,
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: 'article',
       publishedTime: article.date,
       modifiedTime: article.dateModified || article.date,
-      authors: ['练学宝'],
+      authors: [article.author?.name || defaultAuthor.name],
       images: [
         {
           url: 'https://www.skillxm.cn/og-image.jpg',

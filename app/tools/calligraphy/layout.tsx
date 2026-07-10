@@ -11,6 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: "字帖生成器,练字帖生成,田字格字帖,米字格练习,汉字书写练习,楷体字帖打印,小学生练字,免费字帖下载,自定义字帖,硬笔书法练习,笔画笔顺,生字练习,描红字帖,书法入门,PDF字帖打印",
     alternates: {
     canonical: canonicalUrl,
+    languages: {
+      "zh-CN": canonicalUrl,
+      "x-default": canonicalUrl,
+    },
   },
     openGraph: {
       url: canonicalUrl,

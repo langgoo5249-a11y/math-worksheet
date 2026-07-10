@@ -11,6 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: "数学练习卷生成器,小学数学练习题,口算题生成,竖式计算打印,数学作业PDF,加减乘除出题,1-6年级数学试卷,免费数学出题器,在线数学练习,应用题生成器,数学每日一练,数学思维训练,混合运算练习题,小学数学题库,免费打印试卷",
     alternates: {
     canonical: canonicalUrl,
+    languages: {
+      "zh-CN": canonicalUrl,
+      "x-default": canonicalUrl,
+    },
   },
     openGraph: {
       url: canonicalUrl,

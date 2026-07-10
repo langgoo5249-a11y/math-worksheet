@@ -11,6 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: "口算速练,口算练习,心算训练,速算练习,在线口算,数学口算题,计时口算,口算天天练,一年级口算,二年级口算,三年级口算,口算题生成,免费口算练习,口算速度提升,手机口算练习",
     alternates: {
     canonical: canonicalUrl,
+    languages: {
+      "zh-CN": canonicalUrl,
+      "x-default": canonicalUrl,
+    },
   },
     openGraph: {
       url: canonicalUrl,

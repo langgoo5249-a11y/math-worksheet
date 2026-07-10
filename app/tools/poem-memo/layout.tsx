@@ -11,6 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: "古诗词默写,小学古诗词,必背古诗,古诗打印,默写练习,古诗词填空,唐诗三百首,宋词,古诗文默写,小学必背古诗75首,小学必背古诗80首,一年级古诗,二年级古诗,三年级古诗,古诗词上下句默写,古诗默写练习卷,古诗词复习,语文古诗默写",
     alternates: {
     canonical: canonicalUrl,
+    languages: {
+      "zh-CN": canonicalUrl,
+      "x-default": canonicalUrl,
+    },
   },
     openGraph: {
       url: canonicalUrl,

@@ -11,6 +11,10 @@ export async function generateMetadata(): Promise<Metadata> {
     keywords: "单元测试卷,期中试卷,期末试卷,小学数学试卷,小学语文试卷,小学英语试卷,小学科学试卷,试卷生成器,免费试卷打印,人教版试卷,三年级数学试卷,四年级语文试卷,五年级英语试卷,单元测试题,小学全科试卷,期中复习试卷,期末复习试卷",
     alternates: {
     canonical: canonicalUrl,
+    languages: {
+      "zh-CN": canonicalUrl,
+      "x-default": canonicalUrl,
+    },
   },
     openGraph: {
       url: canonicalUrl,
