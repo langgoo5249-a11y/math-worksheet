@@ -22,66 +22,6 @@
   Content-Type: text/html; charset=utf-8
   Cache-Control: public, max-age=86400
 
-# 博客文章：静态内容，CDN 缓存 1 天，离线时返回旧版本
-/blog/*
-  Cache-Control: public, max-age=0, s-maxage=86400, stale-while-revalidate=86400
-
-# 工具页面：变化很少，CDN 缓存 12 小时
-/tools/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 年级页面
-/grade/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 知识点页面
-/knowledge/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 资源页面
-/resources/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 家长指南页面
-/parent-guide/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 教材页面
-/textbook/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 每日一练页面
-/daily/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 更新日志页面
-/changelog/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 联系我们页面
-/contact/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 关于我们页面
-/about/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 隐私政策页面
-/privacy/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 服务条款页面
-/terms/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 站点地图页面
-/sitemap/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
-# 搜索页面
-/search/*
-  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
-
 # 静态资源：图片、JS、CSS 长期缓存
 /_next/static/*
   Cache-Control: public, max-age=31536000, immutable
@@ -102,14 +42,15 @@
   Cache-Control: public, max-age=2592000
 
 # ============================================
-# 安全头：仅对 HTML 页面生效
-# 关键修复：之前使用 /* 通配符导致 CSP 等安全头被注入到 ads.txt (text/plain)，
-# 导致 Google AdSense 验证失败。现改为精确匹配 HTML 页面路径。
+# HTML 页面：缓存策略 + 安全头合并为单块
+# 每个 URL 路径一个块，避免多块合并冲突导致 CDN 缓存失效
+# CDN-Cache-Control 是 Cloudflare 专用头，优先级高于 Cache-Control
 # ============================================
 
 # 首页
 /
   Cache-Control: public, max-age=0, s-maxage=300, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=300
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -119,6 +60,8 @@
 
 # 博客页面
 /blog/*
+  Cache-Control: public, max-age=0, s-maxage=86400, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=86400
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -128,15 +71,8 @@
 
 # 工具页面
 /tools/*
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  X-XSS-Protection: 1; mode=block
-  Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
-
-# 其他 HTML 页面（.html 直接访问）
-/*.html
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -146,6 +82,8 @@
 
 # 年级页面
 /grade/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -155,6 +93,8 @@
 
 # 知识点页面
 /knowledge/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -164,6 +104,8 @@
 
 # 资源页面
 /resources/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -173,6 +115,8 @@
 
 # 家长指南页面
 /parent-guide/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -182,6 +126,8 @@
 
 # 教材页面
 /textbook/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -191,6 +137,8 @@
 
 # 每日一练页面
 /daily/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -200,6 +148,8 @@
 
 # 更新日志页面
 /changelog/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -209,6 +159,8 @@
 
 # 联系我们页面
 /contact/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -218,6 +170,8 @@
 
 # 关于我们页面
 /about/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -227,6 +181,8 @@
 
 # 隐私政策页面
 /privacy/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -236,6 +192,8 @@
 
 # 服务条款页面
 /terms/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -245,6 +203,8 @@
 
 # 站点地图页面
 /sitemap/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -254,6 +214,8 @@
 
 # 搜索页面
 /search/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
@@ -261,7 +223,18 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
 
-# 全局 HSTS（对所有资源安全，包括 ads.txt）
+# 其他 HTML 页面（.html 直接访问）
+/*.html
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 全局 HSTS
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 

@@ -14,7 +14,7 @@ const BASE_URL = 'https://www.skillxm.cn';
 
 // 站点级固定更新日期（用于没有独立更新时间的静态页）
 // 2026-07-09: 更新至最新部署日期，确保 Google 能正确识别页面新鲜度
-const SITE_LASTMOD = '2026-07-09';
+const SITE_LASTMOD = '2026-07-10';
 
 // =====================================================================
 // Sitemap 配置说明
@@ -114,6 +114,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ========== 工具页面 ==========
   TOOLS.filter(t => t.active).forEach(tool => {
     sitemapEntries.push(makeEntry(tool.path + '/', {
+      lastModified: SITE_LASTMOD,
       changeFrequency: tool.changefreq || 'weekly',
       priority: tool.priority || 0.8,
     }));
