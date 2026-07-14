@@ -7,7 +7,7 @@
  * 或: node scripts/submit-indexnow.js --recent-days 7  (提交最近N天的博客文章)
  */
 
-const INDEXNOW_KEY = 'e8f3a2b1c4d5e6f7g8h9i0j1k2l3m4n5';
+const INDEXNOW_KEY = 'a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6';
 const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/IndexNow';
 const HOST = 'www.skillxm.cn';
 const BASE_URL = `https://${HOST}`;
@@ -42,7 +42,7 @@ async function submitUrls(urls) {
       result = { status, message: response.statusText };
     }
 
-    if (status === 200) {
+    if (status === 200 || status === 202) {
       console.log('✅ IndexNow submission successful');
       console.log(`   Submitted: ${urls.length} URLs`);
     } else {
@@ -53,7 +53,7 @@ async function submitUrls(urls) {
       console.log(`   Message: ${result.message}`);
     }
 
-    return { success: status === 200, status, result };
+    return { success: status === 200 || status === 202, status, result };
   } catch (error) {
     console.error('❌ Error submitting to IndexNow:', error.message);
     return { success: false, error: error.message };
