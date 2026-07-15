@@ -12,9 +12,21 @@ export const metadata = {
     siteName: '练学宝',
     locale: 'zh_CN',
     type: 'website',
+    images: [
+      {
+        url: 'https://www.skillxm.cn/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: '练学宝 - 免费在线教育工具',
+      },
+    ],
   },
   alternates: {
     canonical: 'https://www.skillxm.cn/',
+    languages: {
+      'zh-CN': 'https://www.skillxm.cn/',
+      'x-default': 'https://www.skillxm.cn/',
+    },
   },
 };
 
