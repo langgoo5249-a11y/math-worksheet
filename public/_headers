@@ -17,6 +17,7 @@
 /rss.xml
   Content-Type: application/rss+xml; charset=utf-8
   Cache-Control: public, max-age=3600, must-revalidate
+  X-Robots-Tag: noindex, nofollow
 
 /baidu_verify_codeva-nVZFsgvPZu.html
   Content-Type: text/html; charset=utf-8
