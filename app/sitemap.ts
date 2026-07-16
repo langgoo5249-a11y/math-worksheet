@@ -13,7 +13,7 @@ export const dynamic = 'force-static';
 const BASE_URL = 'https://www.skillxm.cn';
 
 // 站点级固定更新日期（用于没有独立更新时间的静态页）
-// 2026-07-16: 回退到 07-10，避免 92 个 URL 同时更新 lastmod 触发 Google 大规模重新抓取
+// 2026-07-09: 更新至最新部署日期，确保 Google 能正确识别页面新鲜度
 const SITE_LASTMOD = '2026-07-10';
 
 // =====================================================================
@@ -131,7 +131,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
     .forEach(article => {
       sitemapEntries.push(makeEntry(`/blog/${article.id}/`, {
-        lastModified: article.dateModified || article.date,
+        lastModified: article.date,
         changeFrequency: 'monthly',
         priority: 0.7,
       }));

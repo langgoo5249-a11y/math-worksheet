@@ -36,7 +36,6 @@ export const metadata: Metadata = {
   title: "练学宝 - 免费小学教学工具/中文学习/数学练习卷/字帖/口算",
   description: "练学宝是儿童中文学习网站，提供10+款免费小学教学工具，包括数学练习卷、字帖、口算速练、拼音、识字卡片、古诗词默写等，支持手机在线做题与PDF打印，无需注册即开即用。",
   keywords: "练学宝,中文学习,小学中文学习,儿童中文学习网站,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印,手机练习,在线做题,免费打印试卷,小学数学题,小学语文练习,英语字帖,数独游戏,AI口算出题,口算学习报告",
-
   openGraph: {
     title: "练学宝 - 儿童中文学习网站|免费小学教学工具|数学练习卷|字帖|口算",
     description: "练学宝是优质的儿童中文学习网站，提供拼音学习、识字卡片、古诗词默写、字帖生成器等中文学习工具，以及数学练习卷、口算速练等10+款免费小学教学工具，支持PDF导出打印，无需注册即开即用。",
@@ -157,8 +156,6 @@ export default async function RootLayout({
           "https://author.baidu.com/home?from=bjh_article&app_id=1810332299795975",
         ],
         foundingDate: "2025-12-01",
-        // Google 2026年7月核心更新: Editorial Process Attribution 信号
-        publishingPrinciples: "https://www.skillxm.cn/about/",
         contactPoint: {
           "@type": "ContactPoint",
           email: "lang@skillxm.cn",
