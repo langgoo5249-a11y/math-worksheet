@@ -40,6 +40,37 @@
 /zh                  https://www.skillxm.cn/                  301
 
 # ===========================================
+# /en/ 重复 wrapper 页面 301 重定向到中文版
+# 原因：[locale] wrapper 为 /en/ 生成了所有中文页面的翻译版，
+#       这些是重复内容。postbuild 脚本会删除这些 HTML 文件，
+#       此处添加 301 重定向确保访问时跳转到中文版而非 404。
+# 保留的 8 个独立英文页面不会被重定向（静态文件优先于 _redirects）。
+# ===========================================
+/en/blog/*           /blog/:splat                         301
+/en/about/           /about/                               301
+/en/contact/         /contact/                             301
+/en/privacy/         /privacy/                             301
+/en/terms/           /terms/                               301
+/en/search/          /search/                              301
+/en/grade/*          /grade/:splat                         301
+/en/knowledge/*      /knowledge/:splat                     301
+/en/resources/*      /resources/:splat                     301
+/en/parent-guide/*   /parent-guide/:splat                  301
+/en/textbook/*       /textbook/:splat                      301
+/en/changelog/       /changelog/                           301
+/en/daily/           /daily/                               301
+/en/tools/math-worksheet/    /tools/math-worksheet/        301
+/en/tools/calligraphy/       /tools/calligraphy/           301
+/en/tools/mental-math/       /tools/mental-math/           301
+/en/tools/sudoku/            /tools/sudoku/                301
+/en/tools/flashcards/        /tools/flashcards/            301
+/en/tools/writing-template/  /tools/writing-template/      301
+/en/tools/pinyin/            /tools/pinyin/                301
+/en/tools/poem-memo/         /tools/poem-memo/             301
+/en/tools/unit-test/         /tools/unit-test/             301
+/en/tools/english-calligraphy/  /tools/english-calligraphy/  301
+
+# ===========================================
 # 重复博客文章 301 重定向（去重修复）
 # ===========================================
 /blog/haizi-xie-zi-wai-wai-niu-niu-lian-zi-shi-jian-2    /blog/haizi-xie-zi-wai-wai-niu-niu-lian-zi-shi-jian/    301

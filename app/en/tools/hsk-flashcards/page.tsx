@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import HSKFlashcards from './HSKFlashcards';
 
 export const metadata: Metadata = {
   title: 'HSK Flashcards - Free HSK 1-6 Vocabulary Practice',
@@ -278,6 +279,22 @@ export default function HskFlashcardsPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== Interactive flashcard practice ===== */}
+      <section className="relative py-16 px-4 sm:px-6 bg-[#0f0303]">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-[#D4AF37] text-sm font-medium tracking-[0.3em] uppercase">Practice Now</span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#F5F0E8] mt-3">Interactive HSK Flashcards</h2>
+            <p className="text-[#F5F0E8]/60 max-w-2xl mx-auto mt-3 text-sm">
+              Pick a level, flip each card to reveal the pinyin and meaning,
+              and mark how well you know the word. Your progress is tracked
+              right here in the browser.
+            </p>
+          </div>
+          <HSKFlashcards />
         </div>
       </section>
 

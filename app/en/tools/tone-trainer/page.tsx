@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import ToneTrainer from './ToneTrainer';
 
 export const metadata: Metadata = {
   title: 'Mandarin Tone Trainer - Master the Four Tones',
@@ -315,6 +316,22 @@ export default function ToneTrainerPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ===== Interactive tone practice ===== */}
+      <section className="relative py-16 px-4 sm:px-6 bg-[#1a0808]">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-[#D4AF37] text-sm font-medium tracking-[0.3em] uppercase">Practice Now</span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#F5F0E8] mt-3">Interactive Tone Trainer</h2>
+            <p className="text-[#F5F0E8]/60 max-w-2xl mx-auto mt-3 text-sm">
+              Listen to each syllable, then pick the tone you hear. The pitch
+              diagram highlights the correct contour, and your score updates as
+              you go.
+            </p>
+          </div>
+          <ToneTrainer />
         </div>
       </section>
 

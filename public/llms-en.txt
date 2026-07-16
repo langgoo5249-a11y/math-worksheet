@@ -1,0 +1,22 @@
+# SkillXM English - Learn Chinese Free
+
+> Free online tools for learning Chinese (Mandarin) for beginners worldwide. Pinyin converter, stroke order practice, HSK flashcards, tone trainer, graded reader, and radical explorer. No registration required.
+
+## Tools
+- Pinyin Converter: https://www.skillxm.cn/en/tools/pinyin-converter/
+- Stroke Order Practice: https://www.skillxm.cn/en/tools/stroke-order/
+- HSK Flashcards: https://www.skillxm.cn/en/tools/hsk-flashcards/
+- Tone Trainer: https://www.skillxm.cn/en/tools/tone-trainer/
+- Chinese Reading Reader: https://www.skillxm.cn/en/tools/reading-reader/
+- Radical Explorer: https://www.skillxm.cn/en/tools/radical-explorer/
+
+## HSK Learning Path
+- HSK 1 (150 words): Beginner - greetings, numbers, basic phrases
+- HSK 2 (300 words): Elementary - daily conversations
+- HSK 3 (600 words): Intermediate - basic reading and writing
+- HSK 4 (1200 words): Upper-Intermediate - fluent daily communication
+- HSK 5 (2500 words): Advanced - reading newspapers, watching movies
+- HSK 6 (5000+ words): Proficient - near-native fluency
+
+## About
+SkillXM provides free Chinese learning tools for the global community. All tools run in the browser, require no registration, and are completely free. The site also offers a Chinese version (https://www.skillxm.cn/) for native Chinese speakers with elementary education tools.

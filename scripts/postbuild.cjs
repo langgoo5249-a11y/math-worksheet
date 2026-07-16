@@ -43,10 +43,67 @@ for (const locale of localeDirs) {
     console.log(`[CLEANUP] Removed out/${locale}/ - Cloudflare will use _redirects 301 rules`);
   }
 }
-// 验证 /en/ 目录存在
+
+// 0.6 关键：清理 /en/ 目录中的 [locale] wrapper 重复页面
+// 原因：Next.js [locale] 动态路由为 /en/ 生成了所有中文页面的英文翻译版（blog/、
+//       tools/math-worksheet/、about/ 等），这些是 wrapper 生成的重复内容，
+//       与我们的独立英文版（教外国人学中文）内容完全不同。
+//       保留我们手写的 8 个英文页面，删除其余 wrapper 生成的页面。
+// 方法：用白名单机制，只保留指定的文件和目录。
+const EN_KEEP_DIRS = ['tools'];  // /en/ 下保留的子目录
+const EN_KEEP_TOOL_DIRS = [
+  'pinyin-converter',
+  'stroke-order',
+  'hsk-flashcards',
+  'tone-trainer',
+  'reading-reader',
+  'radical-explorer',
+];
+
 const enDir = path.join(outDir, 'en');
 if (fs.existsSync(enDir)) {
-  console.log(`[OK] out/en/ preserved - English version is live`);
+  let removedCount = 0;
+
+  // 1. 删除 /en/ 根目录下不需要的子目录（保留 tools/）
+  const enRootEntries = fs.readdirSync(enDir, { withFileTypes: true });
+  for (const entry of enRootEntries) {
+    if (entry.isDirectory() && !EN_KEEP_DIRS.includes(entry.name)) {
+      fs.rmSync(path.join(enDir, entry.name), { recursive: true, force: true });
+      removedCount++;
+      console.log(`[CLEANUP] Removed out/en/${entry.name}/ - duplicate wrapper content`);
+    }
+  }
+
+  // 2. 清理 /en/tools/ 下不需要的工具页（保留我们的 6 个工具）
+  const enToolsDir = path.join(enDir, 'tools');
+  if (fs.existsSync(enToolsDir)) {
+    const toolsEntries = fs.readdirSync(enToolsDir, { withFileTypes: true });
+    for (const entry of toolsEntries) {
+      if (entry.isDirectory() && !EN_KEEP_TOOL_DIRS.includes(entry.name)) {
+        fs.rmSync(path.join(enToolsDir, entry.name), { recursive: true, force: true });
+        removedCount++;
+        console.log(`[CLEANUP] Removed out/en/tools/${entry.name}/ - duplicate wrapper tool`);
+      }
+    }
+  }
+
+  // 3. 验证保留的页面
+  const expectedPages = [
+    'en/index.html',
+    'en/tools/index.html',
+    'en/tools/pinyin-converter/index.html',
+    'en/tools/stroke-order/index.html',
+    'en/tools/hsk-flashcards/index.html',
+    'en/tools/tone-trainer/index.html',
+    'en/tools/reading-reader/index.html',
+    'en/tools/radical-explorer/index.html',
+  ];
+  let keptCount = 0;
+  for (const p of expectedPages) {
+    if (fs.existsSync(path.join(outDir, p))) keptCount++;
+  }
+  console.log(`[CLEANUP] Removed ${removedCount} duplicate /en/ wrapper pages`);
+  console.log(`[OK] out/en/ cleaned - ${keptCount}/${expectedPages.length} English pages preserved`);
 } else {
   console.warn('[WARN] out/en/ not found - English pages may not have been generated');
 }

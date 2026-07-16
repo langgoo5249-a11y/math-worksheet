@@ -25,6 +25,24 @@ export const metadata: Metadata = {
     siteName: 'SkillXM',
     locale: 'en_US',
     url: 'https://www.skillxm.cn/en/',
+    title: 'Learn Chinese Free - Online Mandarin Learning Tools',
+    description:
+      'Free interactive tools for learning Chinese: pinyin converter, stroke order, HSK flashcards, tone trainer, and more.',
+    images: [
+      {
+        url: 'https://www.skillxm.cn/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Learn Chinese Free - SkillXM',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Learn Chinese Free - Online Mandarin Learning Tools',
+    description:
+      'Free interactive tools for learning Chinese: pinyin converter, stroke order, HSK flashcards, tone trainer, and more.',
+    images: ['https://www.skillxm.cn/og-image.jpg'],
   },
   robots: {
     index: true,

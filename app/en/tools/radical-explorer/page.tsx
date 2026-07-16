@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import RadicalExplorer from './RadicalExplorer';
 
 export const metadata: Metadata = {
   title: 'Chinese Radical Explorer - Character Decomposition',
@@ -163,6 +164,9 @@ export default function RadicalExplorerPage() {
           </p>
         </div>
       </section>
+
+      {/* ===== Interactive radical explorer ===== */}
+      <RadicalExplorer />
 
       {/* ===== SEO content ===== */}
       <section className="relative py-16 px-4 sm:px-6 bg-[#F5F0E8] text-[#1a1a1a]">
