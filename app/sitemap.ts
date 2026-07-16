@@ -220,5 +220,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // ========== 英文版页面（教外国人学中文）==========
+  // /en/ 已有独立内容，不再 301 重定向
+  const enPages: Array<{ path: string; priority: number; freq: SitemapEntryOptions['changeFrequency'] }> = [
+    { path: '/en/', priority: 0.9, freq: 'weekly' },
+    { path: '/en/tools/', priority: 0.85, freq: 'weekly' },
+    { path: '/en/tools/pinyin-converter/', priority: 0.8, freq: 'weekly' },
+    { path: '/en/tools/stroke-order/', priority: 0.8, freq: 'monthly' },
+    { path: '/en/tools/hsk-flashcards/', priority: 0.8, freq: 'weekly' },
+    { path: '/en/tools/tone-trainer/', priority: 0.8, freq: 'monthly' },
+    { path: '/en/tools/reading-reader/', priority: 0.8, freq: 'monthly' },
+    { path: '/en/tools/radical-explorer/', priority: 0.8, freq: 'monthly' },
+  ];
+  enPages.forEach(({ path, priority, freq }) => {
+    sitemapEntries.push(makeEntry(path, {
+      lastModified: SITE_LASTMOD,
+      changeFrequency: freq,
+      priority,
+    }));
+  });
+
   return sitemapEntries;
 }

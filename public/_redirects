@@ -16,24 +16,22 @@
 
 # ===========================================
 # 多语言 wrapper 路由 301 重定向到中文版
-# 原因：[locale]/ 下的 /en /ja /ko 页面未真正翻译，
-#     返回中文内容造成 4x 重复内容，触发 Google 降权。
+# 原因：[locale]/ 下的 /ja /ko 页面未真正翻译，
+#     返回中文内容造成重复内容，触发 Google 降权。
 #     301 永久重定向把所有信号（PageRank/外链/抓取预算）合并到中文版。
+# 注意：/en/ 已有独立英文版内容（教外国人学中文），不再重定向。
 # ===========================================
 
-# 单条精确重定向（顶层页面）
-/en                  https://www.skillxm.cn/                  301
+# 单条精确重定向（顶层页面）- 仅 ja/ko
 /ja                  https://www.skillxm.cn/                  301
 /ko                  https://www.skillxm.cn/                  301
-/en/                 https://www.skillxm.cn/                  301
 /ja/                 https://www.skillxm.cn/                  301
 /ko/                 https://www.skillxm.cn/                  301
 
-# 多路径子目录通配重定向
-# /en/blog/xxx → /blog/xxx
-# /en/tools/xxx → /tools/xxx
+# 多路径子目录通配重定向 - 仅 ja/ko
+# /ja/blog/xxx → /blog/xxx
+# /ko/tools/xxx → /tools/xxx
 # 注意：splats 语法是 /* 而非 /:splat（Cloudflare Pages 规范）
-/en/*                /:splat                              301
 /ja/*                /:splat                              301
 /ko/*                /:splat                              301
 
