@@ -6,7 +6,6 @@ import { TOOLS, ACTIVE_TOOL_COUNT } from '@/lib/toolRegistry';
 export const metadata: Metadata = {
   title: '全部学习工具 - 练学宝免费小学教学工具合集',
   description: '练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、数独游戏、英语字帖、拼音注音、识字卡片、作文模板、古诗词默写、单元测试卷等，支持PDF导出打印。',
-  keywords: '练学宝工具,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,数独游戏,英语字帖,拼音注音,识字卡片,作文模板,免费PDF打印',
   alternates: {
     canonical: 'https://www.skillxm.cn/tools/',
   },

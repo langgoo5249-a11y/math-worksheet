@@ -35,7 +35,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "练学宝 - 免费小学教学工具/中文学习/数学练习卷/字帖/口算",
   description: "练学宝是儿童中文学习网站，提供10+款免费小学教学工具，包括数学练习卷、字帖、口算速练、拼音、识字卡片、古诗词默写等，支持手机在线做题与PDF打印，无需注册即开即用。",
-  keywords: "练学宝,中文学习,小学中文学习,儿童中文学习网站,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印,手机练习,在线做题,免费打印试卷,小学数学题,小学语文练习,英语字帖,数独游戏,AI口算出题,口算学习报告",
+  // 2026-07-16: 移除 meta keywords（Google 早已忽略此标签，24个关键词可能被判定为关键词堆砌负面信号）
+
   openGraph: {
     title: "练学宝 - 儿童中文学习网站|免费小学教学工具|数学练习卷|字帖|口算",
     description: "练学宝是优质的儿童中文学习网站，提供拼音学习、识字卡片、古诗词默写、字帖生成器等中文学习工具，以及数学练习卷、口算速练等10+款免费小学教学工具，支持PDF导出打印，无需注册即开即用。",
@@ -90,7 +91,11 @@ export const metadata: Metadata = {
   // 本站内容均由人工审校，AI 仅辅助生成初稿。
   other: {
     'datePublished': '2025-12-01',
-    'dateModified': '2026-07-10',
+    'dateModified': '2026-07-16',
+    // Google 2026年7月核心更新信号#1: Editorial Process Attribution
+    'editorial_process': 'human-reviewed',
+    'content_reviewer': '林远',
+    'review_date': '2026-07-16',
   },
 };
 
@@ -111,7 +116,7 @@ export default async function RootLayout({
         url: "https://www.skillxm.cn/",
         description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
         inLanguage: "zh-CN",
-        dateModified: "2026-07-10",
+        dateModified: "2026-07-16",
         potentialAction: {
           "@type": "SearchAction",
           target: "https://www.skillxm.cn/search?q={search_term_string}",
@@ -156,6 +161,10 @@ export default async function RootLayout({
           "https://author.baidu.com/home?from=bjh_article&app_id=1810332299795975",
         ],
         foundingDate: "2025-12-01",
+        // Google 2026年7月核心更新: Editorial Process Attribution 信号
+        publishingPrinciples: "https://www.skillxm.cn/about/",
+        editorialPolicy: "所有内容由专业教育从业者创作，经人工审校后发布。AI仅辅助生成初稿，不参与最终内容决策。",
+        diversityPolicy: "https://www.skillxm.cn/about/",
         contactPoint: {
           "@type": "ContactPoint",
           email: "lang@skillxm.cn",

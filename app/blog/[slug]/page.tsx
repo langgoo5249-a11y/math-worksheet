@@ -72,6 +72,21 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     "image": "https://www.skillxm.cn/og-image.jpg",
     "inLanguage": "zh-CN",
     "isAccessibleForFree": true,
+    // Google 2026年7月核心更新: Editorial Process Attribution
+    "publishingPrinciples": "https://www.skillxm.cn/about/",
+    "editor": {
+      "@type": "Person",
+      "name": article.author?.name || defaultAuthor.name,
+      "url": "https://www.skillxm.cn/about/"
+    },
+    // Google 2026年7月核心更新: Utility 信号 - 标记可交互/可下载内容
+    "isPartOf": {
+      "@type": "WebApplication",
+      "name": "练学宝",
+      "url": "https://www.skillxm.cn/",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Web"
+    },
     "author": {
       "@type": "Person",
       "name": article.author?.name || defaultAuthor.name,

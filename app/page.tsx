@@ -55,6 +55,20 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* ===== SEO 内容区（服务端渲染，增加页面文本内容深度） ===== */}
+        <section className="max-w-4xl mx-auto px-4 py-8 text-gray-300">
+          <h2 className="text-xl font-bold text-white mb-4">为什么选择练学宝？</h2>
+          <p className="text-gray-400 leading-relaxed mb-4">
+            练学宝是一个专为小学生家长和教师打造的<span className="text-blue-300 font-medium">免费在线教育工具平台</span>。我们提供10+款即开即用的教学工具，涵盖数学练习卷生成、语文字帖制作、英语书写练习、口算训练、识字卡片等核心学习场景。所有工具均支持手机在线使用和PDF打印下载，无需注册账号，完全免费。
+          </p>
+          <p className="text-gray-400 leading-relaxed mb-4">
+            与传统教育软件不同，练学宝的工具全部在浏览器中运行，<span className="text-emerald-300 font-medium">无需下载安装任何APP</span>。家长可以随时打开网页为孩子生成一份个性化的练习卷，教师可以快速制作单元测试题。我们的数学练习卷生成器支持自定义题型、难度和数量，字帖生成器提供田字格、米字格等多种模板，口算速练工具还能自动计时并生成学习报告。
+          </p>
+          <p className="text-gray-400 leading-relaxed mb-4">
+            练学宝还提供丰富的小学教育学习方法文章，覆盖1-6年级数学、语文、英语三大学科，包括暑假学习计划、写字姿势纠正、英语启蒙路线图等实用指南。所有文章均由教育从业者撰写并经人工审校，确保内容的专业性和准确性。
+          </p>
+        </section>
+
         {/* ===== 客户端交互部分 ===== */}
         <HomePageClient />
       </div>
@@ -71,6 +85,8 @@ export default function HomePage() {
             url: 'https://www.skillxm.cn/',
             description: '10+款免费小学教学工具，覆盖数学计算、语文练字、练习卷下载，即开即用无需注册。',
             inLanguage: 'zh-CN',
+            dateModified: '2026-07-16',
+            isAccessibleForFree: true,
             mainEntity: {
               '@type': 'ItemList',
               itemListElement: [
@@ -113,6 +129,59 @@ export default function HomePage() {
               ],
             },
           }),
+        }}
+      />
+      {/* Google 2026年7月核心更新信号#3: Utility & Experience Metrics
+          标记交互式工具为 WebApplication，增强实用性信号 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'WebApplication',
+              name: '数学练习卷生成器',
+              url: 'https://www.skillxm.cn/tools/math-worksheet/',
+              applicationCategory: 'EducationalApplication',
+              operatingSystem: 'Web',
+              offers: { '@type': 'Offer', price: '0', priceCurrency: 'CNY' },
+              isAccessibleForFree: true,
+              description: '在线生成小学1-6年级数学练习卷，支持加减乘除、竖式计算、填空题等多种题型，可导出PDF打印。',
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'WebApplication',
+              name: '字帖生成器',
+              url: 'https://www.skillxm.cn/tools/calligraphy/',
+              applicationCategory: 'EducationalApplication',
+              operatingSystem: 'Web',
+              offers: { '@type': 'Offer', price: '0', priceCurrency: 'CNY' },
+              isAccessibleForFree: true,
+              description: '生成田字格、米字格、方格字帖，支持自定义练习内容，可导出PDF打印。',
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'WebApplication',
+              name: '口算速练',
+              url: 'https://www.skillxm.cn/tools/mental-math/',
+              applicationCategory: 'EducationalApplication',
+              operatingSystem: 'Web',
+              offers: { '@type': 'Offer', price: '0', priceCurrency: 'CNY' },
+              isAccessibleForFree: true,
+              description: '在线计时口算练习，多难度级别，即时反馈，自动生成学习报告。',
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'WebApplication',
+              name: '数独游戏',
+              url: 'https://www.skillxm.cn/tools/sudoku/',
+              applicationCategory: 'GameApplication',
+              operatingSystem: 'Web',
+              offers: { '@type': 'Offer', price: '0', priceCurrency: 'CNY' },
+              isAccessibleForFree: true,
+              description: '多难度级别的在线数独游戏，锻炼逻辑思维能力，支持计时挑战和自动校验。',
+            },
+          ]),
         }}
       />
     </SiteLayout>

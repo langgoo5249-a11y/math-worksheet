@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "知识分享 - 小学数学语文英语学习方法 | 练学宝",
   description: "小学数学语文英语学习方法文章集锦，覆盖一年级到六年级学习指南，包含口算训练、字帖练习、阅读理解、作文写作等实用教程。为家长和教师提供专业教育资讯与学习指导。",
-  keywords: "知识分享,小学学习方法,数学学习,语文学习,英语学习,教育资讯,小学教育,学习技巧",
   alternates: {
     canonical: 'https://www.skillxm.cn/blog/',
     languages: {
