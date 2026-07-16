@@ -91,11 +91,7 @@ export const metadata: Metadata = {
   // 本站内容均由人工审校，AI 仅辅助生成初稿。
   other: {
     'datePublished': '2025-12-01',
-    'dateModified': '2026-07-16',
-    // Google 2026年7月核心更新信号#1: Editorial Process Attribution
-    'editorial_process': 'human-reviewed',
-    'content_reviewer': '林远',
-    'review_date': '2026-07-16',
+    'dateModified': '2026-07-10',
   },
 };
 
@@ -116,7 +112,7 @@ export default async function RootLayout({
         url: "https://www.skillxm.cn/",
         description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
         inLanguage: "zh-CN",
-        dateModified: "2026-07-16",
+        dateModified: "2026-07-10",
         potentialAction: {
           "@type": "SearchAction",
           target: "https://www.skillxm.cn/search?q={search_term_string}",
@@ -163,8 +159,6 @@ export default async function RootLayout({
         foundingDate: "2025-12-01",
         // Google 2026年7月核心更新: Editorial Process Attribution 信号
         publishingPrinciples: "https://www.skillxm.cn/about/",
-        editorialPolicy: "所有内容由专业教育从业者创作，经人工审校后发布。AI仅辅助生成初稿，不参与最终内容决策。",
-        diversityPolicy: "https://www.skillxm.cn/about/",
         contactPoint: {
           "@type": "ContactPoint",
           email: "lang@skillxm.cn",

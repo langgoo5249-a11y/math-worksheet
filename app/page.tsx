@@ -85,7 +85,6 @@ export default function HomePage() {
             url: 'https://www.skillxm.cn/',
             description: '10+款免费小学教学工具，覆盖数学计算、语文练字、练习卷下载，即开即用无需注册。',
             inLanguage: 'zh-CN',
-            dateModified: '2026-07-16',
             isAccessibleForFree: true,
             mainEntity: {
               '@type': 'ItemList',
