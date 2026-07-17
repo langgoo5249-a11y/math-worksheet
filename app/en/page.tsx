@@ -2,11 +2,11 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Learn Chinese Free - Pinyin, Stroke Order, HSK Practice | SkillXM',
+  title: 'Learn Chinese Free - Pinyin, Stroke Order, HSK, Picture Learning | SkillXM',
   description:
-    'Free online tools to learn Chinese (Mandarin). Pinyin converter, stroke order practice, HSK flashcards, tone trainer, graded reader, and radical explorer. No registration required.',
+    'Free online tools to learn Chinese (Mandarin). Pinyin converter, stroke order, HSK flashcards, tone trainer, picture learning, pinyin chart, graded reader, and radical explorer. No registration required.',
   keywords:
-    'learn Chinese, learn Mandarin, Chinese for beginners, pinyin converter, stroke order, HSK practice, Chinese characters, free Chinese learning, Mandarin tones, Chinese reading',
+    'learn Chinese, learn Mandarin, Chinese for beginners, pinyin converter, stroke order, HSK practice, Chinese characters, free Chinese learning, Mandarin tones, picture learning, pinyin chart, Chinese reading',
   openGraph: {
     title: 'Learn Chinese Free - Online Mandarin Learning Tools',
     description:
@@ -91,6 +91,24 @@ const tools = [
       'Decompose any character into its radicals and components. Discover the meaning behind each building block and remember characters faster.',
     accent: 'from-amber-600 to-red-900',
   },
+  {
+    name: 'Picture Learning',
+    nameZh: '看图学中文',
+    href: '/en/tools/picture-learning/',
+    emoji: '🖼️',
+    description:
+      'Learn Chinese vocabulary through pictures. Three difficulty levels from everyday nouns to four-character idioms, with audio pronunciation.',
+    accent: 'from-purple-600 to-pink-900',
+  },
+  {
+    name: 'Pinyin Chart',
+    nameZh: '拼音图表',
+    href: '/en/tools/pinyin-chart/',
+    emoji: '📊',
+    description:
+      'Complete interactive pinyin table with 23 initials and 24 finals. Click any cell to hear pronunciation, switch between tones, and learn phonetics rules.',
+    accent: 'from-blue-600 to-indigo-900',
+  },
 ];
 
 const features = [
@@ -166,6 +184,8 @@ export default function EnglishHomePage() {
           'Tone Trainer',
           'Chinese Reading Reader',
           'Radical Explorer',
+          'Picture Learning',
+          'Pinyin Chart',
         ],
         audience: {
           '@type': 'EducationalAudience',
@@ -340,7 +360,7 @@ export default function EnglishHomePage() {
 
           <p className="text-lg sm:text-xl text-[#F5F0E8]/85 max-w-2xl mx-auto mb-10 leading-relaxed">
             A complete toolkit for learning Mandarin — pinyin, stroke order, HSK vocabulary,
-            tones, graded reading and radicals. Free, with no registration, built for
+            tones, picture learning, pinyin chart, graded reading and radicals. Free, with no registration, built for
             beginners and serious learners alike.
           </p>
 
@@ -369,7 +389,7 @@ export default function EnglishHomePage() {
           {/* Trust indicators */}
           <div className="mt-14 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-[#F5F0E8]/70">
             <span className="flex items-center gap-1.5">
-              <span className="text-[#FFD700]" aria-hidden="true">✦</span> 6 free tools
+              <span className="text-[#FFD700]" aria-hidden="true">✦</span> 8 free tools
             </span>
             <span className="flex items-center gap-1.5">
               <span className="text-[#FFD700]" aria-hidden="true">✦</span> HSK 1–6 coverage
@@ -407,7 +427,7 @@ export default function EnglishHomePage() {
           {/* Section heading */}
           <div className="text-center mb-14">
             <span className="text-[#D4AF37] text-sm font-medium tracking-[0.3em] uppercase">
-              Six Practice Tools
+              Eight Practice Tools
             </span>
             <h2 className="text-3xl sm:text-5xl font-bold text-[#F5F0E8] mt-3 mb-4">
               Everything You Need to{' '}
@@ -702,7 +722,8 @@ export default function EnglishHomePage() {
               HSK 6 (5,000+ words and near-native reading ability). Free Chinese learning
               tools like ours let you practise each level deliberately: convert text to
               pinyin, drill vocabulary with spaced-repetition flashcards, train your ear on
-              the four Mandarin tones, and read graded passages with on-demand annotation.
+              the four Mandarin tones, learn words through pictures, explore the full pinyin
+              chart with audio, and read graded passages with on-demand annotation.
               Because every tool is free and requires no registration, you can focus entirely
               on the language itself.
             </p>
@@ -729,6 +750,9 @@ export default function EnglishHomePage() {
               'stroke order',
               'HSK practice',
               'Mandarin tones',
+              'picture learning',
+              'pinyin chart',
+              'Chinese radicals',
             ].map((kw) => (
               <span
                 key={kw}
@@ -840,10 +864,10 @@ export default function EnglishHomePage() {
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <Link
-                    href="/en/tools/pinyin-converter/"
+                    href="/en/tools/pinyin-chart/"
                     className="text-[#F5F0E8]/60 hover:text-[#FFD700] transition-colors"
                   >
-                    Pinyin Guide
+                    Pinyin Chart
                   </Link>
                 </li>
                 <li>
@@ -852,6 +876,14 @@ export default function EnglishHomePage() {
                     className="text-[#F5F0E8]/60 hover:text-[#FFD700] transition-colors"
                   >
                     Mandarin Tones
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/en/tools/picture-learning/"
+                    className="text-[#F5F0E8]/60 hover:text-[#FFD700] transition-colors"
+                  >
+                    Picture Dictionary
                   </Link>
                 </li>
                 <li>

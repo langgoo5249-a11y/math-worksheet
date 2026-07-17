@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     'Free online tools to learn Chinese (Mandarin): pinyin converter, stroke order practice, HSK flashcards, tone trainer, graded reader and radical explorer. No registration required.',
   keywords:
-    'learn Chinese, learn Mandarin, Chinese for beginners, pinyin converter, stroke order, HSK practice, Chinese characters, free Chinese learning, Mandarin tones, Chinese reading',
+    'learn Chinese, learn Mandarin, Chinese for beginners, pinyin converter, pinyin chart, stroke order, HSK practice, Chinese characters, free Chinese learning, Mandarin tones, picture learning, Chinese reading',
   alternates: {
     canonical: 'https://www.skillxm.cn/en/',
     languages: {

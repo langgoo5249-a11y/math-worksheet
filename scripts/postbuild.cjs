@@ -58,6 +58,8 @@ const EN_KEEP_TOOL_DIRS = [
   'tone-trainer',
   'reading-reader',
   'radical-explorer',
+  'picture-learning',
+  'pinyin-chart',
 ];
 
 const enDir = path.join(outDir, 'en');
@@ -97,6 +99,8 @@ if (fs.existsSync(enDir)) {
     'en/tools/tone-trainer/index.html',
     'en/tools/reading-reader/index.html',
     'en/tools/radical-explorer/index.html',
+    'en/tools/picture-learning/index.html',
+    'en/tools/pinyin-chart/index.html',
   ];
   let keptCount = 0;
   for (const p of expectedPages) {

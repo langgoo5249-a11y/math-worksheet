@@ -231,6 +231,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/en/tools/tone-trainer/', priority: 0.8, freq: 'monthly' },
     { path: '/en/tools/reading-reader/', priority: 0.8, freq: 'monthly' },
     { path: '/en/tools/radical-explorer/', priority: 0.8, freq: 'monthly' },
+    { path: '/en/tools/picture-learning/', priority: 0.8, freq: 'weekly' },
+    { path: '/en/tools/pinyin-chart/', priority: 0.85, freq: 'weekly' },
   ];
   enPages.forEach(({ path, priority, freq }) => {
     sitemapEntries.push(makeEntry(path, {

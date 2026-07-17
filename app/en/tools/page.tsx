@@ -7,9 +7,9 @@ export const metadata: Metadata = {
       'Free Chinese Learning Tools - Pinyin, Stroke Order, HSK | SkillXM',
   },
   description:
-    'Explore six free online tools for learning Mandarin Chinese: a pinyin converter, stroke order practice, HSK 1-6 flashcards, a tone trainer, a graded reading reader and a radical explorer. No registration required.',
+    'Explore eight free online tools for learning Mandarin Chinese: a pinyin converter, stroke order practice, HSK 1-6 flashcards, a tone trainer, picture learning, pinyin chart, a graded reading reader and a radical explorer. No registration required.',
   keywords:
-    'Chinese learning tools, pinyin converter, stroke order practice, HSK flashcards, Mandarin tone trainer, Chinese reading reader, radical explorer, learn Chinese free, free Mandarin tools',
+    'Chinese learning tools, pinyin converter, stroke order practice, HSK flashcards, Mandarin tone trainer, picture learning, pinyin chart, Chinese reading reader, radical explorer, learn Chinese free, free Mandarin tools',
   alternates: {
     canonical: 'https://www.skillxm.cn/en/tools/',
     languages: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title:
       'Free Chinese Learning Tools - Pinyin, Stroke Order, HSK | SkillXM',
     description:
-      'Six free online tools for learning Mandarin Chinese: pinyin converter, stroke order practice, HSK flashcards, tone trainer, graded reader and radical explorer.',
+      'Eight free online tools for learning Mandarin Chinese: pinyin converter, stroke order practice, HSK flashcards, tone trainer, picture learning, pinyin chart, graded reader and radical explorer.',
     url: 'https://www.skillxm.cn/en/tools/',
     siteName: 'SkillXM',
     locale: 'en_US',
@@ -88,6 +88,22 @@ const tools = [
     emoji: '🧩',
     description: 'Decompose characters into radicals.',
     accent: 'from-amber-600 to-red-900',
+  },
+  {
+    name: 'Picture Learning',
+    nameZh: '看图学中文',
+    href: '/en/tools/picture-learning/',
+    emoji: '🖼️',
+    description: 'Learn Chinese vocabulary through pictures with 3 difficulty levels.',
+    accent: 'from-purple-600 to-pink-900',
+  },
+  {
+    name: 'Pinyin Chart',
+    nameZh: '拼音图表',
+    href: '/en/tools/pinyin-chart/',
+    emoji: '📊',
+    description: 'Interactive pinyin table with 23 initials × 24 finals and audio.',
+    accent: 'from-blue-600 to-indigo-900',
   },
 ];
 
@@ -238,9 +254,9 @@ export default function EnglishToolsPage() {
           </div>
 
           <p className="text-base sm:text-lg text-[#F5F0E8]/85 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Six focused tools to practise every core Mandarin skill — pinyin,
-            stroke order, HSK vocabulary, tones, reading and radicals. All free,
-            with no sign-up required.
+            Eight focused tools to practise every core Mandarin skill — pinyin,
+            stroke order, HSK vocabulary, tones, picture learning, pinyin chart,
+            reading and radicals. All free, with no sign-up required.
           </p>
 
           {/* Language switcher */}
@@ -281,7 +297,7 @@ export default function EnglishToolsPage() {
         <div className="relative max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <span className="text-[#D4AF37] text-sm font-medium tracking-[0.3em] uppercase">
-              Six Practice Tools
+              Eight Practice Tools
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#F5F0E8] mt-3 mb-4">
               Choose a Tool to{' '}
@@ -385,13 +401,20 @@ export default function EnglishToolsPage() {
             One Toolkit for the Whole Mandarin Journey
           </h2>
           <p className="text-[#1a1a1a]/75 leading-relaxed text-base sm:text-lg">
-            These six free tools cover the full path from absolute beginner to
+            These eight free tools cover the full path from absolute beginner to
             advanced reader. Start with the{' '}
             <Link
               href="/en/tools/pinyin-converter/"
               className="text-[#8B0000] font-semibold hover:underline"
             >
               Pinyin Converter
+            </Link>
+            ,{' '}
+            <Link
+              href="/en/tools/pinyin-chart/"
+              className="text-[#8B0000] font-semibold hover:underline"
+            >
+              Pinyin Chart
             </Link>{' '}
             and{' '}
             <Link
@@ -400,7 +423,14 @@ export default function EnglishToolsPage() {
             >
               Tone Trainer
             </Link>{' '}
-            to build pronunciation, learn characters with{' '}
+            to build pronunciation, learn words with{' '}
+            <Link
+              href="/en/tools/picture-learning/"
+              className="text-[#8B0000] font-semibold hover:underline"
+            >
+              Picture Learning
+            </Link>
+            , characters with{' '}
             <Link
               href="/en/tools/stroke-order/"
               className="text-[#8B0000] font-semibold hover:underline"
@@ -436,9 +466,11 @@ export default function EnglishToolsPage() {
             {[
               'free Chinese tools',
               'pinyin converter',
+              'pinyin chart',
               'stroke order',
               'HSK flashcards',
               'Mandarin tones',
+              'picture learning',
               'graded reader',
               'Chinese radicals',
             ].map((kw) => (
