@@ -59,12 +59,14 @@ export const metadata: Metadata = {
 const navLinks = [
   { label: 'Home', href: '/en/' },
   { label: 'Tools', href: '/en/tools/' },
+  { label: 'Blog', href: '/en/blog/' },
   { label: '中文版', href: '/' },
 ];
 
 const footerLinks = [
   { label: 'Home', href: '/en/' },
   { label: 'Tools', href: '/en/tools/' },
+  { label: 'Blog', href: '/en/blog/' },
   { label: '中文版', href: '/' },
   { label: 'Privacy', href: '/privacy/' },
   { label: 'Terms', href: '/terms/' },

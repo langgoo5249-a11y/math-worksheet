@@ -50,7 +50,7 @@ for (const locale of localeDirs) {
 //       与我们的独立英文版（教外国人学中文）内容完全不同。
 //       保留我们手写的 8 个英文页面，删除其余 wrapper 生成的页面。
 // 方法：用白名单机制，只保留指定的文件和目录。
-const EN_KEEP_DIRS = ['tools'];  // /en/ 下保留的子目录
+const EN_KEEP_DIRS = ['tools', 'blog'];  // /en/ 下保留的子目录
 const EN_KEEP_TOOL_DIRS = [
   'pinyin-converter',
   'stroke-order',
@@ -60,6 +60,15 @@ const EN_KEEP_TOOL_DIRS = [
   'radical-explorer',
   'picture-learning',
   'pinyin-chart',
+];
+
+const EN_KEEP_BLOG_DIRS = [
+  'how-to-start-learning-chinese-from-zero',
+  'mastering-chinese-tones-scientific-approach',
+  'hsk-guide-roadmap-to-chinese-fluency',
+  'chinese-characters-demystifying-writing-system',
+  'best-free-resources-learn-chinese-online',
+  'category',
 ];
 
 const enDir = path.join(outDir, 'en');
@@ -76,7 +85,7 @@ if (fs.existsSync(enDir)) {
     }
   }
 
-  // 2. 清理 /en/tools/ 下不需要的工具页（保留我们的 6 个工具）
+  // 2. 清理 /en/tools/ 下不需要的工具页（保留我们的 8 个工具）
   const enToolsDir = path.join(enDir, 'tools');
   if (fs.existsSync(enToolsDir)) {
     const toolsEntries = fs.readdirSync(enToolsDir, { withFileTypes: true });
@@ -85,6 +94,19 @@ if (fs.existsSync(enDir)) {
         fs.rmSync(path.join(enToolsDir, entry.name), { recursive: true, force: true });
         removedCount++;
         console.log(`[CLEANUP] Removed out/en/tools/${entry.name}/ - duplicate wrapper tool`);
+      }
+    }
+  }
+
+  // 2.5 清理 /en/blog/ 下不需要的博客页（保留我们的 5 篇英文文章）
+  const enBlogDir = path.join(enDir, 'blog');
+  if (fs.existsSync(enBlogDir)) {
+    const blogEntries = fs.readdirSync(enBlogDir, { withFileTypes: true });
+    for (const entry of blogEntries) {
+      if (entry.isDirectory() && !EN_KEEP_BLOG_DIRS.includes(entry.name)) {
+        fs.rmSync(path.join(enBlogDir, entry.name), { recursive: true, force: true });
+        removedCount++;
+        console.log(`[CLEANUP] Removed out/en/blog/${entry.name}/ - duplicate wrapper blog`);
       }
     }
   }
@@ -101,6 +123,12 @@ if (fs.existsSync(enDir)) {
     'en/tools/radical-explorer/index.html',
     'en/tools/picture-learning/index.html',
     'en/tools/pinyin-chart/index.html',
+    'en/blog/index.html',
+    'en/blog/how-to-start-learning-chinese-from-zero/index.html',
+    'en/blog/mastering-chinese-tones-scientific-approach/index.html',
+    'en/blog/hsk-guide-roadmap-to-chinese-fluency/index.html',
+    'en/blog/chinese-characters-demystifying-writing-system/index.html',
+    'en/blog/best-free-resources-learn-chinese-online/index.html',
   ];
   let keptCount = 0;
   for (const p of expectedPages) {

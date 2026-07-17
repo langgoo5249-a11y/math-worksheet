@@ -12,6 +12,14 @@
 - Chinese Reading Reader: https://www.skillxm.cn/en/tools/reading-reader/
 - Radical Explorer: https://www.skillxm.cn/en/tools/radical-explorer/
 
+## Blog
+- Chinese Learning Blog: https://www.skillxm.cn/en/blog/
+- How to Start Learning Chinese from Zero: https://www.skillxm.cn/en/blog/how-to-start-learning-chinese-from-zero/
+- Mastering Chinese Tones: https://www.skillxm.cn/en/blog/mastering-chinese-tones-scientific-approach/
+- HSK Guide: https://www.skillxm.cn/en/blog/hsk-guide-roadmap-to-chinese-fluency/
+- Chinese Characters Demystified: https://www.skillxm.cn/en/blog/chinese-characters-demystifying-writing-system/
+- Best Free Resources: https://www.skillxm.cn/en/blog/best-free-resources-learn-chinese-online/
+
 ## HSK Learning Path
 - HSK 1 (150 words): Beginner - greetings, numbers, basic phrases
 - HSK 2 (300 words): Elementary - daily conversations

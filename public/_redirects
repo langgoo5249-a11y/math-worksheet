@@ -71,6 +71,11 @@
 /en/tools/english-calligraphy/  /tools/english-calligraphy/  301
 
 # ===========================================
+# /en/blog/ wrapper redirects
+# 英文版博客是独立内容，static files handle these
+# ===========================================
+
+# ===========================================
 # 重复博客文章 301 重定向（去重修复）
 # ===========================================
 /blog/haizi-xie-zi-wai-wai-niu-niu-lian-zi-shi-jian-2    /blog/haizi-xie-zi-wai-wai-niu-niu-lian-zi-shi-jian/    301

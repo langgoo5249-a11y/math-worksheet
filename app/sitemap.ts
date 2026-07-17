@@ -6,6 +6,7 @@ import { TEXTBOOKS } from '@/lib/textbookConfig';
 import { KNOWLEDGE_POINTS } from '@/lib/knowledgeConfig';
 import { PARENT_GUIDE_TOPICS } from '@/lib/parentGuideConfig';
 import { getAllResources } from '@/lib/resourcesConfig';
+import { enArticles } from '@/app/en/blog/data';
 
 // output: "export" 模式下需要声明为静态生成
 export const dynamic = 'force-static';
@@ -233,12 +234,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/en/tools/radical-explorer/', priority: 0.8, freq: 'monthly' },
     { path: '/en/tools/picture-learning/', priority: 0.8, freq: 'weekly' },
     { path: '/en/tools/pinyin-chart/', priority: 0.85, freq: 'weekly' },
+    { path: '/en/blog/', priority: 0.85, freq: 'weekly' },
   ];
   enPages.forEach(({ path, priority, freq }) => {
     sitemapEntries.push(makeEntry(path, {
       lastModified: SITE_LASTMOD,
       changeFrequency: freq,
       priority,
+    }));
+  });
+
+  // English blog articles
+  enArticles.forEach((a) => {
+    sitemapEntries.push(makeEntry(`/en/blog/${a.id}/`, {
+      lastModified: a.dateModified || a.date,
+      changeFrequency: 'monthly',
+      priority: 0.7,
     }));
   });
 
