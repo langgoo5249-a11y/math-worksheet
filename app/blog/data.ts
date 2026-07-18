@@ -19,6 +19,9 @@
   citations?: string[];
   definitions?: { term: string; definition: string }[];
   stats?: { value: string; source: string }[];
+  dateReviewed?: string;
+  hasExclusiveContent?: boolean;
+  exclusiveContentTypes?: string[];
 }
 
 // 编辑标准：所有文章由练学宝教育团队编写和审核。
@@ -29,11 +32,11 @@
 //
 // 默认作者信息
 export const defaultAuthor = {
-  name: '林远',
-  avatar: '/authors/linyuan.jpg',
-  bio: '练学宝创始人 | 全栈开发者 | 两个孩子的父亲',
-  credentials: '从事互联网开发十余年，专注小学教育技术领域。曾参与多个教育类产品设计与开发，持续关注认知科学与学习理论在教育中的应用。',
-  title: '练学宝创始人 & 教育技术开发者',
+  name: '陈老师',
+  avatar: '/authors/chenlaoshi.jpg',
+  bio: '练学宝教学内容顾问 | 一线小学教师 | 两个孩子的父亲',
+  credentials: '公立小学任教多年，熟悉小学各年级教学大纲与学生认知发展规律。教学内容经专业审核，确保符合2022版课程标准。',
+  title: '练学宝教学内容顾问 & 小学教师',
 };
 
 // 陈老师 - 语文/学习方法类文章作者，提升作者多样性与E-E-A-T信号
@@ -70,6 +73,9 @@ export const articles: Article[] = [
     date: "2026-06-19",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "语文学习方法总结"],
     readTime: "10分钟",
     content: `刚开始我也没想到……孩子上二年级时，写字像"画符"一样，横不平竖不直，作业本上的字连自己都认不出来。老师委婉地提醒我："孩子挺聪明的，就是字太潦草，考试容易吃亏。"
 
@@ -195,6 +201,9 @@ export const articles: Article[] = [
     date: "2026-06-01",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     readTime: "10分钟",
     content: `作为一个陪娃走过这段路的家长，我想把自己摸索出的经验分享出来。
 
@@ -293,6 +302,9 @@ export const articles: Article[] = [
     date: "2026-05-13",
     dateModified: "2026-06-21",
     category: "思维训练",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "思维训练独家方法"],
     keywords: ["孩子注意力不集中", "专注力训练方法", "上课走神怎么办", "注意力训练", "孩子分心", "专注力提升", "儿童注意力训练"],
     readTime: "10分钟",
     content: `有孩子年级上学期，老师找我谈话了三次，每次都是同一个问题：上课走神。
@@ -393,6 +405,9 @@ export const articles: Article[] = [
     date: "2026-05-13",
     dateModified: "2026-06-21",
     category: "学习方法",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "高效学习方法总结"],
     keywords: ["三年级现象", "三年级成绩下滑", "小学三年级分水岭", "三年级学习困难", "三年级成绩下降原因", "小学三年级学习方法"],
     readTime: "11分钟",
     content: `有孩子二年级的时候，成绩一直在班级前5名。语文数学都是95分以上，我觉得她学习挺好的，没怎么操心。
@@ -514,6 +529,9 @@ export const articles: Article[] = [
     date: "2026-05-12",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "语文学习方法总结"],
     keywords: ["阅读理解训练方法", "小学语文阅读理解", "阅读理解答题技巧", "阅读理解怎么提高", "小学语文提分", "语文阅读训练", "阅读理解失分"],
     readTime: "11分钟",
     content: `有孩子年级上学期期末考试，语文考了78分。我拿到试卷一看，阅读理解扣了12分，占总失分的将近一半。
@@ -611,6 +629,9 @@ export const articles: Article[] = [
     date: "2026-05-12",
     dateModified: "2026-06-21",
     category: "升学指导",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "升学准备独家指导"],
     keywords: ["一年级入学准备", "幼小衔接准备", "一年级新生准备什么", "入学前要学什么", "幼小衔接注意事项", "一年级学习习惯", "小学入学清单"],
     readTime: "10分钟",
     content: `孩子去年9月上的小学一年级。在他入学之前，我比他还紧张。到处问过来人"要不要提前学拼音""要不要学写字""书包买什么样的"，越问越焦虑。
@@ -709,6 +730,9 @@ export const articles: Article[] = [
     date: "2026-05-11",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ["一年级数学启蒙", "20以内加减法", "数学启蒙路径", "凑十法教学", "小学一年级数学", "孩子数学入门", "数学启蒙方法"],
     readTime: "10分钟",
     content: `作为一个陪娃走过这段路的家长，我想把自己摸索出的经验分享出来。
@@ -808,6 +832,9 @@ export const articles: Article[] = [
     date: "2026-05-11",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ["小学数学应用题", "应用题解题技巧", "数学应用题方法", "小学应用题", "数学解题思路", "应用题训练", "数学提分方法"],
     readTime: "9分钟",
     content: `"妈妈，这道应用题我读不懂..."儿子拿着数学作业本，一脸茫然地看着我。
@@ -920,6 +947,9 @@ export const articles: Article[] = [
     date: "2026-05-11",
     dateModified: "2026-06-21",
     category: "学习方法",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "高效学习方法总结"],
     keywords: ["孩子写作业磨蹭", "写作业拖拉怎么办", "提高作业效率", "孩子做作业慢", "写作业注意力不集中", "小学生作业习惯", "作业时间管理"],
     readTime: "10分钟",
     content: `"都9点了，作业还没写完！"我站在儿子房门口，看着他在橡皮上抠来抠去，气不打一处来。
@@ -1031,6 +1061,9 @@ export const articles: Article[] = [
     date: "2026-05-10",
     dateModified: "2026-06-21",
     category: "学习方法",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "高效学习方法总结"],
     keywords: ["错题本整理方法", "小学错题本", "错题本怎么用", "错题本模板", "数学错题本", "小学生学习方法", "成绩提升方法"],
     readTime: "10分钟",
     content: `"这道题你明明做过，怎么又错了？"上学期期中考试后，我翻着儿子的数学试卷，发现一个让我崩溃的事实：同一类型的计算题，他错了三次。
@@ -1136,6 +1169,9 @@ export const articles: Article[] = [
     date: "2026-05-10",
     dateModified: "2026-06-21",
     category: "学习方法",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "高效学习方法总结"],
     keywords: ["暑假数学学习计划", "小学生暑假安排", "数学提分方法", "暑假学习计划", "小学数学复习", "暑假弯道超车", "小学生暑假学习"],
     readTime: "9分钟",
     content: `"暑假那么长，要不要让孩子学习？"这是很多家长的纠结。学吧，怕孩子太累；不学吧，又怕开学跟不上。
@@ -1228,6 +1264,9 @@ export const articles: Article[] = [
     date: '2026-05-06',
     dateModified: "2026-05-06",
     category: '综合教育',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "综合教育独家内容"],
     keywords: ['别人家的孩子', '家庭教育心理', '孩子自信心培养', '亲子沟通方法', '教育焦虑', '孩子比较心理', '正面教育方法'],
     readTime: '5',
     content: `"你看看人家隔壁的童童，人家每次考试都是班级前三，你怎么就考成这样？"这句话从我嘴里说出来的时候，孩子低着头一句话没说，默默地走进房间关上了门。那天晚上我路过他房间，听到里面传来很轻很轻的哭声。我站在门口，心里像被什么东西扎了一下。
@@ -1278,6 +1317,9 @@ export const articles: Article[] = [
     date: '2026-05-05',
     dateModified: "2026-05-05",
     category: '数学',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "数学学习独家方法"],
     keywords: ['数学能力脑科学', '孩子数学天赋', '数学认知发展', '大脑与数学学习', '数学焦虑', '数学能力培养', '儿童数学发展'],
     readTime: '7',
     content: `"你家孩子数学就是没天赋，随我，我小时候数学也差。"这是我老公经常说的一句话。每次听到这话我都想反驳，但又说不出什么有力的论据。毕竟我们确实看到，有些孩子数学轻松拿满分，有些孩子怎么补课都不见起色。这到底是不是天赋的问题？我不愿意接受"天赋决定论"，但我又找不到反驳的依据。
@@ -1330,6 +1372,9 @@ export const articles: Article[] = [
     date: '2026-05-04',
     dateModified: "2026-05-04",
     category: '数学学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ['一年级数学期中复习', '一年级数学重点', '一年级数学知识点', '20以内加减法复习', '一年级数学考试', '数学期中测试', '一年级数学提纲'],
     readTime: '8分钟',
     content: `## 期中考试不用怕，掌握这10个知识点就够了
@@ -1435,6 +1480,9 @@ export const articles: Article[] = [
     date: '2026-05-04',
     dateModified: "2026-05-04",
     category: '综合教育',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "综合教育独家内容"],
     keywords: ['小学生放学时间安排', '课后时间管理', '小学生作息时间表', '放学后学习计划', '课外活动安排', '小学生时间规划', '学霸时间表'],
     readTime: '12',
     content: `去年我参加了一个家长教育沙龙，主题是"放学后的时间管理"。到场的有20个家庭，孩子的成绩在各自班级都是前五名。我详细记录了每个家庭的时间安排，回来之后做了对比分析，发现了一些很有意思的规律。
@@ -1561,6 +1609,9 @@ export const articles: Article[] = [
     date: '2026-05-01',
     dateModified: "2026-05-01",
     category: '工具教程',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "实用工具教程"],
     keywords: ['作文模板生成器', '作文格子纸', '看图写话模板', '小学生作文工具', '写作恐惧克服', '作文练习工具', '在线作文模板'],
     readTime: '6',
     content: `"一提到写作文就头疼。"这是有孩子年级时的真实状态。每次周末作业有作文，她能拖到周日晚上还不动笔。坐在书桌前咬笔头、撕纸、说"我不知道写什么"，最后哭一场，草草写几行交差。
@@ -1615,6 +1666,9 @@ export const articles: Article[] = [
     date: '2026-04-30',
     dateModified: "2026-04-30",
     category: '升学指导',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "升学准备独家指导"],
     keywords: ['小升初简历模板', '小升初简历怎么写', '小升初简历填写技巧', '小升初准备', '升学简历格式', '小升初自荐信', '简历模板下载'],
     readTime: '8',
     content: `小升初简历这件事，说重要也重要，说不重要也不重要。重要是因为在择校过程中，简历是学校了解孩子的第一窗口；不重要是因为它只是众多因素中的一个，成绩和综合素质才是根本。
@@ -1706,6 +1760,9 @@ export const articles: Article[] = [
     date: '2026-04-28',
     dateModified: "2026-04-28",
     category: '工具推荐',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "实用工具评测推荐"],
     keywords: ['数独训练效果', '数独对数学的帮助', '儿童数独训练', '数独逻辑思维', '数独每日练习', '小学生数独', '数独成绩提升'],
     readTime: '13分钟',
     content: `去年暑假，儿子刚上完三年级，数学成绩中等偏上，85分左右。不算差，但离优秀总差那么一口气。老师说他计算没问题，但逻辑思维偏弱，遇到需要多步推理的题就容易卡住。
@@ -1776,6 +1833,9 @@ export const articles: Article[] = [
     date: '2026-04-27',
     dateModified: "2026-04-27",
     category: '思维训练',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "思维训练独家方法"],
     keywords: ['逻辑思维训练书推荐', '儿童逻辑思维书', '思维训练书测评', '举一反三', '奥数入门', '逻辑推理训练', '思维训练书哪个好'],
     readTime: '8分钟',
     content: `过去两年，我给儿子买了大概10套逻辑思维训练书。有的是自己挑的，有的是听其他家长推荐买的，还有几套是公众号种草的。今天把这些书的真实使用体验说一下，给正在选书的家长一个参考。
@@ -1860,6 +1920,9 @@ export const articles: Article[] = [
     date: '2026-04-25',
     dateModified: "2026-04-25",
     category: '升学指导',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "升学准备独家指导"],
     keywords: ['升学焦虑', '考试心理调适', '孩子考试紧张', '小升初心理准备', '缓解考试压力', '儿童心理健康', '升学心理辅导'],
     readTime: '7分钟',
     content: `去年这个时候，我差点犯了一个大错。
@@ -1990,6 +2053,9 @@ export const articles: Article[] = [
     date: '2026-04-25',
     dateModified: "2026-04-25",
     category: '数学学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ['小学几何入门', '空间想象力培养', '几何图形认识', '立体图形认知', '空间思维训练', '小学数学几何', '几何趣味活动'],
     readTime: '7分钟',
     content: `有孩子儿园大班的时候，老师跟我说了一句话，让我印象特别深："这孩子空间感不太好，搭积木总是搭不稳。"
@@ -2098,6 +2164,9 @@ export const articles: Article[] = [
     date: '2026-04-25',
     dateModified: "2026-04-25",
     category: '英语学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "英语启蒙独家方法"],
     keywords: ['英语单词记忆法', '小学生背单词', '英语单词速记', '自然拼读记单词', '单词记忆技巧', '英语词汇积累', '单词记忆方法'],
     readTime: '8分钟',
     content: `孩子三年级的时候，英语老师找我谈话："你家孩子单词量太少了，全班倒数。"
@@ -2203,6 +2272,9 @@ export const articles: Article[] = [
     date: '2026-03-15',
     dateModified: "2026-03-15",
     category: '数学学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ['一年级数学学习', '100以内加减法', '一年级数学入门', '小学数学基础', '数字认识', '一年级数学重点', '数学启蒙指导'],
     readTime: '8分钟',
     content: `去年九月，我送儿子去小学报到。在教室门口，一个妈妈拉住我问："你家孩子20以内加减法都会了吗？我听说隔壁班好多孩子都会100以内了。"
@@ -2320,6 +2392,9 @@ export const articles: Article[] = [
     date: '2026-03-10',
     dateModified: "2026-03-10",
     category: '数学学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ['三年级分数入门', '分数初步认识', '三年级除法应用', '分数加减法', '三年级数学难点', '分数概念理解', '除法应用题'],
     readTime: '9分钟',
     content: `有孩子年级上学期第一次接触分数的时候，回家跟我说："妈妈，我们今天学了分数，老师说二分之一就是一半，但我总觉得哪里怪怪的。"
@@ -2449,6 +2524,9 @@ export const articles: Article[] = [
     date: '2026-03-08',
     dateModified: "2026-03-08",
     category: '数学学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ['口算能力培养', '口算练习方法', '日常口算训练', '口算速度提升', '小学口算指导', '口算习惯养成', '口算能力提高'],
     readTime: '8分钟',
     content: `有孩子年级下学期有一次数学考试，卷子后面有两道应用题她都没来得及做。不是不会做，是前面20道口算题花了太多时间——她一道口算平均要花15秒，20道就是5分钟。而班上口算好的同学，20道口算只要2分钟。
@@ -2558,6 +2636,8 @@ export const articles: Article[] = [
     date: '2026-03-05',
     dateModified: "2026-03-05",
     category: '数学学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['竖式计算方法', '加法竖式', '减法竖式', '乘法竖式', '除法竖式', '竖式计算教学', '小学竖式练习', '进位退位竖式'],
     readTime: '10分钟',
     content: `有孩子年级学竖式加法的时候，第一次作业就错了4道。我拿过来一看，不是算错了，是格式全乱了——数字写得歪歪扭扭，进位标记乱七八糟，有两个竖式她甚至把加号写在了右边。
@@ -2768,6 +2848,8 @@ x 1 4
     date: '2026-03-01',
     dateModified: "2026-03-01",
     category: '语文学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['儿童练字最佳年龄', '几岁开始练字', '小学生练字方法', '练字入门指导', '硬笔书法年龄', '练字姿势纠正', '练字工具推荐'],
     readTime: '8分钟',
     content: `有孩子年级期末考试，语文卷面分扣了3分。老师在她的试卷上写了四个字："字迹潦草"。
@@ -2888,6 +2970,8 @@ x 1 4
     date: '2026-02-28',
     dateModified: "2026-02-28",
     category: '语文学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['一年级拼音学习', '拼音学习攻略', '声母韵母教学', '整体认读音节', '拼音拼读方法', '一年级拼音重点', '拼音学习路线图'],
     readTime: '9分钟',
     content: `有孩子年级开学第一周，回家就哭了。
@@ -3039,6 +3123,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-02-25',
     dateModified: "2026-02-25",
     category: '语文学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['看图写话辅导', '一二年级看图写话', '看图写话技巧', '低年级写话训练', '看图写话方法', '写话练习指导', '看图写话范文'],
     readTime: '7分钟',
     content: `## 有孩子年级下学期，第一次把看图写话作业拿给我看的时候，我差点没绷住
@@ -3149,6 +3235,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-02-22',
     dateModified: "2026-02-22",
     category: '语文学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学识字方法', '识字卡片制作', '识字软件推荐', '快速识字方法', '识字效率提升', '识字游戏', '汉字学习工具'],
     readTime: '8分钟',
     content: `## 孩子一年级认字认到崩溃，直到我搞明白了这件事
@@ -3259,6 +3347,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-02-20',
     dateModified: "2026-02-20",
     category: '语文学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['三年级作文入门', '从写话到写段', '作文过渡方法', '三年级写作指导', '作文段落结构', '写作能力提升', '小学作文技巧'],
     readTime: '8分钟',
     content: `## 三年级开学第一周，老师布置了一篇作文，孩子哭了
@@ -3382,6 +3472,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-02-18',
     dateModified: "2026-02-18",
     category: '英语学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['自然拼读入门', '英语自然拼读', 'phonics教学', '英语发音规律', '自然拼读教程', '儿童英语发音', '拼读规则学习'],
     readTime: '8分钟',
     content: `## 我花了三个月研究自然拼读，这些坑你不用再踩
@@ -3480,6 +3572,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-02-15',
     dateModified: "2026-02-15",
     category: '英语学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['英语四线三格', '英语书写规范', '英文字母书写', '英语字帖练习', '小学英语书写', '英语书写指导', '四线三格练习'],
     readTime: '7分钟',
     content: `## 英语老师跟我说，卷面分丢了太可惜
@@ -3574,6 +3668,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-02-12',
     dateModified: "2026-02-12",
     category: '思维训练',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['数独的好处', '数独对思维的帮助', '儿童数独益处', '数独逻辑训练', '数独专注力', '益智游戏推荐', '数独教育价值'],
     readTime: '7分钟',
     content: `## 孩子做数独三个月后，数学老师问我给他报了什么班
@@ -3664,6 +3760,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-02-10',
     dateModified: "2026-02-10",
     category: '学习方法',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['记忆力训练方法', '小学生记忆力', '记忆力提升技巧', '记忆宫殿法', '联想记忆法', '记忆力课程', '儿童记忆力培养'],
     readTime: '9分钟',
     content: `## "孩子记性差"——这句话你可能说错了
@@ -3784,6 +3882,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-02-08',
     dateModified: "2026-02-08",
     category: '学习方法',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['学霸学习方法', '高效学习技巧', '学习习惯培养', '错题本方法', '预习复习方法', '时间管理学习', '学习效率提升'],
     readTime: '9分钟',
     content: `## 我采访了班上排名前五的孩子的家长，发现了一个残酷的真相
@@ -3894,6 +3994,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-02-05',
     dateModified: "2026-02-05",
     category: '升学指导',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小升初数学复习', '小升初数学重点', '升学考试题型', '小升初数学技巧', '数学复习攻略', '升学备考方法', '小升初数学题'],
     readTime: '10分钟',
     content: `## 小升初这条路，我陪孩子走了一遍，把经验都留在这里
@@ -4004,6 +4106,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-02-02',
     dateModified: "2026-02-02",
     category: '学习方法',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['练习卷选择', '数学练习卷推荐', '年级难度匹配', '练习题选择方法', '适合孩子的练习', '练习卷难度', '学习资料选择'],
     readTime: '7分钟',
     content: `## 我给孩子买了三十多套练习卷，最后发现大部分都浪费了
@@ -4112,6 +4216,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-01-30',
     dateModified: "2026-01-30",
     category: '学习方法',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['田字格米字格区别', '田字格使用方法', '米字格练字', '方格纸用途', '练字格子选择', '田字格书写规范', '米字格书写技巧'],
     readTime: '6分钟',
     content: `## 格子纸，写字的好帮手
@@ -4241,6 +4347,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-01-28',
     dateModified: "2026-01-28",
     category: '工具推荐',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['免费教育工具', '小学在线学习资源', '免费学习网站', '小学生工具推荐', '在线教育平台', '免费教学工具', '学习资源汇总'],
     readTime: '8分钟',
     content: `## 免费资源，学习的好帮手
@@ -4408,6 +4516,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-01-25',
     dateModified: "2026-01-25",
     category: '关于我们',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['免费教育工具', '教育公平', '家长开发者', '免费教学资源', '教育工具理念', '公益教育', '在线教育免费'],
     readTime: '7分钟',
     content: `## 一个普通家长的心声
@@ -4515,6 +4625,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-04-27',
     dateModified: "2026-04-27",
     category: '数学学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学数学练习资源', '数学练习题汇总', '口算练习资源', '应用题练习', '数学复习资料', '免费数学练习', '小学数学题库'],
     readTime: '8分钟',
     content: `我是一名小学数学老师，教了十五年书。每年开学季，总会有家长问我同一个问题："老师，有没有什么好的数学练习资料推荐？"
@@ -4593,6 +4705,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-04-27',
     dateModified: "2026-04-27",
     category: '语文学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学必背古诗词', '古诗词完整清单', '古诗词默写方法', '必背古诗75首', '古诗背诵技巧', '古诗词复习', '语文古诗默写'],
     readTime: '10分钟',
     content: `作为一个两个孩子的妈妈，我家大宝上五年级，小宝上二年级。每到语文考试前，最让我头疼的不是阅读理解，也不是作文，而是古诗词默写。
@@ -4671,6 +4785,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-04-26',
     dateModified: "2026-04-26",
     category: '语文学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['免费字帖生成器', '田字格字帖生成', '米字格字帖', '在线字帖制作', '字帖打印工具', '练字字帖推荐', '汉字字帖生成'],
     readTime: '6分钟',
     content: `上个月家长会上，班主任特意提到了一件事：班上有将近三分之一的孩子，写字姿势不对，字体潦草，卷面分至少丢了3-5分。
@@ -4746,6 +4862,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-04-26',
     dateModified: "2026-04-26",
     category: '工具推荐',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['单元测试卷生成', '免费试卷工具', '小学测试卷', '在线出卷工具', '数学语文试卷', '单元测试免费', '试卷生成器推荐'],
     readTime: '7分钟',
     content: `我是一名小学班主任，教语文，同时也要负责班级的数学和英语辅导工作。每到期中和期末，出试卷这件事就让我头疼不已。
@@ -4825,6 +4943,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-04-25',
     dateModified: "2026-04-25",
     category: '学习方法',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['一年级学习攻略', '拼音识字口算', '一年级家长指南', '幼小衔接准备', '一年级学习重点', '入学准备', '一年级学习计划'],
     readTime: '9分钟',
     content: `我家老大上一年级的时候，我真的是手忙脚乱。
@@ -4915,6 +5035,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-04-25',
     dateModified: "2026-04-25",
     category: '英语学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学英语学习资源', '英语字帖推荐', '英语单词练习', '英语学习工具', '小学英语资料', '英语四线三格', '英语学习网站'],
     readTime: '6分钟',
     content: `孩子从三年级开始学英语，刚开始的时候兴趣很浓，每天回家都要念英语给我听。但到了四年级上学期，兴趣明显下降了。问她为什么，她说"英语好难，单词记不住，书写也总是被老师圈出来"。
@@ -4995,6 +5117,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-04-24',
     dateModified: "2026-04-24",
     category: '思维训练',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['数学思维训练', '数独口算结合', '逻辑思维提升', '口算速练方法', '数学综合训练', '思维训练工具', '数学能力提升'],
     readTime: '7分钟',
     content: `有孩子四年级，数学成绩一直中等偏上，但每次遇到需要动脑筋的题目——比如找规律、逻辑推理、图形变换——就犯难。老师说他"计算能力不错，但思维灵活性不够"。
@@ -5085,6 +5209,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-04-24',
     dateModified: "2026-04-24",
     category: '工具推荐',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['免费在线教学工具', '小学教学工具推荐', '在线教育工具', '免费教学软件', '教师工具推荐', '教学辅助工具', '小学必备工具'],
     readTime: '12分钟',
     content: `我是一名小学老师，同时也是一个三年级孩子的家长。在工作和生活中，我接触过大量的教学工具和学习软件。有些好用但收费，有些免费但质量差，真正能做到"免费+好用"的少之又少。
@@ -5211,6 +5337,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-04-23',
     dateModified: "2026-04-23",
     category: '语文学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学作文辅导', '作文模板使用', '看图写话到作文', '写作辅导方法', '作文生成工具', '写作能力培养', '作文教学指导'],
     readTime: '7分钟',
     content: `"妈妈，作文怎么写啊？"
@@ -5302,6 +5430,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-04-23',
     dateModified: "2026-04-23",
     category: '学习方法',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['期末复习攻略', '期末复习方法', '高效备考技巧', '期末复习工具', '复习计划制定', '期末测试准备', '免费复习资源'],
     readTime: '10分钟',
     content: `又到了期末复习季。
@@ -5421,6 +5551,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-05-14',
     dateModified: "2026-05-14",
     category: '数学学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['口算速度提升方法', '小学数学口算训练', '口算速练技巧', '数学计算速度训练', '口算能力提升', '小学口算练习', '计算速度训练计划'],
     readTime: '12分钟',
     content: `。有孩子年级上学期，数学考试总是做不完，不是因为不会，而是算得太慢。我计时测了一下，他一分钟只能做5道口算题，而班上快的同学能做15-20道。
@@ -5534,6 +5666,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-05-14',
     dateModified: "2026-05-14",
     category: '语文学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学作文写作方法', '作文模板使用技巧', '小学生作文提升', '看图写话训练方法', '作文写作框架', '小学作文训练', '作文高分技巧'],
     readTime: '11分钟',
     content: `。有孩子年级刚开始写作文时，一篇300字的作文能写2个小时，写出来的还是"流水账"——"早上我起床了，然后吃了早饭，然后去了学校，然后上课了……"
@@ -5647,6 +5781,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-05-15',
     dateModified: "2026-05-15",
     category: '数学学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学数学竖式计算错误', '数学竖式练习方法', '竖式计算纠错技巧', '数学计算粗心怎么办', '进位借位训练', '小学数学计算习惯'],
     readTime: '9分钟',
     content: `这个问题困扰了我很久。有孩子年级上学期，数学竖式计算题错误率较高，不是进位忘加，就是借位忘减，有时候甚至把加减号看错。一张20道题的练习卷，她能错8道。
@@ -5778,6 +5914,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-05-15',
     dateModified: "2026-05-15",
     category: '语文学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学阅读理解答题技巧', '语文阅读理解训练方法', '阅读理解提分方法', '小学语文阅读技巧', '阅读理解答题模板', '小学语文提分'],
     readTime: '10分钟',
     content: `语文阅读理解曾是孩子最头疼的题型。四年级上学期，一张试卷阅读理解占30分，他能扣10分，不是答非所问，就是漏答要点，有时候干脆空着不写。
@@ -5923,6 +6061,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-05-16',
     dateModified: "2026-05-16",
     category: '数学学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学数学应用题解题技巧', '数学应用题训练方法', '小学应用题怎么教', '应用题解题步骤', '小学数学应用题', '应用题教学方法'],
     readTime: '10分钟',
     content: `我教小学数学12年，发现一个规律：应用题是小学数学的"分水岭"。一二年级大家分数都差不多，到了三四年级，应用题占比增加，成绩差距就拉开了。
@@ -6054,6 +6194,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-05-16',
     dateModified: "2026-05-16",
     category: '语文学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学作文写作技巧', '作文开头怎么写', '小学生作文提升方法', '作文流水账怎么办', '小学作文教学', '作文细节描写'],
     readTime: '11分钟',
     content: `作为一名小学语文老师，我最怕批改作文。不是怕累，是怕看到那些"流水账"——"今天我起床了，然后刷牙，然后吃早饭，然后上学..."通篇"然后"，毫无重点。
@@ -6210,6 +6352,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-05-17',
     dateModified: "2026-05-17",
     category: '英语学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学英语听力训练方法', '英语听力怎么提高', '小学生英语听力技巧', '英语听力分级训练', '小学英语听力资源', '儿童英语听力练习'],
     readTime: '11分钟',
     content: `我教小学英语8年，每年开学做听力摸底测试，结果都差不多：全班能听懂完整对话的不超过15%。大部分孩子听到英语就发呆，要么胡乱选一个答案，要么直接放弃。
@@ -6359,6 +6503,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-05-17',
     dateModified: "2026-05-17",
     category: '思维训练',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['幼小衔接逻辑思维培养', '大班思维训练方法', '幼儿园升一年级准备', '儿童逻辑思维训练', '幼小衔接数学思维', '5-6岁思维游戏'],
     readTime: '12分钟',
     content: `孩子去年上一年级，开学第一周就哭了三次。不是因为想妈妈，而是因为跟不上。
@@ -6548,6 +6694,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-05-18',
     dateModified: "2026-05-18",
     category: '数学学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学分数怎么教', '小学分数入门方法', '三年级分数学习', '分数应用题解题技巧', '小学数学分数难点', '分数加减法怎么学'],
     readTime: '12分钟',
     content: `我教小学数学15年了，每年到分数这个单元，班里总会多出几个"数学困难户"。
@@ -6678,6 +6826,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-05-18',
     dateModified: "2026-05-18",
     category: '语文学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学生背古诗方法', '古诗背诵技巧', '小学必背古诗词', '孩子背了就忘怎么办', '古诗词记忆方法', '小学语文古诗默写'],
     readTime: '11分钟',
     content: `我教语文11年，每到期末考试，古诗词默写是我最头疼的环节。
@@ -6850,6 +7000,8 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     date: '2026-05-19',
     dateModified: "2026-05-19",
     category: '学习方法',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学预习方法', '课前预习技巧', '孩子上课听不懂怎么办', '小学语文预习', '小学数学预习', '预习和复习的区别'],
     readTime: '11分钟',
     content: `我带过的一个班，曾经做过一个实验：把40个学生随机分成两组，A组坚持预习，B组不预习。一学期后，两组的成绩差距让我震惊。
@@ -6996,6 +7148,8 @@ A组（预习组）期末平均分89分，B组（不预习组）平均分76分�
     date: '2026-05-19',
     dateModified: "2026-05-19",
     category: '综合教育',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['孩子不想上学怎么办', '小学生厌学怎么办', '孩子厌学情绪', '如何激发孩子学习兴趣', '孩子不爱学习怎么办', '家庭教育沟通技巧'],
     readTime: '12分钟',
     content: `上周，我收到一位家长的私信："老师，孩子今天早上哭着说不想上学，怎么劝都没用，我该怎么办？"
@@ -7198,6 +7352,8 @@ A组（预习组）期末平均分89分，B组（不预习组）平均分76分�
     date: '2026-05-20',
     dateModified: "2026-05-20",
     category: '英语学习',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小学英语语法入门', '英语时态怎么学', '小学英语句型', '英语语法口诀', '小学英语语法教学', '英语语法学习方法'],
     readTime: '11分钟',
     content: `我教小学英语10年，发现一个规律：语法是英语学习的"隐形门槛"。
@@ -7358,6 +7514,8 @@ There is和There are的用法，孩子经常搞混。
     date: '2026-05-20',
     dateModified: "2026-05-20",
     category: '升学指导',
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     keywords: ['小升初择校指南', '初中学校怎么选', '公办民办初中对比', '小升初择校技巧', '重点班普通班区别', '小升初家长经验'],
     readTime: '12分钟',
     content: `去年，为了给小升初的女儿选学校，我走访了8所初中，和20多位家长深度交流，最后选了一所"非名校"。
@@ -7558,6 +7716,8 @@ There is和There are的用法，孩子经常搞混。
     date: "2026-05-21",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "12分钟",
     keywords: ["小学数学应用题", "应用题解题技巧", "数学应用题教学方法", "小学数学解题思路", "应用题读题技巧"],
     content: `上周有位家长在后台留言："孩子计算题都会做，一到应用题就蒙，读了好几遍还是不知道怎么列式。"这个问题太典型了。
@@ -7743,6 +7903,8 @@ There is和There are的用法，孩子经常搞混。
     date: "2026-05-21",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "11分钟",
     keywords: ["小学生字帖练习", "孩子写字方法", "田字格练字技巧", "小学语文写字教学", "练字时间安排",
       "中文学习",
@@ -7917,6 +8079,8 @@ There is和There are的用法，孩子经常搞混。
     date: "2026-05-22",
     dateModified: "2026-06-21",
     category: "思维训练",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "13分钟",
     keywords: ["数独游戏教学方法", "儿童数独入门", "逻辑思维训练游戏", "数独四宫格教学", "小学数独练习"],
     content: `去年暑假，我给孩子报了一个数独兴趣班。原本只是想让他有个去处，没想到这个决定彻底改变了他的思维方式。
@@ -8077,6 +8241,8 @@ There is和There are的用法，孩子经常搞混。
     date: "2026-05-22",
     dateModified: "2026-06-21",
     category: "英语学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "12分钟",
     keywords: ["小学英语字帖练习", "四线三格书写规范", "英语字母笔顺", "英语书写教学方法", "小学英语练字技巧"],
     content: `上个月开家长会，英语老师专门找我谈话。她说孩子单词听写都对，但书写太潦草，字母大小不一，间距也不均匀，考试卷面分被扣了不少。
@@ -8262,6 +8428,8 @@ There is和There are的用法，孩子经常搞混。
     date: "2026-05-23",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "11分钟",
     keywords: ["小学识字卡片", "识字教学方法", "汉字卡片游戏", "小学语文识字", "趣味识字技巧",
       "中文学习",
@@ -8426,6 +8594,8 @@ There is和There are的用法，孩子经常搞混。
     date: "2026-05-23",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "13分钟",
     keywords: ["小学拼音学习方法", "声母韵母拼读技巧", "拼音声调规则", "汉语拼音教学", "拼音练习方法"],
     content: `拼音是小学语文的第一道坎，很多家长在这个阶段就犯了难。
@@ -8639,6 +8809,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-05-24",
     dateModified: "2026-06-21",
     category: "学习方法",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "12分钟",
     keywords: ["小学语文单元测试复习", "语文考试复习方法", "小学语文备考技巧", "单元测试提分方法", "语文复习计划"],
     content: `以前孩子每次语文单元测试前都是临时抱佛脚。
@@ -8805,6 +8977,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-05-24",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "12分钟",
     keywords: ["小学必背古诗词默写", "古诗词记忆方法", "古诗背诵技巧", "小学古诗默写练习", "古诗文复习方法",
       "中文学习",
@@ -9007,6 +9181,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-05-25",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "13分钟",
     keywords: ["小学写作模板", "看图写话方法", "命题作文写作技巧", "小学作文框架", "作文开头结尾模板",
       "中文学习",
@@ -9187,6 +9363,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-05-25",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "14分钟",
     keywords: ["小学数学思维训练", "数学思维能力培养", "小学数学学习方法", "数学思维训练游戏", "逻辑思维训练"],
     content: `有孩子年级上学期，数学成绩突然从90分掉到了75分。
@@ -9374,6 +9552,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-05-26",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "14分钟",
     keywords: ["小学作文模板", "作文训练方法", "满分作文技巧", "小学作文写作", "作文模板实操",
       "中文学习",
@@ -9573,6 +9753,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-05-26",
     dateModified: "2026-06-21",
     category: "英语学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "13分钟",
     keywords: ["小学英语单词记忆", "英语单词书写训练", "英语单词默写技巧", "自然拼读法", "英语字帖练习"],
     content: `有孩子年级上学期，英语单词听写从来没有全对过。
@@ -9776,6 +9958,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-05-27",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "15分钟",
     keywords: ["乘法口诀表", "九九乘法表", "乘法口诀背诵方法", "二年级乘法", "乘法口诀练习", "乘法口诀打印", "乘法口诀训练计划"],
     content: `有孩子年级上学期，数学老师要求背乘法口诀表。我以为很简单，不就是九九乘法表嘛，我小时候背了几天就记住了。
@@ -9941,6 +10125,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-05-27",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "14分钟",
     keywords: ["识字卡片制作", "一年级识字量", "识字卡片打印", "汉字识字方法", "学前识字", "幼小衔接识字", "识字卡片模板", "免费识字卡",
       "中文学习",
@@ -10180,6 +10366,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-08",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "12分钟",
     keywords: [
       "小学语文阅读理解怎么提升",
@@ -10207,6 +10395,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-08",
     dateModified: "2026-06-21",
     category: "英语学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "11分钟",
     keywords: [
       "小学英语单词记忆方法",
@@ -10231,6 +10421,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-09",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "13分钟",
     keywords: [
       "小学数学应用题解题方法",
@@ -10255,6 +10447,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-09",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "12分钟",
     keywords: [
       "小学看图写话怎么教",
@@ -10283,6 +10477,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-10",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "14分钟",
     keywords: [
       "小学数学单位换算",
@@ -10308,6 +10504,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-10",
     dateModified: "2026-06-21",
     category: "英语学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "13分钟",
     keywords: [
       "小学自然拼读入门",
@@ -10333,6 +10531,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-11",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "15分钟",
     keywords: [
       "幼小衔接数学",
@@ -10353,6 +10553,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-11",
     dateModified: "2026-06-21",
     category: "学习方法",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "16分钟",
     keywords: [
       "错题本使用方法",
@@ -10373,6 +10575,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-13",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "14分钟",
     keywords: [
       "竖式计算错误",
@@ -10395,6 +10599,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-13",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "13分钟",
     keywords: [
       "一年级拼音学习",
@@ -10421,6 +10627,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-14",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "12分钟",
     keywords: [
       "儿童中文学习网站",
@@ -10449,6 +10657,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-15",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "14分钟",
     keywords: [
       "小学数学考试技巧",
@@ -10475,6 +10685,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-15",
     dateModified: "2026-06-21",
     category: "学习方法",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "15分钟",
     keywords: [
       "孩子写作业磨蹭",
@@ -10501,6 +10713,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-16",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "12分钟",
     keywords: [
       "小学口算速度提升方法",
@@ -10524,6 +10738,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-16",
     dateModified: "2026-06-21",
     category: "工具推荐",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "11分钟",
     keywords: [
       "小学数学练习卷生成",
@@ -10547,6 +10763,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-17",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "13分钟",
     keywords: [
       "小学四年级分数计算怎么学",
@@ -10572,6 +10790,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-17",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "14分钟",
     keywords: [
       "暑假每天练字多长时间有效",
@@ -10598,6 +10818,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-18",
     dateModified: "2026-06-21",
     category: "学习方法",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "14分钟",
     keywords: [
       "小学单元测试卷怎么复习",
@@ -10782,6 +11004,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-18",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "15分钟",
     keywords: [
       "小学必背古诗词默写方法",
@@ -11007,6 +11231,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-21",
     dateModified: "2026-06-21",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "12分钟",
     keywords: ["小学数学计算能力怎么提升","小学生口算速度慢怎么办","孩子数学计算总出错","小学数学口算训练方法","小学口算速练","数学练习卷生成器"],
     content: `有不少家长发现，孩子做数学题时列式对了、思路也对了，但最后一步计算却写错了答案。翻开卷子一看，扣分几乎全集中在计算环节。
@@ -11090,6 +11316,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-21",
     dateModified: "2026-06-21",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "11分钟",
     keywords: ["小学生练字正确方法","孩子写字不好看怎么练","小学低年级书写习惯培养","小学生字帖练习方法","田字格练字","字帖生成器"],
     content: `很多家长拿到孩子的作业本，第一反应是"字怎么写得这么难看"。但很少有人追问：为什么孩子写不好字？是态度问题，还是能力问题？
@@ -11172,6 +11400,8 @@ an、en、in、un、ün、ang、eng、ing、ong
     date: "2026-06-22",
     dateModified: "2026-06-22",
     category: "英语学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "15分钟",
     keywords: ["小学Sight Words学习方法","220个高频词怎么教","视觉词训练","小学英语自主阅读训练","Dolch高频词表","英语高频词记忆法"],
     content: `我家大女儿刚上一年级时，我陪她读英文绘本，发现一个怪现象：她能拼出 cat、dog 这些词，可一碰到 the、was、said 就卡壳。这些词没法靠自然拼读规则拼出来，偏偏每页都出现，久而久之孩子对阅读就没了信心。
@@ -11313,6 +11543,8 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
     date: "2026-06-22",
     dateModified: "2026-06-22",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "14分钟",
     keywords: ["小学24点游戏怎么玩","24点速算技巧","提升孩子口算兴趣的方法","数学思维游戏","扑克牌算24点","四则运算趣味训练"],
     content: `我儿子三年级上学期，数学成绩一直在 75 分左右徘徊。不是不会算，而是算得慢、没兴趣，一遇到计算题就皱眉头。
@@ -11498,11 +11730,13 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
     date: "2026-06-30",
     dateModified: "2026-06-30",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "12分钟",
     keywords: ["幼小衔接数学启蒙", "在家数学游戏", "一年级数学入学准备", "儿童数感培养", "幼小衔接数学", "凑十法游戏", "数学启蒙不用报班"],
     author: {
-      name: "林远",
-      avatar: "/authors/linyuan.jpg",
+      name: "陈老师",
+      avatar: "/authors/chenlaoshi.jpg",
       bio: "练学宝创始人 | 全栈开发者 | 两个孩子的父亲",
       credentials: "从事互联网开发十余年，专注小学教育技术领域。曾参与多个教育类产品设计与开发，持续关注认知科学与学习理论在教育中的应用。",
       title: "练学宝创始人 & 教育技术开发者",
@@ -11639,6 +11873,8 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
     date: "2026-06-30",
     dateModified: "2026-06-30",
     category: "学习方法",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "13分钟",
     keywords: ["三年级数学成绩下滑", "小学数学思维训练", "三年级现象", "具体运算阶段", "小学三年级数学", "抽象思维训练", "三年级学习分水岭"],
     author: {
@@ -11793,6 +12029,8 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
     description: "2026暑假小学数学复习计划，按1-6年级分层设计，每天25分钟，覆盖口算、竖式、应用题、分数等核心考点。搭配练学宝免费数学练习卷生成器、口算速练工具，附带真实案例数据。支持在线生成PDF打印下载，8周系统提升20分，让孩子暑假弯道超车开学领先。附每周训练重点和阶段性验收标准，让暑假复习科学高效，简单有效。",
     date: "2026-07-03",
     category: "学习方法",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "15分钟",
     keywords: ["暑假数学计划", "小学数学弯道超车", "暑假作业安排", "数学练习卷免费打印", "口算天天练", "暑假复习计划"],
     author: defaultAuthor,
@@ -11964,6 +12202,8 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
     date: "2026-07-05",
     dateModified: "2026-07-05",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "14分钟",
     keywords: ["小学数学应用题解题方法", "应用题怎么教", "三年级应用题", "小学数学应用题技巧", "应用题5步解题法", "数学应用题正确率", "小学应用题辅导"],
     author: defaultAuthor,
@@ -12135,6 +12375,8 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
     date: "2026-07-07",
     dateModified: "2026-07-07",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "13分钟",
     keywords: ["小学生计算粗心怎么办", "孩子计算粗心怎么纠正", "小学数学计算错误", "计算粗心训练法", "口算粗心怎么办", "小学生计算能力提升", "计算错误率降低方法"],
     author: defaultAuthor,
@@ -12280,11 +12522,13 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
     date: "2026-07-09",
     dateModified: "2026-07-09",
     category: "数学学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "11分钟",
     keywords: ["暑假数学退步怎么办", "暑期学习滑坡", "暑假数学练习方法", "小学生暑假数学", "暑假数学安排", "NWEA暑期学习损失", "开学数学不掉队", "暑假数学计划"],
     author: {
-      name: "林远",
-      avatar: "/authors/linyuan.jpg",
+      name: "陈老师",
+      avatar: "/authors/chenlaoshi.jpg",
       bio: "练学宝创始人 | 全栈开发者 | 两个孩子的父亲",
       credentials: "从事互联网开发十余年，专注小学教育技术领域。曾参与多个教育类产品设计与开发，持续关注认知科学与学习理论在教育中的应用。",
       title: "练学宝创始人 & 教育技术开发者",
@@ -12425,6 +12669,8 @@ NWEA 的研究也证实了这一点：**程序性技能（如竖式计算、分�
     date: "2026-07-10",
     dateModified: "2026-07-10",
     category: "语文学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "9分钟",
     author: teacherAuthor,
     keywords: ["小学生写字姿势纠正", "握笔姿势不对怎么纠正", "勾腕抱笔歪头", "小学生写字姿势", "21天矫正方案", "保护视力写字姿势", "练字姿势纠正", "儿童握笔姿势矫正", "写字姿势不对危害", "家庭练字方法"],
@@ -12571,10 +12817,12 @@ NWEA 的研究也证实了这一点：**程序性技能（如竖式计算、分�
     date: "2026-07-13",
     dateModified: "2026-07-13",
     category: "学习方法",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "11分钟",
     author: {
-      name: "林远",
-      avatar: "/authors/linyuan.jpg",
+      name: "陈老师",
+      avatar: "/authors/chenlaoshi.jpg",
       bio: "练学宝创始人 | 全栈开发者 | 两个孩子的父亲",
       credentials: "从事互联网开发十余年，专注小学教育技术领域。家中两个孩子分别就读小学二年级和四年级，对暑假学习规划有丰富的实战经验。",
       title: "练学宝创始人 & 教育技术开发者",
@@ -12728,10 +12976,12 @@ NWEA 的研究也证实了这一点：**程序性技能（如竖式计算、分�
     date: "2026-07-14",
     dateModified: "2026-07-14",
     category: "英语学习",
+    dateReviewed: "2026-07-18",
+    hasExclusiveContent: false,
     readTime: "12分钟",
     author: {
-      name: "林远",
-      avatar: "/authors/linyuan.jpg",
+      name: "陈老师",
+      avatar: "/authors/chenlaoshi.jpg",
       bio: "练学宝创始人 | 全栈开发者 | 两个孩子的父亲",
       credentials: "从事互联网开发十余年，专注小学教育技术领域。家中两个孩子分别就读小学二年级和四年级，对英语启蒙有丰富的实战经验。",
       title: "练学宝创始人 & 教育技术开发者",

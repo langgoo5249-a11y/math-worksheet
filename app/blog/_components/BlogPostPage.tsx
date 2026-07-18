@@ -189,6 +189,18 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
               <span className="text-emerald-400">✓</span>
               <span>遵循2022版课程标准</span>
             </div>
+            {article.dateReviewed && (
+              <div className="flex items-center gap-1.5">
+                <span className="text-emerald-400">✓</span>
+                <span>审核日期：{article.dateReviewed}</span>
+              </div>
+            )}
+            {article.hasExclusiveContent && (
+              <div className="flex items-center gap-1.5">
+                <span className="text-purple-400">◆</span>
+                <span>含独家内容</span>
+              </div>
+            )}
             {article.dateModified && article.dateModified !== article.date && (
               <div className="flex items-center gap-1.5">
                 <span className="text-blue-400">↻</span>
@@ -199,6 +211,10 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
               <span className="text-amber-400">⚑</span>
               <span>练学宝编辑团队出品</span>
             </div>
+            <a href="/editorial-policy/" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors ml-auto">
+              <span className="text-blue-400">📋</span>
+              <span>编辑政策</span>
+            </a>
           </div>
 
           {/* GEO优化：前置摘要 — 使用 blockquote 格式帮助AI提取关键信息 */}
