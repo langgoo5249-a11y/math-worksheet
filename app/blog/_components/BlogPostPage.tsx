@@ -179,7 +179,29 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           </div>
         </header>
 
-        {/* GEO优化：前置摘要 — 使用 blockquote 格式帮助AI提取关键信息 */}
+          {/* 编辑声明 — 增强E-E-A-T信号 */}
+          <div className="mt-4 flex flex-wrap items-center gap-4 text-xs text-gray-500">
+            <div className="flex items-center gap-1.5">
+              <span className="text-emerald-400">✓</span>
+              <span>内容经陈老师（一线教师）审核</span>
+            </div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-emerald-400">✓</span>
+              <span>遵循2022版课程标准</span>
+            </div>
+            {article.dateModified && article.dateModified !== article.date && (
+              <div className="flex items-center gap-1.5">
+                <span className="text-blue-400">↻</span>
+                <span>最近更新：{article.dateModified}</span>
+              </div>
+            )}
+            <div className="flex items-center gap-1.5">
+              <span className="text-amber-400">⚑</span>
+              <span>练学宝编辑团队出品</span>
+            </div>
+          </div>
+
+          {/* GEO优化：前置摘要 — 使用 blockquote 格式帮助AI提取关键信息 */}
         <section className="mb-8">
           <blockquote className="summary border-l-4 border-blue-500 pl-5 py-4 bg-blue-500/5 rounded-r-xl">
             <p className="text-blue-300 text-xs font-semibold uppercase tracking-wide mb-2">📋 文章摘要</p>

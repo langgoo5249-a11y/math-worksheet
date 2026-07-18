@@ -5,6 +5,8 @@ import HomePageClient from './_components/HomePageClient';
 export const metadata = {
   title: '练学宝 - 免费小学在线学习工具',
   description: '10+款免费小学教学工具，覆盖数学计算、语文练字、练习卷下载，即开即用无需注册。包括数学练习卷生成器、字帖生成器、口算速练、数独游戏、识字卡片、作文模板等。',
+  keywords: '练学宝,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷',
+  author: '陈老师',
   openGraph: {
     title: '练学宝 - 免费小学在线学习工具',
     description: '10+款免费小学教学工具，覆盖数学计算、语文练字、练习卷下载，即开即用无需注册。',
@@ -25,6 +27,7 @@ export const metadata = {
     canonical: 'https://www.skillxm.cn/',
     languages: {
       'zh-CN': 'https://www.skillxm.cn/',
+      'en': 'https://www.skillxm.cn/en/',
       'x-default': 'https://www.skillxm.cn/',
     },
   },

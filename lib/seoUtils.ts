@@ -3,7 +3,7 @@
 
 const BASE_URL = 'https://www.skillxm.cn';
 const SITE_NAME = '练学宝';
-const SITE_AUTHOR = '林远';
+const SITE_AUTHOR = '陈老师';
 const SITE_LOGO = 'https://www.skillxm.cn/favicon.svg';
 
 // 确保页面 URL 以 / 结尾（不影响带查询参数、锚点或文件后缀的 URL）
@@ -99,7 +99,7 @@ export function generateArticleSchema(opts: {
     dateModified: opts.dateModified || new Date().toISOString().slice(0, 10),
     author: {
       '@type': 'Person',
-      '@id': `${BASE_URL}/#person-linyuan`,
+      '@id': `${BASE_URL}/#person-chenlaoshi`,
       name: SITE_AUTHOR,
       url: `${BASE_URL}/about/`,
       affiliation: {

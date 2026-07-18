@@ -60,9 +60,9 @@ function makeEntry(
     changeFrequency: options.changeFrequency,
     priority: options.priority,
     alternates: {
-      // x-default 指向中文版
       languages: {
         'zh-CN': url,
+        'en': url.replace('https://www.skillxm.cn/', 'https://www.skillxm.cn/en/'),
         'x-default': url,
       },
     },

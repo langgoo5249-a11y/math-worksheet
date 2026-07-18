@@ -35,7 +35,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "练学宝 - 免费小学教学工具/中文学习/数学练习卷/字帖/口算",
   description: "练学宝是儿童中文学习网站，提供10+款免费小学教学工具，包括数学练习卷、字帖、口算速练、拼音、识字卡片、古诗词默写等，支持手机在线做题与PDF打印，无需注册即开即用。",
-  keywords: "练学宝,中文学习,小学中文学习,儿童中文学习网站,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印,手机练习,在线做题,免费打印试卷,小学数学题,小学语文练习,英语字帖,数独游戏,AI口算出题,口算学习报告",
+  keywords: "练学宝,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷",
   openGraph: {
     title: "练学宝 - 儿童中文学习网站|免费小学教学工具|数学练习卷|字帖|口算",
     description: "练学宝是优质的儿童中文学习网站，提供拼音学习、识字卡片、古诗词默写、字帖生成器等中文学习工具，以及数学练习卷、口算速练等10+款免费小学教学工具，支持PDF导出打印，无需注册即开即用。",
@@ -62,6 +62,7 @@ export const metadata: Metadata = {
     canonical: "https://www.skillxm.cn/",
     languages: {
       "zh-CN": "https://www.skillxm.cn/",
+      "en": "https://www.skillxm.cn/en/",
       "x-default": "https://www.skillxm.cn/",
     },
   },
@@ -165,8 +166,8 @@ export default async function RootLayout({
       },
       {
         "@type": "Person",
-        "@id": "https://www.skillxm.cn/#person-linyuan",
-        name: "林远",
+        "@id": "https://www.skillxm.cn/#person-chenlaoshi",
+        name: "陈老师",
         description: "练学宝创始人，具备教育技术和全栈开发双重背景。两个孩子的父亲，持续关注小学教育技术领域，致力于为家长和老师提供免费优质的教育资源。",
         jobTitle: "教育内容作者",
         sameAs: [
@@ -245,8 +246,9 @@ export default async function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="format-detection" content="telephone=no" />
 
-        {/* hreflang: 单语言站点，仅声明 zh-CN + x-default */}
+        {/* hreflang: 多语言站点，声明 zh-CN、en、x-default */}
         <link rel="alternate" hrefLang="zh-CN" href="https://www.skillxm.cn/" />
+        <link rel="alternate" hrefLang="en" href="https://www.skillxm.cn/en/" />
         <link rel="alternate" hrefLang="x-default" href="https://www.skillxm.cn/" />
 
         {/* 动态设置 html lang 属性（根据 URL 路径） */}

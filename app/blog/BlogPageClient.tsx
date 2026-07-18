@@ -176,9 +176,9 @@ export default function BlogPageClient({
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-[10px] font-bold">
-                    {(article.authorName || '林').charAt(0)}
+                    {(article.authorName || '陈').charAt(0)}
                   </div>
-                  <span className="text-gray-500 text-xs">{article.authorName || '林远'}</span>
+                  <span className="text-gray-500 text-xs">{article.authorName || '陈老师'}</span>
                   <time className="text-gray-500 text-xs">{article.date}</time>
                 </div>
                 <span className="text-gray-400 group-hover:text-blue-400 group-hover:translate-x-1 transition-all">

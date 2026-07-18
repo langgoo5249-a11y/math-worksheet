@@ -124,7 +124,7 @@ export default function ToolPageSchema({ toolPath }: ToolPageSchemaProps) {
           '@id': 'https://www.skillxm.cn/#organization',
         },
         author: {
-          '@id': 'https://www.skillxm.cn/#person-linyuan',
+          '@id': 'https://www.skillxm.cn/#person-chenlaoshi',
         },
         isAccessibleForFree: true,
         educationalUse: ['练习', '家庭作业', '课堂辅助', '自学'],
