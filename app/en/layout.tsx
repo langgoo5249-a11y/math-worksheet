@@ -77,8 +77,109 @@ export default function EnLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const enSchemaOrg = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.skillxm.cn/en/#website",
+        name: "SkillXM - Learn Chinese Free",
+        url: "https://www.skillxm.cn/en/",
+        description:
+          "Free online tools to learn Chinese (Mandarin): pinyin converter, stroke order practice, HSK flashcards, tone trainer, graded reader, radical explorer, picture learning, and pinyin chart. No registration required.",
+        inLanguage: "en",
+        dateModified: "2026-07-18",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: "https://www.skillxm.cn/en/?q={search_term_string}",
+          "query-input": "required name=search_term_string",
+        },
+        publisher: {
+          "@id": "https://www.skillxm.cn/#organization",
+        },
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.skillxm.cn/en/#organization-en",
+        name: "SkillXM",
+        url: "https://www.skillxm.cn/en/",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://www.skillxm.cn/favicon.svg",
+          width: 512,
+          height: 512,
+        },
+        description:
+          "SkillXM provides free online tools for learning Chinese (Mandarin). Pinyin converter, stroke order, HSK flashcards, tone trainer, picture learning, pinyin chart, graded reader, and radical explorer — all free, no registration.",
+        foundingDate: "2025-12-01",
+        knowsAbout: [
+          "Chinese language learning",
+          "Mandarin Chinese",
+          "Pinyin",
+          "HSK exam preparation",
+          "Chinese characters",
+          "Stroke order",
+          "Chinese tones",
+          "Chinese radicals",
+          "Online education",
+          "Language learning tools",
+        ],
+        sameAs: [
+          "https://github.com/jm6-lang/math-worksheet",
+          "https://www.skillxm.cn/en/",
+          "https://www.skillxm.cn/",
+        ],
+        contactPoint: {
+          "@type": "ContactPoint",
+          email: "lang@skillxm.cn",
+          contactType: "customer support",
+          availableLanguage: ["English", "Chinese", "Japanese", "Korean"],
+        },
+        areaServed: {
+          "@type": "Country",
+          name: "Worldwide",
+        },
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.skillxm.cn/en/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is SkillXM?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SkillXM is a free online platform for learning Chinese (Mandarin). It provides 8 interactive tools including pinyin converter, stroke order practice, HSK flashcards, tone trainer, picture learning, pinyin chart, graded reader, and radical explorer. No registration required, completely free to use."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are the tools free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, all SkillXM tools are completely free. There are no paywalls, no premium tiers, and no registration required. You can access all 8 Chinese learning tools — pinyin converter, stroke order, HSK flashcards, tone trainer, picture learning, pinyin chart, reading reader, and radical explorer — without paying anything."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What HSK levels does SkillXM cover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SkillXM covers HSK 1 through HSK 6, supporting learners from absolute beginner (HSK 1, 150 words) to advanced proficiency (HSK 6, 5,000+ words). Our HSK flashcards provide vocabulary by level, the reading reader offers graded passages, and the pinyin chart and tone trainer build the pronunciation foundation needed at every level."
+            }
+          }
+        ]
+      },
+    ],
+  };
+
   return (
     <>
+      {/* JSON-LD structured data for English pages */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(enSchemaOrg) }}
+      />
       {/* Decorative top band */}
       <div
         aria-hidden="true"

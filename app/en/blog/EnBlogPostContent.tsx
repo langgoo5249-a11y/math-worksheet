@@ -195,10 +195,63 @@ export default function EnBlogPostContent({ article, relatedArticles }: EnBlogPo
                     <p className="text-xs text-[#F5F0E8]/60 leading-relaxed">
                       {article.author.bio}
                     </p>
+                    {article.author.credentials && (
+                      <p className="text-xs text-[#F5F0E8]/50 leading-relaxed mt-1 italic">
+                        {article.author.credentials}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
             )}
+
+            {/* Editorial declaration — E-E-A-T signals */}
+            <div className="mt-6 p-5 rounded-xl border border-[#D4AF37]/20" style={{ background: 'rgba(60,10,10,0.4)' }}>
+              <h3 className="text-sm font-bold text-[#FFD700] mb-3 tracking-[0.2em] uppercase">
+                Editorial Review
+              </h3>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-[#F5F0E8]/60">
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[#D4AF37]">&#10003;</span>
+                  <span>Content reviewed by Chen Laoshi (certified instructor)</span>
+                </div>
+                {article.dateReviewed && (
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[#D4AF37]">&#10003;</span>
+                    <span>Reviewed: {article.dateReviewed}</span>
+                  </div>
+                )}
+                {article.hasExclusiveContent && (
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[#FFD700]">&#9670;</span>
+                    <span>Contains exclusive content</span>
+                  </div>
+                )}
+                {article.exclusiveContentTypes && article.exclusiveContentTypes.length > 0 && (
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[#FFD700]">&#9670;</span>
+                    <span>{article.exclusiveContentTypes.join(' / ')}</span>
+                  </div>
+                )}
+                {article.dateModified && article.dateModified !== article.date && (
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[#D4AF37]">&#8635;</span>
+                    <span>Last updated: {article.dateModified}</span>
+                  </div>
+                )}
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[#FFD700]">&#9873;</span>
+                  <span>SkillXM Editorial Team</span>
+                </div>
+                <Link
+                  href="/editorial-policy/"
+                  className="flex items-center gap-1.5 hover:text-[#FFD700] transition-colors ml-auto"
+                >
+                  <span className="text-[#D4AF37]">&#128203;</span>
+                  <span>Editorial Policy</span>
+                </Link>
+              </div>
+            </div>
           </article>
 
           {/* ===== Sidebar ===== */}

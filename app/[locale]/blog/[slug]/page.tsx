@@ -10,7 +10,10 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
-  return articles.map(a => ({ slug: a.id }));
+  // 仅生成中文版本（zh）的静态页面。
+  // 英文博客由 app/en/blog/[slug]/page.tsx 独立处理，拥有独立的数据源和设计。
+  // 日文/韩文版本暂不生成，避免生成大量 404 页面浪费抓取预算。
+  return articles.map(a => ({ slug: a.id, locale: 'zh' as const }));
 }
 
 // 为每篇文章生成独特的og:image

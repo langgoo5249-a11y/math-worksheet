@@ -47,8 +47,10 @@ interface PageProps {
 }
 
 export function generateStaticParams() {
+  // 仅生成中文版本（zh）的分类静态页面
   return categoryList.map((category) => ({
     category: category,
+    locale: 'zh' as const,
   }));
 }
 

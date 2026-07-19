@@ -94,6 +94,7 @@ export default async function EnBlogPostPage({
         url: `https://www.skillxm.cn/en/blog/${slug}/`,
         datePublished: article.date,
         dateModified: article.dateModified || article.date,
+        ...(article.dateReviewed && { dateReviewed: article.dateReviewed }),
         author: {
           '@type': 'Person',
           name: article.author?.name || 'Lin Yuan',
@@ -104,6 +105,7 @@ export default async function EnBlogPostPage({
           '@type': 'Organization',
           name: 'SkillXM',
           url: 'https://www.skillxm.cn/',
+          publishingPrinciples: 'https://www.skillxm.cn/editorial-policy/',
         },
         inLanguage: 'en',
         keywords: article.keywords?.join(', '),
@@ -176,6 +178,18 @@ export default async function EnBlogPostPage({
             <span className="text-[#F5F0E8]/40 text-sm">{article.date}</span>
             <span className="text-[#F5F0E8]/40 text-sm">·</span>
             <span className="text-[#F5F0E8]/40 text-sm">{article.readTime}</span>
+            {article.dateReviewed && (
+              <>
+                <span className="text-[#F5F0E8]/40 text-sm">·</span>
+                <span className="text-[#F5F0E8]/40 text-sm">Reviewed: {article.dateReviewed}</span>
+              </>
+            )}
+            {article.hasExclusiveContent && (
+              <>
+                <span className="text-[#F5F0E8]/40 text-sm">·</span>
+                <span className="text-[#FFD700] text-sm">&#9670; Exclusive Content</span>
+              </>
+            )}
           </div>
           <h1 className="text-3xl sm:text-4xl font-black text-[#F5F0E8] tracking-tight mb-4 leading-tight">
             {article.title}
@@ -243,6 +257,12 @@ export default async function EnBlogPostPage({
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-medium text-[#FFD700] border border-[#D4AF37]/50 hover:bg-[#D4AF37]/10 transition-colors"
             >
               Free Tools
+            </Link>
+            <Link
+              href="/editorial-policy/"
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full font-medium text-[#FFD700] border border-[#D4AF37]/50 hover:bg-[#D4AF37]/10 transition-colors"
+            >
+              Editorial Policy
             </Link>
           </div>
         </div>

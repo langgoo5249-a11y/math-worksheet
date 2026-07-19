@@ -112,7 +112,7 @@ export default async function RootLayout({
         url: "https://www.skillxm.cn/",
         description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
         inLanguage: "zh-CN",
-        dateModified: "2026-07-10",
+        dateModified: "2026-07-18",
         potentialAction: {
           "@type": "SearchAction",
           target: "https://www.skillxm.cn/search?q={search_term_string}",
@@ -157,6 +157,22 @@ export default async function RootLayout({
           "https://author.baidu.com/home?from=bjh_article&app_id=1810332299795975",
         ],
         foundingDate: "2025-12-01",
+        knowsAbout: [
+          "小学教育",
+          "在线教育工具",
+          "数学练习卷",
+          "字帖生成",
+          "口算练习",
+          "拼音学习",
+          "识字卡片",
+          "古诗词默写",
+          "中文学习",
+          "教育技术",
+          "英语书写",
+          "数独游戏",
+          "单元测试",
+          "作文写作",
+        ],
         contactPoint: {
           "@type": "ContactPoint",
           email: "lang@skillxm.cn",
@@ -215,6 +231,36 @@ export default async function RootLayout({
         "cssSelector": [
           "h1",
           ".sr-only"
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.skillxm.cn/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "练学宝是什么？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "练学宝是免费的在线小学教育工具平台，提供数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写等10+款教学工具，支持手机在线练习和PDF打印，无需注册即开即用。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "练学宝的工具是否免费？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "是的，练学宝所有工具完全免费，无需注册即可使用。包括数学练习卷、字帖、口算、拼音、识字卡片、古诗词默写、作文模板等全部工具均可免费使用。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "练学宝适合哪个年级的学生？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "练学宝工具覆盖小学1-6年级，数学练习卷支持按年级、教材版本、知识点灵活组卷，字帖支持拼音、笔顺、汉字多种模式，适合不同年级学生的学习需求。"
+            }
+          }
         ]
       },
     ],

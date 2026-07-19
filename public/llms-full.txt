@@ -1,5 +1,5 @@
 # 练学宝 (skillxm.cn) — 完整站点内容索引
-> 最后更新：2026-07-09
+> 最后更新：2026-07-18
 > 本文件为 AI 模型（LLM）提供站点结构概览，便于内容发现与索引。
 
 ## 站点简介
@@ -14,6 +14,50 @@
 | 知识分享 | https://www.skillxm.cn/blog/ | 教育干货文章 |
 | 关于我们 | https://www.skillxm.cn/about/ | 团队介绍与权威来源 |
 | 联系我们 | https://www.skillxm.cn/contact/ | 联系方式 |
+| 编辑政策 | https://www.skillxm.cn/editorial-policy/ | 内容编辑规范 |
+| 隐私政策 | https://www.skillxm.cn/privacy/ | 隐私保护说明 |
+| 服务条款 | https://www.skillxm.cn/terms/ | 使用条款 |
+| 每日一练 | https://www.skillxm.cn/daily/ | 每日练习推荐 |
+| 更新日志 | https://www.skillxm.cn/changelog/ | 站点更新记录 |
+| 站点搜索 | https://www.skillxm.cn/search/ | 全站搜索 |
+| 站点地图 | https://www.skillxm.cn/sitemap/ | 站点地图页面 |
+
+## 按年级浏览
+| 年级 | URL |
+|------|-----|
+| 一年级 | https://www.skillxm.cn/grade/1/ |
+| 二年级 | https://www.skillxm.cn/grade/2/ |
+| 三年级 | https://www.skillxm.cn/grade/3/ |
+| 四年级 | https://www.skillxm.cn/grade/4/ |
+| 五年级 | https://www.skillxm.cn/grade/5/ |
+| 六年级 | https://www.skillxm.cn/grade/6/ |
+
+## 按教材版本浏览
+| 版本 | URL |
+|------|-----|
+| 人教版 | https://www.skillxm.cn/textbook/renjiao/ |
+| 北师大版 | https://www.skillxm.cn/textbook/beishida/ |
+| 苏教版 | https://www.skillxm.cn/textbook/sujiao/ |
+
+## 博客分类
+| 分类 | URL |
+|------|-----|
+| 全部文章 | https://www.skillxm.cn/blog/ |
+| 数学学习 | https://www.skillxm.cn/blog/category/math/ |
+| 语文学习 | https://www.skillxm.cn/blog/category/chinese/ |
+| 英语学习 | https://www.skillxm.cn/blog/category/english/ |
+| 学习方法 | https://www.skillxm.cn/blog/category/study-methods/ |
+| 思维训练 | https://www.skillxm.cn/blog/category/thinking/ |
+| 升学指导 | https://www.skillxm.cn/blog/category/exam-prep/ |
+| 工具教程 | https://www.skillxm.cn/blog/category/tool-tutorials/ |
+| 综合教育 | https://www.skillxm.cn/blog/category/general/ |
+
+## 知识分享与资源
+| 页面 | URL | 说明 |
+|------|-----|------|
+| 知识分享 | https://www.skillxm.cn/knowledge/ | 教育知识库 |
+| 家长指南 | https://www.skillxm.cn/parent-guide/ | 家庭教育指导 |
+| 学习资源 | https://www.skillxm.cn/resources/ | 精选学习资源推荐 |
 
 ## 在线工具
 - **口算速练**: 在线口算练习工具，支持加减乘除混合运算，自动计时批改，适合1-6年级小学生每日练习 — https://www.skillxm.cn/tools/mental-math/
@@ -678,9 +722,37 @@
 - 摘要: 暑假数学退步不是错觉，NWEA追踪百万学生数据证实暑期学习滑坡真实存在。每天只需15分钟精准练习，就能有效避免开学掉队。本文用真实研究数据+可操作的4个方法，帮家长科学应对暑假数学退步。
 
 
+## 英文版 (English)
+- 英文首页: https://www.skillxm.cn/en/
+- 英文工具页: https://www.skillxm.cn/en/tools/
+- 英文博客: https://www.skillxm.cn/en/blog/
+- 拼音转换器: https://www.skillxm.cn/en/tools/pinyin-converter/
+- 拼音图表: https://www.skillxm.cn/en/tools/pinyin-chart/
+- 笔顺练习: https://www.skillxm.cn/en/tools/stroke-order/
+- HSK词汇卡: https://www.skillxm.cn/en/tools/hsk-flashcards/
+- 声调训练: https://www.skillxm.cn/en/tools/tone-trainer/
+- 看图学中文: https://www.skillxm.cn/en/tools/picture-learning/
+- 中文阅读器: https://www.skillxm.cn/en/tools/reading-reader/
+- 部首探索: https://www.skillxm.cn/en/tools/radical-explorer/
+- 英文博客文章 (5篇) — 涵盖中文入门、声调训练、HSK备考、汉字学习、免费资源推荐
+
+## 站点地图摘要
+- 中文主页: https://www.skillxm.cn/
+- 英文主页: https://www.skillxm.cn/en/
+- 工具: 10个中文教学工具 + 8个英文学习工具
+- 博客: 108篇中文文章 + 5篇英文文章
+- 年级导航: 1-6年级分年级内容
+- 教材版本: 人教版、北师大版、苏教版
+- 知识分享: 教育知识库、家长指南、学习资源
+- 其他: 关于、联系、编辑政策、隐私、条款、每日一练、更新日志
+- 站点地图: https://www.skillxm.cn/sitemap.xml
+- LLMs索引: https://www.skillxm.cn/llms.txt (中文) / https://www.skillxm.cn/llms-en.txt (英文)
+
 ## 站点评级
 - 内容原创性: 高（所有文章由教育团队原创撰写）
 - 权威性: 高（引用教育部文件、学术研究、一线教师经验）
 - AI声明: ai-assisted（AI辅助写作，人工审核发布）
 - 更新频率: 每周
 - 适用学段: 小学1-6年级
+- 内容审核: 全部文章经过人工审核，确保信息准确性和教育价值
+- 编辑政策: https://www.skillxm.cn/editorial-policy/

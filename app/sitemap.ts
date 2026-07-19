@@ -14,8 +14,8 @@ export const dynamic = 'force-static';
 const BASE_URL = 'https://www.skillxm.cn';
 
 // 站点级固定更新日期（用于没有独立更新时间的静态页）
-// 2026-07-09: 更新至最新部署日期，确保 Google 能正确识别页面新鲜度
-const SITE_LASTMOD = '2026-07-10';
+// 2026-07-18: 更新至最新部署日期，确保 Google 能正确识别页面新鲜度
+const SITE_LASTMOD = '2026-07-18';
 
 // =====================================================================
 // Sitemap 配置说明
@@ -34,6 +34,10 @@ const SITE_LASTMOD = '2026-07-10';
 //     1) 教材详情页 URL 改为 /textbook/{version}/grade-{grade}/，与真实路由一致
 //     2) 不再把当天日期作为所有页面 lastModified，只有博客文章使用真实发布日期，
 //        其余无明确更新时间的页面要么使用固定站点日期，要么省略 lastModified
+//   - 2026-07-18 修复：
+//     1) 移除中文博客文章的 en hreflang alternate（英文博客是独立内容，不是中文翻译版）
+//     2) 为英文页面添加独立的 en hreflang，zh-CN/x-default 指向根路径对应页面
+//     3) 添加 /editorial-policy/ 页面到站点地图
 // =====================================================================
 
 // URL slug 安全校验：仅允许 ASCII 字母、数字、连字符和下划线
@@ -50,7 +54,9 @@ type SitemapEntryOptions = {
   priority: number;
 };
 
-function makeEntry(
+// 中文页面条目：仅包含 zh-CN 和 x-default hreflang
+// 英文博客是独立内容，不是中文博客的翻译版，因此不添加 en hreflang alternate
+function makeZhEntry(
   path: string,
   options: SitemapEntryOptions
 ): MetadataRoute.Sitemap[number] {
@@ -62,8 +68,33 @@ function makeEntry(
     alternates: {
       languages: {
         'zh-CN': url,
-        'en': url.replace('https://www.skillxm.cn/', 'https://www.skillxm.cn/en/'),
         'x-default': url,
+      },
+    },
+  };
+  if (options.lastModified) {
+    entry.lastModified = options.lastModified;
+  }
+  return entry;
+}
+
+// 英文页面条目：包含 en hreflang（指向自身），zh-CN/x-default 指向根路径对应页面
+function makeEnEntry(
+  path: string,
+  zhFallbackPath: string,
+  options: SitemapEntryOptions
+): MetadataRoute.Sitemap[number] {
+  const url = `${BASE_URL}${path}`;
+  const zhUrl = `${BASE_URL}${zhFallbackPath}`;
+  const entry: MetadataRoute.Sitemap[number] = {
+    url,
+    changeFrequency: options.changeFrequency,
+    priority: options.priority,
+    alternates: {
+      languages: {
+        'en': url,
+        'zh-CN': zhUrl,
+        'x-default': zhUrl,
       },
     },
   };
@@ -77,7 +108,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const sitemapEntries: MetadataRoute.Sitemap = [];
 
   // ========== 首页 ==========
-  sitemapEntries.push(makeEntry('/', {
+  sitemapEntries.push(makeZhEntry('/', {
     lastModified: SITE_LASTMOD,
     changeFrequency: 'daily',
     priority: 1.0,
@@ -89,9 +120,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/contact/', priority: 0.4, freq: 'monthly', lastmod: SITE_LASTMOD },
     { path: '/terms/', priority: 0.3, freq: 'yearly', lastmod: SITE_LASTMOD },
     { path: '/privacy/', priority: 0.3, freq: 'yearly', lastmod: SITE_LASTMOD },
+    { path: '/editorial-policy/', priority: 0.4, freq: 'monthly', lastmod: SITE_LASTMOD },
   ];
   staticPages.forEach(({ path, priority, freq, lastmod }) => {
-    sitemapEntries.push(makeEntry(path, {
+    sitemapEntries.push(makeZhEntry(path, {
       lastModified: lastmod,
       changeFrequency: freq,
       priority,
@@ -99,14 +131,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // ========== 博客首页 ==========
-  sitemapEntries.push(makeEntry('/blog/', {
+  sitemapEntries.push(makeZhEntry('/blog/', {
     lastModified: SITE_LASTMOD,
     changeFrequency: 'daily',
     priority: 0.9,
   }));
 
   // ========== 工具聚合页 ==========
-  sitemapEntries.push(makeEntry('/tools/', {
+  sitemapEntries.push(makeZhEntry('/tools/', {
     lastModified: SITE_LASTMOD,
     changeFrequency: 'weekly',
     priority: 0.85,
@@ -114,7 +146,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ========== 工具页面 ==========
   TOOLS.filter(t => t.active).forEach(tool => {
-    sitemapEntries.push(makeEntry(tool.path + '/', {
+    sitemapEntries.push(makeZhEntry(tool.path + '/', {
       lastModified: SITE_LASTMOD,
       changeFrequency: tool.changefreq || 'weekly',
       priority: tool.priority || 0.8,
@@ -131,7 +163,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       return true;
     })
     .forEach(article => {
-      sitemapEntries.push(makeEntry(`/blog/${article.id}/`, {
+      sitemapEntries.push(makeZhEntry(`/blog/${article.id}/`, {
         lastModified: article.date,
         changeFrequency: 'monthly',
         priority: 0.7,
@@ -142,7 +174,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   categories
     .filter(c => c !== '全部' && isValidUrlSlug(c))
     .forEach(cat => {
-      sitemapEntries.push(makeEntry(`/blog/category/${cat}/`, {
+      sitemapEntries.push(makeZhEntry(`/blog/category/${cat}/`, {
         lastModified: SITE_LASTMOD,
         changeFrequency: 'weekly',
         priority: 0.8,
@@ -160,7 +192,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/changelog/', priority: 0.4, freq: 'monthly' },
   ];
   aggregatePages.forEach(({ path, priority, freq }) => {
-    sitemapEntries.push(makeEntry(path, {
+    sitemapEntries.push(makeZhEntry(path, {
       lastModified: SITE_LASTMOD,
       changeFrequency: freq,
       priority,
@@ -169,7 +201,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ========== 年级详情页 ==========
   GRADES.forEach(g => {
-    sitemapEntries.push(makeEntry(`/grade/grade-${g.grade}/`, {
+    sitemapEntries.push(makeZhEntry(`/grade/grade-${g.grade}/`, {
       lastModified: SITE_LASTMOD,
       changeFrequency: 'weekly',
       priority: 0.8,
@@ -179,7 +211,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // ========== 教材详情页（URL 与 generateStaticParams 保持一致）==========
   TEXTBOOKS.forEach(tb => {
     tb.grades.forEach(g => {
-      sitemapEntries.push(makeEntry(`/textbook/${tb.id}/grade-${g.grade}/`, {
+      sitemapEntries.push(makeZhEntry(`/textbook/${tb.id}/grade-${g.grade}/`, {
         lastModified: SITE_LASTMOD,
         changeFrequency: 'weekly',
         priority: 0.8,
@@ -189,7 +221,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ========== 知识点详情页 ==========
   KNOWLEDGE_POINTS.forEach(kp => {
-    sitemapEntries.push(makeEntry(`/knowledge/${kp.slug}/`, {
+    sitemapEntries.push(makeZhEntry(`/knowledge/${kp.slug}/`, {
       lastModified: SITE_LASTMOD,
       changeFrequency: 'monthly',
       priority: 0.75,
@@ -198,7 +230,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ========== 资源详情页 ==========
   getAllResources().forEach(r => {
-    sitemapEntries.push(makeEntry(`/resources/${r.id}/`, {
+    sitemapEntries.push(makeZhEntry(`/resources/${r.id}/`, {
       lastModified: SITE_LASTMOD,
       changeFrequency: 'monthly',
       priority: 0.75,
@@ -207,7 +239,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ========== 家长指导详情页 ==========
   PARENT_GUIDE_TOPICS.forEach(t => {
-    sitemapEntries.push(makeEntry(`/parent-guide/${t.id}/`, {
+    sitemapEntries.push(makeZhEntry(`/parent-guide/${t.id}/`, {
       lastModified: SITE_LASTMOD,
       changeFrequency: 'monthly',
       priority: 0.7,
@@ -215,7 +247,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   // ========== AI 搜索引擎优化概览页 ==========
-  sitemapEntries.push(makeEntry('/ai-overview/', {
+  sitemapEntries.push(makeZhEntry('/ai-overview/', {
     lastModified: SITE_LASTMOD,
     changeFrequency: 'weekly',
     priority: 0.9,
@@ -223,30 +255,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // ========== 英文版页面（教外国人学中文）==========
   // /en/ 已有独立内容，不再 301 重定向
-  const enPages: Array<{ path: string; priority: number; freq: SitemapEntryOptions['changeFrequency'] }> = [
-    { path: '/en/', priority: 0.9, freq: 'weekly' },
-    { path: '/en/tools/', priority: 0.85, freq: 'weekly' },
-    { path: '/en/tools/pinyin-converter/', priority: 0.8, freq: 'weekly' },
-    { path: '/en/tools/stroke-order/', priority: 0.8, freq: 'monthly' },
-    { path: '/en/tools/hsk-flashcards/', priority: 0.8, freq: 'weekly' },
-    { path: '/en/tools/tone-trainer/', priority: 0.8, freq: 'monthly' },
-    { path: '/en/tools/reading-reader/', priority: 0.8, freq: 'monthly' },
-    { path: '/en/tools/radical-explorer/', priority: 0.8, freq: 'monthly' },
-    { path: '/en/tools/picture-learning/', priority: 0.8, freq: 'weekly' },
-    { path: '/en/tools/pinyin-chart/', priority: 0.85, freq: 'weekly' },
-    { path: '/en/blog/', priority: 0.85, freq: 'weekly' },
+  // 英文页面使用 makeEnEntry：en hreflang 指向自身，zh-CN/x-default 指向根路径对应页面
+  // 英文工具页面无中文对应页，zh-CN/x-default 回退到 /tools/ 聚合页
+  const enPages: Array<{ path: string; zhFallback: string; priority: number; freq: SitemapEntryOptions['changeFrequency'] }> = [
+    { path: '/en/', zhFallback: '/', priority: 0.9, freq: 'weekly' },
+    { path: '/en/tools/', zhFallback: '/tools/', priority: 0.85, freq: 'weekly' },
+    { path: '/en/tools/pinyin-converter/', zhFallback: '/tools/', priority: 0.8, freq: 'weekly' },
+    { path: '/en/tools/stroke-order/', zhFallback: '/tools/', priority: 0.8, freq: 'monthly' },
+    { path: '/en/tools/hsk-flashcards/', zhFallback: '/tools/', priority: 0.8, freq: 'weekly' },
+    { path: '/en/tools/tone-trainer/', zhFallback: '/tools/', priority: 0.8, freq: 'monthly' },
+    { path: '/en/tools/reading-reader/', zhFallback: '/tools/', priority: 0.8, freq: 'monthly' },
+    { path: '/en/tools/radical-explorer/', zhFallback: '/tools/', priority: 0.8, freq: 'monthly' },
+    { path: '/en/tools/picture-learning/', zhFallback: '/tools/', priority: 0.8, freq: 'weekly' },
+    { path: '/en/tools/pinyin-chart/', zhFallback: '/tools/', priority: 0.85, freq: 'weekly' },
+    { path: '/en/blog/', zhFallback: '/blog/', priority: 0.85, freq: 'weekly' },
   ];
-  enPages.forEach(({ path, priority, freq }) => {
-    sitemapEntries.push(makeEntry(path, {
+  enPages.forEach(({ path, zhFallback, priority, freq }) => {
+    sitemapEntries.push(makeEnEntry(path, zhFallback, {
       lastModified: SITE_LASTMOD,
       changeFrequency: freq,
       priority,
     }));
   });
 
-  // English blog articles
+  // English blog articles（独立内容，无中文对应文章，zh-CN/x-default 回退到 /blog/）
   enArticles.forEach((a) => {
-    sitemapEntries.push(makeEntry(`/en/blog/${a.id}/`, {
+    sitemapEntries.push(makeEnEntry(`/en/blog/${a.id}/`, '/blog/', {
       lastModified: a.dateModified || a.date,
       changeFrequency: 'monthly',
       priority: 0.7,

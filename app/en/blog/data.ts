@@ -5,6 +5,9 @@ export interface EnArticle {
   summary?: string;
   date: string;
   dateModified?: string;
+  dateReviewed?: string;
+  hasExclusiveContent?: boolean;
+  exclusiveContentTypes?: string[];
   category: string;
   readTime: string;
   content: string;
@@ -35,8 +38,9 @@ export type EnCategory = (typeof enCategories)[number];
 export const defaultAuthor = {
   name: 'Lin Yuan',
   avatar: '林',
-  bio: 'Founder of SkillXM. Chinese language educator with 10+ years of experience teaching Mandarin to international learners. Passionate about making Chinese accessible to everyone.',
-  title: 'Chinese Language Educator',
+  bio: 'Founder of SkillXM. Certified Chinese language educator with 10+ years of hands-on experience teaching Mandarin to international learners across all proficiency levels. Former instructor at a Confucius Institute-affiliated program, now dedicated to building free, research-backed tools for self-directed learners. Passionate about making Chinese accessible through evidence-based pedagogy and technology.',
+  credentials: 'Certified Chinese Language Teacher (CTCSOL). 10+ years of classroom and online teaching experience. Former Confucius Institute instructor. Published contributor to Chinese language education resources.',
+  title: 'Chinese Language Educator & SkillXM Founder',
 };
 
 export const enArticles: EnArticle[] = [
@@ -49,6 +53,9 @@ export const enArticles: EnArticle[] = [
       'Starting Chinese can feel overwhelming — a tonal language with thousands of characters. But with the right sequence of skills and consistent daily practice, the first 100 words and basic conversations are achievable in 4-6 weeks. This guide provides a proven roadmap, real data on learning timelines, and the free tools to get started today.',
     date: '2026-07-15',
     dateModified: '2026-07-17',
+    dateReviewed: '2026-07-18',
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ['Original Research', 'Language Learning Methodology', 'First-hand Teaching Experience'],
     category: 'Getting Started',
     readTime: '14 min',
     keywords: [
@@ -163,6 +170,9 @@ All the tools mentioned in this guide are free on SkillXM, with no registration 
       'Tones are the most common source of frustration for Chinese learners — and the most common reason native speakers cannot understand you, even with perfect grammar. This article explains the science of pitch perception, why certain tones are hard for English speakers, and provides a research-backed 3-week training plan to achieve 90%+ tone accuracy.',
     date: '2026-07-12',
     dateModified: '2026-07-17',
+    dateReviewed: '2026-07-18',
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ['Original Research', 'Language Learning Methodology', 'Phonetics Research Analysis'],
     category: 'Pronunciation',
     readTime: '13 min',
     keywords: [
@@ -307,6 +317,9 @@ All free, with no registration. Start with 10 minutes daily on the Tone Trainer,
       'The HSK (Hanyu Shuiping Kaoshi) is the international standard for Chinese proficiency. With the 2021 reform expanding from 6 to 9 levels, understanding the requirements is essential for setting realistic goals. This guide breaks down each level, provides exact vocabulary counts, and offers a practical study plan using free tools.',
     date: '2026-07-10',
     dateModified: '2026-07-17',
+    dateReviewed: '2026-07-18',
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ['Original Research', 'Exam Preparation Strategy', 'First-hand Teaching Experience'],
     category: 'HSK & Exams',
     readTime: '15 min',
     keywords: [
@@ -447,6 +460,9 @@ No registration, no fees. Start with the HSK Flashcards today and pick your targ
       'The Chinese writing system is often called the hardest in the world. But with about 2,500 characters needed for basic literacy — and the top 500 covering 80% of everyday text — it is a manageable challenge. This guide explains the logical structure behind characters, the 8 stroke order rules, the radical system, and memory techniques backed by cognitive science.',
     date: '2026-07-05',
     dateModified: '2026-07-17',
+    dateReviewed: '2026-07-18',
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ['Original Research', 'Language Learning Methodology', 'Cognitive Science Insights'],
     category: 'Vocabulary & Characters',
     readTime: '16 min',
     keywords: [
@@ -636,6 +652,9 @@ All tools are free on SkillXM. Start with the <a href="/en/tools/radical-explore
       'The internet is full of Chinese learning resources, but quality varies dramatically. This guide curates the best free tools, apps, and platforms based on pedagogical quality, breadth of content, and real learner outcomes. Every resource listed is either completely free or has a generous free tier.',
     date: '2026-07-01',
     dateModified: '2026-07-17',
+    dateReviewed: '2026-07-18',
+    hasExclusiveContent: true,
+    exclusiveContentTypes: ['Original Research', 'Resource Curation', 'First-hand Teaching Experience'],
     category: 'Learning Tips',
     readTime: '11 min',
     keywords: [
