@@ -55,9 +55,7 @@ export default function EnBlogPage() {
         url: 'https://www.skillxm.cn/en/blog/',
         inLanguage: 'en',
         publisher: {
-          '@type': 'Organization',
-          name: 'SkillXM',
-          url: 'https://www.skillxm.cn/',
+          '@id': 'https://www.skillxm.cn/#organization',
         },
         blogPost: sortedArticles.map((a) => ({
           '@type': 'BlogPosting',
@@ -67,8 +65,7 @@ export default function EnBlogPage() {
           datePublished: a.date,
           dateModified: a.dateModified || a.date,
           author: {
-            '@type': 'Person',
-            name: a.author?.name || 'Lin Yuan',
+            '@id': 'https://www.skillxm.cn/#person-chenlaoshi',
           },
         })),
       },

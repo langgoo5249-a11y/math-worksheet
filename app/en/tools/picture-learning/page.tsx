@@ -103,6 +103,13 @@ export default function PictureLearningPage() {
           'Native Mandarin audio pronunciation',
           'Progress and score tracking',
         ],
+        provider: { '@id': 'https://www.skillxm.cn/#organization' },
+        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
+        educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
+        audience: {
+          '@type': 'EducationalAudience',
+          educationalRole: ['Student', 'Parent', 'Teacher'],
+        },
       },
       {
         '@type': 'BreadcrumbList',

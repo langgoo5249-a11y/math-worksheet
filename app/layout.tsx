@@ -191,10 +191,6 @@ export default async function RootLayout({
           "https://www.skillxm.cn/about/",
           "https://www.xiaohongshu.com/user/profile/6723c8e3000000001c02b1a8",
         ],
-        alumniOf: {
-          "@type": "Organization",
-          "name": "练学宝"
-        },
         knowsAbout: [
           "小学教育",
           "教育技术",

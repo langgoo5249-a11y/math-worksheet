@@ -38,6 +38,8 @@ export interface ToolConfig {
   changefreq: 'daily' | 'weekly' | 'monthly';
   /** 是否已上线 */
   active: boolean;
+  /** 适用年级，如 [1,2,3,4,5,6] */
+  grades: number[];
 }
 
 export const TOOLS: ToolConfig[] = [
@@ -55,6 +57,7 @@ export const TOOLS: ToolConfig[] = [
     priority: 0.9,
     changefreq: 'weekly',
     active: true,
+    grades: [1, 2, 3, 4, 5, 6],
   },
   {
     path: '/tools/unit-test',
@@ -70,6 +73,7 @@ export const TOOLS: ToolConfig[] = [
     priority: 0.9,
     changefreq: 'weekly',
     active: true,
+    grades: [1, 2, 3, 4, 5, 6],
   },
   {
     path: '/tools/math-worksheet',
@@ -85,6 +89,7 @@ export const TOOLS: ToolConfig[] = [
     priority: 0.9,
     changefreq: 'weekly',
     active: true,
+    grades: [1, 2, 3, 4, 5, 6],
   },
   {
     path: '/tools/calligraphy',
@@ -100,6 +105,7 @@ export const TOOLS: ToolConfig[] = [
     priority: 0.9,
     changefreq: 'weekly',
     active: true,
+    grades: [1, 2, 3, 4, 5, 6],
   },
   {
     path: '/tools/english-calligraphy',
@@ -115,6 +121,7 @@ export const TOOLS: ToolConfig[] = [
     priority: 0.9,
     changefreq: 'weekly',
     active: true,
+    grades: [3, 4, 5, 6],
   },
   {
     path: '/tools/sudoku',
@@ -126,10 +133,11 @@ export const TOOLS: ToolConfig[] = [
     color: 'orange',
     schemaName: '数独游戏',
     schemaDescription: '在线数独游戏，支持多个难度等级，数字键盘输入，适合各年龄段益智训练',
-    schemaCategory: 'GameApplication',
+    schemaCategory: 'EducationApplication',
     priority: 0.9,
     changefreq: 'weekly',
     active: true,
+    grades: [1, 2, 3, 4, 5, 6],
   },
   {
     path: '/tools/pinyin',
@@ -145,6 +153,7 @@ export const TOOLS: ToolConfig[] = [
     priority: 0.8,
     changefreq: 'weekly',
     active: true,
+    grades: [1, 2],
   },
   {
     path: '/tools/mental-math',
@@ -160,6 +169,7 @@ export const TOOLS: ToolConfig[] = [
     priority: 0.9,
     changefreq: 'weekly',
     active: true,
+    grades: [1, 2, 3, 4, 5, 6],
   },
   {
     path: '/tools/flashcards',
@@ -175,6 +185,7 @@ export const TOOLS: ToolConfig[] = [
     priority: 0.9,
     changefreq: 'weekly',
     active: true,
+    grades: [1, 2, 3],
   },
   {
     path: '/tools/writing-template',
@@ -190,6 +201,7 @@ export const TOOLS: ToolConfig[] = [
     priority: 0.9,
     changefreq: 'weekly',
     active: true,
+    grades: [1, 2, 3, 4, 5, 6],
   },
 ];
 

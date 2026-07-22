@@ -100,7 +100,7 @@ export default function EnLayout({
       },
       {
         "@type": "Organization",
-        "@id": "https://www.skillxm.cn/en/#organization-en",
+        "@id": "https://www.skillxm.cn/#organization",
         name: "SkillXM",
         url: "https://www.skillxm.cn/en/",
         logo: {
@@ -139,6 +139,20 @@ export default function EnLayout({
           "@type": "Country",
           name: "Worldwide",
         },
+      },
+      {
+        "@type": "Person",
+        "@id": "https://www.skillxm.cn/#person-chenlaoshi",
+        name: "Chen Laoshi",
+        description: "Founder of SkillXM, experienced Chinese language educator and full-stack developer.",
+        jobTitle: "Educational Content Author",
+        sameAs: [
+          "https://github.com/jm6-lang",
+          "https://www.skillxm.cn/about/"
+        ],
+        knowsAbout: ["Chinese Language Education", "HSK Preparation", "Chinese Character Writing", "Pinyin Instruction", "Educational Technology"],
+        affiliation: { "@id": "https://www.skillxm.cn/#organization" },
+        url: "https://www.skillxm.cn/about/"
       },
       {
         "@type": "FAQPage",

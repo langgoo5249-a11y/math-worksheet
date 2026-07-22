@@ -73,22 +73,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     "inLanguage": "zh-CN",
     "isAccessibleForFree": true,
     "author": {
-      "@type": "Person",
-      "name": article.author?.name || defaultAuthor.name,
-      "description": article.author?.credentials || article.author?.bio || defaultAuthor.bio,
-      "jobTitle": article.author?.title || defaultAuthor.title,
-      "url": "https://www.skillxm.cn/about/"
+      "@id": "https://www.skillxm.cn/#person-chenlaoshi"
     },
     "publisher": {
-      "@type": "Organization",
-      "name": "练学宝",
-      "url": "https://www.skillxm.cn/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.skillxm.cn/favicon.svg",
-        "width": 512,
-        "height": 512
-      }
+      "@id": "https://www.skillxm.cn/#organization"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
@@ -103,6 +91,19 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       "name": article.category,
       "description": article.description
     },
+    ...(article.definitions && article.definitions.length > 0 ? {
+      "mentions": article.definitions.map((def: { term: string; definition: string }) => ({
+        "@type": "DefinedTerm",
+        "name": def.term,
+        "description": def.definition,
+        "termCode": "skillxm-" + def.term,
+        "inDefinedTermSet": {
+          "@type": "DefinedTermSet",
+          "name": article.title + " | 核心概念",
+          "url": "https://www.skillxm.cn/blog/" + article.id + "/"
+        }
+      }))
+    } : {}),
     ...(article.citations && article.citations.length > 0 ? {
       "citation": article.citations.map(c => ({
         "@type": "CreativeWork",

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SectionLayout from '@/app/_components/SectionLayout';
 import { GRADES, getGradeConfig } from '@/lib/gradeConfig';
+import { KNOWLEDGE_POINTS } from '@/lib/knowledgeConfig';
 import { articles as blogPosts } from '@/app/blog/data';
 import { generateCourseSchema, generateOrganizationSchema } from '@/lib/seoUtils';
 
@@ -108,6 +109,15 @@ function generateSemesterPlan(config: ReturnType<typeof getGradeConfig>) {
         : ['寒假集中复习小升初重点', '下学期全力冲刺，每周至少2次模拟测试', '暑假做好小升初衔接准备'],
     },
   };
+}
+
+// 将年级知识点名称映射到知识点专题 slug
+function mapKnowledgePointToSlug(kpName: string): string | null {
+  const matched = KNOWLEDGE_POINTS.find((kp) => {
+    // 年级知识点名称包含知识点专题名称，或知识点专题名称包含年级知识点名称
+    return kpName.includes(kp.name) || kp.name.includes(kpName);
+  });
+  return matched ? `/knowledge/${matched.slug}/` : null;
 }
 
 export default async function GradePage({ params }: { params: Promise<{ grade: string }> }) {
@@ -271,15 +281,30 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
           🎯 {config.name}核心知识点清单
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          {config.knowledgePoints.map((kp) => (
-            <div
-              key={kp}
-              className="px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-slate-200 hover:border-blue-500/30 transition-colors"
-            >
-              <span className="text-blue-400 mr-2">▸</span>
-              {kp}
-            </div>
-          ))}
+          {config.knowledgePoints.map((kp) => {
+            const slug = mapKnowledgePointToSlug(kp);
+            if (slug) {
+              return (
+                <Link
+                  key={kp}
+                  href={slug}
+                  className="px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-slate-200 hover:border-blue-500/50 hover:bg-slate-700/50 transition-all"
+                >
+                  <span className="text-blue-400 mr-2">▸</span>
+                  {kp}
+                </Link>
+              );
+            }
+            return (
+              <div
+                key={kp}
+                className="px-4 py-3 bg-slate-800/50 border border-white/10 rounded-lg text-slate-200"
+              >
+                <span className="text-blue-400 mr-2">▸</span>
+                {kp}
+              </div>
+            );
+          })}
         </div>
       </section>
 

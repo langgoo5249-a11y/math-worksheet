@@ -103,6 +103,13 @@ export default function ReadingReaderPage() {
           'Free Chinese graded reader with pinyin and English translation. Includes a sample beginner passage, reading tips and graded level descriptions.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         isAccessibleForFree: true,
+        provider: { '@id': 'https://www.skillxm.cn/#organization' },
+        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
+        educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
+        audience: {
+          '@type': 'EducationalAudience',
+          educationalRole: ['Student', 'Parent', 'Teacher'],
+        },
       },
       {
         '@type': 'BreadcrumbList',

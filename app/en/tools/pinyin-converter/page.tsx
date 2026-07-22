@@ -71,6 +71,13 @@ export default function PinyinConverterPage() {
           'Free online pinyin converter. Paste Chinese text and instantly get pinyin with tone marks.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         isAccessibleForFree: true,
+        provider: { '@id': 'https://www.skillxm.cn/#organization' },
+        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
+        educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
+        audience: {
+          '@type': 'EducationalAudience',
+          educationalRole: ['Student', 'Parent', 'Teacher'],
+        },
       },
       {
         '@type': 'BreadcrumbList',

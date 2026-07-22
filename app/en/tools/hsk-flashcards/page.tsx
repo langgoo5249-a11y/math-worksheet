@@ -98,6 +98,13 @@ export default function HskFlashcardsPage() {
           'Free HSK 1-6 flashcards to practice Mandarin vocabulary with spaced repetition. Includes level descriptions, sample HSK 1 vocabulary and study tips.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         isAccessibleForFree: true,
+        provider: { '@id': 'https://www.skillxm.cn/#organization' },
+        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
+        educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
+        audience: {
+          '@type': 'EducationalAudience',
+          educationalRole: ['Student', 'Parent', 'Teacher'],
+        },
       },
       {
         '@type': 'BreadcrumbList',

@@ -40,6 +40,9 @@ const defaultCategoryColors: Record<string, string> = {
   '升学指导': 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30 hover:bg-yellow-500/30',
   '工具推荐': 'bg-teal-500/20 text-teal-300 border-teal-500/30 hover:bg-teal-500/30',
   '关于我们': 'bg-pink-500/20 text-pink-300 border-pink-500/30 hover:bg-pink-500/30',
+  '综合教育': 'bg-indigo-500/20 text-indigo-300 border-indigo-500/30 hover:bg-indigo-500/30',
+  '数学': 'bg-cyan-500/20 text-cyan-300 border-cyan-500/30 hover:bg-cyan-500/30',
+  '工具教程': 'bg-lime-500/20 text-lime-300 border-lime-500/30 hover:bg-lime-500/30',
 };
 
 export default function BlogPageClient({ 
@@ -127,9 +130,13 @@ export default function BlogPageClient({
         {/* Category Filter */}
         <div className="flex flex-wrap gap-2 mb-6">
           {categories.map((category) => (
-            <button
+            <a
               key={category}
-              onClick={() => handleCategoryChange(category)}
+              href={category === '全部' ? '/blog/' : `/blog/category/${encodeURIComponent(category)}/`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleCategoryChange(category);
+              }}
               className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
                 activeCategory === category
                   ? (categoryColors[category] || 'bg-white/20 text-white border-white/30')
@@ -137,7 +144,7 @@ export default function BlogPageClient({
               }`}
             >
               {category}
-            </button>
+            </a>
           ))}
         </div>
 
@@ -208,9 +215,13 @@ export default function BlogPageClient({
     return (
       <div className="flex flex-wrap gap-2 mb-6">
         {categories.map((category) => (
-          <button
+          <a
             key={category}
-            onClick={() => handleCategoryChange(category)}
+            href={category === '全部' ? '/blog/' : `/blog/category/${encodeURIComponent(category)}/`}
+            onClick={(e) => {
+              e.preventDefault();
+              handleCategoryChange(category);
+            }}
             className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
               activeCategory === category
                 ? (defaultCategoryColors[category] || 'bg-white/20 text-white border-white/30')
@@ -218,7 +229,7 @@ export default function BlogPageClient({
             }`}
           >
             {category}
-          </button>
+          </a>
         ))}
       </div>
     );

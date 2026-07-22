@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import SectionLayout from '@/app/_components/SectionLayout';
 import { KNOWLEDGE_POINTS, getKnowledgePoint } from '@/lib/knowledgeConfig';
+import { articles } from '@/app/blog/data';
 import {
   generateArticleSchema,
   generateLearningResourceSchema,
@@ -431,6 +432,56 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
           ))}
         </div>
       </section>
+
+      {/* 相关博客文章 */}
+      {(() => {
+        const relatedBlogs = articles
+          .filter((a) => {
+            const searchText = (a.title + ' ' + (a.keywords?.join(' ') || '') + ' ' + a.description).toLowerCase();
+            return searchText.includes(kp.name.toLowerCase());
+          })
+          .slice(0, 4);
+        if (relatedBlogs.length === 0) return null;
+        return (
+          <section className="mb-10">
+            <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
+              <span>📝</span>相关博客文章
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {relatedBlogs.map((post) => (
+                <Link
+                  key={post.id}
+                  href={`/blog/${post.id}/`}
+                  className="group flex items-start gap-3 p-4 bg-slate-800/50 hover:bg-slate-700/70 border border-white/10 hover:border-blue-500/50 rounded-xl transition-all"
+                >
+                  <div className="flex-1 min-w-0">
+                    <div className="text-xs text-slate-400 mb-1">
+                      {post.category} · {post.readTime}
+                    </div>
+                    <div className="font-medium text-white group-hover:text-blue-400 transition-colors line-clamp-2">
+                      {post.title}
+                    </div>
+                    <div className="text-sm text-slate-400 mt-1 line-clamp-2">
+                      {post.description}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <div className="mt-4 text-center">
+              <Link
+                href="/blog/"
+                className="inline-flex items-center gap-1.5 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+              >
+                查看更多学习方法
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </section>
+        );
+      })()}
 
       {/* FAQ - 帮助 AI 引擎抓取 */}
       <section className="mb-10 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">

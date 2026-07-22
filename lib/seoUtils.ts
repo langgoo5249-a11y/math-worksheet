@@ -61,9 +61,7 @@ export function generateCourseSchema(opts: {
     description: opts.description,
     url: ensureTrailingSlash(opts.url),
     provider: {
-      '@type': 'Organization',
-      name: opts.provider || SITE_NAME,
-      sameAs: `${BASE_URL}/`,
+      '@id': `${BASE_URL}/#organization`,
     },
     educationalLevel: opts.educationalLevel,
     teaches: opts.teaches,
@@ -103,18 +101,11 @@ export function generateArticleSchema(opts: {
       name: SITE_AUTHOR,
       url: `${BASE_URL}/about/`,
       affiliation: {
-        '@type': 'Organization',
-        name: SITE_NAME,
-        url: `${BASE_URL}/`,
+        '@id': `${BASE_URL}/#organization`,
       },
     },
     publisher: {
-      '@type': 'Organization',
-      name: SITE_NAME,
-      logo: {
-        '@type': 'ImageObject',
-        url: SITE_LOGO,
-      },
+      '@id': `${BASE_URL}/#organization`,
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -149,9 +140,7 @@ export function generateLearningResourceSchema(opts: {
     inLanguage: opts.inLanguage || 'zh-CN',
     isAccessibleForFree: opts.isAccessibleForFree !== false,
     provider: {
-      '@type': 'Organization',
-      name: SITE_NAME,
-      url: `${BASE_URL}/`,
+      '@id': `${BASE_URL}/#organization`,
     },
   };
 }
@@ -259,9 +248,7 @@ export function generatePersonSchema(opts: {
     url: opts.url ? ensureTrailingSlash(opts.url) : `${BASE_URL}/`,
     sameAs: opts.sameAs || [],
     affiliation: {
-      '@type': 'Organization',
-      name: SITE_NAME,
-      url: `${BASE_URL}/`,
+      '@id': `${BASE_URL}/#organization`,
     },
   };
 }

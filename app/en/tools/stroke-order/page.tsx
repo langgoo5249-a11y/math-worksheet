@@ -85,6 +85,13 @@ export default function StrokeOrderPage() {
           'Learn Chinese character stroke order with clear rules and examples: the 8 basic strokes, general stroke order rules, and common characters broken down stroke by stroke.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         isAccessibleForFree: true,
+        provider: { '@id': 'https://www.skillxm.cn/#organization' },
+        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
+        educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
+        audience: {
+          '@type': 'EducationalAudience',
+          educationalRole: ['Student', 'Parent', 'Teacher'],
+        },
       },
       {
         '@type': 'BreadcrumbList',

@@ -8,6 +8,7 @@ import { TEXTBOOKS } from '@/lib/textbookConfig';
 import { KNOWLEDGE_POINTS } from '@/lib/knowledgeConfig';
 import { PARENT_GUIDE_TOPICS, TOPIC_COLORS } from '@/lib/parentGuideConfig';
 import { getAllResources } from '@/lib/resourcesConfig';
+import HomeBlogSection from '@/app/_components/HomeBlogSection';
 
 // ============ 轮播图数据 ============
 const CAROUSEL_ITEMS = [
@@ -721,6 +722,9 @@ export default function HomePageClient() {
           </div>
         </div>
       </section>
+
+      {/* ===== 精选博客 ===== */}
+      <HomeBlogSection />
 
       {/* ===== 功能介绍卡片 ===== */}
       <section className="py-12 sm:py-16 px-4">

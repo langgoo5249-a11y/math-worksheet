@@ -38,9 +38,7 @@ export default function BlogLayout({
     "description": "小学数学语文英语学习方法文章集锦",
     "url": "https://www.skillxm.cn/blog",
     "publisher": {
-      "@type": "Organization",
-      "name": "练学宝",
-      "url": "https://www.skillxm.cn"
+      "@id": "https://www.skillxm.cn/#organization"
     }
   };
 

@@ -95,6 +95,26 @@ export default async function EnBlogPostPage({
         datePublished: article.date,
         dateModified: article.dateModified || article.date,
         ...(article.dateReviewed && { dateReviewed: article.dateReviewed }),
+        image: 'https://www.skillxm.cn/og-image.jpg',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': `https://www.skillxm.cn/en/blog/${slug}/`,
+        },
+        articleSection: article.category,
+        about: {
+          '@type': 'Thing',
+          name: article.category,
+          description: article.description,
+        },
+        speakable: {
+          '@type': 'SpeakableSpecification',
+          cssSelector: ['.summary', 'h2'],
+        },
+        isAccessibleForFree: true,
+        wordCount: article.content
+          ? (article.content.replace(/<[^>]*>/g, '').match(/\b\w+\b/g) || []).length
+          : 0,
+        license: 'https://www.skillxm.cn/',
         author: {
           '@type': 'Person',
           name: article.author?.name || 'Lin Yuan',

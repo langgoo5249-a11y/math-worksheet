@@ -322,6 +322,39 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           </div>
         </div>
 
+        {/* 相关工具与资源 */}
+        {article.category && (
+          <section className="mt-8 p-5 bg-slate-800/50 rounded-xl border border-white/10">
+            <h3 className="text-lg font-bold text-white mb-3">🔗 相关工具与资源</h3>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="/tools/"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-500/15 hover:bg-blue-500/25 border border-blue-500/30 hover:border-blue-500/50 rounded-lg text-sm text-blue-300 hover:text-blue-200 transition-colors"
+              >
+                全部工具
+              </a>
+              <a
+                href="/grade/"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/30 hover:border-purple-500/50 rounded-lg text-sm text-purple-300 hover:text-purple-200 transition-colors"
+              >
+                年级专区
+              </a>
+              <a
+                href="/knowledge/"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 hover:border-amber-500/50 rounded-lg text-sm text-amber-300 hover:text-amber-200 transition-colors"
+              >
+                知识点专题
+              </a>
+              <a
+                href={`/blog/category/${encodeURIComponent(article.category)}/`}
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-emerald-500/15 hover:bg-emerald-500/25 border border-emerald-500/30 hover:border-emerald-500/50 rounded-lg text-sm text-emerald-300 hover:text-emerald-200 transition-colors"
+              >
+                更多{article.category}文章
+              </a>
+            </div>
+          </section>
+        )}
+
         {/* 相关文章推荐 - 增强版 */}
         {relatedArticles.length > 0 && (
           <div className="mt-8 p-6 bg-slate-800/50 rounded-xl border border-white/10">
