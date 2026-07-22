@@ -70,6 +70,22 @@ export default function EnBlogPage() {
         })),
       },
       {
+        '@type': 'CollectionPage',
+        '@id': 'https://www.skillxm.cn/en/blog/#collection',
+        name: 'Chinese Learning Blog - Guides, Tips & Strategies | SkillXM',
+        url: 'https://www.skillxm.cn/en/blog/',
+        description:
+          'Free Chinese learning guides, tips, and strategies for Mandarin learners. Articles on pinyin, tones, HSK, characters, pronunciation, and the best free resources.',
+        inLanguage: 'en',
+        isPartOf: { '@id': 'https://www.skillxm.cn/en/#website' },
+        hasPart: sortedArticles.map((a) => ({
+          '@type': 'BlogPosting',
+          headline: a.title,
+          url: `https://www.skillxm.cn/en/blog/${a.id}/`,
+        })),
+        mainEntity: { '@id': 'https://www.skillxm.cn/en/blog/#blog' },
+      },
+      {
         '@type': 'BreadcrumbList',
         itemListElement: [
           {

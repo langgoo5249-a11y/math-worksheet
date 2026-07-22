@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import RadicalExplorer from './RadicalExplorer';
+import { enArticles } from '@/app/en/blog/data';
 
 export const metadata: Metadata = {
   title: 'Chinese Radical Explorer - Character Decomposition',
@@ -87,6 +88,12 @@ const decompositions = [
   { char: '钱', pinyin: 'qián', meaning: 'money', parts: [{ c: '钅', m: 'metal' }, { c: '戋', m: 'small (sound)' }], story: 'Coins are metal; 戋 hints at the sound.' },
   { char: '想', pinyin: 'xiǎng', meaning: 'to think', parts: [{ c: '相', m: 'mutual' }, { c: '心', m: 'heart' }], story: 'Thinking is something the heart does.' },
 ];
+
+const relatedArticleIds = [
+  'chinese-characters-demystifying-writing-system',
+  'how-to-start-learning-chinese-from-zero',
+];
+const relatedArticles = enArticles.filter((a) => relatedArticleIds.includes(a.id)).slice(0, 3);
 
 export default function RadicalExplorerPage() {
   const jsonLd = {
@@ -234,6 +241,40 @@ export default function RadicalExplorerPage() {
             {['Chinese radicals', 'Kangxi radicals', 'character decomposition', '部首', 'radical meanings', 'Chinese character components'].map((kw) => (
               <span key={kw} className="px-3 py-1 text-xs font-medium rounded-full border border-[#8B0000]/25 text-[#8B0000] bg-[#8B0000]/5">{kw}</span>
             ))}
+          </div>
+
+          {/* Related blog articles */}
+          <div className="mt-10 pt-8 border-t border-[#8B0000]/15">
+            <h3 className="text-lg font-bold text-[#1a1a1a] mb-4">Related Blog Articles</h3>
+            <div className="space-y-3">
+              {relatedArticles.map((article) => (
+                <Link
+                  key={article.id}
+                  href={`/en/blog/${article.id}/`}
+                  className="block group"
+                >
+                  <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-[#8B0000]/5 transition-colors">
+                    <span className="shrink-0 mt-0.5 text-[#C41E3A] text-sm" aria-hidden="true">
+                      &#128214;
+                    </span>
+                    <div>
+                      <p className="text-[#8B0000] font-semibold group-hover:underline text-sm leading-snug">
+                        {article.title}
+                      </p>
+                      <p className="text-[#1a1a1a]/55 text-xs mt-0.5 line-clamp-1">
+                        {article.description}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <Link
+              href="/en/blog/"
+              className="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-[#8B0000] hover:text-[#C41E3A] transition-colors"
+            >
+              View All Articles <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
         <div aria-hidden="true" className="absolute bottom-0 inset-x-0 h-1.5" style={{ background: 'linear-gradient(90deg, #8B0000 0%, #C41E3A 30%, #D4AF37 50%, #C41E3A 70%, #8B0000 100%)' }} />

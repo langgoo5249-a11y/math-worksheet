@@ -68,6 +68,8 @@ const EN_KEEP_BLOG_DIRS = [
   'hsk-guide-roadmap-to-chinese-fluency',
   'chinese-characters-demystifying-writing-system',
   'best-free-resources-learn-chinese-online',
+  'learn-800-chinese-characters-3-months-case-study',
+  'chinese-tones-not-hard-pitch-contour-method',
   'category',
 ];
 
@@ -129,6 +131,13 @@ if (fs.existsSync(enDir)) {
     'en/blog/hsk-guide-roadmap-to-chinese-fluency/index.html',
     'en/blog/chinese-characters-demystifying-writing-system/index.html',
     'en/blog/best-free-resources-learn-chinese-online/index.html',
+    'en/blog/learn-800-chinese-characters-3-months-case-study/index.html',
+    'en/blog/chinese-tones-not-hard-pitch-contour-method/index.html',
+    'en/blog/category/Getting Started/index.html',
+    'en/blog/category/Pronunciation/index.html',
+    'en/blog/category/HSK & Exams/index.html',
+    'en/blog/category/Vocabulary & Characters/index.html',
+    'en/blog/category/Learning Tips/index.html',
   ];
   let keptCount = 0;
   for (const p of expectedPages) {

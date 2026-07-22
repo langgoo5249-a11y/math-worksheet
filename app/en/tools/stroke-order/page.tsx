@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { enArticles } from '@/app/en/blog/data';
 
 export const metadata: Metadata = {
   title: 'Chinese Stroke Order Practice - Learn to Write Characters',
@@ -69,6 +70,12 @@ const exampleCharacters = [
   { char: '水', pinyin: 'shuǐ', meaning: 'water', strokes: '4 strokes', breakdown: 'Center vertical-hook, then the left and right pie and nà.' },
   { char: '好', pinyin: 'hǎo', meaning: 'good', strokes: '6 strokes', breakdown: 'Left part 女 (nǚ) first, then right part 子 (zǐ) — left to right.' },
 ];
+
+const relatedArticleIds = [
+  'chinese-characters-demystifying-writing-system',
+  'how-to-start-learning-chinese-from-zero',
+];
+const relatedArticles = enArticles.filter((a) => relatedArticleIds.includes(a.id)).slice(0, 3);
 
 export default function StrokeOrderPage() {
   const jsonLd = {
@@ -206,9 +213,43 @@ export default function StrokeOrderPage() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-2">
-            {['Chinese stroke order', '笔顺', 'basic strokes', 'how to write Chinese', 'calligraphy', 'stroke order rules'].map((kw) => (
+            {[ 'Chinese stroke order', '笔顺', 'basic strokes', 'how to write Chinese', 'calligraphy', 'stroke order rules'].map((kw) => (
               <span key={kw} className="px-3 py-1 text-xs font-medium rounded-full border border-[#8B0000]/25 text-[#8B0000] bg-[#8B0000]/5">{kw}</span>
             ))}
+          </div>
+
+          {/* Related blog articles */}
+          <div className="mt-10 pt-8 border-t border-[#8B0000]/15">
+            <h3 className="text-lg font-bold text-[#1a1a1a] mb-4">Related Blog Articles</h3>
+            <div className="space-y-3">
+              {relatedArticles.map((article) => (
+                <Link
+                  key={article.id}
+                  href={`/en/blog/${article.id}/`}
+                  className="block group"
+                >
+                  <div className="flex items-start gap-3 p-3 rounded-lg hover:bg-[#8B0000]/5 transition-colors">
+                    <span className="shrink-0 mt-0.5 text-[#C41E3A] text-sm" aria-hidden="true">
+                      &#128214;
+                    </span>
+                    <div>
+                      <p className="text-[#8B0000] font-semibold group-hover:underline text-sm leading-snug">
+                        {article.title}
+                      </p>
+                      <p className="text-[#1a1a1a]/55 text-xs mt-0.5 line-clamp-1">
+                        {article.description}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+            <Link
+              href="/en/blog/"
+              className="inline-flex items-center gap-1.5 mt-4 text-sm font-medium text-[#8B0000] hover:text-[#C41E3A] transition-colors"
+            >
+              View All Articles <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
         <div aria-hidden="true" className="absolute bottom-0 inset-x-0 h-1.5" style={{ background: 'linear-gradient(90deg, #8B0000 0%, #C41E3A 30%, #D4AF37 50%, #C41E3A 70%, #8B0000 100%)' }} />

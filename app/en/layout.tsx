@@ -184,6 +184,14 @@ export default function EnLayout({
           }
         ]
       },
+      {
+        '@type': 'SpeakableSpecification',
+        '@id': 'https://www.skillxm.cn/en/#speakable',
+        xpath: [
+          '/html/head/title',
+          "/html/head/meta[@name='description']/@content",
+        ],
+      },
     ],
   };
 

@@ -35,13 +35,15 @@ export default function EnBlogPageClient({ articles, categories }: EnBlogPageCli
         {/* Category filter */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           {categories.map((cat) => (
-            <button
+            <a
               key={cat}
-              onClick={() => {
+              href={`/en/blog/category/${cat}/`}
+              onClick={(e) => {
+                e.preventDefault();
                 setActiveCategory(cat);
                 setShownCount(6);
               }}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border cursor-pointer ${
                 activeCategory === cat
                   ? 'border-[#FFD700] bg-[#D4AF37]/15 text-[#FFD700]'
                   : 'border-[#D4AF37]/20 text-[#F5F0E8]/60 hover:text-[#FFD700] hover:border-[#D4AF37]/50'
@@ -53,7 +55,7 @@ export default function EnBlogPageClient({ articles, categories }: EnBlogPageCli
                   ({articles.filter((a) => a.category === cat).length})
                 </span>
               )}
-            </button>
+            </a>
           ))}
         </div>
 

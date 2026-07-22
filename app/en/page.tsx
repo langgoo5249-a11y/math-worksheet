@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { enArticles } from '@/app/en/blog/data';
 
 export const metadata: Metadata = {
   title: 'Learn Chinese Free - Pinyin, Stroke Order, HSK, Picture Learning | SkillXM',
@@ -194,6 +195,26 @@ export default function EnglishHomePage() {
         isAccessibleForFree: true,
       },
       {
+        '@type': 'WebPage',
+        '@id': 'https://www.skillxm.cn/en/#homepage',
+        name: 'SkillXM - Learn Chinese Free Online',
+        url: 'https://www.skillxm.cn/en/',
+        description:
+          'Free online Chinese learning tools for Mandarin: pinyin converter, stroke order practice, HSK flashcards, tone trainer, graded reader, picture learning, pinyin chart, and radical explorer. No registration required.',
+        inLanguage: 'en',
+        publisher: { '@id': 'https://www.skillxm.cn/#organization' },
+        mainEntity: {
+          '@type': 'ItemList',
+          itemListElement: tools.map((tool, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: tool.name,
+            description: tool.description,
+            url: `https://www.skillxm.cn${tool.href}`,
+          })),
+        },
+      },
+      {
         '@type': 'ItemList',
         '@id': 'https://www.skillxm.cn/en/#tools',
         itemListElement: tools.map((tool, index) => ({
@@ -203,6 +224,18 @@ export default function EnglishHomePage() {
           description: tool.description,
           url: `https://www.skillxm.cn${tool.href}`,
         })),
+      },
+      {
+        '@type': 'WebPage',
+        '@id': 'https://www.skillxm.cn/en/#homepage',
+        name: 'SkillXM - Learn Chinese Free Online | Pinyin, Stroke Order, HSK',
+        url: 'https://www.skillxm.cn/en/',
+        description:
+          'Free online Chinese learning tools for beginners to advanced learners. Pinyin converter, stroke order, HSK flashcards, tone trainer, picture learning, pinyin chart, graded reader, and radical explorer. No registration required.',
+        inLanguage: 'en',
+        publisher: { '@id': 'https://www.skillxm.cn/#organization' },
+        isPartOf: { '@id': 'https://www.skillxm.cn/en/#website' },
+        about: { '@id': 'https://www.skillxm.cn/#organization' },
       },
     ],
   };
@@ -508,6 +541,134 @@ export default function EnglishHomePage() {
                 />
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Blog section ===== */}
+      <section className="relative py-20 px-4 sm:px-6 bg-[#1a0808]">
+        {/* Subtle grain texture */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='1' fill='%23F5F0E8'/%3E%3C/svg%3E\")",
+          }}
+        />
+        {/* Top gold border */}
+        <div
+          aria-hidden="true"
+          className="absolute top-0 inset-x-0 h-1.5"
+          style={{
+            background:
+              'linear-gradient(90deg, #8B0000 0%, #C41E3A 30%, #D4AF37 50%, #C41E3A 70%, #8B0000 100%)',
+          }}
+        />
+
+        <div className="relative max-w-6xl mx-auto">
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-10 gap-4">
+            <div>
+              <span className="text-[#D4AF37] text-sm font-medium tracking-[0.3em] uppercase">
+                Learning Blog
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-bold text-[#F5F0E8] mt-3 mb-4">
+                Chinese Learning{' '}
+                <span className="text-[#FFD700]">Guides & Tips</span>
+              </h2>
+              <p className="text-[#F5F0E8]/60 max-w-2xl">
+                In-depth articles on pinyin, tones, HSK, characters, and free resources — written by experienced Chinese language educators.
+              </p>
+            </div>
+            <Link
+              href="/en/blog/"
+              className="hidden sm:flex items-center gap-1.5 text-sm text-[#FFD700] hover:text-[#D4AF37] font-medium shrink-0 transition-colors"
+            >
+              View All Articles
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {enArticles.slice(0, 3).map((article) => (
+              <Link
+                key={article.id}
+                href={`/en/blog/${article.id}/`}
+                className="group relative block rounded-2xl overflow-hidden border border-[#D4AF37]/20 hover:border-[#D4AF37]/60 transition-all duration-300 hover:-translate-y-1"
+                style={{
+                  background:
+                    'linear-gradient(160deg, rgba(60,10,10,0.9) 0%, rgba(26,8,8,0.95) 100%)',
+                  boxShadow: '0 4px 20px rgba(0,0,0,0.4)',
+                }}
+              >
+                {/* Gold corner ornaments */}
+                <span
+                  aria-hidden="true"
+                  className="absolute top-3 left-3 w-5 h-5 border-t border-l border-[#D4AF37]/50 rounded-tl"
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute top-3 right-3 w-5 h-5 border-t border-r border-[#D4AF37]/50 rounded-tr"
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute bottom-3 left-3 w-5 h-5 border-b border-l border-[#D4AF37]/50 rounded-bl"
+                />
+                <span
+                  aria-hidden="true"
+                  className="absolute bottom-3 right-3 w-5 h-5 border-b border-r border-[#D4AF37]/50 rounded-br"
+                />
+
+                <div className="p-7">
+                  {/* Category badge + date */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="px-2.5 py-0.5 rounded-full text-xs font-medium border border-[#D4AF37]/40 text-[#FFD700] bg-[#D4AF37]/10">
+                      {article.category}
+                    </span>
+                    <span className="text-xs text-[#F5F0E8]/40">{article.date}</span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-[#F5F0E8] group-hover:text-[#FFD700] transition-colors mb-3 leading-snug line-clamp-2">
+                    {article.title}
+                  </h3>
+
+                  <p className="text-sm text-[#F5F0E8]/60 leading-relaxed mb-5 line-clamp-3">
+                    {article.description}
+                  </p>
+
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-[#F5F0E8]/40 flex items-center gap-1.5">
+                      <span aria-hidden="true">☕</span> {article.readTime}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[#FFD700] group-hover:gap-3 transition-all">
+                      Read more
+                      <span aria-hidden="true">→</span>
+                    </span>
+                  </div>
+                </div>
+
+                {/* Hover gold sheen */}
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                  style={{
+                    background:
+                      'linear-gradient(120deg, transparent 40%, rgba(255,215,0,0.06) 50%, transparent 60%)',
+                  }}
+                />
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile view all link */}
+          <div className="mt-6 text-center sm:hidden">
+            <Link
+              href="/en/blog/"
+              className="inline-flex items-center gap-1.5 text-sm text-[#FFD700] hover:text-[#D4AF37] font-medium transition-colors"
+            >
+              View All Articles
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </section>
