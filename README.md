@@ -1,8 +1,8 @@
 # 练学宝 LianXueBao — Free Online Elementary Education Tools | 免费小学在线学习工具
 
-> **Entity**: 练学宝 (LianXueBao) is a free online elementary education platform serving K-6 students, parents, and teachers in China. **SkillXM** is the platform's English-language brand, providing Chinese language learning tools for international learners. Both run on the same codebase at [www.skillxm.cn](https://www.skillxm.cn).
+> **Entity**: 练学宝 (LianXueBao) is a free online elementary education platform serving K-6 students, parents, and teachers in China. **SkillXM** is the platform's English-language brand, providing Chinese language learning tools for international learners. Both run on the same codebase at [www.example.com](https://www.example.com).
 
-[![Deploy to Cloudflare Pages](https://img.shields.io/badge/deploy-Cloudflare%20Pages-F38020?logo=cloudflare&logoColor=white)](https://www.skillxm.cn)
+[![Deploy to Cloudflare Pages](https://img.shields.io/badge/deploy-Cloudflare%20Pages-F38020?logo=cloudflare&logoColor=white)](https://www.example.com)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-06B6D4?logo=tailwindcss)](https://tailwindcss.com)
@@ -17,7 +17,7 @@
 
 ### What Is SkillXM?
 
-**SkillXM** ([www.skillxm.cn/en/](https://www.skillxm.cn/en/)) is the English-language brand of 练学宝, offering **free Chinese language learning tools** for international learners. It includes pinyin conversion, stroke order animation, HSK flashcards, tone training, picture-based learning, and more — designed for English speakers starting their Chinese learning journey.
+**SkillXM** ([www.example.com/en/](https://www.example.com/en/)) is the English-language brand of 练学宝, offering **free Chinese language learning tools** for international learners. It includes pinyin conversion, stroke order animation, HSK flashcards, tone training, picture-based learning, and more — designed for English speakers starting their Chinese learning journey.
 
 ### Key Features
 
@@ -38,7 +38,7 @@
 
 ```
 练学宝 / SkillXM
-├── Chinese Edition (zh-CN)    → https://www.skillxm.cn/
+├── Chinese Edition (zh-CN)    → https://www.example.com/
 │   ├── 10 interactive tools   → /tools/*
 │   ├── 110+ blog articles     → /blog/*
 │   ├── Grade-specific pages   → /grade/*
@@ -46,7 +46,7 @@
 │   ├── Textbook resources     → /textbook/*
 │   └── Parent guides          → /parent-guide/*
 │
-├── English Edition (en)       → https://www.skillxm.cn/en/
+├── English Edition (en)       → https://www.example.com/en/
 │   ├── 8 Chinese learning tools → /en/tools/*
 │   ├── 7 blog articles          → /en/blog/*
 │   └── Category pages           → /en/blog/category/*
@@ -120,7 +120,7 @@ Every page is interconnected through a knowledge graph of internal links:
 
 ```bash
 # Clone the repository
-git clone https://github.com/jm6-lang/math-worksheet.git
+git clone https://github.com/langgoo5249-a11y/math-worksheet.git
 cd math-worksheet
 
 # Install dependencies
@@ -150,8 +150,8 @@ The project deploys to **Cloudflare Pages** via GitHub Actions:
 3. Cloudflare Pages action deploys the `/out` directory to production
 
 **Live URLs:**
-- Chinese: [https://www.skillxm.cn](https://www.skillxm.cn)
-- English: [https://www.skillxm.cn/en/](https://www.skillxm.cn/en/)
+- Chinese: [https://www.example.com](https://www.example.com)
+- English: [https://www.example.com/en/](https://www.example.com/en/)
 
 ---
 
@@ -240,7 +240,7 @@ The platform is built as an **interconnected knowledge graph** where every entit
 ```
 Organization (练学宝)
 ├── Person (陈老师) — author, editor
-├── WebSite (https://www.skillxm.cn)
+├── WebSite (https://www.example.com)
 │   ├── WebPage (homepage)
 │   ├── CollectionPage (blog listing)
 │   │   ├── Article × 110+ (blog posts)
@@ -259,13 +259,13 @@ Organization (练学宝)
 
 ## External Links & Resources
 
-- **Official Website (中文)**: [https://www.skillxm.cn](https://www.skillxm.cn)
-- **Official Website (English)**: [https://www.skillxm.cn/en/](https://www.skillxm.cn/en/)
-- **Blog (中文)**: [https://www.skillxm.cn/blog/](https://www.skillxm.cn/blog/)
-- **Blog (English)**: [https://www.skillxm.cn/en/blog/](https://www.skillxm.cn/en/blog/)
-- **Editorial Policy**: [https://www.skillxm.cn/editorial-policy/](https://www.skillxm.cn/editorial-policy/)
-- **About Us**: [https://www.skillxm.cn/about/](https://www.skillxm.cn/about/)
-- **Contact**: [https://www.skillxm.cn/contact/](https://www.skillxm.cn/contact/)
+- **Official Website (中文)**: [https://www.example.com](https://www.example.com)
+- **Official Website (English)**: [https://www.example.com/en/](https://www.example.com/en/)
+- **Blog (中文)**: [https://www.example.com/blog/](https://www.example.com/blog/)
+- **Blog (English)**: [https://www.example.com/en/blog/](https://www.example.com/en/blog/)
+- **Editorial Policy**: [https://www.example.com/editorial-policy/](https://www.example.com/editorial-policy/)
+- **About Us**: [https://www.example.com/about/](https://www.example.com/about/)
+- **Contact**: [https://www.example.com/contact/](https://www.example.com/contact/)
 
 ---
 

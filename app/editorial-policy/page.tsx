@@ -306,10 +306,10 @@ export default function EditorialPolicyPage() {
               <div className="flex items-center gap-3">
                 <span className="text-blue-400 text-lg">📧</span>
                 <a
-                  href="mailto:lang@skillxm.cn"
+                  href="mailto:lang@example.com"
                   className="text-blue-400 hover:text-blue-300 font-medium transition-colors"
                 >
-                  lang@skillxm.cn
+                  lang@example.com
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -358,8 +358,8 @@ export default function EditorialPolicyPage() {
             name: '编辑政策与内容审核流程',
             description:
               '练学宝编辑政策：所有教育内容经一线教师审核，遵循AI辅助初稿+人工审核的流程，确保内容准确、可靠、符合课程标准。',
-            url: 'https://www.skillxm.cn/editorial-policy/',
-            publisher: { '@id': 'https://www.skillxm.cn/#organization' },
+            url: 'https://www.example.com/editorial-policy/',
+            publisher: { '@id': 'https://www.example.com/#organization' },
             dateModified: '2026-07-18',
             about: { '@type': 'Thing', name: '内容编辑政策' },
           }),

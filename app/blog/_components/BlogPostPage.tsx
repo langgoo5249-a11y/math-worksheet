@@ -313,7 +313,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             <span className="flex items-center gap-1.5">
               <span className="text-blue-400">✉</span> jm6_lang@163.com
             </span>
-            <a href="https://github.com/jm6-lang/math-worksheet" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors">
+            <a href="https://github.com/langgoo5249-a11y/math-worksheet" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors">
               <span className="text-blue-400">⌂</span> GitHub
             </a>
             <a href="/about/" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors">

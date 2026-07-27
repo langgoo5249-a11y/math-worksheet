@@ -5,20 +5,20 @@ export const metadata: Metadata = {
   title: '隐私政策 - 练学宝',
   description: "练学宝隐私政策：详细说明我们如何收集、使用、存储和保护用户个人信息。练学宝不要求注册登录，不收集敏感个人信息，仅使用必要的Cookie保障网站正常运行。所有学习工具包括数学练习卷生成器、字帖生成器、口算速练、识字卡片、古诗词默写等均可在不提供个人信息的情况下免费使用，支持PDF打印下载，家长可放心让孩子使用。",
   alternates: {
-    canonical: 'https://www.skillxm.cn/privacy/',
+    canonical: 'https://www.example.com/privacy/',
   },
   openGraph: {
-    url: 'https://www.skillxm.cn/privacy/',
+    url: 'https://www.example.com/privacy/',
     title: '隐私政策 - 练学宝',
     description: "练学宝隐私政策：详细说明我们如何收集、使用、存储和保护用户个人信息。练学宝不要求注册登录，不收集敏感个人信息，仅使用必要的Cookie保障网站正常运行。所有学习工具包括数学练习卷生成器、字帖生成器、口算速练、识字卡片、古诗词默写等均可在不提供个人信息的情况下免费使用，支持PDF打印下载，家长可放心让孩子使用。",
     type: 'website',
-    images: [{ url: 'https://www.skillxm.cn/og-image.jpg', width: 1200, height: 630, alt: '练学宝' }],
+    images: [{ url: 'https://www.example.com/og-image.jpg', width: 1200, height: 630, alt: '练学宝' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: '隐私政策 - 练学宝',
     description: "练学宝隐私政策：详细说明我们如何收集、使用、存储和保护用户个人信息。练学宝不要求注册登录，不收集敏感个人信息，仅使用必要的Cookie保障网站正常运行。所有学习工具包括数学练习卷生成器、字帖生成器、口算速练、识字卡片、古诗词默写等均可在不提供个人信息的情况下免费使用，支持PDF打印下载，家长可放心让孩子使用。",
-    images: ['https://www.skillxm.cn/og-image.jpg'],
+    images: ['https://www.example.com/og-image.jpg'],
   },
 };
 
@@ -260,10 +260,10 @@ export default function PrivacyPage() {
               如果您对本隐私政策有任何疑问、意见或建议，请通过邮件联系我们：
             </p>
             <a
-              href="mailto:lang@skillxm.cn"
+              href="mailto:lang@example.com"
               className="text-lg font-bold text-blue-400 hover:text-blue-300 transition-colors"
             >
-              lang@skillxm.cn
+              lang@example.com
             </a>
             <p className="text-gray-500 text-sm mt-4">
               我们会在收到您的邮件后尽快回复，通常不超过3个工作日。

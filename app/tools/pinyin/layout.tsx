@@ -4,7 +4,7 @@ import ToolPageSchema from '@/app/_components/ToolPageSchema';
 import ToolContent from '@/app/tools/_components/ToolContent';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const canonicalUrl = 'https://www.skillxm.cn/tools/pinyin/';
+    const canonicalUrl = 'https://www.example.com/tools/pinyin/';
   return {
     title: "拼音学习工具在线练习 - 声母韵母整体认读音节四线三格 | 练学宝",
     description: "免费拼音学习工具，完整收录23个声母、24个韵母、16个整体认读音节，采用四线三格标准格式，支持在线答题练习和PDF导出打印。适合小学一年级拼音启蒙和学前幼小衔接，家长辅导孩子学拼音的必备工具，即开即用无需注册，与部编版语文教材同步，配发音示范和书写笔顺可重复打印永久免费使用，手机电脑均可使用，适合幼小衔接拼音启蒙。",
@@ -21,13 +21,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "拼音注音练习 - 免费在线拼音学习工具 | 练学宝",
       description: "免费拼音学习工具，完整收录23个声母、24个韵母、16个整体认读音节，采用四线三格标准格式，支持在线答题练习和PDF导出打印。适合小学一年级拼音启蒙和学前幼小衔接，家长辅导孩子学拼音的必备工具，即开即用无需注册，与部编版语文教材同步，配发音示范和书写笔顺可重复打印永久免费使用，手机电脑均可使用，适合幼小衔接拼音启蒙。",
       type: "website",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("拼音注音练习")}&category=${encodeURIComponent("语文工具")}&icon=📝`, width: 1200, height: 630, alt: "拼音注音练习 - 练学宝" }],
+      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("拼音注音练习")}&category=${encodeURIComponent("语文工具")}&icon=📝`, width: 1200, height: 630, alt: "拼音注音练习 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "拼音注音练习 - 免费在线拼音学习工具 | 练学宝",
       description: "免费拼音学习工具，完整收录23个声母、24个韵母、16个整体认读音节，采用四线三格标准格式，支持在线答题练习和PDF导出打印。适合小学一年级拼音启蒙和学前幼小衔接，家长辅导孩子学拼音的必备工具，即开即用无需注册，与部编版语文教材同步，配发音示范和书写笔顺可重复打印永久免费使用，手机电脑均可使用，适合幼小衔接拼音启蒙。",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("拼音注音练习")}&category=${encodeURIComponent("语文工具")}&icon=📝`, width: 1200, height: 630, alt: "拼音注音练习 - 练学宝" }],
+      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("拼音注音练习")}&category=${encodeURIComponent("语文工具")}&icon=📝`, width: 1200, height: 630, alt: "拼音注音练习 - 练学宝" }],
     },
   };
 }
@@ -49,12 +49,12 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
         </ul>
         <p>适用对象</p>
         <p>拼音学习工具适合小学一年级语文教师、幼儿园大班教师、学生家长以及从事拼音教学的培训机构使用。无论是课堂教学、课后辅导还是家庭早教，都可以通过本工具生成专业的拼音书写练习纸，帮助孩子打好拼音基础。</p>
-        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具。</p>
+        <p>访问 <a href="https://www.example.com/">练学宝</a> 获取更多免费教学工具。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/pinyin-xuexi-luxiantu/">一年级拼音学习完整攻略</a></li>
-          <li><a href="https://www.skillxm.cn/blog/yinianji-pinyin-shizi-kousuan-gonglue/">一年级家长必看：拼音+识字+口算全攻略</a></li>
-          <li><a href="https://www.skillxm.cn/blog/shizi-fangfa-tisheng/">小学识字方法大比拼</a></li>
+          <li><a href="https://www.example.com/blog/pinyin-xuexi-luxiantu/">一年级拼音学习完整攻略</a></li>
+          <li><a href="https://www.example.com/blog/yinianji-pinyin-shizi-kousuan-gonglue/">一年级家长必看：拼音+识字+口算全攻略</a></li>
+          <li><a href="https://www.example.com/blog/shizi-fangfa-tisheng/">小学识字方法大比拼</a></li>
         </ul>
       </div>
       <script
@@ -152,7 +152,7 @@ export default function PinyinLayout({ children }: { children: React.ReactNode }
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SpeakableSpecification",
-            "@id": "https://www.skillxm.cn/tools/pinyin/#speakable",
+            "@id": "https://www.example.com/tools/pinyin/#speakable",
             "cssSelector": [
               "h1",
               "h2",

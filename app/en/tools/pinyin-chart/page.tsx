@@ -10,18 +10,18 @@ export const metadata: Metadata = {
   keywords:
     'pinyin chart, pinyin table, Chinese pronunciation chart, initials and finals, Mandarin pinyin, pinyin with audio, Chinese phonetics, pinyin sounds, learn pinyin, Chinese syllable chart',
   alternates: {
-    canonical: 'https://www.skillxm.cn/en/tools/pinyin-chart/',
+    canonical: 'https://www.example.com/en/tools/pinyin-chart/',
     languages: {
-      'zh-CN': 'https://www.skillxm.cn/',
-      en: 'https://www.skillxm.cn/en/tools/pinyin-chart/',
-      'x-default': 'https://www.skillxm.cn/',
+      'zh-CN': 'https://www.example.com/',
+      en: 'https://www.example.com/en/tools/pinyin-chart/',
+      'x-default': 'https://www.example.com/',
     },
   },
   openGraph: {
     title: 'Pinyin Chart - Interactive Chinese Pronunciation Table with Audio',
     description:
       'Complete interactive pinyin chart with 23 initials and 24 finals. Click any cell to hear pronunciation, switch between 4 tones.',
-    url: 'https://www.skillxm.cn/en/tools/pinyin-chart/',
+    url: 'https://www.example.com/en/tools/pinyin-chart/',
     siteName: 'SkillXM',
     locale: 'en_US',
     type: 'website',
@@ -54,13 +54,13 @@ export default function PinyinChartPage() {
         applicationCategory: 'EducationApplication',
         operatingSystem: 'Web',
         inLanguage: 'en',
-        url: 'https://www.skillxm.cn/en/tools/pinyin-chart/',
+        url: 'https://www.example.com/en/tools/pinyin-chart/',
         description:
           'Complete interactive pinyin chart with 23 initials and 24 finals. Click any cell to hear pronunciation, switch between 4 tones, and learn pronunciation rules.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         isAccessibleForFree: true,
-        provider: { '@id': 'https://www.skillxm.cn/#organization' },
-        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
+        provider: { '@id': 'https://www.example.com/#organization' },
+        author: { '@id': 'https://www.example.com/#person-chenlaoshi' },
         educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
         audience: {
           '@type': 'EducationalAudience',
@@ -70,9 +70,9 @@ export default function PinyinChartPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.skillxm.cn/en/' },
-          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.skillxm.cn/en/tools/' },
-          { '@type': 'ListItem', position: 3, name: 'Pinyin Chart', item: 'https://www.skillxm.cn/en/tools/pinyin-chart/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.example.com/en/' },
+          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.example.com/en/tools/' },
+          { '@type': 'ListItem', position: 3, name: 'Pinyin Chart', item: 'https://www.example.com/en/tools/pinyin-chart/' },
         ],
       },
     ],

@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   description: '练学宝为小学1-6年级学生提供完整的学习专区，包含各年级数学语文英语的练习题、学习工具、知识点汇总。所有内容免费，支持PDF下载打印。',
   keywords: ['小学年级学习', '一年级学习', '二年级学习', '三年级学习', '四年级学习', '五年级学习', '六年级学习', '小升初', '年级专区'],
   alternates: {
-    canonical: 'https://www.skillxm.cn/grade/',
+    canonical: 'https://www.example.com/grade/',
   },
   openGraph: {
     title: '小学年级学习专区 - 练学宝',
     description: '小学1-6年级完整学习方案：核心知识点、配套练习工具、学习路径全覆盖',
-    url: 'https://www.skillxm.cn/grade',
+    url: 'https://www.example.com/grade',
     type: 'website',
     locale: 'zh_CN',
   },
@@ -48,10 +48,10 @@ export default function GradeIndex() {
         generateItemListSchema({
           name: '练学宝年级学习专区',
           description: '小学1-6年级完整学习方案',
-          url: 'https://www.skillxm.cn/grade',
+          url: 'https://www.example.com/grade',
           items: GRADES.map((g, i) => ({
             name: `${g.name}学习专区`,
-            url: `https://www.skillxm.cn/grade/grade-${g.grade}`,
+            url: `https://www.example.com/grade/grade-${g.grade}`,
             position: i + 1,
             description: g.description,
           })),

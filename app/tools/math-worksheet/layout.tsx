@@ -4,7 +4,7 @@ import ToolPageSchema from '@/app/_components/ToolPageSchema';
 import ToolContent from '@/app/tools/_components/ToolContent';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const canonicalUrl = 'https://www.skillxm.cn/tools/math-worksheet/';
+    const canonicalUrl = 'https://www.example.com/tools/math-worksheet/';
   return {
     title: "小学数学练习卷生成器免费 - 1-6年级在线出题PDF打印 | 练学宝",
     description: "免费在线生成小学1-6年级数学练习卷，支持加减乘除、竖式计算、四则混合运算、填空题、应用题、图形题等11种题型，随机出题不重复，一键导出PDF打印。适合家长辅导和教师备课，覆盖人教版北师大版苏教版教材同步内容，每日练习提升计算能力和解题速度，配答案详解可重复打印永久免费无需注册即开即用，手机电脑均可使用。",
@@ -21,13 +21,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "数学练习卷生成器 - 免费在线出题打印 | 练学宝",
       description: "免费在线生成小学1-6年级数学练习卷，支持加减乘除、竖式计算、四则混合运算、填空题、应用题、图形题等11种题型，随机出题不重复，一键导出PDF打印。适合家长辅导和教师备课，覆盖人教版北师大版苏教版教材同步内容，每日练习提升计算能力和解题速度，配答案详解可重复打印永久免费无需注册即开即用，手机电脑均可使用。",
       type: "website",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数学练习卷生成器")}&category=${encodeURIComponent("数学工具")}&icon=🧮`, width: 1200, height: 630, alt: "数学练习卷生成器 - 练学宝" }],
+      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("数学练习卷生成器")}&category=${encodeURIComponent("数学工具")}&icon=🧮`, width: 1200, height: 630, alt: "数学练习卷生成器 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "数学练习卷生成器 - 免费在线出题打印 | 练学宝",
       description: "免费在线生成小学1-6年级数学练习卷，支持加减乘除、竖式计算、四则混合运算、填空题、应用题、图形题等11种题型，随机出题不重复，一键导出PDF打印。适合家长辅导和教师备课，覆盖人教版北师大版苏教版教材同步内容，每日练习提升计算能力和解题速度，配答案详解可重复打印永久免费无需注册即开即用，手机电脑均可使用。",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数学练习卷生成器")}&category=${encodeURIComponent("数学工具")}&icon=🧮`, width: 1200, height: 630, alt: "数学练习卷生成器 - 练学宝" }],
+      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("数学练习卷生成器")}&category=${encodeURIComponent("数学工具")}&icon=🧮`, width: 1200, height: 630, alt: "数学练习卷生成器 - 练学宝" }],
     },
   };
 }
@@ -51,13 +51,13 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
         </ul>
         <p>适用对象</p>
         <p>小学1-6年级学生家长、小学数学教师、课后辅导机构老师。适合日常数学练习、单元测试出题、期末复习巩固、假期作业布置等场景使用。</p>
-        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具，包括字帖生成器、英语字帖、数独游戏、口算速练等。</p>
+        <p>访问 <a href="https://www.example.com/">练学宝</a> 获取更多免费教学工具，包括字帖生成器、英语字帖、数独游戏、口算速练等。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/yinianji-shuxue-ruxue/">一年级数学入学准备：从数数到20以内加减法的完整路径</a></li>
-          <li><a href="https://www.skillxm.cn/blog/kousuan-sudu-tisheng-shizhan-20ti/">口算速度提升实战：从每分钟5题到20题</a></li>
-          <li><a href="https://www.skillxm.cn/blog/xueba-xuexi-xiguan/">学霸学习习惯养成方法</a></li>
-          <li><a href="https://www.skillxm.cn/blog/shushi-jisuan-jiaoxue/">小学数学竖式计算全攻略</a></li>
+          <li><a href="https://www.example.com/blog/yinianji-shuxue-ruxue/">一年级数学入学准备：从数数到20以内加减法的完整路径</a></li>
+          <li><a href="https://www.example.com/blog/kousuan-sudu-tisheng-shizhan-20ti/">口算速度提升实战：从每分钟5题到20题</a></li>
+          <li><a href="https://www.example.com/blog/xueba-xuexi-xiguan/">学霸学习习惯养成方法</a></li>
+          <li><a href="https://www.example.com/blog/shushi-jisuan-jiaoxue/">小学数学竖式计算全攻略</a></li>
         </ul>
       </div>
       <script
@@ -146,7 +146,7 @@ export default function MathWorksheetLayout({ children }: { children: React.Reac
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SpeakableSpecification",
-            "@id": "https://www.skillxm.cn/tools/math-worksheet/#speakable",
+            "@id": "https://www.example.com/tools/math-worksheet/#speakable",
             "cssSelector": [
               "h1",
               "h2",

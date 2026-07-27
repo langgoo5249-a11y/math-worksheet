@@ -10,18 +10,18 @@ export const metadata: Metadata = {
   keywords:
     'pinyin converter, Chinese to pinyin, pinyin with tones, convert Chinese text to pinyin, pinyin tone marks, free pinyin tool, Mandarin romanization, hanyu pinyin converter',
   alternates: {
-    canonical: 'https://www.skillxm.cn/en/tools/pinyin-converter/',
+    canonical: 'https://www.example.com/en/tools/pinyin-converter/',
     languages: {
-      'zh-CN': 'https://www.skillxm.cn/',
-      en: 'https://www.skillxm.cn/en/tools/pinyin-converter/',
-      'x-default': 'https://www.skillxm.cn/',
+      'zh-CN': 'https://www.example.com/',
+      en: 'https://www.example.com/en/tools/pinyin-converter/',
+      'x-default': 'https://www.example.com/',
     },
   },
   openGraph: {
     title: 'Pinyin Converter - Convert Chinese to Pinyin Online Free',
     description:
       'Free online pinyin converter. Paste Chinese text and instantly get pinyin with tone marks. No registration required.',
-    url: 'https://www.skillxm.cn/en/tools/pinyin-converter/',
+    url: 'https://www.example.com/en/tools/pinyin-converter/',
     siteName: 'SkillXM',
     locale: 'en_US',
     type: 'website',
@@ -74,13 +74,13 @@ export default function PinyinConverterPage() {
         applicationCategory: 'EducationApplication',
         operatingSystem: 'Web',
         inLanguage: 'en',
-        url: 'https://www.skillxm.cn/en/tools/pinyin-converter/',
+        url: 'https://www.example.com/en/tools/pinyin-converter/',
         description:
           'Free online pinyin converter. Paste Chinese text and instantly get pinyin with tone marks.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         isAccessibleForFree: true,
-        provider: { '@id': 'https://www.skillxm.cn/#organization' },
-        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
+        provider: { '@id': 'https://www.example.com/#organization' },
+        author: { '@id': 'https://www.example.com/#person-chenlaoshi' },
         educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
         audience: {
           '@type': 'EducationalAudience',
@@ -94,19 +94,19 @@ export default function PinyinConverterPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://www.skillxm.cn/en/',
+            item: 'https://www.example.com/en/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Tools',
-            item: 'https://www.skillxm.cn/en/tools/',
+            item: 'https://www.example.com/en/tools/',
           },
           {
             '@type': 'ListItem',
             position: 3,
             name: 'Pinyin Converter',
-            item: 'https://www.skillxm.cn/en/tools/pinyin-converter/',
+            item: 'https://www.example.com/en/tools/pinyin-converter/',
           },
         ],
       },

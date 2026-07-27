@@ -304,7 +304,7 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
       {/* 分享 */}
       <section className="mt-8">
         <ShareButtons
-          url={`https://www.skillxm.cn/resources/${r.id}`}
+          url={`https://www.example.com/resources/${r.id}`}
           title={r.title}
         />
       </section>

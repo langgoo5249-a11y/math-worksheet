@@ -9,7 +9,7 @@
 
 const INDEXNOW_KEY = 'a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6';
 const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/IndexNow';
-const HOST = 'www.skillxm.cn';
+const HOST = 'www.example.com';
 const BASE_URL = `https://${HOST}`;
 
 async function submitUrls(urls) {
@@ -111,7 +111,7 @@ async function main() {
     console.log('Usage:');
     console.log('  node scripts/submit-indexnow.js --all');
     console.log('  node scripts/submit-indexnow.js --recent-days 7');
-    console.log('  node scripts/submit-indexnow.js https://www.skillxm.cn/blog/article-1/');
+    console.log('  node scripts/submit-indexnow.js https://www.example.com/blog/article-1/');
   }
 }
 

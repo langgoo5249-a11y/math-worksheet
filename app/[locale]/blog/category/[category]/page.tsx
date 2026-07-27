@@ -6,7 +6,7 @@ import { getTranslations } from 'next-intl/server';
 import LanguageSwitcher from '../../../../_components/LanguageSwitcher';
 import { localePath, type Locale } from '@/lib/i18n';
 
-const BASE_URL = 'https://www.skillxm.cn';
+const BASE_URL = 'https://www.example.com';
 
 // 分类颜色配置
 const categoryColors: Record<string, string> = {

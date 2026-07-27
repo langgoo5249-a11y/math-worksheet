@@ -314,7 +314,7 @@ ${dailyDetail || '  本周暂无练习记录'}
 【改进建议】
 ${suggestion}
 
-— 练学宝 www.skillxm.cn
+— 练学宝 www.example.com
 让每个孩子爱上口算 ✨`;
 
   const html = `<!DOCTYPE html>
@@ -361,7 +361,7 @@ ${trend.filter(d => d.count > 0).map(d => `<div class="daily-row"><span>${d.date
 <div class="section-title">💡 改进建议</div>
 <div class="suggestion">${suggestion}</div>
 </div>
-<div class="footer">练学宝 www.skillxm.cn · 让每个孩子爱上口算 ✨</div>
+<div class="footer">练学宝 www.example.com · 让每个孩子爱上口算 ✨</div>
 </body></html>`;
 
   return { subject, text, html };
@@ -382,5 +382,5 @@ export function generateWeChatShareText(): string {
     ? Math.round((weekRecords.reduce((sum, r) => sum + r.correctCount, 0) / weekRecords.reduce((sum, r) => sum + r.questionCount, 0)) * 100) 
     : 0;
   
-  return `📊 练学宝口算学习报告\n本周练习${weekRecords.length}次，正确率${weekAccuracy}%\n累计练习${stats.totalPractice}次，连续打卡${stats.currentStreak}天🔥\n\n快来练学宝一起练口算吧！\n👉 www.skillxm.cn/tools/mental-math/`;
+  return `📊 练学宝口算学习报告\n本周练习${weekRecords.length}次，正确率${weekAccuracy}%\n累计练习${stats.totalPractice}次，连续打卡${stats.currentStreak}天🔥\n\n快来练学宝一起练口算吧！\n👉 www.example.com/tools/mental-math/`;
 }

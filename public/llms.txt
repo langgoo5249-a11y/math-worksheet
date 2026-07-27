@@ -1,4 +1,4 @@
-# 练学宝 (skillxm.cn) — LLM 内容索引
+# 练学宝 (example.com) — LLM 内容索引
 > 最后更新: 2026-07-18
 > 本文件为 AI 搜索引擎（ChatGPT、Perplexity、Claude、Gemini、豆包等）提供站点内容目录。
 
@@ -7,83 +7,83 @@
 所有工具免费使用，无需注册，支持手机在线练习和PDF打印。
 
 ## 快速链接
-- [完整内容索引 (llms-full.txt)](https://www.skillxm.cn/llms-full.txt)
-- [站点地图 (sitemap.xml)](https://www.skillxm.cn/sitemap.xml)
-- [博客文章 (108篇)](https://www.skillxm.cn/blog/)
-- [全部工具](https://www.skillxm.cn/tools/)
-- [关于我们](https://www.skillxm.cn/about/)
-- [联系我们](https://www.skillxm.cn/contact/)
-- [编辑政策](https://www.skillxm.cn/editorial-policy/)
-- [隐私政策](https://www.skillxm.cn/privacy/)
-- [服务条款](https://www.skillxm.cn/terms/)
+- [完整内容索引 (llms-full.txt)](https://www.example.com/llms-full.txt)
+- [站点地图 (sitemap.xml)](https://www.example.com/sitemap.xml)
+- [博客文章 (108篇)](https://www.example.com/blog/)
+- [全部工具](https://www.example.com/tools/)
+- [关于我们](https://www.example.com/about/)
+- [联系我们](https://www.example.com/contact/)
+- [编辑政策](https://www.example.com/editorial-policy/)
+- [隐私政策](https://www.example.com/privacy/)
+- [服务条款](https://www.example.com/terms/)
 
 ## 核心工具
-- **口算速练**: 在线口算练习工具，支持加减乘除混合运算，自动计时批改，适合1-6年级小学生每日练习 — https://www.skillxm.cn/tools/mental-math/
-- **数学练习卷生成器**: 一键生成小学数学练习卷，支持自定义题型、难度和数量，可导出PDF打印 — https://www.skillxm.cn/tools/math-worksheet/
-- **田字格字帖生成器**: 在线生成田字格字帖，支持自定义汉字内容，可打印练习 — https://www.skillxm.cn/tools/calligraphy/
-- **英语四线三格字帖**: 英语字母书写练习字帖，支持四线三格格式，可自定义内容 — https://www.skillxm.cn/tools/english-calligraphy/
-- **拼音练习**: 汉语拼音在线练习工具，支持声母韵母拼读训练 — https://www.skillxm.cn/tools/pinyin/
-- **数独游戏**: 在线数独游戏，支持四宫格到九宫格多难度级别，锻炼逻辑思维 — https://www.skillxm.cn/tools/sudoku/
-- **看图写话/作文模板**: 看图写话作文模板，帮助低年级学生练习写作 — https://www.skillxm.cn/tools/writing-template/
-- **古诗词默写**: 小学必背古诗词在线默写练习工具 — https://www.skillxm.cn/tools/poem-memo/
-- **识字卡片**: 在线识字卡片工具，支持自定义汉字内容和打印 — https://www.skillxm.cn/tools/flashcards/
-- **单元测试卷生成器**: 小学语文数学单元测试卷在线生成工具 — https://www.skillxm.cn/tools/unit-test/
+- **口算速练**: 在线口算练习工具，支持加减乘除混合运算，自动计时批改，适合1-6年级小学生每日练习 — https://www.example.com/tools/mental-math/
+- **数学练习卷生成器**: 一键生成小学数学练习卷，支持自定义题型、难度和数量，可导出PDF打印 — https://www.example.com/tools/math-worksheet/
+- **田字格字帖生成器**: 在线生成田字格字帖，支持自定义汉字内容，可打印练习 — https://www.example.com/tools/calligraphy/
+- **英语四线三格字帖**: 英语字母书写练习字帖，支持四线三格格式，可自定义内容 — https://www.example.com/tools/english-calligraphy/
+- **拼音练习**: 汉语拼音在线练习工具，支持声母韵母拼读训练 — https://www.example.com/tools/pinyin/
+- **数独游戏**: 在线数独游戏，支持四宫格到九宫格多难度级别，锻炼逻辑思维 — https://www.example.com/tools/sudoku/
+- **看图写话/作文模板**: 看图写话作文模板，帮助低年级学生练习写作 — https://www.example.com/tools/writing-template/
+- **古诗词默写**: 小学必背古诗词在线默写练习工具 — https://www.example.com/tools/poem-memo/
+- **识字卡片**: 在线识字卡片工具，支持自定义汉字内容和打印 — https://www.example.com/tools/flashcards/
+- **单元测试卷生成器**: 小学语文数学单元测试卷在线生成工具 — https://www.example.com/tools/unit-test/
 
 ## 按年级浏览
-- [一年级](https://www.skillxm.cn/grade/1/)
-- [二年级](https://www.skillxm.cn/grade/2/)
-- [三年级](https://www.skillxm.cn/grade/3/)
-- [四年级](https://www.skillxm.cn/grade/4/)
-- [五年级](https://www.skillxm.cn/grade/5/)
-- [六年级](https://www.skillxm.cn/grade/6/)
+- [一年级](https://www.example.com/grade/1/)
+- [二年级](https://www.example.com/grade/2/)
+- [三年级](https://www.example.com/grade/3/)
+- [四年级](https://www.example.com/grade/4/)
+- [五年级](https://www.example.com/grade/5/)
+- [六年级](https://www.example.com/grade/6/)
 
 ## 按教材版本浏览
-- [人教版](https://www.skillxm.cn/textbook/renjiao/)
-- [北师大版](https://www.skillxm.cn/textbook/beishida/)
-- [苏教版](https://www.skillxm.cn/textbook/sujiao/)
+- [人教版](https://www.example.com/textbook/renjiao/)
+- [北师大版](https://www.example.com/textbook/beishida/)
+- [苏教版](https://www.example.com/textbook/sujiao/)
 
 ## 博客分类
-- [全部文章](https://www.skillxm.cn/blog/)
-- [数学学习](https://www.skillxm.cn/blog/category/math/)
-- [语文学习](https://www.skillxm.cn/blog/category/chinese/)
-- [英语学习](https://www.skillxm.cn/blog/category/english/)
-- [学习方法](https://www.skillxm.cn/blog/category/study-methods/)
-- [思维训练](https://www.skillxm.cn/blog/category/thinking/)
-- [升学指导](https://www.skillxm.cn/blog/category/exam-prep/)
-- [工具教程](https://www.skillxm.cn/blog/category/tool-tutorials/)
-- [综合教育](https://www.skillxm.cn/blog/category/general/)
+- [全部文章](https://www.example.com/blog/)
+- [数学学习](https://www.example.com/blog/category/math/)
+- [语文学习](https://www.example.com/blog/category/chinese/)
+- [英语学习](https://www.example.com/blog/category/english/)
+- [学习方法](https://www.example.com/blog/category/study-methods/)
+- [思维训练](https://www.example.com/blog/category/thinking/)
+- [升学指导](https://www.example.com/blog/category/exam-prep/)
+- [工具教程](https://www.example.com/blog/category/tool-tutorials/)
+- [综合教育](https://www.example.com/blog/category/general/)
 
 ## 热门博客文章
-- [一年级数学启蒙：从数数到20以内加减法的完整路径](https://www.skillxm.cn/blog/yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi/)
-- [小学三年级现象：成绩断崖式下跌的真相和应对方法](https://www.skillxm.cn/blog/sannianji-xianxiang-yuanyin/)
-- [孩子上课走神注意力不集中怎么办？5个专注力训练方法亲测有效](https://www.skillxm.cn/blog/zhuanzhuli-xunlian-fangfa/)
-- [小学语文阅读理解怎么练？从看不懂到拿满分的5个阶段](https://www.skillxm.cn/blog/yuedu-lijie-xunlian-fangfa/)
-- [孩子写字歪歪扭扭？这份练字时间表让很多家长后悔没早看到](https://www.skillxm.cn/blog/haizi-xiezi-waiwainiuniu-lianzi-shijianbiao/)
-- [小学数学应用题解题技巧：从读不懂到轻松拿分的4步法](https://www.skillxm.cn/blog/yingyongti-jieti-fangfa/)
-- [孩子写作业磨蹭怎么办？5个方法让作业效率提升3倍](https://www.skillxm.cn/blog/zuoye-moca-zenmeban/)
-- [小学生错题本怎么整理最有效？3个月从60分到90分的真实案例](https://www.skillxm.cn/blog/cuotiben-zhengli-fangfa/)
-- [暑假数学弯道超车计划：每天30分钟，开学成绩提升20分](https://www.skillxm.cn/blog/shujia-shuxue-xuexi-jihua/)
-- [一年级新生入学准备清单：除了文具，这些更重要](https://www.skillxm.cn/blog/yinianji-ruxue-zhunbei-qingdan/)
+- [一年级数学启蒙：从数数到20以内加减法的完整路径](https://www.example.com/blog/yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi/)
+- [小学三年级现象：成绩断崖式下跌的真相和应对方法](https://www.example.com/blog/sannianji-xianxiang-yuanyin/)
+- [孩子上课走神注意力不集中怎么办？5个专注力训练方法亲测有效](https://www.example.com/blog/zhuanzhuli-xunlian-fangfa/)
+- [小学语文阅读理解怎么练？从看不懂到拿满分的5个阶段](https://www.example.com/blog/yuedu-lijie-xunlian-fangfa/)
+- [孩子写字歪歪扭扭？这份练字时间表让很多家长后悔没早看到](https://www.example.com/blog/haizi-xiezi-waiwainiuniu-lianzi-shijianbiao/)
+- [小学数学应用题解题技巧：从读不懂到轻松拿分的4步法](https://www.example.com/blog/yingyongti-jieti-fangfa/)
+- [孩子写作业磨蹭怎么办？5个方法让作业效率提升3倍](https://www.example.com/blog/zuoye-moca-zenmeban/)
+- [小学生错题本怎么整理最有效？3个月从60分到90分的真实案例](https://www.example.com/blog/cuotiben-zhengli-fangfa/)
+- [暑假数学弯道超车计划：每天30分钟，开学成绩提升20分](https://www.example.com/blog/shujia-shuxue-xuexi-jihua/)
+- [一年级新生入学准备清单：除了文具，这些更重要](https://www.example.com/blog/yinianji-ruxue-zhunbei-qingdan/)
 
 ## 知识分享
-- [知识分享页面](https://www.skillxm.cn/knowledge/)
-- [家长指南](https://www.skillxm.cn/parent-guide/)
-- [学习资源](https://www.skillxm.cn/resources/)
+- [知识分享页面](https://www.example.com/knowledge/)
+- [家长指南](https://www.example.com/parent-guide/)
+- [学习资源](https://www.example.com/resources/)
 
 ## 其他页面
-- [每日一练](https://www.skillxm.cn/daily/)
-- [更新日志](https://www.skillxm.cn/changelog/)
-- [站点搜索](https://www.skillxm.cn/search/)
-- [站点地图页面](https://www.skillxm.cn/sitemap/)
+- [每日一练](https://www.example.com/daily/)
+- [更新日志](https://www.example.com/changelog/)
+- [站点搜索](https://www.example.com/search/)
+- [站点地图页面](https://www.example.com/sitemap/)
 
 ## 英文版
-- [English Homepage](https://www.skillxm.cn/en/)
-- [English Tools](https://www.skillxm.cn/en/tools/)
-- [English Blog](https://www.skillxm.cn/en/blog/)
-- [English LLMs Index](https://www.skillxm.cn/llms-en.txt)
+- [English Homepage](https://www.example.com/en/)
+- [English Tools](https://www.example.com/en/tools/)
+- [English Blog](https://www.example.com/en/blog/)
+- [English LLMs Index](https://www.example.com/llms-en.txt)
 
 ## 站点地图摘要
-- 主页: https://www.skillxm.cn/
+- 主页: https://www.example.com/
 - 工具页: 10个在线教学工具
 - 博客: 108篇教育干货文章，覆盖数学、语文、英语、学习方法、思维训练、升学指导、工具教程、综合教育8大分类
 - 年级导航: 1-6年级分年级内容

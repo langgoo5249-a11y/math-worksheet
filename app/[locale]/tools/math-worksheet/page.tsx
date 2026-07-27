@@ -21,13 +21,13 @@ export async function generateMetadata({
     title: t('metaTitle'),
     description: t('metaDescription'),
     alternates: {
-      canonical: `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}tools/math-worksheet/`,
+      canonical: `https://www.example.com/${locale === 'zh' ? '' : locale + '/'}tools/math-worksheet/`,
       languages: {
-        'zh-CN': 'https://www.skillxm.cn/tools/math-worksheet/',
-        'en': 'https://www.skillxm.cn/en/tools/math-worksheet/',
-        'ja': 'https://www.skillxm.cn/ja/tools/math-worksheet/',
-        'ko': 'https://www.skillxm.cn/ko/tools/math-worksheet/',
-        'x-default': 'https://www.skillxm.cn/tools/math-worksheet/',
+        'zh-CN': 'https://www.example.com/tools/math-worksheet/',
+        'en': 'https://www.example.com/en/tools/math-worksheet/',
+        'ja': 'https://www.example.com/ja/tools/math-worksheet/',
+        'ko': 'https://www.example.com/ko/tools/math-worksheet/',
+        'x-default': 'https://www.example.com/tools/math-worksheet/',
       },
     },
   };

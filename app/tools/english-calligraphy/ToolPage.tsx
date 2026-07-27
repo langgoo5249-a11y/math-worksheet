@@ -197,7 +197,7 @@ export default function EnglishCalligraphyPage({ locale }: { locale?: Locale } =
     const printWindow = window.open('', '_blank');
     if (!printWindow || !previewRef.current) return;
     const content = previewRef.current.innerHTML;
-    printWindow.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>英语字帖</title><style>@page{margin:10mm;size:A4 portrait;}body{margin:0;font-family:'Comic Sans MS','Arial',sans-serif;color:#000;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}</style></head><body>${content}<p style="text-align:center;color:#999;font-size:12px;margin-top:20px;">来源：练学宝 | 免费下载：www.skillxm.cn</p></body></html>`);
+    printWindow.document.write(`<!DOCTYPE html><html><head><meta charset="utf-8"><title>英语字帖</title><style>@page{margin:10mm;size:A4 portrait;}body{margin:0;font-family:'Comic Sans MS','Arial',sans-serif;color:#000;}@media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact;}}</style></head><body>${content}<p style="text-align:center;color:#999;font-size:12px;margin-top:20px;">来源：练学宝 | 免费下载：www.example.com</p></body></html>`);
     printWindow.document.close();
     printWindow.focus();
     printWindow.print();

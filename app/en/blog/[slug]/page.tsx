@@ -16,7 +16,7 @@ export async function generateMetadata({
   const article = enArticles.find((a) => a.id === slug);
   if (!article) return { title: 'Article Not Found' };
 
-  const url = `https://www.skillxm.cn/en/blog/${slug}/`;
+  const url = `https://www.example.com/en/blog/${slug}/`;
 
   return {
     title: `${article.title} | SkillXM`,
@@ -25,9 +25,9 @@ export async function generateMetadata({
     alternates: {
       canonical: url,
       languages: {
-        'zh-CN': 'https://www.skillxm.cn/blog/',
+        'zh-CN': 'https://www.example.com/blog/',
         en: url,
-        'x-default': 'https://www.skillxm.cn/blog/',
+        'x-default': 'https://www.example.com/blog/',
       },
     },
     openGraph: {
@@ -91,14 +91,14 @@ export default async function EnBlogPostPage({
         '@type': 'Article',
         headline: article.title,
         description: article.description,
-        url: `https://www.skillxm.cn/en/blog/${slug}/`,
+        url: `https://www.example.com/en/blog/${slug}/`,
         datePublished: article.date,
         dateModified: article.dateModified || article.date,
         ...(article.dateReviewed && { dateReviewed: article.dateReviewed }),
-        image: 'https://www.skillxm.cn/og-image.jpg',
+        image: 'https://www.example.com/og-image.jpg',
         mainEntityOfPage: {
           '@type': 'WebPage',
-          '@id': `https://www.skillxm.cn/en/blog/${slug}/`,
+          '@id': `https://www.example.com/en/blog/${slug}/`,
         },
         articleSection: article.category,
         about: {
@@ -114,7 +114,7 @@ export default async function EnBlogPostPage({
         wordCount: article.content
           ? (article.content.replace(/<[^>]*>/g, '').match(/\b\w+\b/g) || []).length
           : 0,
-        license: 'https://www.skillxm.cn/',
+        license: 'https://www.example.com/',
         author: {
           '@type': 'Person',
           name: article.author?.name || 'Lin Yuan',
@@ -124,8 +124,8 @@ export default async function EnBlogPostPage({
         publisher: {
           '@type': 'Organization',
           name: 'SkillXM',
-          url: 'https://www.skillxm.cn/',
-          publishingPrinciples: 'https://www.skillxm.cn/editorial-policy/',
+          url: 'https://www.example.com/',
+          publishingPrinciples: 'https://www.example.com/editorial-policy/',
         },
         inLanguage: 'en',
         keywords: article.keywords?.join(', '),
@@ -137,9 +137,9 @@ export default async function EnBlogPostPage({
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.skillxm.cn/en/' },
-          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.skillxm.cn/en/blog/' },
-          { '@type': 'ListItem', position: 3, name: article.title, item: `https://www.skillxm.cn/en/blog/${slug}/` },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.example.com/en/' },
+          { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://www.example.com/en/blog/' },
+          { '@type': 'ListItem', position: 3, name: article.title, item: `https://www.example.com/en/blog/${slug}/` },
         ],
       },
       ...(article.definitions

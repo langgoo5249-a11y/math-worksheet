@@ -3,22 +3,22 @@ import SiteLayout from '../_components/SiteLayout';
 
 export const metadata: Metadata = {
   title: '服务条款 - 练学宝',
-  description: "练学宝服务条款：包括用户使用规则、知识产权声明、免责条款、隐私保护政策和争议解决等内容。使用练学宝免费学习工具即表示同意本条款，所有工具包括数学练习卷生成器、字帖生成器、口算速练、数独游戏等仅供个人学习使用，禁止商业用途和批量抓取，详细条款请阅读全文，如有疑问请联系 lang@skillxm.cn。",
+  description: "练学宝服务条款：包括用户使用规则、知识产权声明、免责条款、隐私保护政策和争议解决等内容。使用练学宝免费学习工具即表示同意本条款，所有工具包括数学练习卷生成器、字帖生成器、口算速练、数独游戏等仅供个人学习使用，禁止商业用途和批量抓取，详细条款请阅读全文，如有疑问请联系 lang@example.com。",
   alternates: {
-    canonical: 'https://www.skillxm.cn/terms/',
+    canonical: 'https://www.example.com/terms/',
   },
   openGraph: {
-    url: 'https://www.skillxm.cn/terms/',
+    url: 'https://www.example.com/terms/',
     title: '服务条款 - 练学宝',
-    description: "练学宝服务条款：包括用户使用规则、知识产权声明、免责条款、隐私保护政策和争议解决等内容。使用练学宝免费学习工具即表示同意本条款，所有工具包括数学练习卷生成器、字帖生成器、口算速练、数独游戏等仅供个人学习使用，禁止商业用途和批量抓取，详细条款请阅读全文，如有疑问请联系 lang@skillxm.cn。",
+    description: "练学宝服务条款：包括用户使用规则、知识产权声明、免责条款、隐私保护政策和争议解决等内容。使用练学宝免费学习工具即表示同意本条款，所有工具包括数学练习卷生成器、字帖生成器、口算速练、数独游戏等仅供个人学习使用，禁止商业用途和批量抓取，详细条款请阅读全文，如有疑问请联系 lang@example.com。",
     type: 'website',
-    images: [{ url: 'https://www.skillxm.cn/og-image.jpg', width: 1200, height: 630, alt: '练学宝' }],
+    images: [{ url: 'https://www.example.com/og-image.jpg', width: 1200, height: 630, alt: '练学宝' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: '服务条款 - 练学宝',
-    description: "练学宝服务条款：包括用户使用规则、知识产权声明、免责条款、隐私保护政策和争议解决等内容。使用练学宝免费学习工具即表示同意本条款，所有工具包括数学练习卷生成器、字帖生成器、口算速练、数独游戏等仅供个人学习使用，禁止商业用途和批量抓取，详细条款请阅读全文，如有疑问请联系 lang@skillxm.cn。",
-    images: ['https://www.skillxm.cn/og-image.jpg'],
+    description: "练学宝服务条款：包括用户使用规则、知识产权声明、免责条款、隐私保护政策和争议解决等内容。使用练学宝免费学习工具即表示同意本条款，所有工具包括数学练习卷生成器、字帖生成器、口算速练、数独游戏等仅供个人学习使用，禁止商业用途和批量抓取，详细条款请阅读全文，如有疑问请联系 lang@example.com。",
+    images: ['https://www.example.com/og-image.jpg'],
   },
 };
 
@@ -165,10 +165,10 @@ export default function TermsPage() {
               如果您对本服务条款有任何疑问，请通过邮件联系我们：
             </p>
             <a
-              href="mailto:lang@skillxm.cn"
+              href="mailto:lang@example.com"
               className="text-lg font-bold text-blue-400 hover:text-blue-300 transition-colors"
             >
-              lang@skillxm.cn
+              lang@example.com
             </a>
           </div>
         </section>

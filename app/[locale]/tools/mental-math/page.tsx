@@ -21,13 +21,13 @@ export async function generateMetadata({
     title: t('metaTitle'),
     description: t('metaDescription'),
     alternates: {
-      canonical: `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}tools/mental-math/`,
+      canonical: `https://www.example.com/${locale === 'zh' ? '' : locale + '/'}tools/mental-math/`,
       languages: {
-        'zh-CN': 'https://www.skillxm.cn/tools/mental-math/',
-        'en': 'https://www.skillxm.cn/en/tools/mental-math/',
-        'ja': 'https://www.skillxm.cn/ja/tools/mental-math/',
-        'ko': 'https://www.skillxm.cn/ko/tools/mental-math/',
-        'x-default': 'https://www.skillxm.cn/tools/mental-math/',
+        'zh-CN': 'https://www.example.com/tools/mental-math/',
+        'en': 'https://www.example.com/en/tools/mental-math/',
+        'ja': 'https://www.example.com/ja/tools/mental-math/',
+        'ko': 'https://www.example.com/ko/tools/mental-math/',
+        'x-default': 'https://www.example.com/tools/mental-math/',
       },
     },
   };

@@ -4,7 +4,7 @@ import ToolPageSchema from '@/app/_components/ToolPageSchema';
 import ToolContent from '@/app/tools/_components/ToolContent';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const canonicalUrl = 'https://www.skillxm.cn/tools/sudoku/';
+    const canonicalUrl = 'https://www.example.com/tools/sudoku/';
   return {
     title: "数独游戏在线玩免费 - 4x4/6x6/9x9入门到挑战儿童益智 | 练学宝",
     description: "免费在线数独游戏，提供4x4入门、6x6进阶、9x9挑战三档难度，内置提示和计时功能，锻炼儿童逻辑思维和专注力。适合小学2-6年级学生课外益智训练，无需下载安装，手机电脑直接在线玩，培养数学推理能力和空间想象力，每日一题养成思考习惯，配解题步骤提示适合自学入门，永久免费无需注册即开即用，家长可陪伴孩子一起挑战。",
@@ -21,13 +21,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "数独游戏 - 免费在线数独挑战 | 练学宝",
       description: "免费在线数独游戏，提供4x4入门、6x6进阶、9x9挑战三档难度，内置提示和计时功能，锻炼儿童逻辑思维和专注力。适合小学2-6年级学生课外益智训练，无需下载安装，手机电脑直接在线玩，培养数学推理能力和空间想象力，每日一题养成思考习惯，配解题步骤提示适合自学入门，永久免费无需注册即开即用，家长可陪伴孩子一起挑战。",
       type: "website",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数独游戏")}&category=${encodeURIComponent("思维训练")}&icon=🧩`, width: 1200, height: 630, alt: "数独游戏 - 练学宝" }],
+      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("数独游戏")}&category=${encodeURIComponent("思维训练")}&icon=🧩`, width: 1200, height: 630, alt: "数独游戏 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "数独游戏 - 免费在线数独挑战 | 练学宝",
       description: "免费在线数独游戏，提供4x4入门、6x6进阶、9x9挑战三档难度，内置提示和计时功能，锻炼儿童逻辑思维和专注力。适合小学2-6年级学生课外益智训练，无需下载安装，手机电脑直接在线玩，培养数学推理能力和空间想象力，每日一题养成思考习惯，配解题步骤提示适合自学入门，永久免费无需注册即开即用，家长可陪伴孩子一起挑战。",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("数独游戏")}&category=${encodeURIComponent("思维训练")}&icon=🧩`, width: 1200, height: 630, alt: "数独游戏 - 练学宝" }],
+      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("数独游戏")}&category=${encodeURIComponent("思维训练")}&icon=🧩`, width: 1200, height: 630, alt: "数独游戏 - 练学宝" }],
     },
   };
 }
@@ -51,13 +51,13 @@ export default function SudokuLayout({ children }: { children: React.ReactNode }
         </ul>
         <p>适用对象</p>
         <p>小学3-6年级学生、逻辑思维训练爱好者、数独入门学习者、课余时间需要益智活动的中小学生。适合课间休息、家庭亲子互动、逻辑思维训练、数学兴趣培养等场景。</p>
-        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、字帖生成器、英语字帖、口算速练等。</p>
+        <p>访问 <a href="https://www.example.com/">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、字帖生成器、英语字帖、口算速练等。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/shudu-100tian-xunlian-jilu/">坚持数独训练100天的变化</a></li>
-          <li><a href="https://www.skillxm.cn/blog/shudu-shuxue-bangzhu/">数独游戏对儿童思维发展的5大好处</a></li>
-          <li><a href="https://www.skillxm.cn/blog/youxiao-xianjie-luoji-siwei-peiyang/">有效衔接阶段逻辑思维培养方法</a></li>
-          <li><a href="https://www.skillxm.cn/blog/shuxue-siwei-shudu-kousuan-shuangguan/">数学思维训练：数独+口算双管齐下</a></li>
+          <li><a href="https://www.example.com/blog/shudu-100tian-xunlian-jilu/">坚持数独训练100天的变化</a></li>
+          <li><a href="https://www.example.com/blog/shudu-shuxue-bangzhu/">数独游戏对儿童思维发展的5大好处</a></li>
+          <li><a href="https://www.example.com/blog/youxiao-xianjie-luoji-siwei-peiyang/">有效衔接阶段逻辑思维培养方法</a></li>
+          <li><a href="https://www.example.com/blog/shuxue-siwei-shudu-kousuan-shuangguan/">数学思维训练：数独+口算双管齐下</a></li>
         </ul>
       </div>
       <script
@@ -149,7 +149,7 @@ export default function SudokuLayout({ children }: { children: React.ReactNode }
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SpeakableSpecification",
-            "@id": "https://www.skillxm.cn/tools/sudoku/#speakable",
+            "@id": "https://www.example.com/tools/sudoku/#speakable",
             "cssSelector": [
               "h1",
               "h2",

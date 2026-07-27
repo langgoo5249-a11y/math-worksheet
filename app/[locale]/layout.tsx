@@ -32,12 +32,12 @@ export async function generateMetadata({
       title: t("title"),
       description: t("description"),
       type: "website",
-      url: `https://www.skillxm.cn/${safeLocale === defaultLocale ? "" : safeLocale}`,
+      url: `https://www.example.com/${safeLocale === defaultLocale ? "" : safeLocale}`,
       siteName: "练学宝",
       locale: safeLocale === "zh" ? "zh_CN" : safeLocale,
       images: [
         {
-          url: "https://www.skillxm.cn/og-image.jpg",
+          url: "https://www.example.com/og-image.jpg",
           width: 1200,
           height: 630,
           alt: t("title"),
@@ -48,15 +48,15 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: ["https://www.skillxm.cn/og-image.jpg"],
+      images: ["https://www.example.com/og-image.jpg"],
     },
     alternates: {
       // 多语言 wrapper 页面本身设置为 noindex，这里使用自引用 canonical
       // 避免与中文原页的 hreflang 信号冲突
       canonical:
         safeLocale === defaultLocale
-          ? 'https://www.skillxm.cn/'
-          : `https://www.skillxm.cn/${safeLocale}/`,
+          ? 'https://www.example.com/'
+          : `https://www.example.com/${safeLocale}/`,
     },
   };
 }

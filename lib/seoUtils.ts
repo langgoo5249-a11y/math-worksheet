@@ -1,10 +1,10 @@
 // 共享的 SEO/GEO 工具函数
 // 包括 Schema.org JSON-LD 结构化数据生成
 
-const BASE_URL = 'https://www.skillxm.cn';
+const BASE_URL = 'https://www.example.com';
 const SITE_NAME = '练学宝';
 const SITE_AUTHOR = '陈老师';
-const SITE_LOGO = 'https://www.skillxm.cn/favicon.svg';
+const SITE_LOGO = 'https://www.example.com/favicon.svg';
 
 // 确保页面 URL 以 / 结尾（不影响带查询参数、锚点或文件后缀的 URL）
 function ensureTrailingSlash(url: string): string {
@@ -220,12 +220,12 @@ export function generateOrganizationSchema() {
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      email: 'lang@skillxm.cn',
+      email: 'lang@example.com',
       contactType: 'customer support',
       availableLanguage: ['Chinese', 'English', 'Japanese', 'Korean'],
     },
     sameAs: [
-      'https://github.com/jm6-lang/math-worksheet',
+      'https://github.com/langgoo5249-a11y/math-worksheet',
       'https://xhslink.com/m/8u3VNbmKr0F',
       'https://author.baidu.com/home?from=bjh_article&app_id=1810332299795975',
     ],

@@ -3,7 +3,7 @@
  */
 
 /** 来源水印文字 */
-const WATERMARK_TEXT = '来源：练学宝 | 免费下载：www.skillxm.cn';
+const WATERMARK_TEXT = '来源：练学宝 | 免费下载：www.example.com';
 
 /**
  * 在 canvas 顶部绘制来源水印（首页）

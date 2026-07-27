@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { enArticles, enCategories } from '../../data';
 import type { EnCategory } from '../../data';
 
-const BASE_URL = 'https://www.skillxm.cn';
+const BASE_URL = 'https://www.example.com';
 
 // Category SEO configuration
 const categorySEOConfig: Record<string, {
@@ -390,9 +390,9 @@ export default async function EnCategoryPage({ params }: PageProps) {
               <span className="text-[#F5F0E8]/20">|</span>
               <Link href="/en/blog/" className="hover:text-[#FFD700] transition-colors">Blog</Link>
               <span className="text-[#F5F0E8]/20">|</span>
-              <Link href="https://www.skillxm.cn/privacy/" className="hover:text-[#FFD700] transition-colors">Privacy</Link>
+              <Link href="https://www.example.com/privacy/" className="hover:text-[#FFD700] transition-colors">Privacy</Link>
               <span className="text-[#F5F0E8]/20">|</span>
-              <Link href="https://www.skillxm.cn/terms/" className="hover:text-[#FFD700] transition-colors">Terms</Link>
+              <Link href="https://www.example.com/terms/" className="hover:text-[#FFD700] transition-colors">Terms</Link>
             </div>
             <div className="text-center text-[#F5F0E8]/30 text-sm">
               &copy; {new Date().getFullYear()} SkillXM. Learn Chinese Free.

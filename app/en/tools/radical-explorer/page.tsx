@@ -10,18 +10,18 @@ export const metadata: Metadata = {
   keywords:
     'Chinese radicals, Kangxi radicals, character decomposition, Chinese character components, 部首, radical explorer, learn Chinese radicals, decompose Chinese characters, common radicals, radical meanings',
   alternates: {
-    canonical: 'https://www.skillxm.cn/en/tools/radical-explorer/',
+    canonical: 'https://www.example.com/en/tools/radical-explorer/',
     languages: {
-      'zh-CN': 'https://www.skillxm.cn/',
-      en: 'https://www.skillxm.cn/en/tools/radical-explorer/',
-      'x-default': 'https://www.skillxm.cn/',
+      'zh-CN': 'https://www.example.com/',
+      en: 'https://www.example.com/en/tools/radical-explorer/',
+      'x-default': 'https://www.example.com/',
     },
   },
   openGraph: {
     title: 'Chinese Radical Explorer - Character Decomposition',
     description:
       'Explore Chinese radicals and decompose characters into components. The 214 Kangxi radicals, the most common 30, and example breakdowns like 好 = 女 + 子.',
-    url: 'https://www.skillxm.cn/en/tools/radical-explorer/',
+    url: 'https://www.example.com/en/tools/radical-explorer/',
     siteName: 'SkillXM',
     locale: 'en_US',
     type: 'website',
@@ -105,13 +105,13 @@ export default function RadicalExplorerPage() {
         applicationCategory: 'EducationApplication',
         operatingSystem: 'Web',
         inLanguage: 'en',
-        url: 'https://www.skillxm.cn/en/tools/radical-explorer/',
+        url: 'https://www.example.com/en/tools/radical-explorer/',
         description:
           'Explore Chinese radicals and decompose characters into components. Learn the 214 Kangxi radicals, the most common 30, and example character breakdowns.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         isAccessibleForFree: true,
-        provider: { '@id': 'https://www.skillxm.cn/#organization' },
-        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
+        provider: { '@id': 'https://www.example.com/#organization' },
+        author: { '@id': 'https://www.example.com/#person-chenlaoshi' },
         educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
         audience: {
           '@type': 'EducationalAudience',
@@ -121,9 +121,9 @@ export default function RadicalExplorerPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.skillxm.cn/en/' },
-          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.skillxm.cn/en/tools/' },
-          { '@type': 'ListItem', position: 3, name: 'Radical Explorer', item: 'https://www.skillxm.cn/en/tools/radical-explorer/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.example.com/en/' },
+          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.example.com/en/tools/' },
+          { '@type': 'ListItem', position: 3, name: 'Radical Explorer', item: 'https://www.example.com/en/tools/radical-explorer/' },
         ],
       },
     ],

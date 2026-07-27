@@ -11,11 +11,11 @@ export const metadata: Metadata = {
   keywords:
     'Chinese learning tools, pinyin converter, stroke order practice, HSK flashcards, Mandarin tone trainer, picture learning, pinyin chart, Chinese reading reader, radical explorer, learn Chinese free, free Mandarin tools',
   alternates: {
-    canonical: 'https://www.skillxm.cn/en/tools/',
+    canonical: 'https://www.example.com/en/tools/',
     languages: {
-      'zh-CN': 'https://www.skillxm.cn/tools/',
-      en: 'https://www.skillxm.cn/en/tools/',
-      'x-default': 'https://www.skillxm.cn/tools/',
+      'zh-CN': 'https://www.example.com/tools/',
+      en: 'https://www.example.com/en/tools/',
+      'x-default': 'https://www.example.com/tools/',
     },
   },
   openGraph: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
       'Free Chinese Learning Tools - Pinyin, Stroke Order, HSK | SkillXM',
     description:
       'Eight free online tools for learning Mandarin Chinese: pinyin converter, stroke order practice, HSK flashcards, tone trainer, picture learning, pinyin chart, graded reader and radical explorer.',
-    url: 'https://www.skillxm.cn/en/tools/',
+    url: 'https://www.example.com/en/tools/',
     siteName: 'SkillXM',
     locale: 'en_US',
     type: 'website',
@@ -111,7 +111,7 @@ export default function EnglishToolsPage() {
   const itemListJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    '@id': 'https://www.skillxm.cn/en/tools/#tools',
+    '@id': 'https://www.example.com/en/tools/#tools',
     name: 'Free Chinese Learning Tools',
     description:
       'Six free online tools for learning Mandarin Chinese: pinyin converter, stroke order practice, HSK flashcards, tone trainer, graded reader and radical explorer.',
@@ -121,7 +121,7 @@ export default function EnglishToolsPage() {
       position: index + 1,
       name: tool.name,
       description: tool.description,
-      url: `https://www.skillxm.cn${tool.href}`,
+      url: `https://www.example.com${tool.href}`,
     })),
   };
 
@@ -133,13 +133,13 @@ export default function EnglishToolsPage() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://www.skillxm.cn/en/',
+        item: 'https://www.example.com/en/',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Tools',
-        item: 'https://www.skillxm.cn/en/tools/',
+        item: 'https://www.example.com/en/tools/',
       },
     ],
   };
@@ -266,7 +266,7 @@ export default function EnglishToolsPage() {
               English
             </span>
             <Link
-              href="https://www.skillxm.cn/tools/"
+              href="https://www.example.com/tools/"
               className="text-[#F5F0E8]/80 hover:text-[#FFD700] transition-colors px-2.5 py-0.5 rounded-full border border-transparent hover:border-[#D4AF37]/50"
             >
               中文

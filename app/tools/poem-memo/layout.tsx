@@ -4,7 +4,7 @@ import ToolPageSchema from '@/app/_components/ToolPageSchema';
 import ToolContent from '@/app/tools/_components/ToolContent';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const canonicalUrl = 'https://www.skillxm.cn/tools/poem-memo/';
+    const canonicalUrl = 'https://www.example.com/tools/poem-memo/';
   return {
     title: "古诗词默写生成器免费 - 240首小学必背古诗填空全诗打印 | 练学宝",
     description: "免费生成小学1-6年级必背古诗词默写练习卷，收录240首经典古诗词，支持填空默写、全诗默写、上下句默写三种模式，田字格方格排版一键导出PDF打印。与部编版教材同步，适合课后复习和考前冲刺默写训练，配答案详解和易错字标注，可重复打印永久免费，家长教师零成本使用即开即用，手机电脑均可使用，适合期末复习考前冲刺。",
@@ -21,13 +21,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "古诗词默写生成器 - 240首小学必背古诗词在线打印 | 练学宝",
       description: "免费生成小学1-6年级必背古诗词默写练习卷，收录240首经典古诗词，支持填空默写、全诗默写、上下句默写三种模式，田字格方格排版一键导出PDF打印。与部编版教材同步，适合课后复习和考前冲刺默写训练，配答案详解和易错字标注，可重复打印永久免费，家长教师零成本使用即开即用，手机电脑均可使用，适合期末复习考前冲刺。",
       type: "website",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("古诗词默写生成器")}&category=${encodeURIComponent("语文工具")}&icon=📜`, width: 1200, height: 630, alt: "古诗词默写生成器 - 练学宝" }],
+      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("古诗词默写生成器")}&category=${encodeURIComponent("语文工具")}&icon=📜`, width: 1200, height: 630, alt: "古诗词默写生成器 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "古诗词默写生成器 - 240首小学必背古诗词在线打印 | 练学宝",
       description: "免费生成小学1-6年级必背古诗词默写练习卷，收录240首经典古诗词，支持填空默写、全诗默写、上下句默写三种模式，田字格方格排版一键导出PDF打印。与部编版教材同步，适合课后复习和考前冲刺默写训练，配答案详解和易错字标注，可重复打印永久免费，家长教师零成本使用即开即用，手机电脑均可使用，适合期末复习考前冲刺。",
-      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("古诗词默写生成器")}&category=${encodeURIComponent("语文工具")}&icon=📜`, width: 1200, height: 630, alt: "古诗词默写生成器 - 练学宝" }],
+      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("古诗词默写生成器")}&category=${encodeURIComponent("语文工具")}&icon=📜`, width: 1200, height: 630, alt: "古诗词默写生成器 - 练学宝" }],
     },
   };
 }
@@ -49,12 +49,12 @@ export default function PoemMemoLayout({ children }: { children: React.ReactNode
         </ul>
         <p>适用对象</p>
         <p>古诗词默写生成器适合小学语文教师、学生家长以及小学各年级学生使用。无论是日常古诗词背诵检查、期中期末考试复习还是假期作业布置，都可以通过本工具快速生成专业的古诗词默写练习卷，提高古诗词学习效率。</p>
-        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具。</p>
+        <p>访问 <a href="https://www.example.com/">练学宝</a> 获取更多免费教学工具。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/gushi-shici-moxie-lianxi-fangfa/">小学1-6年级必背古诗词完整清单及默写方法</a></li>
-          <li><a href="https://www.skillxm.cn/blog/pinyin-xuexi-luxiantu/">一年级拼音学习完整攻略</a></li>
-          <li><a href="https://www.skillxm.cn/blog/sannianji-zuowen-rumen/">三年级作文入门方法</a></li>
+          <li><a href="https://www.example.com/blog/gushi-shici-moxie-lianxi-fangfa/">小学1-6年级必背古诗词完整清单及默写方法</a></li>
+          <li><a href="https://www.example.com/blog/pinyin-xuexi-luxiantu/">一年级拼音学习完整攻略</a></li>
+          <li><a href="https://www.example.com/blog/sannianji-zuowen-rumen/">三年级作文入门方法</a></li>
         </ul>
       </div>
       <script
@@ -143,7 +143,7 @@ export default function PoemMemoLayout({ children }: { children: React.ReactNode
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SpeakableSpecification",
-            "@id": "https://www.skillxm.cn/tools/poem-memo/#speakable",
+            "@id": "https://www.example.com/tools/poem-memo/#speakable",
             "cssSelector": [
               "h1",
               "h2",

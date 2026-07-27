@@ -21,13 +21,13 @@ export async function generateMetadata({
     title: t('metaTitle'),
     description: t('metaDescription'),
     alternates: {
-      canonical: `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}tools/english-calligraphy/`,
+      canonical: `https://www.example.com/${locale === 'zh' ? '' : locale + '/'}tools/english-calligraphy/`,
       languages: {
-        'zh-CN': 'https://www.skillxm.cn/tools/english-calligraphy/',
-        'en': 'https://www.skillxm.cn/en/tools/english-calligraphy/',
-        'ja': 'https://www.skillxm.cn/ja/tools/english-calligraphy/',
-        'ko': 'https://www.skillxm.cn/ko/tools/english-calligraphy/',
-        'x-default': 'https://www.skillxm.cn/tools/english-calligraphy/',
+        'zh-CN': 'https://www.example.com/tools/english-calligraphy/',
+        'en': 'https://www.example.com/en/tools/english-calligraphy/',
+        'ja': 'https://www.example.com/ja/tools/english-calligraphy/',
+        'ko': 'https://www.example.com/ko/tools/english-calligraphy/',
+        'x-default': 'https://www.example.com/tools/english-calligraphy/',
       },
     },
   };

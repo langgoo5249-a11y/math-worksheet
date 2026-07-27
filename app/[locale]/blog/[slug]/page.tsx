@@ -19,7 +19,7 @@ export function generateStaticParams() {
 // 为每篇文章生成独特的og:image
 function generateOgImage(article: { title: string; category: string; id: string }): string {
   const encodedTitle = encodeURIComponent(article.title.slice(0, 50));
-  return `https://og.skillxm.cn/api/og?title=${encodedTitle}&category=${encodeURIComponent(article.category)}&id=${article.id}`;
+  return `https://og.example.com/api/og?title=${encodedTitle}&category=${encodeURIComponent(article.category)}&id=${article.id}`;
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
@@ -47,10 +47,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     // 非中文版本不索引，避免低质量内容判定
     robots: isNonZh ? { index: false, follow: true } : undefined,
     alternates: isNonZh ? undefined : {
-      canonical: `https://www.skillxm.cn/blog/${slug}/`,
+      canonical: `https://www.example.com/blog/${slug}/`,
       languages: {
-        'zh-CN': `https://www.skillxm.cn/blog/${slug}/`,
-        'x-default': `https://www.skillxm.cn/blog/${slug}/`,
+        'zh-CN': `https://www.example.com/blog/${slug}/`,
+        'x-default': `https://www.example.com/blog/${slug}/`,
       },
     },
     openGraph: {
@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
           type: 'image/png',
         },
         {
-          url: 'https://www.skillxm.cn/og-image.jpg',
+          url: 'https://www.example.com/og-image.jpg',
           width: 1200,
           height: 630,
           alt: siteName,
@@ -107,22 +107,22 @@ export default async function Page({ params }: PageProps) {
       "@type": "Person",
       "name": article.author?.name || defaultAuthor.name,
       "description": article.author?.bio || defaultAuthor.bio,
-      "url": `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}about/`
+      "url": `https://www.example.com/${locale === 'zh' ? '' : locale + '/'}about/`
     },
     "publisher": {
       "@type": "Organization",
       "name": siteName,
-      "url": "https://www.skillxm.cn/",
+      "url": "https://www.example.com/",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://www.skillxm.cn/favicon.svg",
+        "url": "https://www.example.com/favicon.svg",
         "width": 512,
         "height": 512
       }
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.skillxm.cn/blog/${article.id}/`
+      "@id": `https://www.example.com/blog/${article.id}/`
     },
     "articleSection": article.category,
     "wordCount": article.content?.length || 0,
@@ -137,19 +137,19 @@ export default async function Page({ params }: PageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": siteName,
-        "item": "https://www.skillxm.cn/"
+        "item": "https://www.example.com/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": t('nav.blog'),
-        "item": `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}blog/`
+        "item": `https://www.example.com/${locale === 'zh' ? '' : locale + '/'}blog/`
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": article.title,
-        "item": `https://www.skillxm.cn/blog/${article.id}/`
+        "item": `https://www.example.com/blog/${article.id}/`
       }
     ]
   };

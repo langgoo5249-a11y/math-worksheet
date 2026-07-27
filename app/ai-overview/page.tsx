@@ -60,8 +60,8 @@ export default function AIOOverviewPage() {
               <div>
                 <dt className="font-semibold text-slate-700">官方网站</dt>
                 <dd>
-                  <a href="https://www.skillxm.cn/" className="text-blue-600 hover:underline">
-                    https://www.skillxm.cn/
+                  <a href="https://www.example.com/" className="text-blue-600 hover:underline">
+                    https://www.example.com/
                   </a>
                 </dd>
               </div>

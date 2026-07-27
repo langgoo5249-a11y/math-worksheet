@@ -10,18 +10,18 @@ export const metadata: Metadata = {
   keywords:
     'HSK flashcards, HSK 1 vocabulary, HSK practice, HSK 1-6, Hanyu Shuiping Kaoshi, Chinese vocabulary flashcards, spaced repetition Chinese, HSK exam prep, free HSK words',
   alternates: {
-    canonical: 'https://www.skillxm.cn/en/tools/hsk-flashcards/',
+    canonical: 'https://www.example.com/en/tools/hsk-flashcards/',
     languages: {
-      'zh-CN': 'https://www.skillxm.cn/',
-      en: 'https://www.skillxm.cn/en/tools/hsk-flashcards/',
-      'x-default': 'https://www.skillxm.cn/',
+      'zh-CN': 'https://www.example.com/',
+      en: 'https://www.example.com/en/tools/hsk-flashcards/',
+      'x-default': 'https://www.example.com/',
     },
   },
   openGraph: {
     title: 'HSK Flashcards - Free HSK 1-6 Vocabulary Practice',
     description:
       'Practice HSK 1-6 vocabulary with spaced repetition. Level descriptions, sample HSK 1 words and study tips. Free.',
-    url: 'https://www.skillxm.cn/en/tools/hsk-flashcards/',
+    url: 'https://www.example.com/en/tools/hsk-flashcards/',
     siteName: 'SkillXM',
     locale: 'en_US',
     type: 'website',
@@ -101,13 +101,13 @@ export default function HskFlashcardsPage() {
         applicationCategory: 'EducationApplication',
         operatingSystem: 'Web',
         inLanguage: 'en',
-        url: 'https://www.skillxm.cn/en/tools/hsk-flashcards/',
+        url: 'https://www.example.com/en/tools/hsk-flashcards/',
         description:
           'Free HSK 1-6 flashcards to practice Mandarin vocabulary with spaced repetition. Includes level descriptions, sample HSK 1 vocabulary and study tips.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         isAccessibleForFree: true,
-        provider: { '@id': 'https://www.skillxm.cn/#organization' },
-        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
+        provider: { '@id': 'https://www.example.com/#organization' },
+        author: { '@id': 'https://www.example.com/#person-chenlaoshi' },
         educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
         audience: {
           '@type': 'EducationalAudience',
@@ -117,9 +117,9 @@ export default function HskFlashcardsPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.skillxm.cn/en/' },
-          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.skillxm.cn/en/tools/' },
-          { '@type': 'ListItem', position: 3, name: 'HSK Flashcards', item: 'https://www.skillxm.cn/en/tools/hsk-flashcards/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.example.com/en/' },
+          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.example.com/en/tools/' },
+          { '@type': 'ListItem', position: 3, name: 'HSK Flashcards', item: 'https://www.example.com/en/tools/hsk-flashcards/' },
         ],
       },
     ],

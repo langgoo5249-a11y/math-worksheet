@@ -85,7 +85,7 @@ export default function HomePage() {
   const carouselItems = getCarouselItems(locale);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('https://www.skillxm.cn');
+    navigator.clipboard.writeText('https://www.example.com');
     setCopySuccess(true);
     setTimeout(() => setCopySuccess(false), 2000);
   };
@@ -515,7 +515,7 @@ export default function HomePage() {
           <div className="border-t border-gray-200 py-4 text-center text-sm text-gray-500">
             <p className="mb-2 text-gray-400">{t('footer.friendLinks')}</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="https://www.tokenfind.cn/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-400 transition-colors">Token聚合平台</a>
+              <a href="https://example.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-400 transition-colors">Token聚合平台</a>
             </div>
           </div>
           {/* 版权信息 */}
@@ -526,7 +526,7 @@ export default function HomePage() {
           <div className="border-t border-gray-200 py-4 text-center text-sm text-gray-500">
             <p className="mb-2 text-gray-400">友情链接</p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="https://www.tokenfind.cn/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-400 transition-colors">Token聚合平台</a>
+              <a href="https://example.com/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-400 transition-colors">Token聚合平台</a>
             </div>
           </div>
         </div>
@@ -579,7 +579,7 @@ export default function HomePage() {
             <div className="flex items-center gap-2 bg-white/5 rounded-xl p-3 border border-white/10">
               <input
                 type="text"
-                value="https://www.skillxm.cn"
+                value="https://www.example.com"
                 readOnly
                 className="flex-1 bg-transparent text-white text-sm outline-none"
               />

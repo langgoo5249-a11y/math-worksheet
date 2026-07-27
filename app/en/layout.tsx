@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 // Layout-level metadata for all English pages.
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.skillxm.cn'),
+  metadataBase: new URL('https://www.example.com'),
   title: {
     default: 'Learn Chinese Free | SkillXM',
     template: '%s | SkillXM',
@@ -13,24 +13,24 @@ export const metadata: Metadata = {
   keywords:
     'learn Chinese, learn Mandarin, Chinese for beginners, pinyin converter, pinyin chart, stroke order, HSK practice, Chinese characters, free Chinese learning, Mandarin tones, picture learning, Chinese reading',
   alternates: {
-    canonical: 'https://www.skillxm.cn/en/',
+    canonical: 'https://www.example.com/en/',
     languages: {
-      'zh-CN': 'https://www.skillxm.cn/',
-      'en': 'https://www.skillxm.cn/en/',
-      'x-default': 'https://www.skillxm.cn/',
+      'zh-CN': 'https://www.example.com/',
+      'en': 'https://www.example.com/en/',
+      'x-default': 'https://www.example.com/',
     },
   },
   openGraph: {
     type: 'website',
     siteName: 'SkillXM',
     locale: 'en_US',
-    url: 'https://www.skillxm.cn/en/',
+    url: 'https://www.example.com/en/',
     title: 'Learn Chinese Free - Online Mandarin Learning Tools',
     description:
       'Free interactive tools for learning Chinese: pinyin converter, stroke order, HSK flashcards, tone trainer, and more.',
     images: [
       {
-        url: 'https://www.skillxm.cn/og-image.jpg',
+        url: 'https://www.example.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Learn Chinese Free - SkillXM',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: 'Learn Chinese Free - Online Mandarin Learning Tools',
     description:
       'Free interactive tools for learning Chinese: pinyin converter, stroke order, HSK flashcards, tone trainer, and more.',
-    images: ['https://www.skillxm.cn/og-image.jpg'],
+    images: ['https://www.example.com/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -82,30 +82,30 @@ export default function EnLayout({
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://www.skillxm.cn/en/#website",
+        "@id": "https://www.example.com/en/#website",
         name: "SkillXM - Learn Chinese Free",
-        url: "https://www.skillxm.cn/en/",
+        url: "https://www.example.com/en/",
         description:
           "Free online tools to learn Chinese (Mandarin): pinyin converter, stroke order practice, HSK flashcards, tone trainer, graded reader, radical explorer, picture learning, and pinyin chart. No registration required.",
         inLanguage: "en",
         dateModified: "2026-07-18",
         potentialAction: {
           "@type": "SearchAction",
-          target: "https://www.skillxm.cn/en/?q={search_term_string}",
+          target: "https://www.example.com/en/?q={search_term_string}",
           "query-input": "required name=search_term_string",
         },
         publisher: {
-          "@id": "https://www.skillxm.cn/#organization",
+          "@id": "https://www.example.com/#organization",
         },
       },
       {
         "@type": "Organization",
-        "@id": "https://www.skillxm.cn/#organization",
+        "@id": "https://www.example.com/#organization",
         name: "SkillXM",
-        url: "https://www.skillxm.cn/en/",
+        url: "https://www.example.com/en/",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.skillxm.cn/favicon.svg",
+          url: "https://www.example.com/favicon.svg",
           width: 512,
           height: 512,
         },
@@ -125,13 +125,13 @@ export default function EnLayout({
           "Language learning tools",
         ],
         sameAs: [
-          "https://github.com/jm6-lang/math-worksheet",
-          "https://www.skillxm.cn/en/",
-          "https://www.skillxm.cn/",
+          "https://github.com/langgoo5249-a11y/math-worksheet",
+          "https://www.example.com/en/",
+          "https://www.example.com/",
         ],
         contactPoint: {
           "@type": "ContactPoint",
-          email: "lang@skillxm.cn",
+          email: "lang@example.com",
           contactType: "customer support",
           availableLanguage: ["English", "Chinese", "Japanese", "Korean"],
         },
@@ -142,21 +142,21 @@ export default function EnLayout({
       },
       {
         "@type": "Person",
-        "@id": "https://www.skillxm.cn/#person-chenlaoshi",
+        "@id": "https://www.example.com/#person-chenlaoshi",
         name: "Chen Laoshi",
         description: "Founder of SkillXM, experienced Chinese language educator and full-stack developer.",
         jobTitle: "Educational Content Author",
         sameAs: [
-          "https://github.com/jm6-lang",
-          "https://www.skillxm.cn/about/"
+          "https://github.com/langgoo5249-a11y",
+          "https://www.example.com/about/"
         ],
         knowsAbout: ["Chinese Language Education", "HSK Preparation", "Chinese Character Writing", "Pinyin Instruction", "Educational Technology"],
-        affiliation: { "@id": "https://www.skillxm.cn/#organization" },
-        url: "https://www.skillxm.cn/about/"
+        affiliation: { "@id": "https://www.example.com/#organization" },
+        url: "https://www.example.com/about/"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.skillxm.cn/en/#faq",
+        "@id": "https://www.example.com/en/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -186,7 +186,7 @@ export default function EnLayout({
       },
       {
         '@type': 'SpeakableSpecification',
-        '@id': 'https://www.skillxm.cn/en/#speakable',
+        '@id': 'https://www.example.com/en/#speakable',
         xpath: [
           '/html/head/title',
           "/html/head/meta[@name='description']/@content",

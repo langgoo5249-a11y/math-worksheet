@@ -9,18 +9,18 @@ export const metadata: Metadata = {
   keywords:
     'Chinese stroke order, stroke order rules, how to write Chinese characters, basic strokes of Chinese, 笔顺, Chinese calligraphy strokes, learn to write Chinese, stroke order practice',
   alternates: {
-    canonical: 'https://www.skillxm.cn/en/tools/stroke-order/',
+    canonical: 'https://www.example.com/en/tools/stroke-order/',
     languages: {
-      'zh-CN': 'https://www.skillxm.cn/',
-      en: 'https://www.skillxm.cn/en/tools/stroke-order/',
-      'x-default': 'https://www.skillxm.cn/',
+      'zh-CN': 'https://www.example.com/',
+      en: 'https://www.example.com/en/tools/stroke-order/',
+      'x-default': 'https://www.example.com/',
     },
   },
   openGraph: {
     title: 'Chinese Stroke Order Practice - Learn to Write Characters',
     description:
       'Master Chinese stroke order: the 8 basic strokes, general rules, and common characters broken down stroke by stroke. Free.',
-    url: 'https://www.skillxm.cn/en/tools/stroke-order/',
+    url: 'https://www.example.com/en/tools/stroke-order/',
     siteName: 'SkillXM',
     locale: 'en_US',
     type: 'website',
@@ -87,13 +87,13 @@ export default function StrokeOrderPage() {
         applicationCategory: 'EducationApplication',
         operatingSystem: 'Web',
         inLanguage: 'en',
-        url: 'https://www.skillxm.cn/en/tools/stroke-order/',
+        url: 'https://www.example.com/en/tools/stroke-order/',
         description:
           'Learn Chinese character stroke order with clear rules and examples: the 8 basic strokes, general stroke order rules, and common characters broken down stroke by stroke.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         isAccessibleForFree: true,
-        provider: { '@id': 'https://www.skillxm.cn/#organization' },
-        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
+        provider: { '@id': 'https://www.example.com/#organization' },
+        author: { '@id': 'https://www.example.com/#person-chenlaoshi' },
         educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
         audience: {
           '@type': 'EducationalAudience',
@@ -103,9 +103,9 @@ export default function StrokeOrderPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.skillxm.cn/en/' },
-          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.skillxm.cn/en/tools/' },
-          { '@type': 'ListItem', position: 3, name: 'Stroke Order', item: 'https://www.skillxm.cn/en/tools/stroke-order/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.example.com/en/' },
+          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.example.com/en/tools/' },
+          { '@type': 'ListItem', position: 3, name: 'Stroke Order', item: 'https://www.example.com/en/tools/stroke-order/' },
         ],
       },
     ],

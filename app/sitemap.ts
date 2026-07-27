@@ -11,7 +11,7 @@ import { enArticles } from '@/app/en/blog/data';
 // output: "export" 模式下需要声明为静态生成
 export const dynamic = 'force-static';
 
-const BASE_URL = 'https://www.skillxm.cn';
+const BASE_URL = 'https://www.example.com';
 
 // 站点级固定更新日期（用于没有独立更新时间的静态页）
 // 2026-07-18: 更新至最新部署日期，确保 Google 能正确识别页面新鲜度

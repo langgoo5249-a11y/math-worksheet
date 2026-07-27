@@ -8,18 +8,18 @@ export const metadata: Metadata = {
   description: '练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、数独游戏、英语字帖、拼音注音、识字卡片、作文模板、古诗词默写、单元测试卷等，支持PDF导出打印。',
   keywords: '练学宝工具,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,数独游戏,英语字帖,拼音注音,识字卡片,作文模板,免费PDF打印',
   alternates: {
-    canonical: 'https://www.skillxm.cn/tools/',
+    canonical: 'https://www.example.com/tools/',
   },
   openGraph: {
     title: '全部学习工具 - 练学宝免费小学教学工具合集',
     description: '10+款免费小学教学工具，数学练习卷、字帖、口算、数独、英语字帖等，无需注册即开即用。',
-    url: 'https://www.skillxm.cn/tools/',
+    url: 'https://www.example.com/tools/',
     siteName: '练学宝',
     type: 'website',
     locale: 'zh_CN',
     images: [
       {
-        url: 'https://www.skillxm.cn/og-image.jpg',
+        url: 'https://www.example.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: '练学宝全部学习工具',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '全部学习工具 - 练学宝免费小学教学工具合集',
     description: '10+款免费小学教学工具，数学练习卷、字帖、口算、数独、英语字帖等，无需注册即开即用。',
-    images: ['https://www.skillxm.cn/og-image.jpg'],
+    images: ['https://www.example.com/og-image.jpg'],
   },
 };
 
@@ -56,7 +56,7 @@ export default function ToolsPage() {
       '@type': 'ListItem',
       position: i + 1,
       name: tool.name,
-      url: `https://www.skillxm.cn${tool.path.endsWith('/') ? tool.path : tool.path + '/'}`,
+      url: `https://www.example.com${tool.path.endsWith('/') ? tool.path : tool.path + '/'}`,
       description: tool.desc,
     })),
   };

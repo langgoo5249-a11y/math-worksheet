@@ -215,9 +215,9 @@ Allow: /manifest.json
 Content-Signal: ai-train=yes, search=yes, ai-input=yes
 
 # LLM 内容索引
-LLMs-Index: https://www.skillxm.cn/llms.txt
-LLMs-Index: https://www.skillxm.cn/llms-en.txt
+LLMs-Index: https://www.example.com/llms.txt
+LLMs-Index: https://www.example.com/llms-en.txt
 
 # Sitemap
-Sitemap: https://www.skillxm.cn/sitemap.xml
-Sitemap: https://www.skillxm.cn/sitemap-geo.xml
+Sitemap: https://www.example.com/sitemap.xml
+Sitemap: https://www.example.com/sitemap-geo.xml
