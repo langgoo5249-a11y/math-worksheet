@@ -30,7 +30,7 @@
 ## 项目信息
 
 - 网站名称：练学宝
-- 官网：https://www.example.com/
+- 官网：https://www.skillxm.cn/
 - AdSense 发布商ID：pub-4710405779358793
 - 部署平台：Cloudflare Pages
 - 最后更新：2026-07-05

@@ -16,13 +16,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t("dailyTitle"),
     description: t("dailyDesc"),
     alternates: {
-      canonical: "https://www.example.com/daily/",
+      canonical: "https://www.skillxm.cn/daily/",
       languages: {
-        "zh-CN": "https://www.example.com/daily",
-        en: "https://www.example.com/en/daily",
-        ja: "https://www.example.com/ja/daily",
-        ko: "https://www.example.com/ko/daily",
-        "x-default": "https://www.example.com/daily",
+        "zh-CN": "https://www.skillxm.cn/daily",
+        en: "https://www.skillxm.cn/en/daily",
+        ja: "https://www.skillxm.cn/ja/daily",
+        ko: "https://www.skillxm.cn/ko/daily",
+        "x-default": "https://www.skillxm.cn/daily",
       },
     },
   };

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { articles, categories } from '../../data';
 import type { Category } from '../../data';
 
-const BASE_URL = 'https://www.example.com';
+const BASE_URL = 'https://www.skillxm.cn';
 
 // 分类 SEO 配置
 const categorySEOConfig: Record<string, {

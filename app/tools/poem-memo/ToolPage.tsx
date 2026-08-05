@@ -504,7 +504,7 @@ export default function PoemMemoPage({ locale }: { locale?: Locale } = {}) {
           @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
         </style>
       </head>
-      <body>${content}<p style="text-align:center;color:#999;font-size:12px;margin-top:20px;">来源：练学宝 | 免费下载：www.example.com</p></body>
+      <body>${content}<p style="text-align:center;color:#999;font-size:12px;margin-top:20px;">来源：练学宝 | 免费下载：www.skillxm.cn</p></body>
       </html>
     `);
     printWindow.document.close();

@@ -4,7 +4,7 @@ import ToolPageSchema from '@/app/_components/ToolPageSchema';
 import ToolContent from '@/app/tools/_components/ToolContent';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const canonicalUrl = 'https://www.example.com/tools/mental-math/';
+    const canonicalUrl = 'https://www.skillxm.cn/tools/mental-math/';
   return {
     title: "口算速练在线计时 - 小学1-6年级心算训练免费打卡 | 练学宝",
     description: "免费在线口算速练工具，支持计时挑战和AI智能出题，4个难度级别涵盖10以内加减法到乘除法混合运算，自动分析薄弱点生成针对性练习。适合小学1-6年级学生每日训练计算速度和准确率，无需注册即开即用，自动批改省心省力，配成绩记录追踪进步情况，手机电脑均可使用，永久免费即开即用，适合家长课后辅导和教师课堂训练使用。",
@@ -21,13 +21,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "口算速练 - 免费在线口算计时挑战 | 练学宝",
       description: "免费在线口算速练工具，支持计时挑战和AI智能出题，4个难度级别涵盖10以内加减法到乘除法混合运算，自动分析薄弱点生成针对性练习。适合小学1-6年级学生每日训练计算速度和准确率，无需注册即开即用，自动批改省心省力，配成绩记录追踪进步情况，手机电脑均可使用，永久免费即开即用，适合家长课后辅导和教师课堂训练使用。",
       type: "website",
-      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "口算速练 - 免费在线口算计时挑战 | 练学宝",
       description: "免费在线口算速练工具，支持计时挑战和AI智能出题，4个难度级别涵盖10以内加减法到乘除法混合运算，自动分析薄弱点生成针对性练习。适合小学1-6年级学生每日训练计算速度和准确率，无需注册即开即用，自动批改省心省力，配成绩记录追踪进步情况，手机电脑均可使用，永久免费即开即用，适合家长课后辅导和教师课堂训练使用。",
-      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("口算速练")}&category=${encodeURIComponent("数学工具")}&icon=⚡`, width: 1200, height: 630, alt: "口算速练 - 练学宝" }],
     },
   };
 }
@@ -51,13 +51,13 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
         </ul>
         <p>适用对象</p>
         <p>小学1-6年级学生、需要提升计算速度的中小学生、家长辅导孩子口算练习、教师课堂口算训练。适合每日口算打卡、课前热身练习、期末口算复习、假期计算能力巩固等场景。</p>
-        <p>访问 <a href="https://www.example.com/">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏等。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏等。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.example.com/blog/kousuan-sudu-tisheng-shizhan-20ti/">口算速度提升实战：从每分钟5题到20题</a></li>
-          <li><a href="https://www.example.com/blog/kousuan-xunlian-fangfa/">如何培养孩子的口算能力</a></li>
-          <li><a href="https://www.example.com/blog/kousuan-xunlian-fangfa/">口算训练方法与技巧</a></li>
-          <li><a href="https://www.example.com/blog/shuxue-siwei-shudu-kousuan-shuangguan/">数学思维训练：数独+口算双管齐下</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kousuan-sudu-tisheng-shizhan-20ti/">口算速度提升实战：从每分钟5题到20题</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kousuan-xunlian-fangfa/">如何培养孩子的口算能力</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kousuan-xunlian-fangfa/">口算训练方法与技巧</a></li>
+          <li><a href="https://www.skillxm.cn/blog/shuxue-siwei-shudu-kousuan-shuangguan/">数学思维训练：数独+口算双管齐下</a></li>
         </ul>
       </div>
       <script
@@ -161,7 +161,7 @@ export default function MentalMathLayout({ children }: { children: React.ReactNo
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SpeakableSpecification",
-            "@id": "https://www.example.com/tools/mental-math/#speakable",
+            "@id": "https://www.skillxm.cn/tools/mental-math/#speakable",
             "cssSelector": [
               "h1",
               "h2",

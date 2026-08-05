@@ -16,13 +16,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t("privacyTitle"),
     description: t("privacyDesc"),
     alternates: {
-      canonical: "https://www.example.com/privacy/",
+      canonical: "https://www.skillxm.cn/privacy/",
       languages: {
-        "zh-CN": "https://www.example.com/privacy",
-        en: "https://www.example.com/en/privacy",
-        ja: "https://www.example.com/ja/privacy",
-        ko: "https://www.example.com/ko/privacy",
-        "x-default": "https://www.example.com/privacy",
+        "zh-CN": "https://www.skillxm.cn/privacy",
+        en: "https://www.skillxm.cn/en/privacy",
+        ja: "https://www.skillxm.cn/ja/privacy",
+        ko: "https://www.skillxm.cn/ko/privacy",
+        "x-default": "https://www.skillxm.cn/privacy",
       },
     },
   };

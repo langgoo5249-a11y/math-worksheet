@@ -6,20 +6,20 @@ export const metadata: Metadata = {
   title: '联系我们 - 练学宝',
   description: "联系练学宝团队：如有问题、建议或合作意向，欢迎通过邮箱 lang@example.com 或在线表单联系我们。电话0575-64972527，地址浙江省绍兴市嵊州三江街道花园社区75号。我们会在1-2个工作日内回复您的邮件，欢迎家长教师和合作伙伴咨询交流，共同为小学生提供更好的免费学习工具和教育资源。",
   alternates: {
-    canonical: 'https://www.example.com/contact/',
+    canonical: 'https://www.skillxm.cn/contact/',
   },
   openGraph: {
-    url: 'https://www.example.com/contact/',
+    url: 'https://www.skillxm.cn/contact/',
     title: '联系我们 - 练学宝',
     description: "联系练学宝团队：如有问题、建议或合作意向，欢迎通过邮箱 lang@example.com 或在线表单联系我们。电话0575-64972527，地址浙江省绍兴市嵊州三江街道花园社区75号。我们会在1-2个工作日内回复您的邮件，欢迎家长教师和合作伙伴咨询交流，共同为小学生提供更好的免费学习工具和教育资源。",
     type: 'website',
-    images: [{ url: 'https://www.example.com/og-image.jpg', width: 1200, height: 630, alt: '练学宝' }],
+    images: [{ url: 'https://www.skillxm.cn/og-image.jpg', width: 1200, height: 630, alt: '练学宝' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: '联系我们 - 练学宝',
     description: "联系练学宝团队：如有问题、建议或合作意向，欢迎通过邮箱 lang@example.com 或在线表单联系我们。电话0575-64972527，地址浙江省绍兴市嵊州三江街道花园社区75号。我们会在1-2个工作日内回复您的邮件，欢迎家长教师和合作伙伴咨询交流，共同为小学生提供更好的免费学习工具和教育资源。",
-    images: ['https://www.example.com/og-image.jpg'],
+    images: ['https://www.skillxm.cn/og-image.jpg'],
   },
 };
 

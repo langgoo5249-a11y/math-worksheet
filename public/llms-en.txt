@@ -6,25 +6,25 @@
 SkillXM is a free online platform for learning Chinese (Mandarin). It provides 8 interactive tools for learners at all levels, from absolute beginners to HSK 6. All tools are free, require no registration, and work on any device.
 
 ## Quick Links
-- [Full Content Index (llms-full.txt)](https://www.example.com/llms-full.txt)
-- [Sitemap (sitemap.xml)](https://www.example.com/sitemap.xml)
-- [Chinese Version (练学宝)](https://www.example.com/)
-- [Chinese LLMs Index](https://www.example.com/llms.txt)
-- [About SkillXM](https://www.example.com/about/)
-- [Contact](https://www.example.com/contact/)
-- [Editorial Policy](https://www.example.com/editorial-policy/)
-- [Privacy Policy](https://www.example.com/privacy/)
-- [Terms of Service](https://www.example.com/terms/)
+- [Full Content Index (llms-full.txt)](https://www.skillxm.cn/llms-full.txt)
+- [Sitemap (sitemap.xml)](https://www.skillxm.cn/sitemap.xml)
+- [Chinese Version (练学宝)](https://www.skillxm.cn/)
+- [Chinese LLMs Index](https://www.skillxm.cn/llms.txt)
+- [About SkillXM](https://www.skillxm.cn/about/)
+- [Contact](https://www.skillxm.cn/contact/)
+- [Editorial Policy](https://www.skillxm.cn/editorial-policy/)
+- [Privacy Policy](https://www.skillxm.cn/privacy/)
+- [Terms of Service](https://www.skillxm.cn/terms/)
 
 ## Learning Tools
-- **Pinyin Converter**: Convert any Chinese text into pinyin with accurate tone marks. Paste a paragraph or a single character and instantly see the pronunciation — https://www.example.com/en/tools/pinyin-converter/
-- **Pinyin Chart**: Complete interactive pinyin table with 23 initials and 24 finals. Click any cell to hear pronunciation, switch between tones, and learn phonetics rules — https://www.example.com/en/tools/pinyin-chart/
-- **Stroke Order Practice**: Learn to write Chinese characters with the correct stroke order. Animated guides show every stroke so beginners build proper habits from day one — https://www.example.com/en/tools/stroke-order/
-- **HSK Flashcards**: Practice HSK 1 through HSK 6 vocabulary with spaced repetition. Track which words you know and focus your review where it matters most — https://www.example.com/en/tools/hsk-flashcards/
-- **Tone Trainer**: Master the four Mandarin tones through listening and comparison drills. Train your ear to distinguish ma, ma, ma and ma with confidence — https://www.example.com/en/tools/tone-trainer/
-- **Picture Learning**: Learn Chinese vocabulary through pictures. Three difficulty levels from everyday nouns to four-character idioms, with audio pronunciation — https://www.example.com/en/tools/picture-learning/
-- **Chinese Reading Reader**: Graded reading passages with on-demand pinyin annotation and tap-to-translate vocabulary. Read at your level and grow your understanding naturally — https://www.example.com/en/tools/reading-reader/
-- **Radical Explorer**: Decompose any character into its radicals and components. Discover the meaning behind each building block and remember characters faster — https://www.example.com/en/tools/radical-explorer/
+- **Pinyin Converter**: Convert any Chinese text into pinyin with accurate tone marks. Paste a paragraph or a single character and instantly see the pronunciation — https://www.skillxm.cn/en/tools/pinyin-converter/
+- **Pinyin Chart**: Complete interactive pinyin table with 23 initials and 24 finals. Click any cell to hear pronunciation, switch between tones, and learn phonetics rules — https://www.skillxm.cn/en/tools/pinyin-chart/
+- **Stroke Order Practice**: Learn to write Chinese characters with the correct stroke order. Animated guides show every stroke so beginners build proper habits from day one — https://www.skillxm.cn/en/tools/stroke-order/
+- **HSK Flashcards**: Practice HSK 1 through HSK 6 vocabulary with spaced repetition. Track which words you know and focus your review where it matters most — https://www.skillxm.cn/en/tools/hsk-flashcards/
+- **Tone Trainer**: Master the four Mandarin tones through listening and comparison drills. Train your ear to distinguish ma, ma, ma and ma with confidence — https://www.skillxm.cn/en/tools/tone-trainer/
+- **Picture Learning**: Learn Chinese vocabulary through pictures. Three difficulty levels from everyday nouns to four-character idioms, with audio pronunciation — https://www.skillxm.cn/en/tools/picture-learning/
+- **Chinese Reading Reader**: Graded reading passages with on-demand pinyin annotation and tap-to-translate vocabulary. Read at your level and grow your understanding naturally — https://www.skillxm.cn/en/tools/reading-reader/
+- **Radical Explorer**: Decompose any character into its radicals and components. Discover the meaning behind each building block and remember characters faster — https://www.skillxm.cn/en/tools/radical-explorer/
 
 ## HSK Learning Path
 - HSK 1 (150 words): Beginner - greetings, numbers, basic phrases
@@ -35,12 +35,12 @@ SkillXM is a free online platform for learning Chinese (Mandarin). It provides 8
 - HSK 6 (5,000+ words): Advanced - fluent reading and professional use
 
 ## English Blog
-- [All English Blog Posts](https://www.example.com/en/blog/)
-- [How to Start Learning Chinese from Zero: A Complete Beginner's Guide (2026)](https://www.example.com/en/blog/how-to-start-learning-chinese-from-zero/)
-- [Mastering Chinese Tones: A Scientific Approach to Perfect Pronunciation](https://www.example.com/en/blog/mastering-chinese-tones-scientific-approach/)
-- [The Complete HSK Guide: Your Roadmap to Chinese Fluency (2026 Edition)](https://www.example.com/en/blog/hsk-guide-roadmap-to-chinese-fluency/)
-- [Chinese Characters Demystified: Structure, Stroke Order, and Radicals](https://www.example.com/en/blog/chinese-characters-demystifying-writing-system/)
-- [The Best Free Resources to Learn Chinese Online in 2026](https://www.example.com/en/blog/best-free-resources-learn-chinese-online/)
+- [All English Blog Posts](https://www.skillxm.cn/en/blog/)
+- [How to Start Learning Chinese from Zero: A Complete Beginner's Guide (2026)](https://www.skillxm.cn/en/blog/how-to-start-learning-chinese-from-zero/)
+- [Mastering Chinese Tones: A Scientific Approach to Perfect Pronunciation](https://www.skillxm.cn/en/blog/mastering-chinese-tones-scientific-approach/)
+- [The Complete HSK Guide: Your Roadmap to Chinese Fluency (2026 Edition)](https://www.skillxm.cn/en/blog/hsk-guide-roadmap-to-chinese-fluency/)
+- [Chinese Characters Demystified: Structure, Stroke Order, and Radicals](https://www.skillxm.cn/en/blog/chinese-characters-demystifying-writing-system/)
+- [The Best Free Resources to Learn Chinese Online in 2026](https://www.skillxm.cn/en/blog/best-free-resources-learn-chinese-online/)
 
 ## Blog Categories
 - Getting Started - Beginner guides and first steps in Chinese
@@ -50,14 +50,14 @@ SkillXM is a free online platform for learning Chinese (Mandarin). It provides 8
 - Learning Tips - Study strategies and resource recommendations
 
 ## Additional Pages
-- [English Homepage](https://www.example.com/en/)
-- [All English Tools](https://www.example.com/en/tools/)
-- [Site Search](https://www.example.com/search/)
-- [Changelog](https://www.example.com/changelog/)
+- [English Homepage](https://www.skillxm.cn/en/)
+- [All English Tools](https://www.skillxm.cn/en/tools/)
+- [Site Search](https://www.skillxm.cn/search/)
+- [Changelog](https://www.skillxm.cn/changelog/)
 
 ## Site Structure Summary
-- Homepage: https://www.example.com/en/
+- Homepage: https://www.skillxm.cn/en/
 - Tools: 8 interactive Chinese learning tools
 - Blog: 5 in-depth English articles on Chinese learning
 - HSK Path: Complete HSK 1-6 vocabulary and study resources
-- Chinese Version: https://www.example.com/ (10+ elementary education tools, 108 blog articles)
+- Chinese Version: https://www.skillxm.cn/ (10+ elementary education tools, 108 blog articles)

@@ -10,18 +10,18 @@ export const metadata: Metadata = {
   keywords:
     'learn Chinese pictures, Chinese visual vocabulary, Chinese picture flashcards, learn Chinese with emoji, Chinese vocabulary builder, picture Chinese learning, chengyu idioms, Chinese characters with images, visual Mandarin, picture flashcards Chinese',
   alternates: {
-    canonical: 'https://www.example.com/en/tools/picture-learning/',
+    canonical: 'https://www.skillxm.cn/en/tools/picture-learning/',
     languages: {
-      'zh-CN': 'https://www.example.com/',
-      en: 'https://www.example.com/en/tools/picture-learning/',
-      'x-default': 'https://www.example.com/',
+      'zh-CN': 'https://www.skillxm.cn/',
+      en: 'https://www.skillxm.cn/en/tools/picture-learning/',
+      'x-default': 'https://www.skillxm.cn/',
     },
   },
   openGraph: {
     title: 'Learn Chinese with Pictures - Visual Vocabulary Builder',
     description:
       'A free visual vocabulary builder that pairs pictures and emoji with Chinese characters, pinyin and English. Easy, Hard and Hell (idiom) levels.',
-    url: 'https://www.example.com/en/tools/picture-learning/',
+    url: 'https://www.skillxm.cn/en/tools/picture-learning/',
     siteName: 'SkillXM',
     locale: 'en_US',
     type: 'website',
@@ -97,7 +97,7 @@ export default function PictureLearningPage() {
         applicationCategory: 'EducationApplication',
         operatingSystem: 'Web',
         inLanguage: 'en',
-        url: 'https://www.example.com/en/tools/picture-learning/',
+        url: 'https://www.skillxm.cn/en/tools/picture-learning/',
         description:
           'Free visual vocabulary builder that pairs pictures and emoji with Chinese characters, pinyin and English. Three levels from simple nouns to four-character idioms.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
@@ -110,8 +110,8 @@ export default function PictureLearningPage() {
           'Native Mandarin audio pronunciation',
           'Progress and score tracking',
         ],
-        provider: { '@id': 'https://www.example.com/#organization' },
-        author: { '@id': 'https://www.example.com/#person-chenlaoshi' },
+        provider: { '@id': 'https://www.skillxm.cn/#organization' },
+        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
         educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
         audience: {
           '@type': 'EducationalAudience',
@@ -121,9 +121,9 @@ export default function PictureLearningPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.example.com/en/' },
-          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.example.com/en/tools/' },
-          { '@type': 'ListItem', position: 3, name: 'Learn Chinese with Pictures', item: 'https://www.example.com/en/tools/picture-learning/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.skillxm.cn/en/' },
+          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.skillxm.cn/en/tools/' },
+          { '@type': 'ListItem', position: 3, name: 'Learn Chinese with Pictures', item: 'https://www.skillxm.cn/en/tools/picture-learning/' },
         ],
       },
     ],

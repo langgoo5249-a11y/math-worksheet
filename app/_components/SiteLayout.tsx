@@ -13,7 +13,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
   const [copySuccess, setCopySuccess] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('https://www.example.com');
+    navigator.clipboard.writeText('https://www.skillxm.cn');
     setCopySuccess(true);
     setTimeout(() => setCopySuccess(false), 2000);
   };
@@ -389,7 +389,7 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
             <div className="flex items-center gap-2 bg-white/5 rounded-xl p-3 border border-white/10">
               <input
                 type="text"
-                value="https://www.example.com"
+                value="https://www.skillxm.cn"
                 readOnly
                 className="flex-1 bg-transparent text-white text-sm outline-none"
               />

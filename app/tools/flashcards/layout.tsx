@@ -4,7 +4,7 @@ import ToolPageSchema from '@/app/_components/ToolPageSchema';
 import ToolContent from '@/app/tools/_components/ToolContent';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const canonicalUrl = 'https://www.example.com/tools/flashcards/';
+    const canonicalUrl = 'https://www.skillxm.cn/tools/flashcards/';
   return {
     title: "识字卡片生成器免费 - 汉字拼音组词双面卡片PDF打印 | 练学宝",
     description: "免费生成汉字识字卡片，自动标注拼音并提供常用组词，支持双面卡片PDF打印。适合幼儿园大班到小学低年级识字启蒙，涵盖一年级常用300字和二年级常用500字，家长打印即可使用，教师可用于课堂识字教学，支持自定义生字内容与课文同步，配笔顺动画演示，可重复打印永久免费无需注册即用，手机电脑均可使用，适合幼小衔接识字启蒙。",
@@ -16,12 +16,12 @@ export async function generateMetadata(): Promise<Metadata> {
       "x-default": canonicalUrl,
     },
   },
-    openGraph: { url: canonicalUrl, title: "识字卡片生成器 - 练学宝", description: "免费生成汉字识字卡片，自动标注拼音并提供常用组词，支持双面卡片PDF打印。适合幼儿园大班到小学低年级识字启蒙，涵盖一年级常用300字和二年级常用500字，家长打印即可使用，教师可用于课堂识字教学，支持自定义生字内容与课文同步，配笔顺动画演示，可重复打印永久免费无需注册即用，手机电脑均可使用，适合幼小衔接识字启蒙。", images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("识字卡片生成器")}&category=${encodeURIComponent("语文工具")}&icon=🃏`, width: 1200, height: 630, alt: "识字卡片生成器 - 练学宝" }] },
+    openGraph: { url: canonicalUrl, title: "识字卡片生成器 - 练学宝", description: "免费生成汉字识字卡片，自动标注拼音并提供常用组词，支持双面卡片PDF打印。适合幼儿园大班到小学低年级识字启蒙，涵盖一年级常用300字和二年级常用500字，家长打印即可使用，教师可用于课堂识字教学，支持自定义生字内容与课文同步，配笔顺动画演示，可重复打印永久免费无需注册即用，手机电脑均可使用，适合幼小衔接识字启蒙。", images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("识字卡片生成器")}&category=${encodeURIComponent("语文工具")}&icon=🃏`, width: 1200, height: 630, alt: "识字卡片生成器 - 练学宝" }] },
     twitter: {
       card: "summary_large_image",
       title: "识字卡片生成器 - 练学宝",
       description: "免费生成汉字识字卡片，自动标注拼音并提供常用组词，支持双面卡片PDF打印。适合幼儿园大班到小学低年级识字启蒙，涵盖一年级常用300字和二年级常用500字，家长打印即可使用，教师可用于课堂识字教学，支持自定义生字内容与课文同步，配笔顺动画演示，可重复打印永久免费无需注册即用，手机电脑均可使用，适合幼小衔接识字启蒙。",
-      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("识字卡片生成器")}&category=${encodeURIComponent("语文工具")}&icon=🃏`, width: 1200, height: 630, alt: "识字卡片生成器 - 练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("识字卡片生成器")}&category=${encodeURIComponent("语文工具")}&icon=🃏`, width: 1200, height: 630, alt: "识字卡片生成器 - 练学宝" }],
     },
   };
 }
@@ -42,12 +42,12 @@ export default function FlashcardsLayout({ children }: { children: React.ReactNo
         </ul>
         <p>适用对象</p>
         <p>识字卡片生成器适合小学语文教师、幼儿园教师、学生家长以及从事汉字教学的培训机构使用。无论是课堂教学、课后辅导还是家庭早教，都可以通过本工具快速生成专业的识字卡片，提高汉字学习效率。</p>
-        <p>访问 <a href="https://www.example.com/">练学宝</a> 获取更多免费教学工具。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.example.com/blog/shizi-fangfa-tisheng/">小学识字方法大比拼</a></li>
-          <li><a href="https://www.example.com/blog/pinyin-xuexi-luxiantu/">一年级拼音学习完整攻略</a></li>
-          <li><a href="https://www.example.com/blog/yinianji-pinyin-shizi-kousuan-gonglue/">一年级家长必看：拼音+识字+口算全攻略</a></li>
+          <li><a href="https://www.skillxm.cn/blog/shizi-fangfa-tisheng/">小学识字方法大比拼</a></li>
+          <li><a href="https://www.skillxm.cn/blog/pinyin-xuexi-luxiantu/">一年级拼音学习完整攻略</a></li>
+          <li><a href="https://www.skillxm.cn/blog/yinianji-pinyin-shizi-kousuan-gonglue/">一年级家长必看：拼音+识字+口算全攻略</a></li>
         </ul>
       </div>
       <script
@@ -145,7 +145,7 @@ export default function FlashcardsLayout({ children }: { children: React.ReactNo
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SpeakableSpecification",
-            "@id": "https://www.example.com/tools/flashcards/#speakable",
+            "@id": "https://www.skillxm.cn/tools/flashcards/#speakable",
             "cssSelector": [
               "h1",
               "h2",

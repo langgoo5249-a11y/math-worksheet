@@ -213,7 +213,7 @@ export function generateSchemaApps(): object[] {
   return TOOLS.filter(t => t.active).map(tool => ({
     '@type': 'SoftwareApplication',
     name: tool.schemaName,
-    url: `https://www.example.com${tool.path}`,
+    url: `https://www.skillxm.cn${tool.path}`,
     description: tool.schemaDescription,
     applicationCategory: tool.schemaCategory,
     operatingSystem: 'Web Browser',
@@ -230,8 +230,8 @@ export function generateSchemaBreadcrumbs(): object[] {
   return TOOLS.filter(t => t.active).map(tool => ({
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: '首页', item: 'https://www.example.com' },
-      { '@type': 'ListItem', position: 2, name: tool.name, item: `https://www.example.com${tool.path}` },
+      { '@type': 'ListItem', position: 1, name: '首页', item: 'https://www.skillxm.cn' },
+      { '@type': 'ListItem', position: 2, name: tool.name, item: `https://www.skillxm.cn${tool.path}` },
     ],
   }));
 }
@@ -272,10 +272,10 @@ export function getToolPathMappings(toolId: string): Record<string, string> {
   if (!tool) return {};
   
   return {
-    'zh-CN': `https://www.example.com${tool.path}`,
-    'en': `https://www.example.com/en${tool.path}`,
-    'ja': `https://www.example.com/ja${tool.path}`,
-    'ko': `https://www.example.com/ko${tool.path}`,
-    'x-default': `https://www.example.com${tool.path}`,
+    'zh-CN': `https://www.skillxm.cn${tool.path}`,
+    'en': `https://www.skillxm.cn/en${tool.path}`,
+    'ja': `https://www.skillxm.cn/ja${tool.path}`,
+    'ko': `https://www.skillxm.cn/ko${tool.path}`,
+    'x-default': `https://www.skillxm.cn${tool.path}`,
   };
 }

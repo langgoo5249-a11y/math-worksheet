@@ -5,20 +5,20 @@ export const metadata: Metadata = {
   title: '关于我们 - 练学宝',
   description: "了解练学宝的建站初衷、使命和团队。练学宝是一个免费的小学在线学习工具平台，由全栈开发者林远创建，提供数学练习卷生成器、字帖生成器、口算速练、数独游戏、识字卡片、英语字帖、拼音学习、古诗词默写、作文模板、单元测试卷等10+款工具，覆盖小学1-6年级数学语文英语全科，所有功能免费使用无需注册，支持PDF打印下载，已服务超过10万家长和学生，致力于让每个家庭都能用上优质教育工具。",
   alternates: {
-    canonical: 'https://www.example.com/about/',
+    canonical: 'https://www.skillxm.cn/about/',
   },
   openGraph: {
-    url: 'https://www.example.com/about/',
+    url: 'https://www.skillxm.cn/about/',
     title: '关于我们 - 练学宝',
     description: "了解练学宝的建站初衷、使命和团队。练学宝是一个免费的小学在线学习工具平台，由全栈开发者林远创建，提供数学练习卷生成器、字帖生成器、口算速练、数独游戏、识字卡片、英语字帖、拼音学习、古诗词默写、作文模板、单元测试卷等10+款工具，覆盖小学1-6年级数学语文英语全科，所有功能免费使用无需注册，支持PDF打印下载，已服务超过10万家长和学生，致力于让每个家庭都能用上优质教育工具。",
     type: 'website',
-    images: [{ url: 'https://www.example.com/og-image.jpg', width: 1200, height: 630, alt: '练学宝' }],
+    images: [{ url: 'https://www.skillxm.cn/og-image.jpg', width: 1200, height: 630, alt: '练学宝' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: '关于我们 - 练学宝',
     description: "了解练学宝的建站初衷、使命和团队。练学宝是一个免费的小学在线学习工具平台，由全栈开发者林远创建，提供数学练习卷生成器、字帖生成器、口算速练、数独游戏、识字卡片、英语字帖、拼音学习、古诗词默写、作文模板、单元测试卷等10+款工具，覆盖小学1-6年级数学语文英语全科，所有功能免费使用无需注册，支持PDF打印下载，已服务超过10万家长和学生，致力于让每个家庭都能用上优质教育工具。",
-    images: ['https://www.example.com/og-image.jpg'],
+    images: ['https://www.skillxm.cn/og-image.jpg'],
   },
 };
 
@@ -33,12 +33,12 @@ export default function AboutPage() {
             "@type": "AboutPage",
             "name": "关于练学宝 - 免费小学教育工具平台",
             "description": "练学宝是一个免费的在线教育工具平台，为小学生提供口算练习、字帖生成、数学练习卷等学习工具。创始团队拥有教育技术和软件开发背景。",
-            "url": "https://www.example.com/about",
+            "url": "https://www.skillxm.cn/about",
             "mainEntity": {
               "@type": "Organization",
               "name": "练学宝",
               "foundingDate": "2024",
-              "url": "https://www.example.com",
+              "url": "https://www.skillxm.cn",
               "description": "免费在线教育工具平台"
             }
           })

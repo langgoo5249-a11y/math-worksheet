@@ -82,7 +82,7 @@ export default function BlogPage() {
             "@type": "CollectionPage",
             "name": "练学宝博客 - 小学教育学习方法指南",
             "description": "小学数学语文英语学习方法文章集锦，覆盖一年级到六年级学习指南，包含口算训练、字帖练习、阅读理解、作文写作等实用教程。",
-            "url": "https://www.example.com/blog",
+            "url": "https://www.skillxm.cn/blog",
             "dateModified": "2026-06-21"
           })
         }}

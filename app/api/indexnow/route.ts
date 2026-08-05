@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
     const validUrls = urls.filter(url => {
       try {
         const u = new URL(url);
-        return u.hostname === 'www.example.com';
+        return u.hostname === 'www.skillxm.cn';
       } catch {
         return false;
       }
@@ -40,9 +40,9 @@ export async function POST(request: NextRequest) {
 
     // Submit to IndexNow
     const payload = {
-      host: 'www.example.com',
+      host: 'www.skillxm.cn',
       key: INDEXNOW_KEY,
-      keyLocation: `https://www.example.com/${INDEXNOW_KEY}.txt`,
+      keyLocation: `https://www.skillxm.cn/${INDEXNOW_KEY}.txt`,
       urlList: validUrls,
     };
 

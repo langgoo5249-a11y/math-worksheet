@@ -10,18 +10,18 @@ export const metadata: Metadata = {
   keywords:
     'Chinese learning blog, learn Chinese guide, Mandarin tips, Chinese language blog, HSK guide, Chinese characters guide, Chinese pronunciation, free Chinese resources',
   alternates: {
-    canonical: 'https://www.example.com/en/blog/',
+    canonical: 'https://www.skillxm.cn/en/blog/',
     languages: {
-      'zh-CN': 'https://www.example.com/blog/',
-      en: 'https://www.example.com/en/blog/',
-      'x-default': 'https://www.example.com/blog/',
+      'zh-CN': 'https://www.skillxm.cn/blog/',
+      en: 'https://www.skillxm.cn/en/blog/',
+      'x-default': 'https://www.skillxm.cn/blog/',
     },
   },
   openGraph: {
     title: 'Chinese Learning Blog - Guides, Tips & Strategies | SkillXM',
     description:
       'Free Chinese learning guides, tips, and strategies for Mandarin learners.',
-    url: 'https://www.example.com/en/blog/',
+    url: 'https://www.skillxm.cn/en/blog/',
     siteName: 'SkillXM',
     locale: 'en_US',
     type: 'website',
@@ -48,42 +48,42 @@ export default function EnBlogPage() {
     '@graph': [
       {
         '@type': 'Blog',
-        '@id': 'https://www.example.com/en/blog/#blog',
+        '@id': 'https://www.skillxm.cn/en/blog/#blog',
         name: 'SkillXM Chinese Learning Blog',
         description:
           'Free Chinese learning guides, tips, and strategies for Mandarin learners.',
-        url: 'https://www.example.com/en/blog/',
+        url: 'https://www.skillxm.cn/en/blog/',
         inLanguage: 'en',
         publisher: {
-          '@id': 'https://www.example.com/#organization',
+          '@id': 'https://www.skillxm.cn/#organization',
         },
         blogPost: sortedArticles.map((a) => ({
           '@type': 'BlogPosting',
           headline: a.title,
           description: a.description,
-          url: `https://www.example.com/en/blog/${a.id}/`,
+          url: `https://www.skillxm.cn/en/blog/${a.id}/`,
           datePublished: a.date,
           dateModified: a.dateModified || a.date,
           author: {
-            '@id': 'https://www.example.com/#person-chenlaoshi',
+            '@id': 'https://www.skillxm.cn/#person-chenlaoshi',
           },
         })),
       },
       {
         '@type': 'CollectionPage',
-        '@id': 'https://www.example.com/en/blog/#collection',
+        '@id': 'https://www.skillxm.cn/en/blog/#collection',
         name: 'Chinese Learning Blog - Guides, Tips & Strategies | SkillXM',
-        url: 'https://www.example.com/en/blog/',
+        url: 'https://www.skillxm.cn/en/blog/',
         description:
           'Free Chinese learning guides, tips, and strategies for Mandarin learners. Articles on pinyin, tones, HSK, characters, pronunciation, and the best free resources.',
         inLanguage: 'en',
-        isPartOf: { '@id': 'https://www.example.com/en/#website' },
+        isPartOf: { '@id': 'https://www.skillxm.cn/en/#website' },
         hasPart: sortedArticles.map((a) => ({
           '@type': 'BlogPosting',
           headline: a.title,
-          url: `https://www.example.com/en/blog/${a.id}/`,
+          url: `https://www.skillxm.cn/en/blog/${a.id}/`,
         })),
-        mainEntity: { '@id': 'https://www.example.com/en/blog/#blog' },
+        mainEntity: { '@id': 'https://www.skillxm.cn/en/blog/#blog' },
       },
       {
         '@type': 'BreadcrumbList',
@@ -92,13 +92,13 @@ export default function EnBlogPage() {
             '@type': 'ListItem',
             position: 1,
             name: 'Home',
-            item: 'https://www.example.com/en/',
+            item: 'https://www.skillxm.cn/en/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: 'Blog',
-            item: 'https://www.example.com/en/blog/',
+            item: 'https://www.skillxm.cn/en/blog/',
           },
         ],
       },

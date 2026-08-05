@@ -40,12 +40,12 @@ export const metadata: Metadata = {
     title: "练学宝 - 儿童中文学习网站|免费小学教学工具|数学练习卷|字帖|口算",
     description: "练学宝是优质的儿童中文学习网站，提供拼音学习、识字卡片、古诗词默写、字帖生成器等中文学习工具，以及数学练习卷、口算速练等10+款免费小学教学工具，支持PDF导出打印，无需注册即开即用。",
     type: "website",
-    url: "https://www.example.com",
+    url: "https://www.skillxm.cn/",
     siteName: "练学宝",
     locale: "zh_CN",
     images: [
       {
-        url: "https://www.example.com/og-image.jpg",
+        url: "https://www.skillxm.cn/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "练学宝 - 免费在线教育工具",
@@ -56,15 +56,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "练学宝 - 免费小学数学练习卷生成器/字帖/作文模板",
     description: "免费在线教育工具，支持小学1-6年级数学练习卷、字帖、拼音卡片、数独、作文模板等，PDF导出即印即用，无需注册完全免费。",
-    images: ["https://www.example.com/og-image.jpg"],
+    images: ["https://www.skillxm.cn/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://www.example.com/",
-    languages: {
-      "zh-CN": "https://www.example.com/",
-      "en": "https://www.example.com/en/",
-      "x-default": "https://www.example.com/",
-    },
+    canonical: "https://www.skillxm.cn/",
   },
   icons: {
     icon: [
@@ -107,30 +102,30 @@ export default async function RootLayout({
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://www.example.com/#website",
+        "@id": "https://www.skillxm.cn/#website",
         name: "练学宝",
-        url: "https://www.example.com/",
+        url: "https://www.skillxm.cn/",
         description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
         inLanguage: "zh-CN",
         dateModified: "2026-07-18",
         potentialAction: {
           "@type": "SearchAction",
-          target: "https://www.example.com/search?q={search_term_string}",
+          target: "https://www.skillxm.cn/search?q={search_term_string}",
           "query-input": "required name=search_term_string"
         },
         publisher: {
-          "@id": "https://www.example.com/#organization"
+          "@id": "https://www.skillxm.cn/#organization"
         },
       },
       {
         "@type": "Organization",
-        "@id": "https://www.example.com/#organization",
+        "@id": "https://www.skillxm.cn/#organization",
         name: "练学宝",
-        url: "https://www.example.com/",
+        url: "https://www.skillxm.cn/",
         dateModified: "2026-07-03",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.example.com/favicon.svg",
+          url: "https://www.skillxm.cn/favicon.svg",
           width: 512,
           height: 512,
         },
@@ -152,7 +147,7 @@ export default async function RootLayout({
         },
         sameAs: [
           "https://github.com/langgoo5249-a11y/math-worksheet",
-          "https://www.example.com/",
+          "https://www.skillxm.cn/",
           "https://xhslink.com/m/8u3VNbmKr0F",
           "https://author.baidu.com/home?from=bjh_article&app_id=1810332299795975",
         ],
@@ -175,20 +170,20 @@ export default async function RootLayout({
         ],
         contactPoint: {
           "@type": "ContactPoint",
-          email: "lang@example.com",
+          email: "contact@skillxm.cn",
           contactType: "customer support",
           availableLanguage: ["Chinese", "English", "Japanese", "Korean"],
         },
       },
       {
         "@type": "Person",
-        "@id": "https://www.example.com/#person-chenlaoshi",
+        "@id": "https://www.skillxm.cn/#person-chenlaoshi",
         name: "陈老师",
         description: "练学宝创始人，具备教育技术和全栈开发双重背景。两个孩子的父亲，持续关注小学教育技术领域，致力于为家长和老师提供免费优质的教育资源。",
         jobTitle: "教育内容作者",
         sameAs: [
           "https://github.com/langgoo5249-a11y",
-          "https://www.example.com/about/",
+          "https://www.skillxm.cn/about/",
           "https://www.xiaohongshu.com/user/profile/6723c8e3000000001c02b1a8",
         ],
         knowsAbout: [
@@ -199,9 +194,9 @@ export default async function RootLayout({
           "英语自然拼读"
         ],
         affiliation: {
-          "@id": "https://www.example.com/#organization"
+          "@id": "https://www.skillxm.cn/#organization"
         },
-        url: "https://www.example.com/about/",
+        url: "https://www.skillxm.cn/about/",
         hasCredential: [
           {
             "@type": "EducationalOccupationalCredential",
@@ -219,7 +214,7 @@ export default async function RootLayout({
       },
       {
         "@type": "SpeakableSpecification",
-        "@id": "https://www.example.com/#speakable",
+        "@id": "https://www.skillxm.cn/#speakable",
         "xpath": [
           "/html/head/title",
           "/html/head/meta[@name='description']/@content"
@@ -231,7 +226,7 @@ export default async function RootLayout({
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.example.com/#faq",
+        "@id": "https://www.skillxm.cn/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -288,10 +283,7 @@ export default async function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="format-detection" content="telephone=no" />
 
-        {/* hreflang: 多语言站点，声明 zh-CN、en、x-default */}
-        <link rel="alternate" hrefLang="zh-CN" href="https://www.example.com/" />
-        <link rel="alternate" hrefLang="en" href="https://www.example.com/en/" />
-        <link rel="alternate" hrefLang="x-default" href="https://www.example.com/" />
+        {/* hreflang 由各页面 metadata.alternates 单独定义，避免全站重复 */}
 
         {/* 动态设置 html lang 属性（根据 URL 路径） */}
         <script

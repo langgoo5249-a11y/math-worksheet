@@ -195,7 +195,7 @@ export default async function ParentGuideDetailPage({ params }: { params: Promis
       {/* 分享 */}
       <section className="mt-8">
         <ShareButtons
-          url={`https://www.example.com/parent-guide/${t.id}`}
+          url={`https://www.skillxm.cn/parent-guide/${t.id}`}
           title={t.title}
         />
       </section>

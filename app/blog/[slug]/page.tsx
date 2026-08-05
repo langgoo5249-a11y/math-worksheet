@@ -18,23 +18,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     authors: [{ name: article.author?.name || defaultAuthor.name }],
     keywords: article.keywords || [article.category, '小学教育', '学习方法', '家长辅导'],
     alternates: {
-      canonical: `https://www.example.com/blog/${slug}/`,
+      canonical: `https://www.skillxm.cn/blog/${slug}/`,
       languages: {
-        "zh-CN": `https://www.example.com/blog/${slug}/`,
-        "x-default": `https://www.example.com/blog/${slug}/`,
+        "zh-CN": `https://www.skillxm.cn/blog/${slug}/`,
+        "x-default": `https://www.skillxm.cn/blog/${slug}/`,
       },
     },
     openGraph: {
       title: article.title,
       description: article.description,
-      url: `https://www.example.com/blog/${slug}/`,
+      url: `https://www.skillxm.cn/blog/${slug}/`,
       type: 'article',
       publishedTime: article.date,
       modifiedTime: article.dateModified || article.date,
       authors: [article.author?.name || defaultAuthor.name],
       images: [
         {
-          url: 'https://www.example.com/og-image.jpg',
+          url: 'https://www.skillxm.cn/og-image.jpg',
           width: 1200,
           height: 630,
           alt: article.title,
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
-      images: ['https://www.example.com/og-image.jpg'],
+      images: ['https://www.skillxm.cn/og-image.jpg'],
     },
     other: {
       'article:tag': article.keywords?.join(',') || [article.category, '小学教育', '学习方法', '家长辅导'].join(','),
@@ -69,18 +69,18 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     "description": article.description,
     "datePublished": article.date,
     "dateModified": article.dateModified || article.date,
-    "image": "https://www.example.com/og-image.jpg",
+    "image": "https://www.skillxm.cn/og-image.jpg",
     "inLanguage": "zh-CN",
     "isAccessibleForFree": true,
     "author": {
-      "@id": "https://www.example.com/#person-chenlaoshi"
+      "@id": "https://www.skillxm.cn/#person-chenlaoshi"
     },
     "publisher": {
-      "@id": "https://www.example.com/#organization"
+      "@id": "https://www.skillxm.cn/#organization"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://www.example.com/blog/${article.id}/`
+      "@id": `https://www.skillxm.cn/blog/${article.id}/`
     },
     "articleSection": article.category,
     "articleBody": article.content || "",
@@ -100,7 +100,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         "inDefinedTermSet": {
           "@type": "DefinedTermSet",
           "name": article.title + " | 核心概念",
-          "url": "https://www.example.com/blog/" + article.id + "/"
+          "url": "https://www.skillxm.cn/blog/" + article.id + "/"
         }
       }))
     } : {}),
@@ -114,8 +114,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       "@type": "SpeakableSpecification",
       "cssSelector": [".summary", "h2"]
     },
-    "license": "https://www.example.com/",
-    "acquireLicensePage": "https://www.example.com/contact/",
+    "license": "https://www.skillxm.cn/",
+    "acquireLicensePage": "https://www.skillxm.cn/contact/",
   };
 
   const breadcrumbSchema = {
@@ -126,19 +126,19 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         "@type": "ListItem",
         "position": 1,
         "name": "练学宝",
-        "item": "https://www.example.com/"
+        "item": "https://www.skillxm.cn/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "知识分享",
-        "item": "https://www.example.com/blog/"
+        "item": "https://www.skillxm.cn/blog/"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": article.title,
-        "item": `https://www.example.com/blog/${article.id}/`
+        "item": `https://www.skillxm.cn/blog/${article.id}/`
       }
     ]
   };

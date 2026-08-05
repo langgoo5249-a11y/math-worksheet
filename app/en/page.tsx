@@ -12,17 +12,17 @@ export const metadata: Metadata = {
     title: 'Learn Chinese Free - Online Mandarin Learning Tools',
     description:
       'Free interactive tools for learning Chinese: pinyin converter, stroke order practice, HSK flashcards, tone trainer, and more.',
-    url: 'https://www.example.com/en/',
+    url: 'https://www.skillxm.cn/en/',
     siteName: 'SkillXM',
     locale: 'en_US',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.example.com/en/',
+    canonical: 'https://www.skillxm.cn/en/',
     languages: {
-      'zh-CN': 'https://www.example.com/',
-      en: 'https://www.example.com/en/',
-      'x-default': 'https://www.example.com/',
+      'zh-CN': 'https://www.skillxm.cn/',
+      en: 'https://www.skillxm.cn/en/',
+      'x-default': 'https://www.skillxm.cn/',
     },
   },
   robots: {
@@ -150,25 +150,25 @@ export default function EnglishHomePage() {
     '@graph': [
       {
         '@type': 'WebSite',
-        '@id': 'https://www.example.com/en/#website',
+        '@id': 'https://www.skillxm.cn/en/#website',
         name: 'SkillXM - Learn Chinese Free',
         alternateName: 'Learn Chinese Free',
-        url: 'https://www.example.com/en/',
+        url: 'https://www.skillxm.cn/en/',
         description:
           'Free online tools to learn Chinese (Mandarin): pinyin converter, stroke order practice, HSK flashcards, tone trainer, graded reader and radical explorer.',
         inLanguage: 'en',
-        publisher: { '@id': 'https://www.example.com/#organization' },
+        publisher: { '@id': 'https://www.skillxm.cn/#organization' },
         potentialAction: {
           '@type': 'SearchAction',
-          target: 'https://www.example.com/en/?q={search_term_string}',
+          target: 'https://www.skillxm.cn/en/?q={search_term_string}',
           'query-input': 'required name=search_term_string',
         },
       },
       {
         '@type': 'WebApplication',
-        '@id': 'https://www.example.com/en/#webapplication',
+        '@id': 'https://www.skillxm.cn/en/#webapplication',
         name: 'SkillXM Chinese Learning Tools',
-        url: 'https://www.example.com/en/',
+        url: 'https://www.skillxm.cn/en/',
         applicationCategory: 'EducationApplication',
         operatingSystem: 'Web',
         browserRequirements: 'Requires JavaScript. Requires HTML5.',
@@ -196,13 +196,13 @@ export default function EnglishHomePage() {
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://www.example.com/en/#homepage',
+        '@id': 'https://www.skillxm.cn/en/#homepage',
         name: 'SkillXM - Learn Chinese Free Online',
-        url: 'https://www.example.com/en/',
+        url: 'https://www.skillxm.cn/en/',
         description:
           'Free online Chinese learning tools for Mandarin: pinyin converter, stroke order practice, HSK flashcards, tone trainer, graded reader, picture learning, pinyin chart, and radical explorer. No registration required.',
         inLanguage: 'en',
-        publisher: { '@id': 'https://www.example.com/#organization' },
+        publisher: { '@id': 'https://www.skillxm.cn/#organization' },
         mainEntity: {
           '@type': 'ItemList',
           itemListElement: tools.map((tool, index) => ({
@@ -210,32 +210,32 @@ export default function EnglishHomePage() {
             position: index + 1,
             name: tool.name,
             description: tool.description,
-            url: `https://www.example.com${tool.href}`,
+            url: `https://www.skillxm.cn${tool.href}`,
           })),
         },
       },
       {
         '@type': 'ItemList',
-        '@id': 'https://www.example.com/en/#tools',
+        '@id': 'https://www.skillxm.cn/en/#tools',
         itemListElement: tools.map((tool, index) => ({
           '@type': 'ListItem',
           position: index + 1,
           name: tool.name,
           description: tool.description,
-          url: `https://www.example.com${tool.href}`,
+          url: `https://www.skillxm.cn${tool.href}`,
         })),
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://www.example.com/en/#homepage',
+        '@id': 'https://www.skillxm.cn/en/#homepage',
         name: 'SkillXM - Learn Chinese Free Online | Pinyin, Stroke Order, HSK',
-        url: 'https://www.example.com/en/',
+        url: 'https://www.skillxm.cn/en/',
         description:
           'Free online Chinese learning tools for beginners to advanced learners. Pinyin converter, stroke order, HSK flashcards, tone trainer, picture learning, pinyin chart, graded reader, and radical explorer. No registration required.',
         inLanguage: 'en',
-        publisher: { '@id': 'https://www.example.com/#organization' },
-        isPartOf: { '@id': 'https://www.example.com/en/#website' },
-        about: { '@id': 'https://www.example.com/#organization' },
+        publisher: { '@id': 'https://www.skillxm.cn/#organization' },
+        isPartOf: { '@id': 'https://www.skillxm.cn/en/#website' },
+        about: { '@id': 'https://www.skillxm.cn/#organization' },
       },
     ],
   };
@@ -263,7 +263,7 @@ export default function EnglishHomePage() {
           <div className="flex items-center gap-3">
             <span className="text-[#F5F0E8]/70">Language:</span>
             <Link
-              href="https://www.example.com/"
+              href="https://www.skillxm.cn/"
               className="text-[#F5F0E8]/80 hover:text-[#FFD700] transition-colors px-2 py-0.5 rounded border border-transparent hover:border-[#D4AF37]/50"
             >
               中文
@@ -1007,7 +1007,7 @@ export default function EnglishHomePage() {
               <ul className="space-y-2.5 text-sm">
                 <li>
                   <Link
-                    href="https://www.example.com/"
+                    href="https://www.skillxm.cn/"
                     className="text-[#F5F0E8]/60 hover:text-[#FFD700] transition-colors inline-flex items-center gap-1.5"
                   >
                     <span aria-hidden="true">🇨🇳</span> 中文版 (Chinese)
@@ -1049,7 +1049,7 @@ export default function EnglishHomePage() {
                 </li>
                 <li>
                   <Link
-                    href="https://www.example.com/about/"
+                    href="https://www.skillxm.cn/about/"
                     className="text-[#F5F0E8]/60 hover:text-[#FFD700] transition-colors"
                   >
                     About SkillXM
@@ -1081,14 +1081,14 @@ export default function EnglishHomePage() {
               </Link>
               <span aria-hidden="true">·</span>
               <Link
-                href="https://www.example.com/privacy/"
+                href="https://www.skillxm.cn/privacy/"
                 className="hover:text-[#FFD700] transition-colors"
               >
                 Privacy
               </Link>
               <span aria-hidden="true">·</span>
               <Link
-                href="https://www.example.com/terms/"
+                href="https://www.skillxm.cn/terms/"
                 className="hover:text-[#FFD700] transition-colors"
               >
                 Terms

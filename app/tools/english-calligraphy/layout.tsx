@@ -4,7 +4,7 @@ import ToolPageSchema from '@/app/_components/ToolPageSchema';
 import ToolContent from '@/app/tools/_components/ToolContent';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const canonicalUrl = 'https://www.example.com/tools/english-calligraphy/';
+    const canonicalUrl = 'https://www.skillxm.cn/tools/english-calligraphy/';
   return {
     title: "英文字帖生成器在线打印 - 四线三格衡水体字母单词练习 | 练学宝",
     description: "免费生成四线三格英文字帖，支持衡水体、手写印刷体两种字体，可自定义26个字母、单词、句子内容，一键导出PDF打印。适合小学3-6年级英语书写练习和课后作业，与课本同步，帮助养成规范书写习惯，教师家长免费使用，可批量生成全班字帖，支持自定义行数和字数，可重复打印永久免费无需注册即开即用，手机电脑均可使用。",
@@ -21,13 +21,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "英语字帖生成器 - 免费四线三格英语练习 | 练学宝",
       description: "免费生成四线三格英文字帖，支持衡水体、手写印刷体两种字体，可自定义26个字母、单词、句子内容，一键导出PDF打印。适合小学3-6年级英语书写练习和课后作业，与课本同步，帮助养成规范书写习惯，教师家长免费使用，可批量生成全班字帖，支持自定义行数和字数，可重复打印永久免费无需注册即开即用，手机电脑均可使用。",
       type: "website",
-      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("英语字帖生成器")}&category=${encodeURIComponent("英语工具")}&icon=🔤`, width: 1200, height: 630, alt: "英语字帖生成器 - 练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("英语字帖生成器")}&category=${encodeURIComponent("英语工具")}&icon=🔤`, width: 1200, height: 630, alt: "英语字帖生成器 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "英语字帖生成器 - 免费四线三格英语练习 | 练学宝",
       description: "免费生成四线三格英文字帖，支持衡水体、手写印刷体两种字体，可自定义26个字母、单词、句子内容，一键导出PDF打印。适合小学3-6年级英语书写练习和课后作业，与课本同步，帮助养成规范书写习惯，教师家长免费使用，可批量生成全班字帖，支持自定义行数和字数，可重复打印永久免费无需注册即开即用，手机电脑均可使用。",
-      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("英语字帖生成器")}&category=${encodeURIComponent("英语工具")}&icon=🔤`, width: 1200, height: 630, alt: "英语字帖生成器 - 练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("英语字帖生成器")}&category=${encodeURIComponent("英语工具")}&icon=🔤`, width: 1200, height: 630, alt: "英语字帖生成器 - 练学宝" }],
     },
   };
 }
@@ -51,12 +51,12 @@ export default function EnglishCalligraphyLayout({ children }: { children: React
         </ul>
         <p>适用对象</p>
         <p>小学3-6年级学生、英语初学者、英文字母书写需要规范的中学生、英语教师布置书写练习作业。适合英语课堂书写训练、课后练习、英语书写竞赛准备等场景。</p>
-        <p>访问 <a href="https://www.example.com/">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、汉字字帖、数独游戏、口算速练等。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、汉字字帖、数独游戏、口算速练等。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.example.com/blog/xiaoxue-yingyu-shuxie/">小学英语四线三格书写规范</a></li>
-          <li><a href="https://www.example.com/blog/ziran-pindu-rumen/">英语自然拼读入门</a></li>
-          <li><a href="https://www.example.com/blog/xiaoxue-yingyu-xuexi-ziyuan-tuijian/">小学英语学习资源推荐</a></li>
+          <li><a href="https://www.skillxm.cn/blog/xiaoxue-yingyu-shuxie/">小学英语四线三格书写规范</a></li>
+          <li><a href="https://www.skillxm.cn/blog/ziran-pindu-rumen/">英语自然拼读入门</a></li>
+          <li><a href="https://www.skillxm.cn/blog/xiaoxue-yingyu-xuexi-ziyuan-tuijian/">小学英语学习资源推荐</a></li>
         </ul>
       </div>
       <script
@@ -154,7 +154,7 @@ export default function EnglishCalligraphyLayout({ children }: { children: React
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SpeakableSpecification",
-            "@id": "https://www.example.com/tools/english-calligraphy/#speakable",
+            "@id": "https://www.skillxm.cn/tools/english-calligraphy/#speakable",
             "cssSelector": [
               "h1",
               "h2",

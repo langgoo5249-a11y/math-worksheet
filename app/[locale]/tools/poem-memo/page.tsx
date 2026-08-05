@@ -21,13 +21,13 @@ export async function generateMetadata({
     title: t('metaTitle'),
     description: t('metaDescription'),
     alternates: {
-      canonical: `https://www.example.com/${locale === 'zh' ? '' : locale + '/'}tools/poem-memo/`,
+      canonical: `https://www.skillxm.cn/${locale === 'zh' ? '' : locale + '/'}tools/poem-memo/`,
       languages: {
-        'zh-CN': 'https://www.example.com/tools/poem-memo/',
-        'en': 'https://www.example.com/en/tools/poem-memo/',
-        'ja': 'https://www.example.com/ja/tools/poem-memo/',
-        'ko': 'https://www.example.com/ko/tools/poem-memo/',
-        'x-default': 'https://www.example.com/tools/poem-memo/',
+        'zh-CN': 'https://www.skillxm.cn/tools/poem-memo/',
+        'en': 'https://www.skillxm.cn/en/tools/poem-memo/',
+        'ja': 'https://www.skillxm.cn/ja/tools/poem-memo/',
+        'ko': 'https://www.skillxm.cn/ko/tools/poem-memo/',
+        'x-default': 'https://www.skillxm.cn/tools/poem-memo/',
       },
     },
   };

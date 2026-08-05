@@ -22,12 +22,12 @@ export async function generateMetadata({ params }: { params: Promise<{ grade: st
     description: config.metaDescription,
     keywords: config.metaKeywords,
     alternates: {
-      canonical: `https://www.example.com/grade/${slug}/`,
+      canonical: `https://www.skillxm.cn/grade/${slug}/`,
     },
     openGraph: {
       title: config.metaTitle,
       description: config.metaDescription,
-      url: `https://www.example.com/grade/${slug}/`,
+      url: `https://www.skillxm.cn/grade/${slug}/`,
       type: 'article',
       locale: 'zh_CN',
     },
@@ -162,7 +162,7 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
         generateCourseSchema({
           name: config.metaTitle,
           description: config.metaDescription,
-          url: `https://www.example.com/grade/${slug}/`,
+          url: `https://www.skillxm.cn/grade/${slug}/`,
           educationalLevel: config.name,
           teaches: config.knowledgePoints.slice(0, 8),
         }),

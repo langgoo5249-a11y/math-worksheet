@@ -4,7 +4,7 @@ import ToolPageSchema from '@/app/_components/ToolPageSchema';
 import ToolContent from '@/app/tools/_components/ToolContent';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const canonicalUrl = 'https://www.example.com/tools/calligraphy/';
+    const canonicalUrl = 'https://www.skillxm.cn/tools/calligraphy/';
   return {
     title: "免费字帖生成器在线打印 - 田字格米字格描红练字帖 | 练学宝",
     description: "免费在线生成田字格、米字格汉字字帖，支持楷体描红和临摹双模式，可自定义输入任意汉字、古诗词、课文内容，一键导出PDF打印。适合小学1-6年级语文生字练习和课后练字作业，替代传统描红字帖本，与部编版教材同步生字表，家长教师零成本使用，支持自定义字体大小和格数，可重复打印永久免费无需注册即开即用，手机电脑均可使用。",
@@ -21,13 +21,13 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "字帖生成器 - 免费在线田字格米字格练字 | 练学宝",
       description: "免费在线生成田字格、米字格汉字字帖，支持楷体描红和临摹双模式，可自定义输入任意汉字、古诗词、课文内容，一键导出PDF打印。适合小学1-6年级语文生字练习和课后练字作业，替代传统描红字帖本，与部编版教材同步生字表，家长教师零成本使用，支持自定义字体大小和格数，可重复打印永久免费无需注册即开即用，手机电脑均可使用。",
       type: "website",
-      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("字帖生成器")}&category=${encodeURIComponent("语文工具")}&icon=✍️`, width: 1200, height: 630, alt: "字帖生成器 - 练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("字帖生成器")}&category=${encodeURIComponent("语文工具")}&icon=✍️`, width: 1200, height: 630, alt: "字帖生成器 - 练学宝" }],
     },
     twitter: {
       card: "summary_large_image",
       title: "字帖生成器 - 免费在线田字格米字格练字 | 练学宝",
       description: "免费在线生成田字格、米字格汉字字帖，支持楷体描红和临摹双模式，可自定义输入任意汉字、古诗词、课文内容，一键导出PDF打印。适合小学1-6年级语文生字练习和课后练字作业，替代传统描红字帖本，与部编版教材同步生字表，家长教师零成本使用，支持自定义字体大小和格数，可重复打印永久免费无需注册即开即用，手机电脑均可使用。",
-      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("字帖生成器")}&category=${encodeURIComponent("语文工具")}&icon=✍️`, width: 1200, height: 630, alt: "字帖生成器 - 练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("字帖生成器")}&category=${encodeURIComponent("语文工具")}&icon=✍️`, width: 1200, height: 630, alt: "字帖生成器 - 练学宝" }],
     },
   };
 }
@@ -51,13 +51,13 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
         </ul>
         <p>适用对象</p>
         <p>小学1-6年级学生、书法初学者、汉字书写需要提升的中小学生、语文教师布置练字作业。适合日常练字、书法兴趣培养、汉字书写规范训练等场景。</p>
-        <p>访问 <a href="https://www.example.com/">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、英语字帖、数独游戏、口算速练等。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、英语字帖、数独游戏、口算速练等。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.example.com/blog/haizi-lianzi-shijianbiao/">孩子写字歪歪扭扭？练字时间表和方法</a></li>
-          <li><a href="https://www.example.com/blog/ertong-lianzi-nianling/">小学生练字最佳年龄和方法</a></li>
-          <li><a href="https://www.example.com/blog/fanggezhi-tianzige/">田字格、米字格、方格纸的使用场景和选择</a></li>
-          <li><a href="https://www.example.com/blog/mianfei-zitie-shengchengqi-tuijian/">免费字帖生成器推荐</a></li>
+          <li><a href="https://www.skillxm.cn/blog/haizi-lianzi-shijianbiao/">孩子写字歪歪扭扭？练字时间表和方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/ertong-lianzi-nianling/">小学生练字最佳年龄和方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/fanggezhi-tianzige/">田字格、米字格、方格纸的使用场景和选择</a></li>
+          <li><a href="https://www.skillxm.cn/blog/mianfei-zitie-shengchengqi-tuijian/">免费字帖生成器推荐</a></li>
         </ul>
       </div>
       <script
@@ -146,7 +146,7 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SpeakableSpecification",
-            "@id": "https://www.example.com/tools/calligraphy/#speakable",
+            "@id": "https://www.skillxm.cn/tools/calligraphy/#speakable",
             "cssSelector": [
               "h1",
               "h2",

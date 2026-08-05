@@ -16,13 +16,13 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t("gradeTitle"),
     description: t("gradeDesc"),
     alternates: {
-      canonical: "https://www.example.com/grade/",
+      canonical: "https://www.skillxm.cn/grade/",
       languages: {
-        "zh-CN": "https://www.example.com/grade",
-        en: "https://www.example.com/en/grade",
-        ja: "https://www.example.com/ja/grade",
-        ko: "https://www.example.com/ko/grade",
-        "x-default": "https://www.example.com/grade",
+        "zh-CN": "https://www.skillxm.cn/grade",
+        en: "https://www.skillxm.cn/en/grade",
+        ja: "https://www.skillxm.cn/ja/grade",
+        ko: "https://www.skillxm.cn/ko/grade",
+        "x-default": "https://www.skillxm.cn/grade",
       },
     },
   };

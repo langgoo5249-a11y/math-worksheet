@@ -149,6 +149,38 @@ if (fs.existsSync(enDir)) {
   console.warn('[WARN] out/en/ not found - English pages may not have been generated');
 }
 
+// 0.7 关键：修复英文页面的 <html lang="zh-CN"> 为 <html lang="en">
+// 原因：根 layout.tsx 硬编码了 <html lang="zh-CN">，英文页面继承了这个值。
+//       虽然有客户端JS动态修改，但搜索引擎爬虫不执行JS，会读到错误的lang属性。
+//       在构建后直接修改HTML文件，确保SEO正确。
+function fixEnHtmlLang(dir) {
+  let fixedCount = 0;
+  function walk(d) {
+    const entries = fs.readdirSync(d, { withFileTypes: true });
+    for (const entry of entries) {
+      const fullPath = path.join(d, entry.name);
+      if (entry.isDirectory()) {
+        walk(fullPath);
+      } else if (entry.name.endsWith('.html')) {
+        let content = fs.readFileSync(fullPath, 'utf8');
+        if (content.includes('<html lang="zh-CN"')) {
+          content = content.replace(/<html lang="zh-CN"/g, '<html lang="en"');
+          fs.writeFileSync(fullPath, content, 'utf8');
+          fixedCount++;
+        }
+      }
+    }
+  }
+  walk(dir);
+  if (fixedCount > 0) {
+    console.log(`[FIX LANG] Corrected <html lang="zh-CN"> → <html lang="en"> in ${fixedCount} English HTML files`);
+  }
+}
+
+if (fs.existsSync(enDir)) {
+  fixEnHtmlLang(enDir);
+}
+
 // 1. Copy Cloudflare-specific files - 关键文件必须成功
 const criticalFiles = [
   { name: '_redirects', required: true },

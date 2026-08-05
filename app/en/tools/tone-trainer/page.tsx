@@ -10,18 +10,18 @@ export const metadata: Metadata = {
   keywords:
     'Mandarin tone trainer, Chinese four tones, Mandarin tones, tone marks, pinyin tones, tone pairs, Chinese pronunciation, neutral tone, Mandarin tone practice, first second third fourth tone',
   alternates: {
-    canonical: 'https://www.example.com/en/tools/tone-trainer/',
+    canonical: 'https://www.skillxm.cn/en/tools/tone-trainer/',
     languages: {
-      'zh-CN': 'https://www.example.com/',
-      en: 'https://www.example.com/en/tools/tone-trainer/',
-      'x-default': 'https://www.example.com/',
+      'zh-CN': 'https://www.skillxm.cn/',
+      en: 'https://www.skillxm.cn/en/tools/tone-trainer/',
+      'x-default': 'https://www.skillxm.cn/',
     },
   },
   openGraph: {
     title: 'Mandarin Tone Trainer - Master the Four Tones',
     description:
       'Learn the four Mandarin tones and neutral tone with diagrams, tone pairs and tips. Free pronunciation trainer.',
-    url: 'https://www.example.com/en/tools/tone-trainer/',
+    url: 'https://www.skillxm.cn/en/tools/tone-trainer/',
     siteName: 'SkillXM',
     locale: 'en_US',
     type: 'website',
@@ -120,13 +120,13 @@ export default function ToneTrainerPage() {
         applicationCategory: 'EducationApplication',
         operatingSystem: 'Web',
         inLanguage: 'en',
-        url: 'https://www.example.com/en/tools/tone-trainer/',
+        url: 'https://www.skillxm.cn/en/tools/tone-trainer/',
         description:
           'Master the four Mandarin tones and the neutral tone with clear explanations, a tone-mark diagram, common tone pairs and tips for tone mastery.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         isAccessibleForFree: true,
-        provider: { '@id': 'https://www.example.com/#organization' },
-        author: { '@id': 'https://www.example.com/#person-chenlaoshi' },
+        provider: { '@id': 'https://www.skillxm.cn/#organization' },
+        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
         educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
         audience: {
           '@type': 'EducationalAudience',
@@ -136,9 +136,9 @@ export default function ToneTrainerPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.example.com/en/' },
-          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.example.com/en/tools/' },
-          { '@type': 'ListItem', position: 3, name: 'Tone Trainer', item: 'https://www.example.com/en/tools/tone-trainer/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.skillxm.cn/en/' },
+          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.skillxm.cn/en/tools/' },
+          { '@type': 'ListItem', position: 3, name: 'Tone Trainer', item: 'https://www.skillxm.cn/en/tools/tone-trainer/' },
         ],
       },
     ],

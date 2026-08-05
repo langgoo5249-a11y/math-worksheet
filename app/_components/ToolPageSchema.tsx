@@ -13,7 +13,7 @@ interface ToolPageSchemaProps {
 export default function ToolPageSchema({ toolPath }: ToolPageSchemaProps) {
   const normalizedPath = toolPath.replace(/\/$/, '');
   const tool = TOOLS.find((t) => t.path === normalizedPath && t.active);
-  const toolUrl = `https://www.example.com${normalizedPath}/`;
+  const toolUrl = `https://www.skillxm.cn${normalizedPath}/`;
   if (!tool) return null;
 
   const dateModified = new Date().toISOString().split('T')[0];
@@ -60,10 +60,10 @@ export default function ToolPageSchema({ toolPath }: ToolPageSchemaProps) {
           name: getGradeLabel(grades),
         },
         provider: {
-          '@id': 'https://www.example.com/#organization',
+          '@id': 'https://www.skillxm.cn/#organization',
         },
         author: {
-          '@id': 'https://www.example.com/#person-chenlaoshi',
+          '@id': 'https://www.skillxm.cn/#person-chenlaoshi',
         },
         isAccessibleForFree: true,
         educationalUse: ['练习', '家庭作业', '课堂辅助', '自学'],
@@ -79,13 +79,13 @@ export default function ToolPageSchema({ toolPath }: ToolPageSchemaProps) {
             '@type': 'ListItem',
             position: 1,
             name: '练学宝首页',
-            item: 'https://www.example.com/',
+            item: 'https://www.skillxm.cn/',
           },
           {
             '@type': 'ListItem',
             position: 2,
             name: '免费教学工具',
-            item: 'https://www.example.com/tools/',
+            item: 'https://www.skillxm.cn/tools/',
           },
           {
             '@type': 'ListItem',

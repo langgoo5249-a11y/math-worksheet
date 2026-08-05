@@ -4,7 +4,7 @@ import ToolPageSchema from '@/app/_components/ToolPageSchema';
 import ToolContent from '@/app/tools/_components/ToolContent';
 
 export async function generateMetadata(): Promise<Metadata> {
-    const canonicalUrl = 'https://www.example.com/tools/writing-template/';
+    const canonicalUrl = 'https://www.skillxm.cn/tools/writing-template/';
   return {
     title: "作文模板生成器免费 - 看图写话日记作文格纸PDF打印 | 练学宝",
     description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，可设置300-600字篇幅，一键导出PDF打印。适合小学1-6年级语文写作练习和课后作业，与课堂教学同步使用，家长教师免费使用，可重复打印，支持自定义格数和行距，永久免费无需注册即开即用，手机电脑均可使用，适合日常写作训练。",
@@ -16,12 +16,12 @@ export async function generateMetadata(): Promise<Metadata> {
       "x-default": canonicalUrl,
     },
   },
-    openGraph: { url: canonicalUrl, title: "作文模板生成器 - 练学宝", description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，可设置300-600字篇幅，一键导出PDF打印。适合小学1-6年级语文写作练习和课后作业，与课堂教学同步使用，家长教师免费使用，可重复打印，支持自定义格数和行距，永久免费无需注册即开即用，手机电脑均可使用，适合日常写作训练。", images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }] },
+    openGraph: { url: canonicalUrl, title: "作文模板生成器 - 练学宝", description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，可设置300-600字篇幅，一键导出PDF打印。适合小学1-6年级语文写作练习和课后作业，与课堂教学同步使用，家长教师免费使用，可重复打印，支持自定义格数和行距，永久免费无需注册即开即用，手机电脑均可使用，适合日常写作训练。", images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }] },
     twitter: {
       card: "summary_large_image",
       title: "作文模板生成器 - 练学宝",
       description: "免费生成小学作文格纸模板，涵盖看图写话、日记、作文格子纸等多种格式，支持田字格方格横线格，可设置300-600字篇幅，一键导出PDF打印。适合小学1-6年级语文写作练习和课后作业，与课堂教学同步使用，家长教师免费使用，可重复打印，支持自定义格数和行距，永久免费无需注册即开即用，手机电脑均可使用，适合日常写作训练。",
-      images: [{ url: `https://og.example.com/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }],
+      images: [{ url: `https://og.skillxm.cn/api/og?title=${encodeURIComponent("作文模板生成器")}&category=${encodeURIComponent("语文工具")}&icon=📄`, width: 1200, height: 630, alt: "作文模板生成器 - 练学宝" }],
     },
   };
 }
@@ -42,13 +42,13 @@ export default function WritingTemplateLayout({ children }: { children: React.Re
         </ul>
         <p>适用对象</p>
         <p>作文模板生成器适合小学语文教师、学生家长以及小学各年级学生使用。无论是日常写作练习、考试作文训练还是家庭作业，都可以通过本工具快速生成规范的作文书写模板，培养孩子良好的书写习惯。</p>
-        <p>访问 <a href="https://www.example.com/">练学宝</a> 获取更多免费教学工具。</p>
+        <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.example.com/blog/xiaoxue-zuowen-moban/">小学作文不会写？3个模板轻松写出300字</a></li>
-          <li><a href="https://www.example.com/blog/sannianji-zuowen-rumen/">三年级作文入门方法</a></li>
-          <li><a href="https://www.example.com/blog/kantu-xiehua-xunlian/">如何辅导孩子看图写话</a></li>
-          <li><a href="https://www.example.com/blog/xiaoxue-zuowen-fudao-moban-shengcheng/">小学作文辅导：写作不再难</a></li>
+          <li><a href="https://www.skillxm.cn/blog/xiaoxue-zuowen-moban/">小学作文不会写？3个模板轻松写出300字</a></li>
+          <li><a href="https://www.skillxm.cn/blog/sannianji-zuowen-rumen/">三年级作文入门方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/kantu-xiehua-xunlian/">如何辅导孩子看图写话</a></li>
+          <li><a href="https://www.skillxm.cn/blog/xiaoxue-zuowen-fudao-moban-shengcheng/">小学作文辅导：写作不再难</a></li>
         </ul>
       </div>
       <script
@@ -146,7 +146,7 @@ export default function WritingTemplateLayout({ children }: { children: React.Re
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SpeakableSpecification",
-            "@id": "https://www.example.com/tools/writing-template/#speakable",
+            "@id": "https://www.skillxm.cn/tools/writing-template/#speakable",
             "cssSelector": [
               "h1",
               "h2",

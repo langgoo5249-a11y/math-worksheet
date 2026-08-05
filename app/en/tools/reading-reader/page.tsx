@@ -9,18 +9,18 @@ export const metadata: Metadata = {
   keywords:
     'Chinese reading practice, graded reader Chinese, Chinese reader with pinyin, Chinese reading for beginners, Mandarin reading practice, HSK reading, Chinese passage with pinyin, free Chinese reader, graded Chinese texts',
   alternates: {
-    canonical: 'https://www.example.com/en/tools/reading-reader/',
+    canonical: 'https://www.skillxm.cn/en/tools/reading-reader/',
     languages: {
-      'zh-CN': 'https://www.example.com/',
-      en: 'https://www.example.com/en/tools/reading-reader/',
-      'x-default': 'https://www.example.com/',
+      'zh-CN': 'https://www.skillxm.cn/',
+      en: 'https://www.skillxm.cn/en/tools/reading-reader/',
+      'x-default': 'https://www.skillxm.cn/',
     },
   },
   openGraph: {
     title: 'Chinese Reading Practice - Graded Reader with Pinyin',
     description:
       'Free Chinese graded reader with pinyin and English. Sample beginner passage, reading tips and graded level descriptions.',
-    url: 'https://www.example.com/en/tools/reading-reader/',
+    url: 'https://www.skillxm.cn/en/tools/reading-reader/',
     siteName: 'SkillXM',
     locale: 'en_US',
     type: 'website',
@@ -106,13 +106,13 @@ export default function ReadingReaderPage() {
         applicationCategory: 'EducationApplication',
         operatingSystem: 'Web',
         inLanguage: 'en',
-        url: 'https://www.example.com/en/tools/reading-reader/',
+        url: 'https://www.skillxm.cn/en/tools/reading-reader/',
         description:
           'Free Chinese graded reader with pinyin and English translation. Includes a sample beginner passage, reading tips and graded level descriptions.',
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         isAccessibleForFree: true,
-        provider: { '@id': 'https://www.example.com/#organization' },
-        author: { '@id': 'https://www.example.com/#person-chenlaoshi' },
+        provider: { '@id': 'https://www.skillxm.cn/#organization' },
+        author: { '@id': 'https://www.skillxm.cn/#person-chenlaoshi' },
         educationalUse: ['Practice', 'Homework', 'Classroom Aid', 'Self-Study'],
         audience: {
           '@type': 'EducationalAudience',
@@ -122,9 +122,9 @@ export default function ReadingReaderPage() {
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.example.com/en/' },
-          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.example.com/en/tools/' },
-          { '@type': 'ListItem', position: 3, name: 'Reading Reader', item: 'https://www.example.com/en/tools/reading-reader/' },
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.skillxm.cn/en/' },
+          { '@type': 'ListItem', position: 2, name: 'Tools', item: 'https://www.skillxm.cn/en/tools/' },
+          { '@type': 'ListItem', position: 3, name: 'Reading Reader', item: 'https://www.skillxm.cn/en/tools/reading-reader/' },
         ],
       },
     ],
