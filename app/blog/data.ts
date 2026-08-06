@@ -239,7 +239,6 @@ export const articles: Article[] = [
 },
 {
     id: "xiaoxue-shujia-shuxue-hualuo-yufang-jihua-2026",
-    id: "xiaoxue-shujia-shuxue-hualuo-yufang-jihua-2026",
     title: "小学生暑假数学「滑坡」有多严重？每天25分钟用对这个方法，开学成绩不降反升",
     description: "暑假数学滑坡真实数据：美国杜克大学Harris Cooper教授对39项研究的元分析显示，暑期数学计算能力平均倒退约一个月。本文分享一线教师亲测的25分钟每日学习计划，结合练学宝免费口算速练和数学练习卷生成器，覆盖小学1-6年级，帮助孩子暑假保持数学状态，开学摸底考不慌。",
     date: "2026-07-21",
