@@ -187,6 +187,8 @@ const criticalFiles = [
   { name: '_headers', required: true },
   { name: 'robots.txt', required: true },
   { name: 'llms.txt', required: true },
+  { name: 'llms-full.txt', required: false },
+  { name: '0b81424548734bdabcf36ec4c1e449a6.txt', required: true },
   { name: 'favicon.ico', required: false },
   { name: 'favicon.svg', required: false },
   { name: 'manifest.json', required: false },
@@ -307,3 +309,43 @@ if (fs.existsSync(functionsDir)) {
 }
 
 console.log('\n[POSTBUILD] All critical files verified. Build is deployment-ready.');
+
+// 6. IndexNow 自动提交 — 部署后通知 Bing 和 Yandex 新内容
+// 从 sitemap.xml 中提取最近更新的 URL 并通过 IndexNow API 提交
+try {
+  const sitemapPath = path.join(outDir, 'sitemap.xml');
+  if (fs.existsSync(sitemapPath)) {
+    const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
+    // 提取所有 <loc> 中的 URL
+    const urlMatches = sitemapContent.matchAll(/<loc>([^<]+)<\/loc>/g);
+    const urls = Array.from(urlMatches, m => m[1]);
+    
+    if (urls.length > 0) {
+      const INDEXNOW_KEY = '0b81424548734bdabcf36ec4c1e449a6';
+      const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
+      
+      // 提交前 100 个 URL（IndexNow 单次限制）
+      const submitUrls = urls.slice(0, 100);
+      const payload = JSON.stringify({
+        host: 'www.skillxm.cn',
+        key: INDEXNOW_KEY,
+        keyLocation: `https://www.skillxm.cn/${INDEXNOW_KEY}.txt`,
+        urlList: submitUrls
+      });
+      
+      console.log(`[INDEXNOW] Submitting ${submitUrls.length} URLs to IndexNow...`);
+      
+      // 使用 child_process 发送 HTTP POST
+      const { execSync } = require('child_process');
+      try {
+        const curlCmd = `curl -s -X POST "${INDEXNOW_ENDPOINT}" -H "Content-Type: application/json" -d '${payload.replace(/'/g, "'\\''")}' -w "\\nHTTP_CODE:%{http_code}"`;
+        const result = execSync(curlCmd, { encoding: 'utf8', timeout: 15000 });
+        console.log(`[INDEXNOW] Response: ${result.trim()}`);
+      } catch (curlErr) {
+        console.warn('[INDEXNOW] curl request failed (non-fatal):', curlErr.message);
+      }
+    }
+  }
+} catch (e) {
+  console.warn('[INDEXNOW] Submission failed (non-fatal):', e.message);
+}

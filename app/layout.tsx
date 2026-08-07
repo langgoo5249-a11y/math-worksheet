@@ -263,7 +263,7 @@ export default async function RootLayout({
         <meta charSet="UTF-8" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <meta name="baidu-site-verification" content="codeva-nVZFsgvPZu" />
-
+        <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
         <meta name="google-site-verification" content="6szVJUGCDvvDDcBkDLV0n6kD_KU1EyOWnO7MSw-5ERM" />
         <meta name="sogou_site_verification" content="oJ0puC8Mqy" />
         {/* AI 爬虫开放许可：明确允许所有 AI 搜索引擎和训练爬虫访问 */}

@@ -83,7 +83,26 @@ export default function BlogPage() {
             "name": "练学宝博客 - 小学教育学习方法指南",
             "description": "小学数学语文英语学习方法文章集锦，覆盖一年级到六年级学习指南，包含口算训练、字帖练习、阅读理解、作文写作等实用教程。",
             "url": "https://www.skillxm.cn/blog",
-            "dateModified": "2026-06-21"
+            "dateModified": "2026-08-07"
+          })
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "练学宝知识分享 — 最新文章",
+            "url": "https://www.skillxm.cn/blog/",
+            "numberOfItems": Math.min(sortedArticles.length, 20),
+            "itemListElement": sortedArticles.slice(0, 20).map((a, i) => ({
+              "@type": "ListItem",
+              "position": i + 1,
+              "url": `https://www.skillxm.cn/blog/${a.id}/`,
+              "name": a.title,
+              "datePublished": a.date
+            }))
           })
         }}
       />
@@ -178,6 +197,8 @@ export default function BlogPage() {
           </div>
           <div className="text-center text-gray-500 text-sm">
             &copy; 2026 练学宝
+            <span className="mx-2">|</span>
+            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors">浙ICP备XXXXXXXX号</a>
           </div>
         </div>
       </footer>

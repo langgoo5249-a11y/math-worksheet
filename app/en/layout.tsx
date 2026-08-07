@@ -299,6 +299,9 @@ export default function EnLayout({
               &copy; 2026 SkillXM. Learn Chinese Free.
             </p>
             <p>Free Mandarin learning tools for the world.</p>
+            <p>
+              <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFD700] transition-colors">浙ICP备XXXXXXXX号</a>
+            </p>
           </div>
         </div>
       </footer>

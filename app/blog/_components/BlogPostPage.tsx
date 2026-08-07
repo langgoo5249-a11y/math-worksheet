@@ -217,6 +217,36 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             </a>
           </div>
 
+          {/* 社交分享按钮 — Bing 将社交信号作为直接排名因素 */}
+          <div className="mt-4 flex items-center gap-2 text-xs text-gray-500">
+            <span className="text-gray-500">分享到：</span>
+            <a
+              href={`https://service.weibo.com/share/share.php?url=${encodeURIComponent(`https://www.skillxm.cn/blog/${article.id}/`)}&title=${encodeURIComponent(article.title)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-2.5 py-1 bg-red-500/10 hover:bg-red-500/25 border border-red-500/20 rounded-md text-red-300 hover:text-red-200 transition-colors"
+            >
+              微博
+            </a>
+            <button
+              onClick={() => {
+                navigator.clipboard.writeText(`https://www.skillxm.cn/blog/${article.id}/`);
+                alert('链接已复制到剪贴板');
+              }}
+              className="px-2.5 py-1 bg-blue-500/10 hover:bg-blue-500/25 border border-blue-500/20 rounded-md text-blue-300 hover:text-blue-200 transition-colors"
+            >
+              复制链接
+            </button>
+            <a
+              href={`https://connect.qq.com/widget/shareqq/index.html?url=${encodeURIComponent(`https://www.skillxm.cn/blog/${article.id}/`)}&title=${encodeURIComponent(article.title)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-2.5 py-1 bg-sky-500/10 hover:bg-sky-500/25 border border-sky-500/20 rounded-md text-sky-300 hover:text-sky-200 transition-colors"
+            >
+              QQ
+            </a>
+          </div>
+
           {/* GEO优化：前置摘要 — 使用 blockquote 格式帮助AI提取关键信息 */}
         <section className="mb-8">
           <blockquote className="summary border-l-4 border-blue-500 pl-5 py-4 bg-blue-500/5 rounded-r-xl">
