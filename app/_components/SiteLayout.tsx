@@ -347,8 +347,6 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
           </div>
           <div className="text-center text-gray-500 text-sm">
             &copy; 2026 练学宝
-            <span className="mx-2">|</span>
-            <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">浙ICP备XXXXXXXX号</a>
           </div>
         </div>
       </footer>
