@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   // 本站内容均由人工审校，AI 仅辅助生成初稿。
   other: {
     'datePublished': '2025-12-01',
-    'dateModified': '2026-07-10',
+    'dateModified': '2026-08-09',
   },
 };
 
@@ -107,7 +107,7 @@ export default async function RootLayout({
         url: "https://www.skillxm.cn/",
         description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
         inLanguage: "zh-CN",
-        dateModified: "2026-07-18",
+        dateModified: "2026-08-09",
         potentialAction: {
           "@type": "SearchAction",
           target: "https://www.skillxm.cn/search?q={search_term_string}",
@@ -116,6 +116,29 @@ export default async function RootLayout({
         publisher: {
           "@id": "https://www.skillxm.cn/#organization"
         },
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.skillxm.cn/#webpage",
+        url: "https://www.skillxm.cn/",
+        name: "练学宝 - 免费小学教学工具",
+        description: "练学宝是儿童中文学习网站，提供10+款免费小学教学工具，包括数学练习卷、字帖、口算速练、拼音、识字卡片、古诗词默写等，支持手机在线做题与PDF打印，无需注册即开即用。",
+        inLanguage: "zh-CN",
+        isPartOf: {
+          "@id": "https://www.skillxm.cn/#website"
+        },
+        about: {
+          "@id": "https://www.skillxm.cn/#organization"
+        },
+        dateModified: "2026-08-09",
+        speakable: {
+          "@type": "SpeakableSpecification",
+          "cssSelector": ["h1", ".sr-only"],
+          "xpath": [
+            "/html/head/title",
+            "/html/head/meta[@name='description']/@content"
+          ]
+        }
       },
       {
         "@type": "Organization",
@@ -213,18 +236,6 @@ export default async function RootLayout({
         ],
       },
       {
-        "@type": "SpeakableSpecification",
-        "@id": "https://www.skillxm.cn/#speakable",
-        "xpath": [
-          "/html/head/title",
-          "/html/head/meta[@name='description']/@content"
-        ],
-        "cssSelector": [
-          "h1",
-          ".sr-only"
-        ]
-      },
-      {
         "@type": "FAQPage",
         "@id": "https://www.skillxm.cn/#faq",
         "mainEntity": [
@@ -263,7 +274,6 @@ export default async function RootLayout({
         <meta charSet="UTF-8" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <meta name="baidu-site-verification" content="codeva-nVZFsgvPZu" />
-        <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
         <meta name="google-site-verification" content="6szVJUGCDvvDDcBkDLV0n6kD_KU1EyOWnO7MSw-5ERM" />
         <meta name="sogou_site_verification" content="oJ0puC8Mqy" />
         {/* AI 爬虫开放许可：明确允许所有 AI 搜索引擎和训练爬虫访问 */}

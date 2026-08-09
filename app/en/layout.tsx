@@ -88,7 +88,7 @@ export default function EnLayout({
         description:
           "Free online tools to learn Chinese (Mandarin): pinyin converter, stroke order practice, HSK flashcards, tone trainer, graded reader, radical explorer, picture learning, and pinyin chart. No registration required.",
         inLanguage: "en",
-        dateModified: "2026-07-18",
+        dateModified: "2026-08-09",
         potentialAction: {
           "@type": "SearchAction",
           target: "https://www.skillxm.cn/en/?q={search_term_string}",

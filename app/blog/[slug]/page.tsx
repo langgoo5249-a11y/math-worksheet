@@ -65,6 +65,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `https://www.skillxm.cn/blog/${article.id}/#article`,
     "headline": article.title,
     "description": article.description,
     "datePublished": article.date,
@@ -73,6 +74,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     "inLanguage": "zh-CN",
     "isAccessibleForFree": true,
     "author": {
+      "@id": "https://www.skillxm.cn/#person-chenlaoshi"
+    },
+    "reviewedBy": {
       "@id": "https://www.skillxm.cn/#person-chenlaoshi"
     },
     "publisher": {
@@ -84,7 +88,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     },
     "articleSection": article.category,
     "articleBody": article.content || "",
-    "wordCount": article.content ? (article.content.match(/[\u4e00-\u9fff]/g) || []).length : 0,
+    "wordCount": article.content ? (article.content.match(/[\u4e00-\u9fff]/g) || []).length + (article.content.match(/[a-zA-Z]+/g) || []).length : 0,
     "keywords": article.keywords?.join(',') || article.category,
     "about": {
       "@type": "Thing",
@@ -114,8 +118,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       "@type": "SpeakableSpecification",
       "cssSelector": [".summary", "h2"]
     },
-    "license": "https://www.skillxm.cn/",
-    "acquireLicensePage": "https://www.skillxm.cn/contact/",
+    "license": "https://www.skillxm.cn/terms/",
+    "acquireLicensePage": "https://www.skillxm.cn/terms/",
   };
 
   const breadcrumbSchema = {

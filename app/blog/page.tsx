@@ -1,8 +1,29 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { articles, categories } from './data';
 import { TOOLS } from '@/lib/toolRegistry';
 import BlogPageClient from './BlogPageClient';
 import MiniappFooterButton from '../_components/MiniappFooterButton';
+
+export const metadata: Metadata = {
+  title: '知识分享 - 小学教育学习方法指南 | 练学宝',
+  description: '小学数学语文英语学习方法文章集锦，覆盖一年级到六年级学习指南，包含口算训练、字帖练习、阅读理解、作文写作等实用教程。',
+  alternates: {
+    canonical: 'https://www.skillxm.cn/blog/',
+    languages: {
+      'zh-CN': 'https://www.skillxm.cn/blog/',
+      'x-default': 'https://www.skillxm.cn/blog/',
+    },
+  },
+  openGraph: {
+    title: '知识分享 - 小学教育学习方法指南 | 练学宝',
+    description: '小学数学语文英语学习方法文章集锦，覆盖一年级到六年级学习指南。',
+    url: 'https://www.skillxm.cn/blog/',
+    type: 'website',
+    locale: 'zh_CN',
+    siteName: '练学宝',
+  },
+};
 
 const categoryColors: Record<string, string> = {
   '数学学习': 'bg-blue-500/20 text-blue-300 border-blue-500/30',
@@ -28,47 +49,19 @@ export default function BlogPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
+            "@type": "BreadcrumbList",
+            "itemListElement": [
               {
-                "@type": "Question",
-                "name": "小学生数学计算能力怎么提升？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "分阶段训练：先夯实20以内加减法和乘法口诀基础，再引入凑整法、拆分法等计算策略，最后进行限时提速训练。每天坚持10-15分钟比大量刷题更有效。"
-                }
+                "@type": "ListItem",
+                "position": 1,
+                "name": "练学宝",
+                "item": "https://www.skillxm.cn/"
               },
               {
-                "@type": "Question",
-                "name": "小学生练字正确方法是什么？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "低年级练字关键是培养正确的握笔姿势和掌握基本笔画。每天坚持15-20分钟，用田字格辅助定位，先描红再临写。手写练习对汉字记忆保持显著优于拼音输入。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "练学宝提供哪些免费学习工具？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "练学宝免费提供口算速练、数学练习卷生成器、田字格字帖生成器、英语四线三格字帖、拼音练习、数独游戏、看图写话、古诗词默写、识字卡片、单元测试卷等10种工具。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "如何帮助孩子克服数学焦虑？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "家长避免传递数学焦虑，不批评孩子计算错误，而是帮助分析具体原因。使用分阶段训练法建立信心，从低难度开始逐步提升。研究表明同伴支持和教师支持对数学焦虑有显著缓解作用。"
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "小学生每天练字多长时间最合适？",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "低年级每天15-20分钟即可。超过20分钟会因疲劳导致姿势变形，形成错误的肌肉记忆。关键在于每天坚持，而非单次练习时长。通常坚持3-6个月能看到明显变化。"
-                }
+                "@type": "ListItem",
+                "position": 2,
+                "name": "知识分享",
+                "item": "https://www.skillxm.cn/blog/"
               }
             ]
           })
