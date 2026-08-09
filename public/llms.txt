@@ -1,5 +1,5 @@
 # 练学宝 (skillxm.cn) — LLM 内容索引
-> 最后更新: 2026-07-18
+> 最后更新: 2026-08-09
 > 本文件为 AI 搜索引擎（ChatGPT、Perplexity、Claude、Gemini、豆包等）提供站点内容目录。
 
 ## 关于练学宝

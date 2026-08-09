@@ -284,7 +284,6 @@ export default async function RootLayout({
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
         <meta name="msapplication-TileImage" content="/favicons/favicon-32x32.png" />
         <meta name="msapplication-TileColor" content="#1e40af" />
-        <meta name="theme-color" content="#1e40af" />
         {/* iOS PWA 配置 */}
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
