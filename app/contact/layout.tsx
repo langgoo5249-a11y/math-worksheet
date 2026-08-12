@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: "联系我们 - 练学宝客服与反馈",
-  description: "联系练学宝团队：如有问题、建议或合作意向，欢迎通过邮箱 lang@example.com 或在线表单联系我们。电话：0575-64972527，地址：浙江省绍兴市嵊州三江街道花园社区75号。",
+  description: "联系练学宝团队：如有问题、建议或合作意向，欢迎通过邮箱 lang@skillxm.cn 或在线表单联系我们。电话：0575-64972527，地址：浙江省绍兴市嵊州三江街道花园社区75号。",
   keywords: "联系练学宝,客服,反馈,合作,教育工具咨询",
   alternates: {
     canonical: 'https://www.skillxm.cn/contact/',
@@ -43,7 +43,7 @@ export default function ContactLayout({ children }: { children: React.ReactNode 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
       />
       <div className="sr-only">
-        <p>联系练学宝团队。邮箱：lang@example.com。电话：0575-64972527。地址：浙江省绍兴市嵊州三江街道花园社区75号。如有问题或建议，欢迎随时联系我们，我们会在24小时内回复。</p>
+        <p>联系练学宝团队。邮箱：lang@skillxm.cn。电话：0575-64972527。地址：浙江省绍兴市嵊州三江街道花园社区75号。如有问题或建议，欢迎随时联系我们，我们会在24小时内回复。</p>
         <p>访问 <a href="https://www.skillxm.cn">练学宝</a> 获取更多免费教学工具。</p>
       </div>
       {children}

@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     q: '我可以反馈问题或建议吗？',
-    a: '非常欢迎！请通过 /contact 联系我们，或发送邮件至 lang@example.com。每条反馈都会被认真阅读，优秀建议会进入下一个版本的更新计划。',
+    a: '非常欢迎！请通过 /contact 联系我们，或发送邮件至 lang@skillxm.cn。每条反馈都会被认真阅读，优秀建议会进入下一个版本的更新计划。',
   },
 ];
 
@@ -93,7 +93,7 @@ export default function ChangelogPage() {
         '🔄 每1-2周发布一次更新，持续迭代',
         '📅 涵盖：新工具上线、新功能发布、体验优化、Bug修复',
         '🔔 推荐订阅 /rss.xml 第一时间获取更新',
-        '💌 反馈建议：lang@example.com',
+        '💌 反馈建议：lang@skillxm.cn',
       ]}
     >
       <section className="relative">

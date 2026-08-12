@@ -24,7 +24,7 @@ export default function ContactForm() {
     const body = encodeURIComponent(
       `姓名：${formData.name}\n邮箱：${formData.email}\n类型：${formData.type}\n\n留言内容：\n${formData.message}`
     );
-    window.location.href = `mailto:lang@example.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:lang@skillxm.cn?subject=${subject}&body=${body}`;
     
     setSubmitted(true);
     setLoading(false);

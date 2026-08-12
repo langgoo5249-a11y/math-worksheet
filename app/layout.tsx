@@ -193,7 +193,7 @@ export default async function RootLayout({
         ],
         contactPoint: {
           "@type": "ContactPoint",
-          email: "contact@skillxm.cn",
+          email: "lang@skillxm.cn",
           contactType: "customer support",
           availableLanguage: ["Chinese", "English", "Japanese", "Korean"],
         },

@@ -306,10 +306,10 @@ export default function EditorialPolicyPage() {
               <div className="flex items-center gap-3">
                 <span className="text-blue-400 text-lg">📧</span>
                 <a
-                  href="mailto:lang@example.com"
+                  href="mailto:lang@skillxm.cn"
                   className="text-blue-400 hover:text-blue-300 font-medium transition-colors"
                 >
-                  lang@example.com
+                  lang@skillxm.cn
                 </a>
               </div>
               <div className="flex items-center gap-3">
