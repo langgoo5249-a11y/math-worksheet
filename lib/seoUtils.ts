@@ -317,14 +317,6 @@ export function generateCanonical(path: string) {
   return ensureTrailingSlash(`${BASE_URL}${path}`);
 }
 
-`),
-    'en': ensureTrailingSlash(`${BASE_URL}/en${path}`),
-    'ja': ensureTrailingSlash(`${BASE_URL}/ja${path}`),
-    'ko': ensureTrailingSlash(`${BASE_URL}/ko${path}`),
-    'x-default': ensureTrailingSlash(`${BASE_URL}${path}`),
-  };
-}
-
 export const SITE_INFO = {
   BASE_URL,
   SITE_NAME,
