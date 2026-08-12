@@ -176,6 +176,34 @@ Allow: /
 User-agent: MiniMaxBot
 Allow: /
 
+# 百川智能 — 百川大模型
+User-agent: BaichuanBot
+Allow: /
+
+# 零一万物 — Yi 大模型
+User-agent: LingyiwanwuBot
+Allow: /
+
+# 商汤 — 日日新/SenseNova
+User-agent: SenseBot
+Allow: /
+
+# 昆仑万维 — 天工AI
+User-agent: TianGongBot
+Allow: /
+
+# 阶跃星辰 — Step
+User-agent: StepBot
+Allow: /
+
+# 面壁智能 — MiniCPM
+User-agent: MianbiBot
+Allow: /
+
+# 猎户星空 — Orion
+User-agent: OrionBot
+Allow: /
+
 # 其他国内搜索引擎
 User-agent: Slurp
 Allow: /
