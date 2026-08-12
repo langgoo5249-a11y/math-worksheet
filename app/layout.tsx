@@ -145,7 +145,7 @@ export default async function RootLayout({
         "@id": "https://www.skillxm.cn/#organization",
         name: "练学宝",
         url: "https://www.skillxm.cn/",
-        dateModified: "2026-07-03",
+        dateModified: "2026-08-12",
         logo: {
           "@type": "ImageObject",
           url: "https://www.skillxm.cn/favicon.svg",
