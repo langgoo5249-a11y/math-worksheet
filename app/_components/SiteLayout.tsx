@@ -329,8 +329,11 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
               <ul className="space-y-1.5 text-gray-400">
                 <li><a href="/about/" className="hover:text-white transition-colors">关于我们</a></li>
                 <li><a href="/contact/" className="hover:text-white transition-colors">联系我们</a></li>
-                <li><a href="/privacy/" className="hover:text-white transition-colors">隐私政策</a></li>
+                <li><a href="/privacy/" className="hover:text-white transition-colors">隐私政策</a>
+            <span className="text-gray-600">|</span>
+            <a href="/editorial-policy/" className="hover:text-white transition-colors">编辑政策</a></li>
                 <li><a href="/terms/" className="hover:text-white transition-colors">服务条款</a></li>
+                <li><a href="/editorial-policy/" className="hover:text-white transition-colors">编辑政策</a></li>
               </ul>
             </div>
           </div>

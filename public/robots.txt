@@ -1,6 +1,6 @@
 # ===========================================
 # 练学宝 robots.txt — 全开放策略
-# 最后更新: 2026-08-09
+# 最后更新: 2026-08-12
 # 原则: 不阻止任何搜索引擎或AI爬虫的访问
 # ===========================================
 
@@ -217,6 +217,9 @@ Content-Signal: ai-train=yes, search=yes, ai-input=yes
 # LLM 内容索引
 LLMs-Index: https://www.skillxm.cn/llms.txt
 LLMs-Index: https://www.skillxm.cn/llms-en.txt
+
+# AI 内容索引
+AI-Index: https://www.skillxm.cn/ai.xml
 
 # Sitemap
 Sitemap: https://www.skillxm.cn/sitemap.xml

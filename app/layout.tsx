@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   // 本站内容均由人工审校，AI 仅辅助生成初稿。
   other: {
     'datePublished': '2025-12-01',
-    'dateModified': '2026-08-09',
+    'dateModified': '2026-08-12',
   },
 };
 
@@ -107,7 +107,7 @@ export default async function RootLayout({
         url: "https://www.skillxm.cn/",
         description: "免费在线教育工具集合，包括数学练习卷生成器、字帖生成器、英语字帖、数独游戏、口算速练、识字卡片、作文模板、拼音注音，支持PDF导出打印",
         inLanguage: "zh-CN",
-        dateModified: "2026-08-09",
+        dateModified: "2026-08-12",
         potentialAction: {
           "@type": "SearchAction",
           target: "https://www.skillxm.cn/search?q={search_term_string}",
@@ -130,7 +130,7 @@ export default async function RootLayout({
         about: {
           "@id": "https://www.skillxm.cn/#organization"
         },
-        dateModified: "2026-08-09",
+        dateModified: "2026-08-12",
         speakable: {
           "@type": "SpeakableSpecification",
           "cssSelector": ["h1", ".sr-only"],
@@ -169,10 +169,12 @@ export default async function RootLayout({
           name: "CN",
         },
         sameAs: [
-          "https://github.com/langgoo5249-a11y/math-worksheet",
           "https://www.skillxm.cn/",
-          "https://xhslink.com/m/8u3VNbmKr0F",
+          "https://github.com/langgoo5249-a11y/math-worksheet",
           "https://author.baidu.com/home?from=bjh_article&app_id=1810332299795975",
+          "https://xhslink.com/m/8u3VNbmKr0F",
+          "https://mp.weixin.qq.com/",  // 微信公众号平台
+          "https://www.zhihu.com/",      // 知乎机构号平台
         ],
         foundingDate: "2025-12-01",
         knowsAbout: [
@@ -244,23 +246,63 @@ export default async function RootLayout({
             "name": "练学宝是什么？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "练学宝是免费的在线小学教育工具平台，提供数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写等10+款教学工具，支持手机在线练习和PDF打印，无需注册即开即用。"
+              "text": "练学宝是免费的在线小学教育工具平台，提供数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写等15+款教学工具，覆盖语文、数学、英语三大学科。所有工具免费使用，支持手机在线练习和PDF打印，无需注册即开即用。"
             }
           },
           {
             "@type": "Question",
-            "name": "练学宝的工具是否免费？",
+            "name": "练学宝的工具是否全部免费？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "是的，练学宝所有工具完全免费，无需注册即可使用。包括数学练习卷、字帖、口算、拼音、识字卡片、古诗词默写、作文模板等全部工具均可免费使用。"
+              "text": "是的，练学宝所有学习工具100%免费。包括数学练习卷、口算速练、字帖生成器、拼音学习、识字卡片、英语字帖、作文模板等全部工具均可免费使用，不限次数，无需注册，无需付费。网站通过 Google AdSense 广告维持运营。"
             }
           },
           {
             "@type": "Question",
-            "name": "练学宝适合哪个年级的学生？",
+            "name": "练学宝适合哪个年级的学生使用？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "练学宝工具覆盖小学1-6年级，数学练习卷支持按年级、教材版本、知识点灵活组卷，字帖支持拼音、笔顺、汉字多种模式，适合不同年级学生的学习需求。"
+              "text": "练学宝工具覆盖小学1-6年级（6-12岁儿童）。数学练习卷支持按年级、教材版本和知识点灵活组卷；字帖生成器支持描红、笔顺、拼音多种模式；拼音工具和识字卡片适合低年级入门；口算速练和数独适合日常训练；作文模板和单元测试卷适合中高年级巩固提升。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "练学宝的字帖生成器怎么用？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "打开字帖生成器页面，选择字帖模式（描红/笔顺/拼音），输入练习的汉字或词语，选择格子样式（米字格/田字格/四线格），点击生成即可预览。满意后可一键导出PDF打印。字帖生成器完全免费，支持自定义任意内容。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "练学宝的数学练习卷有什么特点？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "练学宝数学练习卷生成器支持四则运算、分数、小数、应用题等多种题型，可选1-6年级不同难度，支持人教版、北师大版、苏教版等主流教材同步。智能随机出题确保每份试卷不重复，自动排版生成标准A4试卷，一键PDF打印。适合日常练习、单元复习和期末考试备考。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "练学宝和市场上其他教育工具相比有什么优势？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "练学宝的优势：①完全免费，无需注册，即开即用；②覆盖语数英三大学科，15+款工具一站式解决；③支持PDF打印，不强制在线使用，保护孩子视力；④手机和电脑均可流畅使用；⑤内容由家长和教育工作者共同设计，贴近实际教学需求；⑥持续更新迭代，根据用户反馈不断优化。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "练学宝如何保障学生隐私？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "练学宝极为重视隐私保护：不需要注册登录，不收集任何个人身份信息；仅使用必要的Cookie用于网站功能和访问统计；不会将任何数据出售给第三方；所有工具均可离线打印使用。完整隐私政策请查看 /privacy/ 页面。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "练学宝支持手机使用吗？有App吗？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "练学宝是网站形式（https://www.skillxm.cn），手机浏览器可直接访问，所有工具均已适配移动端。同时也提供微信小程序版本，可在微信中搜索「练学宝」使用。为保护孩子视力，建议优先选择打印使用。"
             }
           }
         ]
@@ -279,6 +321,10 @@ export default async function RootLayout({
         {/* AI 爬虫开放许可：明确允许所有 AI 搜索引擎和训练爬虫访问 */}
         <meta name="ai-usage" content="allow" />
         <meta name="content-signal" content="ai-train=yes, search=yes, ai-input=yes" />
+        {/* AI 内容索引: 引导 AI 搜索引擎发现结构化内容目录 */}
+        <link rel="ai-index" type="text/plain" href="/llms.txt" />
+        <link rel="ai-index" type="text/plain" href="/llms-en.txt" />
+        <link rel="ai-index" type="application/xml" href="/ai.xml" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png" />
