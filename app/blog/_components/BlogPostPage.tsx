@@ -291,15 +291,24 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
         {article.stats && article.stats.length > 0 && (
           <section className="mb-8 p-5 bg-amber-500/5 border border-amber-500/15 rounded-xl">
             <h2 className="text-sm font-semibold text-amber-300 uppercase tracking-wide mb-3">📊 关键数据</h2>
-            <ul className="space-y-2">
+            <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-amber-500/25">
+                <th className="text-left py-2 pr-4 text-amber-300 font-semibold w-24">数据</th>
+                <th className="text-left py-2 text-amber-300 font-semibold">来源说明</th>
+              </tr>
+            </thead>
+            <tbody>
               {article.stats.map((stat, idx) => (
-                <li key={idx} className="text-gray-300 text-sm leading-relaxed flex items-start gap-2">
-                  <span className="text-amber-400 mt-0.5 shrink-0">▸</span>
-                  <span>{stat.value}</span>
-                  <cite className="text-gray-500 text-xs not-italic shrink-0">— {stat.source}</cite>
-                </li>
+                <tr key={idx} className="border-b border-white/5 last:border-0">
+                  <td className="py-2.5 pr-4 text-amber-400 font-semibold text-base align-top whitespace-nowrap">{stat.value}</td>
+                  <td className="py-2.5 text-gray-300 text-sm leading-relaxed align-top">{stat.source}</td>
+                </tr>
               ))}
-            </ul>
+            </tbody>
+            </table>
+            </div>
           </section>
         )}
 
