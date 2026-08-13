@@ -8584,6 +8584,7 @@ There is和There are的用法，孩子经常搞混。
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "12分钟",
+    image: "/images/blog/xiaoxue-yingyu-zitie-lianxi-fangfa-2026.png",
     keywords: ["小学英语字帖练习", "四线三格书写规范", "英语字母笔顺", "英语书写教学方法", "小学英语练字技巧"],
     content: `上个月开家长会，英语老师专门找我谈话。她说孩子单词听写都对，但书写太潦草，字母大小不一，间距也不均匀，考试卷面分被扣了不少。
 
@@ -10701,6 +10702,7 @@ an、en、in、un、ün、ang、eng、ing、ong
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "11分钟",
+    image: "/images/blog/yingyu-danci-jiyi-quanjilve-2026.png",
     keywords: [
       "小学英语单词记忆方法",
       "孩子英语单词记不住怎么办",
@@ -10963,6 +10965,7 @@ an、en、in、un、ün、ang、eng、ing、ong
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "14分钟",
+    image: "/images/blog/xiaoxue-shuxue-kaoshi-shijian-fenpei-2026.png",
     keywords: [
       "小学数学考试技巧",
       "数学考试时间分配",
@@ -11045,6 +11048,7 @@ an、en、in、un、ün、ang、eng、ing、ong
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "11分钟",
+    image: "/images/blog/shuxue-lianxijuan-shengcheng-shiyong-zhinan-2026.png",
     keywords: [
       "小学数学练习卷生成",
       "免费数学练习卷打印",
@@ -12037,6 +12041,7 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "12分钟",
+    image: "/images/blog/youxiao-xianjie-shuxue-qimeng-6ge-youxi.png",
     keywords: ["幼小衔接数学启蒙", "在家数学游戏", "一年级数学入学准备", "儿童数感培养", "幼小衔接数学", "凑十法游戏", "数学启蒙不用报班"],
     author: {
       name: "陈老师",
