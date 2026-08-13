@@ -164,7 +164,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
     .forEach(article => {
       sitemapEntries.push(makeZhEntry(`/blog/${article.id}/`, {
-        lastModified: article.date,
+        lastModified: article.dateModified || article.date,
         changeFrequency: 'monthly',
         priority: 0.7,
       }));

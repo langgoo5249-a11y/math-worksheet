@@ -7,12 +7,32 @@ const path = require('path');
 const dataFile = path.join(__dirname, '..', 'app', 'blog', 'data.ts');
 let articles = [];
 try {
-  // 简单的解析：提取 id, title, description, date
   const content = fs.readFileSync(dataFile, 'utf-8');
-  const articleRegex = /\{\s*id:\s*['"]([^'"]+)['"],\s*title:\s*['"]([^'"]+)['"],\s*description:\s*['"]([^'"]+)['"],\s*date:\s*['"]([^'"]+)['"]/g;
+  // 健壮解析：按 id 字段切块，再在块内按行提取 title/description/date，
+  // 不依赖字段顺序（文章对象可能含 image/summary/dateModified 等字段，位置不定）
+  const idRe = /id:\s*['"]([^'"]+)['"]/g;
+  const marks = [];
   let m;
-  while ((m = articleRegex.exec(content)) !== null) {
-    articles.push({ id: m[1], title: m[2], description: m[3], date: m[4] });
+  while ((m = idRe.exec(content)) !== null) {
+    marks.push({ slug: m[1], start: m.index });
+  }
+  for (let i = 0; i < marks.length; i++) {
+    const start = marks[i].start;
+    const end = i + 1 < marks.length ? marks[i + 1].start : content.length;
+    const block = content.slice(start, end);
+    const get = (key) => {
+      const re = new RegExp('^[ \\t]*' + key + ':[ \\t]*[\'"]([^\'"]*)[\'"]', 'm');
+      const mm = block.match(re);
+      return mm ? mm[1] : '';
+    };
+    const title = get('title');
+    const description = get('description');
+    const date = get('date');
+    if (title && description && date) {
+      articles.push({ id: marks[i].slug, title, description, date });
+    } else {
+      console.warn(`跳过文章（字段缺失）: ${marks[i].slug}`);
+    }
   }
 } catch (e) {
   console.error('Failed to read blog data:', e.message);
@@ -64,4 +84,4 @@ ${recent.map(a => `  <item>
 
 const outPath = path.join(__dirname, '..', 'public', 'rss.xml');
 fs.writeFileSync(outPath, xml, 'utf-8');
-console.log(`✅ Generated ${outPath} with ${recent.length} articles (out of ${articles.length} total)`);
+console.log(`Generated ${outPath} with ${recent.length} articles (out of ${articles.length} total)`);

@@ -2,7 +2,7 @@
 <ai-index xmlns="https://www.skillxm.cn/schemas/ai-index/1.0">
   <!--
     练学宝 AI 内容索引 — AI Content Index
-    最后更新: 2026-08-12
+    最后更新: 2026-08-13
     本文件为 AI 搜索引擎（豆包、元宝、Kimi、文心一言、DeepSeek、ChatGPT 等）
     提供站点结构化内容目录。国产大模型可优先根据此 XML 构建搜索索引。
   -->
@@ -14,9 +14,9 @@
 练学宝是专注小学教育的免费在线工具平台，提供数学练习卷、字帖生成器、口算速练、
 拼音学习、识字卡片、古诗词默写、英语字帖、数独游戏等15+款教学工具，
 覆盖语文、数学、英语三大学科，支持手机在线练习与PDF打印导出，无需注册即开即用。
-同时提供108篇原创教育类博客文章，涵盖学习方法、育儿心得、学科辅导等主题。
+同时提供116篇原创教育类博客文章，涵盖学习方法、育儿心得、学科辅导等主题。
     ]]></description>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-13</lastmod>
     <language>zh-CN</language>
     <supported-languages>zh-CN, en, ja, ko</supported-languages>
     <content-signal>ai-train=yes, search=yes, ai-input=yes</content-signal>
@@ -28,7 +28,7 @@
       <title>练学宝 - 免费小学教学工具/数学练习卷/字帖/口算</title>
       <type>homepage</type>
       <description>练学宝首页，提供15+款免费小学教学工具的入口导航</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
       <changefreq>weekly</changefreq>
     </page>
     <page priority="9">
@@ -36,84 +36,84 @@
       <title>关于练学宝</title>
       <type>about</type>
       <description>介绍练学宝的创办背景、团队信息和教育理念</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page priority="9">
       <loc>https://www.skillxm.cn/contact/</loc>
       <title>联系我们 - 练学宝</title>
       <type>contact</type>
       <description>联系邮箱 lang@skillxm.cn，用户反馈与技术支持</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page priority="8">
       <loc>https://www.skillxm.cn/blog/</loc>
       <title>知识分享 - 练学宝</title>
       <type>blog-index</type>
-      <description>108篇原创教育类博客文章，涵盖数学启蒙、语文写字、英语学习、育儿方法等主题</description>
-      <lastmod>2026-08-12</lastmod>
+      <description>116篇原创教育类博客文章，涵盖数学启蒙、语文写字、英语学习、育儿方法等主题</description>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page priority="8">
       <loc>https://www.skillxm.cn/tools/</loc>
       <title>全部工具 - 练学宝</title>
       <type>tools-index</type>
       <description>练学宝全部15+款免费教学工具汇总页面</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page priority="7">
       <loc>https://www.skillxm.cn/grade/</loc>
       <title>年级专区 - 练学宝</title>
       <type>grade-index</type>
       <description>按年级分类的学习资源导航（1-6年级）</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page priority="7">
       <loc>https://www.skillxm.cn/knowledge/</loc>
       <title>知识点专题 - 练学宝</title>
       <type>knowledge-index</type>
       <description>按知识点分类的学习资源（口算、字词、拼音、阅读、写作等）</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page priority="6">
       <loc>https://www.skillxm.cn/textbook/</loc>
       <title>教材同步 - 练学宝</title>
       <type>textbook-index</type>
       <description>按教材版本同步的学习资源（人教版、北师大版、苏教版）</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page priority="6">
       <loc>https://www.skillxm.cn/parent-guide/</loc>
       <title>家长指导 - 练学宝</title>
       <type>parent-guide</type>
       <description>家长教育指导资源，包括学习方法、育儿建议和工具使用教程</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page priority="6">
       <loc>https://www.skillxm.cn/daily/</loc>
       <title>每日一练 - 练学宝</title>
       <type>daily-practice</type>
       <description>每日更新的练习题，覆盖语文、数学、英语三科</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page priority="5">
       <loc>https://www.skillxm.cn/resources/</loc>
       <title>资源库 - 练学宝</title>
       <type>resources</type>
       <description>可下载的学习资源汇总</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page priority="5">
       <loc>https://www.skillxm.cn/changelog/</loc>
       <title>更新日志 - 练学宝</title>
       <type>changelog</type>
       <description>练学宝网站功能更新记录</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page priority="5">
       <loc>https://www.skillxm.cn/search/</loc>
       <title>搜索 - 练学宝</title>
       <type>search</type>
       <description>全站内容搜索页面</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
   </core-pages>
 
@@ -254,21 +254,21 @@
       <title>隐私政策 - 练学宝</title>
       <type>privacy-policy</type>
       <description>详细说明个人信息收集使用规则、Cookie 政策与 Google AdSense 广告说明</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page>
       <loc>https://www.skillxm.cn/terms/</loc>
       <title>服务条款 - 练学宝</title>
       <type>terms-of-service</type>
       <description>网站使用条款、免责声明和知识产权说明</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page>
       <loc>https://www.skillxm.cn/editorial-policy/</loc>
       <title>编辑政策 - 练学宝</title>
       <type>editorial-policy</type>
       <description>内容创作标准、审校流程和 AI 工具使用声明</description>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
   </legal-pages>
 
@@ -314,19 +314,19 @@
       <loc>https://www.skillxm.cn/en/</loc>
       <title>SkillXM - Free Chinese Learning Tools</title>
       <type>english-homepage</type>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page>
       <loc>https://www.skillxm.cn/en/tools/</loc>
       <title>All Tools - SkillXM</title>
       <type>english-tools</type>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
     <page>
       <loc>https://www.skillxm.cn/en/blog/</loc>
       <title>Blog - SkillXM</title>
       <type>english-blog</type>
-      <lastmod>2026-08-12</lastmod>
+      <lastmod>2026-08-13</lastmod>
     </page>
   </english-version>
 </ai-index>

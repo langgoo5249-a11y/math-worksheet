@@ -6,13 +6,29 @@
   <atom:link href="https://www.skillxm.cn/rss.xml" rel="self" type="application/rss+xml" />
   <description>练学宝为小学1-6年级学生提供数学口算、字帖练习、单元测试、拼音注音等免费学习工具，以及丰富的练习卷资源和家长指导。</description>
   <language>zh-CN</language>
-  <lastBuildDate>Sun, 09 Aug 2026 03:15:44 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 13 Aug 2026 07:37:27 GMT</lastBuildDate>
   <generator>练学宝 RSS Generator</generator>
   <image>
     <url>https://www.skillxm.cn/favicon.svg</url>
     <title>练学宝 - 小学数学语文英语学习工具与练习资源</title>
     <link>https://www.skillxm.cn/</link>
   </image>
+  <item>
+    <title>乘法口诀怎么背最快？孩子总记不住，一线教师的3个科学记忆法让孩子2秒脱口而出</title>
+    <link>https://www.skillxm.cn/blog/chengfa-koujue-jiyi-fangfa/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/chengfa-koujue-jiyi-fangfa/</guid>
+    <description>孩子乘法口诀背了又忘、七九六十三八九七十二分不清？北京师范大学2023年对1200名小学生的研究显示，口诀掌握度与三年级数学成绩相关系数高达0.72。本文分享一线教师亲测的3个科学记忆法（锚点口诀、9的手指法、易错句重点突破），配合练学宝免费口算速练工具，让孩子告别死记硬背，真正实现2秒随机提取。</description>
+    <pubDate>Thu, 13 Aug 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>孩子数学题「一看就会，一做就错」？超半数错题发生在审题阶段，这套4步训练法让正确率翻3倍</title>
+    <link>https://www.skillxm.cn/blog/shuxue-shenti-4bu-xunlian-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/shuxue-shenti-4bu-xunlian-2026/</guid>
+    <description>孩子数学应用题总做错，真的只是粗心吗？SAGE学术期刊2025年研究显示，52.91%的数学解题错误发生在审题理解阶段，而非计算阶段。本文从认知科学角度分析小学生审题困难的三大根源，分享一线教师亲测有效的4步审题训练法（划条件、复述题意、画图建模、反向验证），配合练学宝免费工具，帮助孩子从根本提升数学审题能力。</description>
+    <pubDate>Thu, 06 Aug 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
   <item>
     <title>小学生暑假数学「滑坡」有多严重？每天25分钟用对这个方法，开学成绩不降反升</title>
     <link>https://www.skillxm.cn/blog/xiaoxue-shujia-shuxue-hualuo-yufang-jihua-2026/</link>
@@ -38,6 +54,22 @@
     <category>知识分享</category>
   </item>
   <item>
+    <title>小学生写字姿势不对怎么纠正？勾腕、抱笔、歪头常见问题与家庭练习方法</title>
+    <link>https://www.skillxm.cn/blog/xiaoxuesheng-xiezi-zishi-jiuzheng-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/xiaoxuesheng-xiezi-zishi-jiuzheng-2026/</guid>
+    <description>小学生写字姿势不正确怎么纠正？孩子勾腕、抱笔、歪头写字的危害远比想象中大——不仅影响书写质量，更可能导致近视加深、脊柱侧弯。本文结合儿童康复医学研究数据，详解三种常见错误握笔姿势的成因和危害，提供分阶段家庭练习方案，附练学宝免费字帖生成器实操指南，帮助家长在家有效纠正孩子写字姿势。</description>
+    <pubDate>Fri, 10 Jul 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>暑假数学退步了多少？NWEA追踪百万学生数据：每天只需15分钟，开学成绩不掉队</title>
+    <link>https://www.skillxm.cn/blog/shuqishuxue-xuexi-huapo-kexue-yingdui-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/shuqishuxue-xuexi-huapo-kexue-yingdui-2026/</guid>
+    <description>暑假数学退步不是错觉，NWEA追踪百万学生数据证实暑期学习滑坡真实存在。每天只需15分钟精准练习，就能有效避免开学掉队。本文用真实研究数据+可操作的4个方法，帮家长科学应对暑假数学退步。</description>
+    <pubDate>Thu, 09 Jul 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
     <title>小学生计算粗心怎么办？7天纠正训练法让计算错误率降低80%</title>
     <link>https://www.skillxm.cn/blog/xiaoxue-shuxue-jisuan-cuxin-zenmeban-2026/</link>
     <guid isPermaLink="true">https://www.skillxm.cn/blog/xiaoxue-shuxue-jisuan-cuxin-zenmeban-2026/</guid>
@@ -59,6 +91,22 @@
     <guid isPermaLink="true">https://www.skillxm.cn/blog/shujia-shuxue-wandao-chaoche-jihua-2026/</guid>
     <description>2026暑假小学数学复习计划，按1-6年级分层设计，每天25分钟，覆盖口算、竖式、应用题、分数等核心考点。搭配练学宝免费数学练习卷生成器、口算速练工具，附带真实案例数据。支持在线生成PDF打印下载，8周系统提升20分，让孩子暑假弯道超车开学领先。附每周训练重点和阶段性验收标准，让暑假复习科学高效，简单有效。</description>
     <pubDate>Fri, 03 Jul 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>幼小衔接数学启蒙不用报班，在家每天15分钟，我用这6个游戏让孩子轻松入门</title>
+    <link>https://www.skillxm.cn/blog/youxiao-xianjie-shuxue-qimeng-6ge-youxi/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/youxiao-xianjie-shuxue-qimeng-6ge-youxi/</guid>
+    <description>幼小衔接数学启蒙，报班不是唯一选择。在家用6个简单游戏，每天15分钟，帮孩子建立数感、理解加减法本质，轻松做好一年级入学准备。附真实游戏玩法和阶段性成果数据，配合练学宝免费数学练习工具在线使用，适合5-6岁学龄前儿童家庭启蒙。含每日游戏安排和能力评估表，让家长在家也能科学高效进行数学启蒙，帮孩子打好学习基础。</description>
+    <pubDate>Tue, 30 Jun 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>三年级数学成绩突然下滑怎么办？不是孩子变笨了，是思维转型没跟上</title>
+    <link>https://www.skillxm.cn/blog/sannianji-shuxue-chengji-xiahua-siwei-xunlian/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/sannianji-shuxue-chengji-xiahua-siwei-xunlian/</guid>
+    <description>三年级数学成绩下滑不是孩子不努力，而是从具象思维到抽象逻辑的认知转型没跟上。本文分析三年级现象的原因，提供思维能力训练方案，帮助孩子平稳度过这个关键期。含真实案例和分阶段训练计划，配合练学宝免费数学练习卷生成器在线打印下载，适合3-4年级。附常见转型误区分析和家长辅导要点，让成绩止跌回升，帮孩子打好学习基础。</description>
+    <pubDate>Tue, 30 Jun 2026 08:00:00 GMT</pubDate>
     <category>知识分享</category>
   </item>
   <item>
@@ -190,6 +238,14 @@
     <category>知识分享</category>
   </item>
   <item>
+    <title>幼小衔接数学家长实操指南：3个真实家庭案例，半年从</title>
+    <link>https://www.skillxm.cn/blog/youxiao-xianjie-shuxue-shicao-zhinan-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/youxiao-xianjie-shuxue-shicao-zhinan-2026/</guid>
+    <description>幼小衔接数学怎么教？5-6岁孩子数学启蒙到底做些什么？本文分享3个真实家庭的半年实践数据，涵盖数感、图形、时间、空间、逻辑5大模块训练方案，配合30天每日计划表和免费数学练习工具在线打印下载，附分阶段验收标准和常见辅导误区分析，帮家长科学规划数学启蒙路径，让家庭辅导更科学更轻松高效，效果显著看得见。</description>
+    <pubDate>Thu, 11 Jun 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
     <title>小学数学错题本正确使用方法：家长都做错了，3组对比数据告诉你差别有多大</title>
     <link>https://www.skillxm.cn/blog/xiaoxue-shuxue-cuotiben-zhengque-shiyong-2026/</link>
     <guid isPermaLink="true">https://www.skillxm.cn/blog/xiaoxue-shuxue-cuotiben-zhengque-shiyong-2026/</guid>
@@ -243,6 +299,22 @@
     <guid isPermaLink="true">https://www.skillxm.cn/blog/yingyu-danci-jiyi-quanjilve-2026/</guid>
     <description>小学英语单词记不住怎么办？本文基于德国心理学家艾宾浩斯1885年的经典遗忘曲线实验，结合上海平和双语学校真实案例，给出一份可执行的周日单词记忆计划表，含90天训练数据和阶段性词汇量测试，配合免费英语单词练习工具和英语字帖在线打印下载，附分年级词汇目标和每日复习安排，帮孩子科学扩大英语词汇量，方法简单有效。</description>
     <pubDate>Mon, 08 Jun 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>暑假两个月，孩子不想学习只抱着手机？我用这套「30分钟计划」让儿子从抗拒到主动做题</title>
+    <link>https://www.skillxm.cn/blog/shujia-xuexi-jihua-30fen-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/shujia-xuexi-jihua-30fen-2026/</guid>
+    <description>暑假孩子沉迷手机不想学习怎么办？本文分享一套经过验证的30分钟微学习计划，结合游戏化积分系统和即时反馈机制，让孩子从抗拒到主动做题。涵盖暑假滑坡研究数据、每日学习时间表和各年级练习重点，配合练学宝免费口算速练和数学练习卷生成器，帮助小学生暑假保持学习状态，开学成绩提升。方法简单有效，适合1-6年级家长参考。</description>
+    <pubDate>Sun, 07 Jun 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>小学数学计算总粗心丢分？不是马虎，是这3个「底层能力」没练到位</title>
+    <link>https://www.skillxm.cn/blog/shuxue-jisuan-cuxin-2026/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/shuxue-jisuan-cuxin-2026/</guid>
+    <description>孩子数学计算总粗心丢分怎么办？本文从认知科学角度分析粗心的真正原因，揭示数字感知力、工作记忆容量和持续性注意力三个底层能力的训练方法。含真实案例、分阶段训练方案和免费工具推荐，配合练学宝口算速练和数学练习卷生成器，帮助孩子从根本上提高计算准确率，告别粗心丢分。方法科学有效，适合小学1-6年级家长参考。</description>
+    <pubDate>Sun, 07 Jun 2026 08:00:00 GMT</pubDate>
     <category>知识分享</category>
   </item>
   <item>
@@ -390,10 +462,26 @@
     <category>知识分享</category>
   </item>
   <item>
+    <title>孩子说</title>
+    <link>https://www.skillxm.cn/blog/haizi-yanxue-qingxu-yingdui-fangfa/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/haizi-yanxue-qingxu-yingdui-fangfa/</guid>
+    <description>孩子厌学、不想上学怎么办？本文基于儿童心理学研究，分享应对孩子厌学情绪的5个沟通技巧和3个实用方法，帮助家长重建孩子学习动力。含真实案例分析、沟通话术模板和方法操作步骤，适合小学生家庭。配合免费在线学习工具推荐和兴趣引导方案，附每日亲子互动建议，让家长科学应对厌学问题让孩子重新爱上学习，操作简单适合长期使用。</description>
+    <pubDate>Tue, 19 May 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
     <title>教了15年小学数学，我发现分数没学好的孩子，都栽在这3个地方</title>
     <link>https://www.skillxm.cn/blog/xiaoxue-fenshu-rumen-jiaoxue-jingyan/</link>
     <guid isPermaLink="true">https://www.skillxm.cn/blog/xiaoxue-fenshu-rumen-jiaoxue-jingyan/</guid>
     <description>小学分数是数学学习的分水岭，很多孩子从三年级开始掉队。本文分享一线教师15年教学经验，拆解分数学习的3大难点和对应训练方法。含真实教学案例和阶段性成果数据，涵盖分数概念、同分母异分母运算和分数应用题。配合练学宝免费数学练习卷生成器在线打印下载，适合3-6年级，附分步骤教学流程和常见错误分析，让家庭辅导更轻松。</description>
+    <pubDate>Mon, 18 May 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>孩子背古诗总是背了就忘？语文老师总结了这套</title>
+    <link>https://www.skillxm.cn/blog/xiaoxue-gushi-beisong-fangfa/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/xiaoxue-gushi-beisong-fangfa/</guid>
+    <description>小学生背古诗效率低、容易忘？本文分享一线语文教师总结的三遍背诵法，含记忆遗忘曲线应用、古诗理解技巧和每日背诵计划表。背一首记一首的真实效果验证，配合练学宝免费古诗词默写在线工具使用，适合1-6年级。覆盖75首必背古诗词，附分年级背诵进度表和常见记忆误区分析，帮孩子高效背诵轻松默写，让家庭辅导更科学更轻松高效。</description>
     <pubDate>Mon, 18 May 2026 08:00:00 GMT</pubDate>
     <category>知识分享</category>
   </item>
@@ -422,6 +510,14 @@
     <category>知识分享</category>
   </item>
   <item>
+    <title>孩子作文总写</title>
+    <link>https://www.skillxm.cn/blog/xiaoxue-zuowen-liushuizhang-4zhao-tisheng/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/xiaoxue-zuowen-liushuizhang-4zhao-tisheng/</guid>
+    <description>孩子写作文总是凑字数、记流水账？本文分享一线语文教师的4个写作技巧，含真实教学案例、学生作文对比和写作训练方法。从不及格到满分的真实转变过程，配合练学宝免费作文模板生成器在线使用，适合3-6年级。附8周训练计划、分年级写作技巧和家长辅导要点，含常见写作误区分析，让孩子写出结构完整的高分作文，让家庭辅导更轻松。</description>
+    <pubDate>Sat, 16 May 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
     <title>孩子竖式计算总出错？我用这3个方法让错误率从40%降到5%</title>
     <link>https://www.skillxm.cn/blog/shushi-jisuan-cuowu-liu-cheng-3-fangfa/</link>
     <guid isPermaLink="true">https://www.skillxm.cn/blog/shushi-jisuan-cuowu-liu-cheng-3-fangfa/</guid>
@@ -442,6 +538,14 @@
     <link>https://www.skillxm.cn/blog/kousuan-sudu-tisheng-shizhan-20ti/</link>
     <guid isPermaLink="true">https://www.skillxm.cn/blog/kousuan-sudu-tisheng-shizhan-20ti/</guid>
     <description>口算速度慢怎么提升？分享一套经过实践验证的训练方法，含具体训练计划、阶段性成果数据和口算练习工具推荐，帮助孩子快速提升计算速度。从每分钟5题提升到20题的真实案例，配合练学宝免费口算速练在线工具每日练习，适合1-6年级。附常见计算错误分析和提速技巧，每天10分钟见效，让孩子计算又快又准，操作简单适合长期使用。</description>
+    <pubDate>Thu, 14 May 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>小学作文不会写？我用这3个模板让女儿从</title>
+    <link>https://www.skillxm.cn/blog/xiaoxue-zuowen-moban-sange-tisheng/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/xiaoxue-zuowen-moban-sange-tisheng/</guid>
+    <description>孩子写作文总是流水账、没重点？分享3个实用作文模板，含真实案例和阶段性成果数据，帮助孩子建立写作框架轻松写出高分作文。从流水账到班级范文的真实转变过程，配合练学宝免费作文模板生成器在线使用，适合3-6年级。附8周训练计划和分年级写作技巧，含家长辅导要点和常见写作误区分析，让作文提升看得见，帮孩子打好学习基础。</description>
     <pubDate>Thu, 14 May 2026 08:00:00 GMT</pubDate>
     <category>知识分享</category>
   </item>
@@ -515,6 +619,14 @@
     <guid isPermaLink="true">https://www.skillxm.cn/blog/shujia-shuxue-xuexi-jihua/</guid>
     <description>暑假数学学习计划完整攻略：从复习巩固到预习新知，分享一套每天30分钟的高效学习方案，含时间安排表和免费工具推荐，帮助孩子暑假弯道超车。适合1-6年级分层使用，涵盖口算、竖式、应用题和几何等核心模块。配合练学宝免费数学练习卷生成器在线打印下载，附8周系统训练计划和阶段性验收标准，开学成绩提升20分，简单有效。</description>
     <pubDate>Sun, 10 May 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>不要在孩子面前说</title>
+    <link>https://www.skillxm.cn/blog/baqirenjiaoyu-de-shanghai/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/baqirenjiaoyu-de-shanghai/</guid>
+    <description>从心理学角度分析「别人家的孩子」这句话对孩子的伤害，并提出更有效的教育沟通方式。结合儿童心理学研究数据和真实家庭案例，分析比较式教育对自信心和学习动力的负面影响。分享3个替代表达技巧、5个正向激励方法和亲子沟通话术模板，帮助家长建立健康的亲子沟通模式，适合小学生家庭日常教育场景使用，操作简单适合家庭长期使用。</description>
+    <pubDate>Wed, 06 May 2026 08:00:00 GMT</pubDate>
     <category>知识分享</category>
   </item>
   <item>
