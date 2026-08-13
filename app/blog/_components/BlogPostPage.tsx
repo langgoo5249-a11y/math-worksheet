@@ -19,6 +19,9 @@ function parseMarkdown(markdown: string): string {
   html = html.replace(/<dfn>([^<]+)<\/dfn>/g, '<dfn class="text-emerald-300 font-semibold border-b border-dashed border-emerald-500/50 cursor-help" title="$1">$1</dfn>');
   html = html.replace(/==([^=]+)==/g, '<dfn class="text-emerald-300 font-semibold border-b border-dashed border-emerald-500/50 cursor-help" title="$1">$1</dfn>');
 
+  // Links: [text](url) → <a>（修复：正文内链此前未渲染成超链接）
+  html = html.replace(/\[([^\]]+)\]\(((?:https?:\/\/|\/)[^)\s]+)\)/g, '<a href="$2" class="text-blue-400 hover:text-blue-300 underline underline-offset-2">$1</a>');
+
   // Bold: **text**
   html = html.replace(/\*\*(.+?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>');
 
@@ -323,12 +326,22 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           <div className="mt-8 p-6 bg-slate-800/50 rounded-xl border border-white/10">
             <h3 className="text-lg font-bold text-white mb-3">📚 参考文献与数据来源</h3>
             <ul className="space-y-1.5">
-              {article.citations.map((citation, idx) => (
-                <li key={idx} className="text-gray-400 text-sm flex items-start gap-2">
-                  <span className="text-blue-400 mt-0.5 shrink-0">[{idx + 1}]</span>
-                  <cite className="not-italic">{citation}</cite>
-                </li>
-              ))}
+              {article.citations.map((citation, idx) => {
+                const urlMatch = citation.match(/(https?:\/\/[^\s,，。]+)/);
+                return (
+                  <li key={idx} className="text-gray-400 text-sm flex items-start gap-2">
+                    <span className="text-blue-400 mt-0.5 shrink-0">[{idx + 1}]</span>
+                    {urlMatch ? (
+                      <span className="not-italic">
+                        {citation.replace(urlMatch[0], '')}
+                        <a href={urlMatch[0]} target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline underline-offset-2 break-all">{urlMatch[0]}</a>
+                      </span>
+                    ) : (
+                      <cite className="not-italic">{citation}</cite>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         )}
