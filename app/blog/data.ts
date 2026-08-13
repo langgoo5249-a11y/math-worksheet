@@ -1405,6 +1405,7 @@ export const articles: Article[] = [
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "高效学习方法总结"],
     keywords: ["错题本整理方法", "小学错题本", "错题本怎么用", "错题本模板", "数学错题本", "小学生学习方法", "成绩提升方法"],
     readTime: "10分钟",
+    image: "/images/blog/cuotiben-zhengli-fangfa.png",
     content: `"这道题你明明做过，怎么又错了？"上学期期中考试后，我翻着儿子的数学试卷，发现一个让我崩溃的事实：同一类型的计算题，他错了三次。
 
 第一次是单元测试，第二次是月考，第三次是期中考试。每次都是进位加法算错，每次我都让他订正，可下次还是照错不误。
@@ -10990,6 +10991,7 @@ an、en、in、un、ün、ang、eng、ing、ong
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "15分钟",
+    image: "/images/blog/haizi-xiezuoye-moceng-3bu-fa-2026.png",
     keywords: [
       "孩子写作业磨蹭",
       "孩子写作业慢怎么办",
@@ -12974,6 +12976,7 @@ NWEA 的研究也证实了这一点：**程序性技能（如竖式计算、分�
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "9分钟",
+    image: "/images/blog/xiaoxuesheng-xiezi-zishi-jiuzheng-2026.png",
     author: teacherAuthor,
     keywords: ["小学生写字姿势纠正", "握笔姿势不对怎么纠正", "勾腕抱笔歪头", "小学生写字姿势", "21天矫正方案", "保护视力写字姿势", "练字姿势纠正", "儿童握笔姿势矫正", "写字姿势不对危害", "家庭练字方法"],
     content: `上学期期末家长会，班主任把我拉到一边，说了一句话让我心里咯噔一下："你家孩子这学期视力从5.0掉到4.6了，你看看他写字的姿势。"
@@ -13122,6 +13125,7 @@ NWEA 的研究也证实了这一点：**程序性技能（如竖式计算、分�
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "11分钟",
+    image: "/images/blog/xiaoxuesheng-shujia-xuexi-jihua-2026.png",
     author: {
       name: "陈老师",
       avatar: "/authors/chenlaoshi.jpg",
@@ -13640,6 +13644,7 @@ Sight Words（视觉词）是英语阅读中的"高频拦路虎"。美国伊利�
     hasExclusiveContent: true,
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "认知科学研究解读"],
     readTime: "13分钟",
+    image: "/images/blog/shuxue-jisuan-cuxin-2026.png",
     author: teacherAuthor,
     content: `有孩子年级的时候，有一次数学考试拿了78分。我翻开卷子一看，差点没气晕过去——
 
