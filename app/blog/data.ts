@@ -646,6 +646,7 @@ export const articles: Article[] = [
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "思维训练独家方法"],
     keywords: ["孩子注意力不集中", "专注力训练方法", "上课走神怎么办", "注意力训练", "孩子分心", "专注力提升", "儿童注意力训练"],
     readTime: "10分钟",
+    image: "/images/blog/zhuanzhuli-xunlian-fangfa.png",
     content: `有孩子年级上学期，老师找我谈话了三次，每次都是同一个问题：上课走神。
 
 第一次是数学课，他在课本上画小人，被老师点名。第二次是语文课，他望着窗外发呆，连老师提问都没听见。第三次是英语课，他在抽屉里玩橡皮，整整半节课都没抬头。
@@ -873,6 +874,7 @@ export const articles: Article[] = [
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "语文学习方法总结"],
     keywords: ["阅读理解训练方法", "小学语文阅读理解", "阅读理解答题技巧", "阅读理解怎么提高", "小学语文提分", "语文阅读训练", "阅读理解失分"],
     readTime: "11分钟",
+    image: "/images/blog/yuedu-lijie-xunlian-fangfa.png",
     content: `有孩子年级上学期期末考试，语文考了78分。我拿到试卷一看，阅读理解扣了12分，占总失分的将近一半。
 
 那道题是读一篇关于小蚂蚁搬家的短文，然后回答三个问题。女儿第一个问题就答偏了，问"小蚂蚁为什么要搬家"，她写的是"因为小蚂蚁很勤劳"。正确答案应该是"因为要下雨了，蚂蚁要搬到高处去"。
@@ -1176,6 +1178,7 @@ export const articles: Article[] = [
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ["小学数学应用题", "应用题解题技巧", "数学应用题方法", "小学应用题", "数学解题思路", "应用题训练", "数学提分方法"],
     readTime: "9分钟",
+    image: "/images/blog/yingyongti-jieti-fangfa.png",
     content: `"妈妈，这道应用题我读不懂..."儿子拿着数学作业本，一脸茫然地看着我。
 
 我拿过来看了一眼："小明有12个苹果，给了小红3个，又买了5个，现在有多少个？"
@@ -1717,6 +1720,7 @@ export const articles: Article[] = [
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ['一年级数学期中复习', '一年级数学重点', '一年级数学知识点', '20以内加减法复习', '一年级数学考试', '数学期中测试', '一年级数学提纲'],
     readTime: '8分钟',
+    image: '/images/blog/xiaoxueyinianjishuxuefuxi-10.png',
     content: `## 期中考试不用怕，掌握这10个知识点就够了
 
 一年级数学期中考试通常覆盖上学期前半部分的内容，难度不大但知识点多。很多孩子失分不是因为不会，而是因为粗心或者概念模糊。本文整理了10个必考知识点，家长可以对照检查孩子的掌握情况。
@@ -1825,6 +1829,7 @@ export const articles: Article[] = [
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "综合教育独家内容"],
     keywords: ['小学生放学时间安排', '课后时间管理', '小学生作息时间表', '放学后学习计划', '课外活动安排', '小学生时间规划', '学霸时间表'],
     readTime: '12',
+    image: '/images/blog/fangxuehou-shijian-anpai-diaocha.png',
     content: `去年我参加了一个家长教育沙龙，主题是"放学后的时间管理"。到场的有20个家庭，孩子的成绩在各自班级都是前五名。我详细记录了每个家庭的时间安排，回来之后做了对比分析，发现了一些很有意思的规律。
 
 先说一个总体的发现：这20个家庭没有一个是"一放学就开始写作业"的。全部20个家庭都安排了15-30分钟的休息时间，让孩子在正式开始学习之前有一个缓冲。
@@ -1954,6 +1959,7 @@ export const articles: Article[] = [
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "实用工具教程"],
     keywords: ['作文模板生成器', '作文格子纸', '看图写话模板', '小学生作文工具', '写作恐惧克服', '作文练习工具', '在线作文模板'],
     readTime: '6',
+    image: '/images/blog/zuowen-moban-kongfu-wufu.png',
     content: `"一提到写作文就头疼。"这是有孩子年级时的真实状态。每次周末作业有作文，她能拖到周日晚上还不动笔。坐在书桌前咬笔头、撕纸、说"我不知道写什么"，最后哭一场，草草写几行交差。
 
 后来我发现了网站上的作文模板生成器，用了一套方法帮她慢慢走出了写作恐惧。整个过程分5个步骤，花了大约两个月时间。
@@ -2178,6 +2184,7 @@ export const articles: Article[] = [
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "思维训练独家方法"],
     keywords: ['逻辑思维训练书推荐', '儿童逻辑思维书', '思维训练书测评', '举一反三', '奥数入门', '逻辑推理训练', '思维训练书哪个好'],
     readTime: '8分钟',
+    image: '/images/blog/luoji-siwei-xunlian-shu-pingce.png',
     content: `过去两年，我给儿子买了大概10套逻辑思维训练书。有的是自己挑的，有的是听其他家长推荐买的，还有几套是公众号种草的。今天把这些书的真实使用体验说一下，给正在选书的家长一个参考。
 
 先说结论：没有一套是完美的，每套都有优缺点，关键是看适不适合你家孩子。
@@ -2399,6 +2406,7 @@ export const articles: Article[] = [
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ['小学几何入门', '空间想象力培养', '几何图形认识', '立体图形认知', '空间思维训练', '小学数学几何', '几何趣味活动'],
     readTime: '7分钟',
+    image: '/images/blog/xiaoxue-jihe-kongjian-xiangxiangli.png',
     content: `有孩子儿园大班的时候，老师跟我说了一句话，让我印象特别深："这孩子空间感不太好，搭积木总是搭不稳。"
 
 我当时没太当回事，觉得男孩子嘛，长大就好了。结果到了小学三年级学面积和周长，他真的开始吃力了——不是不会算，是根本想象不出图形之间的关系。给他讲"长方形剪掉一个角还剩几个角"，他想了半天说不出来。
@@ -4694,6 +4702,7 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     hasExclusiveContent: false,
     keywords: ['免费教育工具', '小学在线学习资源', '免费学习网站', '小学生工具推荐', '在线教育平台', '免费教学工具', '学习资源汇总'],
     readTime: '8分钟',
+    image: '/images/blog/mianfei-jiaoyu-ziyuan.png',
     content: `## 免费资源，学习的好帮手
 
 现在网上的教育资源其实非常丰富，很多好用的工具都是免费的，但很多家长并不知道。与其花大价钱报班，不如先把这些免费资源利用起来。这里整理了10个适合小学生的在线学习工具，都是亲测好用的。
@@ -7861,6 +7870,7 @@ There is和There are的用法，孩子经常搞混。
     hasExclusiveContent: false,
     keywords: ['小升初择校指南', '初中学校怎么选', '公办民办初中对比', '小升初择校技巧', '重点班普通班区别', '小升初家长经验'],
     readTime: '12分钟',
+    image: '/images/blog/xiaoshengchu-zexiao-zhinan-jingyan.png',
     content: `去年，为了给小升初的女儿选学校，我走访了8所初中，和20多位家长深度交流，最后选了一所"非名校"。
 
 结果证明，这个选择是对的。女儿现在初一，成绩稳定在前10，每天上学都很开心。而当初执意要选"名校"的几个家长，孩子现在压力巨大，有的已经出现了厌学情绪。
@@ -9710,6 +9720,7 @@ an、en、in、un、ün、ang、eng、ing、ong
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "14分钟",
+    image: "/images/blog/xiaoxue-shuxue-siwei-xunlian-fangfa-2026.png",
     keywords: ["小学数学思维训练", "数学思维能力培养", "小学数学学习方法", "数学思维训练游戏", "逻辑思维训练"],
     content: `有孩子年级上学期，数学成绩突然从90分掉到了75分。
 
@@ -10732,6 +10743,7 @@ an、en、in、un、ün、ang、eng、ing、ong
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "13分钟",
+    image: "/images/blog/san-ji-yingyongti-sijie-fa-2026.png",
     keywords: [
       "小学数学应用题解题方法",
       "三年级应用题怎么教",
@@ -10910,6 +10922,7 @@ an、en、in、un、ün、ang、eng、ing、ong
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "13分钟",
+    image: "/images/blog/yinianji-pinyin-xuexi-luxiantu-2026.png",
     keywords: [
       "一年级拼音学习",
       "拼音学习顺序",
@@ -10938,6 +10951,7 @@ an、en、in、un、ün、ang、eng、ing、ong
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "12分钟",
+    image: "/images/blog/ertong-zhongwen-xuexi-wangzhan-zhinan-2026.png",
     keywords: [
       "儿童中文学习网站",
       "中文学习",
@@ -13293,6 +13307,7 @@ NWEA 的研究也证实了这一点：**程序性技能（如竖式计算、分�
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "12分钟",
+    image: "/images/blog/xiaoxuesheng-yingyu-qimeng-luxiantu-2026.png",
     author: {
       name: "陈老师",
       avatar: "/authors/chenlaoshi.jpg",
