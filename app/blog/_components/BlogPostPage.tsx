@@ -312,6 +312,18 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           </section>
         )}
 
+        {/* 配图（改善“图文并茂”） */}
+        {article.image && (
+          <figure className="mb-8 -mx-4 sm:mx-0">
+            <img
+              src={article.image}
+              alt={article.title + " - 配图"}
+              className="w-full rounded-xl sm:rounded-2xl shadow-lg border border-white/10"
+              loading="eager"
+            />
+          </figure>
+        )}
+
         {/* Article Content */}
         <div
           className="prose prose-invert max-w-none"
