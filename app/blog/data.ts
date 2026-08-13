@@ -75,6 +75,7 @@ export const articles: Article[] = [
     dateModified: "2026-08-06",
     category: "数学学习",
     readTime: "约12分钟",
+    image: "/images/blog/shuxue-shenti-4bu-xunlian-2026.png",
     author: teacherAuthor,
     keywords: [
       "小学生数学审题能力",
