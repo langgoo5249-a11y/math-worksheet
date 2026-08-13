@@ -3,13 +3,13 @@ import SiteLayout from './_components/SiteLayout';
 import HomePageClient from './_components/HomePageClient';
 
 export const metadata = {
-  title: '练学宝 - 免费小学在线学习工具',
-  description: '10+款免费小学教学工具，覆盖数学计算、语文练字、练习卷下载，即开即用无需注册。包括数学练习卷生成器、字帖生成器、口算速练、数独游戏、识字卡片、作文模板等。',
+  title: '练学宝 - 免费小学数学练习卷、字帖、口算速练在线工具',
+  description: '练学宝是免费的在线小学教育工具平台，提供数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写等10+款教学工具，覆盖1-6年级语文数学英语三大学科，支持手机在线练习和PDF打印导出，无需注册完全免费，家长辅导孩子学习的好帮手。',
   keywords: '练学宝,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷',
   author: '陈老师',
   openGraph: {
-    title: '练学宝 - 免费小学在线学习工具',
-    description: '10+款免费小学教学工具，覆盖数学计算、语文练字、练习卷下载，即开即用无需注册。',
+    title: '练学宝 - 免费小学数学练习卷、字帖、口算速练在线工具',
+    description: '练学宝是免费的在线小学教育工具平台，提供数学练习卷、字帖、口算速练、拼音识字等10+款工具，覆盖1-6年级，支持PDF打印，无需注册。',
     url: 'https://www.skillxm.cn/',
     siteName: '练学宝',
     locale: 'zh_CN',
@@ -86,7 +86,7 @@ export default function HomePage() {
             '@id': 'https://www.skillxm.cn/#homepage',
             name: '练学宝 - 免费小学在线学习工具',
             url: 'https://www.skillxm.cn/',
-            description: '10+款免费小学教学工具，覆盖数学计算、语文练字、练习卷下载，即开即用无需注册。',
+            description: '练学宝是免费的在线小学教育工具平台，提供数学练习卷、字帖、口算速练、拼音识字等10+款工具，覆盖1-6年级，支持PDF打印，无需注册。',
             inLanguage: 'zh-CN',
             mainEntity: {
               '@type': 'ItemList',
