@@ -7,7 +7,7 @@ const POPUP_DELAY = 1500;
 const COOLDOWN_MS = 24 * 60 * 60 * 1000; // 24小时
 
 /**
- * ⚠️ 核心功能：微信小程序自动弹窗（24小时弹一次）
+ * ⚠️ 核心功能：微信公众号自动弹窗（24小时弹一次）
  * 页面加载1.5秒后自动弹出，24小时内关闭或点击"我知道了"后不再弹出。
  * 也通过 open-miniapp-modal 事件支持外部触发（如页脚按钮）。
  */
@@ -52,7 +52,7 @@ export default function MiniappModal() {
       className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
       role="dialog"
       aria-modal="true"
-      aria-label="微信小程序推荐"
+      aria-label="微信公众号关注"
     >
       {/* 遮罩层 */}
       <div
@@ -78,16 +78,16 @@ export default function MiniappModal() {
           <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-3 backdrop-blur-sm">
             <span className="text-3xl">📱</span>
           </div>
-          <h3 className="text-white text-lg font-bold">微信扫码，即刻使用</h3>
-          <p className="text-white/80 text-sm mt-1">打开微信扫一扫，使用小程序更便捷</p>
+          <h3 className="text-white text-lg font-bold">微信扫码，关注公众号</h3>
+          <p className="text-white/80 text-sm mt-1">打开微信扫一扫，关注练学宝公众号</p>
         </div>
 
         {/* 二维码区域 */}
         <div className="px-6 -mt-4">
           <div className="bg-white rounded-2xl shadow-lg p-3 border border-gray-100">
             <img
-              src="/miniapp-qrcode.jpg"
-              alt="微信小程序二维码"
+              src="/wechat-official-qrcode.jpg"
+              alt="练学宝微信公众号二维码"
               className="w-full h-auto rounded-xl"
               loading="eager"
             />
@@ -97,7 +97,7 @@ export default function MiniappModal() {
         {/* 底部提示 */}
         <div className="px-6 pt-4 pb-6 text-center">
           <p className="text-xs text-gray-400">
-            无需下载，微信内即可使用全部功能
+            第一时间获取最新教育资源、活动通知和独家内容
           </p>
           <button
             onClick={handleClose}
