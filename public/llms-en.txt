@@ -1,5 +1,5 @@
 # SkillXM (skillxm.cn/en/) — LLM Content Index (English)
-> Last updated: 2026-08-12
+> Last updated: 2026-08-13
 > This file provides a content directory for AI search engines (ChatGPT, Perplexity, Claude, Gemini, etc.).
 
 ## About SkillXM
