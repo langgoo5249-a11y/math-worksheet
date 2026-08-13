@@ -7,6 +7,7 @@
   dateModified?: string;
   category: string;
   readTime: string;
+  image?: string;
   content?: string;
   keywords?: string[];
   author?: {
