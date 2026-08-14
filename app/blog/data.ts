@@ -76,7 +76,7 @@ export const articles: Article[] = [
   dateModified: "2026-08-13",
   category: "数学学习",
   readTime: "约10分钟",
-  image: "/images/blog/chengfa-koujue-jiyi-fangfa.png",
+  image: "/images/blog/chengfa-koujue-jiyi-fangfa.webp",
   author: teacherAuthor,
   keywords: ["乘法口诀怎么背", "乘法口诀表记忆方法", "孩子乘法口诀记不住怎么办", "乘法口诀背诵技巧", "九九乘法表快速记忆", "乘法口诀背了又忘", "二年级乘法口诀", "9的乘法口诀手指法", "乘法口诀易错口诀", "乘法口诀记忆规律"],
   citations: ["北京师范大学（2023）. 小学低年级乘法口诀掌握度与后续数学成绩的追踪研究（样本1200名小学生）.", "《小学数学乘法口诀教学存在的问题及对策》. 学籽期刊.", "周新林等. 乘法口诀学习方式对大脑表征的影响研究（北京师范大学认知神经科学与学习国家重点实验室）. 光明日报数据库.", "中华人民共和国教育部 (2022). 义务教育数学课程标准（2022年版）."],
@@ -126,7 +126,7 @@ export const articles: Article[] = [
     dateModified: "2026-08-06",
     category: "数学学习",
     readTime: "约12分钟",
-    image: "/images/blog/shuxue-shenti-4bu-xunlian-2026.png",
+    image: "/images/blog/shuxue-shenti-4bu-xunlian-2026.webp",
     author: teacherAuthor,
     keywords: [
       "小学生数学审题能力",
@@ -291,7 +291,7 @@ export const articles: Article[] = [
 },
 {
     id: "xiaoxue-shujia-shuxue-hualuo-yufang-jihua-2026",
-    image: "/images/blog/xiaoxue-shujia-shuxue-hualuo-yufang-jihua-2026.png",
+    image: "/images/blog/xiaoxue-shujia-shuxue-hualuo-yufang-jihua-2026.webp",
     title: "小学生暑假数学「滑坡」有多严重？每天25分钟用对这个方法，开学成绩不降反升",
     description: "暑假数学滑坡真实数据：美国杜克大学Harris Cooper教授对39项研究的元分析显示，暑期数学计算能力平均倒退约一个月。本文分享一线教师亲测的25分钟每日学习计划，结合练学宝免费口算速练和数学练习卷生成器，覆盖小学1-6年级，帮助孩子暑假保持数学状态，开学摸底考不慌。",
     date: "2026-07-21",
@@ -408,7 +408,7 @@ export const articles: Article[] = [
   },
   {
     id: "haizi-xiezi-waiwainiuniu-lianzi-shijianbiao",
-    image: "/images/blog/haizi-xiezi-waiwainiuniu-lianzi-shijianbiao.png",
+    image: "/images/blog/haizi-xiezi-waiwainiuniu-lianzi-shijianbiao.webp",
     title: "孩子写字歪歪扭扭？这份练字时间表让很多家长后悔没早看到",
     description: "孩子写字歪歪扭扭怎么办？本文分享一份科学练字时间表，含真实案例、阶段性成果数据和练学宝字帖生成器使用方法。覆盖小学1-3年级田字格米字格练习，支持免费在线生成PDF打印下载，每天15分钟练字。附握笔姿势矫正指南、笔画顺序详解和阶段性验收标准，帮助家长在家科学辅导，让孩子半年内写出工整漂亮的汉字，方法简单有效。",
     date: "2026-06-19",
@@ -537,7 +537,7 @@ export const articles: Article[] = [
   },
       {
     id: "yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi",
-    image: "/images/blog/yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi.png",
+    image: "/images/blog/yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi.webp",
     title: "一年级数学启蒙：从数数到20以内加减法的完整路径",
     description: "一年级数学启蒙怎么做？本文分享从数数到20以内加减法的完整学习路径，含具体教学步骤、时间节点和真实案例。适合6-7岁幼小衔接阶段家庭辅导，涵盖数感培养、凑十法和破十法等核心方法。配合练学宝免费口算速练在线工具每日练习，附分阶段验收标准和常见辅导误区分析，帮孩子轻松建立数学基础，方法简单实用效果立竿见影值得收藏。",
     date: "2026-06-01",
@@ -649,7 +649,7 @@ export const articles: Article[] = [
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "思维训练独家方法"],
     keywords: ["孩子注意力不集中", "专注力训练方法", "上课走神怎么办", "注意力训练", "孩子分心", "专注力提升", "儿童注意力训练"],
     readTime: "10分钟",
-    image: "/images/blog/zhuanzhuli-xunlian-fangfa.png",
+    image: "/images/blog/zhuanzhuli-xunlian-fangfa.webp",
     content: `有孩子年级上学期，老师找我谈话了三次，每次都是同一个问题：上课走神。
 
 第一次是数学课，他在课本上画小人，被老师点名。第二次是语文课，他望着窗外发呆，连老师提问都没听见。第三次是英语课，他在抽屉里玩橡皮，整整半节课都没抬头。
@@ -660,7 +660,7 @@ export const articles: Article[] = [
 
 从那以后，我开始系统地研究专注力训练方法。经过半年的实践，儿子的专注力明显提升，四年级上学期老师反馈"上课状态好多了，能跟着老师思路走了"。
 
-![专注力训练：儿子书桌上摆放的计时器和专注力训练用的数独游戏](/images/blog/zhuanzhuli-xunlian.jpg)
+![专注力训练：儿子书桌上摆放的计时器和专注力训练用的数独游戏](/images/blog/zhuanzhuli-xunlian.webp)
 
 ## 第一个方法：环境减法
 
@@ -692,7 +692,7 @@ export const articles: Article[] = [
 
 现在他已经能玩6×6的数独了。我发现他玩数独的时候特别专注，眼睛盯着格子，手拿着笔思考，完全不受外界干扰。这种专注的状态，就是他上课需要的状态。
 
-![数独游戏：儿子正在专注地玩数独游戏，这是他最喜欢的专注力训练方式](/images/blog/zhuanzhuli-shudu.jpg)
+![数独游戏：儿子正在专注地玩数独游戏，这是他最喜欢的专注力训练方式](/images/blog/zhuanzhuli-shudu.webp)
 
 ## 第四个方法：听觉专注力训练
 
@@ -714,7 +714,7 @@ export const articles: Article[] = [
 
 北京体育大学的研究表明，适量的运动能促进大脑分泌多巴胺，提升注意力和学习效率。运动不是浪费时间，而是为学习做准备。
 
-![运动释放：儿子放学后跳绳的场景，10分钟运动让他能安静学习40分钟](/images/blog/zhuanzhuli-yundong.jpg)
+![运动释放：儿子放学后跳绳的场景，10分钟运动让他能安静学习40分钟](/images/blog/zhuanzhuli-yundong.webp)
 
 
 > **参考数据**：根据《义务教育数学课程标准（2022年版）》，小学数学核心素养包括数感、量感、符号意识、运算能力、几何直观、空间观念、推理意识、数据意识、模型意识、应用意识和创新意识。
@@ -743,7 +743,7 @@ export const articles: Article[] = [
   },
   {
     id: "sannianji-xianxiang-yuanyin",
-    image: "/images/blog/sannianji-xianxiang-yuanyin.png",
+    image: "/images/blog/sannianji-xianxiang-yuanyin.webp",
     title: "小学三年级现象：成绩断崖式下跌的真相和应对方法",
     description: "很多家长发现，孩子一二年级成绩很好，到了三年级突然下滑。这就是「三年级现象」。本文分析三年级成绩下滑的4个根本原因，并给出具体的应对策略，含真实案例和分科目辅导方案，配合免费数学练习卷生成器在线打印下载，附8周系统训练计划和阶段性验收标准，帮助孩子顺利度过这个分水岭，让家庭辅导更科学更轻松高效，方法简单实用。",
     date: "2026-05-13",
@@ -766,7 +766,7 @@ export const articles: Article[] = [
 
 后来我查了一些资料，发现这叫"三年级现象"。中国教育科学研究院的调查显示，约有许多小学生在三年级出现明显的成绩下滑，其中语文和数学的下滑幅度最大。
 
-![三年级现象：女儿三年级期中考试的试卷，红笔批改的痕迹显示失分点分布](/images/blog/sannianji-xianxiang-shijuan.jpg)
+![三年级现象：女儿三年级期中考试的试卷，红笔批改的痕迹显示失分点分布](/images/blog/sannianji-xianxiang-shijuan.webp)
 
 ## 三年级现象的4个真相
 
@@ -802,7 +802,7 @@ export const articles: Article[] = [
 
 她需要学会自己查字典、自己检查作业、自己安排学习时间。这些习惯不是一天能养成的。
 
-![学习难度对比：一二年级和三年级的课本内容对比，显示知识难度的跳跃](/images/blog/sannianji-nandu-duibi.jpg)
+![学习难度对比：一二年级和三年级的课本内容对比，显示知识难度的跳跃](/images/blog/sannianji-nandu-duibi.webp)
 
 ## 我的应对方法
 
@@ -878,7 +878,7 @@ export const articles: Article[] = [
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "语文学习方法总结"],
     keywords: ["阅读理解训练方法", "小学语文阅读理解", "阅读理解答题技巧", "阅读理解怎么提高", "小学语文提分", "语文阅读训练", "阅读理解失分"],
     readTime: "11分钟",
-    image: "/images/blog/yuedu-lijie-xunlian-fangfa.png",
+    image: "/images/blog/yuedu-lijie-xunlian-fangfa.webp",
     content: `有孩子年级上学期期末考试，语文考了78分。我拿到试卷一看，阅读理解扣了12分，占总失分的将近一半。
 
 那道题是读一篇关于小蚂蚁搬家的短文，然后回答三个问题。女儿第一个问题就答偏了，问"小蚂蚁为什么要搬家"，她写的是"因为小蚂蚁很勤劳"。正确答案应该是"因为要下雨了，蚂蚁要搬到高处去"。
@@ -889,7 +889,7 @@ export const articles: Article[] = [
 
 从那以后，我开始系统地研究阅读理解的训练方法。经过差不多半年的摸索，女儿三年级下学期语文考了94分，阅读理解只扣了1分。下面我把这套方法分享出来。
 
-![阅读理解训练：女儿的书桌上摊开着语文课本，旁边是标注了重点词句的打印文章](/images/blog/yuedu-lijie-xunlian.jpg)
+![阅读理解训练：女儿的书桌上摊开着语文课本，旁边是标注了重点词句的打印文章](/images/blog/yuedu-lijie-xunlian.webp)
 
 ## 第一个阶段：学会慢读（适合一二年级）
 
@@ -939,7 +939,7 @@ export const articles: Article[] = [
 
 这些模板不是让孩子死记硬背，而是帮她建立一个答题的思路框架。有了框架，答案就不会东一句西一句了。
 
-![答题规范示例：女儿做的阅读理解练习，用不同颜色标注了找关键句和答题要点](/images/blog/yuedu-lijie-dati.jpg)
+![答题规范示例：女儿做的阅读理解练习，用不同颜色标注了找关键句和答题要点](/images/blog/yuedu-lijie-dati.webp)
 
 
 > **参考数据**：根据教育部《2024年全国教育事业发展统计公报》，全国共有小学14.35万所，在校生1.08亿人。小学阶段是培养学习习惯的关键时期。
@@ -969,7 +969,7 @@ export const articles: Article[] = [
   },
   {
     id: "yinianji-ruxue-zhunbei-qingdan",
-    image: "/images/blog/yinianji-ruxue-zhunbei-qingdan.png",
+    image: "/images/blog/yinianji-ruxue-zhunbei-qingdan.webp",
     title: "一年级新生入学准备清单：除了文具，这些更重要",
     description: "孩子马上要上一年级了，家长需要准备什么？除了书包文具，更重要的是学习习惯和心理准备。这份清单涵盖幼小衔接的6个关键准备，含具体操作方法、时间规划和真实家庭过渡案例，配合免费口算速练和拼音注音工具在线打印下载，附8月开学前倒计时安排表和分阶段验收标准，帮助家长和孩子顺利过渡到小学阶段，方法简单实用值得收藏。",
     date: "2026-05-12",
@@ -986,7 +986,7 @@ export const articles: Article[] = [
 
 这篇文章是我陪儿子走过幼小衔接的真实经验总结。不是什么专家理论，就是一个普通家长的踩坑记录和心得。
 
-![入学准备照片：儿子开学第一天在校门口的照片，背着新书包，有点紧张又有点兴奋](/images/blog/yinianji-ruxue-zhunbei.jpg)
+![入学准备照片：儿子开学第一天在校门口的照片，背着新书包，有点紧张又有点兴奋](/images/blog/yinianji-ruxue-zhunbei.webp)
 
 ## 学习习惯准备（最重要）
 
@@ -1024,7 +1024,7 @@ export const articles: Article[] = [
 
 写字：不需要会写很多字，但最好会写自己的名字，握笔姿势要正确。握笔姿势一旦养成错误的习惯，以后很难改。我专门买了一套握笔器，练习了大概两周。
 
-![知识准备照片：墙上贴着的声母韵母表，儿子用拼音注音工具打印的，旁边是他的名字练习](/images/blog/yinianji-zhunbei-zhipin.jpg)
+![知识准备照片：墙上贴着的声母韵母表，儿子用拼音注音工具打印的，旁边是他的名字练习](/images/blog/yinianji-zhunbei-zhipin.webp)
 
 ## 物品准备（别买太多）
 
@@ -1071,7 +1071,7 @@ export const articles: Article[] = [
   },
   {
     id: "yinianji-shuxue-qimeng-lujing",
-    image: "/images/blog/yinianji-shuxue-qimeng-lujing.png",
+    image: "/images/blog/yinianji-shuxue-qimeng-lujing.webp",
     title: "一年级数学怎么教？从数数到加减法的家庭辅导指南",
     description: "一年级数学启蒙怎么做？本文分享从数数到20以内加减法的完整学习路径，含具体教学步骤、时间节点和真实案例。适合幼小衔接家庭辅导，涵盖数感培养和凑十破十法。配合练学宝免费口算练习卷生成器在线打印，附分阶段验收标准、常见辅导误区和每日10分钟练习方案，帮孩子轻松掌握20以内加减法运算，让家庭辅导更科学更轻松高效。",
     date: "2026-05-11",
@@ -1184,7 +1184,7 @@ dateModified: "2026-08-14",
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ["小学数学应用题", "应用题解题技巧", "数学应用题方法", "小学应用题", "数学解题思路", "应用题训练", "数学提分方法"],
     readTime: "9分钟",
-    image: "/images/blog/yingyongti-jieti-fangfa.png",
+    image: "/images/blog/yingyongti-jieti-fangfa.webp",
     content: `"妈妈，这道应用题我读不懂..."儿子拿着数学作业本，一脸茫然地看着我。
 
 我拿过来看了一眼："小明有12个苹果，给了小红3个，又买了5个，现在有多少个？"
@@ -1223,7 +1223,7 @@ dateModified: "2026-08-14",
 
 刚开始儿子圈得乱七八糟，什么都圈。我教他"只圈数字和问题"，慢慢就找准了。现在他拿到题先圈再算，已经形成习惯了。
 
-![应用题解题示例：圈画关键词，画线段图理解数量关系](/images/blog/yingyongti-example.jpg)
+![应用题解题示例：圈画关键词，画线段图理解数量关系](/images/blog/yingyongti-example.webp)
 
 **第二步：画图示意，理清数量关系**
 
@@ -1290,7 +1290,7 @@ dateModified: "2026-08-14",
   },
   {
     id: "zuoye-moca-zenmeban",
-    image: "/images/blog/zuoye-moca-zenmeban.png",
+    image: "/images/blog/zuoye-moca-zenmeban.webp",
     title: "孩子写作业磨蹭怎么办？5个方法让作业效率提升3倍",
     description: "孩子写作业拖拉磨蹭怎么办？分享5个经过实践验证的方法，从环境布置到时间管理，帮助孩子提升作业效率，告别写到11点的困扰。适合1-6年级，含每日作业时间规划表、番茄钟计时法和免费在线计时工具推荐。附家长陪写技巧和激励机制设计，两周内作业效率提升明显，让孩子养成自主高效完成作业的好习惯，操作简单适合家庭长期使用。",
     date: "2026-05-11",
@@ -1375,7 +1375,7 @@ dateModified: "2026-08-14",
 
 每天节省两个半小时！这些时间用来阅读、运动、亲子游戏，比磨蹭在书桌前有价值多了。现在晚上7点之后是我们的亲子时间，有时候一起看书，有时候一起下棋，有时候出去散步。
 
-![作业效率对比：左边9点半还在写作业，右边7点已完成，桌面整洁有序](/images/blog/zuoye-shijian-duibi.jpg)
+![作业效率对比：左边9点半还在写作业，右边7点已完成，桌面整洁有序](/images/blog/zuoye-shijian-duibi.webp)
 
 
 > **参考数据**：根据《义务教育数学课程标准（2022年版）》，小学数学核心素养包括数感、量感、符号意识、运算能力、几何直观、空间观念、推理意识、数据意识、模型意识、应用意识和创新意识。
@@ -1415,14 +1415,14 @@ dateModified: "2026-08-14",
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "高效学习方法总结"],
     keywords: ["错题本整理方法", "小学错题本", "错题本怎么用", "错题本模板", "数学错题本", "小学生学习方法", "成绩提升方法"],
     readTime: "10分钟",
-    image: "/images/blog/cuotiben-zhengli-fangfa.png",
+    image: "/images/blog/cuotiben-zhengli-fangfa.webp",
     content: `"这道题你明明做过，怎么又错了？"上学期期中考试后，我翻着儿子的数学试卷，发现一个让我崩溃的事实：同一类型的计算题，他错了三次。
 
 第一次是单元测试，第二次是月考，第三次是期中考试。每次都是进位加法算错，每次我都让他订正，可下次还是照错不误。
 
 那天晚上我躺在床上翻来覆去睡不着，心想这孩子到底怎么回事。同样的错误犯三次，我甚至开始怀疑是不是他智商有问题。后来冷静下来想想，我们缺的可能不是练习量，而是一个真正管用的错题本。
 
-![错题本示例：儿子的数学错题本，红笔标注错误类型，彩色便利贴标记重点](/images/blog/cuotiben-example.jpg)
+![错题本示例：儿子的数学错题本，红笔标注错误类型，彩色便利贴标记重点](/images/blog/cuotiben-example.webp)
 
 ## 为什么要专门做错题本？
 
@@ -1514,7 +1514,7 @@ dateModified: "2026-08-14",
   },
   {
     id: "shujia-shuxue-xuexi-jihua",
-    image: "/images/blog/shujia-shuxue-xuexi-jihua.png",
+    image: "/images/blog/shujia-shuxue-xuexi-jihua.webp",
     title: "暑假数学弯道超车计划：每天30分钟，开学成绩提升20分",
     description: "暑假数学学习计划完整攻略：从复习巩固到预习新知，分享一套每天30分钟的高效学习方案，含时间安排表和免费工具推荐，帮助孩子暑假弯道超车。适合1-6年级分层使用，涵盖口算、竖式、应用题和几何等核心模块。配合练学宝免费数学练习卷生成器在线打印下载，附8周系统训练计划和阶段性验收标准，开学成绩提升20分，简单有效。",
     date: "2026-05-10",
@@ -1531,7 +1531,7 @@ dateModified: "2026-08-14",
 
 今天分享一套我用了两年的暑假数学学习计划，每天只需要30分钟，但效果非常明显。儿子去年暑假用这套方法，开学后数学成绩从班级中游提升到前15名。
 
-![暑假学习计划表：手写日程安排，彩色标记，每日30分钟数学练习](/images/blog/shujia-jihua.jpg)
+![暑假学习计划表：手写日程安排，彩色标记，每日30分钟数学练习](/images/blog/shujia-jihua.webp)
 
 ## 暑假学习的三个原则
 
@@ -1610,7 +1610,7 @@ dateModified: "2026-08-14",
 
   {
     id: 'baqirenjiaoyu-de-shanghai',
-    image: '/images/blog/baqirenjiaoyu-de-shanghai.png',
+    image: '/images/blog/baqirenjiaoyu-de-shanghai.webp',
     title: '不要在孩子面前说"别人家的孩子"，这是我听过最好的理由',
     description: "从心理学角度分析「别人家的孩子」这句话对孩子的伤害，并提出更有效的教育沟通方式。结合儿童心理学研究数据和真实家庭案例，分析比较式教育对自信心和学习动力的负面影响。分享3个替代表达技巧、5个正向激励方法和亲子沟通话术模板，帮助家长建立健康的亲子沟通模式，适合小学生家庭日常教育场景使用，操作简单适合家庭长期使用。",
     date: '2026-05-06',
@@ -1664,7 +1664,7 @@ dateModified: "2026-08-14",
 
   {
     id: 'naokexue-jiedu-shuxue-nengli',
-    image: '/images/blog/naokexue-jiedu-shuxue-nengli.png',
+    image: '/images/blog/naokexue-jiedu-shuxue-nengli.webp',
     title: '为什么有些孩子数学好，有些不好？脑科学研究告诉你答案',
     description: "从认知神经科学的角度解读儿童数学能力差异的成因，帮助家长建立科学的数学教育观念。结合脑科学研究数据，分析数感、工作记忆和空间推理三大核心能力的发展规律和关键期。提供适合不同年龄段的家庭训练方法，含具体操作步骤和免费在线思维训练工具推荐，帮助家长因材施教，避免盲目焦虑和错误辅导方式，让家庭辅导更科学更轻松高效。",
     date: '2026-05-05',
@@ -1730,7 +1730,7 @@ dateModified: "2026-08-14",
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ['一年级数学期中复习', '一年级数学重点', '一年级数学知识点', '20以内加减法复习', '一年级数学考试', '数学期中测试', '一年级数学提纲'],
     readTime: '8分钟',
-    image: '/images/blog/xiaoxueyinianjishuxuefuxi-10.png',
+    image: '/images/blog/xiaoxueyinianjishuxuefuxi-10.webp',
     content: `## 期中考试不用怕，掌握这10个知识点就够了
 
 一年级数学期中考试通常覆盖上学期前半部分的内容，难度不大但知识点多。很多孩子失分不是因为不会，而是因为粗心或者概念模糊。本文整理了10个必考知识点，家长可以对照检查孩子的掌握情况。
@@ -1839,7 +1839,7 @@ dateModified: "2026-08-14",
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "综合教育独家内容"],
     keywords: ['小学生放学时间安排', '课后时间管理', '小学生作息时间表', '放学后学习计划', '课外活动安排', '小学生时间规划', '学霸时间表'],
     readTime: '12',
-    image: '/images/blog/fangxuehou-shijian-anpai-diaocha.png',
+    image: '/images/blog/fangxuehou-shijian-anpai-diaocha.webp',
     content: `去年我参加了一个家长教育沙龙，主题是"放学后的时间管理"。到场的有20个家庭，孩子的成绩在各自班级都是前五名。我详细记录了每个家庭的时间安排，回来之后做了对比分析，发现了一些很有意思的规律。
 
 先说一个总体的发现：这20个家庭没有一个是"一放学就开始写作业"的。全部20个家庭都安排了15-30分钟的休息时间，让孩子在正式开始学习之前有一个缓冲。
@@ -1969,7 +1969,7 @@ dateModified: "2026-08-14",
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "实用工具教程"],
     keywords: ['作文模板生成器', '作文格子纸', '看图写话模板', '小学生作文工具', '写作恐惧克服', '作文练习工具', '在线作文模板'],
     readTime: '6',
-    image: '/images/blog/zuowen-moban-kongfu-wufu.png',
+    image: '/images/blog/zuowen-moban-kongfu-wufu.webp',
     content: `"一提到写作文就头疼。"这是有孩子年级时的真实状态。每次周末作业有作文，她能拖到周日晚上还不动笔。坐在书桌前咬笔头、撕纸、说"我不知道写什么"，最后哭一场，草草写几行交差。
 
 后来我发现了网站上的作文模板生成器，用了一套方法帮她慢慢走出了写作恐惧。整个过程分5个步骤，花了大约两个月时间。
@@ -2017,7 +2017,7 @@ dateModified: "2026-08-14",
 
   {
     id: 'xiaoshengchu-jianli-xiezuo',
-    image: '/images/blog/xiaoshengchu-jianli-xiezuo.png',
+    image: '/images/blog/xiaoshengchu-jianli-xiezuo.webp',
     title: '小升初简历怎么写？附真实模板和填写技巧',
     description: "详细讲解小升初简历的写作方法，包含真实模板示例和每个模块的填写技巧，帮助家长制作一份有竞争力的简历。涵盖成绩展示、荣誉奖项、自荐信、特长展示和教师推荐等核心模块，每个模块附优秀范例和避坑指南。附可打印简历模板和免费在线工具推荐，适合五年级和六年级家庭提前准备，助力孩子顺利升入理想初中，操作简单适合长期使用。",
     date: '2026-04-30',
@@ -2112,7 +2112,7 @@ dateModified: "2026-08-14",
 
   {
     id: 'shudu-100tian-xunlian-jilu',
-    image: '/images/blog/shudu-100tian-xunlian-jilu.png',
+    image: '/images/blog/shudu-100tian-xunlian-jilu.webp',
     title: '坚持数独训练100天后，孩子的数学成绩发生了这些变化',
     description: "一位家长详细记录了孩子100天数独训练的全过程，包含用时变化、正确率数据和数学成绩的关联分析。从4宫格入门到9宫格精通，附每周训练计划、难度进阶节奏和阶段性成果对比。配合练学宝免费在线数独工具使用，展示逻辑思维提升和专注力增强的真实效果，为家长提供可复制的数独训练方案和数据参考，让家庭辅导更科学更轻松高效。",
     date: '2026-04-28',
@@ -2196,7 +2196,7 @@ dateModified: "2026-08-14",
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "思维训练独家方法"],
     keywords: ['逻辑思维训练书推荐', '儿童逻辑思维书', '思维训练书测评', '举一反三', '奥数入门', '逻辑推理训练', '思维训练书哪个好'],
     readTime: '8分钟',
-    image: '/images/blog/luoji-siwei-xunlian-shu-pingce.png',
+    image: '/images/blog/luoji-siwei-xunlian-shu-pingce.webp',
     content: `过去两年，我给儿子买了大概10套逻辑思维训练书。有的是自己挑的，有的是听其他家长推荐买的，还有几套是公众号种草的。今天把这些书的真实使用体验说一下，给正在选书的家长一个参考。
 
 先说结论：没有一套是完美的，每套都有优缺点，关键是看适不适合你家孩子。
@@ -2284,7 +2284,7 @@ dateModified: "2026-08-14",
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "升学准备独家指导"],
     keywords: ['升学焦虑', '考试心理调适', '孩子考试紧张', '小升初心理准备', '缓解考试压力', '儿童心理健康', '升学心理辅导'],
     readTime: '7分钟',
-    image: '/images/blog/shengxueji-xinli-tiaoshi.png',
+    image: '/images/blog/shengxueji-xinli-tiaoshi.webp',
     content: `去年这个时候，我差点犯了一个大错。
 
 有孩子升初，成绩在班里排前十，按理说没什么好焦虑的。但我不放心，给她报了三个冲刺班，每天晚上刷题到十一点半。结果呢？考前两周她开始失眠，考试那天早上吐了两次，数学卷子最后两道大题完全没做。
@@ -2418,7 +2418,7 @@ dateModified: "2026-08-14",
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "分阶段数学启蒙方法"],
     keywords: ['小学几何入门', '空间想象力培养', '几何图形认识', '立体图形认知', '空间思维训练', '小学数学几何', '几何趣味活动'],
     readTime: '7分钟',
-    image: '/images/blog/xiaoxue-jihe-kongjian-xiangxiangli.png',
+    image: '/images/blog/xiaoxue-jihe-kongjian-xiangxiangli.webp',
     content: `有孩子儿园大班的时候，老师跟我说了一句话，让我印象特别深："这孩子空间感不太好，搭积木总是搭不稳。"
 
 我当时没太当回事，觉得男孩子嘛，长大就好了。结果到了小学三年级学面积和周长，他真的开始吃力了——不是不会算，是根本想象不出图形之间的关系。给他讲"长方形剪掉一个角还剩几个角"，他想了半天说不出来。
@@ -2520,7 +2520,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'yingyu-danci-jiyi-qizhong-fangfa',
-    image: '/images/blog/yingyu-danci-jiyi-qizhong-fangfa.png',
+    image: '/images/blog/yingyu-danci-jiyi-qizhong-fangfa.webp',
     title: '小学生英语单词记忆法：7种方法让单词过目不忘',
     description: "背单词是英语学习的基础。本文介绍7种科学高效的单词记忆方法，帮助孩子轻松扩大词汇量。涵盖自然拼读、联想记忆、词根词缀、间隔复习和情境记忆等方法，适合3-6年级不同水平学生。配合练学宝免费英语字帖和在线单词练习工具，附90天记忆计划表和阶段性词汇量测试，让孩子从死记硬背转向科学记忆，让家庭辅导更科学更轻松高效。",
     date: '2026-04-25',
@@ -2629,7 +2629,7 @@ dateModified: "2026-08-14",
 
   {
     id: 'yinianji-shuxue-ruxue',
-    image: '/images/blog/yinianji-shuxue-ruxue.png',
+    image: '/images/blog/yinianji-shuxue-ruxue.webp',
     title: '小学一年级数学学习指南：从数数到100以内的加减法',
     description: "一年级是数学启蒙的关键期，本文系统梳理了一年级数学的核心知识点和学习方法，帮助家长科学辅导。涵盖数数、10以内和20以内加减法、认识图形和时间等模块，每个知识点配教学步骤和练习建议。配合练学宝免费口算速练在线工具，附分阶段验收标准、常见辅导误区和每日10分钟练习方案，帮孩子打好数学基础，操作简单适合长期使用。",
     date: '2026-03-15',
@@ -2750,7 +2750,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'sannianji-fenshu-rumen',
-    image: '/images/blog/sannianji-fenshu-rumen.png',
+    image: '/images/blog/sannianji-fenshu-rumen.webp',
     title: '三年级数学难点突破：分数入门与除法应用',
     description: "三年级数学的分数和除法是很多孩子的难点，本文详细讲解教学方法和突破技巧。结合一线教师15年教学经验，拆解分数概念理解、同分母加减法和除法应用三大核心难点及对应训练方法。配合练学宝免费数学练习卷生成器在线打印下载，附分步骤教学流程和常见错误分析，帮孩子顺利跨越三年级数学分水岭，方法简单实用效果立竿见影值得收藏。",
     date: '2026-03-10',
@@ -2883,7 +2883,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'kousuan-xunlian-fangfa',
-    image: '/images/blog/kousuan-xunlian-fangfa.png',
+    image: '/images/blog/kousuan-xunlian-fangfa.webp',
     title: '如何培养孩子的口算能力：从日常练习到速度提升',
     description: "口算能力是数学学习的基础功，本文分享科学的口算训练方法，帮助孩子又快又准。涵盖1-6年级分阶段训练方案，从10以内加减法到乘除法和混合运算，含每日10分钟练习计划和阶段性成果数据。配合练学宝免费口算速练在线工具使用，附常见计算错误分析和提速技巧，让孩子计算速度稳步提升准确率达95%以上，操作简单适合长期使用。",
     date: '2026-03-08',
@@ -2996,7 +2996,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'shushi-jisuan-jiaoxue',
-    image: '/images/blog/shushi-jisuan-jiaoxue.png',
+    image: '/images/blog/shushi-jisuan-jiaoxue.webp',
     title: '小学数学竖式计算全攻略：加法减法乘法除法',
     description: "竖式计算是小学数学的核心技能，本文详细讲解四种运算的竖式方法和常见错误。涵盖加减乘除四种运算的规范步骤、对位规则和进退位技巧，含6种典型错误模式和针对性纠正方法。配合练学宝免费竖式练习卷生成器在线打印下载，适合2-5年级使用，附每日练习计划和阶段性验收标准，帮孩子规范书写减少计算失误，操作简单适合长期使用。",
     date: '2026-03-05',
@@ -3209,7 +3209,7 @@ x 1 4
   },
   {
     id: 'ertong-lianzi-nianling',
-    image: '/images/blog/ertong-lianzi-nianling.png',
+    image: '/images/blog/ertong-lianzi-nianling.webp',
     title: '小学生练字最佳年龄和方法：家长必读指南',
     description: "练字什么时候开始最好？怎么练才有效？本文从年龄、方法、工具三个维度给出专业建议。涵盖5-12岁不同年龄段练字方案，含握笔姿势矫正、笔画顺序指导、运笔技巧和结构分析。配合练学宝免费字帖生成器在线生成PDF打印下载，支持田字格米字格多种格式，附每天15分钟练字计划和阶段性验收标准，让练字科学高效，效果显著看得见。",
     date: '2026-03-01',
@@ -3332,7 +3332,7 @@ x 1 4
   },
   {
     id: 'pinyin-xuexi-luxiantu',
-    image: '/images/blog/pinyin-xuexi-luxiantu.png',
+    image: '/images/blog/pinyin-xuexi-luxiantu.webp',
     title: '一年级拼音学习完整攻略：声母韵母整体认读音节',
     description: "拼音是识字和阅读的基础，本文系统整理了一年级拼音学习的全部内容和方法。涵盖23个声母、24个韵母和16个整体认读音节，含拼读规则、声调标记和易混淆音辨析。配合练学宝免费拼音注音在线工具使用，附分阶段学习路线图、每周学习目标和常见难点解析，帮孩子在一个学期内扎实掌握拼音拼读技能，方法简单实用效果立竿见影值得收藏。",
     date: '2026-02-28',
@@ -3486,7 +3486,7 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
   },
   {
     id: 'kantu-xiehua-xunlian',
-    image: '/images/blog/kantu-xiehua-xunlian.png',
+    image: '/images/blog/kantu-xiehua-xunlian.webp',
     title: '如何辅导孩子看图写话：低年级家长实用技巧',
     description: "看图写话是低年级语文的重点和难点，本文分享具体的辅导步骤和技巧。适合一二年级，涵盖五感观察法、要素提取法和写作框架搭建，含真实案例和阶段性成果数据。配合练学宝免费作文模板生成器在线使用，附每日练习计划和常见写话误区分析，帮孩子从无话可说到写出结构完整内容丰富的段落，轻松应对考试，让家庭辅导更科学更轻松高效。",
     date: '2026-02-25',
@@ -3599,7 +3599,7 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
   },
   {
     id: 'shizi-fangfa-tisheng',
-    image: '/images/blog/shizi-fangfa-tisheng.png',
+    image: '/images/blog/shizi-fangfa-tisheng.webp',
     title: '小学识字方法大比拼：字卡、识字软件和传统方法哪个好',
     description: "识字是小学语文的基础，本文对比分析了几种主流识字方法的优缺点和适用场景。涵盖识字卡片、识字软件、绘本识字和传统描红等方法，含1-6年级识字量目标和分阶段推荐方案。配合练学宝免费识字卡片生成器在线打印下载，附每日识字计划和复习策略，帮家长选对方法少走弯路，让孩子高效识字轻松阅读，方法简单实用效果立竿见影值得收藏。",
     date: '2026-02-22',
@@ -3721,7 +3721,7 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
     hasExclusiveContent: false,
     keywords: ['三年级作文入门', '从写话到写段', '作文过渡方法', '三年级写作指导', '作文段落结构', '写作能力提升', '小学作文技巧'],
     readTime: '8分钟',
-    image: '/images/blog/sannianji-zuowen-rumen.png',
+    image: '/images/blog/sannianji-zuowen-rumen.webp',
     content: `## 三年级开学第一周，老师布置了一篇作文，孩子哭了
 
 题目是《我的课余生活》，要求写300字左右。孩子坐在书桌前，咬着铅笔头，半个小时写了一个开头："我的课余生活很丰富。"然后就没词了。
@@ -3838,7 +3838,7 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
   },
   {
     id: 'ziran-pindu-rumen',
-    image: '/images/blog/ziran-pindu-rumen.png',
+    image: '/images/blog/ziran-pindu-rumen.webp',
     title: '英语自然拼读入门：让孩子轻松掌握发音规律',
     description: "自然拼读是英语学习的重要方法，本文介绍自然拼读的基本原理和入门方法。涵盖26个字母发音、CVC单词拼读、辅音组合和长元音规则，含分级阅读书单和半年训练数据。配合练学宝免费英语拼读练习在线工具使用，适合1-3年级零基础入门，附每周学习目标和常见拼读误区分析，帮孩子建立见词能读听音能写的能力，帮孩子打好学习基础。",
     date: '2026-02-18',
@@ -3939,7 +3939,7 @@ zh/ch/sh和z/c/s的分不清，在南方地区尤其普遍。
   },
   {
     id: 'xiaoxue-yingyu-shuxie',
-    image: '/images/blog/xiaoxue-yingyu-shuxie.png',
+    image: '/images/blog/xiaoxue-yingyu-shuxie.webp',
     title: '小学英语四线三格书写规范：家长辅导手册',
     description: "英文字母书写有严格规范，本文详细讲解四线三格的书写规则和常见错误。涵盖26个字母大小写笔顺、占格位置、倾斜角度和间距要求，含典型错误案例和针对性纠正方法。配合练学宝免费英语四线三格字帖生成器在线打印下载，适合1-4年级使用，附每日练习计划和阶段性验收标准，帮孩子写出规范漂亮的英文字母，操作简单适合长期使用。",
     date: '2026-02-15',
@@ -4036,7 +4036,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'shudu-shuxue-bangzhu',
-    image: '/images/blog/shudu-shuxue-bangzhu.png',
+    image: '/images/blog/shudu-shuxue-bangzhu.webp',
     title: '数独游戏对儿童思维发展的5大好处',
     description: "数独不仅是有趣的益智游戏，更能有效促进儿童的逻辑思维发展。本文详细分析数独的五大教育价值，涵盖逻辑推理、专注力、观察力、毅力和排除法思维。提供4宫格到9宫格的完整进阶路径，含分年龄段推荐和每日15分钟训练计划。配合练学宝免费在线数独工具使用，适合5-12岁儿童，附阶段性成果记录表，让家庭辅导更科学更轻松高效。",
     date: '2026-02-12',
@@ -4129,7 +4129,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xiaoxuesheng-jiyili',
-    image: '/images/blog/xiaoxuesheng-jiyili.png',
+    image: '/images/blog/xiaoxuesheng-jiyili.webp',
     title: '记忆力训练：16天超级记忆力课程核心方法揭秘',
     description: "记忆力不是天生的，可以通过科学方法训练提升。本文分享实用的记忆力训练技巧，涵盖联想记忆、宫殿记忆和间隔复习三大核心方法。含16天训练课程核心内容、每日练习安排和阶段性成果数据，分析遗忘曲线规律在学习中的应用。配合免费在线记忆训练工具推荐，适合1-6年级使用，帮孩子掌握科学记忆方法提升学习效率，效果显著看得见。",
     date: '2026-02-10',
@@ -4252,7 +4252,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xueba-xuexi-xiguan',
-    image: '/images/blog/xueba-xuexi-xiguan.png',
+    image: '/images/blog/xueba-xuexi-xiguan.webp',
     title: '985学霸的学习方法总结：普通孩子也能复制',
     description: "学霸的学习方法并不神秘，本文总结了可复制的高效学习策略，适合所有小学生。涵盖预习、听讲、复习、错题管理和时间管理五大环节，每个环节含具体操作步骤和真实学生案例。附每日学习时间表模板和周末复盘方法，配合练学宝免费在线学习工具使用，帮普通孩子也能掌握学霸习惯，在期中期末考试中取得优异成绩，操作简单适合长期使用。",
     date: '2026-02-08',
@@ -4365,7 +4365,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xiaoshengchu-beikao',
-    image: '/images/blog/xiaoshengchu-beikao.png',
+    image: '/images/blog/xiaoshengchu-beikao.webp',
     title: '小升初数学复习全攻略：重点题型和解题技巧',
     description: "小升初是小学阶段的重要考试，本文系统梳理数学复习的重点和技巧。涵盖数论、几何、应用题、行程问题和统计概率等核心考点，含真题解析和高效答题策略。配合练学宝免费数学练习卷生成器在线打印下载，附6周冲刺复习计划、每日练习安排和易错题集，帮孩子高效备考从容应考，顺利升入理想初中，方法简单实用效果立竿见影值得收藏。",
     date: '2026-02-05',
@@ -4487,7 +4487,7 @@ dateModified: "2026-08-14",
     hasExclusiveContent: false,
     keywords: ['练习卷选择', '数学练习卷推荐', '年级难度匹配', '练习题选择方法', '适合孩子的练习', '练习卷难度', '学习资料选择'],
     readTime: '7分钟',
-    image: '/images/blog/lianxijuan-xuanze.png',
+    image: '/images/blog/lianxijuan-xuanze.webp',
     content: `## 我给孩子买了三十多套练习卷，最后发现大部分都浪费了
 
 说出来有点不好意思。孩子从一年级到四年级，我前前后后买了三十多套各种练习卷。有学校推荐的，有家长群跟风买的，有网上看到好评买的。结果呢？大概有一半都没做完，做完了的里面又有不少是"无效练习"——孩子做了，但对成绩提升没什么帮助。
@@ -4589,7 +4589,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'fanggezhi-tianzige',
-    image: '/images/blog/fanggezhi-tianzige.png',
+    image: '/images/blog/fanggezhi-tianzige.webp',
     title: '田字格、米字格、方格纸的使用场景和选择建议',
     description: "不同的格子纸有不同的用途，本文详细对比各种格子纸的特点和适用场景。涵盖田字格、米字格、方格、拼音格和四线三格的用途区别和使用方法，含1-6年级选用建议和书写规范指导。配合练学宝免费在线生成工具推荐，支持多种格式自定义生成PDF打印下载，附练字计划和使用技巧，帮家长选对格子纸配合练字和书写练习，效果显著看得见。",
     date: '2026-01-30',
@@ -4730,7 +4730,7 @@ dateModified: "2026-08-14",
     hasExclusiveContent: false,
     keywords: ['免费教育工具', '小学在线学习资源', '免费学习网站', '小学生工具推荐', '在线教育平台', '免费教学工具', '学习资源汇总'],
     readTime: '8分钟',
-    image: '/images/blog/mianfei-jiaoyu-ziyuan.png',
+    image: '/images/blog/mianfei-jiaoyu-ziyuan.webp',
     content: `## 免费资源，学习的好帮手
 
 现在网上的教育资源其实非常丰富，很多好用的工具都是免费的，但很多家长并不知道。与其花大价钱报班，不如先把这些免费资源利用起来。这里整理了10个适合小学生的在线学习工具，都是亲测好用的。
@@ -4891,7 +4891,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'wei-shenme-mianfei-gongju',
-    image: '/images/blog/wei-shenme-mianfei-gongju.png',
+    image: '/images/blog/wei-shenme-mianfei-gongju.webp',
     title: '为什么我们坚持做免费教育工具：一个开发者家长的心声',
     description: "分享练学宝背后的故事，为什么一个团队愿意投入大量时间做免费的教育工具。讲述创始人作为两个孩子的父亲和全栈开发者的创业初心，涵盖字帖生成器、练习卷生成器和口算速练等10款免费工具的开发历程。分享团队坚持让教育资源共享的理念和用户真实反馈，附功能路线图和未来规划，让更多家庭受益于免费教育工具，帮孩子打好学习基础。",
     date: '2026-01-25',
@@ -5001,7 +5001,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xiaoxue-shuxue-lianxi-ziyuan-huizong',
-    image: '/images/blog/xiaoxue-shuxue-lianxi-ziyuan-huizong.png',
+    image: '/images/blog/xiaoxue-shuxue-lianxi-ziyuan-huizong.webp',
     title: '2026年最全小学数学练习资源汇总：从口算到应用题一站式解决',
     description: "作为一名小学数学老师，我整理了2026年最实用的小学数学练习资源，包括免费试卷生成器、口算速练工具和单元测试卷，帮助家长和孩子高效完成数学练习。覆盖1-6年级全考点，支持在线生成PDF打印下载，涵盖口算竖式应用题和几何等模块。附分年级使用指南和每周练习计划，一站式解决家庭辅导需求让数学学习更轻松，简单有效。",
     date: '2026-04-27',
@@ -5082,7 +5082,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'gushi-shici-moxie-lianxi-fangfa',
-    image: '/images/blog/gushi-shici-moxie-lianxi-fangfa.png',
+    image: '/images/blog/gushi-shici-moxie-lianxi-fangfa.webp',
     title: '小学1-6年级必背古诗词完整清单及默写练习方法',
     description: "小学阶段需要背诵多少首古诗词？如何高效进行古诗词默写练习？本文分享完整的古诗词背诵清单和三种高效的默写练习方法，帮助孩子轻松掌握必背古诗词。覆盖1-6年级75首必背篇目，含理解记忆法、间隔复习法和默写技巧。配合练学宝免费古诗词默写在线工具使用，附每日背诵计划表和常见默写错误分析，让家庭辅导更科学更轻松高效。",
     date: '2026-04-27',
@@ -5163,7 +5163,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'mianfei-zitie-shengchengqi-tuijian',
-    image: '/images/blog/mianfei-zitie-shengchengqi-tuijian.png',
+    image: '/images/blog/mianfei-zitie-shengchengqi-tuijian.webp',
     title: '免费字帖生成器推荐：田字格米字格一键生成打印',
     description: "还在花冤枉钱买字帖？这款免费字帖生成器支持田字格、米字格等多种格式，输入文字即可一键生成可打印的字帖，还有英语四线三格字帖功能，小学阶段写字练习全搞定。支持在线生成PDF下载打印，覆盖1-6年级语文生字和英语字母书写需求。附练字计划和使用技巧，无需注册即可免费使用，帮家长省钱又省心，操作简单适合家庭长期使用。",
     date: '2026-04-26',
@@ -5241,7 +5241,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'danyuan-ceshijuan-shengcheng-gongju',
-    image: '/images/blog/danyuan-ceshijuan-shengcheng-gongju.png',
+    image: '/images/blog/danyuan-ceshijuan-shengcheng-gongju.webp',
     title: '小学单元测试卷怎么出？这套免费工具帮你省下买试卷的钱',
     description: "老师出卷太耗时？家长买试卷太花钱？这款免费单元测试卷生成器覆盖语数英科四科305个单元，一键生成专业试卷，还有配套答案和解析，小学教学必备工具。支持在线生成PDF打印下载，覆盖1-6年级全单元全版本教材。附分年级使用指南和组卷技巧，家长老师都能轻松使用，帮孩子高效复习备考提升成绩，让家庭辅导更科学更轻松高效。",
     date: '2026-04-26',
@@ -5323,7 +5323,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'yinianji-pinyin-shizi-kousuan-gonglue',
-    image: '/images/blog/yinianji-pinyin-shizi-kousuan-gonglue.png',
+    image: '/images/blog/yinianji-pinyin-shizi-kousuan-gonglue.webp',
     title: '一年级家长必看：拼音学习+识字卡片+口算练习全攻略',
     description: "一年级是小学学习的起步阶段，拼音、识字、口算是三大核心任务。本文分享一套完整的一年级学习方案，结合拼音注音工具、识字卡片和口算速练，帮助孩子顺利度过幼小衔接。覆盖6-7岁核心知识点，含每日学习计划表和分阶段验收标准。全部工具免费在线使用支持PDF打印下载，帮家长系统辅导孩子打好一年级基础，帮孩子打好学习基础。",
     date: '2026-04-25',
@@ -5416,7 +5416,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xiaoxue-yingyu-xuexi-ziyuan-tuijian',
-    image: '/images/blog/xiaoxue-yingyu-xuexi-ziyuan-tuijian.png',
+    image: '/images/blog/xiaoxue-yingyu-xuexi-ziyuan-tuijian.webp',
     title: '小学英语学习资源推荐：从四线三格字帖到单词练习',
     description: "小学英语怎么学才高效？本文推荐几款实用的英语学习工具，包括英语四线三格字帖生成器、单词练习和单元测试卷，帮助孩子从书写到应试全面提升英语能力。覆盖3-6年级，全部免费在线使用支持生成PDF打印下载。附分年级学习路线图和每周练习计划，涵盖字母书写、单词记忆和语法专项训练，让孩子英语稳步提升，帮孩子打好学习基础。",
     date: '2026-04-25',
@@ -5499,7 +5499,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'shuxue-siwei-shudu-kousuan-shuangguan',
-    image: '/images/blog/shuxue-siwei-shudu-kousuan-shuangguan.png',
+    image: '/images/blog/shuxue-siwei-shudu-kousuan-shuangguan.webp',
     title: '小学数学思维训练：数独游戏+口算速练双管齐下',
     description: "数学思维怎么培养？数独游戏和口算速练是两个被广泛认可的思维训练方法。本文介绍如何结合这两个工具进行系统的数学思维训练，让孩子在游戏中提升逻辑推理和计算能力。含1-6年级分阶段训练方案、每日训练计划和阶段性成果数据。全部工具免费在线使用，附常见训练误区分析，帮孩子建立真正的数学思维，让家庭辅导更科学更轻松高效。",
     date: '2026-04-24',
@@ -5592,7 +5592,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'mianfei-zaixian-jiaoxue-gongju-tuijian',
-    image: '/images/blog/mianfei-zaixian-jiaoxue-gongju-tuijian.png',
+    image: '/images/blog/mianfei-zaixian-jiaoxue-gongju-tuijian.webp',
     title: '免费在线教学工具推荐：10款小学必备工具一次说清',
     description: "小学教学工具哪个好？本文详细介绍练学宝的10款免费在线教学工具，包括数学练习卷生成器、字帖生成器、古诗词默写、单元测试卷等，一站式解决小学阶段的学习需求。全部支持在线生成PDF打印下载，覆盖语数英科四科1-6年级，无需注册即可免费使用。附每款工具的使用指南和搭配建议，让家长老师轻松高效辅导，让家庭辅导更轻松。",
     date: '2026-04-24',
@@ -5721,7 +5721,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xiaoxue-zuowen-fudao-moban-shengcheng',
-    image: '/images/blog/xiaoxue-zuowen-fudao-moban-shengcheng.png',
+    image: '/images/blog/xiaoxue-zuowen-fudao-moban-shengcheng.webp',
     title: '小学作文辅导：看图写话到作文模板，写作不再难',
     description: "孩子写作文总是无从下笔？看图写话不知道说什么？本文介绍练学宝作文模板生成器的使用方法，从一年级的看图写话到六年级的命题作文，帮助孩子建立写作框架让写作不再难。全部模板免费在线生成使用，含真实案例和分年级写作指南。附每日练习计划和常见写作误区分析，帮孩子告别作文恐惧轻松写出好文章，让家庭辅导更科学更轻松高效。",
     date: '2026-04-23',
@@ -5815,7 +5815,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'qimo-fuxi-gonglue-mianfei-gongju',
-    image: '/images/blog/qimo-fuxi-gonglue-mianfei-gongju.png',
+    image: '/images/blog/qimo-fuxi-gonglue-mianfei-gongju.webp',
     title: '期末复习攻略：用这套免费工具帮孩子高效备考',
     description: '期末考试临近，如何帮孩子高效复习？本文分享一套系统的期末复习方案，结合练学宝的多个免费工具——单元测试卷、口算速练、古诗词默写等，帮助孩子全面备考，轻松应对期末考试。',
     date: '2026-04-23',
@@ -5937,7 +5937,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'kousuan-sudu-tisheng-shizhan-20ti',
-    image: '/images/blog/kousuan-sudu-tisheng-shizhan-20ti.png',
+    image: '/images/blog/kousuan-sudu-tisheng-shizhan-20ti.webp',
     title: '我用这套方法，让孩子的口算速度从每分钟5题提升到20题',
     description: "口算速度慢怎么提升？分享一套经过实践验证的训练方法，含具体训练计划、阶段性成果数据和口算练习工具推荐，帮助孩子快速提升计算速度。从每分钟5题提升到20题的真实案例，配合练学宝免费口算速练在线工具每日练习，适合1-6年级。附常见计算错误分析和提速技巧，每天10分钟见效，让孩子计算又快又准，操作简单适合长期使用。",
     date: '2026-05-14',
@@ -6053,7 +6053,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xiaoxue-zuowen-moban-sange-tisheng',
-    image: '/images/blog/xiaoxue-zuowen-moban-sange-tisheng.png',
+    image: '/images/blog/xiaoxue-zuowen-moban-sange-tisheng.webp',
     title: '小学作文不会写？我用这3个模板让女儿从"流水账"变成班级范文',
     description: "孩子写作文总是流水账、没重点？分享3个实用作文模板，含真实案例和阶段性成果数据，帮助孩子建立写作框架轻松写出高分作文。从流水账到班级范文的真实转变过程，配合练学宝免费作文模板生成器在线使用，适合3-6年级。附8周训练计划和分年级写作技巧，含家长辅导要点和常见写作误区分析，让作文提升看得见，帮孩子打好学习基础。",
     date: '2026-05-14',
@@ -6169,7 +6169,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'shushi-jisuan-cuowu-liu-cheng-3-fangfa',
-    image: '/images/blog/shushi-jisuan-cuowu-liu-cheng-3-fangfa.png',
+    image: '/images/blog/shushi-jisuan-cuowu-liu-cheng-3-fangfa.webp',
     title: '孩子竖式计算总出错？我用这3个方法让错误率从40%降到5%',
     description: "孩子数学竖式计算总是出错？分享3个经过实践验证的纠错方法，含真实错误案例分析、阶段性成果数据和竖式练习工具推荐。错误率从40%降到5%的真实案例，配合练学宝免费竖式练习卷生成器在线打印下载，适合2-5年级。附两周训练计划和常见竖式错误模式分析，含每日练习安排和验收标准，帮孩子规范计算减少失误，效果显著看得见。",
     date: '2026-05-15',
@@ -6303,7 +6303,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'yuedu-lijie-dati-4-jiqiao-cong-koufen-dao-fengshen',
-    image: '/images/blog/yuedu-lijie-dati-4-jiqiao-cong-koufen-dao-fengshen.png',
+    image: '/images/blog/yuedu-lijie-dati-4-jiqiao-cong-koufen-dao-fengshen.webp',
     title: '孩子阅读理解总丢分？我用这4个技巧让儿子从扣10分到扣2分',
     description: "孩子语文阅读理解总是答不到点上？分享4个实用答题技巧，含真实案例分析、阶段性成果数据和阅读理解训练计划。从扣10分到扣2分的真实提分案例，配合免费在线阅读理解练习工具使用，适合3-6年级。含每日训练计划表和分题型答题模板，附常见失分原因分析和家长辅导要点，帮孩子掌握答题方法稳步提分，操作简单适合家庭长期使用。",
     date: '2026-05-15',
@@ -6451,7 +6451,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xiaoxue-shuxue-yingyongti-5bu-jietifa',
-    image: '/images/blog/xiaoxue-shuxue-yingyongti-5bu-jietifa.png',
+    image: '/images/blog/xiaoxue-shuxue-yingyongti-5bu-jietifa.webp',
     title: '小学数学应用题总丢分？一线教师总结的5步解题法，让孩子正确率翻倍',
     description: "孩子数学应用题总是理解不了题意？本文分享一线教师总结的5步解题法，含真实教学案例、阶段性成果数据和应用题训练技巧。正确率翻倍的真实案例，配合练学宝免费数学练习卷生成器在线打印下载，适合2-6年级。附专项练习建议、常见误区分析和分难度训练方案，含每日练习安排，帮孩子突破应用题难关稳步提分，操作简单适合长期使用。",
     date: '2026-05-16',
@@ -6585,7 +6585,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xiaoxue-zuowen-liushuizhang-4zhao-tisheng',
-    image: '/images/blog/xiaoxue-zuowen-liushuizhang-4zhao-tisheng.png',
+    image: '/images/blog/xiaoxue-zuowen-liushuizhang-4zhao-tisheng.webp',
     title: '孩子作文总写"流水账"？我用这4招让学生作文从不及格到满分',
     description: "孩子写作文总是凑字数、记流水账？本文分享一线语文教师的4个写作技巧，含真实教学案例、学生作文对比和写作训练方法。从不及格到满分的真实转变过程，配合练学宝免费作文模板生成器在线使用，适合3-6年级。附8周训练计划、分年级写作技巧和家长辅导要点，含常见写作误区分析，让孩子写出结构完整的高分作文，让家庭辅导更轻松。",
     date: '2026-05-16',
@@ -6744,7 +6744,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xiaoxue-yingyu-tingli-xunlian-fangfa',
-    image: '/images/blog/xiaoxue-yingyu-tingli-xunlian-fangfa.png',
+    image: '/images/blog/xiaoxue-yingyu-tingli-xunlian-fangfa.webp',
     title: '小学英语听力怎么练才有效？英语老师亲测的4个阶段训练法',
     description: "孩子英语听力总是听不懂？本文分享一线英语教师总结的4阶段听力训练法，含真实教学数据、分级听力资源推荐和每日训练计划。从听不懂到轻松应对考试的真实案例，配合免费在线听力练习工具使用，适合3-6年级。含分阶段训练方案、常见听力障碍分析和家长辅导要点，附每日15分钟练习安排，帮孩子稳步提升听力，帮孩子打好学习基础。",
     date: '2026-05-17',
@@ -6896,7 +6896,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'youxiao-xianjie-luoji-siwei-peiyang',
-    image: '/images/blog/youxiao-xianjie-luoji-siwei-peiyang.png',
+    image: '/images/blog/youxiao-xianjie-luoji-siwei-peiyang.webp',
     title: '幼小衔接怎么做才对？我研究了50个一年级新生后，总结出这份逻辑思维培养清单',
     description: "幼儿园大班升一年级，逻辑思维怎么培养？本文基于50个一年级新生的跟踪观察，总结出6个核心能力训练方法，含具体操作步骤和推荐工具。涵盖数独、口算、空间推理和分类归纳等训练模块，配合练学宝免费在线思维训练工具使用，适合5-7岁幼小衔接阶段。附每日训练计划和阶段性能力评估表，帮孩子做好思维准备，帮孩子打好学习基础。",
     date: '2026-05-17',
@@ -7088,7 +7088,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xiaoxue-fenshu-rumen-jiaoxue-jingyan',
-    image: '/images/blog/xiaoxue-fenshu-rumen-jiaoxue-jingyan.png',
+    image: '/images/blog/xiaoxue-fenshu-rumen-jiaoxue-jingyan.webp',
     title: '教了15年小学数学，我发现分数没学好的孩子，都栽在这3个地方',
     description: "小学分数是数学学习的分水岭，很多孩子从三年级开始掉队。本文分享一线教师15年教学经验，拆解分数学习的3大难点和对应训练方法。含真实教学案例和阶段性成果数据，涵盖分数概念、同分母异分母运算和分数应用题。配合练学宝免费数学练习卷生成器在线打印下载，适合3-6年级，附分步骤教学流程和常见错误分析，让家庭辅导更轻松。",
     date: '2026-05-18',
@@ -7221,7 +7221,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xiaoxue-gushi-beisong-fangfa',
-    image: '/images/blog/xiaoxue-gushi-beisong-fangfa.png',
+    image: '/images/blog/xiaoxue-gushi-beisong-fangfa.webp',
     title: '孩子背古诗总是背了就忘？语文老师总结了这套"三遍法"，背一首记一首',
     description: "小学生背古诗效率低、容易忘？本文分享一线语文教师总结的三遍背诵法，含记忆遗忘曲线应用、古诗理解技巧和每日背诵计划表。背一首记一首的真实效果验证，配合练学宝免费古诗词默写在线工具使用，适合1-6年级。覆盖75首必背古诗词，附分年级背诵进度表和常见记忆误区分析，帮孩子高效背诵轻松默写，让家庭辅导更科学更轻松高效。",
     date: '2026-05-18',
@@ -7396,7 +7396,7 @@ dateModified: "2026-08-14",
   },
   {
     id: 'xiaoxue-yuxi-fangfa-xiaoguo-beizeng',
-    image: '/images/blog/xiaoxue-yuxi-fangfa-xiaoguo-beizeng.png',
+    image: '/images/blog/xiaoxue-yuxi-fangfa-xiaoguo-beizeng.webp',
     title: '预习和不预习，差别有多大？我对比了40个学生一学期的成绩变化',
     description: "孩子上课听不懂、跟不上？问题可能出在预习上。本文分享一线教师对比实验数据，拆解高效预习的3个步骤和常见误区。40个学生一学期成绩变化的真实对比数据，配合练学宝免费在线学习工具使用，适合1-6年级。附每日预习时间安排表、分学科预习方法和家长指导要点，帮孩子养成科学预习习惯提升课堂学习效率，操作简单适合长期使用。",
     date: '2026-05-19',
@@ -7545,7 +7545,7 @@ A组（预习组）期末平均分89分，B组（不预习组）平均分76分�
   },
   {
     id: 'haizi-yanxue-qingxu-yingdui-fangfa',
-    image: '/images/blog/haizi-yanxue-qingxu-yingdui-fangfa.png',
+    image: '/images/blog/haizi-yanxue-qingxu-yingdui-fangfa.webp',
     title: '孩子说"我不想上学"时，聪明家长这样做，比说教管用100倍',
     description: "孩子厌学、不想上学怎么办？本文基于儿童心理学研究，分享应对孩子厌学情绪的5个沟通技巧和3个实用方法，帮助家长重建孩子学习动力。含真实案例分析、沟通话术模板和方法操作步骤，适合小学生家庭。配合免费在线学习工具推荐和兴趣引导方案，附每日亲子互动建议，让家长科学应对厌学问题让孩子重新爱上学习，操作简单适合长期使用。",
     date: '2026-05-19',
@@ -7750,7 +7750,7 @@ A组（预习组）期末平均分89分，B组（不预习组）平均分76分�
   },
   {
     id: 'xiaoxue-yingyu-yufa-rumen-xuexi',
-    image: '/images/blog/xiaoxue-yingyu-yufa-rumen-xuexi.png',
+    image: '/images/blog/xiaoxue-yingyu-yufa-rumen-xuexi.webp',
     title: '小学英语语法怎么教？我用这4个口诀，让孩子轻松掌握时态和句型',
     description: "孩子英语语法总是搞混？本文分享一线英语教师总结的4个语法口诀，含真实教学案例、常见错误分析和语法专项训练方法。让孩子轻松掌握时态和句型的真实效果，配合练学宝免费英语练习卷生成器在线打印下载，适合3-6年级。附每日练习计划、分年级语法重点和易混知识点对比，帮孩子系统掌握语法规则减少考试失分，帮孩子打好学习基础。",
     date: '2026-05-20',
@@ -7922,7 +7922,7 @@ There is和There are的用法，孩子经常搞混。
     hasExclusiveContent: false,
     keywords: ['小升初择校指南', '初中学校怎么选', '公办民办初中对比', '小升初择校技巧', '重点班普通班区别', '小升初家长经验'],
     readTime: '12分钟',
-    image: '/images/blog/xiaoshengchu-zexiao-zhinan-jingyan.png',
+    image: '/images/blog/xiaoshengchu-zexiao-zhinan-jingyan.webp',
     content: `去年，为了给小升初的女儿选学校，我走访了8所初中，和20多位家长深度交流，最后选了一所"非名校"。
 
 结果证明，这个选择是对的。女儿现在初一，成绩稳定在前10，每天上学都很开心。而当初执意要选"名校"的几个家长，孩子现在压力巨大，有的已经出现了厌学情绪。
@@ -8116,7 +8116,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "xiaoxue-sheng-lianzi-lianxi-fangfa-2026",
-    image: "/images/blog/xiaoxue-sheng-lianzi-lianxi-fangfa-2026.png",
+    image: "/images/blog/xiaoxue-sheng-lianzi-lianxi-fangfa-2026.webp",
     title: "小学生字帖练习全攻略：从握笔姿势到独立书写的进阶之路",
     description: "孩子写字歪歪扭扭怎么办？本文详解字帖练习的正确方法，包括握笔姿势、笔画顺序、练习频率和运笔技巧等，配合真实案例和工具推荐。从画符到工整书写的真实转变过程，配合练学宝免费字帖生成器在线生成PDF打印下载，适合1-6年级。附每天15分钟练字计划、分年级练习重点和阶段性验收标准，让练字科学高效见效快，方法简单有效。",
     date: "2026-05-21",
@@ -8293,7 +8293,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "shudu-youxi-jiaoxue-zhinan-2026",
-    image: "/images/blog/shudu-youxi-jiaoxue-zhinan-2026.png",
+    image: "/images/blog/shudu-youxi-jiaoxue-zhinan-2026.webp",
     title: "数独游戏教学指南：从入门到精通，让孩子爱上逻辑思考",
     description: "数独是训练逻辑思维的最佳游戏。本文详解数独教学方法，从4宫格入门到9宫格精通，配合真实案例和练习计划，帮助孩子提升专注力。含分年龄段训练方案、难度进阶节奏和阶段性成果数据。配合练学宝免费在线数独工具使用，适合5-12岁儿童，附每日15分钟训练计划和常见解题技巧，让孩子在游戏中提升逻辑推理能力，效果显著看得见。",
     date: "2026-05-22",
@@ -8456,7 +8456,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "xiaoxue-shizi-kapian-shiyong-fangfa-2026",
-    image: "/images/blog/xiaoxue-shizi-kapian-shiyong-fangfa-2026.png",
+    image: "/images/blog/xiaoxue-shizi-kapian-shiyong-fangfa-2026.webp",
     title: "小学识字卡片使用方法：从死记硬背到趣味识字的转变之路",
     description: "孩子识字总是记不住？本文分享识字卡片的正确使用方法，包括游戏化学习、间隔复习技巧和情境关联法，配合真实案例让孩子轻松掌握生字。从死记硬背到趣味识字的转变过程，配合练学宝免费识字卡片生成器在线打印下载，适合1-3年级。附6个月识字计划、每日复习安排和常见识字误区分析，帮孩子高效识字扩大阅读量，让家庭辅导更轻松。",
     date: "2026-05-23",
@@ -8623,7 +8623,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "xiaoxue-yuwendanyuan-fuxi-fangfa-2026",
-    image: "/images/blog/xiaoxue-yuwendanyuan-fuxi-fangfa-2026.png",
+    image: "/images/blog/xiaoxue-yuwendanyuan-fuxi-fangfa-2026.webp",
     title: "小学语文单元测试复习方法：从临时抱佛脚到系统备考",
     description: "孩子每次单元测试都考不好？本文分享系统化的语文单元测试复习方法，包括知识梳理、错题复盘和模拟测试技巧，帮助孩子稳步提升成绩。从临时抱佛脚到系统备考的转变过程，配合练学宝免费单元测试卷生成器在线打印下载，适合1-6年级。附两周复习计划、分学科复习策略和考前冲刺技巧，含常见失分原因分析，操作简单适合家庭长期使用。",
     date: "2026-05-24",
@@ -8800,7 +8800,7 @@ There is和There are的用法，孩子经常搞混。
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "14分钟",
-    image: "/images/blog/xiaoxue-shuxue-siwei-xunlian-fangfa-2026.png",
+    image: "/images/blog/xiaoxue-shuxue-siwei-xunlian-fangfa-2026.webp",
     keywords: ["小学数学思维训练", "数学思维能力培养", "小学数学学习方法", "数学思维训练游戏", "逻辑思维训练"],
     content: `有孩子年级上学期，数学成绩突然从90分掉到了75分。
 
@@ -8982,7 +8982,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "zuowen-moban-shicao-zhinan-2026",
-    image: "/images/blog/zuowen-moban-shicao-zhinan-2026.png",
+    image: "/images/blog/zuowen-moban-shicao-zhinan-2026.webp",
     title: "小学作文模板实操指南：从不会写到写出满分作文的完整训练法",
     description: "孩子作文总是写不长、写不好？本文分享作文模板的实操训练方法，从填空式写作到独立创作，配合真实案例和8周训练计划，让孩子轻松写出高分作文。从不会写到满分作文的完整训练法，配合练学宝免费作文模板生成器在线使用，适合3-6年级。附每周训练重点、分年级写作技巧和家长辅导要点，让作文提升看得见，操作简单适合长期使用。",
     date: "2026-05-26",
@@ -9184,7 +9184,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "yingyu-danci-jiyi-xunlian-2026",
-    image: "/images/blog/yingyu-danci-jiyi-xunlian-2026.png",
+    image: "/images/blog/yingyu-danci-jiyi-xunlian-2026.webp",
     title: "小学英语单词记忆与书写训练：从记不住到默写满分的系统方法",
     description: "孩子英语单词总是记不住、写不对？本文分享单词记忆和书写训练的完整方法，从自然拼读到艾宾浩斯记忆法，配合英语字帖练习，让孩子轻松掌握单词拼写。从记不住到默写满分的系统训练方法，配合练学宝免费英语字帖生成器在线打印下载，适合3-6年级。附每日练习计划和阶段性词汇量测试，含常见拼写错误分析，操作简单适合长期使用。",
     date: "2026-05-26",
@@ -9390,7 +9390,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "chengfa-koujue-6zhou-xunlian-2026",
-    image: "/images/blog/chengfa-koujue-6zhou-xunlian-2026.png",
+    image: "/images/blog/chengfa-koujue-6zhou-xunlian-2026.webp",
     title: "小学乘法口诀表完整训练法：从死记硬背到脱口而出的6周计划",
     description: "孩子背乘法口诀总是背了就忘、顺序一乱就不会？本文分享一套经过验证的6周训练方法，从理解乘法含义到脱口而出，配合每日练习计划和常见错误分析，让孩子真正掌握乘法口诀。含真实训练数据和阶段性成果对比，配合练学宝免费口算速练在线工具使用，适合2-3年级。附每周训练重点和验收标准，帮孩子牢记乘法表，帮孩子打好学习基础。",
     date: "2026-05-27",
@@ -9558,7 +9558,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "shizi-kapian-zhizuo-shiyong-quangonglue-2026",
-    image: "/images/blog/shizi-kapian-zhizuo-shiyong-quangonglue-2026.png",
+    image: "/images/blog/shizi-kapian-zhizuo-shiyong-quangonglue-2026.webp",
     title: "一年级识字卡片制作与使用全攻略：从零基础到认识1500字的实操方法",
     description: "一年级识字量不够怎么办？本文分享识字卡片的制作方法、使用技巧和6个月识字计划，配合真实案例和数据，帮孩子从零基础到认识1500字。附练学宝免费识字卡片生成工具推荐，支持在线生成PDF打印下载，适合1-2年级低龄儿童识字启蒙使用。含每日识字安排、间隔复习策略和常见识字误区分析，让识字高效又有趣，效果显著看得见。",
     date: "2026-05-27",
@@ -9771,7 +9771,7 @@ There is和There are的用法，孩子经常搞混。
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "11分钟",
-    image: "/images/blog/yingyu-danci-jiyi-quanjilve-2026.png",
+    image: "/images/blog/yingyu-danci-jiyi-quanjilve-2026.webp",
     keywords: [
       "小学英语单词记忆方法",
       "孩子英语单词记不住怎么办",
@@ -9798,7 +9798,7 @@ There is和There are的用法，孩子经常搞混。
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "13分钟",
-    image: "/images/blog/san-ji-yingyongti-sijie-fa-2026.png",
+    image: "/images/blog/san-ji-yingyongti-sijie-fa-2026.webp",
     keywords: [
       "小学数学应用题解题方法",
       "三年级应用题怎么教",
@@ -9817,7 +9817,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "kantuxiehua-wuguan-guancha-2026",
-    image: "/images/blog/kantuxiehua-wuguan-guancha-2026.png",
+    image: "/images/blog/kantuxiehua-wuguan-guancha-2026.webp",
     title: "孩子看图写话只写一句话？北大附小老师教的五感观察法让儿子从20字写到150字",
     description: "小学一二年级看图写话怎么教？孩子写作文没素材、写不长怎么办？本文分享北大附小语文老师亲授的五感观察法（视觉+听觉+触觉+嗅觉+味觉），含真实案例、3周训练脚本和作文模板使用建议，配合免费作文模板生成器在线打印下载，附每日练习计划和常见写话误区分析，帮孩子写出结构完整内容丰富的段落，轻松应对考试值得收藏。",
     date: "2026-06-09",
@@ -9848,7 +9848,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "xiaoxue-danwei-huansuan-zhinan-2026",
-    image: "/images/blog/xiaoxue-danwei-huansuan-zhinan-2026.png",
+    image: "/images/blog/xiaoxue-danwei-huansuan-zhinan-2026.webp",
     title: "孩子单位换算总丢分？这份长度+质量+时间单位换算大全让孩子从扣8分到不扣分",
     description: "小学二三年级数学单位换算怎么教？孩子总是混淆厘米和米、克和千克、小时和分钟怎么办？本文整理了小学阶段最常考的5类单位换算表，含真实错题案例、3周训练数据、家长照着做的换算口诀，配合免费单位换算练习工具在线打印下载，附易错点解析和阶段性验收标准，帮孩子彻底掌握单位换算，方法简单实用效果立竿见影值得收藏。",
     date: "2026-06-10",
@@ -9876,7 +9876,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "ziran-pindu-yinianji-rumen-2026",
-    image: "/images/blog/ziran-pindu-yinianji-rumen-2026.png",
+    image: "/images/blog/ziran-pindu-yinianji-rumen-2026.webp",
     title: "一年级英语单词总记不住？这套自然拼读+分级阅读法让儿子半年自主拼读200个单词",
     description: "小学一年级英语启蒙怎么开始？孩子英语单词总记不住、读不出来怎么办？本文分享自然拼读phonics入门方法，含26个字母发音、辅音组合、CVC单词拼读规则、英文分级阅读书单、半年训练数据和真实效果验证，配合免费拼读练习工具和英语四线三格字帖在线打印下载，附每周学习目标和常见拼读误区分析，帮孩子建立见词能读听音能写能力。",
     date: "2026-06-10",
@@ -9904,7 +9904,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: 'youxiao-xianjie-shuxue-shicao-zhinan-2026',
-    image: '/images/blog/youxiao-xianjie-shuxue-shicao-zhinan-2026.png',
+    image: '/images/blog/youxiao-xianjie-shuxue-shicao-zhinan-2026.webp',
     title: "幼小衔接数学家长实操指南：3个真实家庭案例，半年从'坐不住'到'算得准'",
     description: "幼小衔接数学怎么教？5-6岁孩子数学启蒙到底做些什么？本文分享3个真实家庭的半年实践数据，涵盖数感、图形、时间、空间、逻辑5大模块训练方案，配合30天每日计划表和免费数学练习工具在线打印下载，附分阶段验收标准和常见辅导误区分析，帮家长科学规划数学启蒙路径，让家庭辅导更科学更轻松高效，效果显著看得见。",
     date: "2026-06-11",
@@ -9927,7 +9927,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: 'xiaoxue-shuxue-cuotiben-zhengque-shiyong-2026',
-    image: '/images/blog/xiaoxue-shuxue-cuotiben-zhengque-shiyong-2026.png',
+    image: '/images/blog/xiaoxue-shuxue-cuotiben-zhengque-shiyong-2026.webp',
     title: "小学数学错题本正确使用方法：家长都做错了，3组对比数据告诉你差别有多大",
     description: "小学数学错题本怎么整理才有效？为什么孩子抄了100道错题还是考不好？本文用3个真实案例和3组对比数据，揭秘错题本的5个常见错误和3步正确方法，附可打印错题本模板。配合练学宝免费在线错题管理工具使用，适合3-6年级。含每周复习计划和错因分类方法，帮孩子高效查漏补缺提升成绩，让错题本真正发挥作用，效果显著看得见。",
     date: "2026-06-11",
@@ -9946,11 +9946,11 @@ There is和There are的用法，孩子经常搞混。
       "错题本正确方法",
       "三年级错题本"
     ],
-    content: "说句心里话，我家孩子三年级之前，错题本这件事我做得一塌糊涂。\n\n每次考试结束，我都会让孩子把错题抄到一个本子上。抄完就完事了，下次考试前翻一翻，觉得复习了就心安。结果呢？同样的题错了又错，分数原地踏步。\n\n后来我专门去请教了孩子学校教研组的张老师，又翻了中国教育科学研究院2023年发布的《小学生数学错题管理行为与学业成绩关系研究》（样本量超过8000人），才明白自己一直在犯方向性错误。研究数据显示，坚持科学使用错题本的学生，数学成绩平均比不使用的学生高出14.6分；但仅仅是抄错题而不分析的学生，成绩几乎没有提升。\n\n今天我就把这套经过验证的错题本正确使用方法完整分享出来，包含5个常见错误、3步正确方法和3组真实对比数据。\n\n![错题本正确使用方法示例](/images/blog/cuotiben-shiyong-fangfa.jpg)\n\n## 一、90%家长都在犯的5个错题本错误\n\n### 错误1：只抄题不分析\n\n这是最常见的错误。很多家长让孩子把错题原封不动抄下来，写上正确答案就完事。但这样做的问题在于：孩子根本不知道自己为什么错。下次遇到同类题，还是会用同样的错误思路去解。\n\n正确的做法是：每道错题旁边必须写清楚错误原因，是概念不清、计算失误、还是审题不仔细。\n\n### 错误2：错题本变成罚抄本\n\n有些家长把错题本当成惩罚工具——错一道抄十遍。孩子对错题本产生抵触情绪，抄的时候心不在焉，根本不过脑子。错题本应该是学习工具，不是惩罚手段。\n\n### 错误3：不分类型，杂乱无章\n\n把所有错题按时间顺序堆在一起，几何题、计算题、应用题混在一起。复习的时候毫无重点，翻半天找不到想看的题。正确的做法是按知识点或题型分类整理。\n\n### 错误4：只整理不复习\n\n错题本写完就束之高阁，等到期末才拿出来看一眼。根据艾宾浩斯遗忘曲线，错题需要在1天、3天、7天、15天分别复习一次才能牢固掌握。只整理不复习，等于白整理。\n\n### 错误5：不定期清理已掌握的题\n\n错题本越来越厚，里面很多题孩子早就掌握了，但还是堆在里面。这样复习时浪费时间，也让孩子产生畏难情绪。应该定期把已经掌握的题移出去，保持错题本的精简和高效。\n\n## 二、错题本正确使用3步法\n\n经过半年的实践和调整，我总结出一套3步法，操作简单但效果显著。\n\n### 第1步：分类记录（当天完成）\n\n每次作业或考试后，当天就把错题整理好。记录格式包含五个要素：原题完整抄写、我的错误答案、正确解法、一句话错误原因、知识点标签。建议按四大模块分类：数与代数、图形与几何、统计与概率、综合应用。每个模块用不同颜色的标签纸区分，方便快速定位。\n\n### 第2步：定期重做（1-3-7-15天循环）\n\n这是最关键的一步。整理完错题后，按照1天、3天、7天、15天的节奏重新做一遍。重做的时候不看答案，独立完成。做对了就打个勾，做错了就重新分析原因，并延长复习周期。我给孩子准备了一个简单的复习日历，每天花10分钟重做当天到期的错题。坚持一个月后，同类错误重复率下降了70%。\n\n### 第3步：定期清理与归纳（每周一次）\n\n每周日晚上花20分钟做一次清理和归纳。第一步，把连续两次重做都正确的题移出错题本，归档保存。第二步，把反复出错3次以上的题标记为重点，分析是不是某个知识点存在系统性漏洞。第三步，把同类型的错题归纳到一起，总结出共同的易错点，形成自己的避坑清单。\n\n## 三、3组真实对比数据\n\n我跟踪了3个三年级孩子半年时间（2025年9月至2026年3月），他们用了不同的错题本方法，结果差异巨大。\n\n### 对比1：只抄题 vs 科学整理\n\n孩子A只抄题不分析，孩子B用3步法科学整理。半年后数学成绩变化：孩子A从78分到80分，仅提升2分；孩子B从76分到91分，提升15分。同样的时间投入，方法不同效果天差地别。\n\n### 对比2：不复习 vs 定期重做\n\n孩子C整理了错题但不复习，孩子D按1-3-7-15天定期重做。半年后，孩子C的同类题重复错误率高达65%，期末考82分；孩子D的重复错误率仅18%，期末考93分。定期重做是把短期记忆转化为长期记忆的关键。\n\n### 对比3：杂乱堆放 vs 分类整理\n\n孩子E的错题本杂乱无章，孩子F按知识点分类整理。复习时，孩子E平均花3分钟才能找到一道想看的题，复习没有重点；孩子F平均10秒就能定位到目标错题，复习效率高出数倍。分类整理看似多花了几分钟，却为后续复习节省了大量时间。\n\n## 四、总结与建议\n\n错题本不是简单的抄写工具，而是一套完整的学习系统。核心原则就三条：分类记录、定期重做、及时清理。给家长的建议是：不要追求错题本的数量，而要追求质量。一道题彻底搞懂，胜过抄十道题不过脑子。刚开始可以陪孩子一起整理，等孩子养成习惯后逐步放手。坚持一个学期，你一定会看到明显的变化。\n\n## 相关阅读\n\n- [小学三年级现象：成绩断崖式下跌的真相和应对方法](/blog/sannianji-xianxiang-yuanyin/)\n- [孩子写作业磨蹭怎么办？5个方法让作业效率提升3倍](/blog/zuoye-moca-zenmeban/)\n- [期末复习攻略：用这套免费工具帮孩子高效备考](/blog/qimo-fuxi-gonglue-mianfei-gongju/)\n- [数学练习卷生成器](/tools/math-worksheet/)\n- [单元测试卷生成器](/tools/unit-test/)",
+    content: "说句心里话，我家孩子三年级之前，错题本这件事我做得一塌糊涂。\n\n每次考试结束，我都会让孩子把错题抄到一个本子上。抄完就完事了，下次考试前翻一翻，觉得复习了就心安。结果呢？同样的题错了又错，分数原地踏步。\n\n后来我专门去请教了孩子学校教研组的张老师，又翻了中国教育科学研究院2023年发布的《小学生数学错题管理行为与学业成绩关系研究》（样本量超过8000人），才明白自己一直在犯方向性错误。研究数据显示，坚持科学使用错题本的学生，数学成绩平均比不使用的学生高出14.6分；但仅仅是抄错题而不分析的学生，成绩几乎没有提升。\n\n今天我就把这套经过验证的错题本正确使用方法完整分享出来，包含5个常见错误、3步正确方法和3组真实对比数据。\n\n![错题本正确使用方法示例](/images/blog/cuotiben-shiyong-fangfa.webp)\n\n## 一、90%家长都在犯的5个错题本错误\n\n### 错误1：只抄题不分析\n\n这是最常见的错误。很多家长让孩子把错题原封不动抄下来，写上正确答案就完事。但这样做的问题在于：孩子根本不知道自己为什么错。下次遇到同类题，还是会用同样的错误思路去解。\n\n正确的做法是：每道错题旁边必须写清楚错误原因，是概念不清、计算失误、还是审题不仔细。\n\n### 错误2：错题本变成罚抄本\n\n有些家长把错题本当成惩罚工具——错一道抄十遍。孩子对错题本产生抵触情绪，抄的时候心不在焉，根本不过脑子。错题本应该是学习工具，不是惩罚手段。\n\n### 错误3：不分类型，杂乱无章\n\n把所有错题按时间顺序堆在一起，几何题、计算题、应用题混在一起。复习的时候毫无重点，翻半天找不到想看的题。正确的做法是按知识点或题型分类整理。\n\n### 错误4：只整理不复习\n\n错题本写完就束之高阁，等到期末才拿出来看一眼。根据艾宾浩斯遗忘曲线，错题需要在1天、3天、7天、15天分别复习一次才能牢固掌握。只整理不复习，等于白整理。\n\n### 错误5：不定期清理已掌握的题\n\n错题本越来越厚，里面很多题孩子早就掌握了，但还是堆在里面。这样复习时浪费时间，也让孩子产生畏难情绪。应该定期把已经掌握的题移出去，保持错题本的精简和高效。\n\n## 二、错题本正确使用3步法\n\n经过半年的实践和调整，我总结出一套3步法，操作简单但效果显著。\n\n### 第1步：分类记录（当天完成）\n\n每次作业或考试后，当天就把错题整理好。记录格式包含五个要素：原题完整抄写、我的错误答案、正确解法、一句话错误原因、知识点标签。建议按四大模块分类：数与代数、图形与几何、统计与概率、综合应用。每个模块用不同颜色的标签纸区分，方便快速定位。\n\n### 第2步：定期重做（1-3-7-15天循环）\n\n这是最关键的一步。整理完错题后，按照1天、3天、7天、15天的节奏重新做一遍。重做的时候不看答案，独立完成。做对了就打个勾，做错了就重新分析原因，并延长复习周期。我给孩子准备了一个简单的复习日历，每天花10分钟重做当天到期的错题。坚持一个月后，同类错误重复率下降了70%。\n\n### 第3步：定期清理与归纳（每周一次）\n\n每周日晚上花20分钟做一次清理和归纳。第一步，把连续两次重做都正确的题移出错题本，归档保存。第二步，把反复出错3次以上的题标记为重点，分析是不是某个知识点存在系统性漏洞。第三步，把同类型的错题归纳到一起，总结出共同的易错点，形成自己的避坑清单。\n\n## 三、3组真实对比数据\n\n我跟踪了3个三年级孩子半年时间（2025年9月至2026年3月），他们用了不同的错题本方法，结果差异巨大。\n\n### 对比1：只抄题 vs 科学整理\n\n孩子A只抄题不分析，孩子B用3步法科学整理。半年后数学成绩变化：孩子A从78分到80分，仅提升2分；孩子B从76分到91分，提升15分。同样的时间投入，方法不同效果天差地别。\n\n### 对比2：不复习 vs 定期重做\n\n孩子C整理了错题但不复习，孩子D按1-3-7-15天定期重做。半年后，孩子C的同类题重复错误率高达65%，期末考82分；孩子D的重复错误率仅18%，期末考93分。定期重做是把短期记忆转化为长期记忆的关键。\n\n### 对比3：杂乱堆放 vs 分类整理\n\n孩子E的错题本杂乱无章，孩子F按知识点分类整理。复习时，孩子E平均花3分钟才能找到一道想看的题，复习没有重点；孩子F平均10秒就能定位到目标错题，复习效率高出数倍。分类整理看似多花了几分钟，却为后续复习节省了大量时间。\n\n## 四、总结与建议\n\n错题本不是简单的抄写工具，而是一套完整的学习系统。核心原则就三条：分类记录、定期重做、及时清理。给家长的建议是：不要追求错题本的数量，而要追求质量。一道题彻底搞懂，胜过抄十道题不过脑子。刚开始可以陪孩子一起整理，等孩子养成习惯后逐步放手。坚持一个学期，你一定会看到明显的变化。\n\n## 相关阅读\n\n- [小学三年级现象：成绩断崖式下跌的真相和应对方法](/blog/sannianji-xianxiang-yuanyin/)\n- [孩子写作业磨蹭怎么办？5个方法让作业效率提升3倍](/blog/zuoye-moca-zenmeban/)\n- [期末复习攻略：用这套免费工具帮孩子高效备考](/blog/qimo-fuxi-gonglue-mianfei-gongju/)\n- [数学练习卷生成器](/tools/math-worksheet/)\n- [单元测试卷生成器](/tools/unit-test/)",
   },
   {
     id: "shushi-jisuan-changjian-cuowu-jiugong-fangfa",
-    image: "/images/blog/shushi-jisuan-changjian-cuowu-jiugong-fangfa.png",
+    image: "/images/blog/shushi-jisuan-changjian-cuowu-jiugong-fangfa.webp",
     title: "小学竖式计算总丢分？这6种错误模式占了，对应纠正方法一次讲清楚",
     description: "三年级四年级竖式计算老是出错？本文汇总了6种最常见的竖式计算错误模式，每种都配了典型错例和针对性训练方法，附竖式计算专项练习卷生成方法。配合练学宝免费数学练习卷生成器在线打印下载，适合3-5年级。含错误率对比数据、纠正技巧和每日练习计划，帮孩子规范竖式书写减少计算失误，稳步提升计算准确率，帮孩子打好学习基础。",
     date: "2026-06-13",
@@ -9983,7 +9983,7 @@ There is和There are的用法，孩子经常搞混。
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "13分钟",
-    image: "/images/blog/yinianji-pinyin-xuexi-luxiantu-2026.png",
+    image: "/images/blog/yinianji-pinyin-xuexi-luxiantu-2026.webp",
     keywords: [
       "一年级拼音学习",
       "拼音学习顺序",
@@ -10012,7 +10012,7 @@ There is和There are的用法，孩子经常搞混。
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "12分钟",
-    image: "/images/blog/ertong-zhongwen-xuexi-wangzhan-zhinan-2026.png",
+    image: "/images/blog/ertong-zhongwen-xuexi-wangzhan-zhinan-2026.webp",
     keywords: [
       "儿童中文学习网站",
       "中文学习",
@@ -10043,7 +10043,7 @@ There is和There are的用法，孩子经常搞混。
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "14分钟",
-    image: "/images/blog/xiaoxue-shuxue-kaoshi-shijian-fenpei-2026.png",
+    image: "/images/blog/xiaoxue-shuxue-kaoshi-shijian-fenpei-2026.webp",
     keywords: [
       "小学数学考试技巧",
       "数学考试时间分配",
@@ -10063,7 +10063,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "kousuan-sudu-tisheng-miji-2026",
-    image: "/images/blog/kousuan-sudu-tisheng-miji-2026.png",
+    image: "/images/blog/kousuan-sudu-tisheng-miji-2026.webp",
     title: "小学口算速度提升秘籍：每天10分钟，让孩子从掰手指到心算如飞",
     description: "孩子口算慢、总掰手指？本文分享一套经过200多个家庭验证的口算提速训练法，含真实训练数据、分阶段计划和免费口算练习工具推荐，帮助小学生快速提升计算速度。从掰手指到心算如飞的真实转变过程，每天10分钟练习见效，配合练学宝免费口算速练在线工具使用，适合1-6年级。附常见计算错误分析和提速技巧，帮孩子打好学习基础。",
     date: "2026-06-16",
@@ -10097,7 +10097,7 @@ There is和There are的用法，孩子经常搞混。
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "11分钟",
-    image: "/images/blog/shuxue-lianxijuan-shengcheng-shiyong-zhinan-2026.png",
+    image: "/images/blog/shuxue-lianxijuan-shengcheng-shiyong-zhinan-2026.webp",
     keywords: [
       "小学数学练习卷生成",
       "免费数学练习卷打印",
@@ -10115,7 +10115,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "xiaoxue-fenshu-jisuan-jiaoxue-fangfa-2026",
-    image: "/images/blog/xiaoxue-fenshu-jisuan-jiaoxue-fangfa-2026.png",
+    image: "/images/blog/xiaoxue-fenshu-jisuan-jiaoxue-fangfa-2026.webp",
     title: "小学四年级分数计算怎么学？我用「切披萨法」让孩子两周掌握分数加减法",
     description: "孩子四年级学分数计算总是混淆通分约分？本文分享「切披萨法」可视化教学策略，含真实辅导案例、分步骤教学流程和免费练习工具推荐，帮助家长轻松教会孩子分数加减法。两周掌握分数运算的真实效果验证，配合练学宝免费数学练习卷生成器在线打印下载，适合4-5年级。附每日练习安排和常见分数计算错误分析，操作简单适合长期使用。",
     date: "2026-06-17",
@@ -10143,7 +10143,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "shujia-lianzi-100tian-jihua-xiaoguo-2026",
-    image: "/images/blog/shujia-lianzi-100tian-jihua-xiaoguo-2026.png",
+    image: "/images/blog/shujia-lianzi-100tian-jihua-xiaoguo-2026.webp",
     title: "暑假每天练字多长时间最有效？田字格字帖记录了100天练字变化",
     description: "暑假练字是弯道超车的好机会，但每天练多久才能看到效果？本文分享一位妈妈陪孩子100天练字的真实记录，含逐月进度对比、田字格字帖使用技巧和免费练字工具推荐，配合练学宝字帖生成器在线生成PDF打印下载，附每天15分钟练字计划、阶段性验收标准和握笔姿势矫正指南，帮助家长制定科学的暑假练字方案，效果显著看得见。",
     date: "2026-06-17",
@@ -10172,7 +10172,7 @@ There is和There are的用法，孩子经常搞混。
   },
   {
     id: "xiaoxue-gushi-moxie-jiyi-gaoxiaofa-2026",
-    image: "/images/blog/xiaoxue-gushi-moxie-jiyi-gaoxiaofa-2026.png",
+    image: "/images/blog/xiaoxue-gushi-moxie-jiyi-gaoxiaofa-2026.webp",
     title: "小学必背古诗词背了又忘？我用艾宾浩斯记忆法+古诗默写工具，3个月让孩子牢记75首古诗",
     description: "孩子背古诗总是今天背明天忘？本文分享艾宾浩斯遗忘曲线记忆法配合古诗默写工具的真实使用经验，含75首必背古诗的分阶段背诵计划、默写技巧和长期记忆巩固方法，配合免费古诗词默写工具在线打印下载使用，附16天复习周期表和易错字辨析，帮孩子高效攻克古诗词默写难关实现长期记忆，让家庭辅导更科学更轻松高效，方法简单实用值得收藏。",
     date: "2026-06-18",
@@ -10400,7 +10400,7 @@ There is和There are的用法，孩子经常搞混。
 
   {
     id: "xiaoxue-shuxue-jisuan-nengli-tisheng-kousuan",
-    image: "/images/blog/xiaoxue-shuxue-jisuan-nengli-tisheng-kousuan.png",
+    image: "/images/blog/xiaoxue-shuxue-jisuan-nengli-tisheng-kousuan.webp",
     title: "小学数学计算能力怎么提升？口算速度慢的深层原因和科学训练方法",
     description: "孩子口算速度慢、计算总出错怎么办？本文从认知心理学角度分析计算能力不足的深层原因，结合教育部课程标准和真实研究数据，提供一套可操作的口算训练方案。配合练学宝免费口算速练在线工具和练习卷生成器使用，适合1-6年级。含每日训练计划表、分阶段目标和常见计算障碍分析，帮孩子突破计算瓶颈稳步提升，操作简单适合长期使用。",
     date: "2026-06-21",
@@ -10486,7 +10486,7 @@ There is和There are的用法，孩子经常搞混。
 
   {
     id: "xiaoxuesheng-lianzi-zhengque-fangfa-shuxie-xiguan",
-    image: "/images/blog/xiaoxuesheng-lianzi-zhengque-fangfa-shuxie-xiguan.png",
+    image: "/images/blog/xiaoxuesheng-lianzi-zhengque-fangfa-shuxie-xiguan.webp",
     title: "小学生练字正确方法是什么？低年级书写习惯培养的科学路径",
     description: "孩子写字不好看、歪歪扭扭怎么办？本文从汉字书写认知规律出发，结合真实研究数据，系统讲解小学低年级书写习惯的培养方法，包括握笔姿势、笔画顺序和日常练习安排。配合练学宝免费字帖生成器在线生成PDF打印下载，支持田字格米字格多种格式，适合1-3年级。附每天15分钟练字计划和阶段性验收标准，让练字科学见效。",
     date: "2026-06-21",
@@ -10571,7 +10571,7 @@ There is和There are的用法，孩子经常搞混。
 
   {
     id: "xiaoxue-sight-words-xuexi-fangfa-2026",
-    image: "/images/blog/xiaoxue-sight-words-xuexi-fangfa-2026.png",
+    image: "/images/blog/xiaoxue-sight-words-xuexi-fangfa-2026.webp",
     title: "小学英语Sight Words视觉词学习法：220个高频词怎么教，让孩子从逐词拼读到自主阅读",
     description: "Sight Words视觉词怎么学？本文分享220个小学英语高频词的系统学习方法，含Dolch分级表、90天训练计划、真实案例和常见误区，帮助孩子实现自主阅读。配合练学宝免费英语字帖生成器在线打印下载，适合1-4年级零基础入门。从逐词拼读到流畅阅读的训练路径，附每日练习安排和阶段性词汇量测试方法，简单有效。",
     date: "2026-06-22",
@@ -10715,7 +10715,7 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
   },
   {
     id: "xiaoxue-24dian-youxi-xunlian-fangfa-2026",
-    image: "/images/blog/xiaoxue-24dian-youxi-xunlian-fangfa-2026.png",
+    image: "/images/blog/xiaoxue-24dian-youxi-xunlian-fangfa-2026.webp",
     title: "小学数学24点游戏训练法：每天10分钟提升孩子四则运算与逻辑思维",
     description: "孩子数学口算慢、没兴趣？试试24点游戏。本文分享小学24点游戏训练法，含规则详解、三阶段入门法、解题模型和真实课堂案例，让孩子爱上数学。每天10分钟提升四则运算与逻辑思维能力，配合练学宝免费口算速练在线工具使用，适合2-6年级。附每日训练计划和阶段性成果数据，让孩子在游戏中快乐提升计算速度，让家庭辅导更轻松。",
     date: "2026-06-22",
@@ -10911,7 +10911,7 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "12分钟",
-    image: "/images/blog/youxiao-xianjie-shuxue-qimeng-6ge-youxi.png",
+    image: "/images/blog/youxiao-xianjie-shuxue-qimeng-6ge-youxi.webp",
     keywords: ["幼小衔接数学启蒙", "在家数学游戏", "一年级数学入学准备", "儿童数感培养", "幼小衔接数学", "凑十法游戏", "数学启蒙不用报班"],
     author: {
       name: "陈老师",
@@ -11046,7 +11046,7 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
   },
   {
     id: "sannianji-shuxue-chengji-xiahua-siwei-xunlian",
-    image: "/images/blog/sannianji-shuxue-chengji-xiahua-siwei-xunlian.png",
+    image: "/images/blog/sannianji-shuxue-chengji-xiahua-siwei-xunlian.webp",
     title: "三年级数学成绩突然下滑怎么办？不是孩子变笨了，是思维转型没跟上",
     summary: "大量家长发现孩子一二年级数学成绩很好，到了三年级却突然下滑。本文从认知发展理论和课标变化两个维度分析「三年级现象」的深层原因，并提供一套可操作的思维能力训练方案。",
     description: "三年级数学成绩下滑不是孩子不努力，而是从具象思维到抽象逻辑的认知转型没跟上。本文分析三年级现象的原因，提供思维能力训练方案，帮助孩子平稳度过这个关键期。含真实案例和分阶段训练计划，配合练学宝免费数学练习卷生成器在线打印下载，适合3-4年级。附常见转型误区分析和家长辅导要点，让成绩止跌回升，帮孩子打好学习基础。",
@@ -11205,7 +11205,7 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
   },
   {
     id: "xiaoxue-shuxue-jisuan-cuxin-zenmeban-2026",
-    image: "/images/blog/xiaoxue-shuxue-jisuan-cuxin-zenmeban-2026.png",
+    image: "/images/blog/xiaoxue-shuxue-jisuan-cuxin-zenmeban-2026.webp",
     title: "小学生计算粗心怎么办？7天纠正训练法让计算错误率降低80%",
     description: "小学生计算粗心怎么办？本文从注意力、视觉追踪和工作记忆三个维度分析计算粗心的真实原因，分享一套7天纠正训练法，含真实错题分析和阶段性数据对比，配合练学宝免费口算速练工具在线使用，适合1-5年级家长辅导参考。",
     date: "2026-07-07",
@@ -11352,7 +11352,7 @@ Sight Words 不是英语学习的全部，但它是自主阅读的"基础设施"
 
   {
     id: "shuqishuxue-xuexi-huapo-kexue-yingdui-2026",
-    image: "/images/blog/shuqishuxue-xuexi-huapo-kexue-yingdui-2026.png",
+    image: "/images/blog/shuqishuxue-xuexi-huapo-kexue-yingdui-2026.webp",
     title: "暑假数学退步了多少？NWEA追踪百万学生数据：每天只需15分钟，开学成绩不掉队",
     summary: "每到开学，总有家长发现孩子数学成绩明显退步。这不是错觉——NWEA 2026年最新研究证实，暑假期间小学生数学能力平均退步10%-30%。本文用真实研究数据揭示暑期学习滑坡的科学原理，并提供4个每天只需15分钟的精准应对方法。",
     description: "暑假数学退步不是错觉，NWEA追踪百万学生数据证实暑期学习滑坡真实存在。每天只需15分钟精准练习，就能有效避免开学掉队。本文用真实研究数据+可操作的4个方法，帮家长科学应对暑假数学退步。",
@@ -11509,7 +11509,7 @@ NWEA 的研究也证实了这一点：**程序性技能（如竖式计算、分�
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "9分钟",
-    image: "/images/blog/xiaoxuesheng-xiezi-zishi-jiuzheng-2026.png",
+    image: "/images/blog/xiaoxuesheng-xiezi-zishi-jiuzheng-2026.webp",
     author: teacherAuthor,
     keywords: ["小学生写字姿势纠正", "握笔姿势不对怎么纠正", "勾腕抱笔歪头", "小学生写字姿势", "21天矫正方案", "保护视力写字姿势", "练字姿势纠正", "儿童握笔姿势矫正", "写字姿势不对危害", "家庭练字方法"],
     content: `上学期期末家长会，班主任把我拉到一边，说了一句话让我心里咯噔一下："你家孩子这学期视力从5.0掉到4.6了，你看看他写字的姿势。"
@@ -11658,7 +11658,7 @@ NWEA 的研究也证实了这一点：**程序性技能（如竖式计算、分�
     dateReviewed: "2026-07-18",
     hasExclusiveContent: false,
     readTime: "12分钟",
-    image: "/images/blog/xiaoxuesheng-yingyu-qimeng-luxiantu-2026.png",
+    image: "/images/blog/xiaoxuesheng-yingyu-qimeng-luxiantu-2026.webp",
     author: {
       name: "陈老师",
       avatar: "/authors/chenlaoshi.jpg",
@@ -11836,7 +11836,7 @@ Sight Words（视觉词）是英语阅读中的"高频拦路虎"。美国伊利�
   },
   {
     id: "shujia-xuexi-jihua-30fen-2026",
-    image: "/images/blog/shujia-xuexi-jihua-30fen-2026.png",
+    image: "/images/blog/shujia-xuexi-jihua-30fen-2026.webp",
     title: "暑假两个月，孩子不想学习只抱着手机？我用这套「30分钟计划」让儿子从抗拒到主动做题",
     description: "暑假孩子沉迷手机不想学习怎么办？本文分享一套经过验证的30分钟微学习计划，结合游戏化积分系统和即时反馈机制，让孩子从抗拒到主动做题。涵盖暑假滑坡研究数据、每日学习时间表和各年级练习重点，配合练学宝免费口算速练和数学练习卷生成器，帮助小学生暑假保持学习状态，开学成绩提升。方法简单有效，适合1-6年级家长参考。",
     summary: "暑假孩子沉迷手机、不想学习怎么办？本文分享一套经过验证的30分钟微学习计划，让孩子在暑假中保持学习状态，每天只需30分钟，从抗拒到主动。",
@@ -12019,7 +12019,7 @@ Sight Words（视觉词）是英语阅读中的"高频拦路虎"。美国伊利�
     hasExclusiveContent: true,
     exclusiveContentTypes: ["独家教学案例", "一线教师实操经验", "认知科学研究解读"],
     readTime: "13分钟",
-    image: "/images/blog/shuxue-jisuan-cuxin-2026.png",
+    image: "/images/blog/shuxue-jisuan-cuxin-2026.webp",
     author: teacherAuthor,
     content: `有孩子年级的时候，有一次数学考试拿了78分。我翻开卷子一看，差点没气晕过去——
 
