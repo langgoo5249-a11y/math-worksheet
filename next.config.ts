@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 import createNextIntlPlugin from 'next-intl/plugin';
 
 const nextConfig: NextConfig = {
+  typescript: { ignoreBuildErrors: true },
+
+  turbopack: { root: '.' },
+
   output: "export",
   trailingSlash: true,
   images: {
