@@ -1,81 +1,11 @@
-# Cloudflare Pages redirects
-# 旧路径重定向到工具页
-/mental-math /tools/mental-math/ 308
-
-# 旧URL重定向到正确路径（修复Bing报告的404错误）
-/tools/oral-math/ /tools/mental-math/ 301
-/tools/english-cursive/ /tools/english-calligraphy/ 301
-/tools/flashcard/ /tools/flashcards/ 301
-/tools/chinese-writing/ /tools/calligraphy/ 301
-/tools/writingTemplate/ /tools/writing-template/ 301
-/blog/xiaoxue-zuowen-moban/ /blog/zuowen-moban-kongfu-wufu/ 301
-/blog/haizi-lianzi-shijianbiao/ /blog/haizi-xiezi-waiwainiuniu-lianzi-shijianbiao/ 301
-
-# .html 后缀兼容重定向（静态导出产物为 index.html 目录方式）
-/ai-overview.html /ai-overview/ 301
-
-# ===========================================
-# 多语言 wrapper 路由 301 重定向到中文版
-# 原因：[locale]/ 下的 /ja /ko 页面未真正翻译，
-#     返回中文内容造成重复内容，触发 Google 降权。
-#     301 永久重定向把所有信号（PageRank/外链/抓取预算）合并到中文版。
-# 注意：/en/ 已有独立英文版内容（教外国人学中文），不再重定向。
-# ===========================================
-
-# 单条精确重定向（顶层页面）- 仅 ja/ko
-/ja                  https://www.skillxm.cn/                  301
-/ko                  https://www.skillxm.cn/                  301
-/ja/                 https://www.skillxm.cn/                  301
-/ko/                 https://www.skillxm.cn/                  301
-
-# 多路径子目录通配重定向 - 仅 ja/ko
-# /ja/blog/xxx → /blog/xxx
-# /ko/tools/xxx → /tools/xxx
-# 注意：splats 语法是 /* 而非 /:splat（Cloudflare Pages 规范）
-/ja/*                /:splat                              301
-/ko/*                /:splat                              301
-
-# /zh 是默认语言，等同于 / ；为避免双内容也做 301
-/zh/                 https://www.skillxm.cn/                  301
-/zh                  https://www.skillxm.cn/                  301
-
-# ===========================================
-# /en/ 重复 wrapper 页面 301 重定向到中文版
-# 原因：[locale] wrapper 为 /en/ 生成了所有中文页面的翻译版，
-#       这些是重复内容。postbuild 脚本会删除这些 HTML 文件，
-#       此处添加 301 重定向确保访问时跳转到中文版而非 404。
-# 保留的 8 个独立英文页面不会被重定向（静态文件优先于 _redirects）。
-# ===========================================
-/en/about/           /about/                               301
-/en/contact/         /contact/                             301
-/en/privacy/         /privacy/                             301
-/en/terms/           /terms/                               301
-/en/search/          /search/                              301
-/en/grade/*          /grade/:splat                         301
-/en/knowledge/*      /knowledge/:splat                     301
-/en/resources/*      /resources/:splat                     301
-/en/parent-guide/*   /parent-guide/:splat                  301
-/en/textbook/*       /textbook/:splat                      301
-/en/changelog/       /changelog/                           301
-/en/daily/           /daily/                               301
-/en/tools/math-worksheet/    /tools/math-worksheet/        301
-/en/tools/calligraphy/       /tools/calligraphy/           301
-/en/tools/mental-math/       /tools/mental-math/           301
-/en/tools/sudoku/            /tools/sudoku/                301
-/en/tools/flashcards/        /tools/flashcards/            301
-/en/tools/writing-template/  /tools/writing-template/      301
-/en/tools/pinyin/            /tools/pinyin/                301
-/en/tools/poem-memo/         /tools/poem-memo/             301
-/en/tools/unit-test/         /tools/unit-test/             301
-/en/tools/english-calligraphy/  /tools/english-calligraphy/  301
-
-# ===========================================
-# /en/blog/ wrapper redirects
-# 英文版博客是独立内容，static files handle these
-# ===========================================
-
-# ===========================================
-# 重复博客文章 301 重定向（去重修复）
-# ===========================================
-/blog/haizi-xie-zi-wai-wai-niu-niu-lian-zi-shi-jian-2    /blog/haizi-xie-zi-wai-wai-niu-niu-lian-zi-shi-jian/    301
-/blog/yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi-2  /blog/yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi/  301
+/blog/xiaoxue-shuxue-yingyongti-jieti-jiqiao-2026/ /blog/yingyongti-jieti-fangfa/ 301
+/blog/xiaoxue-yingyu-zitie-lianxi-fangfa-2026/ /blog/xiaoxue-yingyu-shuxie/ 301
+/blog/xiaoxue-pinyin-xuexi-quangonglue-2026/ /blog/pinyin-xuexi-luxiantu/ 301
+/blog/xiaoxue-gushi-moxie-jiyi-fangfa-2026/ /blog/gushi-shici-moxie-lianxi-fangfa/ 301
+/blog/xiaoxue-xiezuo-moban-shiyong-zhinan-2026/ /blog/xiaoxue-zuowen-fudao-moban-shengcheng/ 301
+/blog/xiaoxue-yuedu-zhenti-jieti-jiqiao-2026/ /blog/yuedu-lijie-dati-4-jiqiao-cong-koufen-dao-fengshen/ 301
+/blog/haizi-xiezuoye-moceng-3bu-fa-2026/ /blog/zuoye-moca-zenmeban/ 301
+/blog/danyuan-ceshijuan-fuxi-mianfei-gongju-2026/ /blog/danyuan-ceshijuan-shengcheng-gongju/ 301
+/blog/shujia-shuxue-wandao-chaoche-jihua-2026/ /blog/shujia-shuxue-xuexi-jihua/ 301
+/blog/xiaoxue-shuxue-yingyongti-jieti-fangfa-2026/ /blog/xiaoxue-shuxue-yingyongti-5bu-jietifa/ 301
+/blog/xiaoxuesheng-shujia-xuexi-jihua-2026/ /blog/shujia-shuxue-xuexi-jihua/ 301

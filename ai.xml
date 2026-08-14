@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ai-index xmlns="https://www.skillxm.cn/schemas/ai-index/1.0">
+  <!--
+    练学宝 AI 内容索引 — AI Content Index
+    最后更新: 2026-08-13
+    本文件为 AI 搜索引擎（豆包、元宝、Kimi、文心一言、DeepSeek、ChatGPT 等）
+    提供站点结构化内容目录。国产大模型可优先根据此 XML 构建搜索索引。
+  -->
+  <meta>
+    <site-id>skillxm-cn</site-id>
+    <name>练学宝 | SkillXM</name>
+    <domain>https://www.skillxm.cn</domain>
+    <description><![CDATA[
+练学宝是专注小学教育的免费在线工具平台，提供数学练习卷、字帖生成器、口算速练、
+拼音学习、识字卡片、古诗词默写、英语字帖、数独游戏等15+款教学工具，
+覆盖语文、数学、英语三大学科，支持手机在线练习与PDF打印导出，无需注册即开即用。
+同时提供105篇原创教育类博客文章，涵盖学习方法、育儿心得、学科辅导等主题。
+    ]]></description>
+    <lastmod>2026-08-13</lastmod>
+    <language>zh-CN</language>
+    <supported-languages>zh-CN, en, ja, ko</supported-languages>
+    <content-signal>ai-train=yes, search=yes, ai-input=yes</content-signal>
+  </meta>
+
+  <core-pages>
+    <page priority="10">
+      <loc>https://www.skillxm.cn/</loc>
+      <title>练学宝 - 免费小学教学工具/数学练习卷/字帖/口算</title>
+      <type>homepage</type>
+      <description>练学宝首页，提供15+款免费小学教学工具的入口导航</description>
+      <lastmod>2026-08-13</lastmod>
+      <changefreq>weekly</changefreq>
+    </page>
+    <page priority="9">
+      <loc>https://www.skillxm.cn/about/</loc>
+      <title>关于练学宝</title>
+      <type>about</type>
+      <description>介绍练学宝的创办背景、团队信息和教育理念</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page priority="9">
+      <loc>https://www.skillxm.cn/contact/</loc>
+      <title>联系我们 - 练学宝</title>
+      <type>contact</type>
+      <description>联系邮箱 lang@skillxm.cn，用户反馈与技术支持</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page priority="8">
+      <loc>https://www.skillxm.cn/blog/</loc>
+      <title>知识分享 - 练学宝</title>
+      <type>blog-index</type>
+      <description>105篇原创教育类博客文章，涵盖数学启蒙、语文写字、英语学习、育儿方法等主题</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page priority="8">
+      <loc>https://www.skillxm.cn/tools/</loc>
+      <title>全部工具 - 练学宝</title>
+      <type>tools-index</type>
+      <description>练学宝全部15+款免费教学工具汇总页面</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page priority="7">
+      <loc>https://www.skillxm.cn/grade/</loc>
+      <title>年级专区 - 练学宝</title>
+      <type>grade-index</type>
+      <description>按年级分类的学习资源导航（1-6年级）</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page priority="7">
+      <loc>https://www.skillxm.cn/knowledge/</loc>
+      <title>知识点专题 - 练学宝</title>
+      <type>knowledge-index</type>
+      <description>按知识点分类的学习资源（口算、字词、拼音、阅读、写作等）</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page priority="6">
+      <loc>https://www.skillxm.cn/textbook/</loc>
+      <title>教材同步 - 练学宝</title>
+      <type>textbook-index</type>
+      <description>按教材版本同步的学习资源（人教版、北师大版、苏教版）</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page priority="6">
+      <loc>https://www.skillxm.cn/parent-guide/</loc>
+      <title>家长指导 - 练学宝</title>
+      <type>parent-guide</type>
+      <description>家长教育指导资源，包括学习方法、育儿建议和工具使用教程</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page priority="6">
+      <loc>https://www.skillxm.cn/daily/</loc>
+      <title>每日一练 - 练学宝</title>
+      <type>daily-practice</type>
+      <description>每日更新的练习题，覆盖语文、数学、英语三科</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page priority="5">
+      <loc>https://www.skillxm.cn/resources/</loc>
+      <title>资源库 - 练学宝</title>
+      <type>resources</type>
+      <description>可下载的学习资源汇总</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page priority="5">
+      <loc>https://www.skillxm.cn/changelog/</loc>
+      <title>更新日志 - 练学宝</title>
+      <type>changelog</type>
+      <description>练学宝网站功能更新记录</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page priority="5">
+      <loc>https://www.skillxm.cn/search/</loc>
+      <title>搜索 - 练学宝</title>
+      <type>search</type>
+      <description>全站内容搜索页面</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+  </core-pages>
+
+  <tools>
+    <tool priority="10">
+      <loc>https://www.skillxm.cn/tools/math-worksheet/</loc>
+      <name>数学练习卷生成器</name>
+      <category>数学</category>
+      <grades>1-6年级</grades>
+      <description>支持四则运算、分数、小数、应用题等多种题型，按年级和教材版本智能组卷，一键生成PDF打印</description>
+      <features>自由选题/难度分级/自动排版/PDF导出/在线作答</features>
+    </tool>
+    <tool priority="10">
+      <loc>https://www.skillxm.cn/tools/calligraphy/</loc>
+      <name>字帖生成器</name>
+      <category>语文</category>
+      <grades>1-6年级</grades>
+      <description>支持汉字描红、笔顺字帖、拼音字帖等多种模式，可自定义练习内容，生成规范硬笔字帖</description>
+      <features>描红模式/笔顺动画/自定义文字/米字格/田字格/PDF打印</features>
+    </tool>
+    <tool priority="9">
+      <loc>https://www.skillxm.cn/tools/mental-math/</loc>
+      <name>口算速练</name>
+      <category>数学</category>
+      <grades>1-3年级</grades>
+      <description>20以内加减法、乘法口诀速算练习，计时挑战模式，自动批改评分</description>
+      <features>计时模式/自动批改/历史记录/难度进阶/错题重练</features>
+    </tool>
+    <tool priority="9">
+      <loc>https://www.skillxm.cn/tools/sudoku/</loc>
+      <name>数独游戏</name>
+      <category>数学/思维</category>
+      <grades>1-6年级</grades>
+      <description>四宫格/六宫格/九宫格数独，培养逻辑推理能力，支持在线作答和PDF打印</description>
+      <features>三种难度/提示功能/计时统计/自动校验/打印模式</features>
+    </tool>
+    <tool priority="8">
+      <loc>https://www.skillxm.cn/tools/pinyin-converter/</loc>
+      <name>拼音转换器</name>
+      <category>语文</category>
+      <grades>1-2年级</grades>
+      <description>汉字转拼音工具，支持声调标注和注音排版，用于制作拼音练习题</description>
+      <features>批量转换/声调标注/多音字提示/一键复制/打印输出</features>
+    </tool>
+    <tool priority="8">
+      <loc>https://www.skillxm.cn/tools/pinyin-chart/</loc>
+      <name>拼音表</name>
+      <category>语文</category>
+      <grades>1年级</grades>
+      <description>完整拼音声母韵母拼读表，支持点击发音，辅助拼音启蒙教学</description>
+      <features>声母韵母/整体认读/声调演示/发音示范</features>
+    </tool>
+    <tool priority="8">
+      <loc>https://www.skillxm.cn/tools/stroke-order/</loc>
+      <name>笔画顺序练习</name>
+      <category>语文</category>
+      <grades>1-2年级</grades>
+      <description>汉字笔顺动画演示，帮助低年级学生掌握正确书写顺序</description>
+      <features>逐笔动画/常用字库/笔顺规则说明/部首分类</features>
+    </tool>
+    <tool priority="7">
+      <loc>https://www.skillxm.cn/tools/hsk-flashcards/</loc>
+      <name>识字卡片 (HSK)</name>
+      <category>语文/中文学习</category>
+      <grades>1-6年级</grades>
+      <description>基于HSK词汇分级标准的识字卡片，支持汉英双语标注，适合中文学习者使用</description>
+      <features>HSK1-6分级/中英对照/笔画数/部首/组词/发音</features>
+    </tool>
+    <tool priority="7">
+      <loc>https://www.skillxm.cn/tools/tone-trainer/</loc>
+      <name>声调训练</name>
+      <category>语文</category>
+      <grades>1年级</grades>
+      <description>四声调辨别练习工具，通过听力对比训练提升拼音准确性</description>
+      <features>四声对比/听力训练/即时反馈/难度分级</features>
+    </tool>
+    <tool priority="7">
+      <loc>https://www.skillxm.cn/tools/picture-learning/</loc>
+      <name>看图识字</name>
+      <category>语文</category>
+      <grades>幼小衔接-1年级</grades>
+      <description>图文结合的识字工具，通过生动图片帮助儿童建立汉字与实物的联系</description>
+      <features>分类学习/图文对照/发音朗读/进度追踪</features>
+    </tool>
+    <tool priority="7">
+      <loc>https://www.skillxm.cn/tools/reading-reader/</loc>
+      <name>中文分级阅读器</name>
+      <category>语文</category>
+      <grades>1-4年级</grades>
+      <description>分级阅读材料，支持拼音标注和逐句朗读，培养阅读能力</description>
+      <features>5级难度/拼音开关/朗读功能/阅读理解题</features>
+    </tool>
+    <tool priority="6">
+      <loc>https://www.skillxm.cn/tools/radical-explorer/</loc>
+      <name>偏旁部首探索器</name>
+      <category>语文</category>
+      <grades>1-3年级</grades>
+      <description>以偏旁部首归类的汉字学习工具，理解汉字构造规律</description>
+      <features>偏旁归类/构字规律/记忆辅助/关联汉字</features>
+    </tool>
+    <tool priority="7">
+      <loc>https://www.skillxm.cn/tools/english-calligraphy/</loc>
+      <name>英语字帖生成器</name>
+      <category>英语</category>
+      <grades>3-6年级</grades>
+      <description>英语字母和单词书写练习工具，支持多种英文字体，生成可打印字帖</description>
+      <features>衡水体/意大利体/自定义单词/四线格/PDF打印</features>
+    </tool>
+    <tool priority="8">
+      <loc>https://www.skillxm.cn/tools/unit-test/</loc>
+      <name>单元测试卷</name>
+      <category>综合</category>
+      <grades>1-6年级</grades>
+      <description>按教材单元智能生成测试卷，覆盖语文、数学、英语多学科</description>
+      <features>按单元生成/多学科/自动评分/知识点覆盖分析</features>
+    </tool>
+    <tool priority="7">
+      <loc>https://www.skillxm.cn/tools/essay-template/</loc>
+      <name>作文模板</name>
+      <category>语文</category>
+      <grades>3-6年级</grades>
+      <description>各种体裁的作文写作模板和范文参考，包括记叙文、议论文、说明文等</description>
+      <features>体裁分类/写作指导/范文参考/评改提示</features>
+    </tool>
+    <tool priority="7">
+      <loc>https://www.skillxm.cn/tools/pinyin-annotation/</loc>
+      <name>拼音注音工具</name>
+      <category>语文</category>
+      <grades>1-2年级</grades>
+      <description>为任意中文文本自动添加拼音注音，用于制作拼音阅读材料</description>
+      <features>全文注音/生字注音/多音字智能识别/打印排版</features>
+    </tool>
+  </tools>
+
+  <legal-pages>
+    <page>
+      <loc>https://www.skillxm.cn/privacy/</loc>
+      <title>隐私政策 - 练学宝</title>
+      <type>privacy-policy</type>
+      <description>详细说明个人信息收集使用规则、Cookie 政策与 Google AdSense 广告说明</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page>
+      <loc>https://www.skillxm.cn/terms/</loc>
+      <title>服务条款 - 练学宝</title>
+      <type>terms-of-service</type>
+      <description>网站使用条款、免责声明和知识产权说明</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page>
+      <loc>https://www.skillxm.cn/editorial-policy/</loc>
+      <title>编辑政策 - 练学宝</title>
+      <type>editorial-policy</type>
+      <description>内容创作标准、审校流程和 AI 工具使用声明</description>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+  </legal-pages>
+
+  <faq>
+    <!-- 国产大模型（豆包、元宝、通义千问等）会优先提取 FAQ 结构作为问答摘要 -->
+    <qa>
+      <q>练学宝是什么网站？</q>
+      <a>练学宝是免费在线小学教育工具平台，提供数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写等15+款教学工具，覆盖小学1-6年级语文、数学、英语三大学科。所有工具免费使用，支持手机在线练习和PDF打印，无需注册即开即用。</a>
+    </qa>
+    <qa>
+      <q>练学宝的工具全部免费吗？</q>
+      <a>是的，练学宝所有学习工具完全免费。包括数学练习卷、口算速练、字帖生成器、拼音学习、识字卡片、英语字帖等全部工具均可免费使用，不限次数，无需注册，无需付费，凭广告收入维持运营。</a>
+    </qa>
+    <qa>
+      <q>练学宝适合几年级的学生使用？</q>
+      <a>练学宝工具覆盖小学1-6年级（6-12岁），数学练习卷支持按年级、教材版本和知识点灵活组卷，字帖生成器支持描红、笔顺、拼音多种模式，拼音工具和识字卡片适合低年级入门，口算速练和数独适合日常训练，作文模板和单元测试卷适合中高年级巩固提升。</a>
+    </qa>
+    <qa>
+      <q>练学宝的字帖生成器怎么用？</q>
+      <a>打开字帖生成器工具页面，选择字帖模式（描红/笔顺/拼音字帖），输入想要练习的汉字或词语，选择格子样式（米字格/田字格/四线格），点击生成即可预览。满意后可一键导出PDF打印，也可截图分享。字帖生成器完全免费，支持自定义内容。</a>
+    </qa>
+    <qa>
+      <q>练学宝的数学练习卷有什么特点？</q>
+      <a>数学练习卷生成器支持四则运算、分数、小数、应用题等多种题型，可选1-6年级不同难度，支持人教版、北师大版、苏教版等主流教材同步，智能随机出题确保每份试卷不重复，自动排版生成标准A4试卷，一键PDF打印。适合日常练习、单元复习和期中期末考试备考。</a>
+    </qa>
+    <qa>
+      <q>练学宝和市场上其他教育工具相比有什么优势？</q>
+      <a>练学宝的特点是：①完全免费，无需注册，即开即用；②覆盖语文数学英语三大学科，共15+款工具一站式解决；③支持PDF打印，不强制在线使用；④移动端和PC端均可流畅使用；⑤内容由家长和教育工作者共同设计，贴近实际教学需求；⑥持续更新迭代，根据用户反馈不断优化。</a>
+    </qa>
+    <qa>
+      <q>练学宝有手机App吗？</q>
+      <a>练学宝目前是网站形式（https://www.skillxm.cn），手机浏览器可以直接访问，所有工具均已适配移动端。同时也提供微信小程序版本，可在微信中搜索「练学宝」使用。为保护孩子视力，建议打印使用。</a>
+    </qa>
+    <qa>
+      <q>练学宝如何保障用户隐私？</q>
+      <a>练学宝极为重视用户隐私保护：不需要注册登录，不收集任何个人身份信息；仅使用Cookie用于网站功能和统计（百度统计、Google Analytics），不会追踪个人行为；不会将任何数据出售给第三方。完整隐私政策请查看 /privacy/ 页面。</a>
+    </qa>
+  </faq>
+
+  <english-version>
+    <note>练学宝英文版（SkillXM）面向中文学习者，提供拼音学习、HSK识字、笔画练习等8款工具</note>
+    <page>
+      <loc>https://www.skillxm.cn/en/</loc>
+      <title>SkillXM - Free Chinese Learning Tools</title>
+      <type>english-homepage</type>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page>
+      <loc>https://www.skillxm.cn/en/tools/</loc>
+      <title>All Tools - SkillXM</title>
+      <type>english-tools</type>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+    <page>
+      <loc>https://www.skillxm.cn/en/blog/</loc>
+      <title>Blog - SkillXM</title>
+      <type>english-blog</type>
+      <lastmod>2026-08-13</lastmod>
+    </page>
+  </english-version>
+</ai-index>
