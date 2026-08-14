@@ -9,7 +9,7 @@
 ## 快速链接
 - [完整内容索引 (llms-full.txt)](https://www.skillxm.cn/llms-full.txt)
 - [站点地图 (sitemap.xml)](https://www.skillxm.cn/sitemap.xml)
-- [博客文章 (116篇)](https://www.skillxm.cn/blog/)
+- [博客文章 (105篇)](https://www.skillxm.cn/blog/)
 - [全部工具](https://www.skillxm.cn/tools/)
 - [关于我们](https://www.skillxm.cn/about/)
 - [联系我们](https://www.skillxm.cn/contact/)
@@ -85,7 +85,7 @@
 ## 站点地图摘要
 - 主页: https://www.skillxm.cn/
 - 工具页: 10个在线教学工具
-- 博客: 116篇教育干货文章，覆盖数学、语文、英语、学习方法、思维训练、升学指导、工具教程、综合教育8大分类
+- 博客: 105篇教育干货文章，覆盖数学、语文、英语、学习方法、思维训练、升学指导、工具教程、综合教育8大分类
 - 年级导航: 1-6年级分年级内容
 - 教材版本: 人教版、北师大版、苏教版
 - 知识分享: 教育知识库
