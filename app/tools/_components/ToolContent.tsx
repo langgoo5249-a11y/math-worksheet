@@ -7,6 +7,7 @@
 
 import { toolPageContents } from '@/lib/toolContentData';
 import { relatedToolsMap } from '@/lib/relatedTools';
+import { TOOLS } from '@/lib/toolRegistry';
 import Link from 'next/link';
 
 interface ToolContentProps {
@@ -18,6 +19,8 @@ export default function ToolContent({ toolId }: ToolContentProps) {
   if (!content) return null;
 
   const related = relatedToolsMap[toolId] || [];
+  const tool = TOOLS.find((t) => t.path === `/tools/${toolId}`);
+  const grades = tool?.grades || [];
   // 生成 lastModified 日期 — 帮助 Passage Ranking 和 Freshness 信号
   // 在 force-static 构建模式下，此日期随每次部署自动更新
   const now = new Date();
@@ -155,6 +158,24 @@ export default function ToolContent({ toolId }: ToolContentProps) {
         </div>
       </section>
 
+      {/* 年级专题内链 — 强化年级页权重 */}
+      {grades.length > 0 && (
+        <section id="tool-grade-links" className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
+          <h2 className="text-lg font-bold text-white mb-4">🎒 按年级查看相关学习内容</h2>
+          <div className="flex flex-wrap gap-3">
+            {grades.map((g) => (
+              <Link
+                key={g}
+                href={`/grade/grade-${g}`}
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/25 rounded-lg text-sm text-purple-300 hover:text-purple-200 transition-colors"
+              >
+                {g} 年级学习资源 →
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* 相关工具推荐 — Topic Mesh 内链 */}
       {related.length > 0 && (
         <section id="tool-related" className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-8">
@@ -188,3 +209,4 @@ export default function ToolContent({ toolId }: ToolContentProps) {
     </div>
   );
 }
+

@@ -129,8 +129,73 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
     .filter(a => a.id !== article.id)
     .slice(0, 8);
 
+  // 常见问题 FAQ（结构化数据 + 可见内容，需互相匹配）
+  const faqs = [
+    {
+      q: `《${article.title}》主要讲了什么？`,
+      a: article.summary || article.description,
+    },
+    {
+      q: '练学宝提供哪些免费的配套学习工具？',
+      a: '练学宝提供口算速练、数学练习卷、字帖、英语字帖、拼音、古诗默写、数独、单元测试卷等免费工具，无需注册，支持在线生成与 PDF 打印。',
+    },
+    {
+      q: `关于「${article.category}」还有哪些实用内容？`,
+      a: `可在练学宝「${article.category}」分类查看更多相关文章，或进入年级专区按年级查找针对性学习资源与练习。`,
+    },
+  ];
+
+  // 按分类推导相关年级（用于年级专题内链）
+  const categoryGrades: Record<string, number[]> = {
+    '数学学习': [1, 2, 3, 4, 5, 6],
+    '语文学习': [1, 2, 3, 4, 5, 6],
+    '英语学习': [3, 4, 5, 6],
+    '思维训练': [1, 2, 3, 4, 5, 6],
+    '学习方法': [1, 2, 3, 4, 5, 6],
+    '升学指导': [5, 6],
+    '工具推荐': [1, 2, 3, 4, 5, 6],
+  };
+  const articleGrades = categoryGrades[article.category] || [];
+
   return (
     <SiteLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'BlogPosting',
+                headline: article.title,
+                description: article.summary || article.description,
+                image: article.image || 'https://www.skillxm.cn/og-image.jpg',
+                datePublished: article.date,
+                dateModified: article.dateModified || article.date,
+                author: {
+                  '@type': 'Person',
+                  name: article.author?.name || defaultAuthor.name,
+                  jobTitle: article.author?.title || defaultAuthor.title,
+                },
+                publisher: {
+                  '@id': 'https://www.skillxm.cn/#organization',
+                },
+                mainEntityOfPage: `https://www.skillxm.cn/blog/${article.id}/`,
+                articleSection: article.category,
+                inLanguage: 'zh-CN',
+              },
+              {
+                '@type': 'FAQPage',
+                mainEntity: faqs.map((f) => ({
+                  '@type': 'Question',
+                  name: f.q,
+                  acceptedAnswer: { '@type': 'Answer', text: f.a },
+                })),
+              },
+            ],
+          }),
+        }}
+      />
       <article className="max-w-3xl mx-auto px-4 py-12">
         {/* Breadcrumb */}
         <nav className="mb-8 text-sm">
@@ -419,6 +484,37 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           </section>
         )}
 
+        {/* 常见问题 FAQ（可见，匹配结构化数据） */}
+        <section className="mt-8 p-5 bg-slate-800/50 rounded-xl border border-white/10">
+          <h3 className="text-lg font-bold text-white mb-3">❓ 常见问题</h3>
+          <div className="space-y-3">
+            {faqs.map((f, i) => (
+              <div key={i} className="border border-white/10 rounded-lg p-3">
+                <p className="text-white font-medium text-sm mb-1">Q{i + 1}：{f.q}</p>
+                <p className="text-gray-400 text-sm leading-relaxed">A：{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* 年级专题内链 — 强化年级页权重 */}
+        {articleGrades.length > 0 && (
+          <section className="mt-8 p-5 bg-purple-500/5 border border-purple-500/15 rounded-xl">
+            <h3 className="text-lg font-bold text-white mb-3">🎒 按年级查看相关学习资源</h3>
+            <div className="flex flex-wrap gap-2">
+              {articleGrades.map((g) => (
+                <Link
+                  key={g}
+                  href={`/grade/grade-${g}/`}
+                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/30 rounded-lg text-sm text-purple-300 hover:text-purple-200 transition-colors"
+                >
+                  {g} 年级
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
+
         {/* 相关文章推荐 - 增强版 */}
         {relatedArticles.length > 0 && (
           <div className="mt-8 p-6 bg-slate-800/50 rounded-xl border border-white/10">
@@ -507,3 +603,4 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
     </SiteLayout>
   );
 }
+
