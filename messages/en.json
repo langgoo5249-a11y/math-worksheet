@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "title": "LianXueBao - Free Elementary Learning Tools / Math Worksheets / Calligraphy / Mental Math",
+    "description": "LianXueBao offers 10+ free elementary learning tools including math worksheet generator, calligraphy practice sheets, mental math trainer, pinyin learning, flashcards, classical poetry, unit tests, and more. PDF export available, no registration required. Suitable for grades 1-6 students and teachers.",
+    "keywords": "LianXueBao, elementary learning tools, math worksheet generator, calligraphy practice, mental math, pinyin learning, flashcards, classical poetry, unit tests, free worksheets, educational resources, PDF print"
+  },
+  "nav": {
+    "home": "LianXueBao",
+    "tools": "Learning Tools",
+    "blog": "Education Blog",
+    "search": "Search",
+    "about": "About Us",
+    "contact": "Contact Us"
+  },
+  "footer": {
+    "about": "About Us",
+    "contact": "Contact Us",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "friendLinks": "Friendly Links",
+    "copyright": "© 2026 LianXueBao · Making Education Simple"
+  },
+  "language": {
+    "switch": "Switch Language",
+    "zh": "中文",
+    "en": "English",
+    "ja": "日本語",
+    "ko": "한국어"
+  },
+  "home": {
+    "hero": {
+      "title": "Free Learning Tools",
+      "subtitle": "Math Worksheets · Calligraphy · Mental Math",
+      "ctaPrimary": "Start Using"
+    },
+    "popularTools": "Popular Tools",
+    "features": {
+      "instant": {
+        "title": "Instant Access",
+        "description": "No registration required. Open the website and start generating worksheets and practice sheets immediately."
+      },
+      "pdf": {
+        "title": "PDF Export",
+        "description": "One-click export to high-quality PDF files with clear A4 printing results."
+      },
+      "templates": {
+        "title": "Multiple Templates",
+        "description": "Tianzigezi, grid paper, lined paper and more templates to meet different needs."
+      }
+    },
+    "faq": {
+      "title": "FAQ",
+      "free": {
+        "question": "Are these tools free?",
+        "answer": "Yes, all tools are completely free to use. No registration or fees required."
+      },
+      "watermark": {
+        "question": "Will the generated PDFs have watermarks?",
+        "answer": "No. All generated PDF files are clean without any watermarks and ready to print."
+      },
+      "grades": {
+        "question": "Which grades are supported?",
+        "answer": "Primarily for elementary grades 1-6, with some tools suitable for kindergarten and middle school students."
+      }
+    }
+  },
+  "tools": {
+    "mathWorksheet": {
+      "name": "Math Worksheets",
+      "shortName": "Math",
+      "description": "Generate elementary math worksheets instantly. Supports 11 question types including addition, subtraction, multiplication, division, and vertical calculations. PDF export ready.",
+      "metaTitle": "Math Worksheet Generator - Free Elementary Math Practice",
+      "metaDescription": "Free online math worksheet generator for elementary students. Supports arithmetic, fractions, equations and more. Grades 1-6. One-click PDF printing."
+    },
+    "calligraphy": {
+      "name": "Calligraphy Sheets",
+      "shortName": "Writing",
+      "description": "Generate Tianzigezi and米格字帖 practice sheets online. Four grid styles available. Print-ready for handwriting practice.",
+      "metaTitle": "Calligraphy Sheet Generator - Free Chinese Writing Practice",
+      "metaDescription": "Create Chinese character practice sheets with Tianzigezi and米格字帖 grids. Customizable content. Free PDF download and print."
+    },
+    "englishCalligraphy": {
+      "name": "English Writing",
+      "shortName": "English",
+      "description": "Enter English words or sentences to generate four-line-three-grid practice paper. Multiple fonts and line heights supported.",
+      "metaTitle": "English Handwriting Practice - Four-Line Writing Sheets",
+      "metaDescription": "Free English handwriting practice sheets with four-line grids. Custom words and sentences. Multiple fonts available for elementary students."
+    },
+    "flashcards": {
+      "name": "Flashcards",
+      "shortName": "Cards",
+      "description": "Generate free Chinese character flashcards online. Customizable characters, pinyin, and phrases. Printable for physical cards.",
+      "metaTitle": "Chinese Flashcard Generator - Free Character Learning Cards",
+      "metaDescription": "Create Chinese character flashcards online with custom characters, pinyin, and phrases. PDF export for printing. Perfect for early literacy."
+    },
+    "mentalMath": {
+      "name": "Mental Math",
+      "shortName": "Mental",
+      "description": "Online timed mental math practice. Supports 4 difficulty levels with instant feedback. Perfect for math speed training.",
+      "metaTitle": "Mental Math Trainer - Online Timed Math Practice",
+      "metaDescription": "Free online mental math practice with timer. Addition, subtraction, multiplication, division. Challenge mode for elementary students."
+    },
+    "pinyin": {
+      "name": "Pinyin Practice",
+      "shortName": "Pinyin",
+      "description": "Generate pinyin four-line-three-grid practice sheets. Supports initials, finals, and whole syllables. PDF export available.",
+      "metaTitle": "Pinyin Writing Practice - Four-Line Pinyin Sheets",
+      "metaDescription": "Free pinyin practice sheets with four-line grids. Initials, finals, and whole syllables supported. Perfect for Grade 1 Chinese learning."
+    },
+    "poemMemo": {
+      "name": "Poetry Practice",
+      "shortName": "Poetry",
+      "description": "240 classical Chinese poems for recitation practice. Covers grades 1-6 required poems and extended reading.",
+      "metaTitle": "Classical Poetry Practice - Elementary Poem Recitation",
+      "metaDescription": "240 classical Chinese poems with fill-in-the-blank, full recitation, and line completion modes. Covers elementary grades 1-6."
+    },
+    "sudoku": {
+      "name": "Sudoku Game",
+      "shortName": "Sudoku",
+      "description": "Online sudoku game with multiple difficulty levels. Number pad input suitable for all ages.",
+      "metaTitle": "Sudoku Game - Free Online Logic Puzzle",
+      "metaDescription": "Free online sudoku with easy, medium, and hard levels. Auto-check answers. Great for logical thinking training."
+    },
+    "unitTest": {
+      "name": "Unit Tests",
+      "shortName": "Tests",
+      "description": "Generate free elementary unit test papers online. Supports math, Chinese, English, and science. Covers grades 1-6.",
+      "metaTitle": "Unit Test Generator - Elementary School Test Papers",
+      "metaDescription": "Free elementary unit test generator for math, Chinese, English, and science. Covers grades 1-6. PDF export available."
+    },
+    "writingTemplate": {
+      "name": "Writing Templates",
+      "shortName": "Writing",
+      "description": "Generate free writing templates online. Supports picture composition, diary, letter formats, and more for elementary writing practice.",
+      "metaTitle": "Writing Template Generator - Elementary Writing Formats",
+      "metaDescription": "Free writing templates for picture composition, diary, letters, book reports, and more. A4 printable format for elementary students."
+    }
+  },
+  "blog": {
+    "siteName": "LianXueBao",
+    "title": "Education Blog",
+    "description": "Sharing practical teaching methods and learning tips to help children grow",
+    "nav": {
+      "home": "Home",
+      "tools": "Learning Tools",
+      "blog": "Education Blog",
+      "search": "Search",
+      "about": "About Us",
+      "contact": "Contact Us",
+      "terms": "Terms of Service"
+    },
+    "footer": {
+      "copyright": "© 2026 LianXueBao"
+    },
+    "categories": {
+      "all": "All",
+      "math": "Math Learning",
+      "chinese": "Chinese Learning",
+      "english": "English Learning",
+      "thinking": "Thinking Training",
+      "studyMethods": "Study Methods",
+      "admissions": "Admissions Guide",
+      "tools": "Tools & Resources",
+      "about": "About Us",
+      "general": "General Education"
+    },
+    "articleCount": "{count} Articles",
+    "currentCategory": "Category",
+    "readMore": "Read More",
+    "noArticles": "No articles in this category",
+    "backToBlog": "Back to Blog",
+    "articleNotFound": "Article Not Found",
+    "relatedArticles": "Related Articles",
+    "latestArticles": "Latest Articles",
+    "categoryNotFound": "Category Not Found",
+    "categoryNotFoundDesc": "The category you are looking for does not exist",
+    "categoryPage": {
+      "title": "{category} - Education Blog",
+      "description": "{category} Collection: {count} original articles sharing practical education experience and methods",
+      "articleCount": "{count} Original Articles",
+      "otherCategories": "Browse Other Categories"
+    },
+    "languageNotice": {
+      "title": "Language Notice",
+      "description": "This article is currently available in Chinese only"
+    },
+    "keywords": {
+      "primary": "Elementary Education",
+      "secondary": "Learning Methods",
+      "tertiary": "Parenting Tips"
+    }
+  },
+  "pages": {
+    "aboutTitle": "About Us - LianXueBao",
+    "aboutDesc": "Learn about LianXueBao, a free elementary learning tools platform. Our mission is to make quality education accessible to everyone.",
+    "contactTitle": "Contact Us - LianXueBao",
+    "contactDesc": "Get in touch with the LianXueBao team. We welcome your feedback, suggestions, and questions about our free elementary learning tools.",
+    "privacyTitle": "Privacy Policy - LianXueBao",
+    "privacyDesc": "LianXueBao privacy policy. We do not collect personal data. All tools run locally in your browser.",
+    "termsTitle": "Terms of Use - LianXueBao",
+    "termsDesc": "Terms of use for LianXueBao. All tools are free for personal and educational use.",
+    "changelogTitle": "Changelog - LianXueBao",
+    "changelogDesc": "Latest updates and improvements to LianXueBao's free elementary learning tools and features.",
+    "searchTitle": "Search - LianXueBao",
+    "searchDesc": "Search LianXueBao for learning tools, educational articles, worksheets, and practice resources.",
+    "gradeTitle": "Grade Learning Hub - LianXueBao",
+    "gradeDesc": "Browse elementary grade-specific learning resources, practice worksheets, and study tools for grades 1-6.",
+    "gradeDetailTitle": "Grade Learning Resources - LianXueBao",
+    "gradeDetailDesc": "Grade-specific learning resources, practice worksheets, and study tools for elementary students.",
+    "textbookTitle": "Textbook-Aligned Practice - LianXueBao",
+    "textbookDesc": "Practice exercises aligned with Chinese elementary textbooks. Covers all major textbook versions for grades 1-6.",
+    "textbookDetailTitle": "Textbook Practice - LianXueBao",
+    "textbookDetailDesc": "Practice exercises aligned with specific textbook versions and grades for elementary students.",
+    "knowledgeTitle": "Knowledge Points - LianXueBao",
+    "knowledgeDesc": "Explore key elementary knowledge points with targeted practice exercises and learning resources.",
+    "knowledgeDetailTitle": "Knowledge Point Detail - LianXueBao",
+    "knowledgeDetailDesc": "Detailed explanation and practice resources for specific elementary knowledge points.",
+    "resourcesTitle": "Practice Resources Library - LianXueBao",
+    "resourcesDesc": "Free printable practice worksheets, test papers, and learning resources for elementary students.",
+    "resourcesDetailTitle": "Resource Detail - LianXueBao",
+    "resourcesDetailDesc": "Download and print free practice worksheets and learning resources for elementary education.",
+    "parentGuideTitle": "Parent Guide Center - LianXueBao",
+    "parentGuideDesc": "Practical guidance for parents on helping children with elementary education, homework, and study habits.",
+    "parentGuideDetailTitle": "Parent Guide Article - LianXueBao",
+    "parentGuideDetailDesc": "In-depth parent guidance articles on elementary education topics and learning strategies.",
+    "dailyTitle": "Daily Practice - LianXueBao",
+    "dailyDesc": "Daily practice exercises for elementary students. New questions every day to keep learning fresh and engaging."
+  }
+}

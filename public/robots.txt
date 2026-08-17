@@ -1,0 +1,244 @@
+# ===========================================
+# 练学宝 robots.txt — 搜索引擎优先策略
+# 最后更新: 2026-08-17
+# 原则: 允许传统搜索引擎，限制 AI 爬虫，保护内容原创性
+# ===========================================
+
+# ---------- Google AdSense 广告爬虫 ----------
+User-agent: Mediapartners-Google
+Allow: /
+
+# ---------- 传统搜索引擎（允许） ----------
+User-agent: Googlebot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# ---------- AI 搜索引擎 & 大模型爬虫（限制） ----------
+
+# OpenAI (ChatGPT / SearchGPT)
+User-agent: GPTBot
+Disallow: /blog/
+Disallow: /tools/
+
+User-agent: OAI-SearchBot
+Disallow: /blog/
+Disallow: /tools/
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Disallow: /blog/
+Disallow: /tools/
+
+User-agent: Claude-User
+Disallow: /blog/
+Disallow: /tools/
+
+# Google AI (Gemini)
+User-agent: Google-Extended
+Disallow: /blog/
+Disallow: /tools/
+
+User-agent: GoogleOther
+Disallow: /blog/
+Disallow: /tools/
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Disallow: /blog/
+Disallow: /tools/
+
+# Meta AI (Llama)
+User-agent: Meta-ExternalAgent
+Disallow: /blog/
+Disallow: /tools/
+
+User-agent: FacebookBot
+Disallow: /blog/
+Disallow: /tools/
+
+# Microsoft Copilot / Bing AI
+User-agent: MSNBot-Media
+Disallow: /blog/
+Disallow: /tools/
+
+# Perplexity AI
+User-agent: PerplexityBot
+Disallow: /blog/
+Disallow: /tools/
+
+User-agent: Perplexity-User
+Disallow: /blog/
+Disallow: /tools/
+
+# Common Crawl (LLM 训练数据)
+User-agent: CCBot
+Disallow: /blog/
+Disallow: /tools/
+
+# Cohere
+User-agent: cohere-ai
+Disallow: /blog/
+Disallow: /tools/
+
+# You.com
+User-agent: YouBot
+Disallow: /blog/
+Disallow: /tools/
+
+# DuckDuckGo AI
+User-agent: DuckAssistBot
+Disallow: /blog/
+Disallow: /tools/
+
+# Amazon (Alexa / Rufus)
+User-agent: Amazonbot
+Disallow: /blog/
+Disallow: /tools/
+
+# Diffbot (知识图谱 + AI 训练)
+User-agent: Diffbot
+Disallow: /blog/
+Disallow: /tools/
+
+# Mistral AI
+User-agent: MistralAI-User
+Disallow: /blog/
+Disallow: /tools/
+
+# xAI (Grok)
+User-agent: xAI
+Disallow: /blog/
+Disallow: /tools/
+
+# 百度 — 文心一言
+User-agent: ERNIEBot
+Disallow: /blog/
+Disallow: /tools/
+
+User-agent: YiyanBot
+Disallow: /blog/
+Disallow: /tools/
+
+# 字节跳动 — 豆包
+User-agent: Doubaobot
+Disallow: /blog/
+Disallow: /tools/
+
+User-agent: Bytespider
+Disallow: /blog/
+Disallow: /tools/
+
+# 阿里 — 通义千问
+User-agent: QwenBot
+Disallow: /blog/
+Disallow: /tools/
+
+User-agent: TongyiBot
+Disallow: /blog/
+Disallow: /tools/
+
+# 腾讯 — 混元大模型
+User-agent: TencentBot
+Disallow: /blog/
+Disallow: /tools/
+
+# 月之暗面 — Kimi
+User-agent: Kimibot
+Disallow: /blog/
+Disallow: /tools/
+
+# 智谱 — ChatGLM
+User-agent: ChatGLM-Spider
+Disallow: /blog/
+Disallow: /tools/
+
+# 360 — 360AI搜索
+User-agent: 360Spider-Image
+Disallow: /blog/
+Disallow: /tools/
+
+User-agent: 360Spider-Video
+Disallow: /blog/
+Disallow: /tools/
+
+# 搜狗 — 搜狗AI搜索
+User-agent: Sogou inst spider
+Disallow: /blog/
+Disallow: /tools/
+
+User-agent: Sogou pic spider
+Disallow: /blog/
+Disallow: /tools/
+
+# DeepSeek
+User-agent: DeepSeekBot
+Disallow: /blog/
+Disallow: /tools/
+
+# MiniMax — 海螺AI
+User-agent: MiniMaxBot
+Disallow: /blog/
+Disallow: /tools/
+
+# ===========================================
+# 默认规则：限制 AI 爬虫访问内容页面
+# ===========================================
+User-agent: *
+Disallow: /blog/
+Disallow: /tools/
+Allow: /
+Allow: /_next/static/
+Allow: /_next/data/
+
+# ===========================================
+# 路径规则
+# ===========================================
+
+# 允许爬虫访问 Next.js 静态资源
+Allow: /_next/static/
+Allow: /_next/data/
+
+# 不希望被索引的内部路径
+Disallow: /api/
+Disallow: /cdn-cgi/
+Disallow: /_next/
+Disallow: /_components/
+Disallow: /admin/
+
+# 其他静态资源全部允许
+Allow: /manifest.json
+Allow: /favicon*
+Allow: /og-image.jpg
+
+# ===========================================
+# 协议扩展
+# ===========================================
+
+# Cloudflare Content Signals: 限制 AI 训练，允许搜索
+# https://contentsignals.org/
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+# LLM 内容索引（仅允许搜索引擎访问）
+LLMs-Index: https://www.skillxm.cn/llms.txt
+LLMs-Index: https://www.skillxm.cn/llms-en.txt
+
+# Sitemap
+Sitemap: https://www.skillxm.cn/sitemap.xml
+Sitemap: https://www.skillxm.cn/sitemap-geo.xml

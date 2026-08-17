@@ -1,0 +1,283 @@
+/ads.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=86400
+  Access-Control-Allow-Origin: *
+  ! X-Content-Type-Options
+  ! Referrer-Policy
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+  Access-Control-Allow-Origin: *
+
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/rss.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=3600, must-revalidate
+  X-Robots-Tag: noindex, nofollow
+
+/baidu_verify_codeva-nVZFsgvPZu.html
+  Content-Type: text/html; charset=utf-8
+  Cache-Control: public, max-age=86400
+
+# 静态资源：图片、JS、CSS 长期缓存
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=86400
+
+/*.png
+  Cache-Control: public, max-age=86400
+
+/*.svg
+  Cache-Control: public, max-age=86400
+
+/favicon.ico
+  Cache-Control: public, max-age=2592000
+
+/favicon.svg
+  Cache-Control: public, max-age=2592000
+
+# ============================================
+# HTML 页面：缓存策略 + 安全头合并为单块
+# 每个 URL 路径一个块，避免多块合并冲突导致 CDN 缓存失效
+# CDN-Cache-Control 是 Cloudflare 专用头，优先级高于 Cache-Control
+# ============================================
+
+# 首页
+/
+  Cache-Control: public, max-age=60, s-maxage=300, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=300
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 博客页面
+/blog/*
+  Cache-Control: public, max-age=0, s-maxage=86400, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=86400
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 工具页面
+/tools/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 年级页面
+/grade/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 知识点页面
+/knowledge/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 资源页面
+/resources/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 家长指南页面
+/parent-guide/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 教材页面
+/textbook/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 每日一练页面
+/daily/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 更新日志页面
+/changelog/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 联系我们页面
+/contact/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 关于我们页面
+/about/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 隐私政策页面
+/privacy/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 服务条款页面
+/terms/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 站点地图页面
+/sitemap/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 搜索页面
+/search/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 其他 HTML 页面（.html 直接访问）
+/*.html
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 全局 HSTS
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# ============================================
+# 英文版页面（/en/*）：缓存策略 + 安全头
+# 英文页面是独立内容，不是中文翻译版本
+# ============================================
+
+# 英文首页
+/en/
+  Cache-Control: public, max-age=60, s-maxage=300, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=300
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 英文博客页面
+/en/blog/*
+  Cache-Control: public, max-age=0, s-maxage=86400, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=86400
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 英文工具页面
+/en/tools/*
+  Cache-Control: public, max-age=0, s-maxage=43200, stale-while-revalidate=86400
+  CDN-Cache-Control: public, max-age=43200
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Cross-Origin-Opener-Policy: same-origin
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), interest-cohort=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://hm.baidu.com https://zz.bdstatic.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://hm.baidu.com https://pagead2.googlesyndication.com https://adservice.google.com https://adservice.google.cn https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://lf1-cdn-tos.bytegoofy.com https://lf3-cdn-tos.bytegoofy.com https://lf6-cdn-tos.bytegoofy.com https://lf9-cdn-tos.bytegoofy.com; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com; frame-ancestors 'self' https://www.skillxm.cn
+
+# 404 页面
+/404.html
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=0, must-revalidate

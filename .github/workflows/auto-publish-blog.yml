@@ -1,0 +1,47 @@
+name: 自动发布博客文章 V3
+on:
+  schedule:
+    - cron: '0 2 * * 1,3,5'  # 周一、三、五 UTC 2:00（北京时间 10:00），每周3篇高质量文章
+  workflow_dispatch:
+    inputs:
+      count:
+        description: '生成文章数量'
+        required: false
+        default: '1'
+        type: choice
+        options:
+          - '1'
+          - '2'
+          - '3'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+
+      - name: 生成高质量博客文章 (V3)
+        run: node scripts/generate-article-v3.cjs ${{ github.event.inputs.count || '1' }}
+
+      - name: 验证生成的文章
+        run: |
+          echo "检查生成的文章..."
+          git diff --stat app/blog/data.ts || true
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add app/blog/data.ts
+          git diff --cached --quiet || (git commit -m "📝 自动发布新博客文章 $(date +%Y-%m-%d) - 优化版" && git push)
+
+      - name: 触发部署
+        if: success()
+        run: |
+          echo "文章已提交，部署工作流将自动触发"

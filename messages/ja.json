@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "title": "練学宝 - 無料小学校学習ツール/数学ワークシート/書道/暗算",
+    "description": "練学宝は10以上の無料小学校学習ツールを提供しています。数学ワークシート生成器、書道練習紙、暗算トレーナー、ピンイン学習、識字カード、古典詩、単元テストなど。PDFエクスポート対応、登録不要。小学1〜6年生と教師向け。",
+    "keywords": "練学宝,小学校学習ツール,数学ワークシート生成器,書道練習,暗算,ピンイン学習,識字カード,古典詩,単元テスト,無料ワークシート,教育リソース,PDF印刷"
+  },
+  "nav": {
+    "home": "練学宝",
+    "tools": "学習ツール",
+    "blog": "教育ブログ",
+    "search": "検索",
+    "about": "私たちについて",
+    "contact": "お問い合わせ"
+  },
+  "footer": {
+    "about": "私たちについて",
+    "contact": "お問い合わせ",
+    "terms": "利用規約",
+    "privacy": "プライバシーポリシー",
+    "friendLinks": "リンク集",
+    "copyright": "© 2026 練学宝 · 教育をもっと簡単に"
+  },
+  "language": {
+    "switch": "言語を切り替え",
+    "zh": "中文",
+    "en": "English",
+    "ja": "日本語",
+    "ko": "한국어"
+  },
+  "home": {
+    "hero": {
+      "title": "無料学習ツール",
+      "subtitle": "数学ワークシート · 書道 · 暗算",
+      "ctaPrimary": "今すぐ使用"
+    },
+    "popularTools": "人気のツール",
+    "features": {
+      "instant": {
+        "title": "即座にアクセス",
+        "description": "登録不要。ウェブサイトを開いてすぐにワークシートや練習紙を生成できます。"
+      },
+      "pdf": {
+        "title": "PDFエクスポート",
+        "description": "ワンクリックで高品質なPDFファイルをエクスポート。A4印刷で鮮明な結果。"
+      },
+      "templates": {
+        "title": "複数のテンプレート",
+        "description": "田字格、方眼紙、罫線紙など、さまざまなニーズに応えるテンプレート。"
+      }
+    },
+    "faq": {
+      "title": "よくある質問",
+      "free": {
+        "question": "これらのツールは無料ですか？",
+        "answer": "はい、すべてのツールは完全に無料で使用できます。登録や料金は必要ありません。"
+      },
+      "watermark": {
+        "question": "生成されたPDFに透かしは入りますか？",
+        "answer": "いいえ。生成されたPDFファイルは透かしなしで、すぐに印刷できます。"
+      },
+      "grades": {
+        "question": "どの学年に対応していますか？",
+        "answer": "主に小学1〜6年生向けで、一部のツールは幼稚園や中学生にも適しています。"
+      }
+    }
+  },
+  "tools": {
+    "mathWorksheet": {
+      "name": "数学ワークシート",
+      "shortName": "数学",
+      "description": "小学校の数学ワークシートを即座に生成。足し算、引き算、掛け算、割り算、筆算など11種類の問題形式に対応。PDFエクスポート可能。",
+      "metaTitle": "数学ワークシート生成器 - 無料小学校数学練習",
+      "metaDescription": "小学生向け無料オンライン数学ワークシート生成器。算術、分数、方程式などに対応。1〜6年生。ワンクリックPDF印刷。"
+    },
+    "calligraphy": {
+      "name": "書道練習紙",
+      "shortName": "書道",
+      "description": "オンラインで田字格や米格字帖の練習紙を生成。4種類のグリッドスタイルが利用可能。書道練習用に印刷可能。",
+      "metaTitle": "書道練習紙生成器 - 無料中国語書写練習",
+      "metaDescription": "田字格や米格字帖グリッドの中国語文字練習紙を作成。カスタマイズ可能な内容。無料PDFダウンロードと印刷。"
+    },
+    "englishCalligraphy": {
+      "name": "英語書写",
+      "shortName": "英語",
+      "description": "英単語や文章を入力して四線三格の練習用紙を生成。複数のフォントと行の高さに対応。",
+      "metaTitle": "英語書写練習 - 四線三格シート",
+      "metaDescription": "四線三格の無料英語書写練習シート。カスタム単語と文章。小学生向けに複数のフォントが利用可能。"
+    },
+    "flashcards": {
+      "name": "識字カード",
+      "shortName": "カード",
+      "description": "オンラインで無料の中国語文字識字カードを生成。文字、ピンイン、フレーズをカスタマイズ可能。物理カード用に印刷可能。",
+      "metaTitle": "中国語識字カード生成器 - 無料文字学習カード",
+      "metaDescription": "カスタム文字、ピンイン、フレーズの中国語文字識字カードをオンラインで作成。印刷用PDFエクスポート。初期識字に最適。"
+    },
+    "mentalMath": {
+      "name": "暗算練習",
+      "shortName": "暗算",
+      "description": "オンラインタイマー付き暗算練習。4段階の難易度に対応し、即座にフィードバック。計算スピードトレーニングに最適。",
+      "metaTitle": "暗算トレーナー - オンラインタイマー計算練習",
+      "metaDescription": "タイマー付き無料オンライン暗算練習。足し算、引き算、掛け算、割り算。小学生向けチャレンジモード。"
+    },
+    "pinyin": {
+      "name": "ピンイン練習",
+      "shortName": "ピンイン",
+      "description": "ピンイン四線三格練習シートを生成。声母、韻母、整体認读音節に対応。PDFエクスポート可能。",
+      "metaTitle": "ピンイン書写練習 - 四線ピンインシート",
+      "metaDescription": "四線グリッドの無料ピンイン練習シート。声母、韻母、整体認读音節に対応。小学1年生中国語学習に最適。"
+    },
+    "poemMemo": {
+      "name": "古典詩練習",
+      "shortName": "詩",
+      "description": "暗唱練習用の240首の中国古典詩。小学1〜6年生の必須詩と拡張読書をカバー。",
+      "metaTitle": "古典詩練習 - 小学校詩暗唱",
+      "metaDescription": "穴埋め、全文暗唱、行補完モードの240首の中国古典詩。小学1〜6年生をカバー。"
+    },
+    "sudoku": {
+      "name": "数独ゲーム",
+      "shortName": "数独",
+      "description": "複数の難易度レベルを持つオンライン数独ゲーム。数字キー入力で全年齢対象。",
+      "metaTitle": "数独ゲーム - 無料オンラインロジックパズル",
+      "metaDescription": "簡単、中級、上級レベルの無料オンライン数独。自動回答チェック。論理的思考トレーニングに最適。"
+    },
+    "unitTest": {
+      "name": "単元テスト",
+      "shortName": "テスト",
+      "description": "オンラインで無料の小学校単元テスト用紙を生成。数学、中国語、英語、理科に対応。1〜6年生をカバー。",
+      "metaTitle": "単元テスト生成器 - 小学校テスト用紙",
+      "metaDescription": "数学、中国語、英語、理科の無料小学校単元テスト生成器。1〜6年生をカバー。PDFエクスポート可能。"
+    },
+    "writingTemplate": {
+      "name": "作文テンプレート",
+      "shortName": "作文",
+      "description": "オンラインで無料の作文テンプレートを生成。絵作文、日記、手紙形式など、小学校の作文練習に対応。",
+      "metaTitle": "作文テンプレート生成器 - 小学校作文形式",
+      "metaDescription": "絵作文、日記、手紙、読書感想文などの無料作文テンプレート。小学生向けA4印刷形式。"
+    }
+  },
+  "blog": {
+    "siteName": "練学宝",
+    "title": "教育ブログ",
+    "description": "実践的な教育方法と学習のコツを共有し、子供の成長をサポート",
+    "nav": {
+      "home": "ホーム",
+      "tools": "学習ツール",
+      "blog": "教育ブログ",
+      "search": "検索",
+      "about": "私たちについて",
+      "contact": "お問い合わせ",
+      "terms": "利用規約"
+    },
+    "footer": {
+      "copyright": "© 2026 練学宝"
+    },
+    "categories": {
+      "all": "すべて",
+      "math": "数学学習",
+      "chinese": "中国語学習",
+      "english": "英語学習",
+      "thinking": "思考力トレーニング",
+      "studyMethods": "学習方法",
+      "admissions": "進学ガイド",
+      "tools": "ツール・リソース",
+      "about": "私たちについて",
+      "general": "総合教育"
+    },
+    "articleCount": "{count}件の記事",
+    "currentCategory": "カテゴリー",
+    "readMore": "続きを読む",
+    "noArticles": "このカテゴリーには記事がありません",
+    "backToBlog": "ブログ一覧に戻る",
+    "articleNotFound": "記事が見つかりません",
+    "relatedArticles": "関連記事",
+    "latestArticles": "最新記事",
+    "categoryNotFound": "カテゴリーが見つかりません",
+    "categoryNotFoundDesc": "お探しのカテゴリーは存在しません",
+    "categoryPage": {
+      "title": "{category} - 教育ブログ",
+      "description": "{category}コレクション：{count}件のオリジナル記事で実践的な教育経験と方法を共有",
+      "articleCount": "オリジナル記事 {count}件",
+      "otherCategories": "他のカテゴリーを見る"
+    },
+    "languageNotice": {
+      "title": "言語のお知らせ",
+      "description": "この記事は現在、中国語のみでご利用いただけます"
+    },
+    "keywords": {
+      "primary": "小学校教育",
+      "secondary": "学習方法",
+      "tertiary": "子育てのコツ"
+    }
+  },
+  "pages": {
+    "aboutTitle": "LianXueBaoについて",
+    "aboutDesc": "LianXueBaoは無料の小学生向け学習ツールプラットフォームです。質の高い教育を誰もが利用できるようにすることを目指しています。",
+    "contactTitle": "お問い合わせ - LianXueBao",
+    "contactDesc": "LianXueBaoチームへのお問い合わせ。無料の学習ツールに関するご意見・ご質問をお待ちしています。",
+    "privacyTitle": "プライバシーポリシー - LianXueBao",
+    "privacyDesc": "LianXueBaoのプライバシーポリシー。個人データは収集しません。すべてのツールはブラウザ内でローカルに実行されます。",
+    "termsTitle": "利用規約 - LianXueBao",
+    "termsDesc": "LianXueBaoの利用規約。すべてのツールは個人および教育目的で無料でご利用いただけます。",
+    "changelogTitle": "更新履歴 - LianXueBao",
+    "changelogDesc": "LianXueBaoの無料学習ツールと機能の最新アップデートと改善点をご覧いただけます。",
+    "searchTitle": "検索 - LianXueBao",
+    "searchDesc": "LianXueBaoで学習ツール、教育記事、練習問題、学習リソースを検索できます。",
+    "gradeTitle": "学年別学習ハブ - LianXueBao",
+    "gradeDesc": "小学1〜6年生向けの学年別学習リソース、練習問題、学習ツールをご覧いただけます。",
+    "gradeDetailTitle": "学年別学習リソース - LianXueBao",
+    "gradeDetailDesc": "小学生向けの学年別学習リソース、練習問題、学習ツールです。",
+    "textbookTitle": "教科書準拠練習 - LianXueBao",
+    "textbookDesc": "中国の小学校教科書に準拠した練習問題。主要な教科書バージョンをカバーしています。",
+    "textbookDetailTitle": "教科書練習 - LianXueBao",
+    "textbookDetailDesc": "特定の教科書バージョンと学年に準拠した小学生向け練習問題です。",
+    "knowledgeTitle": "学習ポイント - LianXueBao",
+    "knowledgeDesc": "小学生の主要な学習ポイントを対象とした練習問題と学習リソースをご覧いただけます。",
+    "knowledgeDetailTitle": "学習ポイント詳細 - LianXueBao",
+    "knowledgeDetailDesc": "特定の小学生向け学習ポイントの詳細な説明と練習リソースです。",
+    "resourcesTitle": "練習リソースライブラリ - LianXueBao",
+    "resourcesDesc": "小学生向けの無料印刷可能な練習問題、テスト用紙、学習リソースです。",
+    "resourcesDetailTitle": "リソース詳細 - LianXueBao",
+    "resourcesDetailDesc": "小学生向けの無料練習問題と学習リソースをダウンロード・印刷できます。",
+    "parentGuideTitle": "保護者ガイドセンター - LianXueBao",
+    "parentGuideDesc": "小学生の教育、宿題、学習習慣に関する保護者向けの実践的なガイダンスです。",
+    "parentGuideDetailTitle": "保護者ガイド記事 - LianXueBao",
+    "parentGuideDetailDesc": "小学生の教育トピックと学習戦略に関する詳細な保護者向けガイダンス記事です。",
+    "dailyTitle": "日々の練習 - LianXueBao",
+    "dailyDesc": "小学生向けの日々の練習問題。毎日新しい問題で学習を新鮮で楽しいものにします。"
+  }
+}

@@ -1,0 +1,103 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# ==========================================
+# 防止 agent 污染仓库的忽略规则
+# (2026-06-15 添加，防止 zibll/agent 文件再次混入)
+# ==========================================
+# agent 临时状态
+.openclaw/
+.tmp_workspace/
+.consolidate-state.json
+.qclaw/
+~/.qclaw/
+
+# Agent memory 文档（绝对不能提交到网站仓库）
+AGENTS.md
+HEARTBEAT.md
+IDENTITY.md
+MEMORY.md
+SOUL.md
+TOOLS.md
+USER.md
+CLAUDE.md
+
+# 第三方主题/项目（zibll 是 WordPress 主题，与本项目无关）
+zibll_theme/
+zibll_78_official/
+
+# Agent 操作产生的一次性脚本
+*.tmp
+*.bak
+_*_*.js
+_*.js
+_*.txt
+_*.json
+_*_zibll*
+add_*.py
+add_*.sh
+admin_opts_*.txt
+activate*.py
+activate*.sh
+
+# 临时文件
+.~lock.*
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# 临时构建产物
+.tsbuildinfo
+*.tsbuildinfo
+next-env.d.ts.bak
+
+# 用户本地 Node 版本（不应入仓，由 .nvmrc 标准化）
+.nvmrc
+
+# 临时调试日志
+browse.log
+debug.log
+api.log
+*.log.gz
+

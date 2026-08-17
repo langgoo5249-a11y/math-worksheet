@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "title": "练学宝 - 免费小学教学工具/数学练习卷/字帖/口算生成器等",
+    "description": "练学宝提供10+款免费小学教学工具，包括数学练习卷生成器、字帖生成器、口算速练、拼音学习、识字卡片、古诗词默写、单元测试卷等，支持PDF导出打印，无需注册即开即用。适合小学1-6年级学生日常练习与教师课堂教学使用。",
+    "keywords": "练学宝,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,拼音学习,识字卡片,古诗词默写,单元测试卷,免费试卷,小学教育资源,PDF打印"
+  },
+  "nav": {
+    "home": "练学宝",
+    "tools": "学习工具",
+    "blog": "知识分享",
+    "search": "搜索",
+    "about": "关于我们",
+    "contact": "联系我们"
+  },
+  "footer": {
+    "about": "关于我们",
+    "contact": "联系我们",
+    "terms": "使用条款",
+    "privacy": "隐私政策",
+    "friendLinks": "友情链接",
+    "copyright": "© 2026 练学宝 · 让教育更简单"
+  },
+  "language": {
+    "switch": "切换语言",
+    "zh": "中文",
+    "en": "English",
+    "ja": "日本語",
+    "ko": "한국어"
+  },
+  "home": {
+    "hero": {
+      "title": "免费教学工具",
+      "subtitle": "数学练习卷 · 字帖生成 · 口算速练",
+      "ctaPrimary": "立即使用"
+    },
+    "popularTools": "热门工具",
+    "features": {
+      "instant": {
+        "title": "即开即用",
+        "description": "无需注册，打开网页即可生成练习卷和字帖，节省宝贵时间"
+      },
+      "pdf": {
+        "title": "PDF导出",
+        "description": "一键导出高清PDF文件，A4纸打印效果清晰规范"
+      },
+      "templates": {
+        "title": "多种模板",
+        "description": "田字格、方格纸、横线格等多种模板，满足不同需求"
+      }
+    },
+    "faq": {
+      "title": "常见问题",
+      "free": {
+        "question": "这些工具是免费的吗？",
+        "answer": "是的，所有工具完全免费使用，无需注册账号，不收取任何费用。"
+      },
+      "watermark": {
+        "question": "生成的PDF会有水印吗？",
+        "answer": "不会。所有生成的PDF文件都是干净的，没有任何水印，可直接打印使用。"
+      },
+      "grades": {
+        "question": "支持哪些年级？",
+        "answer": "主要面向小学1-6年级学生，部分工具也适合幼儿园和初中生使用。"
+      }
+    }
+  },
+  "tools": {
+    "mathWorksheet": {
+      "name": "数学练习卷",
+      "shortName": "数学",
+      "description": "一键生成小学数学练习卷，支持加减乘除、竖式计算等11种题型，PDF导出即印即用",
+      "metaTitle": "数学练习卷生成器 - 免费在线生成小学数学练习题",
+      "metaDescription": "免费在线生成小学数学练习卷，支持加减乘除竖式、分数、方程等题型，覆盖1-6年级，一键打印PDF"
+    },
+    "calligraphy": {
+      "name": "字帖生成器",
+      "shortName": "字帖",
+      "description": "在线生成田字格/米字格字帖，四种格子样式可选，支持直接打印，适合小学生练字",
+      "metaTitle": "字帖生成器 - 免费在线生成田字格米字格练字帖",
+      "metaDescription": "在线生成田字格/米字格字帖，输入汉字即可生成练字纸，支持多种格子样式，免费打印"
+    },
+    "englishCalligraphy": {
+      "name": "英语字帖",
+      "shortName": "英语",
+      "description": "输入英文单词或句子，自动生成四线三格练习纸，支持多种字体和行高，一键打印",
+      "metaTitle": "英语字帖生成器 - 四线三格英文书写练习",
+      "metaDescription": "免费生成英语四线三格字帖，支持自定义单词、句子，多种字体可选，适合小学英语书写练习"
+    },
+    "flashcards": {
+      "name": "识字卡片",
+      "shortName": "识字",
+      "description": "免费在线生成识字卡片，支持自定义汉字、拼音、组词，可打印制作实体卡片",
+      "metaTitle": "识字卡片生成器 - 免费制作汉字识字卡片",
+      "metaDescription": "在线生成识字卡片，支持自定义汉字、拼音、组词，PDF导出打印，适合幼儿识字启蒙"
+    },
+    "mentalMath": {
+      "name": "口算速练",
+      "shortName": "口算",
+      "description": "在线口算计时练习，支持4个难度级别，即时反馈，适合小学生数学速算训练",
+      "metaTitle": "口算速练 - 在线计时口算练习工具",
+      "metaDescription": "免费在线口算练习，支持加减乘除，计时挑战模式，适合小学生日常速算训练"
+    },
+    "pinyin": {
+      "name": "拼音注音",
+      "shortName": "拼音",
+      "description": "生成拼音四线三格练习纸，支持声母、韵母、整体认读音节，一键打印PDF",
+      "metaTitle": "拼音注音练习 - 四线三格拼音书写纸生成",
+      "metaDescription": "免费生成拼音四线三格练习纸，支持声母、韵母、整体认读音节，适合小学一年级拼音学习"
+    },
+    "poemMemo": {
+      "name": "古诗词默写",
+      "shortName": "古诗",
+      "description": "收录240首经典古诗词默写练习卷，覆盖小学1-6年级必背古诗词及课外拓展",
+      "metaTitle": "古诗词默写 - 小学必背古诗填空练习",
+      "metaDescription": "收录240首经典古诗词，支持填空默写、全诗默写、上下句默写三种模式，覆盖小学1-6年级"
+    },
+    "sudoku": {
+      "name": "数独游戏",
+      "shortName": "数独",
+      "description": "在线数独游戏，支持多个难度等级，数字键盘输入，适合各年龄段益智训练",
+      "metaTitle": "数独游戏 - 在线免费数独益智训练",
+      "metaDescription": "免费在线数独游戏，支持简单、中等、困难多个难度，自动检查答案，适合逻辑思维训练"
+    },
+    "unitTest": {
+      "name": "单元测试卷",
+      "shortName": "试卷",
+      "description": "免费在线生成小学单元测试卷，支持数学、语文、英语、科学四科，覆盖人教版1-6年级",
+      "metaTitle": "单元测试卷生成器 - 小学全科单元测试",
+      "metaDescription": "免费生成小学单元测试卷，支持数学、语文、英语、科学，覆盖人教版1-6年级上下册"
+    },
+    "writingTemplate": {
+      "name": "作文模板",
+      "shortName": "作文",
+      "description": "免费在线生成作文模板，支持看图写话、日记、书信等多种格式，适合小学生写作练习",
+      "metaTitle": "作文模板生成器 - 小学作文格式模板",
+      "metaDescription": "免费生成作文模板，支持看图写话、日记、书信、读后感等多种格式，A4纸打印"
+    }
+  },
+  "blog": {
+    "siteName": "练学宝",
+    "title": "知识分享",
+    "description": "分享实用的教育方法和学习技巧，助力孩子成长",
+    "nav": {
+      "home": "首页",
+      "tools": "学习工具",
+      "blog": "知识分享",
+      "search": "搜索",
+      "about": "关于我们",
+      "contact": "联系我们",
+      "terms": "服务条款"
+    },
+    "footer": {
+      "copyright": "© 2026 练学宝"
+    },
+    "categories": {
+      "all": "全部",
+      "math": "数学学习",
+      "chinese": "语文学习",
+      "english": "英语学习",
+      "thinking": "思维训练",
+      "studyMethods": "学习方法",
+      "admissions": "升学指导",
+      "tools": "工具推荐",
+      "about": "关于我们",
+      "general": "综合教育"
+    },
+    "articleCount": "共 {count} 篇文章",
+    "currentCategory": "分类",
+    "readMore": "阅读全文",
+    "noArticles": "该分类暂无文章",
+    "backToBlog": "返回博客列表",
+    "articleNotFound": "文章未找到",
+    "relatedArticles": "相关文章",
+    "latestArticles": "最新文章",
+    "categoryNotFound": "分类未找到",
+    "categoryNotFoundDesc": "您访问的分类不存在",
+    "categoryPage": {
+      "title": "{category} - 知识分享",
+      "description": "{category}专栏：共{count}篇原创文章，分享实用的教育经验和方法",
+      "articleCount": "共 {count} 篇原创文章",
+      "otherCategories": "浏览其他分类"
+    },
+    "languageNotice": {
+      "title": "语言提示",
+      "description": "本文目前仅提供中文版本"
+    },
+    "keywords": {
+      "primary": "小学教育",
+      "secondary": "学习方法",
+      "tertiary": "家长辅导"
+    }
+  },
+  "pages": {
+    "aboutTitle": "关于我们 - 练学宝",
+    "aboutDesc": "了解练学宝，一个免费的小学教学工具平台。我们的使命是让优质教育触手可及。",
+    "contactTitle": "联系我们 - 练学宝",
+    "contactDesc": "联系练学宝团队。欢迎您的反馈、建议和问题。",
+    "privacyTitle": "隐私政策 - 练学宝",
+    "privacyDesc": "练学宝隐私政策。我们不收集个人信息，所有工具在浏览器本地运行。",
+    "termsTitle": "使用条款 - 练学宝",
+    "termsDesc": "练学宝使用条款。所有工具免费供个人和教育用途使用。",
+    "changelogTitle": "更新日志 - 练学宝",
+    "changelogDesc": "练学宝免费学习工具和功能的最新更新与改进。",
+    "searchTitle": "搜索 - 练学宝",
+    "searchDesc": "搜索练学宝的学习工具、教育文章、练习卷和学习资源。",
+    "gradeTitle": "年级学习专区 - 练学宝",
+    "gradeDesc": "浏览小学1-6年级各年级专属学习资源、练习卷和学习工具。",
+    "gradeDetailTitle": "年级学习资源 - 练学宝",
+    "gradeDetailDesc": "小学各年级专属学习资源、练习卷和学习工具。",
+    "textbookTitle": "教材同步练习 - 练学宝",
+    "textbookDesc": "与小学教材同步的练习资源，覆盖所有主流教材版本。",
+    "textbookDetailTitle": "教材练习 - 练学宝",
+    "textbookDetailDesc": "按教材版本和年级匹配的同步练习资源。",
+    "knowledgeTitle": "知识点专题 - 练学宝",
+    "knowledgeDesc": "探索小学核心知识点，获取针对性练习和学习资源。",
+    "knowledgeDetailTitle": "知识点详情 - 练学宝",
+    "knowledgeDetailDesc": "小学知识点的详细讲解和练习资源。",
+    "resourcesTitle": "练习卷资源库 - 练学宝",
+    "resourcesDesc": "免费可打印的练习卷、试卷和学习资源。",
+    "resourcesDetailTitle": "资源详情 - 练学宝",
+    "resourcesDetailDesc": "下载打印免费练习卷和学习资源。",
+    "parentGuideTitle": "家长指导中心 - 练学宝",
+    "parentGuideDesc": "为家长提供小学教育、作业辅导和学习习惯培养的实用指导。",
+    "parentGuideDetailTitle": "家长指导文章 - 练学宝",
+    "parentGuideDetailDesc": "关于小学教育话题和学习策略的深度家长指导文章。",
+    "dailyTitle": "每日一练 - 练学宝",
+    "dailyDesc": "小学生每日练习题，每天更新，保持学习新鲜感。"
+  }
+}
