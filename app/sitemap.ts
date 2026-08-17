@@ -253,6 +253,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
+  // ========== 法律页面 ==========
+  sitemapEntries.push(makeZhEntry('/privacy-policy/', {
+    lastModified: '2026-08-17T12:00:00+08:00',
+    changeFrequency: 'yearly',
+    priority: 0.5,
+  }));
+  sitemapEntries.push(makeZhEntry('/terms-of-service/', {
+    lastModified: '2026-08-17T12:00:00+08:00',
+    changeFrequency: 'yearly',
+    priority: 0.5,
+  }));
+
   // ========== 英文版页面（教外国人学中文）==========
   // /en/ 已有独立内容，不再 301 重定向
   // 英文页面使用 makeEnEntry：en hreflang 指向自身，zh-CN/x-default 指向根路径对应页面
