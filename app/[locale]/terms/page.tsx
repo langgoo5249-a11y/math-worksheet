@@ -1,33 +1,20 @@
-import OriginalPage from "@/app/terms/page";
-import { getTranslations } from "next-intl/server";
-import { Metadata } from "next";
-import { locales } from "@/lib/i18n";
-
-export const dynamic = "force-static";
+﻿import OriginalPage from '@/app/terms/page';
+import { getTranslations } from 'next-intl/server';
+import { Metadata } from 'next';
+import { locales } from '@/lib/i18n';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: "pages" });
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const t = await getTranslations({ locale: params.locale, namespace: 'Terms' });
   return {
-    title: t("termsTitle"),
-    description: t("termsDesc"),
-    alternates: {
-      canonical: "https://www.skillxm.cn/terms/",
-      languages: {
-        "zh-CN": "https://www.skillxm.cn/terms",
-        en: "https://www.skillxm.cn/en/terms",
-        ja: "https://www.skillxm.cn/ja/terms",
-        ko: "https://www.skillxm.cn/ko/terms",
-        "x-default": "https://www.skillxm.cn/terms",
-      },
-    },
+    title: t('title'),
+    description: t('description'),
   };
 }
 
-export default function TermsPage({ params }: { params: Promise<{ locale: string }> }) {
+export default function Page() {
   return <OriginalPage />;
 }
