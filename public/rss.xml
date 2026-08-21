@@ -6,13 +6,45 @@
   <atom:link href="https://www.skillxm.cn/rss.xml" rel="self" type="application/rss+xml" />
   <description>练学宝为小学1-6年级学生提供数学口算、字帖练习、单元测试、拼音注音等免费学习工具，以及丰富的练习卷资源和家长指导。</description>
   <language>zh-CN</language>
-  <lastBuildDate>Fri, 14 Aug 2026 03:13:20 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 21 Aug 2026 01:40:54 GMT</lastBuildDate>
   <generator>练学宝 RSS Generator</generator>
   <image>
     <url>https://www.skillxm.cn/favicon.svg</url>
     <title>练学宝 - 小学数学语文英语学习工具与练习资源</title>
     <link>https://www.skillxm.cn/</link>
   </image>
+  <item>
+    <title>孩子乘法口诀背得熟，除法却一做就错？一线教师：先补「平均分」这堂课，正确率差25个百分点</title>
+    <link>https://www.skillxm.cn/blog/er-nianji-chufa-zenme-jiao/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/er-nianji-chufa-zenme-jiao/</guid>
+    <description>孩子乘法口诀滚瓜烂熟，一做除法就懵？前测数据显示6÷2这类最简单的题错误率仍超5%，典型错误6÷2=12正是「用乘法思维做除法」。教学对比实验发现：常规教法下包含分问题正确率仅61%，先动手操作「包含分」的班级达86%。本文分享一线教师的除法启蒙三步法（分实物、说算式、想乘算除）、3个家庭游戏和三周训练计划，配合练学宝免费口算工具，帮孩子真正理解除法。</description>
+    <pubDate>Fri, 21 Aug 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>小学数学练习题免费下载｜1-6年级口算+应用题可打印PDF（家长收藏）</title>
+    <link>https://www.skillxm.cn/blog/xiaoxue-shuxue-lianxiti-mianfei-xiazai/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/xiaoxue-shuxue-lianxiti-mianfei-xiazai/</guid>
+    <description>小学数学练习题免费下载去哪找靠谱的？网上题目鱼龙混杂，要么超纲要么重复。本文按《义务教育数学课程标准（2022年版）》梳理1-6年级各学段的计算重点（一年级20以内加减法、二年级表内乘除法、三年级多位数乘除等），给出「按年级+薄弱点选、计算天天少量、应用题做一道会一类」三条实操原则，并介绍练学宝免费练习卷生成工具，一键生成可打印口算题与应用题PDF，无需注册。</description>
+    <pubDate>Mon, 17 Aug 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>一年级口算题打印｜20以内加减法每天60道，A4可直接打印</title>
+    <link>https://www.skillxm.cn/blog/yinianji-kousuan-ti-dayin/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/yinianji-kousuan-ti-dayin/</guid>
+    <description>一年级口算题打印哪里下载？20以内加减法是小学数学的地基，课程标准要求一年级结束时能熟练口算。本文讲清一年级口算的达标要求、每天练多少合适（少量多次），分析进退位混淆、数感不足两大常见错误的根源，并给出具体的每日练习安排，配合练学宝免费口算速练工具，一键生成20以内加减法口算题并A4打印。</description>
+    <pubDate>Mon, 17 Aug 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
+  <item>
+    <title>二年级数学试卷免费下载｜单元测试+期末真题，附答案可打印</title>
+    <link>https://www.skillxm.cn/blog/ernianji-shuxue-shijuan/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/ernianji-shuxue-shijuan/</guid>
+    <description>二年级数学试卷免费下载哪里找？本文按《义务教育数学课程标准（2022年版）》梳理二年级数学的重难点（表内乘除法、100以内加减法、万以内数的认识、长度与时间单位），讲清单元测试卷和期末卷分别该怎么用，给出考前一周的复习节奏，并介绍练学宝免费单元测试卷生成器，按单元一键出卷、附答案、可打印。</description>
+    <pubDate>Mon, 17 Aug 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
   <item>
     <title>乘法口诀怎么背最快？孩子总记不住，一线教师的3个科学记忆法让孩子2秒脱口而出</title>
     <link>https://www.skillxm.cn/blog/chengfa-koujue-jiyi-fangfa/</link>

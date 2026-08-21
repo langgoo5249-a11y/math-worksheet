@@ -1,6 +1,6 @@
 # 练学宝 (skillxm.cn) — LLM 内容索引
 
-> 最后更新: 2026-08-17
+> 最后更新: 2026-08-21
 
 > 本文件为 AI 搜索引擎（ChatGPT、Perplexity、Claude、Gemini、豆包等）提供站点内容目录。
 
@@ -20,7 +20,7 @@
 
 - [站点地图 (sitemap.xml)](https://www.skillxm.cn/sitemap.xml)
 
-- [博客文章 (108篇)](https://www.skillxm.cn/blog/)
+- [博客文章 (109篇)](https://www.skillxm.cn/blog/)
 
 - [全部工具](https://www.skillxm.cn/tools/)
 
@@ -62,17 +62,17 @@
 
 ## 按年级浏览
 
-- [一年级](https://www.skillxm.cn/grade/1/)
+- [一年级](https://www.skillxm.cn/grade/grade-1/)
 
-- [二年级](https://www.skillxm.cn/grade/2/)
+- [二年级](https://www.skillxm.cn/grade/grade-2/)
 
-- [三年级](https://www.skillxm.cn/grade/3/)
+- [三年级](https://www.skillxm.cn/grade/grade-3/)
 
-- [四年级](https://www.skillxm.cn/grade/4/)
+- [四年级](https://www.skillxm.cn/grade/grade-4/)
 
-- [五年级](https://www.skillxm.cn/grade/5/)
+- [五年级](https://www.skillxm.cn/grade/grade-5/)
 
-- [六年级](https://www.skillxm.cn/grade/6/)
+- [六年级](https://www.skillxm.cn/grade/grade-6/)
 
 
 
@@ -109,6 +109,10 @@
 
 
 ## 热门博客文章
+
+- [孩子乘法口诀背得熟，除法却一做就错？一线教师：先补「平均分」这堂课](https://www.skillxm.cn/blog/er-nianji-chufa-zenme-jiao/)
+
+- [乘法口诀怎么背最快？孩子总记不住，一线教师的3个科学记忆法](https://www.skillxm.cn/blog/chengfa-koujue-jiyi-fangfa/)
 
 - [一年级数学启蒙：从数数到20以内加减法的完整路径](https://www.skillxm.cn/blog/yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi/)
 
@@ -172,7 +176,7 @@
 
 - 工具页: 10个在线教学工具
 
-- 博客: 108篇教育干货文章，覆盖数学、语文、英语、学习方法、思维训练、升学指导、工具教程、综合教育8大分类
+- 博客: 109篇教育干货文章，覆盖数学、语文、英语、学习方法、思维训练、升学指导、工具教程、综合教育8大分类
 
 - 年级导航: 1-6年级分年级内容
 
@@ -184,4 +188,4 @@
 
 - 学习资源: 精选学习资源推荐
 
-- 英文版: 8个中文学习工具 + 5篇英文博客
+- 英文版: 8个中文学习工具 + 7篇英文博客
