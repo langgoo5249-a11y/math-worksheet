@@ -42,7 +42,7 @@ export default function FloatingMiniappButton() {
           className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
           role="dialog"
           aria-modal="true"
-          aria-label="微信公众号关注"
+          aria-label="扫码关注公众号，免费使用小程序版练学宝"
         >
           {/* 遮罩层 */}
           <div
@@ -68,8 +68,8 @@ export default function FloatingMiniappButton() {
               <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-3 backdrop-blur-sm">
                 <span className="text-3xl">📱</span>
               </div>
-              <h3 className="text-white text-lg font-bold">微信扫码，关注公众号</h3>
-              <p className="text-white/80 text-sm mt-1">打开微信扫一扫，关注练学宝公众号</p>
+              <h3 className="text-white text-lg font-bold">扫码关注公众号</h3>
+              <p className="text-white/80 text-sm mt-1">免费使用小程序版练学宝</p>
             </div>
 
             {/* 二维码区域 */}
@@ -84,10 +84,32 @@ export default function FloatingMiniappButton() {
               </div>
             </div>
 
+            {/* 免费功能清单 */}
+            <div className="px-6 pt-4">
+              <div className="grid grid-cols-2 gap-2">
+                <div className="flex items-center gap-1.5 bg-green-50 rounded-lg px-2 py-2">
+                  <span className="text-sm shrink-0">✏️</span>
+                  <span className="text-xs font-medium text-gray-700">免费生成字帖</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-green-50 rounded-lg px-2 py-2">
+                  <span className="text-sm shrink-0">📄</span>
+                  <span className="text-xs font-medium text-gray-700">免费生成试卷</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-green-50 rounded-lg px-2 py-2">
+                  <span className="text-sm shrink-0">🧮</span>
+                  <span className="text-xs font-medium text-gray-700">免费生成口算题</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-green-50 rounded-lg px-2 py-2">
+                  <span className="text-sm shrink-0">📜</span>
+                  <span className="text-xs font-medium text-gray-700">古诗等更多功能</span>
+                </div>
+              </div>
+            </div>
+
             {/* 底部提示 */}
-            <div className="px-6 pt-4 pb-6 text-center">
+            <div className="px-6 pt-3 pb-6 text-center">
               <p className="text-xs text-gray-400">
-                第一时间获取最新教育资源、活动通知和独家内容
+                关注后即可在小程序免费使用，随时生成、随时打印
               </p>
               <button
                 onClick={() => setShowQR(false)}
