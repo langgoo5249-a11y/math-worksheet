@@ -24539,7 +24539,7 @@ Sight Words（视觉词）是英语阅读中的"高频拦路虎"。美国伊利�
 
       date: "2026-08-25",
 
-      category: "小学数学",
+      category: "数学学习",
 
       readTime: "10分钟",
 
