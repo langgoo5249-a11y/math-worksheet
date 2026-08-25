@@ -1,6 +1,6 @@
 # 练学宝 (skillxm.cn) — LLM 内容索引
 
-> 最后更新: 2026-08-21
+> 最后更新: 2026-08-25
 
 > 本文件为 AI 搜索引擎（ChatGPT、Perplexity、Claude、Gemini、豆包等）提供站点内容目录。
 
@@ -20,7 +20,7 @@
 
 - [站点地图 (sitemap.xml)](https://www.skillxm.cn/sitemap.xml)
 
-- [博客文章 (109篇)](https://www.skillxm.cn/blog/)
+- [博客文章 (110篇)](https://www.skillxm.cn/blog/)
 
 - [全部工具](https://www.skillxm.cn/tools/)
 
@@ -133,6 +133,8 @@
 - [暑假数学弯道超车计划：每天30分钟，开学成绩提升20分](https://www.skillxm.cn/blog/shujia-shuxue-xuexi-jihua/)
 
 - [一年级新生入学准备清单：除了文具，这些更重要](https://www.skillxm.cn/blog/yinianji-ruxue-zhunbei-qingdan/)
+
+- [二年级退位减法老算错？90%孩子踩过的3个坑，家长这样帮就对了](https://www.skillxm.cn/blog/tuixue-jiansuan-shili-jiejiu/)
 
 
 

@@ -6,13 +6,21 @@
   <atom:link href="https://www.skillxm.cn/rss.xml" rel="self" type="application/rss+xml" />
   <description>练学宝为小学1-6年级学生提供数学口算、字帖练习、单元测试、拼音注音等免费学习工具，以及丰富的练习卷资源和家长指导。</description>
   <language>zh-CN</language>
-  <lastBuildDate>Fri, 21 Aug 2026 01:40:54 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 25 Aug 2026 02:10:25 GMT</lastBuildDate>
   <generator>练学宝 RSS Generator</generator>
   <image>
     <url>https://www.skillxm.cn/favicon.svg</url>
     <title>练学宝 - 小学数学语文英语学习工具与练习资源</title>
     <link>https://www.skillxm.cn/</link>
   </image>
+  <item>
+    <title>二年级退位减法老算错？90%孩子踩过的3个坑，家长这样帮就对了</title>
+    <link>https://www.skillxm.cn/blog/tuixue-jiansuan-shili-jiejiu/</link>
+    <guid isPermaLink="true">https://www.skillxm.cn/blog/tuixue-jiansuan-shili-jiejiu/</guid>
+    <description>孩子做退位减法总是忘借位、0的处理总是出错？本文一线教师结合真实课堂数据，拆解三类最常见错误，给出三步可落地的辅导方法，帮孩子彻底攻克退位减法。</description>
+    <pubDate>Tue, 25 Aug 2026 08:00:00 GMT</pubDate>
+    <category>知识分享</category>
+  </item>
   <item>
     <title>孩子乘法口诀背得熟，除法却一做就错？一线教师：先补「平均分」这堂课，正确率差25个百分点</title>
     <link>https://www.skillxm.cn/blog/er-nianji-chufa-zenme-jiao/</link>
