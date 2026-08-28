@@ -3,41 +3,45 @@ const path = require('path');
 
 const dataPath = path.join(__dirname, '..', 'app', 'blog', 'data.ts');
 const data = fs.readFileSync(dataPath, 'utf-8');
-const lines = data.split('\n');
 
-// Find all article blocks.
-// Key insight: we must skip the content template literal (starts with 'content: \x60' and ends with '\x60,')
-// because it may contain '  },' on its own lines.
+// Find all article blocks with a robust "chunk by id" parser.
+// Key insight: identical to generate-rss.cjs — split the file by top-level
+// `id:` markers, then extract fields per block WITHOUT assuming field order.
+// This avoids false breaks from '  },' lines inside the content template literal.
 const articles = [];
-for (let i = 0; i < lines.length - 1; i++) {
-  if (lines[i].trim() === '{' && lines[i+1].trim().startsWith('id:')) {
-    const article = {};
-    let inContent = false;
-    for (let j = i + 1; j < lines.length; j++) {
-      const t = lines[j].trim();
-      const raw = lines[j];
-      
-      // Track content template literal
-      if (t.startsWith('content: \x60')) { inContent = true; continue; }
-      if (inContent && t === '\x60,' || t === '\x60') { inContent = false; continue; }
-      if (inContent) continue;
-      
-      // Article closing: exactly 2 spaces + },
-      if (raw === '  },' || raw === '  }') break;
-      
-      const idM = t.match(/^id:\s*["']([^"']+)["']/);
-      const titleM = t.match(/^title:\s*["']([^"']+)["']/);
-      const descM = t.match(/^description:\s*["']([^"']+)["']/);
-      const dateM = t.match(/^date:\s*["']([^"']+)["']/);
-      const catM = t.match(/^category:\s*["']([^"']+)["']/);
-      
-      if (idM) article.id = idM[1];
-      if (titleM) article.title = titleM[1];
-      if (descM) article.description = descM[1];
-      if (dateM && !article.date) article.date = dateM[1];
-      if (catM) article.category = catM[1];
-    }
-    if (article.id && article.title) articles.push(article);
+// Reuse the exact robust parser proven correct in generate-rss.cjs:
+// split by id markers, then extract fields per block without assuming field order.
+const idRe = /id:\s*['"]([^'"]+)['"]/g;
+const marks = [];
+let m;
+while ((m = idRe.exec(data)) !== null) {
+  marks.push({ id: m[1], start: m.index });
+}
+// Dedupe ids (guard against an id string appearing twice) while preserving order
+const seenIds = new Set();
+const uniqueMarks = [];
+for (const mk of marks) {
+  if (!seenIds.has(mk.id)) { seenIds.add(mk.id); uniqueMarks.push(mk); }
+}
+for (let i = 0; i < uniqueMarks.length; i++) {
+  const start = uniqueMarks[i].start;
+  // Stop at the NEXT article block's id marker, not at '  },' (which appears inside content)
+  const end = i + 1 < uniqueMarks.length ? uniqueMarks[i + 1].start : data.length;
+  const block = data.slice(start, end);
+  const get = (key) => {
+    // Only match a field if 'key:' sits at the start of a line (after whitespace),
+    // so we never pick up words like 'id:' appearing inside markdown content.
+    const re = new RegExp('(^|\\n)[ \\t]*' + key + ':[ \\t]*[\'"]([^\'"]*)[\'"]');
+    const mm = block.match(re);
+    return mm ? mm[2] : '';
+  };
+  const id = get('id');
+  const title = get('title');
+  const description = get('description');
+  const date = get('date');
+  const category = get('category');
+  if (id && title) {
+    articles.push({ id, title, description, date, category });
   }
 }
 
