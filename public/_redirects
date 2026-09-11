@@ -9,6 +9,9 @@
 /blog/shujia-shuxue-wandao-chaoche-jihua-2026/ /blog/shujia-shuxue-xuexi-jihua/ 301
 /blog/xiaoxue-shuxue-yingyongti-jieti-fangfa-2026/ /blog/xiaoxue-shuxue-yingyongti-5bu-jietifa/ 301
 /blog/xiaoxuesheng-shujia-xuexi-jihua-2026/ /blog/shujia-shuxue-xuexi-jihua/ 301
+# P3-1 重复内容合并：与 /blog/yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi/ 内容 88.7% 重复
+/blog/yinianji-shuxue-qimeng-lujing/ /blog/yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi/ 301
+/blog/yinianji-shuxue-qimeng-lujing /blog/yi-nian-ji-shu-xue-qimeng-cong-shu-shu-dao-20-yi/ 301
 # 博客配图原图 301 (png/jpg -> webp)
 /images/blog/baqirenjiaoyu-de-shanghai.png /images/blog/baqirenjiaoyu-de-shanghai.webp 301
 /images/blog/baqirenjiaoyu-de-shanghai.jpg /images/blog/baqirenjiaoyu-de-shanghai.webp 301
@@ -382,3 +385,7 @@
 /en/parent-guide/* /en/ 301
 /en/resources/* /en/ 301
 /en/textbook/* /en/ 301
+
+# P3-2 EN 重复文合并（与 /en/blog/chinese-tones-not-hard-pitch-contour-method/ 主题重叠，已并入）
+/en/blog/mastering-chinese-tones-scientific-approach/ /en/blog/chinese-tones-not-hard-pitch-contour-method/ 301
+/en/blog/mastering-chinese-tones-scientific-approach /en/blog/chinese-tones-not-hard-pitch-contour-method/ 301

@@ -82,7 +82,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const description = `SkillXM ${decodedCategory} category: ${count} original articles covering ${config.topics}. Practical guides and evidence-based strategies for ${config.ability}.`;
 
   return {
-    title: `${decodedCategory} - Chinese Learning Guides | SkillXM`,
+    // 品牌后缀由 app/en/layout.tsx 的 title.template 追加（P3-4：此处不再手写）
+    title: `${decodedCategory} - Chinese Learning Guides`,
     description,
     keywords: config.keywords,
     alternates: {

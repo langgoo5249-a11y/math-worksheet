@@ -58,9 +58,11 @@ export const metadata: Metadata = {
     description: "免费在线教育工具，支持小学1-6年级数学练习卷、字帖、拼音卡片、数独、作文模板等，PDF导出即印即用，无需注册完全免费。",
     images: ["https://www.skillxm.cn/og-image.jpg"],
   },
-  alternates: {
-    canonical: "https://www.skillxm.cn/",
-  },
+  // ⚠️ P3-4：这里**不能**放全局 alternates.canonical。
+  //    根 layout 的 canonical 会被所有未自行声明 canonical 的子页面继承，
+  //    使它们静默指向首页（/editorial-policy/ 就因此被 Google 当成首页副本而不索引）。
+  //    首页的 canonical 已在 app/page.tsx 自行声明；其余页面各自声明。
+  //    宁可某页没有 canonical（Google 自动自指），也不要错误地指向首页。
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "16x16 32x32 48x48 256x256", type: "image/x-icon" },

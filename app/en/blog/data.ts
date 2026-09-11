@@ -50,7 +50,7 @@ export const defaultAuthor = {
 export const enArticles: EnArticle[] = [
   {
     id: 'learn-800-chinese-characters-3-months-case-study',
-    title: 'How I Learned 800 Chinese Characters in 3 Months: A Real Case Study with Daily Practice Plan',
+    title: 'How I Learned 800 Chinese Characters in 3 Months',
     description:
       'A first-person case study on learning 800 Chinese characters in 90 days using radical-based learning, spaced repetition, and mnemonic stories. Includes the exact daily practice plan, tools used, and research that backs the methods.',
     summary:
@@ -200,9 +200,8 @@ You do not need a photographic memory. You just need a system.`,
   },
   {
     id: 'chinese-tones-not-hard-pitch-contour-method',
-    title: 'Why Chinese Tones Aren\'t Actually Hard: The Pitch Contour Method That Changed Everything',
-    description:
-      'A contrarian take on Chinese tones: they are not hard, they are unfamiliar. Learn the pitch contour visualization method that rewires your brain to treat pitch as language, with a 30-day training plan, real research on tone acquisition, and the science of why tones are actually the easiest part of Chinese.',
+    title: 'Chinese Tones Made Easy: Pitch Contour Method',
+    description: 'Chinese tones are not hard, just unfamiliar. Learn the pitch contour method, a 30-day training plan, and the mistakes speakers of English, Japanese and Korean make - with free tone practice tools.',
     summary:
       'Everyone says Chinese tones are the hardest part of the language. I disagree. After a dinner party disaster where I accidentally told a host I wanted to kiss her instead of ask her a question, I discovered a method that made tones click: visualizing pitch contours before vocalizing them. This article explains the neuroscience of tone perception, the pitch contour method, and a 30-day plan backed by research from Wiener et al. (2019), Wang et al. (2018), and Chun (2020).',
     date: '2026-07-22',
@@ -212,18 +211,7 @@ You do not need a photographic memory. You just need a system.`,
     exclusiveContentTypes: ['First-hand Experience', 'Learning Methodology', 'Phonetics Research Analysis'],
     category: 'Pronunciation',
     readTime: '14 min',
-    keywords: [
-      'Chinese tones practice',
-      'how to learn Chinese tones easily',
-      'Mandarin tone training method',
-      'pitch contour Chinese tones',
-      'Chinese pronunciation tips',
-      'tone sandhi explained',
-      'learn Mandarin tones fast',
-      'Chinese tone perception training',
-      'visual feedback tone training',
-      'why Chinese tones are not hard',
-    ],
+    keywords: ['Chinese tones', 'Mandarin tones', 'how to learn Chinese tones easily', 'pitch contour Chinese tones', 'tone pairs', 'tone sandhi explained', 'Chinese pronunciation tips', 'Mandarin tone training method'],
     author: defaultAuthor,
     definitions: [
       { term: 'Pitch Contour', definition: 'The pattern of pitch change over time within a syllable, typically measured on a scale from 1 (lowest) to 5 (highest). In Mandarin Chinese, each of the four tones has a distinct pitch contour: first tone (55, high-level), second tone (35, rising), third tone (214, dipping), and fourth tone (51, falling). The neutral tone has no fixed contour and is pronounced short and light.' },
@@ -350,6 +338,20 @@ Watch a Chinese TV show or YouTube video with subtitles. Pick a 30-second segmen
 
 This final phase is where the training transfers to real-world listening. You will notice that native speakers do not always produce textbook-perfect tones — the third tone in particular is often reduced to a "half third tone" (just the low dip, without the rise) in fast speech. Recognizing these real-world variations is the difference between classroom Chinese and the language as it is actually spoken.
 
+## Common Tone Mistakes by Native Language
+
+### English Speakers
+- **2nd-3rd confusion:** The most common error. The 2nd tone rises, the 3rd dips — but the 3rd tone's dip is subtle in fast speech.
+- **4th tone not falling enough:** English speakers tend to soften the 4th tone, making it sound like a 1st tone. The 4th tone must fall sharply and decisively.
+- **Neutral tone too heavy:** The neutral tone should be short and light, but English speakers often give it too much weight.
+
+### Japanese Speakers
+- **2nd tone too flat:** Japanese has a pitch accent system, not full tones, so the rising 2nd tone is often flattened.
+- **3rd tone confusion:** The dipping contour does not exist in Japanese phonology.
+
+### Korean Speakers
+- **1st and 4th tone confusion:** Korean has no phonemic tone, so the high-level and falling tones are often confused.
+
 ## The Tone Sandhi Trap
 
 No discussion of tones is complete without mentioning tone sandhi — the rules that change tones when certain syllables appear together. The most important rule:
@@ -367,6 +369,15 @@ Other sandhi rules:
 
 The <a href="/en/tools/pinyin-chart/">Pinyin Chart</a> includes detailed pronunciation rules covering all tone sandhi patterns. The <a href="/en/tools/reading-reader/">Reading Reader</a> lets you see tones in flowing text where sandhi naturally occurs, so you can internalize the patterns through exposure rather than memorization.
 
+## Tools for Tone Practice
+
+- <a href="/en/tools/tone-trainer/">Tone Trainer</a> — interactive quiz with pitch diagram and audio
+- <a href="/en/tools/pinyin-chart/">Pinyin Chart</a> — click any syllable to hear all 4 tones
+- <a href="/en/tools/pinyin-converter/">Pinyin Converter</a> — convert Chinese text to tone-marked pinyin
+- <a href="/en/tools/reading-reader/">Reading Reader</a> — graded reading with pinyin annotation
+
+All free, with no registration. Start with 10 minutes daily on the Tone Trainer, and you will have the tonal foundation for a lifetime of clear Chinese pronunciation.
+
 ## Why I Now Believe Tones Are the Easy Part
 
 Here is the thing about tones that I wish someone had told me on day one: **once you get them, you have them.** The tonal system is closed. There are no new tones to learn at HSK 4 or HSK 6 or ever. The tones you learn in week one are the same tones you will use for the rest of your Chinese-speaking life.
@@ -379,7 +390,7 @@ I can now say with confidence: 我想问你 (wǒ xiǎng wèn nǐ) — I want to 
   },
   {
     id: 'how-to-start-learning-chinese-from-zero',
-    title: 'How to Start Learning Chinese from Zero: A Complete Beginner\'s Guide (2026)',
+    title: 'How to Start Learning Chinese from Zero (2026)',
     description:
       'A step-by-step guide for absolute beginners to start learning Mandarin Chinese. Covers pinyin, tones, first characters, study schedule, and the best free tools. Updated for 2026.',
     summary:
@@ -494,156 +505,10 @@ Starting Chinese is a journey, not a sprint. The first 4-6 weeks are the hardest
 
 All the tools mentioned in this guide are free on SkillXM, with no registration required. Start with the <a href="/en/tools/pinyin-chart/">Pinyin Chart</a> today, spend 10 minutes clicking and listening, and you have already taken the first step.`,
   },
-  {
-    id: 'mastering-chinese-tones-scientific-approach',
-    title: 'Mastering Chinese Tones: A Scientific Approach to Perfect Pronunciation',
-    description:
-      'Learn the four Mandarin tones with research-backed techniques. Covers pitch contour science, tone pairs, common mistakes by native language, and a 3-week training plan with real data.',
-    summary:
-      'Tones are the most common source of frustration for Chinese learners — and the most common reason native speakers cannot understand you, even with perfect grammar. This article explains the science of pitch perception, why certain tones are hard for English speakers, and provides a research-backed 3-week training plan to achieve 90%+ tone accuracy.',
-    date: '2026-07-12',
-    dateModified: '2026-07-17',
-    dateReviewed: '2026-07-18',
-    hasExclusiveContent: true,
-    exclusiveContentTypes: ['Original Research', 'Language Learning Methodology', 'Phonetics Research Analysis'],
-    category: 'Pronunciation',
-    readTime: '13 min',
-    keywords: [
-      'Chinese tones',
-      'Mandarin tones',
-      'tone pairs',
-      'Chinese pronunciation',
-      'pinyin tones',
-      'tone sandhi',
-      'learn Chinese tones',
-    ],
-    author: defaultAuthor,
-    definitions: [
-      { term: 'Tone Sandhi', definition: 'The phenomenon where the tone of a Chinese syllable changes depending on the tone of the following syllable. The most common example is the 3-3 rule: two consecutive third tones are pronounced as second tone + third tone (e.g., nǐ hǎo → ní hǎo).' },
-      { term: 'Pitch Contour', definition: 'The pattern of pitch change over time within a syllable. In Mandarin, each tone has a distinct pitch contour: high-level (1st), rising (2nd), dipping (3rd), and falling (4th).' },
-      { term: 'Minimal Pair', definition: 'Two words that differ only in one sound element. In Mandarin, tone minimal pairs are syllables that differ only in tone (e.g., mā vs. mà), making them particularly challenging for learners from non-tonal language backgrounds.' },
-    ],
-    stats: [
-      { value: '71%', source: 'Journal of Phonetics (2018) — percentage of tone errors that are 2nd-3rd tone confusions among English-speaking learners' },
-      { value: '~90%', source: 'Multiple studies — tone accuracy achievable after 3 weeks of focused minimal-pair training' },
-      { value: '40%', source: 'Applied Linguistics (2020) — improvement in pronunciation accuracy when learners use visual pitch feedback' },
-      { value: '5', source: 'Number of distinct pitch patterns in Mandarin (4 tones + neutral)' },
-    ],
-    citations: [
-      'Wang, Y. et al. "Tone Perception and Production by L2 Learners." Journal of Phonetics (2018). https://www.sciencedirect.com/journal/journal-of-phonetics',
-      'Chun, D. "Signal Analysis Software for Teaching Pronunciation." Applied Linguistics (2020). https://academic.oup.com/applij',
-      'Chinese Pronunciation Wiki. "Tone Pair Drills." https://resources.allsetlearning.com/chinese/pronunciation/',
-      'Ladefoged, P. & Johnson, K. "A Course in Phonetics." Cengage Learning (2014).',
-    ],
-    content: `## Why Tones Matter More Than You Think
-
-Imagine saying "I'd like to ask a question" in perfect Chinese grammar, but the word "ask" (wèn, 4th tone) comes out as "kiss" (wěn, 3rd tone). You just asked to kiss someone instead of asking a question. This is not a hypothetical — it is the daily reality for learners who underestimate tones.
-
-Mandarin has **four lexical tones plus a neutral tone**, and they are phonemic — meaning changing the tone changes the word, just as changing a consonant changes "cat" to "bat" in English. A 2018 study in the *Journal of Phonetics* found that **71% of tone errors** made by English-speaking learners were confusions between the 2nd and 3rd tones, which are perceptually the most similar pair.
-
-The good news: the tonal system is small (only 5 patterns) and completely learnable. Research shows that focused minimal-pair training can achieve **~90% tone accuracy in 3 weeks**.
-
-## The Science of Tone Perception
-
-### Why English Speakers Struggle
-
-English uses pitch for intonation (emotion, questions), not for word meaning. When an English speaker says "apple" with a rising or falling pitch, it is still an apple. This means the English-speaking brain has never needed to treat pitch as a distinctive feature of words.
-
-Neuroscience research using fMRI scans shows that native Mandarin speakers process tones in the **left hemisphere** (the language center), while untrained English speakers process them in the **right hemisphere** (the music/acoustic center). This is a crucial insight: tone training is literally about rewiring the brain to treat pitch as language, not music.
-
-### The Pitch Contour Diagram
-
-Each tone has a distinct pitch contour measured in Hertz (Hz). Here is what they look like on a 5-point scale (1 = lowest, 5 = highest):
-
-| Tone | Name | Contour | Pitch (5-scale) | Example |
-|------|------|---------|-----------------|---------|
-| 1st | High-level | ― | 55 | mā (妈 - mother) |
-| 2nd | Rising | ╱ | 35 | má (麻 - hemp) |
-| 3rd | Dipping | ∨ | 214 | mǎ (马 - horse) |
-| 4th | Falling | ╲ | 51 | mà (骂 - scold) |
-| Neutral | Light | · | varies | ma (吗 - question particle) |
-
-The 3rd tone is the most complex. In isolation, it dips from 2 to 1 and rises to 4 — a "214" contour. But in connected speech, it is almost always pronounced as a **half third tone** (just the low falling part, "21"), with the full dip only appearing at the end of a phrase or before a pause.
-
-## The 3-Week Tone Training Plan
-
-### Week 1: Single-Tone Discrimination
-
-**Goal:** Hear the difference between any two tones in isolation.
-
-1. Use the <a href="/en/tools/tone-trainer/">Tone Trainer</a> daily. Start with the "Pick the tone" mode — listen to a syllable and identify which tone you heard.
-2. Focus on the hardest pair first: **2nd vs. 3rd tone**. The 2nd tone rises from 3 to 5; the 3rd tone dips from 2 to 1 to 4. If you can reliably distinguish these two, the other pairs are easier.
-3. Use the <a href="/en/tools/pinyin-chart/">Pinyin Chart</a> to hear the same syllable in all 4 tones. Click "ba" in tones 1 through 4: bā, bá, bǎ, bà. Let your ear absorb the difference.
-
-> **Training tip:** Close your eyes while listening. Visual cortex activation can interfere with auditory processing. Studies show that blindfolded tone training improves accuracy by 15-20%.
-
-### Week 2: Tone Pairs
-
-**Goal:** Produce tone pairs smoothly, with correct transitions.
-
-Real speech is a stream of tones, not isolated syllables. The transition between tones is where learners stumble. Practice these common pairs:
-
-- **1-1** (gāo gāo): Two flat tones — keep both steady
-- **2-4** (zài jiàn): Rise then fall — the most common pair in daily speech
-- **3-3** (nǐ hǎo): **Tone sandhi applies!** Pronounce as 2-3 (ní hǎo)
-- **4-2** (kuài lái): Fall then rise — emphasizes urgency
-- **2-2** (xué xí): Two rising tones — avoid blending them into one
-
-The <a href="/en/tools/tone-trainer/">Tone Trainer</a> includes tone pair drills. Speak each pair aloud, record yourself with your phone, and compare with the model audio.
-
-### Week 3: Sentence-Level Practice
-
-**Goal:** Maintain correct tones across a full sentence.
-
-1. Take a short sentence like "我今天去学校" (Wǒ jīn tiān qù xué xiào — I go to school today).
-2. Use the <a href="/en/tools/pinyin-converter/">Pinyin Converter</a> to get the tone marks: Wǒ jīn tiān qù xué xiào.
-3. Mark the tones above each syllable: 3-1-1-4-2-4.
-4. Practice the sentence slowly, then at natural speed. The rhythm of tones should feel like a melody.
-
-> **Real data point:** Learners who practiced sentence-level tone drills for 15 minutes daily for 3 weeks showed a 40% improvement in pronunciation accuracy compared to a control group who only practiced isolated tones (Chun, 2020).
-
-## Common Tone Mistakes by Native Language
-
-### English Speakers
-- **2nd-3rd confusion:** The most common error. The 2nd tone rises, the 3rd dips — but the 3rd tone's dip is subtle in fast speech.
-- **4th tone not falling enough:** English speakers tend to soften the 4th tone, making it sound like a 1st tone. The 4th tone must fall sharply and decisively.
-- **Neutral tone too heavy:** The neutral tone should be short and light, but English speakers often give it too much weight.
-
-### Japanese Speakers
-- **2nd tone too flat:** Japanese has a pitch accent system, not full tones, so the rising 2nd tone is often flattened.
-- **3rd tone confusion:** The dipping contour does not exist in Japanese phonology.
-
-### Korean Speakers
-- **1st and 4th tone confusion:** Korean has no phonemic tone, so the high-level and falling tones are often confused.
-
-## The Role of Tone Sandhi
-
-==Tone Sandhi== is the secret rule that makes natural Chinese sound different from textbook pronunciations. The most important rule:
-
-**The 3-3 Rule:** When two third tones appear together, the first becomes a second tone.
-
-- nǐ (3rd) + hǎo (3rd) → **ní hǎo** (2nd + 3rd)
-- hěn (3rd) + hǎo (3rd) → **hén hǎo** (2nd + 3rd)
-- suǒ (3rd) + yǐ (3rd) → **suó yǐ** (2nd + 3rd)
-
-Other sandhi rules include:
-- **不 (bù) sandhi:** bù becomes bú before a 4th tone (bù shì → bú shì)
-- **一 (yī) sandhi:** yī is 1st tone in isolation, but becomes 2nd tone before a 4th tone (yī gè → yí gè) and 4th tone before 1st, 2nd, or 3rd tones
-
-The <a href="/en/tools/pinyin-chart/">Pinyin Chart</a> includes detailed pronunciation rules including all tone sandhi patterns. The <a href="/en/tools/reading-reader/">Reading Reader</a> lets you see tones in flowing text, where sandhi naturally occurs.
-
-## Tools for Tone Practice
-
-- <a href="/en/tools/tone-trainer/">Tone Trainer</a> — interactive quiz with pitch diagram and audio
-- <a href="/en/tools/pinyin-chart/">Pinyin Chart</a> — click any syllable to hear all 4 tones
-- <a href="/en/tools/pinyin-converter/">Pinyin Converter</a> — convert Chinese text to tone-marked pinyin
-- <a href="/en/tools/reading-reader/">Reading Reader</a> — graded reading with pinyin annotation
-
-All free, with no registration. Start with 10 minutes daily on the Tone Trainer, and you will have the tonal foundation for a lifetime of clear Chinese pronunciation.`,
-  },
+  
   {
     id: 'hsk-guide-roadmap-to-chinese-fluency',
-    title: 'The Complete HSK Guide: Your Roadmap to Chinese Fluency (2026 Edition)',
+    title: 'Complete HSK Guide: Roadmap to Chinese Fluency',
     description:
       'Everything you need to know about the HSK Chinese proficiency test. Covers the new 9-level system, vocabulary requirements by level, exam format, study strategies, and how to use free tools to prepare.',
     summary:
@@ -786,7 +651,7 @@ No registration, no fees. Start with the HSK Flashcards today and pick your targ
   },
   {
     id: 'chinese-characters-demystifying-writing-system',
-    title: 'Chinese Characters Demystified: Structure, Stroke Order, and Radicals',
+    title: 'Chinese Characters Demystified: How They Work',
     description:
       'A practical guide to understanding Chinese characters. Learn the 8 stroke order rules, the 214 radicals, character structure types, and evidence-based memorization techniques with real frequency data.',
     summary:
@@ -978,7 +843,7 @@ All tools are free on SkillXM. Start with the <a href="/en/tools/radical-explore
   },
   {
     id: 'best-free-resources-learn-chinese-online',
-    title: 'The Best Free Resources to Learn Chinese Online in 2026',
+    title: 'Best Free Resources to Learn Chinese Online',
     description:
       'A curated list of the best free online resources for learning Mandarin Chinese, including apps, websites, YouTube channels, podcasts, and dictionaries. Updated for 2026 with data on effectiveness.',
     summary:

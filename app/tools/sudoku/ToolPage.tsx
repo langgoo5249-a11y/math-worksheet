@@ -183,12 +183,25 @@ export default function SudokuPage({ locale }: { locale?: Locale } = {}) {
   };
 
   // SSR guard
+  // ⚠️ 静态导出（output: export）时 puzzle 尚未生成，这里会命中。
+  //    原实现直接返回一个极简 div，导致预渲染 HTML **没有 <h1>**，
+  //    爬虫抓到的 /tools/sudoku/ 缺主标题（P3-4 修复）。
+  //    现改为渲染完整的导航 + H1 头图，只把棋盘区域换成「加载中」。
   if (puzzle.length === 0) {
     return (
-      <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 shadow-lg">🧮</div>
-          <p className="text-gray-500">加载中...</p>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+        <ToolNavBar currentPath="/tools/sudoku" title="数独游戏" locale={locale} />
+        <div className="pt-20 pb-12 px-4">
+          <div className="max-w-xl mx-auto">
+            <div className="text-center mb-6">
+              <h1 className="text-3xl font-bold text-gray-800 mb-1.5">数独游戏在线玩</h1>
+              <p className="text-gray-500 text-sm">入门/进阶/挑战三档难度 · 在线玩+打印</p>
+            </div>
+            <div className="text-center py-10">
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4 shadow-lg">🧮</div>
+              <p className="text-gray-500">加载中...</p>
+            </div>
+          </div>
         </div>
       </div>
     );

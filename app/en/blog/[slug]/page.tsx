@@ -19,7 +19,9 @@ export async function generateMetadata({
   const url = `https://www.skillxm.cn/en/blog/${slug}/`;
 
   return {
-    title: `${article.title} | SkillXM`,
+    // 品牌后缀由 app/en/layout.tsx 的 title.template ('%s | SkillXM') 统一追加，
+    // 此处再拼一次会产生 "xxx | SkillXM | SkillXM"（P3-4 修复）
+    title: article.title,
     description: article.description,
     keywords: article.keywords?.join(', '),
     alternates: {

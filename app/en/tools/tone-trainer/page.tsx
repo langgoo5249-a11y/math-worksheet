@@ -105,7 +105,7 @@ const tips = [
 ];
 
 const relatedArticleIds = [
-  'mastering-chinese-tones-scientific-approach',
+  'chinese-tones-not-hard-pitch-contour-method',
   'how-to-start-learning-chinese-from-zero',
 ];
 const relatedArticles = enArticles.filter((a) => relatedArticleIds.includes(a.id)).slice(0, 3);

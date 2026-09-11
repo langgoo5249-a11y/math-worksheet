@@ -4,7 +4,8 @@ import { enArticles, enCategories } from './data';
 import EnBlogPageClient from './EnBlogPageClient';
 
 export const metadata: Metadata = {
-  title: 'Chinese Learning Blog - Guides, Tips & Strategies | SkillXM',
+  // 品牌后缀由 app/en/layout.tsx 的 title.template 追加（P3-4：此处不再手写）
+  title: 'Chinese Learning Blog - Guides, Tips & Strategies',
   description:
     'Free Chinese learning guides, tips, and strategies for Mandarin learners. Articles on pinyin, tones, HSK, characters, pronunciation, and the best free resources. Updated for 2026.',
   keywords:

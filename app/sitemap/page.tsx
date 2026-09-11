@@ -16,17 +16,17 @@ import {
 const PAGE_URL = `${SITE_INFO.BASE_URL}/sitemap/`;
 
 export const metadata: Metadata = {
-  title: '网站地图 - 练学宝全部页面导航 | 练学宝',
+  title: '网站地图 - 全部页面导航 | 练学宝',
   description: '练学宝全站页面导航地图，包含10个学习工具、6个年级专区、4个教材版本、10个知识点专题、6个家长指导专题、20+练习卷资源，方便用户和搜索引擎发现所有内容。',
   keywords: ['网站地图', '站点导航', '练学宝', 'sitemap', '全站导航'],
   alternates: { canonical: PAGE_URL },
   openGraph: generateOpenGraph({
-    title: '网站地图 - 练学宝全部页面导航 | 练学宝',
+    title: '网站地图 - 全部页面导航 | 练学宝',
     description: '练学宝全站页面导航地图，方便用户和搜索引擎发现所有内容。',
     url: PAGE_URL,
   }),
   twitter: generateTwitterCard({
-    title: '网站地图 - 练学宝 | 练学宝',
+    title: '网站地图 | 练学宝',
     description: '练学宝全站页面导航地图。',
   }),
 };

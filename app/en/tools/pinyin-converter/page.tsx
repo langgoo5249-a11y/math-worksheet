@@ -59,7 +59,7 @@ const faqs = [
 
 const relatedArticleIds = [
   'how-to-start-learning-chinese-from-zero',
-  'mastering-chinese-tones-scientific-approach',
+  'chinese-tones-not-hard-pitch-contour-method',
   'best-free-resources-learn-chinese-online',
 ];
 const relatedArticles = enArticles.filter((a) => relatedArticleIds.includes(a.id)).slice(0, 3);

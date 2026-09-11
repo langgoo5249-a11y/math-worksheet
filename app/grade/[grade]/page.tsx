@@ -40,31 +40,6 @@ export async function generateMetadata({ params }: { params: Promise<{ grade: st
   };
 }
 
-// 生成学期学习计划
-function generateSemesterPlan(config: ReturnType<typeof getGradeConfig>) {
-  if (!config) return null;
-  const grade = config.grade;
-
-  return {
-    firstSemester: {
-      title: `${config.name}上学期学习重点`,
-      tips: grade <= 2
-        ? ['开学前两周适应课堂节奏，建立每天课后练习的习惯', '期中前完成基础计算能力达标', '期末前一个月开始系统复习']
-        : grade <= 4
-        ? ['开学第一个月复习巩固上学期薄弱知识点', '期中检测薄弱科目，针对性补强', '期末前两周完成全部单元复习']
-        : ['开学即进入状态，制定小升初备考计划', '每月进行一次模拟测试，追踪进步', '期末前系统梳理全学段知识点'],
-    },
-    secondSemester: {
-      title: `${config.name}下学期学习重点`,
-      tips: grade <= 2
-        ? ['寒假保持每天15分钟口算练习，避免开学退步', '下学期开始逐步增加练习量和难度', '暑假做好升年级准备，预习下一级内容']
-        : grade <= 4
-        ? ['寒假完成上学期错题回顾', '下学期重点攻克新知识点（如乘法口诀/分数/面积）', '暑假利用练学宝预习工具提前了解下一级内容']
-        : ['寒假集中复习小升初重点', '下学期全力冲刺，每周至少2次模拟测试', '暑假做好小升初衔接准备'],
-    },
-  };
-}
-
 // 将年级知识点名称映射到知识点专题 slug
 function mapKnowledgePointToSlug(kpName: string): string | null {
   const matched = KNOWLEDGE_POINTS.find((kp) => {
@@ -80,14 +55,27 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
   const config = getGradeConfig(gradeNum);
   if (!config) notFound();
 
-  const relatedBlogs = blogPosts
-    .filter((p) => config.blogCategories.some((c) => p.category === c))
-    .slice(0, 6);
+  // P3-3：相关博客按「年级主题词命中优先 + 按年级轮转」挑选，
+  // 避免相邻年级（如五年级/六年级 blogCategories 相同）列出完全相同的 6 篇，
+  // 那会让两页出现 1300+ 字完全一致的正文块。
+  const pool = blogPosts.filter((p) => config.blogCategories.some((c) => p.category === c));
+  const hints = [config.name, `${gradeNum}年级`];
+  const scored = pool.map((p, i) => {
+    const text = p.title + p.id + p.description;
+    const hit = hints.reduce((n, h) => n + (text.includes(h) ? 1 : 0), 0);
+    // 以年级号为偏移做轮转，保证各年级取到不同的 6 篇，且构建结果稳定
+    const rot = (i + (gradeNum - 1) * 3) % pool.length;
+    return { post: p, hit, rot };
+  });
+  scored.sort((x, y) => (y.hit - x.hit) || (x.rot - y.rot));
+  const relatedBlogs = scored.slice(0, 6).map((x) => x.post);
 
   // 按年级定制的 FAQ（lib/gradeFaqs.ts，每页 6 条，不与其他年级共用）
   // 变更前：6 个年级页共用同一段模板生成的 FAQ，只有数字随年级变化。
   const faqs = getGradeFaqs(gradeNum);
-  const semesterPlan = generateSemesterPlan(config);
+  // P3-3：学期计划与家长指南改为读取 config 中的年级专属字段，
+  // 不再按「1-2 / 3-4 / 5-6」区间生成，消除同区间年级的正文重复。
+  const semesterPlan = config.semesterPlan;
 
   const faqSchema = faqs.length > 0 ? {
     '@type': 'FAQPage' as const,
@@ -160,10 +148,10 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-5 bg-orange-500/10 border border-orange-500/20 rounded-2xl">
               <h3 className="text-lg font-semibold text-orange-300 mb-3 flex items-center gap-2">
-                🍂 {semesterPlan.firstSemester.title}
+                🍂 {config.name}上学期学习重点
               </h3>
               <ul className="space-y-2">
-                {semesterPlan.firstSemester.tips.map((tip, i) => (
+                {semesterPlan.firstSemester.map((tip, i) => (
                   <li key={i} className="text-sm text-slate-300 flex items-start gap-2">
                     <span className="text-orange-400 shrink-0 mt-0.5">{i + 1}.</span>
                     <span>{tip}</span>
@@ -173,10 +161,10 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
             </div>
             <div className="p-5 bg-green-500/10 border border-green-500/20 rounded-2xl">
               <h3 className="text-lg font-semibold text-green-300 mb-3 flex items-center gap-2">
-                🌱 {semesterPlan.secondSemester.title}
+                🌱 {config.name}下学期学习重点
               </h3>
               <ul className="space-y-2">
-                {semesterPlan.secondSemester.tips.map((tip, i) => (
+                {semesterPlan.secondSemester.map((tip, i) => (
                   <li key={i} className="text-sm text-slate-300 flex items-start gap-2">
                     <span className="text-green-400 shrink-0 mt-0.5">{i + 1}.</span>
                     <span>{tip}</span>
@@ -273,89 +261,48 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
         </div>
       </section>
 
-      {/* ========== 家长辅导指南 ========== */}
+      {/* ========== 家长辅导指南（年级专属） ========== */}
       <section className="mb-10">
         <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
           👨‍👩‍👧 {config.name}家长辅导指南
         </h2>
         <div className="p-6 bg-yellow-500/10 border border-yellow-500/20 rounded-2xl">
           <div className="space-y-4">
-            {gradeNum <= 2 && (
-              <>
-                <div className="flex gap-3">
-                  <span className="text-2xl shrink-0">1️⃣</span>
-                  <div>
-                    <h3 className="text-white font-medium mb-1">培养每天固定练习时间</h3>
-                    <p className="text-sm text-slate-300">低年级重在养成习惯。建议每天固定一个时间段（如晚饭后），坚持15-20分钟。使用口算速练和字帖生成器，让练习变得有趣。</p>
-                  </div>
+            {config.parentGuide.map((item, i) => (
+              <div key={i} className="flex gap-3">
+                <span className="text-2xl shrink-0">{['1️⃣', '2️⃣', '3️⃣'][i]}</span>
+                <div>
+                  <h3 className="text-white font-medium mb-1">{item.title}</h3>
+                  <p className="text-sm text-slate-300 leading-relaxed">{item.body}</p>
                 </div>
-                <div className="flex gap-3">
-                  <span className="text-2xl shrink-0">2️⃣</span>
-                  <div>
-                    <h3 className="text-white font-medium mb-1">多鼓励少批评</h3>
-                    <p className="text-sm text-slate-300">一二年级孩子自信心脆弱，多鼓励"做对了"而不是批评"做错了"。使用练学宝的计时模式做游戏化练习，孩子在不知不觉中提升计算速度。</p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-2xl shrink-0">3️⃣</span>
-                  <div>
-                    <h3 className="text-white font-medium mb-1">拼音和识字是重中之重</h3>
-                    <p className="text-sm text-slate-300">拼音熟练度直接影响后期阅读速度。每天用拼音注音工具做5分钟拼读练习，用识字卡片巩固300个常用字。</p>
-                  </div>
-                </div>
-              </>
-            )}
-            {gradeNum >= 3 && gradeNum <= 4 && (
-              <>
-                <div className="flex gap-3">
-                  <span className="text-2xl shrink-0">1️⃣</span>
-                  <div>
-                    <h3 className="text-white font-medium mb-1">关注"三年级滑坡"现象</h3>
-                    <p className="text-sm text-slate-300">三年级数学难度陡增（万以内加减法、多位数乘除法），很多孩子出现成绩下滑。关键在于每天坚持练习，使用单元测试卷定期检测薄弱环节。</p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-2xl shrink-0">2️⃣</span>
-                  <div>
-                    <h3 className="text-white font-medium mb-1">英语学习从兴趣开始</h3>
-                    <p className="text-sm text-slate-300">三年级开始学英语，重点是培养兴趣和语感。每天听读15分钟，使用英语字帖练习单词书写，不必急于求成。</p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-2xl shrink-0">3️⃣</span>
-                  <div>
-                    <h3 className="text-white font-medium mb-1">作文从300字起步</h3>
-                    <p className="text-sm text-slate-300">三年级作文要求从"写话"过渡到"写文"。使用作文模板工具，先搭框架再填充内容，逐步提升写作能力。</p>
-                  </div>
-                </div>
-              </>
-            )}
-            {gradeNum >= 5 && (
-              <>
-                <div className="flex gap-3">
-                  <span className="text-2xl shrink-0">1️⃣</span>
-                  <div>
-                    <h3 className="text-white font-medium mb-1">制定小升初备考计划</h3>
-                    <p className="text-sm text-slate-300">{gradeNum === 5 ? '五年级是小升初准备的起点，现在开始系统梳理知识点，到六年级就不会手忙脚乱。' : '六年级是冲刺阶段，每月至少做2次模拟测试，查漏补缺。'}使用单元测试卷工具定期检测，追踪进步。</p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-2xl shrink-0">2️⃣</span>
-                  <div>
-                    <h3 className="text-white font-medium mb-1">数学攻克应用题难关</h3>
-                    <p className="text-sm text-slate-300">{gradeNum === 5 ? '五年级应用题从两步变为三步，对阅读理解能力要求高。' : '六年级的百分数应用题、比例应用题是小升初必考。'}每日用数学练习卷生成器做5道应用题专项训练。</p>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <span className="text-2xl shrink-0">3️⃣</span>
-                  <div>
-                    <h3 className="text-white font-medium mb-1">英语打好小升初基础</h3>
-                    <p className="text-sm text-slate-300">小升初英语要求掌握{gradeNum === 5 ? '1500+' : '1800+'}个单词和所有基本时态。使用英语字帖每天练习10个单词，配合口算速练工具保持数学手感。</p>
-                  </div>
-                </div>
-              </>
-            )}
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* ========== 本年级常见问题（现象 / 原因 / 对策，年级专属） ========== */}
+      <section className="mb-10">
+        <h2 className="text-xl sm:text-2xl font-bold text-white mb-6">
+          🔍 {config.name}最常见的 3 个问题及对策
+        </h2>
+        <div className="space-y-4">
+          {config.commonProblems.map((item, i) => (
+            <div key={i} className="p-5 bg-slate-800/50 border border-white/10 rounded-2xl">
+              <h3 className="text-white font-semibold mb-3 flex items-start gap-2">
+                <span className="text-rose-400 shrink-0">现象 {i + 1}｜</span>
+                <span>{item.problem}</span>
+              </h3>
+              <p className="text-sm text-slate-300 leading-relaxed mb-2">
+                <span className="text-amber-300 font-medium">为什么：</span>
+                {item.why}
+              </p>
+              <p className="text-sm text-slate-300 leading-relaxed">
+                <span className="text-emerald-300 font-medium">怎么做：</span>
+                {item.fix}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -444,7 +391,7 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
           ))}
         </div>
         <p className="mt-3 text-center text-xs text-slate-400">
-          练学宝为小学1-6年级提供全套免费学习资源，包括数学练习卷、口算速练、字帖生成、拼音学习、英语字帖等工具。
+          {config.name}共 {config.knowledgePoints.length} 个核心知识点、{config.subjects.length} 个学科，上方工具全部可用。练学宝为小学 1-6 年级提供免费学习资源，无需注册、支持 PDF 打印。
         </p>
       </section>
     </SectionLayout>

@@ -9,7 +9,7 @@ import { generateItemListSchema, generateOrganizationSchema } from '@/lib/seoUti
 // 4 个版本聚合页），改为链接版本页并用锚点定位年级。
 
 export const metadata: Metadata = {
-  title: '小学教材同步练习专区 - 人教版/北师大版/苏教版/部编版 1-6年级全解 | 练学宝',
+  title: '小学教材同步练习专区 - 人教版/北师大版/苏教版/部编版全解 | 练学宝',
   description: '小学教材同步练习专区，覆盖人教版（PEP）、北师大版、苏教版、部编版（统编版）1-6年级数学语文英语，每个版本提供逐年级知识点、单元明细、常见错因与配套免费练习卷，PDF 免费下载打印。',
   keywords: ['小学教材同步练习', '人教版', '北师大版', '苏教版', '部编版', 'PEP', '小学数学下册', '小学语文下册', '教材同步', '教材版本对比'],
   alternates: {

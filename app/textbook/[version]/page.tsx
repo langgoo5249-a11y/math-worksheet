@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ version: 
   const { textbook: tb, profile } = content;
 
   const pageUrl = `${SITE_INFO.BASE_URL}/textbook/${tb.id}/`;
-  const title = `${tb.name}小学1-6年级同步练习全指南_${tb.fullName}_免费下载打印 | 练学宝`;
+  const title = `${tb.name}小学1-6年级同步练习全指南_免费下载打印 | 练学宝`;
   const description = `${tb.fullName}1-6年级完整学习地图：${profile.regions.slice(0, 60)}。逐年级拆解核心知识点、单元明细与常见错因，配套练习卷、单元测试卷、口算速练等免费工具，PDF 一键打印，与课堂进度同步。`;
 
   return {
