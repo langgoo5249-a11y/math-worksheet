@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SiteLayout from '../_components/SiteLayout';
+import JsonLd from '@/app/_components/JsonLd';
 
 export const metadata: Metadata = {
   title: '服务条款 - 练学宝',
@@ -22,8 +23,37 @@ export const metadata: Metadata = {
   },
 };
 
+const termsPageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.skillxm.cn/terms/#collectionpage',
+      name: '服务条款',
+      description: '练学宝服务条款：使用本站免费学习工具前需知的权利义务与免责说明',
+      url: 'https://www.skillxm.cn/terms/',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://www.skillxm.cn/#website' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.skillxm.cn/#organization',
+        name: '练学宝',
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: '首页', item: 'https://www.skillxm.cn/' },
+        { '@type': 'ListItem', position: 2, name: '服务条款', item: 'https://www.skillxm.cn/terms/' },
+      ],
+    },
+  ],
+};
+
 export default function TermsPage() {
   return (
+      <>
+        <JsonLd data={termsPageSchema} />
     <SiteLayout>
       <div className="max-w-3xl mx-auto px-4 py-8 sm:py-12">
         {/* 页面标题 */}
@@ -175,5 +205,6 @@ export default function TermsPage() {
       </div>
 
       </SiteLayout>
+      </>
   );
 }

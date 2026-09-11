@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import SiteLayout from '../_components/SiteLayout';
+import JsonLd from '@/app/_components/JsonLd';
 
 export const metadata: Metadata = {
   title: '隐私政策 - 练学宝',
@@ -22,8 +23,37 @@ export const metadata: Metadata = {
   },
 };
 
+const privacyPageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.skillxm.cn/privacy/#collectionpage',
+      name: '隐私政策',
+      description: '练学宝隐私政策：说明我们收集哪些信息、如何使用 Cookie 与 Google AdSense 广告，以及您如何管理个性化广告偏好',
+      url: 'https://www.skillxm.cn/privacy/',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://www.skillxm.cn/#website' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.skillxm.cn/#organization',
+        name: '练学宝',
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: '首页', item: 'https://www.skillxm.cn/' },
+        { '@type': 'ListItem', position: 2, name: '隐私政策', item: 'https://www.skillxm.cn/privacy/' },
+      ],
+    },
+  ],
+};
+
 export default function PrivacyPage() {
   return (
+      <>
+        <JsonLd data={privacyPageSchema} />
     <SiteLayout>
       <div className="max-w-3xl mx-auto px-4 py-8 sm:py-12">
         {/* 页面标题 */}
@@ -273,5 +303,6 @@ export default function PrivacyPage() {
       </div>
 
       </SiteLayout>
+      </>
   );
 }

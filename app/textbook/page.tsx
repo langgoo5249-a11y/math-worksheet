@@ -4,6 +4,7 @@ import SectionLayout from '@/app/_components/SectionLayout';
 import { TEXTBOOKS } from '@/lib/textbookConfig';
 import { VERSION_PROFILES } from '@/lib/textbookContent';
 import { generateItemListSchema, generateOrganizationSchema } from '@/lib/seoUtils';
+import JsonLd from '@/app/_components/JsonLd';
 
 // 说明：2026-09 起，教材专区不再逐个年级链接（原来 24 个年级页已合并为
 // 4 个版本聚合页），改为链接版本页并用锚点定位年级。
@@ -31,8 +32,30 @@ export const metadata: Metadata = {
 
 const GRADE_LABEL = ['', '一年级', '二年级', '三年级', '四年级', '五年级', '六年级'];
 
+const textbookIndexSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.skillxm.cn/textbook/#collectionpage',
+      name: '教材版本',
+      description: '人教版、北师大版、苏教版等小学数学教材版本对比与目录索引',
+      url: 'https://www.skillxm.cn/textbook/',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://www.skillxm.cn/#website' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.skillxm.cn/#organization',
+        name: '练学宝',
+      },
+    },
+    ],
+};
+
 export default function TextbookIndex() {
   return (
+    <>
+      <JsonLd data={textbookIndexSchema} />
     <SectionLayout
       breadcrumb={[{ label: '首页', href: '/' }, { label: '教材同步专区' }]}
       icon="📚"
@@ -168,5 +191,6 @@ export default function TextbookIndex() {
         </div>
       </section>
     </SectionLayout>
+    </>
   );
 }

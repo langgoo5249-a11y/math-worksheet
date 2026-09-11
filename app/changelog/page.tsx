@@ -6,6 +6,7 @@ import {
   generateTwitterCard,
   SITE_INFO,
 } from '@/lib/seoUtils';
+import JsonLd from '@/app/_components/JsonLd';
 
 const PAGE_URL = `${SITE_INFO.BASE_URL}/changelog/`;
 
@@ -77,8 +78,30 @@ const faqSchema = {
   })),
 };
 
+const changelogPageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.skillxm.cn/changelog/#collectionpage',
+      name: '更新日志',
+      description: '练学宝功能更新与优化记录，含新增工具、内容更新与体验改进',
+      url: 'https://www.skillxm.cn/changelog/',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://www.skillxm.cn/#website' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.skillxm.cn/#organization',
+        name: '练学宝',
+      },
+    },
+    ],
+};
+
 export default function ChangelogPage() {
   return (
+      <>
+        <JsonLd data={changelogPageSchema} />
     <SectionLayout
       path="/changelog/"
       breadcrumb={[{ label: '首页', href: '/' }, { label: '更新日志' }]}
@@ -191,5 +214,6 @@ export default function ChangelogPage() {
         </div>
       </section>
     </SectionLayout>
+      </>
   );
 }

@@ -8,6 +8,7 @@ import {
   generateTwitterCard,
   SITE_INFO,
 } from '@/lib/seoUtils';
+import JsonLd from '@/app/_components/JsonLd';
 
 const PAGE_URL = `${SITE_INFO.BASE_URL}/daily/`;
 
@@ -25,6 +26,26 @@ export const metadata: Metadata = {
     title: '每日一练 - 小学数学口算每日打卡 | 练学宝',
     description: '每天为孩子生成15分钟数学口算练习，按年级智能出题。',
   }),
+};
+
+const dailyPageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.skillxm.cn/daily/#collectionpage',
+      name: '每日一练',
+      description: '小学每日练习入口，按年级与学科随机生成口算、字词与知识点练习',
+      url: 'https://www.skillxm.cn/daily/',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://www.skillxm.cn/#website' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.skillxm.cn/#organization',
+        name: '练学宝',
+      },
+    },
+    ],
 };
 
 export default function DailyIndex({ searchParams }: { searchParams: Promise<{ grade?: string }> }) {
@@ -69,6 +90,8 @@ async function DailyIndexContent({ searchParams }: { searchParams: Promise<{ gra
   };
 
   return (
+      <>
+        <JsonLd data={dailyPageSchema} />
     <SectionLayout
       path="/daily/"
       breadcrumb={[{ label: '首页', href: '/' }, { label: '每日一练' }]}
@@ -202,5 +225,6 @@ async function DailyIndexContent({ searchParams }: { searchParams: Promise<{ gra
         </div>
       </section>
     </SectionLayout>
+      </>
   );
 }

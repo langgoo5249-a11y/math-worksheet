@@ -12,6 +12,7 @@ import {
   generateTwitterCard,
   SITE_INFO,
 } from '@/lib/seoUtils';
+import JsonLd from '@/app/_components/JsonLd';
 
 const PAGE_URL = `${SITE_INFO.BASE_URL}/sitemap/`;
 
@@ -29,6 +30,26 @@ export const metadata: Metadata = {
     title: '网站地图 | 练学宝',
     description: '练学宝全站页面导航地图。',
   }),
+};
+
+const sitemapPageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.skillxm.cn/sitemap/#collectionpage',
+      name: '网站地图',
+      description: '练学宝全站页面导航索引，按栏目分类列出所有工具、文章与知识点',
+      url: 'https://www.skillxm.cn/sitemap/',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://www.skillxm.cn/#website' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.skillxm.cn/#organization',
+        name: '练学宝',
+      },
+    },
+    ],
 };
 
 export default function SitemapIndex() {
@@ -60,6 +81,8 @@ export default function SitemapIndex() {
   };
 
   return (
+      <>
+        <JsonLd data={sitemapPageSchema} />
     <SectionLayout
       path="/sitemap/"
       breadcrumb={[{ label: '首页', href: '/' }, { label: '网站地图' }]}
@@ -266,5 +289,6 @@ export default function SitemapIndex() {
         </div>
       </section>
     </SectionLayout>
+      </>
   );
 }

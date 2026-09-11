@@ -8,6 +8,7 @@ import {
   generateTwitterCard,
   SITE_INFO,
 } from '@/lib/seoUtils';
+import JsonLd from '@/app/_components/JsonLd';
 
 const PAGE_URL = `${SITE_INFO.BASE_URL}/parent-guide/`;
 
@@ -25,6 +26,26 @@ export const metadata: Metadata = {
     title: '家长指导中心 - 练学宝',
     description: '幼小衔接、学习习惯、辅导作业、时间管理、阅读习惯、小升初等家长关心的核心话题。',
   }),
+};
+
+const parentGuideIndexSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.skillxm.cn/parent-guide/#collectionpage',
+      name: '家长指南',
+      description: '面向小学生家长的实用辅导指南，覆盖习惯培养、沟通方法与学习规划',
+      url: 'https://www.skillxm.cn/parent-guide/',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://www.skillxm.cn/#website' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.skillxm.cn/#organization',
+        name: '练学宝',
+      },
+    },
+    ],
 };
 
 export default function ParentGuideIndex() {
@@ -65,6 +86,8 @@ export default function ParentGuideIndex() {
   };
 
   return (
+    <>
+      <JsonLd data={parentGuideIndexSchema} />
     <SectionLayout
       path="/parent-guide/"
       breadcrumb={[{ label: '首页', href: '/' }, { label: '家长指导' }]}
@@ -171,5 +194,6 @@ export default function ParentGuideIndex() {
         </div>
       </section>
     </SectionLayout>
+    </>
   );
 }

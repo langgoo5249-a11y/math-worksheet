@@ -8,6 +8,7 @@ import {
   generateTwitterCard,
   SITE_INFO,
 } from '@/lib/seoUtils';
+import JsonLd from '@/app/_components/JsonLd';
 
 const PAGE_URL = `${SITE_INFO.BASE_URL}/knowledge/`;
 
@@ -25,6 +26,26 @@ export const metadata: Metadata = {
     title: '小学知识点专题库 - 数学语文英语核心知识点 | 练学宝',
     description: '覆盖小学1-6年级数学语文英语核心知识点，每个知识点含详解、典型例题、易错点、配套练习工具。',
   }),
+};
+
+const knowledgeIndexSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.skillxm.cn/knowledge/#collectionpage',
+      name: '知识点',
+      description: '小学数学、语文、英语核心知识点详解，含解题方法与典型例题',
+      url: 'https://www.skillxm.cn/knowledge/',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://www.skillxm.cn/#website' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.skillxm.cn/#organization',
+        name: '练学宝',
+      },
+    },
+    ],
 };
 
 export default function KnowledgeIndex() {
@@ -69,6 +90,8 @@ export default function KnowledgeIndex() {
   };
 
   return (
+    <>
+      <JsonLd data={knowledgeIndexSchema} />
     <SectionLayout
       path="/knowledge/"
       breadcrumb={[{ label: '首页', href: '/' }, { label: '知识点专题' }]}
@@ -144,5 +167,6 @@ export default function KnowledgeIndex() {
         </div>
       </section>
     </SectionLayout>
+    </>
   );
 }

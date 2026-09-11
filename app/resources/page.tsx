@@ -8,6 +8,7 @@ import {
   generateTwitterCard,
   SITE_INFO,
 } from '@/lib/seoUtils';
+import JsonLd from '@/app/_components/JsonLd';
 
 const PAGE_URL = `${SITE_INFO.BASE_URL}/resources/`;
 
@@ -25,6 +26,26 @@ export const metadata: Metadata = {
     title: '免费练习卷资源库 - 小学1-6年级各科练习卷 | 练学宝',
     description: '覆盖小学1-6年级数学语文英语全科练习卷，全部PDF免费下载打印。',
   }),
+};
+
+const resourcesIndexSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.skillxm.cn/resources/#collectionpage',
+      name: '学习资源',
+      description: '小学1-6年级免费学习资源汇总，按年级与学科分类，支持在线练习与PDF打印',
+      url: 'https://www.skillxm.cn/resources/',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://www.skillxm.cn/#website' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.skillxm.cn/#organization',
+        name: '练学宝',
+      },
+    },
+    ],
 };
 
 export default function ResourcesIndex() {
@@ -69,6 +90,8 @@ export default function ResourcesIndex() {
   };
 
   return (
+    <>
+      <JsonLd data={resourcesIndexSchema} />
     <SectionLayout
       path="/resources/"
       breadcrumb={[{ label: '首页', href: '/' }, { label: '资源库' }]}
@@ -171,5 +194,6 @@ export default function ResourcesIndex() {
         </div>
       </section>
     </SectionLayout>
+    </>
   );
 }

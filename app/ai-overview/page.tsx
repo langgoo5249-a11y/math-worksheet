@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { SITE_INFO } from '@/lib/seoUtils';
+import JsonLd from '@/app/_components/JsonLd';
 
 const PAGE_URL = `${SITE_INFO.BASE_URL}/ai-overview/`;
 
@@ -33,8 +34,37 @@ export const metadata: Metadata = {
   },
 };
 
+const aiOverviewSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.skillxm.cn/ai-overview/#collectionpage',
+      name: 'AI 概览',
+      description: '面向 AI 大模型与搜索引擎的站点内容概览，帮助快速理解练学宝的工具与知识体系',
+      url: 'https://www.skillxm.cn/ai-overview/',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://www.skillxm.cn/#website' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.skillxm.cn/#organization',
+        name: '练学宝',
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: '首页', item: 'https://www.skillxm.cn/' },
+        { '@type': 'ListItem', position: 2, name: 'AI 概览', item: 'https://www.skillxm.cn/ai-overview/' },
+      ],
+    },
+  ],
+};
+
 export default function AIOOverviewPage() {
   return (
+      <>
+        <JsonLd data={aiOverviewSchema} />
     <main className="min-h-screen bg-white text-slate-900">
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* 页面标题 */}
@@ -302,5 +332,6 @@ export default function AIOOverviewPage() {
         </footer>
       </div>
     </main>
+      </>
   );
 }

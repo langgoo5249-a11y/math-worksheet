@@ -3,6 +3,7 @@ import Link from 'next/link';
 import SectionLayout from '@/app/_components/SectionLayout';
 import { GRADES } from '@/lib/gradeConfig';
 import { generateItemListSchema, generateOrganizationSchema } from '@/lib/seoUtils';
+import JsonLd from '@/app/_components/JsonLd';
 
 export const metadata: Metadata = {
   title: '小学年级学习专区 - 1-6年级完整学习方案 | 练学宝',
@@ -25,8 +26,30 @@ export const metadata: Metadata = {
   },
 };
 
+const gradeIndexSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.skillxm.cn/grade/#collectionpage',
+      name: '年级学习',
+      description: '小学1-6年级分年级学习规划，含学期重点、辅导要点与常见问题',
+      url: 'https://www.skillxm.cn/grade/',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://www.skillxm.cn/#website' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.skillxm.cn/#organization',
+        name: '练学宝',
+      },
+    },
+    ],
+};
+
 export default function GradeIndex() {
   return (
+    <>
+      <JsonLd data={gradeIndexSchema} />
     <SectionLayout
       breadcrumb={[{ label: '首页', href: '/' }, { label: '年级专区' }]}
       icon="🎓"
@@ -127,5 +150,6 @@ export default function GradeIndex() {
         </div>
       </section>
     </SectionLayout>
+    </>
   );
 }
