@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import SiteLayout from './_components/SiteLayout';
 import HomePageClient from './_components/HomePageClient';
+import { SITE_FAQS } from '@/lib/siteFaq';
 
 export const metadata = {
   title: '练学宝 - 免费小学数学练习卷、字帖、口算速练在线工具',
@@ -72,9 +73,48 @@ export default function HomePage() {
           </p>
         </section>
 
+        {/* ===== 首页常见问题（可见内容 + 结构化数据对应） ===== */}
+        <section className="max-w-4xl mx-auto px-4 py-8">
+          <h2 className="text-xl font-bold text-white mb-2">常见问题</h2>
+          <p className="text-gray-400 text-sm leading-relaxed mb-5">
+            下面是家长和老师问得最多的 {SITE_FAQS.length} 个问题。如果这里没有解答你的疑问，可以通过
+            <Link href="/contact" className="text-blue-400 hover:text-blue-300"> 联系我们 </Link>
+            反馈。
+          </p>
+          <div className="space-y-3">
+            {SITE_FAQS.map((f, i) => (
+              <details key={i} className="p-4 bg-white/5 border border-white/10 rounded-xl">
+                <summary className="text-white font-medium cursor-pointer">{f.q}</summary>
+                <p className="mt-2 text-sm text-gray-400 leading-relaxed">{f.a}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
         {/* ===== 客户端交互部分 ===== */}
         <HomePageClient />
       </div>
+
+      {/* ===== 首页 FAQPage 结构化数据 =====
+          说明：这组站点级 FAQ 原本定义在 app/layout.tsx 的 schemaOrg @graph 内，
+          会被注入到全站每一个页面的 <head>，导致同一组问答在 200+ 个页面逐字重复，
+          且与各页自身的 FAQPage 并存（每页 2 个 FAQPage 节点）。
+          现已移出根 layout，只在首页出现一次，并且页面上有对应的可见内容。 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            '@id': 'https://www.skillxm.cn/#faq',
+            mainEntity: SITE_FAQS.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
+      />
 
       {/* ===== 首页结构化数据（JSON-LD） ===== */}
       <script

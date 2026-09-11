@@ -6,6 +6,7 @@ import RelatedTools from '@/app/_components/RelatedTools';
 import ShareButtons from '@/app/_components/ShareButtons';
 import { getAllResources, getResourceById, GRADE_LIST } from '@/lib/resourcesConfig';
 import { getResourceFaqs } from '@/lib/resourceFaqs';
+import { getResourceDeepContent } from '@/lib/resourceDeepContent';
 import { TOOLS } from '@/lib/toolRegistry';
 import {
   generateArticleSchema,
@@ -61,6 +62,10 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
   // 变更前：21 个资源页共用同一段 FAQ 模板，其中"如何打印"等条目完全一致，
   // 会把"有 FAQ"做成重复信号放大器。现在每页 4 条，问题与答案均不跨页复用。
   const faqs = getResourceFaqs(r.id);
+
+  // 逐页专属的深度内容：课标定位、典型例题精讲、常见错误纠正、四周练习路径
+  // 变更前这里只有 9 个知识点写了内容，其余 12 个落到一句通用兜底文案
+  const deep = getResourceDeepContent(r.id);
 
   // 内容型页面的 Article 结构化数据（补 E-E-A-T 证据）
   const articleSchema = generateArticleSchema({
@@ -221,69 +226,137 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
         </div>
       </section>
 
-      {/* 知识点说明 */}
-      <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
-        <h2 className="text-xl font-bold text-white mb-3">💡 {r.knowledgePoint} 学习要点</h2>
-        <div className="text-slate-300 text-sm space-y-2 leading-relaxed">
-          {r.subject === 'math' && r.knowledgePoint === '10以内加减法' && (
-            <>
-              <p>10以内加减法是一年级数学的起点，孩子需要通过<strong>实物操作</strong>（如小棒、计数器）理解加减法含义，再过渡到抽象计算。</p>
-              <p>练习建议：每天10-15题，配合<Link href="/knowledge/coushi-fa/" className="text-blue-400 hover:underline">凑十法</Link>等技巧，1-2周可熟练掌握。</p>
-            </>
-          )}
-          {r.subject === 'math' && r.knowledgePoint === '凑十法' && (
-            <>
-              <p>凑十法是20以内进位加法的核心方法：把<strong>小数凑成10</strong>，再加上余下的数。例如 9+5=9+1+4=10+4=14。</p>
-              <p>练习建议：先练"拆小数"（把5拆成1和4），再练"凑十"一步到位。配合<Link href="/knowledge/coushi-fa/" className="text-blue-400 hover:underline">凑十法专题</Link>效果更佳。</p>
-            </>
-          )}
-          {r.subject === 'math' && r.knowledgePoint === '乘法口诀' && (
-            <>
-              <p>九九乘法表是二年级数学的<strong>基石</strong>，所有后续的乘除法、面积、单位换算都依赖于此。</p>
-              <p>练习建议：先理解乘法的"几个几"含义，再背诵口诀，最后通过反复练习达到<strong>脱口而出</strong>。</p>
-            </>
-          )}
-          {r.subject === 'math' && r.knowledgePoint === '万以内加减法' && (
-            <>
-              <p>万以内加减法是三年级数学的<strong>核心</strong>，需要孩子掌握竖式计算的进位、退位、验算三大步骤。</p>
-              <p>练习建议：先练<strong>相同数位对齐</strong>，再练进位/退位的标记，最后用<strong>逆运算</strong>验算。</p>
-            </>
-          )}
-          {r.subject === 'math' && r.knowledgePoint === '简易方程' && (
-            <>
-              <p>解简易方程是<strong>代数思维</strong>的起点，孩子需要从"算术思维"过渡到"代数思维"。</p>
-              <p>练习建议：理解"方程是等式"的基础上，掌握"移项变号"规则，反复练习直到熟练。</p>
-            </>
-          )}
-          {r.subject === 'math' && r.knowledgePoint === '百分数应用题' && (
-            <>
-              <p>百分数应用题是<strong>小升初</strong>的必考题型，包括：求一个数比另一个数多/少百分之几、折扣、纳税、利息等。</p>
-              <p>练习建议：先理解百分数的含义（表示一个数是另一个数的百分之几），再分类型练习。</p>
-            </>
-          )}
-          {r.subject === 'chinese' && r.knowledgePoint === '声母韵母' && (
-            <>
-              <p>声母（23个）和韵母（24个）是拼音的基础，需要孩子<strong>认读 + 书写</strong>双向掌握。</p>
-              <p>练习建议：先练声母表和韵母表的<strong>整体认读</strong>，再练四线三格的<strong>标准书写</strong>。</p>
-            </>
-          )}
-          {r.subject === 'chinese' && r.knowledgePoint === '看图写话' && (
-            <>
-              <p>看图写话是<strong>二年级作文的起点</strong>，需要孩子观察图片 + 组织语言 + 完整表达。</p>
-              <p>练习建议：使用<strong>时间+人物+事情+结果</strong>的四要素模板，参考范文但用自己的话写。</p>
-            </>
-          )}
-          {r.subject === 'english' && r.knowledgePoint === '26个英语字母' && (
-            <>
-              <p>26个英文字母是英语学习的<strong>基石</strong>，需要掌握大小写、书写、发音、顺序。</p>
-              <p>练习建议：先<strong>认读</strong>字母名称（音），再练<strong>书写</strong>（形），最后<strong>发音</strong>（字母在单词中的常见读音）。</p>
-            </>
-          )}
-          {(!['math', 'chinese', 'english'].includes(r.subject) || !['10以内加减法', '凑十法', '乘法口诀', '万以内加减法', '简易方程', '百分数应用题', '声母韵母', '看图写话', '26个英语字母'].includes(r.knowledgePoint)) && (
+      {/* 课标定位与知识点价值 */}
+      {deep && (
+        <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+          <h2 className="text-xl font-bold text-white mb-4">💡 为什么 {r.knowledgePoint} 重要</h2>
+          <div className="space-y-3 text-sm leading-relaxed">
+            <div className="p-4 bg-blue-500/10 border-l-4 border-blue-500/40 rounded-r-lg">
+              <div className="text-xs text-blue-300 font-medium mb-1">📘 课标定位</div>
+              <p className="text-slate-300">{deep.standard}</p>
+            </div>
+            <div className="p-4 bg-emerald-500/10 border-l-4 border-emerald-500/40 rounded-r-lg">
+              <div className="text-xs text-emerald-300 font-medium mb-1">🔗 在后续学习中的作用</div>
+              <p className="text-slate-300">{deep.why}</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* 典型例题精讲 */}
+      {deep && (
+        <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+          <h2 className="text-xl font-bold text-white mb-4">
+            ✏️ {r.knowledgePoint} 典型例题精讲
+            <span className="ml-2 text-xs text-slate-400 font-normal">{deep.examples.length} 道 · 含分步解析</span>
+          </h2>
+          <div className="space-y-5">
+            {deep.examples.map((ex, i) => (
+              <div key={i} className="p-4 bg-slate-900/50 border border-white/10 rounded-xl">
+                <div className="flex gap-3 mb-3">
+                  <span className="shrink-0 w-6 h-6 flex items-center justify-center bg-blue-500/20 text-blue-300 text-xs font-bold rounded-full">{i + 1}</span>
+                  <p className="text-white font-medium text-sm leading-relaxed">{ex.q}</p>
+                </div>
+                <ol className="space-y-2 mb-3 ml-9">
+                  {ex.steps.map((s, j) => (
+                    <li key={j} className="text-sm text-slate-300 leading-relaxed flex gap-2">
+                      <span className="shrink-0 text-slate-500 text-xs mt-1">{j + 1}.</span>
+                      <span>{s}</span>
+                    </li>
+                  ))}
+                </ol>
+                <div className="ml-9 flex flex-wrap items-center gap-3">
+                  <span className="px-2 py-1 bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-xs rounded">
+                    答案：{ex.answer}
+                  </span>
+                </div>
+                <p className="ml-9 mt-3 text-xs text-amber-300/90 leading-relaxed">
+                  ⚠️ 易错提示：{ex.note}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* 常见错误与纠正 */}
+      {deep && (
+        <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+          <h2 className="text-xl font-bold text-white mb-4">
+            ⚠️ {r.knowledgePoint} 最常见的 {deep.mistakes.length} 个错误
+            <span className="ml-2 text-xs text-slate-400 font-normal">错因分析 + 纠正方法</span>
+          </h2>
+          <div className="space-y-3">
+            {deep.mistakes.map((m, i) => (
+              <div key={i} className="p-4 bg-slate-900/50 border border-white/10 rounded-xl">
+                <div className="flex gap-2 items-start mb-2">
+                  <span className="shrink-0 text-rose-400 text-sm">❌</span>
+                  <code className="text-sm text-rose-300 break-all">{m.wrong}</code>
+                </div>
+                <div className="flex gap-2 items-start mb-2 ml-6">
+                  <span className="shrink-0 text-slate-500 text-xs mt-[3px]">错因</span>
+                  <p className="text-sm text-slate-400 leading-relaxed">{m.reason}</p>
+                </div>
+                <div className="flex gap-2 items-start ml-6">
+                  <span className="shrink-0 text-emerald-400 text-xs mt-[3px]">纠正</span>
+                  <p className="text-sm text-slate-300 leading-relaxed">{m.fix}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* 4 周练习路径 */}
+      {deep && (
+        <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+          <h2 className="text-xl font-bold text-white mb-4">
+            🗓️ {r.knowledgePoint} 四周练习路径
+            <span className="ml-2 text-xs text-slate-400 font-normal">按周递增，可直接照做</span>
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="text-slate-400 text-xs">
+                  <th className="text-left p-3 border-b border-white/10 font-medium w-20">周次</th>
+                  <th className="text-left p-3 border-b border-white/10 font-medium w-40">本周重点</th>
+                  <th className="text-left p-3 border-b border-white/10 font-medium">具体任务</th>
+                </tr>
+              </thead>
+              <tbody>
+                {deep.plan.map((p, i) => (
+                  <tr key={i} className="align-top">
+                    <td className="p-3 border-b border-white/5 text-blue-300 font-medium whitespace-nowrap">{p.week}</td>
+                    <td className="p-3 border-b border-white/5 text-white">{p.focus}</td>
+                    <td className="p-3 border-b border-white/5 text-slate-300 leading-relaxed">{p.task}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-5 p-4 bg-purple-500/10 border border-purple-500/20 rounded-xl">
+            <div className="text-xs text-purple-300 font-medium mb-2">🎯 四周后的掌握自检标准</div>
+            <ul className="space-y-1.5">
+              {deep.mastery.map((m, i) => (
+                <li key={i} className="text-sm text-slate-300 leading-relaxed flex gap-2">
+                  <span className="shrink-0 text-purple-400">☐</span>
+                  <span>{m}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* 知识点说明兜底（深度内容缺失时才显示） */}
+      {!deep && (
+        <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
+          <h2 className="text-xl font-bold text-white mb-3">💡 {r.knowledgePoint} 学习要点</h2>
+          <div className="text-slate-300 text-sm space-y-2 leading-relaxed">
             <p>这是一份针对{gradeName}{r.knowledgePoint}的专项练习，配合本站工具使用效果更佳。</p>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {/* FAQ - 逐页定制（每页 4 条，不与其他资源页共用） */}
       <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
@@ -309,6 +382,21 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
           <li>• 难度定位为{r.difficulty}，建议单次完成时间 {r.estimatedTime}，按"{r.tags.slice(0, 2).join('、')}"的目标编排题型梯度。</li>
           <li>• 内容由练学宝教研团队整理并复核，最近更新：2026-09。发现题目或解析问题请通过<Link href="/contact" className="text-blue-400 hover:text-blue-300">联系我们</Link>反馈。</li>
         </ul>
+        {deep && (
+          <>
+            <div className="mt-4 pt-4 border-t border-white/10">
+              <div className="text-xs text-slate-400 mb-2">本页例题与错因分析依据：</div>
+              <ul className="space-y-1.5 text-sm text-slate-400 leading-relaxed">
+                {deep.sources.map((s, i) => (
+                  <li key={i}>· {s}</li>
+                ))}
+              </ul>
+            </div>
+            <p className="mt-3 text-xs text-slate-500 leading-relaxed">
+              说明：本页所有例题均为教研团队按课程标准要求自行编写，用于演示解题方法；文中提到的方法名称（如凑十法、魔法 e、三查清单）为国内小学数学/英语教学中通行的教学用语，非地方性专有名词。页面不含任何未经核实的统计数据。
+            </p>
+          </>
+        )}
       </section>
 
       {/* 相关工具 */}
