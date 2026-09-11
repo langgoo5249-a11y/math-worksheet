@@ -11,65 +11,23 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // 注意：i18n 配置在 App Router 和 output: 'export' 中不兼容
-  // 使用 next-intl 的 [locale] 路由处理国际化
-  // 缓存策略优化 - 为静态资源设置长期缓存
-  headers: async () => [
-    {
-      source: '/_next/static/:path*',
-      headers: [
-        {
-          key: 'Cache-Control',
-          value: 'public, max-age=31536000, immutable',
-        },
-      ],
-    },
-    {
-      source: '/fonts/:path*',
-      headers: [
-        {
-          key: 'Cache-Control',
-          value: 'public, max-age=31536000, immutable',
-        },
-      ],
-    },
-    {
-      source: '/images/:path*',
-      headers: [
-        {
-          key: 'Cache-Control',
-          value: 'public, max-age=2592000, stale-while-revalidate=86400',
-        },
-      ],
-    },
-    {
-      source: '/favicons/:path*',
-      headers: [
-        {
-          key: 'Cache-Control',
-          value: 'public, max-age=2592000',
-        },
-      ],
-    },
-    {
-      source: '/:path(.*).css',
-      headers: [
-        {
-          key: 'Cache-Control',
-          value: 'public, max-age=31536000, immutable',
-        },
-      ],
-    },
-    {
-      source: '/:path(.*).js',
-      headers: [
-        {
-          key: 'Cache-Control',
-          value: 'public, max-age=31536000, immutable',
-        },
-      ],
-    },
-  ],
+
+  // 缓存策略说明（2026-09-11）
+  // ------------------------------------------------------------------
+  // 此处曾有一整块 headers() 配置（/_next/static、/fonts、/images、
+  // /favicons、*.css、*.js 的 Cache-Control），但 output: "export" 下
+  // Next.js 明确不支持自定义响应头，构建时会打印：
+  //   ⚠ Specified "headers" will not automatically work with "output: export"
+  // 也就是说这块配置一直是空转，从未上线生效。
+  //
+  // 真正生效的是 public/_headers（由 postbuild.cjs 复制进 out/，
+  // Cloudflare Pages 原生读取）。缓存头已全部在 public/_headers 中重新声明：
+  //   /_next/static/*  31536000 immutable
+  //   /*.webp/*.jpg/*.png/*.svg  长期缓存
+  //   /images/*  /favicons/*  2592000
+  // 删除此块可消除构建噪声，且不损失任何实际行为。
+  // 如需调整缓存策略，请改 public/_headers，不要改这里。
+  // ------------------------------------------------------------------
 };
 
 // 创建 next-intl 插件

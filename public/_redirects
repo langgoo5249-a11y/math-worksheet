@@ -326,3 +326,59 @@
 /textbook/bubian/grade-5 /textbook/bubian/ 301
 /textbook/bubian/grade-6/ /textbook/bubian/ 301
 /textbook/bubian/grade-6 /textbook/bubian/ 301
+
+# ============================================
+# 多语言 wrapper 301 补齐（2026-09-11）
+#
+# 背景：scripts/postbuild.cjs 第 38-43 行会主动删除 out/zh、out/ja、out/ko
+#       三个目录，注释写明「Cloudflare will use _redirects 301 rules」，
+#       但 _redirects 中从未写入任何 /zh /ja /ko 规则
+#       → 三个语言前缀长期 404，且没有任何 301 承接。
+#       2026-06-15 之前 sitemap 曾收录 zh/en/ja/ko 四个语言版本，
+#       这些 URL 若已被搜索引擎收录或被外部链接引用，
+#       404 不传递任何权重，必须用 301 收回。
+#       2026-07-16 起 /en/ 有独立英文内容，故 /en/ 不做整段重定向，
+#       只对 postbuild 已删除的 wrapper 目录逐条 301。
+#
+# ⚠️ 关键前提（实测确认）：Cloudflare Pages 先匹配 _redirects、再回退静态文件。
+#    证据：/images/blog/*.png 原图仍在仓库中，但请求返回 301（被 .png->.webp 规则命中）。
+#    因此本段通配符只用于「已被 postbuild 删除、必然不存在静态文件」的路径；
+#    严禁对 /en/tools/* 或 /en/blog/* 写通配——那会遮蔽真实存在的英文页面。
+# ============================================
+
+# 中文前缀 -> 中文原路径
+/zh/ / 301
+/zh / 301
+/zh/* /:splat 301
+
+# 日文前缀 -> 中文原路径（历史上返回的就是中文内容）
+/ja/ / 301
+/ja / 301
+/ja/* /:splat 301
+
+# 韩文前缀 -> 中文原路径
+/ko/ / 301
+/ko / 301
+/ko/* /:splat 301
+
+# /en/ 下由 [locale] wrapper 生成、已被 postbuild 删除的目录
+# （真实英文内容仅保留 /en/、/en/tools/、/en/blog/）
+/en/about/ /en/ 301
+/en/about /en/ 301
+/en/changelog/ /en/ 301
+/en/changelog /en/ 301
+/en/contact/ /en/ 301
+/en/contact /en/ 301
+/en/daily/ /en/ 301
+/en/daily /en/ 301
+/en/privacy/ /en/ 301
+/en/privacy /en/ 301
+/en/search/ /en/ 301
+/en/search /en/ 301
+/en/terms/ /en/ 301
+/en/terms /en/ 301
+/en/grade/* /en/ 301
+/en/knowledge/* /en/ 301
+/en/parent-guide/* /en/ 301
+/en/resources/* /en/ 301
+/en/textbook/* /en/ 301

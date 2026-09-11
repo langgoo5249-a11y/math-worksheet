@@ -36,10 +36,28 @@
 /*.svg
   Cache-Control: public, max-age=86400
 
+# WebP 配图（2026-09-11 补）
+# 背景：P0/P1 已把全部博客配图转为 WebP，但本文件只配了 jpg/png/svg 三种，
+#       WebP 只能落到 Cloudflare 默认的 max-age=14400（4 小时），
+#       实测 Cache-Control: public, max-age=14400, must-revalidate。
+#       补上后与 jpg/png 一致并按内容稳定性放宽到 30 天。
+# 注意：/images/blog/*.png 的旧图已有 _redirects 301 到 .webp，
+#       且 Cloudflare 先匹配 _redirects 再回退静态文件，故 png 规则不会命中这些旧图。
+/*.webp
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
+/images/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+
 /favicon.ico
   Cache-Control: public, max-age=2592000
 
 /favicon.svg
+  Cache-Control: public, max-age=2592000
+
+# 站点图标目录（manifest.json 引用了 android-chrome-*.png / apple-touch-icon.png，
+# 此前无任何缓存规则）
+/favicons/*
   Cache-Control: public, max-age=2592000
 
 # ============================================

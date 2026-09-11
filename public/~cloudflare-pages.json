@@ -1,15 +1,41 @@
 # Cloudflare Pages Configuration
 
+> 说明：本文件是构建配置备忘，不是 Cloudflare 实际读取的配置文件
+> （CF 只读 `_headers`、`_redirects`、`functions/`）。文件以 `~` 开头、
+> 内容是 Markdown、扩展名却是 .json，且会被部署到公网。
+> 2026-09-11 更新：修正其中已失效的路由描述。
+
 ## Build Command
+
 npm run build
 
+（= `next build` → `node scripts/postbuild.cjs` → `node scripts/push-to-baidu.cjs`）
+
 ## Build Output Directory
+
 out
 
-## 页面路由配置
-所有多语言页面已预生成在对应语言目录下：
-- `/` - 中文（默认）
-- `/zh/` - 中文
-- `/en/` - 英文
-- `/ja/` - 日文
-- `/ko/` - 韩文
+## 页面路由现状（2026-09-11）
+
+真实存在的路由：
+
+- `/` — 中文主站（唯一实质内容站，App Router `app/` 根路由）
+- `/en/` — 英文站，独立内容（教外国人学中文）：`/en/tools/*` 8 个工具 + `/en/blog/*` 7 篇文章
+- `/textbook/{pep,bsd,suer,bubian}/` — 4 个教材版本聚合页
+
+已下线并由 301 承接的路由：
+
+- `/zh/*`、`/ja/*`、`/ko/*` — `app/[locale]` 生成的 wrapper 页，
+  由 `scripts/postbuild.cjs` 第 0.5 步主动删除 `out/zh|ja|ko/`，
+  再由 `public/_redirects` 301 到对应中文路径（`/zh/about/` → `/about/`）
+- `/textbook/{version}/grade-{N}/` — 24 个年级页已合并进版本页，
+  由 `public/_redirects` 301 承接
+- `/en/` 下的 `about/`、`changelog/`、`contact/`、`daily/`、`grade/`、
+  `knowledge/`、`parent-guide/`、`privacy/`、`resources/`、`search/`、
+  `terms/`、`textbook/` — 同为 `[locale]` wrapper 页，被 postbuild 删除后 301 到 `/en/`
+
+## 缓存与安全头
+
+全部由 `public/_headers` 声明。
+不要在 `next.config.ts` 里写 `headers()` —— `output: "export"` 下该配置不生效
+（Next.js 会打印 `Specified "headers" will not automatically work with "output: export"`）。

@@ -250,10 +250,13 @@ fixNestedRoutes(path.join(outDir, 'tools'));
 fixNestedRoutes(path.join(outDir, 'blog'));
 fixNestedRoutes(path.join(outDir, 'grade'));
 fixNestedRoutes(path.join(outDir, 'textbook'));
+// 教材版本页目录名以 lib/textbookConfig.ts 的 id 为准：pep / bsd / suer / bubian
+// （2026-09-11 修正：此前写成 bsb / sup，这两个 id 在项目里不存在，属空转；
+//   同时漏了 suer / bubian，已补齐）
 fixNestedRoutes(path.join(outDir, 'textbook', 'pep'));
-fixNestedRoutes(path.join(outDir, 'textbook', 'bsb'));
-fixNestedRoutes(path.join(outDir, 'textbook', 'sup'));
 fixNestedRoutes(path.join(outDir, 'textbook', 'bsd'));
+fixNestedRoutes(path.join(outDir, 'textbook', 'suer'));
+fixNestedRoutes(path.join(outDir, 'textbook', 'bubian'));
 fixNestedRoutes(path.join(outDir, 'knowledge'));
 fixNestedRoutes(path.join(outDir, 'resources'));
 fixNestedRoutes(path.join(outDir, 'parent-guide'));
