@@ -3,9 +3,10 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SectionLayout from '@/app/_components/SectionLayout';
 import { GRADES, getGradeConfig } from '@/lib/gradeConfig';
+import { getGradeFaqs } from '@/lib/gradeFaqs';
 import { KNOWLEDGE_POINTS } from '@/lib/knowledgeConfig';
 import { articles as blogPosts } from '@/app/blog/data';
-import { generateCourseSchema, generateOrganizationSchema } from '@/lib/seoUtils';
+import { generateArticleSchema, generateCourseSchema, generateOrganizationSchema } from '@/lib/seoUtils';
 
 export function generateStaticParams() {
   return GRADES.map((g) => ({ grade: `grade-${g.grade}` }));
@@ -37,53 +38,6 @@ export async function generateMetadata({ params }: { params: Promise<{ grade: st
       description: config.metaDescription,
     },
   };
-}
-
-// 根据年级生成 FAQ 数据
-function generateGradeFaqs(config: ReturnType<typeof getGradeConfig>) {
-  if (!config) return [];
-  const grade = config.grade;
-  const subjectNames = config.subjects.map(s => s.name).join('、');
-  const mathItems = config.subjects.find(s => s.name === '数学')?.items.slice(0, 4).join('、') ?? '';
-  const chineseItems = config.subjects.find(s => s.name === '语文')?.items.slice(0, 4).join('、') ?? '';
-
-  const faqs = [
-    {
-      q: `${config.name}数学主要学什么？`,
-      a: `${config.name}数学主要学习${mathItems}等内容。${config.description.split('。')[0]}。建议使用口算速练和数学练习卷生成器每天进行10-15分钟练习。`,
-    },
-    {
-      q: `${config.name}语文重点掌握哪些内容？`,
-      a: `${config.name}语文重点掌握${chineseItems}等内容。建议配合字帖生成器练习书写，使用古诗词默写工具巩固古诗。`,
-    },
-    {
-      q: `${config.name}每天应该练习多长时间？`,
-      a: `建议${config.name}学生每天练习${grade <= 2 ? '20-30分钟' : grade <= 4 ? '30-45分钟' : '45-60分钟'}。其中数学练习${grade <= 2 ? '10分钟' : '15-20分钟'}，语文练习${grade <= 2 ? '10分钟' : '15分钟'}，英语${grade >= 3 ? '10-15分钟' : ''}。所有练习卷均可在练学宝免费下载打印。`,
-    },
-    {
-      q: `${config.name}口算速度应该达到什么标准？`,
-      a: `${grade === 1 ? '一年级口算达标标准为每分钟8-10题（10以内加减法）' : grade === 2 ? '二年级口算达标标准为每分钟10-15题（100以内加减法和表内乘除法）' : grade <= 4 ? `${config.name}口算达标标准为每分钟12-18题（${grade === 3 ? '万以内加减法' : '三位数乘除法'}）` : `${config.name}口算达标标准为每分钟15-20题（${grade === 5 ? '小数乘除法' : '百分数和比例'}）`}。使用口算速练工具可计时训练并自动统计正确率。`,
-    },
-    {
-      q: `${config.name}需要报课外辅导班吗？`,
-      a: `${grade <= 2 ? '一二年级通常不需要报辅导班，重点放在培养学习习惯和基础计算能力上。每天坚持使用练学宝的免费工具练习即可。' : grade <= 4 ? '三四年级如果某科有明显薄弱环节，可考虑针对性补习，但日常练习仍以练学宝为主，辅以单元测试卷检测学习效果。' : '五六年级面临小升初压力，建议根据孩子实际情况选择。练学宝提供全套免费小升初复习资源，包括模拟试卷、知识点汇总等。'}`,
-    },
-    {
-      q: `练学宝的${config.name}练习题是免费的吗？`,
-      a: `完全免费。练学宝所有${config.name}练习卷、口算题、字帖、试卷等资源均可免费下载PDF打印，无需注册登录，不限制使用次数。`,
-    },
-  ];
-
-  // 英语相关（3年级以上）
-  if (grade >= 3) {
-    const engItems = config.subjects.find(s => s.name === '英语')?.items.slice(0, 4).join('、') ?? '';
-    faqs.splice(2, 0, {
-      q: `${config.name}英语从零开始怎么学？`,
-      a: `${config.name}英语重点学习${engItems}。建议每天听读15分钟，使用英语字帖练习单词书写，配合识字卡片记忆核心单词。${grade === 3 ? '三年级是英语启蒙关键期，重点是培养兴趣和语感。' : `${config.name}英语要开始注重${grade >= 5 ? '语法和写作' : '阅读和句型'}训练。`}`,
-    });
-  }
-
-  return faqs;
 }
 
 // 生成学期学习计划
@@ -130,7 +84,9 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
     .filter((p) => config.blogCategories.some((c) => p.category === c))
     .slice(0, 6);
 
-  const faqs = generateGradeFaqs(config);
+  // 按年级定制的 FAQ（lib/gradeFaqs.ts，每页 6 条，不与其他年级共用）
+  // 变更前：6 个年级页共用同一段模板生成的 FAQ，只有数字随年级变化。
+  const faqs = getGradeFaqs(gradeNum);
   const semesterPlan = generateSemesterPlan(config);
 
   const faqSchema = faqs.length > 0 ? {
@@ -141,6 +97,14 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
       'acceptedAnswer': { '@type': 'Answer' as const, 'text': f.a },
     })),
   } : null;
+
+  // 内容型页面的 Article 结构化数据（补 E-E-A-T 证据）
+  const articleSchema = generateArticleSchema({
+    title: config.metaTitle,
+    description: config.metaDescription,
+    url: `https://www.skillxm.cn/grade/${slug}/`,
+    keywords: config.metaKeywords,
+  });
 
   return (
     <SectionLayout
@@ -167,6 +131,7 @@ export default async function GradePage({ params }: { params: Promise<{ grade: s
           teaches: config.knowledgePoints.slice(0, 8),
         }),
         ...(faqSchema ? [faqSchema] : []),
+        articleSchema,
         generateOrganizationSchema(),
       ]}
     >

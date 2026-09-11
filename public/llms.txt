@@ -78,11 +78,13 @@
 
 ## 按教材版本浏览
 
-- [人教版](https://www.skillxm.cn/textbook/renjiao/)
+- [人教版](https://www.skillxm.cn/textbook/pep/)
 
-- [北师大版](https://www.skillxm.cn/textbook/beishida/)
+- [北师大版](https://www.skillxm.cn/textbook/bsd/)
 
-- [苏教版](https://www.skillxm.cn/textbook/sujiao/)
+- [苏教版](https://www.skillxm.cn/textbook/suer/)
+
+- [部编版（统编版）1-6年级语文同步练习](https://www.skillxm.cn/textbook/bubian/)
 
 
 

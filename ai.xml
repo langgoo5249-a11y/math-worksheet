@@ -30,7 +30,7 @@
 
 覆盖语文、数学、英语三大学科，支持手机在线练习与PDF打印导出，无需注册即开即用。
 
-同时提供108篇原创教育类博客文章，涵盖学习方法、育儿心得、学科辅导等主题。
+同时提供112篇原创教育类博客文章，涵盖学习方法、育儿心得、学科辅导等主题。
 
     ]]></description>
 
@@ -100,7 +100,7 @@
 
       <type>blog-index</type>
 
-      <description>108篇原创教育类博客文章，涵盖数学启蒙、语文写字、英语学习、育儿方法等主题</description>
+      <description>112篇原创教育类博客文章，涵盖数学启蒙、语文写字、英语学习、育儿方法等主题</description>
 
       <lastmod>2026-08-13</lastmod>
 
@@ -156,11 +156,64 @@
 
       <type>textbook-index</type>
 
-      <description>按教材版本同步的学习资源（人教版、北师大版、苏教版）</description>
+      <description>按教材版本同步的学习资源（人教版、北师大版、苏教版、部编版）</description>
 
       <lastmod>2026-08-13</lastmod>
 
     </page>
+    <page priority="5">
+
+      <loc>https://www.skillxm.cn/textbook/pep/</loc>
+
+      <title>人教版（PEP） 1-6年级同步练习全指南 - 练学宝</title>
+
+      <type>textbook-version</type>
+
+      <description>1-6年级 数学/语文/英语：逐年级核心知识点、单元明细表（单元-知识点-常见错因）、掌握标准与家长辅导建议</description>
+
+      <lastmod>2026-09-11</lastmod>
+
+    </page>
+    <page priority="5">
+
+      <loc>https://www.skillxm.cn/textbook/bsd/</loc>
+
+      <title>北师大版 1-6年级同步练习全指南 - 练学宝</title>
+
+      <type>textbook-version</type>
+
+      <description>1-6年级 数学/语文/英语：逐年级核心知识点、单元明细表（单元-知识点-常见错因）、掌握标准与家长辅导建议</description>
+
+      <lastmod>2026-09-11</lastmod>
+
+    </page>
+    <page priority="5">
+
+      <loc>https://www.skillxm.cn/textbook/suer/</loc>
+
+      <title>苏教版 1-6年级同步练习全指南 - 练学宝</title>
+
+      <type>textbook-version</type>
+
+      <description>1-6年级 数学/语文/英语：逐年级核心知识点、单元明细表（单元-知识点-常见错因）、掌握标准与家长辅导建议</description>
+
+      <lastmod>2026-09-11</lastmod>
+
+    </page>
+    <page priority="5">
+
+      <loc>https://www.skillxm.cn/textbook/bubian/</loc>
+
+      <title>部编版（统编版） 1-6年级同步练习全指南 - 练学宝</title>
+
+      <type>textbook-version</type>
+
+      <description>1-6年级 语文：逐年级核心知识点、单元明细表（单元-知识点-常见错因）、掌握标准与家长辅导建议</description>
+
+      <lastmod>2026-09-11</lastmod>
+
+    </page>
+
 
     <page priority="6">
 

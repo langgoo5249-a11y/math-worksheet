@@ -5,8 +5,10 @@ import SectionLayout from '@/app/_components/SectionLayout';
 import RelatedTools from '@/app/_components/RelatedTools';
 import ShareButtons from '@/app/_components/ShareButtons';
 import { getAllResources, getResourceById, GRADE_LIST } from '@/lib/resourcesConfig';
+import { getResourceFaqs } from '@/lib/resourceFaqs';
 import { TOOLS } from '@/lib/toolRegistry';
 import {
+  generateArticleSchema,
   generateLearningResourceSchema,
   generateOpenGraph,
   generateTwitterCard,
@@ -55,20 +57,18 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
     keywords: [r.title, ...r.tags],
   });
 
-  const faqs = [
-    {
-      q: `${r.title}包含多少道题？`,
-      a: `本练习卷共${r.pageCount}页、${r.questionCount}道精选题目，预计完成时间${r.estimatedTime}。题目按${r.knowledgePoint}知识点的难易梯度编排，建议每周1-2次、连续4周完成练习，可显著提升${r.knowledgePoint}的掌握程度。`,
-    },
-    {
-      q: `这份练习卷适合哪个年级？`,
-      a: `本练习卷专为${gradeName}${r.knowledgePoint}设计，难度等级为${r.difficulty}。如孩子觉得题目偏难或偏易，可调整进度或先练习相邻难度的题目。`,
-    },
-    {
-      q: `如何打印练习卷？`,
-      a: '推荐使用A4纸打印本PDF练习卷。打印设置请选择「实际大小」和「无边距」以获得最佳效果。建议家长先打印一份样张检查排版，确认无误后再批量打印。',
-    },
-  ];
+  // 逐页定制的 FAQ（lib/resourceFaqs.ts）
+  // 变更前：21 个资源页共用同一段 FAQ 模板，其中"如何打印"等条目完全一致，
+  // 会把"有 FAQ"做成重复信号放大器。现在每页 4 条，问题与答案均不跨页复用。
+  const faqs = getResourceFaqs(r.id);
+
+  // 内容型页面的 Article 结构化数据（补 E-E-A-T 证据）
+  const articleSchema = generateArticleSchema({
+    title: r.title,
+    description: `${r.description} 适合${gradeName}${r.knowledgePoint}专项练习。`,
+    url: pageUrl,
+    keywords: [r.title, ...r.tags, `${gradeName}${r.knowledgePoint}`],
+  });
 
   const faqSchema = {
     '@type': 'FAQPage',
@@ -91,7 +91,7 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
       title={r.title}
       description={r.description}
       keywords={[r.title, ...r.tags, `${gradeName}${r.knowledgePoint}`, '小学练习卷', 'PDF下载']}
-      jsonLd={[learningResourceSchema, faqSchema]}
+      jsonLd={[learningResourceSchema, articleSchema, faqSchema]}
       summary={`${r.title}：${gradeName}${r.knowledgePoint}专项练习卷，${r.pageCount}页、${r.questionCount}道题、难度${r.difficulty}、预计${r.estimatedTime}完成。配套练学宝${subjectName}相关工具使用效果更佳，支持PDF免费下载打印。`}
       keyPoints={[
         `📚 ${gradeName} · ${subjectName} · ${r.knowledgePoint}专项练习`,
@@ -285,9 +285,9 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
         </div>
       </section>
 
-      {/* FAQ - 帮助 AI 引擎抓取 */}
+      {/* FAQ - 逐页定制（每页 4 条，不与其他资源页共用） */}
       <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
-        <h2 className="text-xl font-bold text-white mb-4">❓ 常见问题</h2>
+        <h2 className="text-xl font-bold text-white mb-4">❓ 关于{gradeName}{r.knowledgePoint}的常见问题</h2>
         <div className="space-y-3">
           {faqs.map((f, i) => (
             <details key={i} className="p-4 bg-slate-900/50 border border-white/5 rounded-lg">
@@ -296,6 +296,19 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
             </details>
           ))}
         </div>
+        <p className="mt-4 text-xs text-slate-400 leading-relaxed">
+          📌 打印说明：本练习卷为 A4 版式 PDF，打印时请选择「实际大小」并关闭「适应页面缩放」，以保持题目间距与书写空间。建议先打印 1 页样张确认排版，再批量打印。
+        </p>
+      </section>
+
+      {/* 内容来源说明（原创性与专业性证据） */}
+      <section className="mb-8 p-5 bg-slate-800/30 border border-white/10 rounded-2xl">
+        <h2 className="text-base font-bold text-white mb-3">📑 内容来源说明</h2>
+        <ul className="space-y-2 text-sm text-slate-300 leading-relaxed">
+          <li>• 题目依据《义务教育{r.subject === 'math' ? '数学' : r.subject === 'chinese' ? '语文' : '英语'}课程标准（2022 年版）》与{gradeName}{r.knowledgePoint}的教学要求编写，共 {r.pageCount} 页、{r.questionCount} 题。</li>
+          <li>• 难度定位为{r.difficulty}，建议单次完成时间 {r.estimatedTime}，按"{r.tags.slice(0, 2).join('、')}"的目标编排题型梯度。</li>
+          <li>• 内容由练学宝教研团队整理并复核，最近更新：2026-09。发现题目或解析问题请通过<Link href="/contact" className="text-blue-400 hover:text-blue-300">联系我们</Link>反馈。</li>
+        </ul>
       </section>
 
       {/* 相关工具 */}

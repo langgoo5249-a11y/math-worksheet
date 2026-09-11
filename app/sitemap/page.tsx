@@ -118,17 +118,21 @@ export default function SitemapIndex() {
         <section className="p-5 bg-slate-800/50 border border-white/10 rounded-2xl">
           <h2 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
             <span>📚</span> 教材同步
-            <span className="text-xs text-slate-400 font-normal">({TEXTBOOKS.length * 6})</span>
+            <span className="text-xs text-slate-400 font-normal">({TEXTBOOKS.length}个版本页)</span>
           </h2>
           <ul className="space-y-1.5 text-sm">
             <li><Link href="/textbook/" className="text-slate-300 hover:text-blue-400">教材专区首页</Link></li>
             {TEXTBOOKS.map((tb) => (
               <li key={tb.id}>
-                <div className="text-slate-200 font-medium mt-2 mb-1">{tb.name}</div>
-                <ul className="ml-3 space-y-1">
+                <div className="mt-2 mb-1">
+                  <Link href={`/textbook/${tb.id}/`} className="text-slate-200 font-medium hover:text-blue-400">
+                    {tb.name}1-6年级学习地图
+                  </Link>
+                </div>
+                <ul className="ml-3 flex flex-wrap gap-x-3 gap-y-1">
                   {tb.grades.map((g) => (
                     <li key={g.grade}>
-                      <Link href={`/textbook/${tb.id}/grade-${g.grade}/`} className="text-slate-300 hover:text-blue-400">
+                      <Link href={`/textbook/${tb.id}/#grade-${g.grade}`} className="text-slate-400 text-xs hover:text-blue-400">
                         {g.grade === 1 ? '一年级' : g.grade === 2 ? '二年级' : g.grade === 3 ? '三年级' : g.grade === 4 ? '四年级' : g.grade === 5 ? '五年级' : '六年级'}
                       </Link>
                     </li>

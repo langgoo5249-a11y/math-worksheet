@@ -274,3 +274,55 @@
 /images/blog/zuoye-moca-zenmeban.jpg /images/blog/zuoye-moca-zenmeban.webp 301
 /images/blog/zuoye-shijian-duibi.png /images/blog/zuoye-shijian-duibi.webp 301
 /images/blog/zuoye-shijian-duibi.jpg /images/blog/zuoye-shijian-duibi.webp 301
+
+# 教材年级页 -> 版本聚合页 301（2026-09-11 页面整合，24 页合并为 4 页，保权重）
+# 原 /textbook/{version}/grade-{N}/ 正文相似度 59%-93%、FAQ 完全共用，
+# 属规模化重复内容。合并后由版本页 /textbook/{version}/ 承接全部年级内容。
+/textbook/pep/grade-1/ /textbook/pep/ 301
+/textbook/pep/grade-1 /textbook/pep/ 301
+/textbook/pep/grade-2/ /textbook/pep/ 301
+/textbook/pep/grade-2 /textbook/pep/ 301
+/textbook/pep/grade-3/ /textbook/pep/ 301
+/textbook/pep/grade-3 /textbook/pep/ 301
+/textbook/pep/grade-4/ /textbook/pep/ 301
+/textbook/pep/grade-4 /textbook/pep/ 301
+/textbook/pep/grade-5/ /textbook/pep/ 301
+/textbook/pep/grade-5 /textbook/pep/ 301
+/textbook/pep/grade-6/ /textbook/pep/ 301
+/textbook/pep/grade-6 /textbook/pep/ 301
+/textbook/bsd/grade-1/ /textbook/bsd/ 301
+/textbook/bsd/grade-1 /textbook/bsd/ 301
+/textbook/bsd/grade-2/ /textbook/bsd/ 301
+/textbook/bsd/grade-2 /textbook/bsd/ 301
+/textbook/bsd/grade-3/ /textbook/bsd/ 301
+/textbook/bsd/grade-3 /textbook/bsd/ 301
+/textbook/bsd/grade-4/ /textbook/bsd/ 301
+/textbook/bsd/grade-4 /textbook/bsd/ 301
+/textbook/bsd/grade-5/ /textbook/bsd/ 301
+/textbook/bsd/grade-5 /textbook/bsd/ 301
+/textbook/bsd/grade-6/ /textbook/bsd/ 301
+/textbook/bsd/grade-6 /textbook/bsd/ 301
+/textbook/suer/grade-1/ /textbook/suer/ 301
+/textbook/suer/grade-1 /textbook/suer/ 301
+/textbook/suer/grade-2/ /textbook/suer/ 301
+/textbook/suer/grade-2 /textbook/suer/ 301
+/textbook/suer/grade-3/ /textbook/suer/ 301
+/textbook/suer/grade-3 /textbook/suer/ 301
+/textbook/suer/grade-4/ /textbook/suer/ 301
+/textbook/suer/grade-4 /textbook/suer/ 301
+/textbook/suer/grade-5/ /textbook/suer/ 301
+/textbook/suer/grade-5 /textbook/suer/ 301
+/textbook/suer/grade-6/ /textbook/suer/ 301
+/textbook/suer/grade-6 /textbook/suer/ 301
+/textbook/bubian/grade-1/ /textbook/bubian/ 301
+/textbook/bubian/grade-1 /textbook/bubian/ 301
+/textbook/bubian/grade-2/ /textbook/bubian/ 301
+/textbook/bubian/grade-2 /textbook/bubian/ 301
+/textbook/bubian/grade-3/ /textbook/bubian/ 301
+/textbook/bubian/grade-3 /textbook/bubian/ 301
+/textbook/bubian/grade-4/ /textbook/bubian/ 301
+/textbook/bubian/grade-4 /textbook/bubian/ 301
+/textbook/bubian/grade-5/ /textbook/bubian/ 301
+/textbook/bubian/grade-5 /textbook/bubian/ 301
+/textbook/bubian/grade-6/ /textbook/bubian/ 301
+/textbook/bubian/grade-6 /textbook/bubian/ 301

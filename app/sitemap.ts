@@ -208,15 +208,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }));
   });
 
-  // ========== 教材详情页（URL 与 generateStaticParams 保持一致）==========
+  // ========== 教材版本聚合页 ==========
+  // 2026-09-11 变更：原先 24 个 /textbook/{version}/grade-{N}/ 页面
+  // 正文相似度 59%-93%、FAQ 完全共用，属规模化重复内容（scaled content abuse）。
+  // 现合并为 4 个版本页 /textbook/{version}/，承载 1-6 年级完整学习地图。
+  // 旧 URL 全部由 public/_redirects 301 到版本页，权重照常传递。
   TEXTBOOKS.forEach(tb => {
-    tb.grades.forEach(g => {
-      sitemapEntries.push(makeZhEntry(`/textbook/${tb.id}/grade-${g.grade}/`, {
-        lastModified: SITE_LASTMOD,
-        changeFrequency: 'weekly',
-        priority: 0.8,
-      }));
-    });
+    sitemapEntries.push(makeZhEntry(`/textbook/${tb.id}/`, {
+      lastModified: SITE_LASTMOD,
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    }));
   });
 
   // ========== 知识点详情页 ==========

@@ -1,4 +1,4 @@
-import OriginalPage from "@/app/textbook/[version]/[grade]/page";
+import OriginalPage from "@/app/textbook/[version]/page";
 import { getTranslations } from "next-intl/server";
 import { Metadata } from "next";
 import { locales } from "@/lib/i18n";
@@ -7,18 +7,16 @@ import { TEXTBOOKS } from "@/lib/textbookConfig";
 export const dynamic = "force-static";
 
 export function generateStaticParams() {
-  const params: { locale: string; version: string; grade: string }[] = [];
+  const params: { locale: string; version: string }[] = [];
   for (const locale of locales) {
     for (const item of TEXTBOOKS) {
-      for (const sub of item.grades) {
-        params.push({ locale, version: item.id, grade: `grade-${sub.grade}` });
-      }
+      params.push({ locale, version: item.id });
     }
   }
   return params;
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string; version: string; grade: string }> }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; version: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "pages" });
   return {
@@ -37,7 +35,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   };
 }
 
-export default async function TextbookGradePage({ params }: { params: Promise<{ locale: string; version: string; grade: string }> }) {
+export default async function TextbookVersionPage({ params }: { params: Promise<{ locale: string; version: string }> }) {
   const { locale, ...rest } = await params;
   return <OriginalPage params={Promise.resolve(rest as any)} />;
 }
