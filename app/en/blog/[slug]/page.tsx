@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { enArticles } from '../data';
 import EnBlogPostContent from '../EnBlogPostContent';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export function generateStaticParams() {
   return enArticles.map((a) => ({ slug: a.id }));
@@ -33,6 +34,7 @@ export async function generateMetadata({
       },
     },
     openGraph: {
+      images: [DEFAULT_OG_IMAGE],
       type: 'article',
       title: article.title,
       description: article.description,

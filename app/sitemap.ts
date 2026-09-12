@@ -121,6 +121,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/terms/', priority: 0.3, freq: 'yearly', lastmod: SITE_LASTMOD },
     { path: '/privacy/', priority: 0.3, freq: 'yearly', lastmod: SITE_LASTMOD },
     { path: '/editorial-policy/', priority: 0.4, freq: 'monthly', lastmod: SITE_LASTMOD },
+    // P6 补收：HTML 站点地图页（/sitemap/ 返回 200、可索引、含 CollectionPage 结构化数据）
+    { path: '/sitemap/', priority: 0.3, freq: 'weekly', lastmod: SITE_LASTMOD },
   ];
   staticPages.forEach(({ path, priority, freq, lastmod }) => {
     sitemapEntries.push(makeZhEntry(path, {

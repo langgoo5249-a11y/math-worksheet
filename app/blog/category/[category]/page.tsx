@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { articles, categories } from '../../data';
 import type { Category } from '../../data';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 const BASE_URL = 'https://www.skillxm.cn';
 
@@ -53,13 +54,7 @@ const categorySEOConfig: Record<string, {
     keywords: ['免费教学工具', '在线教育工具', '小学学习工具', '学习软件推荐', '教育APP'],
     topics: '免费教学工具、在线学习平台、教育APP推荐等核心内容',
     ability: '学习效率',
-    intro: '免费工具的价值不在于「免费」，而在于能不能真的省下时间。这个专栏整理适合小学生使用的在线工具：练习卷生成、口算速练、字帖生成、拼音学习等，说明各自适合什么场景、什么年级，以及有哪些使用上的坑。评测标准统一：是否免费无门槛、是否支持打印、内容是否符合课标。除工具清单外，这里也有单个工具的分步实操（例如作文素材类工具怎么用才有效），按「什么时候用、怎么用、用完之后做什么」写清流程。',
-  },
-  '关于我们': {
-    keywords: ['练学宝介绍', '教育工具团队', '关于我们', '教育理念', '团队介绍'],
-    topics: '团队介绍、教育理念、产品更新等核心内容',
-    ability: '教育认知',
-    intro: '这里记录练学宝的产品更新、教育理念与团队思考。我们做这套工具的出发点很简单：家长辅导孩子需要具体的「抓手」，而不是抽象的方法论。所以练学宝的工具都围绕一个目标——把老师布置的练习需求，变成可以立刻生成、直接打印的页面。这个专栏也会公开我们在内容准确性上的做法与修正记录。',
+    intro: '免费工具的价值不在于「免费」，而在于能不能真的省下时间。这个专栏整理适合小学生使用的在线工具：练习卷生成、口算速练、字帖生成、拼音学习等，说明各自适合什么场景、什么年级，以及有哪些使用上的坑。评测标准统一：是否免费无门槛、是否支持打印、内容是否符合课标。除工具清单外，这里也有单个工具的分步实操（例如作文素材类工具怎么用才有效），按「什么时候用、怎么用、用完之后做什么」写清流程；还收录了开发团队的创作手记，说明这些免费工具是怎么做出来的、为什么坚持免费。',
   },
   '综合教育': {
     keywords: ['家庭教育', '厌学疏导', '时间管理', '亲子沟通', '小学生心理'],
@@ -77,7 +72,7 @@ const categoryColors: Record<string, string> = {
   '学习方法': 'bg-purple-500/20 text-purple-300 border-purple-500/30',
   '升学指导': 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30',
   '工具推荐': 'bg-teal-500/20 text-teal-300 border-teal-500/30',
-  '关于我们': 'bg-pink-500/20 text-pink-300 border-pink-500/30',
+  '综合教育': 'bg-pink-500/20 text-pink-300 border-pink-500/30',
 };
 
 // 排除'全部'的分类列表
@@ -128,6 +123,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     },
     openGraph: {
+      images: [DEFAULT_OG_IMAGE],
       title: `${decodedCategory} - 练学宝知识分享`,
       description,
       type: 'website',

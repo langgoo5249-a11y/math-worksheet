@@ -5,6 +5,7 @@ import type { Category } from '../../../../blog/data';
 import { getTranslations } from 'next-intl/server';
 import LanguageSwitcher from '../../../../_components/LanguageSwitcher';
 import { localePath, type Locale } from '@/lib/i18n';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 const BASE_URL = 'https://www.skillxm.cn';
 
@@ -88,6 +89,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     },
     openGraph: {
+      images: [DEFAULT_OG_IMAGE],
       title: t('categoryPage.title', { category: categoryName }),
       description,
       type: 'website',

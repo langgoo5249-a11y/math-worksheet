@@ -3,7 +3,7 @@ import Link from 'next/link';
 import SectionLayout from '@/app/_components/SectionLayout';
 import { TEXTBOOKS } from '@/lib/textbookConfig';
 import { VERSION_PROFILES } from '@/lib/textbookContent';
-import { generateItemListSchema, generateOrganizationSchema } from '@/lib/seoUtils';
+import { generateItemListSchema, generateOrganizationSchema, DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 import JsonLd from '@/app/_components/JsonLd';
 
 // 说明：2026-09 起，教材专区不再逐个年级链接（原来 24 个年级页已合并为
@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: '小学教材同步练习专区 - 练学宝',
     description: '人教版/北师大版/苏教版/部编版 4 个版本，1-6 年级学习地图与免费练习卷',
     url: 'https://www.skillxm.cn/textbook',

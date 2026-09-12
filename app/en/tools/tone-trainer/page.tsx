@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import ToneTrainer from './ToneTrainer';
 import { enArticles } from '@/app/en/blog/data';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
   title: 'Mandarin Tone Trainer - Master the Four Tones',
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: 'Mandarin Tone Trainer - Master the Four Tones',
     description:
       'Learn the four Mandarin tones and neutral tone with diagrams, tone pairs and tips. Free pronunciation trainer.',

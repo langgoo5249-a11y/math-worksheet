@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { enArticles } from '@/app/en/blog/data';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
   title: 'Chinese Reading Practice - Graded Reader with Pinyin',
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: 'Chinese Reading Practice - Graded Reader with Pinyin',
     description:
       'Free Chinese graded reader with pinyin and English. Sample beginner passage, reading tips and graded level descriptions.',

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import JsonLd from '@/app/_components/JsonLd';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 // ⚠️ app/editorial-policy/page.tsx 是 'use client' 组件，无法导出 metadata，
 //    导致该页继承了根 layout 的 alternates.canonical（指向首页 https://www.skillxm.cn/）。
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: '编辑政策与内容审核流程 | 练学宝',
     description:
       '所有教育内容均经一线教师逐题审核，遵循「AI辅助初稿 + 人工审核」流程，对齐2022版课程标准。',

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { enArticles } from '@/app/en/blog/data';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
   title: 'Chinese Stroke Order Practice - Learn to Write Characters',
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: 'Chinese Stroke Order Practice - Learn to Write Characters',
     description:
       'Master Chinese stroke order: the 8 basic strokes, general rules, and common characters broken down stroke by stroke. Free.',

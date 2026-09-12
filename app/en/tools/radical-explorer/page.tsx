@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import RadicalExplorer from './RadicalExplorer';
 import { enArticles } from '@/app/en/blog/data';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
   title: 'Chinese Radical Explorer - Character Decomposition',
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: 'Chinese Radical Explorer - Character Decomposition',
     description:
       'Explore Chinese radicals and decompose characters into components. The 214 Kangxi radicals, the most common 30, and example breakdowns like 好 = 女 + 子.',

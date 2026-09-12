@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SectionLayout from '@/app/_components/SectionLayout';
 import { GRADES } from '@/lib/gradeConfig';
-import { generateItemListSchema, generateOrganizationSchema } from '@/lib/seoUtils';
+import { generateItemListSchema, generateOrganizationSchema, DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 import JsonLd from '@/app/_components/JsonLd';
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: '小学年级学习专区 - 练学宝',
     description: '小学1-6年级完整学习方案：核心知识点、配套练习工具、学习路径全覆盖',
     url: 'https://www.skillxm.cn/grade',

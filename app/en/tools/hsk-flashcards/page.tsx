@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import HSKFlashcards from './HSKFlashcards';
 import { enArticles } from '@/app/en/blog/data';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
   title: 'HSK Flashcards - Free HSK 1-6 Vocabulary Practice',
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: 'HSK Flashcards - Free HSK 1-6 Vocabulary Practice',
     description:
       'Practice HSK 1-6 vocabulary with spaced repetition. Level descriptions, sample HSK 1 words and study tips. Free.',

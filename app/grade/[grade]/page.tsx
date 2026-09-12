@@ -6,7 +6,7 @@ import { GRADES, getGradeConfig } from '@/lib/gradeConfig';
 import { getGradeFaqs } from '@/lib/gradeFaqs';
 import { KNOWLEDGE_POINTS } from '@/lib/knowledgeConfig';
 import { articles as blogPosts } from '@/app/blog/data';
-import { generateArticleSchema, generateCourseSchema, generateOrganizationSchema } from '@/lib/seoUtils';
+import { generateArticleSchema, generateCourseSchema, generateOrganizationSchema, DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export function generateStaticParams() {
   return GRADES.map((g) => ({ grade: `grade-${g.grade}` }));
@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: { params: Promise<{ grade: st
       },
     },
     openGraph: {
+      images: [DEFAULT_OG_IMAGE],
       title: config.metaTitle,
       description: config.metaDescription,
       url: `https://www.skillxm.cn/grade/${slug}/`,

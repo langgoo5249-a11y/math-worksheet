@@ -406,3 +406,11 @@
 /blog/category/工具教程 /blog/category/工具推荐/ 301
 /blog/category/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/ /blog/category/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/ 301
 /blog/category/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B /blog/category/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/ 301
+
+# P6 薄内容分类收口（2026-09-12）：「关于我们」仅 1 篇，且分类页标题与 /about/ 近似重复
+# 该文（wei-shenme-mianfei-gongju）已归入「工具推荐」；分类页 301 收口。
+# 非 ASCII 路径同时写「原样 UTF-8」与「百分号编码」两版，兼容 CF Pages 匹配方式。
+/blog/category/关于我们/ /blog/category/工具推荐/ 301
+/blog/category/关于我们 /blog/category/工具推荐/ 301
+/blog/category/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC/ /blog/category/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/ 301
+/blog/category/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC /blog/category/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/ 301

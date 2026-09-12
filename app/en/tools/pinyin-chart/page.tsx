@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import PinyinChart from './PinyinChart';
 import { enArticles } from '@/app/en/blog/data';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
   title: 'Pinyin Chart - Interactive Chinese Pronunciation Table with Audio',
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: 'Pinyin Chart - Interactive Chinese Pronunciation Table with Audio',
     description:
       'Complete interactive pinyin chart with 23 initials and 24 finals. Click any cell to hear pronunciation, switch between 4 tones.',

@@ -317,6 +317,16 @@ export function generateCanonical(path: string) {
   return ensureTrailingSlash(`${BASE_URL}${path}`);
 }
 
+// 默认 OG 图。⚠️ 页面级 `openGraph` 会【整块替换】根 layout 的 openGraph，
+// 只要页面自己声明了 openGraph 却没写 images，og:image 就会丢失。
+// 因此所有自定义 openGraph 的页面都必须显式引用本常量（P6 修复）。
+export const DEFAULT_OG_IMAGE = {
+  url: `${BASE_URL}/og-image.jpg`,
+  width: 1200,
+  height: 630,
+  alt: `${SITE_NAME} - 免费在线教育工具`,
+};
+
 export const SITE_INFO = {
   BASE_URL,
   SITE_NAME,

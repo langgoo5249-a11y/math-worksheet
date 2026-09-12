@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { enArticles, enCategories } from '../../data';
 import type { EnCategory } from '../../data';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 const BASE_URL = 'https://www.skillxm.cn';
 
@@ -94,6 +95,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       },
     },
     openGraph: {
+      images: [DEFAULT_OG_IMAGE],
       title: `${decodedCategory} - Chinese Learning Guides | SkillXM`,
       description,
       type: 'website',

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import PictureLearning from './PictureLearning';
 import { enArticles } from '@/app/en/blog/data';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
   title: 'Learn Chinese with Pictures - Visual Vocabulary Builder',
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: 'Learn Chinese with Pictures - Visual Vocabulary Builder',
     description:
       'A free visual vocabulary builder that pairs pictures and emoji with Chinese characters, pinyin and English. Easy, Hard and Hell (idiom) levels.',

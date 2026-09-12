@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import PinyinConverter from './PinyinConverter';
 import { enArticles } from '@/app/en/blog/data';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
   title: 'Pinyin Converter - Convert Chinese to Pinyin Online Free',
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: 'Pinyin Converter - Convert Chinese to Pinyin Online Free',
     description:
       'Free online pinyin converter. Paste Chinese text and instantly get pinyin with tone marks. No registration required.',

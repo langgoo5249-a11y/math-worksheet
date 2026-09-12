@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { enArticles, enCategories } from './data';
 import EnBlogPageClient from './EnBlogPageClient';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
   // 品牌后缀由 app/en/layout.tsx 的 title.template 追加（P3-4：此处不再手写）
@@ -19,6 +20,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: 'Chinese Learning Blog - Guides, Tips & Strategies | SkillXM',
     description:
       'Free Chinese learning guides, tips, and strategies for Mandarin learners.',

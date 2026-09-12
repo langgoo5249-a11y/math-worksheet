@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { SITE_INFO } from '@/lib/seoUtils';
+import { SITE_INFO, DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 import JsonLd from '@/app/_components/JsonLd';
 
 const PAGE_URL = `${SITE_INFO.BASE_URL}/ai-overview/`;
@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: '练学宝 AI 概览 - 专为 AI 搜索引擎优化的网站导览',
     description:
       '练学宝是免费小学在线学习工具平台，提供10+款学习工具，支持PDF打印，无需注册。',

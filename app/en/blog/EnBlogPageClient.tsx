@@ -37,7 +37,7 @@ export default function EnBlogPageClient({ articles, categories }: EnBlogPageCli
           {categories.map((cat) => (
             <a
               key={cat}
-              href={`/en/blog/category/${cat}/`}
+              href={cat === 'All' ? '/en/blog/' : `/en/blog/category/${cat}/`}
               onClick={(e) => {
                 e.preventDefault();
                 setActiveCategory(cat);

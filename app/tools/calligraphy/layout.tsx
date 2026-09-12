@@ -54,7 +54,7 @@ export default function CalligraphyLayout({ children }: { children: React.ReactN
         <p>访问 <a href="https://www.skillxm.cn/">练学宝</a> 获取更多免费教学工具，包括数学练习卷生成器、英语字帖、数独游戏、口算速练等。</p>
         <p>相关学习文章</p>
         <ul>
-          <li><a href="https://www.skillxm.cn/blog/haizi-lianzi-shijianbiao/">孩子写字歪歪扭扭？练字时间表和方法</a></li>
+          <li><a href="https://www.skillxm.cn/blog/haizi-xiezi-waiwainiuniu-lianzi-shijianbiao/">孩子写字歪歪扭扭？练字时间表和方法</a></li>
           <li><a href="https://www.skillxm.cn/blog/ertong-lianzi-nianling/">小学生练字最佳年龄和方法</a></li>
           <li><a href="https://www.skillxm.cn/blog/fanggezhi-tianzige/">田字格、米字格、方格纸的使用场景和选择</a></li>
           <li><a href="https://www.skillxm.cn/blog/mianfei-zitie-shengchengqi-tuijian/">免费字帖生成器推荐</a></li>

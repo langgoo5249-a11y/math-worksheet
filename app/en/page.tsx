@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { enArticles } from '@/app/en/blog/data';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
   title: 'Learn Chinese Free - Pinyin, Stroke Order, HSK, Picture Learning | SkillXM',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   keywords:
     'learn Chinese, learn Mandarin, Chinese for beginners, pinyin converter, stroke order, HSK practice, Chinese characters, free Chinese learning, Mandarin tones, picture learning, pinyin chart, Chinese reading',
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: 'Learn Chinese Free - Online Mandarin Learning Tools',
     description:
       'Free interactive tools for learning Chinese: pinyin converter, stroke order practice, HSK flashcards, tone trainer, and more.',
@@ -77,7 +79,7 @@ const tools = [
   {
     name: 'Chinese Reading Reader',
     nameZh: '中文阅读器',
-    href: '/en/tools/chinese-reader/',
+    href: '/en/tools/reading-reader/',
     emoji: '📖',
     description:
       'Graded reading passages with on-demand pinyin annotation and tap-to-translate vocabulary. Read at your level and grow your understanding naturally.',

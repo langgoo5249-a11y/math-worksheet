@@ -4,6 +4,7 @@ import { articles, categories } from './data';
 import { TOOLS } from '@/lib/toolRegistry';
 import BlogPageClient from './BlogPageClient';
 import MiniappFooterButton from '../_components/MiniappFooterButton';
+import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
   title: '知识分享 - 小学教育学习方法指南 | 练学宝',
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
+    images: [DEFAULT_OG_IMAGE],
     title: '知识分享 - 小学教育学习方法指南 | 练学宝',
     description: '小学数学语文英语学习方法文章集锦，覆盖一年级到六年级学习指南。',
     url: 'https://www.skillxm.cn/blog/',
