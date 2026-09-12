@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   keywords: ['小学年级学习', '一年级学习', '二年级学习', '三年级学习', '四年级学习', '五年级学习', '六年级学习', '小升初', '年级专区'],
   alternates: {
     canonical: 'https://www.skillxm.cn/grade/',
+    languages: {
+      'zh-CN': 'https://www.skillxm.cn/grade/',
+      'x-default': 'https://www.skillxm.cn/grade/',
+    },
   },
   openGraph: {
     title: '小学年级学习专区 - 练学宝',

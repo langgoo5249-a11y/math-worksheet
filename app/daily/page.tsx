@@ -16,7 +16,13 @@ export const metadata: Metadata = {
   title: '每日一练 - 小学数学口算每日打卡 | 练学宝',
   description: '练学宝每日一练：每天为孩子生成15分钟数学口算练习，按年级智能出题，包含答案解析与学习建议。坚持每日打卡，让学习成为习惯。',
   keywords: ['每日一练', '口算打卡', '小学口算', '每日数学练习', '数学打卡', '口算练习', '每日打卡'],
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'zh-CN': PAGE_URL,
+      'x-default': PAGE_URL,
+    },
+  },
   openGraph: generateOpenGraph({
     title: '每日一练 - 小学数学口算每日打卡 | 练学宝',
     description: '每天为孩子生成15分钟数学口算练习，按年级智能出题，包含答案解析与学习建议。',

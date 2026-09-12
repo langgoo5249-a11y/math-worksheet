@@ -122,10 +122,6 @@ export const categories = [
 
   '综合教育',
 
-  '数学',
-
-  '工具教程',
-
 ] as const;
 
 
@@ -242,7 +238,7 @@ export const articles: Article[] = [
 
 有个细节提醒家长：课本和试卷上的角经常"歪着放"，一条边并不水平。所以要允许孩子**转动量角器去凑角，或者转一转作业纸**——把量角器"转"到角上，而不是把角"掰"到量角器上。不少孩子不敢转工具，宁可歪着脑袋硬读，一读就错。
 
-<div class="my-6"><img class="rounded-xl w-full border border-white/10" src="/images/blog/jiaoduliang-liangjiaoqi-zenme-yong-2026.webp" alt="量角器量角操作示意：中心对顶点、零线压一边、先估后读数" /><p class="text-center text-gray-400 text-xs mt-2">图：量角器量角的核心操作，先对准再读数</p></div>
+<div class="my-6"><img class="rounded-xl w-full border border-white/10 h-auto" src="/images/blog/jiaoduliang-liangjiaoqi-zenme-yong-2026.webp" alt="量角器量角操作示意：中心对顶点、零线压一边、先估后读数" width="1920" height="1080" loading="lazy" decoding="async" /><p class="text-center text-gray-400 text-xs mt-2">图：量角器量角的核心操作，先对准再读数</p></div>
 
 ## 在家怎么练：每天10分钟就够
 
@@ -340,7 +336,7 @@ export const articles: Article[] = [
 
 为什么这么改？因为教研方向早就看明白了：钱这件事，靠讲是讲不会的，只能在用中学会。孩子要闯的关，其实是下面这三道。
 
-<div class="my-6"><img class="rounded-xl w-full border border-white/10" src="/images/blog/renshi-renminbi-yijiaofen.webp" alt="人民币启蒙三步练：认面额、懂进率、会找零" /><p class="text-center text-gray-400 text-xs mt-2">图：一年级认识人民币的三道坎与在家训练路径</p></div>
+<div class="my-6"><img class="rounded-xl w-full border border-white/10 h-auto" src="/images/blog/renshi-renminbi-yijiaofen.webp" alt="人民币启蒙三步练：认面额、懂进率、会找零" width="1200" height="900" loading="lazy" decoding="async" /><p class="text-center text-gray-400 text-xs mt-2">图：一年级认识人民币的三道坎与在家训练路径</p></div>
 
 ## 第一道坎：不认识钱长什么样
 
@@ -495,7 +491,7 @@ export const articles: Article[] = [
 
 第二步，算"分"。再找那根长细的分针，看它指着几，几乘5就是几分。指着4，4×5=20，那就是8时20分。
 
-<div class="my-6"><img class="rounded-xl w-full border border-white/10" src="/images/blog/renshi-zhongbiao-jiaoxue.webp" alt="认识钟表两步读法：先定时针再算分针，以8时20分为例" /><p class="text-center text-gray-400 text-xs mt-2">图：认识钟表两步读法，以8时20分为例</p></div>
+<div class="my-6"><img class="rounded-xl w-full border border-white/10 h-auto" src="/images/blog/renshi-zhongbiao-jiaoxue.webp" alt="认识钟表两步读法：先定时针再算分针，以8时20分为例" width="1200" height="821" loading="lazy" decoding="async" /><p class="text-center text-gray-400 text-xs mt-2">图：认识钟表两步读法，以8时20分为例</p></div>
 
 这个顺序很重要。先"定"再"算"，相当于把孩子从"看见哪个数就读哪个数"的直觉，掰回"按规则读"的路径上来。人教版二年级上册《认识时间》用的也是同一套思路：先看时针在几和几之间（看过几时就是几时多），再看分针从12起走了几个小格（就是几分）。
 
@@ -3668,7 +3664,7 @@ dateModified: "2026-08-14",
 
     dateModified: "2026-05-05",
 
-    category: '数学',
+    category: '数学学习',
 
     dateReviewed: "2026-07-18",
 
@@ -4256,7 +4252,7 @@ dateModified: "2026-08-14",
 
     dateModified: "2026-05-01",
 
-    category: '工具教程',
+    category: '工具推荐',
 
     dateReviewed: "2026-07-18",
 

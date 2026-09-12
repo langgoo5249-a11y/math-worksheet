@@ -389,3 +389,20 @@
 # P3-2 EN 重复文合并（与 /en/blog/chinese-tones-not-hard-pitch-contour-method/ 主题重叠，已并入）
 /en/blog/mastering-chinese-tones-scientific-approach/ /en/blog/chinese-tones-not-hard-pitch-contour-method/ 301
 /en/blog/mastering-chinese-tones-scientific-approach /en/blog/chinese-tones-not-hard-pitch-contour-method/ 301
+
+# P5-1 薄内容分类页合并（2026-09-12）
+# 背景：博客共 11 个分类，其中「数学」仅 1 篇、「工具教程」仅 1 篇。
+# 单篇文章的分类页在搜索引擎看来是典型的薄内容列表页，且与「数学学习」（35 篇）、
+# 「工具推荐」（6 篇）主题高度重叠，构成关键词内耗。故将这两篇归入大分类，旧分类页 301 收口。
+# 说明：分类名含中文，同时写出「原样 UTF-8」与「百分号编码」两版规则，
+#       以兼容 Cloudflare Pages 对非 ASCII 路径的匹配方式（多写一条不会误伤其它路径）。
+# /blog/category/数学/  →  /blog/category/数学学习/   （该文：脑科学解读数学能力）
+/blog/category/数学/ /blog/category/数学学习/ 301
+/blog/category/数学 /blog/category/数学学习/ 301
+/blog/category/%E6%95%B0%E5%AD%A6/ /blog/category/%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0/ 301
+/blog/category/%E6%95%B0%E5%AD%A6 /blog/category/%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0/ 301
+# /blog/category/工具教程/  →  /blog/category/工具推荐/   （该文：作文模板生成器实操）
+/blog/category/工具教程/ /blog/category/工具推荐/ 301
+/blog/category/工具教程 /blog/category/工具推荐/ 301
+/blog/category/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B/ /blog/category/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/ 301
+/blog/category/%E5%B7%A5%E5%85%B7%E6%95%99%E7%A8%8B /blog/category/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/ 301

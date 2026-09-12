@@ -88,6 +88,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     keywords: config.keywords,
     alternates: {
       canonical: `${BASE_URL}/en/blog/category/${decodedCategory}/`,
+      languages: {
+        en: `${BASE_URL}/en/blog/category/${decodedCategory}/`,
+        'x-default': `${BASE_URL}/en/blog/category/${decodedCategory}/`,
+      },
     },
     openGraph: {
       title: `${decodedCategory} - Chinese Learning Guides | SkillXM`,

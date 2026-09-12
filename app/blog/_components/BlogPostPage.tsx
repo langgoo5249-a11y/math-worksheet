@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { articles, defaultAuthor } from '../data';
 import SiteLayout from '@/app/_components/SiteLayout';
+import { getImageDims } from '@/lib/imageDims';
 
 interface BlogPostPageProps {
   slug: string;
@@ -383,8 +384,11 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             <img
               src={article.image}
               alt={article.title + " - 配图"}
-              className="w-full rounded-xl sm:rounded-2xl shadow-lg border border-white/10"
+              width={getImageDims(article.image)[0]}
+              height={getImageDims(article.image)[1]}
+              className="w-full h-auto rounded-xl sm:rounded-2xl shadow-lg border border-white/10"
               loading="eager"
+              decoding="async"
             />
           </figure>
         )}

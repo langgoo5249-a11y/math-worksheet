@@ -24,6 +24,10 @@ export async function generateMetadata({ params }: { params: Promise<{ grade: st
     keywords: config.metaKeywords,
     alternates: {
       canonical: `https://www.skillxm.cn/grade/${slug}/`,
+      languages: {
+        'zh-CN': `https://www.skillxm.cn/grade/${slug}/`,
+        'x-default': `https://www.skillxm.cn/grade/${slug}/`,
+      },
     },
     openGraph: {
       title: config.metaTitle,

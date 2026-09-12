@@ -14,7 +14,13 @@ export const metadata: Metadata = {
   title: '更新日志 - 功能更新与新工具发布记录 | 练学宝',
   description: '练学宝更新日志：记录所有新工具上线、功能优化、Bug修复、新增资源。见证练学宝与孩子们一起成长。',
   keywords: ['更新日志', '练学宝更新', '新功能', 'changelog', '版本更新', '功能上线'],
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'zh-CN': PAGE_URL,
+      'x-default': PAGE_URL,
+    },
+  },
   openGraph: generateOpenGraph({
     title: '更新日志 - 功能更新与新工具发布记录 | 练学宝',
     description: '记录所有新工具上线、功能优化、Bug修复、新增资源。',

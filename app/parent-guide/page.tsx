@@ -16,7 +16,13 @@ export const metadata: Metadata = {
   title: '家长指导中心 - 幼小衔接、学习习惯、小升初指导 | 练学宝',
   description: '练学宝家长指导中心：覆盖幼小衔接、学习习惯培养、辅导作业、时间管理、阅读习惯、小升初择校等家长关心的核心话题，提供可落地的实战方法。',
   keywords: ['家长指导', '幼小衔接', '学习习惯', '辅导作业', '时间管理', '小升初', '亲子教育', '家庭教育'],
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'zh-CN': PAGE_URL,
+      'x-default': PAGE_URL,
+    },
+  },
   openGraph: generateOpenGraph({
     title: '家长指导中心 - 幼小衔接、学习习惯、小升初 | 练学宝',
     description: '6大主题、24个实战方法、20+学习工具推荐，覆盖幼小衔接到小升初家长关心的核心话题。',

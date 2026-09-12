@@ -53,7 +53,13 @@ export async function generateMetadata({ params }: { params: Promise<{ version: 
       `${tb.name}单元测试`,
       '小学教材同步练习',
     ],
-    alternates: { canonical: pageUrl },
+    alternates: {
+      canonical: pageUrl,
+      languages: {
+        'zh-CN': pageUrl,
+        'x-default': pageUrl,
+      },
+    },
     openGraph: generateOpenGraph({ title, description, url: pageUrl, type: 'article' }),
     twitter: generateTwitterCard({ title, description }),
   };

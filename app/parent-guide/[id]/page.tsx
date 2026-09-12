@@ -28,7 +28,13 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title,
     description: t.description,
     keywords: [t.title, '家长指导', '家庭教育', t.ageRange, ...t.keyPoints.slice(0, 3)],
-    alternates: { canonical: pageUrl },
+    alternates: {
+      canonical: pageUrl,
+      languages: {
+        'zh-CN': pageUrl,
+        'x-default': pageUrl,
+      },
+    },
     openGraph: generateOpenGraph({ title, description: t.description, url: pageUrl, type: 'article' }),
     twitter: generateTwitterCard({ title, description: t.description }),
   };

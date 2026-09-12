@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import SiteLayout from '../_components/SiteLayout';
 import { TOOLS, ACTIVE_TOOL_COUNT } from '@/lib/toolRegistry';
+import JsonLd from '@/app/_components/JsonLd';
 
 export const metadata: Metadata = {
   title: '全部学习工具 - 练学宝免费小学教学工具合集',
@@ -9,6 +10,11 @@ export const metadata: Metadata = {
   keywords: '练学宝工具,小学教学工具,数学练习卷生成器,字帖生成器,口算速练,数独游戏,英语字帖,拼音注音,识字卡片,作文模板,免费PDF打印',
   alternates: {
     canonical: 'https://www.skillxm.cn/tools/',
+    languages: {
+      'zh-CN': 'https://www.skillxm.cn/tools/',
+      'en': 'https://www.skillxm.cn/en/tools/',
+      'x-default': 'https://www.skillxm.cn/tools/',
+    },
   },
   openGraph: {
     title: '全部学习工具 - 练学宝免费小学教学工具合集',
@@ -32,6 +38,36 @@ export const metadata: Metadata = {
     description: '10+款免费小学教学工具，数学练习卷、字帖、口算、数独、英语字帖等，无需注册即开即用。',
     images: ['https://www.skillxm.cn/og-image.jpg'],
   },
+};
+
+// P5-3：工具总览页此前是全站仅剩两处缺 BreadcrumbList 的有效页面之一（另一处为 /editorial-policy/），
+// 补 CollectionPage + BreadcrumbList，与全站 200 页的结构化数据口径保持一致。
+const toolsPageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': 'https://www.skillxm.cn/tools/#collectionpage',
+      name: '全部学习工具',
+      description:
+        '练学宝全部免费小学教学工具合集：数学练习卷生成器、字帖生成器、口算速练、数独游戏、英语字帖、拼音注音、识字卡片、作文模板、古诗词默写、单元测试卷等，无需注册、支持 PDF 导出打印。',
+      url: 'https://www.skillxm.cn/tools/',
+      inLanguage: 'zh-CN',
+      isPartOf: { '@type': 'WebSite', '@id': 'https://www.skillxm.cn/#website' },
+      publisher: {
+        '@type': 'Organization',
+        '@id': 'https://www.skillxm.cn/#organization',
+        name: '练学宝',
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: '首页', item: 'https://www.skillxm.cn/' },
+        { '@type': 'ListItem', position: 2, name: '全部学习工具', item: 'https://www.skillxm.cn/tools/' },
+      ],
+    },
+  ],
 };
 
 const toolColors: Record<string, string> = {
@@ -62,6 +98,8 @@ export default function ToolsPage() {
   };
 
   return (
+    <>
+      <JsonLd data={toolsPageSchema} />
     <SiteLayout>
       <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
         <script
@@ -197,5 +235,6 @@ export default function ToolsPage() {
         </div>
       </div>
     </SiteLayout>
+    </>
   );
 }

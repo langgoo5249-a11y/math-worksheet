@@ -16,7 +16,13 @@ export const metadata: Metadata = {
   title: '免费练习卷资源库 - 小学1-6年级各科练习卷下载 | 练学宝',
   description: '练学宝免费练习卷资源库：覆盖小学1-6年级数学、语文、英语全科练习卷，按年级+学科+知识点分类，所有资源支持PDF免费下载打印。',
   keywords: ['小学练习卷', '免费练习卷下载', '一年级练习卷', '六年级练习卷', '数学练习卷', '语文练习卷', '英语练习卷', 'PDF下载', '练习题库'],
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'zh-CN': PAGE_URL,
+      'x-default': PAGE_URL,
+    },
+  },
   openGraph: generateOpenGraph({
     title: '免费练习卷资源库 - 小学1-6年级各科练习卷下载 | 练学宝',
     description: '覆盖小学1-6年级数学语文英语全科练习卷，按年级+学科+知识点分类，所有资源支持PDF免费下载打印。',

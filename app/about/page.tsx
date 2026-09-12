@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: "了解练学宝的建站初衷、使命和团队。练学宝是一个免费的小学在线学习工具平台，由全栈开发者林远创建，提供数学练习卷生成器、字帖生成器、口算速练、数独游戏、识字卡片、英语字帖、拼音学习、古诗词默写、作文模板、单元测试卷等10+款工具，覆盖小学1-6年级数学语文英语全科，所有功能免费使用无需注册。",
   alternates: {
     canonical: 'https://www.skillxm.cn/about/',
+    languages: {
+      'zh-CN': 'https://www.skillxm.cn/about/',
+      'x-default': 'https://www.skillxm.cn/about/',
+    },
   },
   openGraph: {
     url: 'https://www.skillxm.cn/about/',

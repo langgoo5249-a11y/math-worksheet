@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   keywords: "联系练学宝,客服,反馈,合作,教育工具咨询",
   alternates: {
     canonical: 'https://www.skillxm.cn/contact/',
+    languages: {
+      'zh-CN': 'https://www.skillxm.cn/contact/',
+      'x-default': 'https://www.skillxm.cn/contact/',
+    },
   },
   openGraph: {
     url: 'https://www.skillxm.cn/contact/',

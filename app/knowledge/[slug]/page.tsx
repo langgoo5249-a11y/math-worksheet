@@ -88,7 +88,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: kp.metaTitle,
     description: kp.metaDescription,
     keywords: kp.metaKeywords,
-    alternates: { canonical: pageUrl },
+    alternates: {
+      canonical: pageUrl,
+      languages: {
+        'zh-CN': pageUrl,
+        'x-default': pageUrl,
+      },
+    },
     openGraph: generateOpenGraph({
       title: kp.metaTitle,
       description: kp.metaDescription,

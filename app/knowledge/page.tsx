@@ -16,7 +16,13 @@ export const metadata: Metadata = {
   title: '小学知识点专题 - 数学语文英语核心知识点详解 | 练学宝',
   description: '小学知识点专题库，覆盖数学（凑十法、乘法口诀、百分数等）、语文（拼音、阅读理解、看图写话）、英语（字母、单词记忆）等核心知识点，每个知识点配详解、例题、易错点和配套练习工具。',
   keywords: ['小学知识点', '凑十法', '破十法', '乘法口诀', '百分数应用题', '拼音学习', '阅读理解', '英语单词记忆', '小学数学知识点', '小学语文知识点', '小学英语知识点'],
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'zh-CN': PAGE_URL,
+      'x-default': PAGE_URL,
+    },
+  },
   openGraph: generateOpenGraph({
     title: '小学知识点专题库 - 数学语文英语核心知识点详解 | 练学宝',
     description: '覆盖小学1-6年级数学语文英语核心知识点，每个知识点含详解、典型例题、易错点、配套练习工具。',

@@ -20,7 +20,13 @@ export const metadata: Metadata = {
     '口算速练',
     '拼音学习',
   ],
-  alternates: { canonical: PAGE_URL },
+  alternates: {
+    canonical: PAGE_URL,
+    languages: {
+      'zh-CN': PAGE_URL,
+      'x-default': PAGE_URL,
+    },
+  },
   openGraph: {
     title: '练学宝 AI 概览 - 专为 AI 搜索引擎优化的网站导览',
     description:

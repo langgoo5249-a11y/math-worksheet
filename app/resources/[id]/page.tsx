@@ -33,7 +33,13 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     title,
     description,
     keywords: [r.title, ...r.tags, `${gradeName}${r.knowledgePoint}`, '小学练习卷', 'PDF下载'],
-    alternates: { canonical: pageUrl },
+    alternates: {
+      canonical: pageUrl,
+      languages: {
+        'zh-CN': pageUrl,
+        'x-default': pageUrl,
+      },
+    },
     openGraph: generateOpenGraph({ title, description, url: pageUrl, type: 'article' }),
     twitter: generateTwitterCard({ title, description }),
   };

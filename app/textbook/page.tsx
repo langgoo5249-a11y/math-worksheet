@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   keywords: ['小学教材同步练习', '人教版', '北师大版', '苏教版', '部编版', 'PEP', '小学数学下册', '小学语文下册', '教材同步', '教材版本对比'],
   alternates: {
     canonical: 'https://www.skillxm.cn/textbook/',
+    languages: {
+      'zh-CN': 'https://www.skillxm.cn/textbook/',
+      'x-default': 'https://www.skillxm.cn/textbook/',
+    },
   },
   openGraph: {
     title: '小学教材同步练习专区 - 练学宝',

@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   description: "练学宝隐私政策：详细说明我们如何收集、使用、存储和保护用户个人信息。练学宝不要求注册登录，不收集敏感个人信息，仅使用必要的Cookie保障网站正常运行。所有学习工具包括数学练习卷生成器、字帖生成器、口算速练、识字卡片、古诗词默写等均可在不提供个人信息的情况下免费使用，支持PDF打印下载，家长可放心让孩子使用。",
   alternates: {
     canonical: 'https://www.skillxm.cn/privacy/',
+    languages: {
+      'zh-CN': 'https://www.skillxm.cn/privacy/',
+      'x-default': 'https://www.skillxm.cn/privacy/',
+    },
   },
   openGraph: {
     url: 'https://www.skillxm.cn/privacy/',

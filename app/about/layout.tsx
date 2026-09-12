@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   keywords: "关于练学宝,教育工具团队,教育理念,免费教学工具,小学教育平台",
   alternates: {
     canonical: 'https://www.skillxm.cn/about/',
+    languages: {
+      'zh-CN': 'https://www.skillxm.cn/about/',
+      'x-default': 'https://www.skillxm.cn/about/',
+    },
   },
   openGraph: {
     url: 'https://www.skillxm.cn/about/',

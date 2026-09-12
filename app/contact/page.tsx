@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   description: "联系练学宝团队：如有问题、建议或合作意向，欢迎通过邮箱 lang@skillxm.cn 或在线表单联系我们。电话0575-64972527，地址浙江省绍兴市嵊州三江街道花园社区75号。我们会在1-2个工作日内回复您的邮件，欢迎家长教师和合作伙伴咨询交流，共同为小学生提供更好的免费学习工具和教育资源。",
   alternates: {
     canonical: 'https://www.skillxm.cn/contact/',
+    languages: {
+      'zh-CN': 'https://www.skillxm.cn/contact/',
+      'x-default': 'https://www.skillxm.cn/contact/',
+    },
   },
   openGraph: {
     url: 'https://www.skillxm.cn/contact/',

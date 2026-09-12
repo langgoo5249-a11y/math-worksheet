@@ -6,7 +6,7 @@ import { TEXTBOOKS } from '@/lib/textbookConfig';
 import { KNOWLEDGE_POINTS } from '@/lib/knowledgeConfig';
 import { PARENT_GUIDE_TOPICS } from '@/lib/parentGuideConfig';
 import { getAllResources } from '@/lib/resourcesConfig';
-import { enArticles } from '@/app/en/blog/data';
+import { enArticles, enCategories } from '@/app/en/blog/data';
 
 // output: "export" 模式下需要声明为静态生成
 export const dynamic = 'force-static';
@@ -170,12 +170,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       }));
     });
 
-  // ========== 博客分类（2026-06-16: 过滤中文分类名，Next.js 静态导出不支持非ASCII路由）==========
+  // ========== 博客分类 ==========
+  // 2026-09-12 更正：早前（2026-06-16）以「Next.js 静态导出不支持非 ASCII 路由」为由，
+  // 用 isValidUrlSlug 把中文分类名整体过滤掉，导致 9 个分类聚合页从未进入 sitemap。
+  // 实测该理由不成立：构建产物确实生成了 /blog/category/数学学习/ 等目录，
+  // 线上访问返回 200（最大一页 289 KB），且各分类页已有独立标题、描述与专属导语，
+  // 属正常可索引的聚合页。现按 encodeURIComponent 编码中文分类名后收录，
+  // 并用「该分类下最新文章的日期」作为 lastModified，避免全部写死站点统一日期。
   categories
-    .filter(c => c !== '全部' && isValidUrlSlug(c))
+    .filter(c => c !== '全部')
     .forEach(cat => {
-      sitemapEntries.push(makeZhEntry(`/blog/category/${cat}/`, {
-        lastModified: SITE_LASTMOD,
+      const latest = articles
+        .filter(a => a.category === cat && isValidUrlSlug(a.id))
+        .reduce((m, a) => {
+          const d = a.dateModified || a.date;
+          return d > m ? d : m;
+        }, '');
+      sitemapEntries.push(makeZhEntry(`/blog/category/${encodeURIComponent(cat)}/`, {
+        lastModified: latest || SITE_LASTMOD,
         changeFrequency: 'weekly',
         priority: 0.8,
       }));
@@ -288,6 +300,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
   });
+
+  // ========== 英文博客分类聚合页（2026-09-12 新增收录）==========
+  // 此前完全遗漏：/en/blog/category/{name}/ 共 5 页，实测线上返回 200、无 noindex、
+  // canonical 自指，属正常可索引页。分类名含空格与 &，故逐一 encodeURIComponent。
+  enCategories
+    .filter(c => c !== 'All')
+    .forEach(cat => {
+      sitemapEntries.push(makeEnEntry(
+        `/en/blog/category/${encodeURIComponent(cat)}/`,
+        '/blog/',
+        {
+          lastModified: SITE_LASTMOD,
+          changeFrequency: 'weekly',
+          priority: 0.7,
+        }
+      ));
+    });
 
   return sitemapEntries;
 }
