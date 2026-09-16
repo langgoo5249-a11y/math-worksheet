@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 /**
  * ⚠️ 重要：此组件为网站核心功能，不可删除或修改触发逻辑
- * 微信公众号二维码浮动按钮 - 用户点击后显示二维码弹窗
+ * 微信小程序码浮动按钮 - 用户点击后显示小程序码弹窗
  * 位置：固定在右下角，语言切换器上方
  */
 
@@ -27,11 +27,11 @@ export default function FloatingMiniappButton() {
           transition-all duration-200
           cursor-pointer
           group/miniapp"
-        aria-label="打开微信公众号二维码"
+        aria-label="打开微信小程序码"
       >
         <span className="text-white text-2xl">📱</span>
         <span className="absolute bottom-full mb-2 px-3 py-1.5 bg-gray-800 text-white text-xs rounded-lg opacity-0 invisible group-hover/miniapp:opacity-100 group-hover/miniapp:visible transition-all duration-200 whitespace-nowrap shadow-lg right-0">
-          关注公众号
+          扫码进小程序
           <div className="absolute top-full right-6 w-2 h-2 bg-gray-800 rotate-45"></div>
         </span>
       </button>
@@ -42,7 +42,7 @@ export default function FloatingMiniappButton() {
           className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
           role="dialog"
           aria-modal="true"
-          aria-label="扫码关注公众号，免费使用小程序版练学宝"
+          aria-label="微信扫一扫，直达练学宝小程序"
         >
           {/* 遮罩层 */}
           <div
@@ -70,16 +70,16 @@ export default function FloatingMiniappButton() {
               <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-2 backdrop-blur-sm">
                 <span className="text-2xl">📱</span>
               </div>
-              <h3 className="text-white text-base font-bold">扫码关注公众号</h3>
-              <p className="text-white/80 text-xs mt-1">免费使用小程序版练学宝</p>
+              <h3 className="text-white text-base font-bold">微信扫一扫，直达小程序</h3>
+              <p className="text-white/80 text-xs mt-1">练学宝小程序版，免下载免费使用</p>
             </div>
 
             {/* 二维码区域：固定小尺寸，不随弹窗宽度放大 */}
             <div className="px-5 -mt-4">
               <div className="bg-white rounded-2xl shadow-lg p-2.5 border border-gray-100 w-fit mx-auto">
                 <img
-                  src="/wechat-official-qrcode.jpg"
-                  alt="练学宝微信公众号二维码"
+                  src="/miniapp-qrcode.jpg"
+                  alt="练学宝微信小程序码"
                   width={144}
                   height={144}
                   className="w-36 h-36 sm:w-40 sm:h-40 rounded-lg"
@@ -113,7 +113,7 @@ export default function FloatingMiniappButton() {
             {/* 底部提示 */}
             <div className="px-5 pt-2.5 pb-5 text-center">
               <p className="text-xs text-gray-400">
-                关注后即可在小程序免费使用，随时生成、随时打印
+                扫码即用、无需关注，随时生成、随时打印
               </p>
               <button
                 onClick={() => setShowQR(false)}
