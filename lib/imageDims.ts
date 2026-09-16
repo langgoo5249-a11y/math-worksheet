@@ -8,6 +8,7 @@ export const IMAGE_DIMS: Record<string, [number, number]> = {
   "/images/blog/chengfa-koujue-6zhou-xunlian-2026.webp": [1000, 684],
   "/images/blog/chengfa-koujue-jiyi-fangfa.png": [1216, 832],
   "/images/blog/chengfa-koujue-jiyi-fangfa.webp": [1200, 821],
+  "/images/blog/chushushi-liangweishu-zenme-jiao-3mengdian-2026.webp": [3840, 2160],
   "/images/blog/cuotiben-example.jpg": [1280, 720],
   "/images/blog/cuotiben-example.webp": [1200, 675],
   "/images/blog/cuotiben-shiyong-fangfa.jpg": [1216, 912],
