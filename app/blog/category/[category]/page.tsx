@@ -91,6 +91,10 @@ type PageProps = {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { category } = await params;
   const decodedCategory = decodeURIComponent(category) as Category;
+  // URL 段必须百分号编码，与 app/sitemap.ts 的写法逐字节一致。
+  // 原始中文字符在 canonical 里属于 IRI；改成百分号编码可让 canonical 与 sitemap
+  // 指向完全相同的 URL 字符串，避免爬虫侧出现两套写法。
+  const categorySeg = encodeURIComponent(decodedCategory);
 
   // 验证分类是否有效（使用全部 categories 而非 categoryList，因为 decodedCategory 类型包含"全部"）
   if (!(categories as readonly string[]).includes(decodedCategory) || decodedCategory === '全部') {
@@ -116,10 +120,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description,
     keywords: config.keywords,
     alternates: {
-      canonical: `${BASE_URL}/blog/category/${decodedCategory}/`,
+      canonical: `${BASE_URL}/blog/category/${categorySeg}/`,
       languages: {
-        'zh-CN': `${BASE_URL}/blog/category/${decodedCategory}/`,
-        'x-default': `${BASE_URL}/blog/category/${decodedCategory}/`,
+        'zh-CN': `${BASE_URL}/blog/category/${categorySeg}/`,
+        'x-default': `${BASE_URL}/blog/category/${categorySeg}/`,
       },
     },
     openGraph: {
@@ -127,7 +131,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `${decodedCategory} - 练学宝知识分享`,
       description,
       type: 'website',
-      url: `${BASE_URL}/blog/category/${decodedCategory}/`,
+      url: `${BASE_URL}/blog/category/${categorySeg}/`,
       siteName: '练学宝',
       locale: 'zh_CN',
     },
@@ -138,6 +142,10 @@ export default async function CategoryPage({ params }: PageProps) {
   const { category } = await params;
   // 对 URL 编码的中文分类名进行解码（确保兼容不同浏览器/蜘蛛的编码方式）
   const decodedCategory = decodeURIComponent(category) as Category;
+  // URL 段必须百分号编码，与 app/sitemap.ts 的写法逐字节一致。
+  // 原始中文字符在 canonical 里属于 IRI；改成百分号编码可让 canonical 与 sitemap
+  // 指向完全相同的 URL 字符串，避免爬虫侧出现两套写法。
+  const categorySeg = encodeURIComponent(decodedCategory);
 
   // 验证分类是否有效
   const isValidCategory = (categories as readonly string[]).includes(decodedCategory) && decodedCategory !== '全部';
@@ -195,7 +203,7 @@ export default async function CategoryPage({ params }: PageProps) {
     '@type': 'CollectionPage',
     name: `${decodedCategory} - 练学宝知识分享`,
     description,
-    url: `${BASE_URL}/blog/category/${decodedCategory}/`,
+    url: `${BASE_URL}/blog/category/${categorySeg}/`,
     isPartOf: {
       '@type': 'WebSite',
       name: '练学宝',
@@ -238,7 +246,7 @@ export default async function CategoryPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 3,
         name: decodedCategory,
-        item: `${BASE_URL}/blog/category/${decodedCategory}/`,
+        item: `${BASE_URL}/blog/category/${categorySeg}/`,
       },
     ],
   };

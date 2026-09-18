@@ -178,6 +178,10 @@ type PageProps = {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { category } = await params;
   const decodedCategory = decodeURIComponent(category) as EnCategory;
+  // URL 段必须百分号编码（"&" -> %26、空格 -> %20），与 app/sitemap.ts 的写法逐字节一致。
+  // 否则 canonical / og:url 会指向一个和 sitemap 不同的 URL 字符串 —— "&" 是合法的路径
+  // 字符（sub-delim），Google 不会把 %26 与 & 归一化，会当作两个不同 URL。
+  const categorySeg = encodeURIComponent(decodedCategory);
 
   // Validate category
   if (!(enCategories as readonly string[]).includes(decodedCategory) || decodedCategory === 'All') {
@@ -205,10 +209,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description,
     keywords: config.keywords,
     alternates: {
-      canonical: `${BASE_URL}/en/blog/category/${decodedCategory}/`,
+      canonical: `${BASE_URL}/en/blog/category/${categorySeg}/`,
       languages: {
-        en: `${BASE_URL}/en/blog/category/${decodedCategory}/`,
-        'x-default': `${BASE_URL}/en/blog/category/${decodedCategory}/`,
+        en: `${BASE_URL}/en/blog/category/${categorySeg}/`,
+        'x-default': `${BASE_URL}/en/blog/category/${categorySeg}/`,
       },
     },
     openGraph: {
@@ -216,7 +220,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: `${decodedCategory} - Chinese Learning Guides | SkillXM`,
       description,
       type: 'website',
-      url: `${BASE_URL}/en/blog/category/${decodedCategory}/`,
+      url: `${BASE_URL}/en/blog/category/${categorySeg}/`,
       siteName: 'SkillXM',
       locale: 'en_US',
     },
@@ -226,6 +230,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function EnCategoryPage({ params }: PageProps) {
   const { category } = await params;
   const decodedCategory = decodeURIComponent(category) as EnCategory;
+  // URL 段必须百分号编码（"&" -> %26、空格 -> %20），与 app/sitemap.ts 的写法逐字节一致。
+  // 否则 canonical / og:url 会指向一个和 sitemap 不同的 URL 字符串 —— "&" 是合法的路径
+  // 字符（sub-delim），Google 不会把 %26 与 & 归一化，会当作两个不同 URL。
+  const categorySeg = encodeURIComponent(decodedCategory);
 
   // Validate category
   const isValidCategory = (enCategories as readonly string[]).includes(decodedCategory) && decodedCategory !== 'All';
@@ -271,7 +279,7 @@ export default async function EnCategoryPage({ params }: PageProps) {
     '@type': 'CollectionPage',
     name: `${decodedCategory} - Chinese Learning Guides | SkillXM`,
     description,
-    url: `${BASE_URL}/en/blog/category/${decodedCategory}/`,
+    url: `${BASE_URL}/en/blog/category/${categorySeg}/`,
     inLanguage: 'en',
     isPartOf: {
       '@type': 'WebSite',
@@ -316,7 +324,7 @@ export default async function EnCategoryPage({ params }: PageProps) {
         '@type': 'ListItem',
         position: 3,
         name: decodedCategory,
-        item: `${BASE_URL}/en/blog/category/${decodedCategory}/`,
+        item: `${BASE_URL}/en/blog/category/${categorySeg}/`,
       },
     ],
   };
