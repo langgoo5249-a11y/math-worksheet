@@ -101,3 +101,7 @@ debug.log
 api.log
 *.log.gz
 
+# 凭据敏感文件：git 的 credential.store --file 误落路径生成的临时凭据文件
+# 严禁提交（内含 GitHub token）
+*.git-credentials-tmp
+
