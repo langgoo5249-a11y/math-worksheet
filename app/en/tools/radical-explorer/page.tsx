@@ -97,6 +97,25 @@ const relatedArticleIds = [
 ];
 const relatedArticles = enArticles.filter((a) => relatedArticleIds.includes(a.id)).slice(0, 3);
 
+const faqs = [
+  {
+    q: 'What is a Chinese radical?',
+    a: 'A radical (部首, bùshǒu) is a recurring component of Chinese characters. The 214 Kangxi radicals historically organise every character in the dictionary, and roughly 30 of them appear in the large majority of common characters.',
+  },
+  {
+    q: 'How do radicals help me learn characters?',
+    a: 'Radicals turn arbitrary stroke piles into meaningful patterns: 好 is 女 (woman) + 子 (child), and 明 is 日 (sun) + 月 (moon). Once you know the components, remembering — and even guessing — new characters becomes far easier.',
+  },
+  {
+    q: 'How many radicals do I need to know?',
+    a: 'The traditional Kangxi system has 214 radicals, but you do not need all of them. The most common 30 radicals, listed on this page with meanings and examples, already unlock most of the characters you will meet.',
+  },
+  {
+    q: 'Can radicals help me look characters up?',
+    a: 'Yes — that is their original purpose. Identify a character’s radical, count its remaining strokes, and you can find the character in any paper or online dictionary indexed the classical way.',
+  },
+];
+
 export default function RadicalExplorerPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -389,6 +408,45 @@ export default function RadicalExplorerPage() {
             </ul>
           </div>
         </div>
+      </section>
+
+      {/* ===== FAQ (P7) ===== */}
+      <section className="relative py-16 px-4 sm:px-6 bg-[#1a0808]">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-[#D4AF37] text-sm font-medium tracking-[0.3em] uppercase">
+              FAQ
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#F5F0E8] mt-3">
+              Radical Explorer Questions
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((f) => (
+              <div
+                key={f.q}
+                className="rounded-xl border border-[#D4AF37]/25 bg-[#3d0606]/40 p-5"
+              >
+                <h3 className="text-[#FFD700] font-semibold mb-2">{f.q}</h3>
+                <p className="text-[#F5F0E8]/75 text-sm leading-relaxed">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a },
+              })),
+            }),
+          }}
+        />
       </section>
 
       {/* ===== Back links ===== */}

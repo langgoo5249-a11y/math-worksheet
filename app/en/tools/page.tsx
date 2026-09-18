@@ -109,6 +109,29 @@ const tools = [
   },
 ];
 
+const toolsFaqs = [
+  {
+    q: 'Are these tools really free?',
+    a: 'Yes. Every tool on this site is free, with no usage limits, no premium tier and no account required — they are maintained as a public learning resource.',
+  },
+  {
+    q: 'Do I need to register an account?',
+    a: 'No. All tools run directly in your browser with no sign-up, so you can start practising in one click and your answers stay on your device.',
+  },
+  {
+    q: 'Do the tools work on mobile phones?',
+    a: 'Yes. The tools are responsive and run on phones, tablets and desktops, so a short drill fits anywhere — a pinyin session on the bus or flashcards in a queue.',
+  },
+  {
+    q: 'Which tool should a complete beginner start with?',
+    a: 'Start with the Pinyin Chart and the Tone Trainer to build pronunciation, then move to Picture Learning and Stroke Order for your first characters, and finally to HSK Flashcards and the Reading Reader as your vocabulary grows.',
+  },
+  {
+    q: 'How do the tools relate to the blog guides?',
+    a: 'Each guide names the tool that practises its method. Read a guide to learn the why, then drill the matching tool for a few minutes a day — the combination is what makes progress stick.',
+  },
+];
+
 export default function EnglishToolsPage() {
   const itemListJsonLd = {
     '@context': 'https://schema.org',
@@ -497,6 +520,48 @@ export default function EnglishToolsPage() {
         />
       </section>
 
+      {/* ===== FAQ (P7, visible — FAQPage markup requires visible content) ===== */}
+      <section className="relative py-16 px-4 sm:px-6 bg-[#F5F0E8] text-[#1a1a1a] border-t border-[#8B0000]/10">
+        <div className="relative max-w-3xl mx-auto">
+          <span className="text-[#C41E3A] text-sm font-medium tracking-[0.3em] uppercase">
+            FAQ
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mt-3 mb-8">
+            Frequently Asked Questions About the Free Tools
+          </h2>
+          <div className="space-y-4">
+            {toolsFaqs.map((f) => (
+              <div
+                key={f.q}
+                className="rounded-xl border border-[#8B0000]/15 bg-white/70 p-5"
+              >
+                <h3 className="text-[#8B0000] font-semibold mb-2">{f.q}</h3>
+                <p className="text-[#1a1a1a]/75 text-sm leading-relaxed">
+                  {f.a}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm text-[#1a1a1a]/60">
+            New to Mandarin? Start with the{' '}
+            <Link
+              href="/en/blog/category/Getting%20Started/"
+              className="text-[#8B0000] font-semibold hover:underline"
+            >
+              beginner guides
+            </Link>{' '}
+            or browse the{' '}
+            <Link
+              href="/en/blog/"
+              className="text-[#8B0000] font-semibold hover:underline"
+            >
+              Chinese learning blog
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
       {/* ===== JSON-LD structured data ===== */}
       <script
         type="application/ld+json"
@@ -505,6 +570,20 @@ export default function EnglishToolsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: toolsFaqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
     </>
   );

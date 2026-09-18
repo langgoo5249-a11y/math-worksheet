@@ -45,6 +45,25 @@ const sortedArticles = [...enArticles].sort(
   (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 );
 
+const blogFaqs = [
+  {
+    q: 'Who writes these guides?',
+    a: 'The guides are written by the SkillXM editorial team and reviewed against published research in linguistics, cognitive science and language pedagogy. Each article explains not just what to do but why it works, so you can judge the method yourself.',
+  },
+  {
+    q: 'How often is new content published?',
+    a: 'New guides are added regularly, and existing ones are revised when tools or methods improve. Every article shows its publish date and read time, so you can judge freshness at a glance.',
+  },
+  {
+    q: 'Are the learning methods here evidence-based?',
+    a: 'Where solid research exists — spaced repetition, graded reading, tone-pair drills — the guides cite the principle and turn it into a concrete routine with free tools. Where evidence is thin, the guides say so instead of overselling.',
+  },
+  {
+    q: 'Can I use these guides together with the free tools?',
+    a: 'Yes, and that is the intended workflow: each guide names the exact tool that practises its method, from the Tone Trainer to the HSK Flashcards. Reading a guide takes five minutes; drilling the matching tool for ten minutes a day is what produces progress.',
+  },
+];
+
 export default function EnBlogPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -288,10 +307,66 @@ export default function EnBlogPage() {
         />
       </section>
 
+      {/* ===== FAQ (P7, visible — FAQPage markup requires visible content) ===== */}
+      <section className="relative py-16 px-4 sm:px-6 bg-[#F5F0E8] text-[#1a1a1a] border-t border-[#8B0000]/10">
+        <div className="relative max-w-3xl mx-auto">
+          <span className="text-[#C41E3A] text-sm font-medium tracking-[0.3em] uppercase">
+            FAQ
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-bold text-[#1a1a1a] mt-3 mb-8">
+            Frequently Asked Questions About Our Chinese Guides
+          </h2>
+          <div className="space-y-4">
+            {blogFaqs.map((f) => (
+              <div
+                key={f.q}
+                className="rounded-xl border border-[#8B0000]/15 bg-white/70 p-5"
+              >
+                <h3 className="text-[#8B0000] font-semibold mb-2">{f.q}</h3>
+                <p className="text-[#1a1a1a]/75 text-sm leading-relaxed">
+                  {f.a}
+                </p>
+              </div>
+            ))}
+          </div>
+          <p className="mt-8 text-sm text-[#1a1a1a]/60">
+            Still have a question?{' '}
+            <Link
+              href="/en/tools/"
+              className="text-[#8B0000] font-semibold hover:underline"
+            >
+              Try the free tools
+            </Link>{' '}
+            or read the{' '}
+            <Link
+              href="/en/blog/category/Getting%20Started/"
+              className="text-[#8B0000] font-semibold hover:underline"
+            >
+              beginner guides
+            </Link>
+            .
+          </p>
+        </div>
+      </section>
+
       {/* ===== JSON-LD ===== */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: blogFaqs.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
       />
     </main>
   );

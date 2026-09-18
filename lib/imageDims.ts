@@ -39,7 +39,6 @@ export const IMAGE_DIMS: Record<string, [number, number]> = {
   "/images/blog/haizi-yanxue-qingxu-yingdui-fangfa.png": [1000, 684],
   "/images/blog/haizi-yanxue-qingxu-yingdui-fangfa.webp": [1000, 684],
   "/images/blog/jiaoduliang-liangjiaoqi-zenme-yong-2026.webp": [1920, 1080],
-  "/images/blog/jiaoduliang-liangjiaoqi-zenme-yong-2026_preview.png": [1920, 1080],
   "/images/blog/kantu-xiehua-xunlian.png": [1000, 684],
   "/images/blog/kantu-xiehua-xunlian.webp": [1000, 684],
   "/images/blog/kantuxiehua-wuguan-guancha-2026.png": [1000, 684],

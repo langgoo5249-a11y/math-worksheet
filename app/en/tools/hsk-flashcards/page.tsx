@@ -93,6 +93,25 @@ const relatedArticleIds = [
 ];
 const relatedArticles = enArticles.filter((a) => relatedArticleIds.includes(a.id)).slice(0, 3);
 
+const faqs = [
+  {
+    q: 'What is the HSK?',
+    a: 'The Hanyu Shuiping Kaoshi (HSK) is China’s standardised Mandarin proficiency test. It runs from Level 1 (about 150 words and basic phrases) to Level 6 (about 5,000 words and fluent reading of real Chinese texts).',
+  },
+  {
+    q: 'Which HSK levels do these flashcards cover?',
+    a: 'The flashcards cover vocabulary from HSK 1 through HSK 6. Each card shows the word, its level, pinyin with tone marks and the English meaning, so you can drill exactly the level you are preparing for.',
+  },
+  {
+    q: 'How does spaced repetition help with HSK vocabulary?',
+    a: 'Spaced repetition schedules each card for review at the moment you are about to forget it, converting short-term recall into long-term memory with the fewest total repetitions. It is the most studied and most efficient way to memorise large word lists such as the HSK.',
+  },
+  {
+    q: 'How should I plan my HSK preparation?',
+    a: 'Test yourself on a sample of your target level to find your real position, then run daily flashcard sessions of ten to fifteen minutes, and read graded texts so the words appear in context. The study tips on this page expand this routine step by step.',
+  },
+];
+
 export default function HskFlashcardsPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -376,6 +395,45 @@ export default function HskFlashcardsPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ===== FAQ (P7) ===== */}
+      <section className="relative py-16 px-4 sm:px-6 bg-[#1a0808]">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-[#D4AF37] text-sm font-medium tracking-[0.3em] uppercase">
+              FAQ
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#F5F0E8] mt-3">
+              HSK Flashcards Questions
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((f) => (
+              <div
+                key={f.q}
+                className="rounded-xl border border-[#D4AF37]/25 bg-[#3d0606]/40 p-5"
+              >
+                <h3 className="text-[#FFD700] font-semibold mb-2">{f.q}</h3>
+                <p className="text-[#F5F0E8]/75 text-sm leading-relaxed">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a },
+              })),
+            }),
+          }}
+        />
       </section>
 
       {/* ===== Back links ===== */}

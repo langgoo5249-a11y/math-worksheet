@@ -98,6 +98,25 @@ const relatedArticleIds = [
 ];
 const relatedArticles = enArticles.filter((a) => relatedArticleIds.includes(a.id)).slice(0, 3);
 
+const faqs = [
+  {
+    q: 'What is graded reading?',
+    a: 'Graded reading means texts written with a controlled vocabulary — for example only HSK 1 words — so beginners can read whole passages without a dictionary. It is one of the fastest proven ways to turn memorised vocabulary into reading fluency.',
+  },
+  {
+    q: 'What does the reader include?',
+    a: 'The reader provides passages from beginner to advanced, each with pinyin annotation and English translation so you can check comprehension without breaking your flow. The level descriptions on this page explain what each stage expects.',
+  },
+  {
+    q: 'Why does the reader show pinyin?',
+    a: 'Pinyin lets you keep reading when a character slips your mind instead of stopping to look it up. As you progress, try covering the pinyin line and only revealing it when stuck — a simple way to wean yourself off the support.',
+  },
+  {
+    q: 'How much should I read each day?',
+    a: 'Ten to fifteen minutes of genuinely understood text daily beats an hour of struggle once a week. Re-reading yesterday’s passage before starting a new one roughly doubles retention at no extra cost.',
+  },
+];
+
 export default function ReadingReaderPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -374,6 +393,45 @@ export default function ReadingReaderPage() {
             ))}
           </ol>
         </div>
+      </section>
+
+      {/* ===== FAQ (P7) ===== */}
+      <section className="relative py-16 px-4 sm:px-6 bg-[#1a0808]">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-[#D4AF37] text-sm font-medium tracking-[0.3em] uppercase">
+              FAQ
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#F5F0E8] mt-3">
+              Reading Reader Questions
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((f) => (
+              <div
+                key={f.q}
+                className="rounded-xl border border-[#D4AF37]/25 bg-[#3d0606]/40 p-5"
+              >
+                <h3 className="text-[#FFD700] font-semibold mb-2">{f.q}</h3>
+                <p className="text-[#F5F0E8]/75 text-sm leading-relaxed">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a },
+              })),
+            }),
+          }}
+        />
       </section>
 
       {/* ===== Back links ===== */}

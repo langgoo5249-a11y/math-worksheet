@@ -89,6 +89,25 @@ const relatedArticleIds = [
 ];
 const relatedArticles = enArticles.filter((a) => relatedArticleIds.includes(a.id)).slice(0, 3);
 
+const faqs = [
+  {
+    q: 'How does picture-based learning work?',
+    a: 'Each card pairs an image with the Chinese character, pinyin and English meaning. Seeing the meaning directly — instead of translating through text — builds a stronger and faster recall link, the same way children attach words to the world around them.',
+  },
+  {
+    q: 'What are the three difficulty levels?',
+    a: 'The Easy level covers simple everyday nouns, the Hard level broadens into everyday vocabulary, and the Hell level challenges you with four-character idioms (chengyu). You can start anywhere and switch levels at any time.',
+  },
+  {
+    q: 'What vocabulary does it cover?',
+    a: 'The deck spans common nouns from food, animals, objects and nature through to idiomatic chengyu expressions, giving you a visual path from your first words to advanced phrases.',
+  },
+  {
+    q: 'Is it suitable for children?',
+    a: 'Yes. The picture-first format needs no grammar explanation and works for young learners and absolute beginners, while the idiom level keeps it genuinely challenging for adults.',
+  },
+];
+
 export default function PictureLearningPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -351,6 +370,45 @@ export default function PictureLearningPage() {
           </div>
           <PictureLearning />
         </div>
+      </section>
+
+      {/* ===== FAQ (P7) ===== */}
+      <section className="relative py-16 px-4 sm:px-6 bg-[#1a0808]">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-[#D4AF37] text-sm font-medium tracking-[0.3em] uppercase">
+              FAQ
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#F5F0E8] mt-3">
+              Picture Learning Questions
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((f) => (
+              <div
+                key={f.q}
+                className="rounded-xl border border-[#D4AF37]/25 bg-[#3d0606]/40 p-5"
+              >
+                <h3 className="text-[#FFD700] font-semibold mb-2">{f.q}</h3>
+                <p className="text-[#F5F0E8]/75 text-sm leading-relaxed">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a },
+              })),
+            }),
+          }}
+        />
       </section>
 
       {/* ===== Back links ===== */}

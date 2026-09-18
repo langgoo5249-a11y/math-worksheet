@@ -79,6 +79,25 @@ const relatedArticleIds = [
 ];
 const relatedArticles = enArticles.filter((a) => relatedArticleIds.includes(a.id)).slice(0, 3);
 
+const faqs = [
+  {
+    q: 'Why does stroke order matter?',
+    a: 'Chinese characters are written in a fixed sequence — top to bottom, left to right, horizontal before vertical. Following the standard order makes handwriting faster and more legible, helps you count strokes correctly when using dictionaries, and is how native speakers and examiners expect characters to be written.',
+  },
+  {
+    q: 'What are the eight basic strokes?',
+    a: 'Mandarin writing is built from eight fundamental strokes: the dot (点), the horizontal (横), the vertical (竖), the hook (钩), the rising stroke (提), the turning stroke (折), the press-down (捺) and the left-falling slash (撇). Every character, however complex, is a sequence of these eight.',
+  },
+  {
+    q: 'What are the general stroke order rules?',
+    a: 'The main rules are: top before bottom, left before right, horizontal before vertical, outside before inside (closing the frame last), and centre before sides in symmetric characters. The guide on this page walks through each rule with example characters.',
+  },
+  {
+    q: 'Do simplified and traditional characters use the same stroke order?',
+    a: 'The rules are identical; only some individual characters differ between the two scripts. Learn the rules once with simplified characters and they transfer directly to traditional.',
+  },
+];
+
 export default function StrokeOrderPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -373,6 +392,45 @@ export default function StrokeOrderPage() {
             </ul>
           </div>
         </div>
+      </section>
+
+      {/* ===== FAQ (P7) ===== */}
+      <section className="relative py-16 px-4 sm:px-6 bg-[#1a0808]">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-[#D4AF37] text-sm font-medium tracking-[0.3em] uppercase">
+              FAQ
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#F5F0E8] mt-3">
+              Stroke Order Practice Questions
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((f) => (
+              <div
+                key={f.q}
+                className="rounded-xl border border-[#D4AF37]/25 bg-[#3d0606]/40 p-5"
+              >
+                <h3 className="text-[#FFD700] font-semibold mb-2">{f.q}</h3>
+                <p className="text-[#F5F0E8]/75 text-sm leading-relaxed">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a },
+              })),
+            }),
+          }}
+        />
       </section>
 
       {/* ===== Back links ===== */}

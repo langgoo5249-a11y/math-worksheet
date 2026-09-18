@@ -46,6 +46,25 @@ const relatedArticleIds = [
 ];
 const relatedArticles = enArticles.filter((a) => relatedArticleIds.includes(a.id)).slice(0, 3);
 
+const faqs = [
+  {
+    q: 'What does the pinyin chart include?',
+    a: 'The complete table of Mandarin syllable building blocks: 23 initials (consonant onsets) and 24 finals (vowel endings). Click any cell to hear the syllable pronounced, and switch between the four tones to hear how pitch changes it.',
+  },
+  {
+    q: 'What are initials and finals?',
+    a: 'Every Mandarin syllable is an initial followed by a final: m + a = ma. Learning the grid of combinations makes pronunciation systematic, because the same final keeps its sound across every initial it combines with.',
+  },
+  {
+    q: 'How should I practise with the chart?',
+    a: 'Work row by row: listen to a cell, repeat it aloud, and move on only when you can say it before the audio plays. Ten minutes of this daily listening-speaking loop is worth more than an hour of silent reading.',
+  },
+  {
+    q: 'Why do some cells not sound like their spelling?',
+    a: 'Pinyin was designed for Chinese speakers, not English ones, so some letters break English habits — the c in cāo is a ts- sound, and ü has no English equivalent. The chart’s audio sidesteps the spelling traps entirely: trust your ears first.',
+  },
+];
+
 export default function PinyinChartPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -324,6 +343,45 @@ export default function PinyinChartPage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ===== FAQ (P7) ===== */}
+      <section className="relative py-16 px-4 sm:px-6 bg-[#1a0808]">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-[#D4AF37] text-sm font-medium tracking-[0.3em] uppercase">
+              FAQ
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#F5F0E8] mt-3">
+              Pinyin Chart Questions
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((f) => (
+              <div
+                key={f.q}
+                className="rounded-xl border border-[#D4AF37]/25 bg-[#3d0606]/40 p-5"
+              >
+                <h3 className="text-[#FFD700] font-semibold mb-2">{f.q}</h3>
+                <p className="text-[#F5F0E8]/75 text-sm leading-relaxed">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a },
+              })),
+            }),
+          }}
+        />
       </section>
 
       {/* ===== Back links ===== */}

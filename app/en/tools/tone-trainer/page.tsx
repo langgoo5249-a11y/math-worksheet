@@ -112,6 +112,25 @@ const relatedArticleIds = [
 ];
 const relatedArticles = enArticles.filter((a) => relatedArticleIds.includes(a.id)).slice(0, 3);
 
+const faqs = [
+  {
+    q: 'Why do tones matter so much in Mandarin?',
+    a: 'In Mandarin the pitch pattern of a syllable changes its meaning: mā, má, mǎ and mà are four unrelated words. Getting a tone wrong does not just make you sound foreign — it makes you say the wrong word entirely, which is why tone practice belongs in week one, not year two.',
+  },
+  {
+    q: 'What are the four tones plus the neutral tone?',
+    a: 'Tone 1 is high and flat, tone 2 rises, tone 3 dips then rises, tone 4 falls sharply, and unstressed syllables carry a light neutral tone. The diagram on this page maps each tone to a pitch contour you can hum.',
+  },
+  {
+    q: 'What are tone pairs and why practise them?',
+    a: 'Tone pairs are two-syllable combinations where the tone transition is tricky, such as third-then-second or fourth-then-first. Practising pairs is more effective than isolated syllables because real speech joins tones together constantly.',
+  },
+  {
+    q: 'How long until I can hear tones reliably?',
+    a: 'With short daily drills — five to ten minutes on tone pairs and minimal contrasts — most learners notice a clear jump in tone perception within two to three weeks. The key is frequency, not session length.',
+  },
+];
+
 export default function ToneTrainerPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -447,6 +466,45 @@ export default function ToneTrainerPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ===== FAQ (P7) ===== */}
+      <section className="relative py-16 px-4 sm:px-6 bg-[#1a0808]">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-[#D4AF37] text-sm font-medium tracking-[0.3em] uppercase">
+              FAQ
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#F5F0E8] mt-3">
+              Tone Trainer Questions
+            </h2>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((f) => (
+              <div
+                key={f.q}
+                className="rounded-xl border border-[#D4AF37]/25 bg-[#3d0606]/40 p-5"
+              >
+                <h3 className="text-[#FFD700] font-semibold mb-2">{f.q}</h3>
+                <p className="text-[#F5F0E8]/75 text-sm leading-relaxed">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faqs.map((f) => ({
+                '@type': 'Question',
+                name: f.q,
+                acceptedAnswer: { '@type': 'Answer', text: f.a },
+              })),
+            }),
+          }}
+        />
       </section>
 
       {/* ===== Back links ===== */}

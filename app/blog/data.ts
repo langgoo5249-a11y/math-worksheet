@@ -25179,7 +25179,7 @@ Sight Words（视觉词）是英语阅读中的"高频拦路虎"。美国伊利�
       dateReviewed: "2026-08-25",
       hasExclusiveContent: true,
       exclusiveContentTypes: ["独家数据", "一线教学案例"],
-      author: "陈老师",
+      author: teacherAuthor,
 
     },
 
