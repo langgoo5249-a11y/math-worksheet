@@ -7,22 +7,12 @@ const BAIDU_PUSH_SRC = 'https://zz.bdstatic.com/linksubmit/push.js';
 const TOUTIAO_PUSH_SRC =
   'https://lf1-cdn-tos.bytegoofy.com/goofy/ttzz/push.js?278b7bc276aa0b514ff5c4e28d63b1e083f58bd22a48d8e0e73447efb03530befd9a9dcb5ced4d7780eb6f3bbd089073c2a6d54440560d63862bbf4ec01bba3a';
 
-// AdSense 发布商 ID
-const ADSENSE_PUB_ID = 'ca-pub-4710405779358793';
-
-function injectExternalScript(src: string, attrs?: Record<string, string>) {
-  if (typeof document === 'undefined') return;
-  if (document.querySelector(`script[src="${src}"]`)) return;
-  const script = document.createElement('script');
-  script.async = true;
-  script.src = src;
-  if (attrs) {
-    Object.entries(attrs).forEach(([key, value]) => {
-      script.setAttribute(key, value);
-    });
-  }
-  document.body.appendChild(script);
-}
+// ⚠️ Google AdSense 核心脚本 **不在此处注入**。
+// 原因：AdSense 的网站验证是抓取页面原始 HTML 查找 `adsbygoogle.js?client=...`，
+// 而本组件是客户端组件，useEffect 里用 createElement 注入的脚本不会出现在 SSR 输出中
+// （线上实测 HTML 0 命中 → 后台持续提示"未检测到网站代码"）。
+// 核心脚本已直接写入 app/layout.tsx 的 <head>：client=ca-pub-4710405779358793
+// 本文件仅保留：广告单元初始化 + 百度统计/主动推送 + 头条推送。
 
 function injectInlineScript(code: string) {
   if (typeof document === 'undefined') return;
@@ -35,19 +25,13 @@ function injectInlineScript(code: string) {
  * ConsentAwareScripts
  *
  * 简化版：中国用户为主，Consent Mode 默认全部 granted，
- * 所以所有追踪脚本在页面加载后直接注入，不需要等待用户同意。
+ * 所以这些追踪脚本在页面加载后直接注入，不需要等待用户同意。
  */
 export default function ConsentAwareScripts() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Google AdSense Core Script
-    injectExternalScript(
-      `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_PUB_ID}`,
-      { crossorigin: 'anonymous', 'data-ad-client': ADSENSE_PUB_ID }
-    );
-
-    // 延迟初始化 AdSense 广告单元
+    // 初始化 AdSense 广告单元（核心脚本由 app/layout.tsx 的 <head> 提供）
     injectInlineScript(
       `window.addEventListener('load',function(){try{var ads=document.querySelectorAll('.adsbygoogle:not([data-adsbygoogle-status])');for(var i=0;i<ads.length;i++){(adsbygoogle=window.adsbygoogle||[]).push({})};}catch(e){console.log('AdSense init deferred:',e)}});`
     );

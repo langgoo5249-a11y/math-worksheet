@@ -5,6 +5,21 @@ import { articles, defaultAuthor } from '../data';
 import SiteLayout from '@/app/_components/SiteLayout';
 import { getImageDims } from '@/lib/imageDims';
 
+/**
+ * AdSense 文内手动广告单元位 ID（10 位数字）
+ *
+ * 留空 = 不渲染该广告单元。原因：
+ * 1) 原先 ad-slot 位置写的是占位数字 1234567890（非真实 slot），AdSense 会判定代码无效，
+ *    在每篇文章的控制台报错；
+ * 2) 无效 slot 不会填充内容，页面上只留一个空边框盒（114 篇文章都有）。
+ *
+ * 不填**不影响开始展示广告**：AdSense 后台开启「广告 → 自动广告(Auto ads)」即可，
+ * 自动广告只需要页面 <head> 里的核心代码（已写在 app/layout.tsx）。
+ * 若要用手动广告单元：AdSense 后台「广告 → 按广告单元 → 新建展示广告单元」，
+ * 把生成的 10 位 slot 数字填到这里。
+ */
+const AD_SLOT_IN_ARTICLE: string = '';
+
 interface BlogPostPageProps {
   slug: string;
 }
@@ -399,17 +414,19 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           dangerouslySetInnerHTML={{ __html: parseMarkdown(article.content || '') }}
         />
 
-        {/* AdSense In-Content Ad Unit */}
-        <div className="my-8 p-4 bg-slate-800/20 border border-white/5 rounded-xl text-center">
-          <ins
-            className="adsbygoogle"
-            style={{ display: 'block', textAlign: 'center' }}
-            data-ad-layout="in-article"
-            data-ad-format="fluid"
-            data-ad-client="ca-pub-4710405779358793"
-            data-ad-slot="1234567890"
-          />
-        </div>
+        {/* AdSense 文内广告单元（slot 未配置时不渲染，见文件顶部 AD_SLOT_IN_ARTICLE 说明） */}
+        {AD_SLOT_IN_ARTICLE ? (
+          <div className="my-8 p-4 bg-slate-800/20 border border-white/5 rounded-xl text-center">
+            <ins
+              className="adsbygoogle"
+              style={{ display: 'block', textAlign: 'center' }}
+              data-ad-layout="in-article"
+              data-ad-format="fluid"
+              data-ad-client="ca-pub-4710405779358793"
+              data-ad-slot={AD_SLOT_IN_ARTICLE}
+            />
+          </div>
+        ) : null}
 
         {/* 参考来源 */}
         {article.citations && article.citations.length > 0 && (

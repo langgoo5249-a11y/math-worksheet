@@ -300,6 +300,20 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://lf1-cdn-tos.bytegoofy.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
 
+        {/* ========== Google AdSense 核心代码（SSR 直出，全站每个页面）==========
+            为什么必须写在这里、而不是客户端动态注入：
+            AdSense 的网站验证是抓取页面原始 HTML 查找 `adsbygoogle.js?client=...`。
+            原先由 app/_components/ConsentAwareScripts.tsx 在 useEffect 里用
+            document.createElement 注入 → 服务端渲染的 HTML 里根本没有这段代码，
+            线上实测 0 命中，因此后台一直提示"未检测到网站代码"，广告也无法展示。
+            发布商 ID：ca-pub-4710405779358793（与 public/ads.txt、functions/ads.txt.js 一致）
+            ⚠️ 修改本行务必同步 ads.txt 与 public/_headers 的 CSP script-src。 */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4710405779358793"
+          crossOrigin="anonymous"
+        />
+
         {/* Google Consent Mode v2 - 中国站无GDPR要求，默认全部 granted */}
         <script
           dangerouslySetInnerHTML={{
