@@ -7,9 +7,18 @@ const POPUP_DELAY = 1500;
 const COOLDOWN_MS = 24 * 60 * 60 * 1000; // 24小时
 
 /**
- * ⚠️ 核心功能：微信公众号自动弹窗（24小时弹一次）
- * 页面加载1.5秒后自动弹出，24小时内关闭或点击"我知道了"后不再弹出。
- * 也通过 open-miniapp-modal 事件支持外部触发（如页脚按钮）。
+ * ⚠️ 核心功能：微信公众号弹窗
+ *
+ * 两个入口，节流规则不同 —— 这是本组件最容易改错的地方：
+ *   ① 自动弹出：页面加载 1.5 秒后触发，24 小时内关闭过则不再自动弹（节流）。
+ *   ② 主动打开：外部 dispatch `open-miniapp-modal` 事件（页脚「关注公众号」按钮）
+ *      或右下角浮动按钮（自己内联弹窗，不走本组件）。
+ *      ⚠️ 主动打开**不受 24 小时节流限制** —— 用户想再看一次二维码时必须能看到。
+ *
+ * 历史缺陷（2026-09-19 修复）：原实现在节流命中时直接 `return`，
+ * 导致监听器根本没注册 → 用户关闭弹窗后 24 小时内点页脚「关注公众号」毫无反应。
+ * 现在监听器无条件注册，节流只作用于「自动弹出」这一个定时器。
+ *
  * 主题：扫码关注公众号，关注后免费使用小程序版练学宝。
  * 说明：公众号二维码（wechat-official-qrcode.jpg），先引导关注，再引导用小程序。
  */
@@ -19,23 +28,29 @@ export default function MiniappModal() {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // 检查24小时内是否已关闭过
+    // ① 主动触发入口（页脚「关注公众号」按钮）—— 无条件注册。
+    //    这里绝不能因为"24 小时内已关闭过"就提前 return，否则监听器不存在，
+    //    用户主动点击会毫无反应（历史缺陷，见文件头注释）。
+    const handleOpen = () => setVisible(true);
+    window.addEventListener('open-miniapp-modal', handleOpen);
+
+    // ② 自动弹出 —— 才受 24 小时节流约束
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    let inCooldown = false;
     try {
       const lastDismissed = localStorage.getItem(STORAGE_KEY);
       if (lastDismissed) {
         const elapsed = Date.now() - Number(lastDismissed);
-        if (elapsed < COOLDOWN_MS) return;
+        if (elapsed < COOLDOWN_MS) inCooldown = true;
       }
     } catch {}
 
-    // 延迟1.5秒自动弹出
-    const timer = setTimeout(() => setVisible(true), POPUP_DELAY);
-
-    const handleOpen = () => setVisible(true);
-    window.addEventListener('open-miniapp-modal', handleOpen);
+    if (!inCooldown) {
+      timer = setTimeout(() => setVisible(true), POPUP_DELAY);
+    }
 
     return () => {
-      clearTimeout(timer);
+      if (timer) clearTimeout(timer);
       window.removeEventListener('open-miniapp-modal', handleOpen);
     };
   }, []);
