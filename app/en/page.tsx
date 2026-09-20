@@ -4,7 +4,7 @@ import { enArticles } from '@/app/en/blog/data';
 import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
-  title: 'Learn Chinese Free - Pinyin, Stroke Order, HSK, Picture Learning | SkillXM',
+  title: 'Learn Chinese Free - Pinyin, Stroke Order, HSK Tools | SkillXM',
   description:
     'Free online tools to learn Chinese (Mandarin). Pinyin converter, stroke order, HSK flashcards, tone trainer, picture learning, pinyin chart, graded reader, and radical explorer. No registration required.',
   keywords:
