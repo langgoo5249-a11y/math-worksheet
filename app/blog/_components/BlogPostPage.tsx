@@ -461,7 +461,7 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
           </p>
           <div className="flex flex-wrap gap-4 text-sm text-gray-400">
             <span className="flex items-center gap-1.5">
-              <span className="text-blue-400">✉</span> jm6_lang@163.com
+              <a href="mailto:lang@skillxm.cn" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors"><span className="text-blue-400">✉</span> lang@skillxm.cn</a>
             </span>
             <a href="https://github.com/langgoo5249-a11y/math-worksheet" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-blue-400 transition-colors">
               <span className="text-blue-400">⌂</span> GitHub
