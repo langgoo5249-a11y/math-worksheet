@@ -5,7 +5,7 @@ import { enArticles } from '@/app/en/blog/data';
 import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
-  title: 'Pinyin Converter - Chinese to Pinyin Free | SkillXM',
+  title: 'Pinyin Converter - Free Chinese to Pinyin Tool',
   description:
     'Free online pinyin converter. Paste Chinese text and instantly get pinyin with tone marks. Built-in dictionary of 100+ common characters. No registration, works in your browser.',
   keywords:
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     images: [DEFAULT_OG_IMAGE],
-    title: 'Pinyin Converter - Chinese to Pinyin Free | SkillXM',
+    title: 'Pinyin Converter - Free Chinese to Pinyin Tool',
     description:
       'Free online pinyin converter. Paste Chinese text and instantly get pinyin with tone marks. No registration required.',
     url: 'https://www.skillxm.cn/en/tools/pinyin-converter/',
