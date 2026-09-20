@@ -23,11 +23,14 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const t = getTopicById(id);
   if (!t) return { title: '专题未找到' };
   const pageUrl = `${SITE_INFO.BASE_URL}/parent-guide/${t.id}/`;
-  const title = `${t.title} - 家长指导 | 练学宝`;
+  // 优先使用配置中的专属 SEO 文案（含长尾搜索词）；缺失时回退到通用拼接
+  const title = t.metaTitle ?? `${t.title} - 家长指导 | 练学宝`;
+  const description = t.metaDescription ?? t.description;
+  const keywords = t.metaKeywords ?? [t.title, '家长指导', '家庭教育', t.ageRange, ...t.keyPoints.slice(0, 3)];
   return {
     title,
-    description: t.description,
-    keywords: [t.title, '家长指导', '家庭教育', t.ageRange, ...t.keyPoints.slice(0, 3)],
+    description,
+    keywords,
     alternates: {
       canonical: pageUrl,
       languages: {
@@ -35,8 +38,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
         'x-default': pageUrl,
       },
     },
-    openGraph: generateOpenGraph({ title, description: t.description, url: pageUrl, type: 'article' }),
-    twitter: generateTwitterCard({ title, description: t.description }),
+    openGraph: generateOpenGraph({ title, description, url: pageUrl, type: 'article' }),
+    twitter: generateTwitterCard({ title, description }),
   };
 }
 
@@ -106,7 +109,7 @@ export default async function ParentGuideDetailPage({ params }: { params: Promis
             </Link>
           )}
         </div>
-        <h2 className={`text-lg font-bold ${c.text} mb-3`}>核心要点</h2>
+        <h2 className={`text-lg font-bold ${c.text} mb-3`}>{t.title}核心要点</h2>
         <ul className="space-y-2 text-sm text-slate-200">
           {t.keyPoints.map((kp, i) => (
             <li key={i} className="flex items-start gap-2">
@@ -119,7 +122,7 @@ export default async function ParentGuideDetailPage({ params }: { params: Promis
 
       {/* 实战方法 */}
       <section className="mb-8">
-        <h2 className="text-2xl font-bold text-white mb-4">🎯 实战方法</h2>
+        <h2 className="text-2xl font-bold text-white mb-4">🎯 {t.title}实战方法</h2>
         <div className="space-y-4">
           {t.practicalTips.map((tip, i) => (
             <div key={i} className="p-5 bg-slate-800/50 border border-white/10 rounded-xl">
@@ -135,8 +138,8 @@ export default async function ParentGuideDetailPage({ params }: { params: Promis
       {/* 配套学习工具 */}
       {t.relatedTools.length > 0 && (
         <section className="mb-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl">
-          <h2 className="text-xl font-bold text-white mb-4">🛠️ 配套学习工具</h2>
-          <p className="text-sm text-slate-400 mb-4">配合以下工具使用，学习效果更佳：</p>
+          <h2 className="text-xl font-bold text-white mb-4">🛠️ {t.title}配套学习工具</h2>
+          <p className="text-sm text-slate-400 mb-4">配合以下工具使用，{t.title}的执行效果更佳：</p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {t.relatedTools.map((tool) => (
               <Link
@@ -157,7 +160,7 @@ export default async function ParentGuideDetailPage({ params }: { params: Promis
       {pitfalls.length > 0 && (
         <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
           <h2 className="text-xl font-bold text-white mb-4">
-            ⚠️ 家长最容易做错的 {pitfalls.length} 件事
+            ⚠️ {t.title}最常见的 {pitfalls.length} 个误区
             <span className="ml-2 text-xs text-slate-400 font-normal">很多做法看着合理，实际会起反效果</span>
           </h2>
           <div className="space-y-4">
@@ -184,9 +187,9 @@ export default async function ParentGuideDetailPage({ params }: { params: Promis
       {/* 效果判断信号 */}
       {signals.length > 0 && (
         <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
-          <h2 className="text-xl font-bold text-white mb-4">📈 怎么判断这套方法有没有效果</h2>
+          <h2 className="text-xl font-bold text-white mb-4">📈 {t.title}效果判断标准</h2>
           <p className="text-sm text-slate-400 mb-4">
-            不要凭"孩子今天听话了"判断效果。下面几条是更稳定的观察指标，达到越多说明方法在起作用：
+            不要凭"孩子今天听话了"判断效果。下面几条是更稳定的{ t.title }效果观察指标，达到越多说明方法在起作用：
           </p>
           <ul className="space-y-2">
             {signals.map((s, i) => (
@@ -201,7 +204,7 @@ export default async function ParentGuideDetailPage({ params }: { params: Promis
 
       {/* FAQ - 逐页专属（每页 5 条，问题与答案均不跨页复用） */}
       <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
-        <h2 className="text-xl font-bold text-white mb-4">❓ 家长最常问的 {faqs.length} 个问题</h2>
+        <h2 className="text-xl font-bold text-white mb-4">❓ {t.title}常见问题（{faqs.length} 个）</h2>
         <div className="space-y-3">
           {faqs.map((f, i) => (
             <details key={i} className="p-4 bg-slate-900/50 border border-white/5 rounded-lg">
