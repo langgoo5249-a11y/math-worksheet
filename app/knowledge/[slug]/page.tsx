@@ -344,7 +344,7 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
       {/* 学习目标 */}
       <section className="mb-10 p-6 bg-slate-800/50 border border-white/10 rounded-2xl">
         <h2 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-          <span>🎯</span>学习目标
+          <span>🎯</span>{kp.name}学习目标
         </h2>
         <p className="text-slate-200 leading-relaxed">{kp.learningGoal}</p>
       </section>
@@ -352,7 +352,7 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
       {/* 学习步骤 */}
       <section className="mb-10">
         <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
-          <span>📝</span>核心步骤
+          <span>📝</span>{kp.name}核心步骤
         </h2>
         <ol className="space-y-3">
           {kp.keySteps.map((step, i) => (
@@ -372,7 +372,7 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
       {/* 常见错误 */}
       <section className="mb-10">
         <h2 className="text-xl sm:text-2xl font-bold text-white mb-6 flex items-center gap-2">
-          <span>⚠️</span>常见错误
+          <span>⚠️</span>{kp.name}常见错误
         </h2>
         <ul className="space-y-2">
           {kp.commonMistakes.map((m, i) => (
@@ -390,7 +390,7 @@ export default async function KnowledgePointPage({ params }: { params: Promise<{
       {/* 练习建议 */}
       <section className="mb-10 p-6 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl">
         <h2 className="text-xl font-bold text-emerald-300 mb-3 flex items-center gap-2">
-          <span>💡</span>练习建议
+          <span>💡</span>{kp.name}练习建议
         </h2>
         <p className="text-slate-200 leading-relaxed">{kp.practiceAdvice}</p>
       </section>
