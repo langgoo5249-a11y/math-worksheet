@@ -198,25 +198,25 @@ export default async function TextbookVersionPage({ params }: { params: Promise<
       {/* ========== 版本介绍（证据区）========== */}
       <section className="mb-10 grid grid-cols-1 lg:grid-cols-2 gap-5">
         <div className="p-5 bg-gradient-to-br from-blue-500/10 to-indigo-500/10 border border-blue-500/20 rounded-2xl">
-          <h2 className="text-lg font-bold text-blue-300 mb-3">📚 这套教材在哪里用</h2>
+          <h2 className="text-lg font-bold text-blue-300 mb-3">📚 {tb.name}在哪些地区使用</h2>
           <p className="text-sm text-slate-200 leading-relaxed">{profile.regions}</p>
         </div>
         <div className="p-5 bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-2xl">
-          <h2 className="text-lg font-bold text-purple-300 mb-3">🧩 编排特点</h2>
+          <h2 className="text-lg font-bold text-purple-300 mb-3">🧩 {tb.name}编排特点</h2>
           <p className="text-sm text-slate-200 leading-relaxed">{profile.design}</p>
         </div>
         <div className="p-5 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-emerald-500/20 rounded-2xl">
-          <h2 className="text-lg font-bold text-emerald-300 mb-3">📐 与课程标准的对应</h2>
+          <h2 className="text-lg font-bold text-emerald-300 mb-3">📐 {tb.name}与课程标准的对应</h2>
           <p className="text-sm text-slate-200 leading-relaxed">{profile.standardBasis}</p>
         </div>
         <div className="p-5 bg-gradient-to-br from-amber-500/10 to-orange-500/10 border border-amber-500/20 rounded-2xl">
-          <h2 className="text-lg font-bold text-amber-300 mb-3">🔍 与其他版本的区别</h2>
+          <h2 className="text-lg font-bold text-amber-300 mb-3">🔍 {tb.name}与其他版本的区别</h2>
           <p className="text-sm text-slate-200 leading-relaxed">{profile.differences}</p>
         </div>
       </section>
 
       <section className="mb-10 p-5 bg-slate-800/50 border border-white/10 rounded-2xl">
-        <h2 className="text-lg font-bold text-white mb-3">👨‍👩‍👧 什么样的孩子适合这套版本</h2>
+        <h2 className="text-lg font-bold text-white mb-3">👨‍👩‍👧 什么样的孩子适合{tb.name}</h2>
         <p className="text-sm text-slate-200 leading-relaxed">{profile.bestFor}</p>
       </section>
 
