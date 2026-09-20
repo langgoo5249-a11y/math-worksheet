@@ -171,12 +171,10 @@ export default async function RootLayout({
           name: "CN",
         },
         sameAs: [
-          "https://www.skillxm.cn/",
+          "https://github.com/langgoo5249-a11y",
           "https://github.com/langgoo5249-a11y/math-worksheet",
           "https://author.baidu.com/home?from=bjh_article&app_id=1810332299795975",
-          "https://xhslink.com/m/8u3VNbmKr0F",
-          "https://mp.weixin.qq.com/",  // 微信公众号平台
-          "https://www.zhihu.com/",      // 知乎机构号平台
+          "https://www.xiaohongshu.com/user/profile/6723c8e3000000001c02b1a8",
         ],
         foundingDate: "2025-12-01",
         knowsAbout: [
