@@ -4,7 +4,7 @@ import { enArticles } from '@/app/en/blog/data';
 import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
-  title: 'Chinese Stroke Order Practice - Free Online | SkillXM',
+  title: 'Chinese Stroke Order Practice - Free Online',
   description:
     'Learn Chinese character stroke order with clear rules and examples. The 8 basic strokes, general stroke order rules, and common characters broken down stroke by stroke. Free practice guide for beginners.',
   keywords:
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     images: [DEFAULT_OG_IMAGE],
-    title: 'Chinese Stroke Order Practice - Free Online | SkillXM',
+    title: 'Chinese Stroke Order Practice - Free Online',
     description:
       'Master Chinese stroke order: the 8 basic strokes, general rules, and common characters broken down stroke by stroke. Free.',
     url: 'https://www.skillxm.cn/en/tools/stroke-order/',
