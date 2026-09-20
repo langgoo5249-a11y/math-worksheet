@@ -64,14 +64,14 @@ function parseMarkdown(markdown: string): string {
   html = html.replace(/^\|(.+)\|$/gm, (match) => {
     const cells = match.split('|').filter(c => c.trim());
     if (cells.every(c => /^[\s-:]+$/.test(c))) {
-      return '<!-- table separator -->';
+      return '';
     }
     const cellHtml = cells.map(c => `<td class="border border-white/10 px-3 py-2 text-gray-300 text-sm">${c.trim()}</td>`).join('');
     return `<tr>${cellHtml}</tr>`;
   });
 
   // Wrap consecutive <tr> in table
-  html = html.replace(/((?:<tr>[\s\S]*?<\/tr>\s*)+)/g, '<table class="w-full border-collapse my-4 rounded-xl overflow-hidden">$1</table>');
+  html = html.replace(/((?:<tr>[\s\S]*?<\/tr>\s*)+)/g, '<table class="w-full border-collapse my-4 rounded-xl overflow-hidden">$1</table>\n');
 
   // Paragraphs: lines that are not already wrapped in HTML tags
   const lines = html.split('\n');
