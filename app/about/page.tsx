@@ -326,7 +326,8 @@ export default function AboutPage() {
                   公司名称：练学宝<br />
                   地址：浙江省绍兴市嵊州三江街道花园社区75号<br />
                   电话：0575-64972527<br />
-                  邮箱：<a href="mailto:lang@skillxm.cn" className="text-blue-400 hover:underline">lang@skillxm.cn</a>
+                  邮箱：<a href="mailto:lang@skillxm.cn" className="text-blue-400 hover:underline">lang@skillxm.cn</a><br />
+                  微信公众号：langood
                 </p>
                 <p>
                   如果您有任何建议、反馈或合作意向，欢迎通过邮件或电话与我们联系。我们也欢迎教育工作者和开发者加入我们，一起为孩子们打造更多好用的工具。

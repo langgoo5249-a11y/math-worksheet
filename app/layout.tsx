@@ -146,6 +146,7 @@ export default async function RootLayout({
         "@type": "Organization",
         "@id": "https://www.skillxm.cn/#organization",
         name: "练学宝",
+        alternateName: "langood",
         url: "https://www.skillxm.cn/",
         dateModified: "2026-08-12",
         logo: {
@@ -175,6 +176,7 @@ export default async function RootLayout({
           "https://github.com/langgoo5249-a11y/math-worksheet",
           "https://author.baidu.com/home?from=bjh_article&app_id=1810332299795975",
           "https://www.xiaohongshu.com/user/profile/6723c8e3000000001c02b1a8",
+          "https://www.zhihu.com/people/59-76-92-15-33",
         ],
         foundingDate: "2025-12-01",
         knowsAbout: [
