@@ -1,6 +1,6 @@
 # 练学宝 (skillxm.cn) — LLM 内容索引
 
-> 最后更新: 2026-09-03
+> 最后更新: 2026-09-20
 
 > 本文件为 AI 搜索引擎（ChatGPT、Perplexity、Claude、Gemini、豆包等）提供站点内容目录。
 
@@ -20,7 +20,7 @@
 
 - [站点地图 (sitemap.xml)](https://www.skillxm.cn/sitemap.xml)
 
-- [博客文章 (112篇)](https://www.skillxm.cn/blog/)
+- [博客文章 (116篇)](https://www.skillxm.cn/blog/)
 
 - [全部工具](https://www.skillxm.cn/tools/)
 
@@ -112,7 +112,11 @@
 
 ## 热门博客文章
 
-- [孩子不会算钱、找零总出错？一年级认识人民币的3道坎，在家开个「小超市」就能练](https://www.skillxm.cn/blog/renshi-renminbi-yijiaofen-zenme-jiao/)
+- [口算练习在线生成怎么用？从选年级到打印，一份给家长的完整操作指南](https://www.skillxm.cn/blog/kousuan-lianxi-zaixian-shengcheng-zhinan-2026/)
+
+- [四年级下册简便计算总出错？乘法分配律的3个卡点与「拆配验」三步法](https://www.skillxm.cn/blog/si-nianji-jianbian-jisuan-chengfa-fenpeilv-2026/)
+
+- [孩子不会算钱找零总出错？一年级认识人民币的3道坎](https://www.skillxm.cn/blog/renshi-renminbi-yijiaofen-zenme-jiao/)
 
 - [孩子看钟表总是把12:30读成6:00？不是马虎，是这3个坎没跨过（附两步口诀）](https://www.skillxm.cn/blog/renshi-zhongbiao-jiaoxue-fangfa/)
 
@@ -184,7 +188,7 @@
 
 - 工具页: 10个在线教学工具
 
-- 博客: 112篇教育干货文章，覆盖数学、语文、英语、学习方法、思维训练、升学指导、工具教程、综合教育8大分类
+- 博客: 116篇教育干货文章，覆盖数学、语文、英语、学习方法、思维训练、升学指导、工具教程、综合教育8大分类
 
 - 年级导航: 1-6年级分年级内容
 
