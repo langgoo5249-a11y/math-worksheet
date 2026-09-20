@@ -92,21 +92,21 @@
 
 - [全部文章](https://www.skillxm.cn/blog/)
 
-- [数学学习](https://www.skillxm.cn/blog/category/math/)
+- [数学学习](https://www.skillxm.cn/blog/category/%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0/)
 
-- [语文学习](https://www.skillxm.cn/blog/category/chinese/)
+- [语文学习](https://www.skillxm.cn/blog/category/%E8%AF%AD%E6%96%87%E5%AD%A6%E4%B9%A0/)
 
-- [英语学习](https://www.skillxm.cn/blog/category/english/)
+- [英语学习](https://www.skillxm.cn/blog/category/%E8%8B%B1%E8%AF%AD%E5%AD%A6%E4%B9%A0/)
 
-- [学习方法](https://www.skillxm.cn/blog/category/study-methods/)
+- [学习方法](https://www.skillxm.cn/blog/category/%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95/)
 
-- [思维训练](https://www.skillxm.cn/blog/category/thinking/)
+- [思维训练](https://www.skillxm.cn/blog/category/%E6%80%9D%E7%BB%B4%E8%AE%AD%E7%BB%83/)
 
-- [升学指导](https://www.skillxm.cn/blog/category/exam-prep/)
+- [升学指导](https://www.skillxm.cn/blog/category/%E5%8D%87%E5%AD%A6%E6%8C%87%E5%AF%BC/)
 
-- [工具教程](https://www.skillxm.cn/blog/category/tool-tutorials/)
+- [工具推荐](https://www.skillxm.cn/blog/category/%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90/)
 
-- [综合教育](https://www.skillxm.cn/blog/category/general/)
+- [综合教育](https://www.skillxm.cn/blog/category/%E7%BB%BC%E5%90%88%E6%95%99%E8%82%B2/)
 
 
 
