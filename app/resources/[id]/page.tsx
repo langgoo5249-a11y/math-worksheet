@@ -138,7 +138,7 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
 
       {/* 知识点与预计时间 */}
       <section className="mb-8 p-6 bg-slate-800/40 border border-white/10 rounded-2xl">
-        <h2 className="text-xl font-bold text-white mb-3">📚 知识点与使用建议</h2>
+        <h2 className="text-xl font-bold text-white mb-3">📚 {gradeName}{r.knowledgePoint}知识点与使用建议</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
           <div>
             <div className="text-slate-400 mb-1">核心知识点</div>
@@ -170,7 +170,7 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
 
       {/* 操作按钮区 */}
       <section className="mb-8 p-6 bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 rounded-2xl">
-        <h2 className="text-xl font-bold text-white mb-4">🚀 立即开始练习</h2>
+        <h2 className="text-xl font-bold text-white mb-4">🚀 立即开始{gradeName}{r.knowledgePoint}练习</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
           {r.subject === 'math' && (
             <>
@@ -382,7 +382,7 @@ export default async function ResourceDetailPage({ params }: { params: Promise<{
 
       {/* 内容来源说明（原创性与专业性证据） */}
       <section className="mb-8 p-5 bg-slate-800/30 border border-white/10 rounded-2xl">
-        <h2 className="text-base font-bold text-white mb-3">📑 内容来源说明</h2>
+        <h2 className="text-base font-bold text-white mb-3">📑 {gradeName}{r.knowledgePoint}练习卷内容来源说明</h2>
         <ul className="space-y-2 text-sm text-slate-300 leading-relaxed">
           <li>• 题目依据《义务教育{r.subject === 'math' ? '数学' : r.subject === 'chinese' ? '语文' : '英语'}课程标准（2022 年版）》与{gradeName}{r.knowledgePoint}的教学要求编写，共 {r.pageCount} 页、{r.questionCount} 题。</li>
           <li>• 难度定位为{r.difficulty}，建议单次完成时间 {r.estimatedTime}，按"{r.tags.slice(0, 2).join('、')}"的目标编排题型梯度。</li>
