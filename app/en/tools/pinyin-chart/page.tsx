@@ -5,7 +5,7 @@ import { enArticles } from '@/app/en/blog/data';
 import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 
 export const metadata: Metadata = {
-  title: 'Pinyin Chart - Interactive Chinese Pronunciation Table with Audio',
+  title: 'Pinyin Chart - Interactive with Audio | SkillXM',
   description:
     'Complete interactive pinyin chart with 23 initials and 24 finals. Click any cell to hear pronunciation, switch between 4 tones, and learn pronunciation rules like tone sandhi. Free Mandarin pinyin table.',
   keywords:
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     images: [DEFAULT_OG_IMAGE],
-    title: 'Pinyin Chart - Interactive Chinese Pronunciation Table with Audio',
+    title: 'Pinyin Chart - Interactive with Audio | SkillXM',
     description:
       'Complete interactive pinyin chart with 23 initials and 24 finals. Click any cell to hear pronunciation, switch between 4 tones.',
     url: 'https://www.skillxm.cn/en/tools/pinyin-chart/',
