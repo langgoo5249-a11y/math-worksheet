@@ -1,6 +1,6 @@
 # 练学宝 (skillxm.cn) — LLM 内容索引
 
-> 最后更新: 2026-09-03
+> 最后更新: 2026-09-20
 
 > 本文件为 AI 搜索引擎（ChatGPT、Perplexity、Claude、Gemini、豆包等）提供站点内容目录。
 
@@ -111,6 +111,8 @@
 
 
 ## 热门博客文章
+
+- [四年级下册简便计算总出错？乘法分配律的3个卡点与「拆配验」三步法](https://www.skillxm.cn/blog/si-nianji-jianbian-jisuan-chengfa-fenpeilv-2026/)
 
 - [孩子不会算钱找零总出错？一年级认识人民币的3道坎](https://www.skillxm.cn/blog/renshi-renminbi-yijiaofen-zenme-jiao/)
 
