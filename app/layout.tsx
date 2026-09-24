@@ -256,8 +256,9 @@ export default async function RootLayout({
         <meta name="ai-usage" content="allow" />
         <meta name="content-signal" content="ai-train=no, search=yes, ai-input=yes" />
         {/* AI 内容索引: 引导 AI 搜索引擎发现结构化内容目录 */}
-        <link rel="ai-index" type="text/plain" href="/llms.txt" />
-        <link rel="ai-index" type="text/plain" href="/llms-en.txt" />
+        <link rel="llms" type="text/plain" href="/llms.txt" />
+        <link rel="llms" type="text/plain" href="/llms-en.txt" hreflang="en" />
+        <link rel="llms-full" type="text/plain" href="/llms-full.txt" />
         <link rel="ai-index" type="application/xml" href="/ai.xml" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="any" />
