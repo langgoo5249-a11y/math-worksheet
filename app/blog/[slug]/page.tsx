@@ -11,6 +11,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const article = articles.find(a => a.id === slug);
   if (!article) return { title: '文章未找到' };
+
+  // og:image 改用各篇文章自己的配图（绝对 URL），无图时回退站点默认图
+  const ogImage = article.image
+    ? (article.image.startsWith('http') ? article.image : `https://www.skillxm.cn${article.image}`)
+    : 'https://www.skillxm.cn/og-image.jpg';
+
   
   return {
     title: `${article.title} | 练学宝`,
@@ -34,7 +40,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       authors: [article.author?.name || defaultAuthor.name],
       images: [
         {
-          url: 'https://www.skillxm.cn/og-image.jpg',
+          url: ogImage,
           width: 1200,
           height: 630,
           alt: article.title,
@@ -47,7 +53,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
-      images: ['https://www.skillxm.cn/og-image.jpg'],
+      images: [ogImage],
     },
     other: {
       'article:tag': article.keywords?.join(',') || [article.category, '小学教育', '学习方法', '家长辅导'].join(','),
@@ -70,7 +76,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     "description": article.description,
     "datePublished": article.date,
     "dateModified": article.dateModified || article.date,
-    "image": "https://www.skillxm.cn/og-image.jpg",
+    "image": ogImage,
     "inLanguage": "zh-CN",
     "isAccessibleForFree": true,
     "author": {

@@ -182,25 +182,6 @@ export default function BlogPostPage({ slug }: BlogPostPageProps) {
             '@context': 'https://schema.org',
             '@graph': [
               {
-                '@type': 'BlogPosting',
-                headline: article.title,
-                description: article.summary || article.description,
-                image: article.image || 'https://www.skillxm.cn/og-image.jpg',
-                datePublished: article.date,
-                dateModified: article.dateModified || article.date,
-                author: {
-                  '@type': 'Person',
-                  name: article.author?.name || defaultAuthor.name,
-                  jobTitle: article.author?.title || defaultAuthor.title,
-                },
-                publisher: {
-                  '@id': 'https://www.skillxm.cn/#organization',
-                },
-                mainEntityOfPage: `https://www.skillxm.cn/blog/${article.id}/`,
-                articleSection: article.category,
-                inLanguage: 'zh-CN',
-              },
-              {
                 '@type': 'FAQPage',
                 mainEntity: faqs.map((f) => ({
                   '@type': 'Question',
