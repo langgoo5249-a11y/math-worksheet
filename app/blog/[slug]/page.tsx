@@ -3,6 +3,12 @@ import { articles, defaultAuthor } from '../data';
 import type { Metadata } from 'next';
 import BlogPostPage from '../_components/BlogPostPage';
 
+function getOgImage(image?: string): string {
+  return image
+    ? (image.startsWith('http') ? image : `https://www.skillxm.cn${image}`)
+    : 'https://www.skillxm.cn/og-image.jpg';
+}
+
 export function generateStaticParams() {
   return articles.map(a => ({ slug: a.id }));
 }
@@ -13,9 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!article) return { title: '文章未找到' };
 
   // og:image 改用各篇文章自己的配图（绝对 URL），无图时回退站点默认图
-  const ogImage = article.image
-    ? (article.image.startsWith('http') ? article.image : `https://www.skillxm.cn${article.image}`)
-    : 'https://www.skillxm.cn/og-image.jpg';
+  const ogImage = getOgImage(article.image);
 
   
   return {
@@ -67,6 +71,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { slug } = await params;
   const article = articles.find(a => a.id === slug);
   if (!article) notFound();
+
+  const ogImage = getOgImage(article.image);
 
   const articleSchema = {
     "@context": "https://schema.org",
