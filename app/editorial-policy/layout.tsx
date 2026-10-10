@@ -9,7 +9,7 @@ import { DEFAULT_OG_IMAGE } from '@/lib/seoUtils';
 const PAGE_URL = 'https://www.skillxm.cn/editorial-policy/';
 
 export const metadata: Metadata = {
-  title: '编辑政策与内容审核流程',
+  title: '练学宝编辑政策 - 内容审核流程、质量标准与教材版本覆盖',
   description:
     '练学宝编辑政策：所有教育内容均经一线教师逐题审核，遵循「AI辅助初稿 + 人工审核」流程，对齐2022版课程标准，覆盖人教版、北师大版、苏教版、青岛版，确保内容准确可靠。',
   keywords: [

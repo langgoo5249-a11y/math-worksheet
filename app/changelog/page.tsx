@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   },
   openGraph: generateOpenGraph({
     title: '更新日志 - 功能更新与新工具发布记录 | 练学宝',
-    description: '记录所有新工具上线、功能优化、Bug修复、新增资源。',
+    description: '练学宝更新日志：记录所有新工具上线、功能优化、Bug修复、新增资源。见证练学宝与孩子们一起成长。',
     url: PAGE_URL,
   }),
   twitter: generateTwitterCard({
-    title: '更新日志 - 功能更新记录 | 练学宝',
-    description: '记录所有新工具上线、功能优化、Bug修复、新增资源。',
+    title: '更新日志 - 功能更新与新工具发布记录 | 练学宝',
+    description: '练学宝更新日志：记录所有新工具上线、功能优化、Bug修复、新增资源。见证练学宝与孩子们一起成长。',
   }),
 };
 

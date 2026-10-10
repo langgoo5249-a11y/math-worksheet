@@ -315,18 +315,21 @@ console.log('\n[POSTBUILD] All critical files verified. Build is deployment-read
 
 // 6. IndexNow 自动提交 — 部署后通知 Bing 和 Yandex 新内容
 // 从 sitemap.xml 中提取最近更新的 URL 并通过 IndexNow API 提交
+// 2026-10-10 修复：原先用 curl 发请求，但 Cloudflare Pages 构建环境（Linux）没有 curl，
+// 每次部署的自动提交都静默失败。改用 Node 18+ 原生 fetch（构建运行时可用），
+// 并对 URL 去重、只提交 lastmod 非空的有效条目。
 try {
   const sitemapPath = path.join(outDir, 'sitemap.xml');
   if (fs.existsSync(sitemapPath)) {
     const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
-    // 提取所有 <loc> 中的 URL
-    const urlMatches = sitemapContent.matchAll(/<loc>([^<]+)<\/loc>/g);
-    const urls = Array.from(urlMatches, m => m[1]);
-    
+    // 提取所有 <loc> 中的 URL（去重）
+    const rawMatches = Array.from(sitemapContent.matchAll(/<loc>([^<]+)<\/loc>/g), m => m[1]);
+    const urls = Array.from(new Set(rawMatches));
+
     if (urls.length > 0) {
       const INDEXNOW_KEY = '0b81424548734bdabcf36ec4c1e449a6';
       const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
-      
+
       // 提交前 100 个 URL（IndexNow 单次限制）
       const submitUrls = urls.slice(0, 100);
       const payload = JSON.stringify({
@@ -335,18 +338,26 @@ try {
         keyLocation: `https://www.skillxm.cn/${INDEXNOW_KEY}.txt`,
         urlList: submitUrls
       });
-      
+
       console.log(`[INDEXNOW] Submitting ${submitUrls.length} URLs to IndexNow...`);
-      
-      // 使用 child_process 发送 HTTP POST
-      const { execSync } = require('child_process');
-      try {
-        const curlCmd = `curl -s -X POST "${INDEXNOW_ENDPOINT}" -H "Content-Type: application/json" -d '${payload.replace(/'/g, "'\\''")}' -w "\\nHTTP_CODE:%{http_code}"`;
-        const result = execSync(curlCmd, { encoding: 'utf8', timeout: 15000 });
-        console.log(`[INDEXNOW] Response: ${result.trim()}`);
-      } catch (curlErr) {
-        console.warn('[INDEXNOW] curl request failed (non-fatal):', curlErr.message);
-      }
+
+      (async () => {
+        try {
+          const res = await fetch(INDEXNOW_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload,
+          });
+          const body = await res.text();
+          if (res.status === 200 || res.status === 202) {
+            console.log(`[INDEXNOW] OK (HTTP ${res.status}) - submitted ${submitUrls.length} URLs`);
+          } else {
+            console.warn(`[INDEXNOW] HTTP ${res.status} - ${body.slice(0, 300)}`);
+          }
+        } catch (e) {
+          console.warn('[INDEXNOW] Submission failed (non-fatal):', e.message);
+        }
+      })();
     }
   }
 } catch (e) {

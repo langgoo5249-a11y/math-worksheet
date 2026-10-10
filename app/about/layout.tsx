@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "关于我们 - 练学宝团队介绍与教育理念",
-  description: "练学宝是一个免费的在线教育工具平台，由一群热爱教育的开发者和教育工作者共同打造。我们致力于为小学生和家长提供便捷、高效的教学工具，让每个孩子都能享受到优质的教育资源。",
+  title: "关于我们 - 练学宝建站初衷、团队与免费教育理念",
+  description: "了解练学宝的建站初衷、使命和团队。练学宝是一个免费的小学在线学习工具平台，由全栈开发者林远创建，提供数学练习卷生成器、字帖生成器、口算速练、数独游戏、识字卡片等10+款免费教学工具，覆盖小学1-6年级数学语文英语全科，无需注册即开即用。",
   keywords: "关于练学宝,教育工具团队,教育理念,免费教学工具,小学教育平台",
   alternates: {
     canonical: 'https://www.skillxm.cn/about/',
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: 'https://www.skillxm.cn/about/',
-    title: "关于我们 - 练学宝团队介绍与教育理念",
+    title: "关于我们 - 练学宝建站初衷、团队与免费教育理念",
     description: "练学宝是一个免费的在线教育工具平台，由一群热爱教育的开发者和教育工作者共同打造。我们致力于为小学生和家长提供便捷、高效的教学工具。",
     type: "website",
     images: [{ url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],

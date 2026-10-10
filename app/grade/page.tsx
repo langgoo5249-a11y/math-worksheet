@@ -18,16 +18,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     images: [DEFAULT_OG_IMAGE],
-    title: '小学年级学习专区 - 练学宝',
-    description: '小学1-6年级完整学习方案：核心知识点、配套练习工具、学习路径全覆盖',
+    title: '小学年级学习专区 - 1-6年级完整学习方案 | 练学宝',
+    description: '练学宝为小学1-6年级学生提供完整的学习专区，包含各年级数学语文英语的练习题、学习工具、知识点汇总。所有内容免费，支持PDF下载打印。',
     url: 'https://www.skillxm.cn/grade',
     type: 'website',
     locale: 'zh_CN',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '小学年级学习专区 - 练学宝',
-    description: '小学1-6年级完整学习方案',
+    title: '小学年级学习专区 - 1-6年级完整学习方案 | 练学宝',
+    description: '小学1-6年级完整学习方案：核心知识点、配套练习工具、学习路径全覆盖，免费使用支持PDF打印。',
   },
 };
 

@@ -25,12 +25,12 @@ export const metadata: Metadata = {
   },
   openGraph: generateOpenGraph({
     title: '每日一练 - 小学数学口算每日打卡 | 练学宝',
-    description: '每天为孩子生成15分钟数学口算练习，按年级智能出题，包含答案解析与学习建议。',
+    description: '练学宝每日一练：每天为孩子生成15分钟数学口算练习，按年级智能出题，包含答案解析与学习建议。坚持每日打卡，让学习成为习惯。',
     url: PAGE_URL,
   }),
   twitter: generateTwitterCard({
     title: '每日一练 - 小学数学口算每日打卡 | 练学宝',
-    description: '每天为孩子生成15分钟数学口算练习，按年级智能出题。',
+    description: '练学宝每日一练：每天15分钟数学口算打卡，按年级智能出题，含答案解析与学习建议。',
   }),
 };
 

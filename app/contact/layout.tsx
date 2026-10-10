@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "联系我们 - 练学宝客服与反馈",
+  title: "联系我们 - 练学宝反馈、客服邮箱与合作渠道",
   description: "联系练学宝团队：如有问题、建议或合作意向，欢迎通过邮箱 lang@skillxm.cn 或在线表单联系我们。电话：0575-64972527，地址：浙江省绍兴市嵊州三江街道花园社区75号。",
   keywords: "联系练学宝,客服,反馈,合作,教育工具咨询",
   alternates: {
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: 'https://www.skillxm.cn/contact/',
-    title: "联系我们 - 练学宝客服与反馈",
+    title: "联系我们 - 练学宝反馈、客服邮箱与合作渠道",
     description: "联系练学宝团队：如有问题、建议或合作意向，欢迎通过邮箱或在线表单联系我们。",
     type: "website",
     images: [{ url: "https://www.skillxm.cn/og-image.jpg", width: 1200, height: 630, alt: "练学宝" }],
