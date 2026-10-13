@@ -249,7 +249,7 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <meta name="baidu-site-verification" content="codeva-nVZFsgvPZu" />
         <meta name="google-site-verification" content="6szVJUGCDvvDDcBkDLV0n6kD_KU1EyOWnO7MSw-5ERM" />
-        <meta name="sogou_site_verification" content="8MPjNizOK7" />
+        <meta name="sogou_site_verification" content="oJ0puC8Mqy" />
         {/* AI 爬虫开放许可：允许 AI 搜索引擎抓取与引用，但声明不用于模型训练
             注意：此处必须与 public/robots.txt 的 Content-Signal 保持一致。
             合并前这里是 ai-train=yes，而 robots.txt 是 ai-train=no，两者互相矛盾。 */}
