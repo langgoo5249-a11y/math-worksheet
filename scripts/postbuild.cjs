@@ -314,52 +314,30 @@ if (fs.existsSync(functionsDir)) {
 console.log('\n[POSTBUILD] All critical files verified. Build is deployment-ready.');
 
 // 6. IndexNow 自动提交 — 部署后通知 Bing 和 Yandex 新内容
-// 从 sitemap.xml 中提取最近更新的 URL 并通过 IndexNow API 提交
-// 2026-10-10 修复：原先用 curl 发请求，但 Cloudflare Pages 构建环境（Linux）没有 curl，
-// 每次部署的自动提交都静默失败。改用 Node 18+ 原生 fetch（构建运行时可用），
-// 并对 URL 去重、只提交 lastmod 非空的有效条目。
-try {
-  const sitemapPath = path.join(outDir, 'sitemap.xml');
-  if (fs.existsSync(sitemapPath)) {
-    const sitemapContent = fs.readFileSync(sitemapPath, 'utf8');
-    // 提取所有 <loc> 中的 URL（去重）
-    const rawMatches = Array.from(sitemapContent.matchAll(/<loc>([^<]+)<\/loc>/g), m => m[1]);
-    const urls = Array.from(new Set(rawMatches));
-
-    if (urls.length > 0) {
-      const INDEXNOW_KEY = '0b81424548734bdabcf36ec4c1e449a6';
-      const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
-
-      // 提交前 100 个 URL（IndexNow 单次限制）
-      const submitUrls = urls.slice(0, 100);
-      const payload = JSON.stringify({
-        host: 'www.skillxm.cn',
-        key: INDEXNOW_KEY,
-        keyLocation: `https://www.skillxm.cn/${INDEXNOW_KEY}.txt`,
-        urlList: submitUrls
-      });
-
-      console.log(`[INDEXNOW] Submitting ${submitUrls.length} URLs to IndexNow...`);
-
-      (async () => {
-        try {
-          const res = await fetch(INDEXNOW_ENDPOINT, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: payload,
-          });
-          const body = await res.text();
-          if (res.status === 200 || res.status === 202) {
-            console.log(`[INDEXNOW] OK (HTTP ${res.status}) - submitted ${submitUrls.length} URLs`);
-          } else {
-            console.warn(`[INDEXNOW] HTTP ${res.status} - ${body.slice(0, 300)}`);
-          }
-        } catch (e) {
-          console.warn('[INDEXNOW] Submission failed (non-fatal):', e.message);
-        }
-      })();
-    }
+//
+// 2026-10-14 重写。此前这段代码有三个问题, 导致「每次更新文章都走 IndexNow」
+// 实际上从未可靠工作:
+//   1) 只提交 sitemap 前 100 个 URL, 且每次全量重发 — 既漏掉后面的页面,
+//      又把没变化的 URL 反复提交, 稀释提交信号;
+//   2) 没有删除感知 — 页面下线后搜索引擎会长时间继续抓 404;
+//   3) fetch 没有 await, 外层是同步 CJS 模块 — Node 会在请求发出前退出,
+//      提交静默丢失。
+//
+// 现在改为调用通用脚本 scripts/indexnow-submit.mjs, 它以「上一版 sitemap
+// 快照」为基线做增量 diff, 并 await 到提交完成。基线由 Cloudflare Pages
+// 构建环境的持久化缓存传递(见下方 baselineDir)。
+//
+// 注意: 这里必须用同步 execSync 等待子进程结束, 不能再放回异步 fetch。
+const INDEXNOW_SCRIPT = path.join(__dirname, 'indexnow-submit.mjs');
+if (fs.existsSync(INDEXNOW_SCRIPT)) {
+  try {
+    console.log('[INDEXNOW] 增量提交中...');
+    execSync(`node "${INDEXNOW_SCRIPT}"`, { stdio: 'inherit', cwd: process.cwd() });
+  } catch (e) {
+    // 提交失败不影响部署本身: 页面已经发布, 收录失败可下次补
+    console.warn('[INDEXNOW] 提交失败(非致命):', e.message);
   }
-} catch (e) {
-  console.warn('[INDEXNOW] Submission failed (non-fatal):', e.message);
+} else {
+  console.warn('[INDEXNOW] 未找到 scripts/indexnow-submit.mjs, 跳过提交');
 }
+
