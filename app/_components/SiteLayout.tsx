@@ -337,6 +337,10 @@ export default function SiteLayout({ children }: { children: React.ReactNode }) 
               </ul>
             </div>
           </div>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-gray-400 mb-3">
+            <span className="text-gray-500">友情链接：</span>
+            <a href="https://vidtidy.cn" target="_blank" rel="noopener" className="hover:text-white transition-colors">净影 AI 视频工具</a>
+          </div>
           <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm text-gray-400 mb-3 pt-6 border-t border-white/5">
             <a href="/about/" className="hover:text-white transition-colors">关于我们</a>
             <span className="text-gray-600">|</span>
